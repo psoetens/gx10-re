@@ -1,0 +1,73 @@
+scrolled: handle 230-792 -> 1352-1919
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+
+=== page 2 idx  0 X_COMP_BASS ===
+  triplet: 0A0000
+
+=== page 2 idx  1 OD_BASS ===
+  triplet: 260000
+
+=== page 2 idx  2 X_OD_BASS ===
+  triplet: 2C0000
+
+=== page 2 idx  3 DIST_BASS ===
+  triplet: 280000
+
+=== page 2 idx  4 METAL_BASS ===
+  triplet: 2F0000
+
+=== page 2 idx  5 FUZZ_BASS ===
+  triplet: 2A0000
+
+=== page 2 idx  6 AMP_BASS ===
+  triplet: 030000
+
+=== page 2 idx  7 CHO_BASS ===
+  triplet: 050000
+
+=== page 2 idx  8 FL_BASS ===
+  triplet: 170000
+
+=== page 2 idx  9 FL_PRIME_BASS ===
+  triplet: 190000
+
+=== page 2 idx 10 PH_BASS ===
+  retry 1/3 for PH_BASS
+  triplet: 380000
+
+=== page 2 idx 11 PH_PRIME_BASS ===
+  triplet: 3A0000
+
+=== page 2 idx 12 PS_BASS ===
+  triplet: 3D0000
+
+=== page 2 idx 13 HARM_BASS ===
+  triplet: 1B0000
+
+=== page 2 idx 14 OCT_BASS ===
+  triplet: 230000
+
+=== page 2 idx 15 SG_BASS ===
+  triplet: 470000
+
+=== page 2 idx 16 DEFRET_BASS ===
+  triplet: 0C0000
+
+=== page 2 idx 17 T_WAH_BASS ===
+  triplet: 490000
+
+=== page 2 idx 18 S_BEND_BASS ===
+  triplet: 450000
+
+=== page 2 idx 19 WAH_BASS ===
+  triplet: 360000
+
+=== page 2 idx 20 PB_BASS ===
+  triplet: 340000
+
+=== DONE: 21 effects mapped ===

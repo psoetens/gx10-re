@@ -1,0 +1,3 @@
+{"event": "opened", "source": "pcap", "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\usbpcap\\noTS_test.pcap", "t": 0.0, "label": "(no label)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B11100011070000000454F7", "t": 1.389445, "frame": 25, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 19, "hex": "F04110000000000B1210001107080000044CF7", "t": 1.395843, "frame": 37, "label": "(usbpcap)"}

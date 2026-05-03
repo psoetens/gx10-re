@@ -1,0 +1,6 @@
+{"event": "opened", "source": "pcap", "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\usbpcap\\unlock_test.pcap", "t": 0.0, "label": "(no label)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1110001100000000401FF7", "t": 1.414573, "frame": 25, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 78, "hex": "F04110000000000B12100011000201010800000B080002080800020808000406080003020800020C08000000080000010800000008000302080000000800000008000000080000000800000120F7", "t": 1.42525, "frame": 37, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 16, "hex": "F04110000000000B127F0000010100F7", "t": 4.14258, "frame": 39, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1110001100000000401FF7", "t": 5.449036, "frame": 41, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 78, "hex": "F04110000000000B12100011000201010800000B080002080800020808000406080003020800020C08000000080000010800000008000302080000000800000008000000080000000800000120F7", "t": 5.461105, "frame": 55, "label": "(usbpcap)"}

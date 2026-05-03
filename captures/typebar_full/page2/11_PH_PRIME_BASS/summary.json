@@ -1,0 +1,470 @@
+{
+  "page": 2,
+  "idx": 11,
+  "name": "PH_PRIME_BASS",
+  "color": [
+    75,
+    200,
+    165
+  ],
+  "hex_x": 872,
+  "n_dt1": 8,
+  "triplet_at_10001100": "3A0000",
+  "has_type": true,
+  "has_sp_type": false,
+  "type_address": "10001103",
+  "type_max": 4,
+  "type_payloads": [
+    "08000000",
+    "08000001",
+    "08000002",
+    "08000003",
+    "08000004",
+    "08000004"
+  ],
+  "sp_type_address": null,
+  "sp_type_max": -1,
+  "sp_type_payloads": [],
+  "knobs": [
+    {
+      "knob_idx": 0,
+      "knob_x": 307,
+      "knob_y": 590,
+      "address": "10001107",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 118,
+      "n_dt1_up": 70,
+      "first_payload_down": "08000705",
+      "name_manual": "STAGE",
+      "min_raw": 32768,
+      "max_raw": 32886,
+      "min_display": 0,
+      "max_display": 118,
+      "n_events_total": 188,
+      "name_manual_v2": "STAGE"
+    },
+    {
+      "knob_idx": 1,
+      "knob_x": 429,
+      "knob_y": 590,
+      "address": "1000110B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "RATE",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "RATE"
+    },
+    {
+      "knob_idx": 2,
+      "knob_x": 548,
+      "knob_y": 590,
+      "address": "1000110F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 100,
+      "first_payload_down": "08000603",
+      "name_manual": "DEPTH",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 200,
+      "name_manual_v2": "DEPTH"
+    },
+    {
+      "knob_idx": 3,
+      "knob_x": 668,
+      "knob_y": 590,
+      "address": "10001113",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "RESONANCE",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "RESONANCE"
+    },
+    {
+      "knob_idx": 4,
+      "knob_x": 789,
+      "knob_y": 590,
+      "address": "10001117",
+      "min": 0,
+      "max": 1,
+      "n_dt1_down": 1,
+      "n_dt1_up": 1,
+      "first_payload_down": "08000000",
+      "name_manual": "MANUAL",
+      "min_raw": 32768,
+      "max_raw": 32769,
+      "min_display": 0,
+      "max_display": 1,
+      "n_events_total": 2,
+      "name_manual_v2": "MANUAL"
+    },
+    {
+      "knob_idx": 5,
+      "knob_x": 909,
+      "knob_y": 590,
+      "address": "1000111B",
+      "min": 0,
+      "max": 12,
+      "n_dt1_down": 12,
+      "n_dt1_up": 12,
+      "first_payload_down": "0800000B",
+      "name_manual": "WAVEFORM",
+      "min_raw": 32768,
+      "max_raw": 32887,
+      "min_display": 0,
+      "max_display": 119,
+      "n_events_total": 238,
+      "name_manual_v2": "WAVEFORM",
+      "address_legacy": "10001123"
+    },
+    {
+      "knob_idx": 6,
+      "knob_x": 1028,
+      "knob_y": 590,
+      "address": "1000111F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 119,
+      "n_dt1_up": 119,
+      "first_payload_down": "08000706",
+      "name_manual": "SEPARATION",
+      "min_raw": 32768,
+      "max_raw": 32769,
+      "min_display": 0,
+      "max_display": 1,
+      "n_events_total": 2,
+      "name_manual_v2": "SEPARATION",
+      "address_legacy": "1000111B"
+    },
+    {
+      "knob_idx": 7,
+      "knob_x": 1147,
+      "knob_y": 590,
+      "address": "10001123",
+      "min": 0,
+      "max": 1,
+      "n_dt1_down": 1,
+      "n_dt1_up": 1,
+      "first_payload_down": "08000000",
+      "name_manual": "STEP RATE",
+      "min_raw": 32768,
+      "max_raw": 32780,
+      "min_display": 0,
+      "max_display": 12,
+      "n_events_total": 24,
+      "name_manual_v2": "STEP RATE",
+      "address_legacy": "1000111F"
+    },
+    {
+      "knob_idx": 8,
+      "knob_x": 1270,
+      "knob_y": 590,
+      "address": "10001127",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "070F0F0F",
+      "name_manual": "BI-PHASE",
+      "min_raw": 32668,
+      "max_raw": 32768,
+      "min_display": -100,
+      "max_display": 0,
+      "n_events_total": 152,
+      "name_manual_v2": "BI-PHASE"
+    },
+    {
+      "knob_idx": 9,
+      "knob_x": 1389,
+      "knob_y": 590,
+      "address": "1000112B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "070F0F0F",
+      "name_manual": "LOW DAMP",
+      "min_raw": 32668,
+      "max_raw": 32768,
+      "min_display": -100,
+      "max_display": 0,
+      "n_events_total": 152,
+      "name_manual_v2": "LOW DAMP"
+    },
+    {
+      "knob_idx": 10,
+      "knob_x": 1508,
+      "knob_y": 590,
+      "address": "1000112F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 29,
+      "n_dt1_up": 29,
+      "first_payload_down": "0800010C",
+      "name_manual": "HIGH DAMP",
+      "min_raw": 32768,
+      "max_raw": 32797,
+      "min_display": 0,
+      "max_display": 29,
+      "n_events_total": 58,
+      "name_manual_v2": "HIGH DAMP"
+    },
+    {
+      "knob_idx": 11,
+      "knob_x": 1628,
+      "knob_y": 590,
+      "address": "10001133",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 29,
+      "n_dt1_up": 2,
+      "first_payload_down": "0800010C",
+      "name_manual": "LOW CUT",
+      "min_raw": 32768,
+      "max_raw": 32797,
+      "min_display": 0,
+      "max_display": 29,
+      "n_events_total": 31,
+      "name_manual_v2": "LOW CUT"
+    },
+    {
+      "knob_idx": 12,
+      "knob_x": 308,
+      "knob_y": 710,
+      "address": "10001137",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 2,
+      "first_payload_down": "08000603",
+      "name_manual": "HIGH CUT",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 102,
+      "name_manual_v2": "HIGH CUT"
+    },
+    {
+      "knob_idx": 13,
+      "knob_x": 428,
+      "knob_y": 710,
+      "address": "1000113B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 100,
+      "first_payload_down": "08000603",
+      "name_manual": "EFFECT LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 200,
+      "name_manual_v2": "EFFECT LEVEL"
+    },
+    {
+      "knob_idx": 14,
+      "knob_x": 549,
+      "knob_y": 710,
+      "address": "1000113F",
+      "min": 0,
+      "max": 14,
+      "n_dt1_down": 140,
+      "n_dt1_up": 158,
+      "first_payload_down": "00090C04",
+      "name_manual": "DIRECT MIX",
+      "min_raw": 480,
+      "max_raw": 2500,
+      "min_display": -32288,
+      "max_display": -30268,
+      "n_events_total": 298,
+      "name_manual_v2": "DIRECT MIX",
+      "address_legacy": "10000F02"
+    }
+  ],
+  "per_type_layouts": [
+    {
+      "type_value": 0,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "type_value": 1,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "type_value": 2,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "type_value": 3,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "type_value": 4,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    }
+  ],
+  "master_knob_positions": [
+    [
+      307,
+      590
+    ],
+    [
+      429,
+      590
+    ],
+    [
+      548,
+      590
+    ],
+    [
+      668,
+      590
+    ],
+    [
+      789,
+      590
+    ],
+    [
+      909,
+      590
+    ],
+    [
+      1028,
+      590
+    ],
+    [
+      1147,
+      590
+    ],
+    [
+      1270,
+      590
+    ],
+    [
+      1389,
+      590
+    ],
+    [
+      1508,
+      590
+    ],
+    [
+      1628,
+      590
+    ],
+    [
+      308,
+      710
+    ],
+    [
+      428,
+      710
+    ],
+    [
+      549,
+      710
+    ]
+  ],
+  "fx_type_byte": 58,
+  "fx_type_official": "PRIME BASS PHASER"
+}

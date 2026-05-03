@@ -1,0 +1,224 @@
+{
+  "page": 2,
+  "idx": 3,
+  "name": "DIST_BASS",
+  "color": [
+    218,
+    130,
+    32
+  ],
+  "hex_x": 422,
+  "n_dt1": 8,
+  "triplet_at_10001100": "280000",
+  "has_type": true,
+  "has_sp_type": false,
+  "type_address": "10001103",
+  "type_max": 2,
+  "type_payloads": [
+    "08000000",
+    "08000001",
+    "08000002",
+    "08000002"
+  ],
+  "sp_type_address": null,
+  "sp_type_max": -1,
+  "sp_type_payloads": [],
+  "knobs": [
+    {
+      "knob_idx": 0,
+      "knob_x": 308,
+      "knob_y": 590,
+      "address": "10001107",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 120,
+      "n_dt1_up": 72,
+      "first_payload_down": "08000707",
+      "name_manual": "DRIVE",
+      "min_raw": 32768,
+      "max_raw": 32888,
+      "min_display": 0,
+      "max_display": 120,
+      "n_events_total": 192,
+      "name_manual_v2": "DRIVE"
+    },
+    {
+      "knob_idx": 1,
+      "knob_x": 429,
+      "knob_y": 590,
+      "address": "1000110B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000301",
+      "name_manual": "TONE",
+      "min_raw": 32718,
+      "max_raw": 32818,
+      "min_display": -50,
+      "max_display": 50,
+      "n_events_total": 152,
+      "name_manual_v2": "TONE"
+    },
+    {
+      "knob_idx": 2,
+      "knob_x": 548,
+      "knob_y": 590,
+      "address": "1000110F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "LEVEL"
+    },
+    {
+      "knob_idx": 3,
+      "knob_x": 669,
+      "knob_y": 590,
+      "address": "10001113",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000301",
+      "name_manual": "BOTTOM",
+      "min_raw": 32718,
+      "max_raw": 32818,
+      "min_display": -50,
+      "max_display": 50,
+      "n_events_total": 152,
+      "name_manual_v2": "BOTTOM"
+    },
+    {
+      "knob_idx": 4,
+      "knob_x": 789,
+      "knob_y": 590,
+      "address": "10001117",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 100,
+      "first_payload_down": "08000603",
+      "name_manual": "DIRECT MIX",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 200,
+      "name_manual_v2": "DIRECT MIX"
+    },
+    {
+      "knob_idx": 5,
+      "knob_x": 910,
+      "knob_y": 590,
+      "address": "1000111B",
+      "min": 0,
+      "max": 1,
+      "n_dt1_down": 1,
+      "n_dt1_up": 1,
+      "first_payload_down": "08000000",
+      "name_manual": "SOLO SW",
+      "min_raw": 32768,
+      "max_raw": 32769,
+      "min_display": 0,
+      "max_display": 1,
+      "n_events_total": 2,
+      "name_manual_v2": "SOLO SW"
+    },
+    {
+      "knob_idx": 6,
+      "knob_x": 1028,
+      "knob_y": 590,
+      "address": "1000111F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "SOLO LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "SOLO LEVEL"
+    }
+  ],
+  "per_type_layouts": [
+    {
+      "type_value": 0,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "type_value": 1,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "type_value": 2,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "master_knob_positions": [
+    [
+      308,
+      590
+    ],
+    [
+      429,
+      590
+    ],
+    [
+      548,
+      590
+    ],
+    [
+      669,
+      590
+    ],
+    [
+      789,
+      590
+    ],
+    [
+      910,
+      590
+    ],
+    [
+      1028,
+      590
+    ]
+  ],
+  "fx_type_byte": 40,
+  "fx_type_official": "BASS DISTORTION"
+}

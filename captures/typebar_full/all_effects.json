@@ -1,0 +1,67 @@
+[
+  {
+    "page": 0,
+    "idx": 0,
+    "name": "COMP",
+    "color": [
+      124,
+      119,
+      199
+    ],
+    "hex_x": 254,
+    "n_dt1": 6,
+    "triplet_at_10001100": "080000",
+    "knobs": [
+      {
+        "address": "10001107",
+        "first_payload": "08000301",
+        "value_byte_offset": "last",
+        "min": 0,
+        "max": 15,
+        "n_dt1": 150,
+        "knob_x": 309,
+        "knob_y": 590
+      },
+      {
+        "address": "1000110B",
+        "first_payload": "08000301",
+        "value_byte_offset": "last",
+        "min": 0,
+        "max": 15,
+        "n_dt1": 150,
+        "knob_x": 429,
+        "knob_y": 590
+      },
+      {
+        "address": "1000110F",
+        "first_payload": "0800030B",
+        "value_byte_offset": "last",
+        "min": 0,
+        "max": 15,
+        "n_dt1": 160,
+        "knob_x": 548,
+        "knob_y": 590
+      },
+      {
+        "address": "10001113",
+        "first_payload": "070F0F0F",
+        "value_byte_offset": "last",
+        "min": 0,
+        "max": 15,
+        "n_dt1": 150,
+        "knob_x": 669,
+        "knob_y": 590
+      },
+      {
+        "address": "10001117",
+        "first_payload": "08000001",
+        "value_byte_offset": "last",
+        "min": 0,
+        "max": 15,
+        "n_dt1": 100,
+        "knob_x": 789,
+        "knob_y": 590
+      }
+    ]
+  }
+]

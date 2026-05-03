@@ -1,0 +1,5 @@
+{"event": "opened", "source": "pcap", "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\usbpcap\\sustain_max.pcap", "t": 0.0, "label": "(no label)"}
+{"dir": "host->dev", "kind": "sysex", "len": 16, "hex": "F04110000000000B127F000001017FF7", "t": 1.479526, "frame": 25, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 16, "hex": "F04110000000000B127F000001017FF7", "t": 1.483237, "frame": 35, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B12100011070800007F51F7", "t": 1.581366, "frame": 37, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B12100011070800000050F7", "t": 5.737407, "frame": 39, "label": "(usbpcap)"}

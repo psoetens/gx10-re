@@ -1,0 +1,237 @@
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+scrolled: handle 230-792 -> 787-1354
+scrolled: handle 787-1354 -> 792-1359
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+scrolled: handle 230-792 -> 787-1354
+scrolled: handle 787-1354 -> 1352-1919
+already on page 2 (handle 1352-1919)
+
+=== per-TYPE explore: COMP (page 0, idx 0, types=3, sp_types=0) ===
+  already done, skip
+
+=== per-TYPE explore: BOOST (page 0, idx 2, types=3, sp_types=0) ===
+  already done, skip
+
+=== per-TYPE explore: OD (page 0, idx 3, types=9, sp_types=0) ===
+  already done, skip
+
+=== per-TYPE explore: DIST (page 0, idx 5, types=8, sp_types=0) ===
+  already done, skip
+
+=== per-TYPE explore: METAL (page 0, idx 7, types=4, sp_types=0) ===
+  already done, skip
+
+=== per-TYPE explore: FUZZ (page 0, idx 8, types=3, sp_types=0) ===
+  already done, skip
+
+=== per-TYPE explore: CHO (page 0, idx 12, types=4, sp_types=0) ===
+    type= 0: 9 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 1: 9 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 2: 9 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 3: 17 knobs at [(309, 590), (430, 590), (549, 590)]...
+  master knob set: 25 positions
+  new knob positions to sweep: 16
+    sweeping 16 new knobs at TYPE=3
+  done: 4 type-layouts, 16 new knob records
+
+=== per-TYPE explore: PH (page 0, idx 16, types=3, sp_types=0) ===
+    type= 0: 8 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 1: 8 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 2: 8 knobs at [(307, 590), (429, 590), (548, 590)]...
+  master knob set: 8 positions
+  new knob positions to sweep: 0
+  done: 3 type-layouts, 0 new knob records
+
+=== per-TYPE explore: PH_PRIME (page 0, idx 18, types=5, sp_types=0) ===
+    type= 0: 15 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 1: 15 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 2: 15 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 3: 15 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 4: 15 knobs at [(307, 590), (429, 590), (548, 590)]...
+  master knob set: 15 positions
+  new knob positions to sweep: 0
+  done: 5 type-layouts, 0 new knob records
+
+=== per-TYPE explore: CLASS_VIBE (page 0, idx 19, types=2, sp_types=0) ===
+    type= 0: 4 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 1: 4 knobs at [(307, 590), (429, 590), (548, 590)]...
+  master knob set: 4 positions
+  new knob positions to sweep: 0
+  done: 2 type-layouts, 0 new knob records
+
+=== per-TYPE explore: PS (page 0, idx 28, types=3, sp_types=0) ===
+    type= 0: 8 knobs at [(311, 590), (429, 590), (549, 590)]...
+    type= 1: 13 knobs at [(311, 590), (429, 590), (549, 590)]...
+    type= 2: 13 knobs at [(311, 590), (429, 590), (549, 590)]...
+  master knob set: 13 positions
+  new knob positions to sweep: 5
+    sweeping 5 new knobs at TYPE=1
+    sweeping 5 new knobs at TYPE=2
+  done: 3 type-layouts, 10 new knob records
+
+=== per-TYPE explore: HARM (page 0, idx 29, types=3, sp_types=0) ===
+    type= 0: 7 knobs at [(310, 590), (429, 590), (550, 590)]...
+    type= 1: 10 knobs at [(310, 590), (429, 590), (550, 590)]...
+    type= 2: 10 knobs at [(310, 590), (429, 590), (550, 590)]...
+  master knob set: 10 positions
+  new knob positions to sweep: 3
+    sweeping 3 new knobs at TYPE=1
+    sweeping 3 new knobs at TYPE=2
+  done: 3 type-layouts, 6 new knob records
+
+=== per-TYPE explore: DELAY_PLUS (page 1, idx 4, types=6, sp_types=0) ===
+    type= 0: 12 knobs at [(309, 590), (428, 590), (548, 590)]...
+    type= 1: 12 knobs at [(309, 590), (428, 590), (548, 590)]...
+    type= 2: 12 knobs at [(309, 590), (428, 590), (548, 590)]...
+    type= 3: 13 knobs at [(309, 590), (428, 590), (548, 590)]...
+    type= 4: 13 knobs at [(309, 590), (428, 590), (548, 590)]...
+    type= 5: 16 knobs at [(309, 590), (430, 590), (549, 590)]...
+  master knob set: 20 positions
+  new knob positions to sweep: 8
+    sweeping 1 new knobs at TYPE=3
+    sweeping 1 new knobs at TYPE=4
+    sweeping 7 new knobs at TYPE=5
+  done: 6 type-layouts, 9 new knob records
+
+=== per-TYPE explore: DELAY_ANALOG (page 1, idx 5, types=2, sp_types=0) ===
+    type= 0: 12 knobs at [(309, 590), (428, 590), (548, 590)]...
+    type= 1: 12 knobs at [(309, 590), (428, 590), (548, 590)]...
+  master knob set: 12 positions
+  new knob positions to sweep: 0
+  done: 2 type-layouts, 0 new knob records
+
+=== per-TYPE explore: DELAY_TWIST (page 1, idx 9, types=2, sp_types=0) ===
+    type= 0: 5 knobs at [(310, 590), (428, 590), (548, 590)]...
+    type= 1: 5 knobs at [(310, 590), (428, 590), (548, 590)]...
+  master knob set: 6 positions
+  new knob positions to sweep: 1
+    sweeping 1 new knobs at TYPE=1
+  done: 2 type-layouts, 1 new knob records
+
+=== per-TYPE explore: REV (page 1, idx 11, types=5, sp_types=0) ===
+    type= 0: 8 knobs at [(309, 590), (428, 590), (549, 590)]...
+    type= 1: 8 knobs at [(309, 590), (428, 590), (549, 590)]...
+    type= 2: 8 knobs at [(309, 590), (428, 590), (549, 590)]...
+    type= 3: 8 knobs at [(309, 590), (428, 590), (549, 590)]...
+    type= 4: 8 knobs at [(309, 590), (428, 590), (549, 590)]...
+  master knob set: 8 positions
+  new knob positions to sweep: 0
+  done: 5 type-layouts, 0 new knob records
+
+=== per-TYPE explore: REV_PLUS (page 1, idx 12, types=7, sp_types=0) ===
+    type= 0: 16 knobs at [(309, 590), (429, 590), (548, 590)]...
+    type= 1: 16 knobs at [(309, 590), (429, 590), (548, 590)]...
+    type= 2: 16 knobs at [(309, 590), (429, 590), (548, 590)]...
+    type= 3: 16 knobs at [(309, 590), (429, 590), (548, 590)]...
+    type= 4: 16 knobs at [(309, 590), (429, 590), (548, 590)]...
+    type= 5: 16 knobs at [(309, 590), (429, 590), (548, 590)]...
+    type= 6: 16 knobs at [(309, 590), (429, 590), (548, 590)]...
+  master knob set: 16 positions
+  new knob positions to sweep: 0
+  done: 7 type-layouts, 0 new knob records
+
+=== per-TYPE explore: AC_RESO (page 1, idx 15, types=3, sp_types=0) ===
+    type= 0: 3 knobs at [(308, 590), (429, 590), (548, 590)]
+    type= 1: 3 knobs at [(308, 590), (429, 590), (548, 590)]
+    type= 2: 3 knobs at [(308, 590), (429, 590), (548, 590)]
+  master knob set: 3 positions
+  new knob positions to sweep: 0
+  done: 3 type-layouts, 0 new knob records
+
+=== per-TYPE explore: WAH (page 1, idx 23, types=6, sp_types=0) ===
+    type= 0: 5 knobs at [(308, 590), (429, 590), (548, 590)]...
+    type= 1: 5 knobs at [(308, 590), (429, 590), (548, 590)]...
+    type= 2: 5 knobs at [(308, 590), (429, 590), (548, 590)]...
+    type= 3: 5 knobs at [(308, 590), (429, 590), (548, 590)]...
+    type= 4: 5 knobs at [(308, 590), (429, 590), (548, 590)]...
+    type= 5: 5 knobs at [(308, 590), (429, 590), (548, 590)]...
+  master knob set: 5 positions
+  new knob positions to sweep: 0
+  done: 6 type-layouts, 0 new knob records
+
+=== per-TYPE explore: DIV_MIX (page 1, idx 27, types=2, sp_types=0) ===
+    type= 0: 2 knobs at [(308, 590), (428, 590)]
+    type= 1: 8 knobs at [(308, 590), (428, 590), (550, 590)]...
+  master knob set: 8 positions
+  new knob positions to sweep: 6
+    sweeping 6 new knobs at TYPE=1
+  done: 2 type-layouts, 6 new knob records
+
+=== per-TYPE explore: SEND_RETURN (page 1, idx 28, types=3, sp_types=0) ===
+  drag retry 1/3 for SEND_RETURN
+  drag retry 2/3 for SEND_RETURN
+  drag failed twice — restoring baseline before retry
+    type= 0: 4 knobs at [(308, 590), (429, 590), (549, 590)]...
+    type= 1: 4 knobs at [(308, 590), (429, 590), (549, 590)]...
+    type= 2: 1 knobs at [(308, 590)]
+  master knob set: 4 positions
+  new knob positions to sweep: 0
+  done: 3 type-layouts, 0 new knob records
+
+=== per-TYPE explore: DIST_BASS (page 2, idx 3, types=3, sp_types=0) ===
+    type= 0: 7 knobs at [(308, 590), (429, 590), (548, 590)]...
+    type= 1: 7 knobs at [(308, 590), (429, 590), (548, 590)]...
+    type= 2: 7 knobs at [(308, 590), (429, 590), (548, 590)]...
+  master knob set: 7 positions
+  new knob positions to sweep: 0
+  done: 3 type-layouts, 0 new knob records
+
+=== per-TYPE explore: CHO_BASS (page 2, idx 7, types=2, sp_types=0) ===
+    type= 0: 7 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 1: 7 knobs at [(307, 590), (429, 590), (548, 590)]...
+  master knob set: 7 positions
+  new knob positions to sweep: 0
+  done: 2 type-layouts, 0 new knob records
+
+=== per-TYPE explore: PH_BASS (page 2, idx 10, types=3, sp_types=0) ===already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+
+    type= 0: 8 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 1: 8 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 2: 8 knobs at [(307, 590), (429, 590), (548, 590)]...
+  master knob set: 8 positions
+  new knob positions to sweep: 0
+  done: 3 type-layouts, 0 new knob records
+
+=== per-TYPE explore: PH_PRIME_BASS (page 2, idx 11, types=5, sp_types=0) ===
+    type= 0: 15 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 1: 15 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 2: 15 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 3: 15 knobs at [(307, 590), (429, 590), (548, 590)]...
+    type= 4: 15 knobs at [(307, 590), (429, 590), (548, 590)]...
+  master knob set: 15 positions
+  new knob positions to sweep: 0
+  done: 5 type-layouts, 0 new knob records
+
+=== per-TYPE explore: PS_BASS (page 2, idx 12, types=3, sp_types=0) ===
+    type= 0: 8 knobs at [(311, 590), (429, 590), (549, 590)]...
+    type= 1: 13 knobs at [(311, 590), (429, 590), (549, 590)]...
+    type= 2: 13 knobs at [(311, 590), (429, 590), (549, 590)]...
+  master knob set: 13 positions
+  new knob positions to sweep: 5
+    sweeping 5 new knobs at TYPE=1
+    sweeping 5 new knobs at TYPE=2
+  done: 3 type-layouts, 10 new knob records
+
+=== per-TYPE explore: HARM_BASS (page 2, idx 13, types=3, sp_types=0) ===
+    type= 0: 7 knobs at [(310, 590), (429, 590), (550, 590)]...
+    type= 1: 10 knobs at [(310, 590), (429, 590), (550, 590)]...
+    type= 2: 10 knobs at [(310, 590), (429, 590), (550, 590)]...
+  master knob set: 10 positions
+  new knob positions to sweep: 3
+    sweeping 3 new knobs at TYPE=1
+    sweeping 3 new knobs at TYPE=2
+  done: 3 type-layouts, 6 new knob records

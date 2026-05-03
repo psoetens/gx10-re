@@ -1,0 +1,124 @@
+{
+  "page": 1,
+  "idx": 15,
+  "name": "AC_RESO",
+  "color": [
+    180,
+    160,
+    100
+  ],
+  "hex_x": 1097,
+  "n_dt1": 8,
+  "triplet_at_10001100": "010000",
+  "has_type": true,
+  "has_sp_type": false,
+  "type_address": "10001103",
+  "type_max": 2,
+  "type_payloads": [
+    "08000000",
+    "08000001",
+    "08000002",
+    "08000002"
+  ],
+  "sp_type_address": null,
+  "sp_type_max": -1,
+  "sp_type_payloads": [],
+  "knobs": [
+    {
+      "knob_idx": 0,
+      "knob_x": 308,
+      "knob_y": 590,
+      "address": "10001107",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "RESONANCE",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "RESONANCE"
+    },
+    {
+      "knob_idx": 1,
+      "knob_x": 429,
+      "knob_y": 590,
+      "address": "1000110B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000301",
+      "name_manual": "TONE",
+      "min_raw": 32718,
+      "max_raw": 32818,
+      "min_display": -50,
+      "max_display": 50,
+      "n_events_total": 152,
+      "name_manual_v2": "TONE"
+    },
+    {
+      "knob_idx": 2,
+      "knob_x": 548,
+      "knob_y": 590,
+      "address": "1000110F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "LEVEL"
+    }
+  ],
+  "per_type_layouts": [
+    {
+      "type_value": 0,
+      "knob_master_indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "type_value": 1,
+      "knob_master_indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "type_value": 2,
+      "knob_master_indices": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "master_knob_positions": [
+    [
+      308,
+      590
+    ],
+    [
+      429,
+      590
+    ],
+    [
+      548,
+      590
+    ]
+  ],
+  "fx_type_byte": 1,
+  "fx_type_official": "AC RESONANCE"
+}

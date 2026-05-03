@@ -1,0 +1,38 @@
+already on page 0 (handle 230-792)
+=== AMP (page 0, idx 9) ===
+  reset TYPE to 0...
+  step -> TYPE=1
+  step -> TYPE=2
+  step -> TYPE=3
+  step -> TYPE=4
+  step -> TYPE=5
+  step -> TYPE=6
+  step -> TYPE=7
+  step -> TYPE=8
+  step -> TYPE=9
+  step -> TYPE=10
+  step -> TYPE=11
+  step -> TYPE=12
+  step -> TYPE=13
+  step -> TYPE=14
+  step -> TYPE=15
+  step -> TYPE=16
+  step -> TYPE=17
+  step -> TYPE=18
+  step -> TYPE=19
+  step -> TYPE=20
+  step -> TYPE=21
+  step -> TYPE=22
+  step -> TYPE=23
+  step -> TYPE=24
+  step -> TYPE=25
+  step -> TYPE=26
+  step -> TYPE=27
+  step -> TYPE=28
+  step -> TYPE=29
+  step -> TYPE=30
+  step -> TYPE=31
+  step -> TYPE=32
+
+  TYPE probe: 1 host->dev DT1s
+  unique addrs touched: ['10001103']

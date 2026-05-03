@@ -1,0 +1,8 @@
+  0x00000011  LOCK STATUS               = 0
+  0x00000012  KNOB lock                 = 1
+  0x00000013  TOUCH SCREEN lock         = 1
+  0x00000014  BUTTON lock               = 0
+  0x00000015  OUTPUT LEVEL LOCK         = 0
+  0x00000016  DELETE WARNING            = 0
+  0x00000017  OVERWRITE WARNING         = 0
+  0x00000018  FX ORDER                  = 0

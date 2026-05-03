@@ -1,0 +1,8800 @@
+[
+  {
+    "page": 0,
+    "idx": 0,
+    "name": "COMP",
+    "color": [
+      124,
+      119,
+      199
+    ],
+    "hex_x": 254,
+    "n_dt1": 6,
+    "triplet_at_10001100": "080000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 1,
+    "name": "X-COMP",
+    "color": [
+      124,
+      119,
+      199
+    ],
+    "hex_x": 310,
+    "n_dt1": 8,
+    "triplet_at_10001100": "090000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 311,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 670,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 790,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 17,
+        "n_dt1_up": 7,
+        "first_payload_down": "08000100"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 2,
+    "name": "BOOST",
+    "color": [
+      200,
+      195,
+      50
+    ],
+    "hex_x": 366,
+    "n_dt1": 8,
+    "triplet_at_10001100": "240000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 3,
+    "name": "OD",
+    "color": [
+      200,
+      195,
+      50
+    ],
+    "hex_x": 422,
+    "n_dt1": 8,
+    "triplet_at_10001100": "250000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 8,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000008",
+      "08000004",
+      "08000005",
+      "08000006",
+      "08000007",
+      "08000007"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 4,
+    "name": "X-OD",
+    "color": [
+      200,
+      195,
+      50
+    ],
+    "hex_x": 478,
+    "n_dt1": 8,
+    "triplet_at_10001100": "2B0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 430,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 5,
+    "name": "DIST",
+    "color": [
+      218,
+      130,
+      32
+    ],
+    "hex_x": 535,
+    "n_dt1": 8,
+    "triplet_at_10001100": "270000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 7,
+    "type_payloads": [
+      "08000000",
+      "08000007",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000004",
+      "08000005",
+      "08000006",
+      "08000006"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 6,
+    "name": "X-DIST",
+    "color": [
+      218,
+      130,
+      32
+    ],
+    "hex_x": 591,
+    "n_dt1": 8,
+    "triplet_at_10001100": "2D0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 430,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 7,
+    "name": "METAL",
+    "color": [
+      218,
+      130,
+      32
+    ],
+    "hex_x": 647,
+    "n_dt1": 8,
+    "triplet_at_10001100": "2E0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 3,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000003"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 8,
+    "name": "FUZZ",
+    "color": [
+      218,
+      130,
+      32
+    ],
+    "hex_x": 703,
+    "n_dt1": 8,
+    "triplet_at_10001100": "290000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 9,
+    "name": "AMP",
+    "color": [
+      210,
+      38,
+      48
+    ],
+    "hex_x": 759,
+    "n_dt1": 8,
+    "triplet_at_10001100": "020000",
+    "has_type": true,
+    "has_sp_type": true,
+    "type_address": "10001103",
+    "type_max": 22,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000004",
+      "08000005",
+      "08000006",
+      "08000007",
+      "08000008",
+      "08000104",
+      "08000105",
+      "08000106",
+      "08000009",
+      "0800000A",
+      "0800000B",
+      "0800000C",
+      "0800000D",
+      "0800000E",
+      "0800000F",
+      "08000100",
+      "08000101",
+      "08000102",
+      "08000103",
+      "08000103"
+    ],
+    "sp_type_address": "1000113B",
+    "sp_type_max": 29,
+    "sp_type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000004",
+      "08000005",
+      "08000006",
+      "08000007",
+      "08000008",
+      "08000009",
+      "0800000A",
+      "0800000B",
+      "0800000C",
+      "0800000D",
+      "0800000E",
+      "0800000F",
+      "08000100",
+      "08000101",
+      "08000102",
+      "08000103",
+      "08000104",
+      "08000105",
+      "08000106",
+      "08000107",
+      "08000108",
+      "08000109",
+      "0800010A",
+      "0800010B",
+      "0800010C",
+      "0800010D",
+      "0800010D"
+    ],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 2,
+        "n_dt1_down": 2,
+        "n_dt1_up": 3,
+        "first_payload_down": "08000001"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 667,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 787,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1270,
+        "knob_y": 590,
+        "address": "10001123",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1388,
+        "knob_y": 590,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 307,
+        "knob_y": 710,
+        "address": "1000112F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 20,
+        "n_dt1_up": 12,
+        "first_payload_down": "08000009"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 429,
+        "knob_y": 710,
+        "address": "10001133",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 20,
+        "n_dt1_up": 12,
+        "first_payload_down": "08000009"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 10,
+    "name": "PEQ",
+    "color": [
+      110,
+      183,
+      231
+    ],
+    "hex_x": 816,
+    "n_dt1": 8,
+    "triplet_at_10001100": "140000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 28,
+        "n_dt1_up": 16,
+        "first_payload_down": "0800010B"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 790,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 5,
+        "n_dt1_down": 5,
+        "n_dt1_up": 6,
+        "first_payload_down": "08000004"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 28,
+        "n_dt1_up": 7,
+        "first_payload_down": "0800010B"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 5,
+        "n_dt1_down": 5,
+        "n_dt1_up": 6,
+        "first_payload_down": "08000004"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 540,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 308,
+        "knob_y": 660,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 29,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 428,
+        "knob_y": 660,
+        "address": "1000112B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 2,
+        "first_payload_down": "0800010C"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 11,
+    "name": "GEQ",
+    "color": [
+      110,
+      183,
+      231
+    ],
+    "hex_x": 872,
+    "n_dt1": 8,
+    "triplet_at_10001100": "150000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 670,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 791,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1030,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 540,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1390,
+        "knob_y": 540,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 1508,
+        "knob_y": 540,
+        "address": "1000112B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 40,
+        "n_dt1_up": 22,
+        "first_payload_down": "08000103"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 12,
+    "name": "CHO",
+    "color": [
+      110,
+      183,
+      231
+    ],
+    "hex_x": 928,
+    "n_dt1": 8,
+    "triplet_at_10001100": "040000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 3,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000003"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 307,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 62,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 80,
+        "n_dt1_up": 74,
+        "first_payload_down": "0800040F"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001123",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 28,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 6,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1148,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 82,
+        "n_dt1_up": 107,
+        "first_payload_down": "00090B0A"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 13,
+    "name": "CHO_PRIME",
+    "color": [
+      110,
+      183,
+      231
+    ],
+    "hex_x": 984,
+    "n_dt1": 8,
+    "triplet_at_10001100": "060000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 62,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 80,
+        "n_dt1_up": 74,
+        "first_payload_down": "0800040F"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 790,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 28,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 6,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1150,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1268,
+        "knob_y": 540,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1388,
+        "knob_y": 540,
+        "address": "10001127",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 1509,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 166,
+        "n_dt1_up": 176,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 14,
+    "name": "FL",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1040,
+    "n_dt1": 8,
+    "triplet_at_10001100": "160000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 95,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 67,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 47,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 24,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 119,
+        "n_dt1_up": 119,
+        "first_payload_down": "08000706"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 142,
+        "n_dt1_up": 152,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 15,
+    "name": "FL_PRIME",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1097,
+    "n_dt1": 8,
+    "triplet_at_10001100": "180000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 95,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 67,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 47,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 790,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 12,
+        "n_dt1_down": 12,
+        "n_dt1_up": 12,
+        "first_payload_down": "0800000B"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1030,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 119,
+        "n_dt1_up": 119,
+        "first_payload_down": "08000706"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1150,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 540,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "070F0F0F"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1389,
+        "knob_y": 540,
+        "address": "1000112B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "070F0F0F"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 1508,
+        "knob_y": 540,
+        "address": "10001133",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 24,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 11,
+        "knob_x": 1628,
+        "knob_y": 540,
+        "address": "10001137",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 4,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 12,
+        "knob_x": 308,
+        "knob_y": 660,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 13,
+        "knob_x": 429,
+        "knob_y": 660,
+        "address": "1000112F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 14,
+        "knob_x": 549,
+        "knob_y": 660,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 115,
+        "n_dt1_up": 119,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 16,
+    "name": "PH",
+    "color": [
+      75,
+      200,
+      165
+    ],
+    "hex_x": 1153,
+    "n_dt1": 8,
+    "triplet_at_10001100": "370000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 307,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 150,
+        "n_dt1_up": 94,
+        "first_payload_down": "00090006"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 90,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 32,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 119,
+        "n_dt1_up": 119,
+        "first_payload_down": "08000706"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 17,
+    "name": "PH_SCRIPT",
+    "color": [
+      75,
+      200,
+      165
+    ],
+    "hex_x": 1209,
+    "n_dt1": 8,
+    "triplet_at_10001100": "3B0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 170,
+        "n_dt1_up": 105,
+        "first_payload_down": "0009070E"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 18,
+    "name": "PH_PRIME",
+    "color": [
+      75,
+      200,
+      165
+    ],
+    "hex_x": 1265,
+    "n_dt1": 8,
+    "triplet_at_10001100": "390000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 4,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000004",
+      "08000004"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 307,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 95,
+        "n_dt1_up": 96,
+        "first_payload_down": "00090506"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 90,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 32,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "10001123",
+        "min": 0,
+        "max": 12,
+        "n_dt1_down": 12,
+        "n_dt1_up": 12,
+        "first_payload_down": "0800000B"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1147,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 119,
+        "n_dt1_up": 119,
+        "first_payload_down": "08000706"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1270,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1389,
+        "knob_y": 590,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "070F0F0F"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 1508,
+        "knob_y": 590,
+        "address": "1000112B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "070F0F0F"
+      },
+      {
+        "knob_idx": 11,
+        "knob_x": 1628,
+        "knob_y": 590,
+        "address": "1000112F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 29,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 12,
+        "knob_x": 308,
+        "knob_y": 710,
+        "address": "10001133",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 2,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 13,
+        "knob_x": 428,
+        "knob_y": 710,
+        "address": "10001137",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 14,
+        "knob_x": 549,
+        "knob_y": 710,
+        "address": "1000113B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 19,
+    "name": "CLASS_VIBE",
+    "color": [
+      160,
+      196,
+      60
+    ],
+    "hex_x": 1321,
+    "n_dt1": 8,
+    "triplet_at_10001100": "070000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 1,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000001"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 307,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 110,
+        "n_dt1_up": 153,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 20,
+    "name": "ROTARY",
+    "color": [
+      160,
+      140,
+      70
+    ],
+    "hex_x": 1378,
+    "n_dt1": 8,
+    "triplet_at_10001100": "430000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 311,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 430,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1027,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 540,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1389,
+        "knob_y": 540,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 1509,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 186,
+        "n_dt1_up": 138,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 21,
+    "name": "VIB",
+    "color": [
+      110,
+      183,
+      231
+    ],
+    "hex_x": 1434,
+    "n_dt1": 8,
+    "triplet_at_10001100": "4B0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 40,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 82,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 790,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 180,
+        "n_dt1_up": 145,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 22,
+    "name": "VIB_PRIME",
+    "color": [
+      110,
+      183,
+      231
+    ],
+    "hex_x": 1490,
+    "n_dt1": 8,
+    "triplet_at_10001100": "4C0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 40,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 82,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 790,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 155,
+        "n_dt1_up": 140,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 23,
+    "name": "TREM",
+    "color": [
+      160,
+      196,
+      60
+    ],
+    "hex_x": 1546,
+    "n_dt1": 8,
+    "triplet_at_10001100": "4A0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 45,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 790,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 137,
+        "n_dt1_up": 153,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 24,
+    "name": "PAN",
+    "color": [
+      160,
+      196,
+      60
+    ],
+    "hex_x": 1602,
+    "n_dt1": 8,
+    "triplet_at_10001100": "310000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 125,
+        "n_dt1_up": 122,
+        "first_payload_down": "00090402"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 25,
+    "name": "RING_MOD",
+    "color": [
+      160,
+      140,
+      70
+    ],
+    "hex_x": 1659,
+    "n_dt1": 8,
+    "triplet_at_10001100": "420000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 191,
+        "n_dt1_up": 158,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 26,
+    "name": "SLICER",
+    "color": [
+      110,
+      183,
+      231
+    ],
+    "hex_x": 1715,
+    "n_dt1": 8,
+    "triplet_at_10001100": "4E0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 152,
+        "n_dt1_up": 103,
+        "first_payload_down": "0009070E"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 19,
+        "n_dt1_up": 19,
+        "first_payload_down": "08000102"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 309,
+        "knob_y": 660,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 429,
+        "knob_y": 660,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 549,
+        "knob_y": 660,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 98,
+        "n_dt1_up": 51,
+        "first_payload_down": "08000602"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 669,
+        "knob_y": 660,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 27,
+    "name": "HMN",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1771,
+    "n_dt1": 8,
+    "triplet_at_10001100": "4F0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 4,
+        "n_dt1_down": 4,
+        "n_dt1_up": 4,
+        "first_payload_down": "08000003"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 4,
+        "n_dt1_down": 4,
+        "n_dt1_up": 4,
+        "first_payload_down": "08000003"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 309,
+        "knob_y": 660,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 429,
+        "knob_y": 660,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 548,
+        "knob_y": 660,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 668,
+        "knob_y": 660,
+        "address": null,
+        "min": null,
+        "max": null,
+        "n_dt1_down": 0,
+        "n_dt1_up": 0
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 28,
+    "name": "PS",
+    "color": [
+      124,
+      119,
+      199
+    ],
+    "hex_x": 1827,
+    "n_dt1": 8,
+    "triplet_at_10001100": "3C0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 311,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 48,
+        "n_dt1_up": 31,
+        "first_payload_down": "08000107"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 3,
+        "n_dt1_down": 3,
+        "n_dt1_up": 4,
+        "first_payload_down": "08000002"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 670,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 202,
+        "n_dt1_up": 201,
+        "first_payload_down": "08000C0A"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 790,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 132,
+        "n_dt1_up": 126,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 0,
+    "idx": 29,
+    "name": "HARM",
+    "color": [
+      124,
+      119,
+      199
+    ],
+    "hex_x": 1883,
+    "n_dt1": 8,
+    "triplet_at_10001100": "1A0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 173,
+        "n_dt1_up": 92,
+        "first_payload_down": "00080F02"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 19,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 670,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 202,
+        "n_dt1_up": 201,
+        "first_payload_down": "08000C0A"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 590,
+        "address": "10000F06",
+        "min": 0,
+        "max": 11,
+        "n_dt1_down": 11,
+        "n_dt1_up": 11,
+        "first_payload_down": "0A"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 590,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 0,
+    "name": "OVER_TONE",
+    "color": [
+      110,
+      183,
+      231
+    ],
+    "hex_x": 254,
+    "n_dt1": 8,
+    "triplet_at_10001100": "300000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 307,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 67,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1148,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 1,
+    "name": "OCT",
+    "color": [
+      200,
+      195,
+      50
+    ],
+    "hex_x": 310,
+    "n_dt1": 8,
+    "triplet_at_10001100": "210000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 2,
+    "name": "OCT_POLY",
+    "color": [
+      200,
+      195,
+      50
+    ],
+    "hex_x": 366,
+    "n_dt1": 8,
+    "triplet_at_10001100": "220000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 3,
+    "name": "DELAY",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "hex_x": 422,
+    "n_dt1": 8,
+    "triplet_at_10001100": "0D0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 202,
+        "n_dt1_up": 202,
+        "first_payload_down": "08020509"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 6,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 97,
+        "n_dt1_up": 141,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 4,
+    "name": "DELAY_PLUS",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "hex_x": 478,
+    "n_dt1": 8,
+    "triplet_at_10001100": "0E0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 5,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000004",
+      "08000005",
+      "08000005"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 590,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 202,
+        "n_dt1_up": 202,
+        "first_payload_down": "08020509"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 590,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000112B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 590,
+        "address": "1000112F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 6,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 907,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1148,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1268,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1388,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 1510,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 11,
+        "knob_x": 1629,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 152,
+        "n_dt1_up": 180,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 5,
+    "name": "DELAY_ANALOG",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "hex_x": 535,
+    "n_dt1": 8,
+    "triplet_at_10001100": "0F0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 1,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000001"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 202,
+        "n_dt1_up": 202,
+        "first_payload_down": "08020509"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 2,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 907,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1148,
+        "knob_y": 590,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1268,
+        "knob_y": 590,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1388,
+        "knob_y": 590,
+        "address": "1000112B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 1510,
+        "knob_y": 590,
+        "address": "1000112F",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 11,
+        "knob_x": 1629,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 150,
+        "n_dt1_up": 120,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 6,
+    "name": "SPACE_ECHO",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "hex_x": 591,
+    "n_dt1": 8,
+    "triplet_at_10001100": "100000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 111,
+        "n_dt1_up": 90,
+        "first_payload_down": "0009020E"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 202,
+        "n_dt1_up": 202,
+        "first_payload_down": "08020509"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 2,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1388,
+        "knob_y": 540,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 309,
+        "knob_y": 660,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 11,
+        "knob_x": 433,
+        "knob_y": 660,
+        "address": "1000112B",
+        "min": 0,
+        "max": 4,
+        "n_dt1_down": 4,
+        "n_dt1_up": 4,
+        "first_payload_down": "08000003"
+      },
+      {
+        "knob_idx": 12,
+        "knob_x": 549,
+        "knob_y": 660,
+        "address": "1000112F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 13,
+        "knob_x": 669,
+        "knob_y": 660,
+        "address": "10001133",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 7,
+    "name": "DELAY_SHIMMER",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "hex_x": 647,
+    "n_dt1": 8,
+    "triplet_at_10001100": "110000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 202,
+        "n_dt1_up": 202,
+        "first_payload_down": "08020509"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 2,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 540,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1388,
+        "knob_y": 540,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 309,
+        "knob_y": 660,
+        "address": "1000112B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 48,
+        "n_dt1_up": 14,
+        "first_payload_down": "08000107"
+      },
+      {
+        "knob_idx": 11,
+        "knob_x": 429,
+        "knob_y": 660,
+        "address": "1000112F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 12,
+        "knob_x": 549,
+        "knob_y": 660,
+        "address": "10001133",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 13,
+        "knob_x": 669,
+        "knob_y": 660,
+        "address": "10001137",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 14,
+        "knob_x": 789,
+        "knob_y": 660,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 92,
+        "n_dt1_up": 173,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 8,
+    "name": "TERA_ECHO",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "hex_x": 703,
+    "n_dt1": 8,
+    "triplet_at_10001100": "410000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 77,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 2,
+        "n_dt1_down": 2,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000001"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1030,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 9,
+    "name": "DELAY_TWIST",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "hex_x": 759,
+    "n_dt1": 8,
+    "triplet_at_10001100": "120000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 1,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000001"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 910,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 10,
+    "name": "DELAY_WARP",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "hex_x": 816,
+    "n_dt1": 8,
+    "triplet_at_10001100": "130000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 202,
+        "n_dt1_up": 202,
+        "first_payload_down": "08020509"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 430,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 124,
+        "n_dt1_up": 114,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 11,
+    "name": "REV",
+    "color": [
+      220,
+      80,
+      150
+    ],
+    "hex_x": 872,
+    "n_dt1": 8,
+    "triplet_at_10001100": "3E0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 4,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000004",
+      "08000004"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 99,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 1,
+        "max": 10,
+        "n_dt1_down": 9,
+        "n_dt1_up": 4,
+        "first_payload_down": "08000009"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 200,
+        "n_dt1_up": 172,
+        "first_payload_down": "08000C07"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 17,
+        "n_dt1_up": 17,
+        "first_payload_down": "08000100"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 14,
+        "n_dt1_up": 2,
+        "first_payload_down": "0800000D"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1150,
+        "knob_y": 590,
+        "address": "10001123",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 12,
+    "name": "REV_PLUS",
+    "color": [
+      220,
+      80,
+      150
+    ],
+    "hex_x": 928,
+    "n_dt1": 8,
+    "triplet_at_10001100": "3F0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 6,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000004",
+      "08000005",
+      "08000006",
+      "08000006"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 99,
+        "n_dt1_up": 76,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 77,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 1,
+        "max": 10,
+        "n_dt1_down": 9,
+        "n_dt1_up": 7,
+        "first_payload_down": "08000009"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 200,
+        "n_dt1_up": 172,
+        "first_payload_down": "08000C07"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 22,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 5,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1150,
+        "knob_y": 590,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 590,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1387,
+        "knob_y": 590,
+        "address": "1000112B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 1509,
+        "knob_y": 590,
+        "address": "1000112F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 11,
+        "knob_x": 308,
+        "knob_y": 710,
+        "address": "10001133",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 12,
+        "knob_x": 429,
+        "knob_y": 710,
+        "address": "10001137",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 13,
+        "knob_x": 548,
+        "knob_y": 710,
+        "address": "1000113B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 14,
+        "knob_x": 668,
+        "knob_y": 710,
+        "address": "1000113F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 15,
+        "knob_x": 789,
+        "knob_y": 710,
+        "address": "10001143",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 13,
+    "name": "REV_SHIMMER",
+    "color": [
+      220,
+      80,
+      150
+    ],
+    "hex_x": 984,
+    "n_dt1": 8,
+    "triplet_at_10001100": "400000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 99,
+        "n_dt1_up": 76,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 430,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 77,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 1,
+        "max": 10,
+        "n_dt1_down": 9,
+        "n_dt1_up": 7,
+        "first_payload_down": "08000009"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 200,
+        "n_dt1_up": 172,
+        "first_payload_down": "08000C07"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 22,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 5,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 540,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1389,
+        "knob_y": 540,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 1509,
+        "knob_y": 540,
+        "address": "1000112B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 11,
+        "knob_x": 309,
+        "knob_y": 660,
+        "address": "1000112F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 12,
+        "knob_x": 429,
+        "knob_y": 660,
+        "address": "10001133",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 13,
+        "knob_x": 548,
+        "knob_y": 660,
+        "address": "10001137",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 14,
+        "knob_x": 668,
+        "knob_y": 660,
+        "address": "1000113B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 15,
+        "knob_x": 788,
+        "knob_y": 660,
+        "address": "1000113F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 48,
+        "n_dt1_up": 14,
+        "first_payload_down": "08000107"
+      },
+      {
+        "knob_idx": 16,
+        "knob_x": 909,
+        "knob_y": 660,
+        "address": "10001147",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 17,
+        "knob_x": 1029,
+        "knob_y": 660,
+        "address": "10001143",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 48,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000107"
+      },
+      {
+        "knob_idx": 18,
+        "knob_x": 1149,
+        "knob_y": 660,
+        "address": "1000114B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 19,
+        "knob_x": 1269,
+        "knob_y": 660,
+        "address": "1000114F",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 14,
+    "name": "AC_SIM",
+    "color": [
+      180,
+      160,
+      100
+    ],
+    "hex_x": 1040,
+    "n_dt1": 8,
+    "triplet_at_10001100": "000000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 15,
+    "name": "AC_RESO",
+    "color": [
+      180,
+      160,
+      100
+    ],
+    "hex_x": 1097,
+    "n_dt1": 8,
+    "triplet_at_10001100": "010000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 16,
+    "name": "FB",
+    "color": [
+      220,
+      220,
+      220
+    ],
+    "hex_x": 1153,
+    "n_dt1": 8,
+    "triplet_at_10001100": "500000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 430,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 52,
+        "n_dt1_up": 0,
+        "first_payload_down": "08000303"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 17,
+    "name": "SITAR_SIM",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1209,
+    "n_dt1": 8,
+    "triplet_at_10001100": "510000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 309,
+        "knob_y": 660,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 428,
+        "knob_y": 660,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 62,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 549,
+        "knob_y": 660,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 18,
+    "name": "SG",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1265,
+    "n_dt1": 8,
+    "triplet_at_10001100": "460000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 19,
+    "name": "DEFRET",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1321,
+    "n_dt1": 8,
+    "triplet_at_10001100": "0B0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 32,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 20,
+    "name": "T_WAH",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1378,
+    "n_dt1": 8,
+    "triplet_at_10001100": "480000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 2,
+        "n_dt1_down": 2,
+        "n_dt1_up": 3,
+        "first_payload_down": "08000001"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 32,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 17,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 21,
+    "name": "A_WAH",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1434,
+    "n_dt1": 8,
+    "triplet_at_10001100": "520000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 2,
+        "n_dt1_down": 2,
+        "n_dt1_up": 3,
+        "first_payload_down": "08000001"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 308,
+        "knob_y": 660,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 429,
+        "knob_y": 660,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 550,
+        "knob_y": 660,
+        "address": "1000111B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 669,
+        "knob_y": 660,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 22,
+    "name": "S_BEND",
+    "color": [
+      220,
+      220,
+      220
+    ],
+    "hex_x": 1490,
+    "n_dt1": 8,
+    "triplet_at_10001100": "440000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 6,
+        "n_dt1_down": 6,
+        "n_dt1_up": 4,
+        "first_payload_down": "08000005"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 97,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 23,
+    "name": "WAH",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1546,
+    "n_dt1": 8,
+    "triplet_at_10001100": "350000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 5,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000004",
+      "08000005",
+      "08000005"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 670,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 24,
+    "name": "PB",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1602,
+    "n_dt1": 8,
+    "triplet_at_10001100": "330000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 48,
+        "n_dt1_up": 26,
+        "first_payload_down": "08000107"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 48,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000107"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 25,
+    "name": "FOOT_VOL",
+    "color": [
+      220,
+      220,
+      220
+    ],
+    "hex_x": 1659,
+    "n_dt1": 8,
+    "triplet_at_10001100": "320000",
+    "has_type": false,
+    "has_sp_type": true,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": 0,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 430,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 670,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 3,
+        "n_dt1_down": 3,
+        "n_dt1_up": 3,
+        "first_payload_down": "08000002"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 26,
+    "name": "NS",
+    "color": [
+      220,
+      220,
+      220
+    ],
+    "hex_x": 1715,
+    "n_dt1": 8,
+    "triplet_at_10001100": "200000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 27,
+    "name": "DIV_MIX",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "hex_x": 1771,
+    "n_dt1": 11,
+    "triplet_at_10001100": "1D0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 1,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000001"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 28,
+    "name": "SEND_RETURN",
+    "color": [
+      75,
+      200,
+      165
+    ],
+    "hex_x": 1827,
+    "n_dt1": 6,
+    "triplet_at_10001100": "4D0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 200,
+        "n_dt1_up": 102,
+        "first_payload_down": "08000C07"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 200,
+        "n_dt1_up": 102,
+        "first_payload_down": "08000C07"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      }
+    ]
+  },
+  {
+    "page": 1,
+    "idx": 29,
+    "name": "LOOP",
+    "color": [
+      210,
+      38,
+      48
+    ],
+    "hex_x": 1883,
+    "n_dt1": 7,
+    "triplet_at_10001100": "1C0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 0,
+    "name": "X_COMP_BASS",
+    "color": [
+      124,
+      119,
+      199
+    ],
+    "hex_x": 254,
+    "n_dt1": 8,
+    "triplet_at_10001100": "0A0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 670,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 790,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 17,
+        "n_dt1_up": 7,
+        "first_payload_down": "08000100"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 1,
+    "name": "OD_BASS",
+    "color": [
+      200,
+      195,
+      50
+    ],
+    "hex_x": 310,
+    "n_dt1": 8,
+    "triplet_at_10001100": "260000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 430,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 2,
+    "name": "X_OD_BASS",
+    "color": [
+      200,
+      195,
+      50
+    ],
+    "hex_x": 366,
+    "n_dt1": 8,
+    "triplet_at_10001100": "2C0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 430,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 3,
+    "name": "DIST_BASS",
+    "color": [
+      218,
+      130,
+      32
+    ],
+    "hex_x": 422,
+    "n_dt1": 8,
+    "triplet_at_10001100": "280000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 4,
+    "name": "METAL_BASS",
+    "color": [
+      218,
+      130,
+      32
+    ],
+    "hex_x": 478,
+    "n_dt1": 8,
+    "triplet_at_10001100": "2F0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 430,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 5,
+    "name": "FUZZ_BASS",
+    "color": [
+      218,
+      130,
+      32
+    ],
+    "hex_x": 535,
+    "n_dt1": 8,
+    "triplet_at_10001100": "2A0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 430,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 6,
+    "name": "AMP_BASS",
+    "color": [
+      210,
+      38,
+      48
+    ],
+    "hex_x": 591,
+    "n_dt1": 8,
+    "triplet_at_10001100": "030000",
+    "has_type": true,
+    "has_sp_type": true,
+    "type_address": "10001103",
+    "type_max": 8,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000004",
+      "08000005",
+      "08000006",
+      "08000007",
+      "08000008",
+      "08000008"
+    ],
+    "sp_type_address": "1000113B",
+    "sp_type_max": 29,
+    "sp_type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000004",
+      "08000005",
+      "08000006",
+      "08000007",
+      "08000008",
+      "08000009",
+      "0800000A",
+      "0800000B",
+      "0800000C",
+      "0800000D",
+      "0800000E",
+      "0800000F",
+      "08000100",
+      "08000101",
+      "08000102",
+      "08000103",
+      "08000104",
+      "08000105",
+      "08000106",
+      "08000107",
+      "08000108",
+      "08000109",
+      "0800010A",
+      "0800010B",
+      "0800010C",
+      "0800010D",
+      "0800010D"
+    ],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 120,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000707"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 2,
+        "n_dt1_down": 2,
+        "n_dt1_up": 3,
+        "first_payload_down": "08000001"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 667,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 787,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 590,
+        "address": "1000112B",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1270,
+        "knob_y": 590,
+        "address": "10001123",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1388,
+        "knob_y": 590,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 307,
+        "knob_y": 710,
+        "address": "1000112F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 20,
+        "n_dt1_up": 12,
+        "first_payload_down": "08000009"
+      },
+      {
+        "knob_idx": 11,
+        "knob_x": 429,
+        "knob_y": 710,
+        "address": "10001133",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 20,
+        "n_dt1_up": 12,
+        "first_payload_down": "08000009"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 7,
+    "name": "CHO_BASS",
+    "color": [
+      75,
+      200,
+      165
+    ],
+    "hex_x": 647,
+    "n_dt1": 8,
+    "triplet_at_10001100": "050000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 1,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000001"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 307,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 23,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 4,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 136,
+        "n_dt1_up": 126,
+        "first_payload_down": "00090B0A"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 8,
+    "name": "FL_BASS",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 703,
+    "n_dt1": 8,
+    "triplet_at_10001100": "170000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 95,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 67,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 47,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 24,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 119,
+        "n_dt1_up": 119,
+        "first_payload_down": "08000706"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 540,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 154,
+        "n_dt1_up": 173,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 9,
+    "name": "FL_PRIME_BASS",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 759,
+    "n_dt1": 8,
+    "triplet_at_10001100": "190000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 95,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 67,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 47,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 790,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 910,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 12,
+        "n_dt1_down": 12,
+        "n_dt1_up": 12,
+        "first_payload_down": "0800000B"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1030,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 119,
+        "n_dt1_up": 119,
+        "first_payload_down": "08000706"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1150,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1269,
+        "knob_y": 540,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "070F0F0F"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1389,
+        "knob_y": 540,
+        "address": "1000112B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "070F0F0F"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 1508,
+        "knob_y": 540,
+        "address": "10001133",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 28,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 11,
+        "knob_x": 1628,
+        "knob_y": 540,
+        "address": "10001137",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 7,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 12,
+        "knob_x": 308,
+        "knob_y": 660,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 13,
+        "knob_x": 429,
+        "knob_y": 660,
+        "address": "1000112F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 14,
+        "knob_x": 549,
+        "knob_y": 660,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 137,
+        "n_dt1_up": 144,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 10,
+    "name": "PH_BASS",
+    "color": [
+      75,
+      200,
+      165
+    ],
+    "hex_x": 816,
+    "n_dt1": 8,
+    "triplet_at_10001100": "380000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 307,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 90,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 32,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 72,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 119,
+        "n_dt1_up": 119,
+        "first_payload_down": "08000706"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 156,
+        "n_dt1_up": 168,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 11,
+    "name": "PH_PRIME_BASS",
+    "color": [
+      75,
+      200,
+      165
+    ],
+    "hex_x": 872,
+    "n_dt1": 8,
+    "triplet_at_10001100": "3A0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 4,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000003",
+      "08000004",
+      "08000004"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 307,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 118,
+        "n_dt1_up": 70,
+        "first_payload_down": "08000705"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 590,
+        "address": "10001123",
+        "min": 0,
+        "max": 12,
+        "n_dt1_down": 12,
+        "n_dt1_up": 12,
+        "first_payload_down": "0800000B"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 119,
+        "n_dt1_up": 119,
+        "first_payload_down": "08000706"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1147,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 8,
+        "knob_x": 1270,
+        "knob_y": 590,
+        "address": "10001127",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "070F0F0F"
+      },
+      {
+        "knob_idx": 9,
+        "knob_x": 1389,
+        "knob_y": 590,
+        "address": "1000112B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "070F0F0F"
+      },
+      {
+        "knob_idx": 10,
+        "knob_x": 1508,
+        "knob_y": 590,
+        "address": "1000112F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 29,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 11,
+        "knob_x": 1628,
+        "knob_y": 590,
+        "address": "10001133",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 2,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 12,
+        "knob_x": 308,
+        "knob_y": 710,
+        "address": "10001137",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 13,
+        "knob_x": 428,
+        "knob_y": 710,
+        "address": "1000113B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 14,
+        "knob_x": 549,
+        "knob_y": 710,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 140,
+        "n_dt1_up": 158,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 12,
+    "name": "PS_BASS",
+    "color": [
+      124,
+      119,
+      199
+    ],
+    "hex_x": 928,
+    "n_dt1": 8,
+    "triplet_at_10001100": "3D0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 311,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 48,
+        "n_dt1_up": 26,
+        "first_payload_down": "08000107"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 3,
+        "n_dt1_down": 3,
+        "n_dt1_up": 4,
+        "first_payload_down": "08000002"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 670,
+        "knob_y": 590,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 202,
+        "n_dt1_up": 201,
+        "first_payload_down": "08000C0A"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 790,
+        "knob_y": 590,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 590,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 134,
+        "n_dt1_up": 147,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 13,
+    "name": "HARM_BASS",
+    "color": [
+      124,
+      119,
+      199
+    ],
+    "hex_x": 984,
+    "n_dt1": 8,
+    "triplet_at_10001100": "1B0000",
+    "has_type": true,
+    "has_sp_type": false,
+    "type_address": "10001103",
+    "type_max": 2,
+    "type_payloads": [
+      "08000000",
+      "08000001",
+      "08000002",
+      "08000002"
+    ],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 590,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 29,
+        "n_dt1_up": 19,
+        "first_payload_down": "0800010C"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 590,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 590,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 202,
+        "n_dt1_up": 201,
+        "first_payload_down": "08000C0A"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 670,
+        "knob_y": 590,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 590,
+        "address": "10000F06",
+        "min": 0,
+        "max": 11,
+        "n_dt1_down": 11,
+        "n_dt1_up": 11,
+        "first_payload_down": "0A"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 908,
+        "knob_y": 590,
+        "address": "10001123",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1029,
+        "knob_y": 590,
+        "address": "10000F02",
+        "min": 0,
+        "max": 14,
+        "n_dt1_down": 126,
+        "n_dt1_up": 115,
+        "first_payload_down": "00090C04"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 14,
+    "name": "OCT_BASS",
+    "color": [
+      200,
+      195,
+      50
+    ],
+    "hex_x": 1040,
+    "n_dt1": 8,
+    "triplet_at_10001100": "230000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 15,
+    "name": "SG_BASS",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1097,
+    "n_dt1": 8,
+    "triplet_at_10001100": "470000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 16,
+    "name": "DEFRET_BASS",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1153,
+    "n_dt1": 8,
+    "triplet_at_10001100": "0C0000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 32,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000301"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 17,
+    "name": "T_WAH_BASS",
+    "color": [
+      180,
+      160,
+      100
+    ],
+    "hex_x": 1209,
+    "n_dt1": 8,
+    "triplet_at_10001100": "490000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 309,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 428,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 550,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000111B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 788,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 5,
+        "knob_x": 909,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 42,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 6,
+        "knob_x": 1028,
+        "knob_y": 540,
+        "address": "10001117",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 7,
+        "knob_x": 1149,
+        "knob_y": 540,
+        "address": "1000111F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 18,
+    "name": "S_BEND_BASS",
+    "color": [
+      220,
+      220,
+      220
+    ],
+    "hex_x": 1265,
+    "n_dt1": 8,
+    "triplet_at_10001100": "450000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 1,
+        "n_dt1_down": 1,
+        "n_dt1_up": 1,
+        "first_payload_down": "08000000"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 6,
+        "n_dt1_down": 6,
+        "n_dt1_up": 4,
+        "first_payload_down": "08000005"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 549,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 52,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 669,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 97,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 19,
+    "name": "WAH_BASS",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1321,
+    "n_dt1": 8,
+    "triplet_at_10001100": "360000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 308,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 670,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "idx": 20,
+    "name": "PB_BASS",
+    "color": [
+      165,
+      84,
+      175
+    ],
+    "hex_x": 1378,
+    "n_dt1": 8,
+    "triplet_at_10001100": "340000",
+    "has_type": false,
+    "has_sp_type": false,
+    "type_address": null,
+    "type_max": -1,
+    "type_payloads": [],
+    "sp_type_address": null,
+    "sp_type_max": -1,
+    "sp_type_payloads": [],
+    "knobs": [
+      {
+        "knob_idx": 0,
+        "knob_x": 310,
+        "knob_y": 540,
+        "address": "10001103",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 48,
+        "n_dt1_up": 26,
+        "first_payload_down": "08000107"
+      },
+      {
+        "knob_idx": 1,
+        "knob_x": 429,
+        "knob_y": 540,
+        "address": "10001107",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 48,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000107"
+      },
+      {
+        "knob_idx": 2,
+        "knob_x": 548,
+        "knob_y": 540,
+        "address": "1000110B",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 3,
+        "knob_x": 668,
+        "knob_y": 540,
+        "address": "1000110F",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 2,
+        "first_payload_down": "08000603"
+      },
+      {
+        "knob_idx": 4,
+        "knob_x": 789,
+        "knob_y": 540,
+        "address": "10001113",
+        "min": 0,
+        "max": 15,
+        "n_dt1_down": 100,
+        "n_dt1_up": 100,
+        "first_payload_down": "08000603"
+      }
+    ]
+  }
+]

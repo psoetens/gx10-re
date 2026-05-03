@@ -1,0 +1,4 @@
+{"event": "opened", "source": "pcap", "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\usbpcap\\sustain_verify.pcap", "t": 0.0, "label": "(no label)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B11100011070000000454F7", "t": 1.460435, "frame": 25, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 19, "hex": "F04110000000000B12100011070800000050F7", "t": 1.464517, "frame": 35, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1210001107080000143CF7", "t": 2.512835, "frame": 37, "label": "(usbpcap)"}

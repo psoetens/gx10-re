@@ -1,0 +1,11 @@
+already on page 0 (handle 230-792)
+
+=== page 0 idx  9 AMP ===
+  TYPE present: True, SP TYPE present: True
+  TYPE: addr=10001103, max=22, payloads=24
+  SP TYPE: addr=1000113B, max=29, payloads=31
+  swept 17 default-layout knobs
+    TYPE catalog: 23 entries @ 10001103
+    SP TYPE catalog: 30 entries @ 1000113B
+
+=== DONE: 1 effects explored ===

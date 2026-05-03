@@ -1,0 +1,14 @@
+{"event": "open", "t": 0.022765, "label": "(no label)"}
+{"event": "opened", "port_index": 0, "port_name": "GX-10", "t": 0.023384, "label": "(no label)"}
+{"event": "started", "t": 0.024412, "label": "(no label)"}
+{"event": "label", "label": "--- start script: patches ---", "t": 2.220138}
+{"event": "label", "label": "== SCRIPT: patch sweep through user bank 1 ==", "t": 2.220658}
+{"event": "label", "label": "click USER tab", "t": 2.686471}
+{"event": "label", "label": "click patch U01-1 NATURAL AMP HB", "t": 3.774146}
+{"event": "label", "label": "click patch U01-2 BOUTIQUE AMP HB", "t": 5.321202}
+{"event": "label", "label": "click patch U01-3 SUPREME AMP HB", "t": 6.869215}
+{"event": "label", "label": "click patch U02-1 MAXIMUM AMP HB", "t": 8.462681}
+{"event": "label", "label": "click patch U02-2 JUGGERNAUT HB", "t": 10.001161}
+{"event": "label", "label": "click patch U02-3 X-CRUNCH AMP HB", "t": 11.546714}
+{"event": "label", "label": "--- end script: patches ---", "t": 13.092096}
+{"event": "label", "label": "DONE", "t": 13.612738}

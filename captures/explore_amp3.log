@@ -1,0 +1,10 @@
+already on page 0 (handle 230-792)
+
+=== page 0 idx  9 AMP ===
+  TYPE present: True, SP TYPE present: True
+  TYPE probe: addr=None range=None-None n_dt1=0
+  SP TYPE probe: addr=10001103 range=0-15 n_dt1=44
+  detected 17 knobs
+  17 knobs
+
+=== DONE: 1 effects explored ===

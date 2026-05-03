@@ -1,0 +1,6 @@
+{"event": "opened", "source": "pcap", "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\usbpcap\\sustain_arrows.pcap", "t": 0.0, "label": "(no label)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1210001107080000014FF7", "t": 2.235677, "frame": 25, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1210001107080000024EF7", "t": 2.627217, "frame": 27, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1210001107080000034DF7", "t": 3.033807, "frame": 29, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1210001107080000044CF7", "t": 3.436675, "frame": 31, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1210001107080000054BF7", "t": 3.836377, "frame": 33, "label": "(usbpcap)"}

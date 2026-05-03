@@ -1,0 +1,9 @@
+{"event": "opened", "source": "pcap", "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\usbpcap\\name_write.pcap", "t": 0.0, "label": "(no label)"}
+{"dir": "host->dev", "kind": "sysex", "len": 16, "hex": "F04110000000000B127F000001017FF7", "t": 1.387258, "frame": 25, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 16, "hex": "F04110000000000B127F000001017FF7", "t": 1.390717, "frame": 35, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B11100000000000001060F7", "t": 2.083802, "frame": 37, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 31, "hex": "F04110000000000B12100000004758204455414C20445249564520202011F7", "t": 2.103707, "frame": 53, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 31, "hex": "F04110000000000B12100000005445535420202020202020202020202030F7", "t": 2.695514, "frame": 55, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B11100000000000001060F7", "t": 3.591027, "frame": 57, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 31, "hex": "F04110000000000B12100000005445535420202020202020202020202030F7", "t": 3.603717, "frame": 73, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 31, "hex": "F04110000000000B1210000000454D505459202020202020202020202001F7", "t": 4.472602, "frame": 75, "label": "(usbpcap)"}

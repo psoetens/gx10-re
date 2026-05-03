@@ -1,0 +1,1163 @@
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+
+=== page 0 idx  0 COMP ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 5 knobs
+    k0: addr=10001107 range=0-15 down=100 up=52
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=42
+    k3: addr=10001113 range=0-15 down=100 up=52
+    k4: addr=10001117 range=0-15 down=100 up=100
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 0 idx  1 X-COMP ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 6 knobs
+    k0: addr=10001117 range=0-15 down=100 up=52
+    k1: addr=10001103 range=0-15 down=100 up=52
+    k2: addr=10001107 range=0-15 down=100 up=42
+    k3: addr=1000110B range=0-15 down=100 up=52
+    k4: addr=1000110F range=0-15 down=17 up=7
+    k5: addr=10001113 range=0-15 down=100 up=100
+
+=== page 0 idx  2 BOOST ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001107 range=0-15 down=120 up=72
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=10001113 range=0-15 down=100 up=52
+    k4: addr=10001117 range=0-15 down=100 up=100
+    k5: addr=1000111B range=0-1 down=1 up=1
+    k6: addr=1000111F range=0-15 down=100 up=52
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 0 idx  3 OD ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=8, payloads=10
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001107 range=0-15 down=120 up=72
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=10001113 range=0-15 down=100 up=52
+    k4: addr=10001117 range=0-15 down=100 up=100
+    k5: addr=1000111B range=0-1 down=1 up=1
+    k6: addr=1000111F range=0-15 down=100 up=52
+    TYPE catalog: 9 entries @ 10001103
+
+=== page 0 idx  4 X-OD ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001103 range=0-15 down=120 up=72
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=1000110B range=0-15 down=100 up=52
+    k4: addr=10001113 range=0-15 down=100 up=100
+    k5: addr=10001117 range=0-1 down=1 up=1
+    k6: addr=1000111B range=0-15 down=100 up=52
+
+=== page 0 idx  5 DIST ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=7, payloads=9
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001107 range=0-15 down=120 up=72
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=10001113 range=0-15 down=100 up=52
+    k4: addr=10001117 range=0-15 down=100 up=100
+    k5: addr=1000111B range=0-1 down=1 up=1
+    k6: addr=1000111F range=0-15 down=100 up=52
+    TYPE catalog: 8 entries @ 10001103
+
+=== page 0 idx  6 X-DIST ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001103 range=0-15 down=120 up=72
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=1000110B range=0-15 down=100 up=52
+    k4: addr=10001113 range=0-15 down=100 up=100
+    k5: addr=10001117 range=0-1 down=1 up=1
+    k6: addr=1000111B range=0-15 down=100 up=52
+
+=== page 0 idx  7 METAL ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=3, payloads=5
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001107 range=0-15 down=120 up=72
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=10001113 range=0-15 down=100 up=52
+    k4: addr=10001117 range=0-15 down=100 up=100
+    k5: addr=1000111B range=0-1 down=1 up=1
+    k6: addr=1000111F range=0-15 down=100 up=52
+    TYPE catalog: 4 entries @ 10001103
+
+=== page 0 idx  8 FUZZ ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001107 range=0-15 down=120 up=72
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=10001113 range=0-15 down=100 up=52
+    k4: addr=10001117 range=0-15 down=100 up=100
+    k5: addr=1000111B range=0-1 down=1 up=1
+    k6: addr=1000111F range=0-15 down=100 up=52
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 0 idx  9 AMP ===
+  TYPE present: True, SP TYPE present: True
+  TYPE: addr=10001103, max=22, payloads=24
+  SP TYPE: addr=1000113B, max=29, payloads=31
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 11 knobs
+    k0: addr=10001107 range=0-15 down=120 up=72
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000111F range=0-2 down=2 up=3
+    k3: addr=1000110F range=0-15 down=100 up=52
+    k4: addr=10001113 range=0-15 down=100 up=52
+    k5: addr=10001117 range=0-15 down=100 up=52
+    k6: addr=1000111B range=0-15 down=100 up=100
+    k7: addr=10001123 range=0-1 down=1 up=1
+    k8: addr=10001127 range=0-15 down=100 up=52
+    k9: addr=1000112F range=0-15 down=20 up=12
+    k10: addr=10001133 range=0-15 down=20 up=12
+    TYPE catalog: 23 entries @ 10001103
+    SP TYPE catalog: 30 entries @ 1000113B
+
+=== page 0 idx 10 PEQ ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 11 knobs
+    k0: addr=10001103 range=0-15 down=40 up=22
+    k1: addr=10001107 range=0-15 down=40 up=22
+    k2: addr=1000110B range=0-15 down=40 up=22
+    k3: addr=1000110F range=0-15 down=28 up=16
+    k4: addr=10001113 range=0-5 down=5 up=6
+    k5: addr=10001117 range=0-15 down=40 up=22
+    k6: addr=1000111B range=0-15 down=28 up=7
+    k7: addr=1000111F range=0-5 down=5 up=6
+    k8: addr=10001123 range=0-15 down=40 up=22
+    k9: addr=10001127 range=0-15 down=29 up=29
+    k10: addr=1000112B range=0-15 down=29 up=2
+
+=== page 0 idx 11 GEQ ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 11 knobs
+    k0: addr=10001103 range=0-15 down=40 up=22
+    k1: addr=10001107 range=0-15 down=40 up=22
+    k2: addr=1000110B range=0-15 down=40 up=22
+    k3: addr=1000110F range=0-15 down=40 up=22
+    k4: addr=10001113 range=0-15 down=40 up=22
+    k5: addr=10001117 range=0-15 down=40 up=22
+    k6: addr=1000111B range=0-15 down=40 up=22
+    k7: addr=1000111F range=0-15 down=40 up=22
+    k8: addr=10001123 range=0-15 down=40 up=22
+    k9: addr=10001127 range=0-15 down=40 up=22
+    k10: addr=1000112B range=0-15 down=40 up=22
+
+=== page 0 idx 12 CHO ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=3, payloads=5
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 9 knobs
+    k0: addr=1000110B range=0-15 down=118 up=70
+    k1: addr=1000110F range=0-15 down=100 up=62
+    k2: addr=10001113 range=0-15 down=100 up=2
+    k3: addr=1000111F range=0-15 down=80 up=74
+    k4: addr=10001123 range=0-1 down=1 up=1
+    k5: addr=10001117 range=0-15 down=29 up=28
+    k6: addr=1000111B range=0-15 down=29 up=6
+    k7: addr=10001107 range=0-15 down=100 up=2
+    k8: addr=10000F02 range=0-14 down=82 up=107
+    TYPE catalog: 4 entries @ 10001103
+
+=== page 0 idx 13 CHO_PRIME ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 11 knobs
+    k0: addr=10001103 range=0-15 down=118 up=70
+    k1: addr=10001107 range=0-15 down=100 up=62
+    k2: addr=1000110B range=0-15 down=100 up=2
+    k3: addr=1000110F range=0-15 down=80 up=74
+    k4: addr=10001113 range=0-1 down=1 up=1
+    k5: addr=10001117 range=0-15 down=29 up=28already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+
+    k6: addr=1000111B range=0-15 down=29 up=6
+    k7: addr=1000111F range=0-15 down=100 up=52
+    k8: addr=10001123 range=0-15 down=100 up=52
+    k9: addr=10001127 range=0-1 down=1 up=2
+    k10: addr=10000F02 range=0-14 down=166 up=176
+
+=== page 0 idx 14 FL ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 9 knobs
+    k0: addr=10001103 range=0-15 down=118 up=95
+    k1: addr=10001107 range=0-15 down=100 up=42
+    k2: addr=1000110B range=0-15 down=100 up=67
+    k3: addr=1000110F range=0-15 down=100 up=47
+    k4: addr=10001117 range=0-15 down=29 up=24
+    k5: addr=10001113 range=0-15 down=119 up=119
+    k6: addr=1000111B range=0-15 down=100 up=2
+    k7: addr=1000111F range=0-15 down=100 up=100
+    k8: addr=10000F02 range=0-14 down=142 up=152
+
+=== page 0 idx 15 FL_PRIME ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 15 knobs
+    k0: addr=10001103 range=0-15 down=118 up=95
+    k1: addr=10001107 range=0-15 down=100 up=42
+    k2: addr=1000110B range=0-15 down=100 up=67
+    k3: addr=1000110F range=0-15 down=100 up=47
+    k4: addr=10001117 range=0-1 down=1 up=1
+    k5: addr=1000111F range=0-12 down=12 up=12
+    k6: addr=1000111B range=0-15 down=119 up=119
+    k7: addr=10001113 range=0-1 down=1 up=1
+    k8: addr=10001127 range=0-15 down=100 up=42
+    k9: addr=1000112B range=0-15 down=100 up=42
+    k10: addr=10001133 range=0-15 down=29 up=24
+    k11: addr=10001137 range=0-15 down=29 up=4
+    k12: addr=10001123 range=0-15 down=100 up=2
+    k13: addr=1000112F range=0-15 down=100 up=100
+    k14: addr=10000F02 range=0-14 down=115 up=119
+
+=== page 0 idx 16 PH ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=10000F02 range=0-14 down=150 up=94
+    k1: addr=10001107 range=0-15 down=118 up=90
+    k2: addr=1000110B range=0-15 down=100 up=32
+    k3: addr=1000110F range=0-15 down=100 up=72
+    k4: addr=10001113 range=0-15 down=100 up=52
+    k5: addr=10001117 range=0-15 down=119 up=119
+    k6: addr=1000111B range=0-15 down=100 up=2
+    k7: addr=1000111F range=0-15 down=100 up=100
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 0 idx 17 PH_SCRIPT ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 5 knobs
+    k0: addr=10000F02 range=0-14 down=170 up=105
+    k1: addr=10001103 range=0-15 down=118 up=70
+    k2: addr=10001107 range=0-15 down=100 up=52
+    k3: addr=1000110B range=0-15 down=100 up=2
+    k4: addr=1000110F range=0-15 down=100 up=100
+
+=== page 0 idx 18 PH_PRIME ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=4, payloads=6
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 15 knobs
+    k0: addr=10000F02 range=0-14 down=95 up=96
+    k1: addr=10001107 range=0-15 down=118 up=90
+    k2: addr=1000110B range=0-15 down=100 up=32
+    k3: addr=1000110F range=0-15 down=100 up=72
+    k4: addr=10001113 range=0-15 down=100 up=52
+    k5: addr=10001117 range=0-1 down=1 up=1
+    k6: addr=10001123 range=0-12 down=12 up=12
+    k7: addr=1000111B range=0-15 down=119 up=119
+    k8: addr=1000111F range=0-1 down=1 up=1
+    k9: addr=10001127 range=0-15 down=100 up=52
+    k10: addr=1000112B range=0-15 down=100 up=52
+    k11: addr=1000112F range=0-15 down=29 up=29
+    k12: addr=10001133 range=0-15 down=29 up=2
+    k13: addr=10001137 range=0-15 down=100 up=2
+    k14: addr=1000113B range=0-15 down=100 up=100
+    TYPE catalog: 5 entries @ 10001103
+
+=== page 0 idx 19 CLASS_VIBE ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=1, payloads=3
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 4 knobs
+    k0: addr=10001107 range=0-15 down=118 up=70
+    k1: addr=1000110B range=0-15 down=100 up=2
+    k2: addr=1000110F range=0-15 down=100 up=2
+    k3: addr=10000F02 range=0-14 down=110 up=153
+    TYPE catalog: 2 entries @ 10001103
+
+=== page 0 idx 20 ROTARY ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 11 knobs
+    k0: addr=10001103 range=0-1 down=1 up=2
+    k1: addr=10001107 range=0-15 down=118 up=70
+    k2: addr=1000110B range=0-15 down=118 up=70
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-15 down=100 up=52
+    k5: addr=10001117 range=0-15 down=100 up=52
+    k6: addr=1000111B range=0-15 down=100 up=2
+    k7: addr=1000111F range=0-15 down=100 up=52
+    k8: addr=10001123 range=0-15 down=100 up=100
+    k9: addr=10001127 range=0-15 down=100 up=100
+    k10: addr=10000F02 range=0-14 down=186 up=138
+
+=== page 0 idx 21 VIB ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 6 knobs
+    k0: addr=10001103 range=0-15 down=118 up=40
+    k1: addr=10001107 range=0-15 down=100 up=82
+    k2: addr=1000110F range=0-15 down=100 up=72
+    k3: addr=10001113 range=0-15 down=100 up=2
+    k4: addr=1000110B range=0-1 down=1 up=2
+    k5: addr=10000F02 range=0-14 down=180 up=145
+
+=== page 0 idx 22 VIB_PRIME ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=10001103 range=0-15 down=118 up=40
+    k1: addr=10001107 range=0-15 down=100 up=82
+    k2: addr=1000110B range=0-15 down=100 up=100
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-1 down=1 up=2
+    k5: addr=10001117 range=0-15 down=100 up=72
+    k6: addr=1000111B range=0-15 down=100 up=100
+    k7: addr=10000F02 range=0-14 down=155 up=140
+
+=== page 0 idx 23 TREM ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=10001103 range=0-15 down=118 up=45
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-1 down=1 up=2
+    k5: addr=10001117 range=0-15 down=100 up=100
+    k6: addr=1000111B range=0-15 down=100 up=100
+    k7: addr=10000F02 range=0-14 down=137 up=153
+
+=== page 0 idx 24 PAN ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 6 knobs
+    k0: addr=10000F02 range=0-14 down=125 up=122
+    k1: addr=10001103 range=0-15 down=118 up=70
+    k2: addr=10001107 range=0-15 down=100 up=52
+    k3: addr=1000110B range=0-15 down=100 up=52
+    k4: addr=1000110F range=0-15 down=100 up=2
+    k5: addr=10001113 range=0-15 down=100 up=100
+
+=== page 0 idx 25 RING_MOD ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001103 range=0-1 down=1 up=1
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=118 up=70
+    k3: addr=1000110F range=0-15 down=100 up=100
+    k4: addr=10001113 range=0-15 down=100 up=2
+    k5: addr=10001117 range=0-15 down=100 up=100
+    k6: addr=10000F02 range=0-14 down=191 up=158
+
+=== page 0 idx 26 SLICER ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=10000F02 range=0-14 down=152 up=103
+    k1: addr=10001103 range=0-15 down=19 up=19
+    k2: addr=10001107 range=0-15 down=118 up=70
+    k3: addr=1000110B range=0-1 down=1 up=1
+    k4: addr=1000110F range=0-15 down=100 up=2
+    k5: addr=10001113 range=0-15 down=100 up=52
+    k6: addr=10001117 range=0-15 down=98 up=51
+    k7: addr=1000111B range=0-15 down=100 up=100
+
+=== page 0 idx 27 HMN ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001103 range=0-1 down=1 up=2
+    k1: addr=10001107 range=0-4 down=4 up=4already on page 0 (handle 230-792)
+already on page 0 (handle 230-792)
+scrolled: handle 230-792 -> 787-1354
+scrolled: handle 787-1354 -> 792-1359
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+
+    k2: addr=1000110B range=0-4 down=4 up=4
+    k3: addr=10001113 range=0-15 down=118 up=70
+    k4: addr=10001117 range=0-15 down=100 up=2
+    k5: addr=1000111F range=0-15 down=100 up=2
+    k6: addr=None range=None-None down=0 up=0
+
+=== page 0 idx 28 PS ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=1000110B range=0-15 down=48 up=31
+    k1: addr=10001113 range=0-15 down=100 up=42
+    k2: addr=1000110F range=0-3 down=3 up=4
+    k3: addr=10001117 range=0-15 down=202 up=201
+    k4: addr=1000111F range=0-15 down=100 up=100
+    k5: addr=1000111B range=0-15 down=100 up=2
+    k6: addr=10001107 range=0-15 down=100 up=2
+    k7: addr=10000F02 range=0-14 down=132 up=126
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 0 idx 29 HARM ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10000F02 range=0-14 down=173 up=92
+    k1: addr=10001107 range=0-15 down=29 up=19
+    k2: addr=1000110B range=0-15 down=100 up=2
+    k3: addr=1000110F range=0-15 down=202 up=201
+    k4: addr=10001113 range=0-15 down=100 up=100
+    k5: addr=10000F06 range=0-11 down=11 up=11
+    k6: addr=10001123 range=0-15 down=100 up=2
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 1 idx  0 OVER_TONE ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=10001103 range=0-15 down=100 up=52
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-15 down=100 up=67
+    k5: addr=1000111B range=0-15 down=100 up=52
+    k6: addr=1000111F range=0-15 down=100 up=52
+    k7: addr=10001117 range=0-1 down=1 up=2
+
+=== page 1 idx  1 OCT ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 3 knobs
+    k0: addr=10001103 range=0-15 down=100 up=52
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=100 up=2
+
+=== page 1 idx  2 OCT_POLY ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 3 knobs
+    k0: addr=10001103 range=0-15 down=100 up=2
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=100 up=2
+
+=== page 1 idx  3 DELAY ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001103 range=0-15 down=202 up=202
+    k1: addr=10001107 range=0-15 down=100 up=72
+    k2: addr=1000110B range=0-15 down=120 up=72
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-15 down=29 up=6
+    k5: addr=10001117 range=0-1 down=1 up=2
+    k6: addr=10000F02 range=0-14 down=97 up=141
+
+=== page 1 idx  4 DELAY_PLUS ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=5, payloads=7
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 12 knobs
+    k0: addr=10001123 range=0-15 down=202 up=202
+    k1: addr=10001127 range=0-15 down=100 up=72
+    k2: addr=1000112B range=0-15 down=120 up=72
+    k3: addr=10001107 range=0-15 down=100 up=2
+    k4: addr=1000112F range=0-15 down=29 up=6
+    k5: addr=1000110B range=0-15 down=100 up=52
+    k6: addr=1000110F range=0-15 down=100 up=100
+    k7: addr=10001113 range=0-15 down=100 up=52
+    k8: addr=10001117 range=0-15 down=100 up=100
+    k9: addr=1000111B range=0-15 down=100 up=100
+    k10: addr=1000111F range=0-1 down=1 up=2
+    k11: addr=10000F02 range=0-14 down=152 up=180
+    TYPE catalog: 6 entries @ 10001103
+
+=== page 1 idx  5 DELAY_ANALOG ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=1, payloads=3
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 12 knobs
+    k0: addr=10001107 range=0-15 down=202 up=202
+    k1: addr=1000110B range=0-15 down=100 up=72
+    k2: addr=1000110F range=0-15 down=120 up=72
+    k3: addr=10001113 range=0-15 down=100 up=2
+    k4: addr=10001117 range=0-15 down=29 up=2
+    k5: addr=1000111B range=0-15 down=100 up=52
+    k6: addr=1000111F range=0-15 down=100 up=100
+    k7: addr=10001123 range=0-15 down=100 up=52
+    k8: addr=10001127 range=0-15 down=100 up=100
+    k9: addr=1000112B range=0-15 down=100 up=100
+    k10: addr=1000112F range=0-1 down=1 up=2
+    k11: addr=10000F02 range=0-14 down=150 up=120
+    TYPE catalog: 2 entries @ 10001103
+
+=== page 1 idx  6 SPACE_ECHO ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 14 knobs
+    k0: addr=10000F02 range=0-14 down=111 up=90
+    k1: addr=10001103 range=0-15 down=202 up=202
+    k2: addr=10001107 range=0-15 down=100 up=72
+    k3: addr=1000110B range=0-15 down=120 up=72
+    k4: addr=1000110F range=0-15 down=100 up=2
+    k5: addr=10001113 range=0-15 down=29 up=2
+    k6: addr=10001117 range=0-15 down=100 up=52
+    k7: addr=1000111B range=0-15 down=100 up=100
+    k8: addr=1000111F range=0-15 down=100 up=52
+    k9: addr=10001123 range=0-15 down=100 up=100
+    k10: addr=10001127 range=0-15 down=100 up=100
+    k11: addr=1000112B range=0-4 down=4 up=4
+    k12: addr=1000112F range=0-15 down=100 up=52
+    k13: addr=10001133 range=0-1 down=1 up=2
+
+=== page 1 idx  7 DELAY_SHIMMER ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 15 knobs
+    k0: addr=10001103 range=0-15 down=202 up=202
+    k1: addr=10001107 range=0-15 down=100 up=72
+    k2: addr=1000110B range=0-15 down=120 up=72
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-15 down=29 up=2
+    k5: addr=10001117 range=0-15 down=100 up=52
+    k6: addr=1000111B range=0-15 down=100 up=100
+    k7: addr=1000111F range=0-15 down=100 up=52
+    k8: addr=10001123 range=0-15 down=100 up=100
+    k9: addr=10001127 range=0-15 down=100 up=100
+    k10: addr=1000112B range=0-15 down=48 up=14
+    k11: addr=1000112F range=0-15 down=100 up=2
+    k12: addr=10001133 range=0-15 down=100 up=52
+    k13: addr=10001137 range=0-1 down=1 up=2
+    k14: addr=10000F02 range=0-14 down=92 up=173
+
+=== page 1 idx  8 TERA_ECHO ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=10001107 range=0-15 down=100 up=52
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=10001113 range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-15 down=100 up=77
+    k4: addr=10001117 range=0-15 down=100 up=2
+    k5: addr=10001103 range=0-2 down=2 up=2
+    k6: addr=1000111B range=0-1 down=1 up=1
+    k7: addr=1000111F range=0-1 down=1 up=2
+
+=== page 1 idx  9 DELAY_TWIST ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=1, payloads=3
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 5 knobs
+    k0: addr=10001107 range=0-1 down=1 up=1
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=10001113 range=0-15 down=100 up=52
+    k4: addr=1000111B range=0-1 down=1 up=2
+    TYPE catalog: 2 entries @ 10001103
+
+=== page 1 idx 10 DELAY_WARP ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 5 knobs
+    k0: addr=10001103 range=0-15 down=202 up=202
+    k1: addr=10001107 range=0-1 down=1 up=1
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-1 down=1 up=2
+    k4: addr=10000F02 range=0-14 down=124 up=114
+
+=== page 1 idx 11 REV ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=4, payloads=6
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=10001107 range=0-15 down=99 up=72already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+already on page 1 (handle 792-1359)
+
+    k1: addr=1000110F range=0-15 down=100 up=72
+    k2: addr=10001113 range=1-10 down=9 up=4
+    k3: addr=1000110B range=0-15 down=200 up=172
+    k4: addr=10001117 range=0-15 down=17 up=17
+    k5: addr=1000111B range=0-14 down=14 up=2
+    k6: addr=1000111F range=0-15 down=100 up=2
+    k7: addr=10001123 range=0-1 down=1 up=2
+    TYPE catalog: 5 entries @ 10001103
+
+=== page 1 idx 12 REV_PLUS ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=6, payloads=8
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 16 knobs
+    k0: addr=10001107 range=0-15 down=99 up=76
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=77
+    k3: addr=10001113 range=1-10 down=9 up=7
+    k4: addr=10001117 range=0-15 down=200 up=172
+    k5: addr=1000111B range=0-15 down=29 up=22
+    k6: addr=1000111F range=0-15 down=29 up=5
+    k7: addr=10001123 range=0-15 down=100 up=52
+    k8: addr=10001127 range=0-15 down=100 up=52
+    k9: addr=1000112B range=0-15 down=100 up=52
+    k10: addr=1000112F range=0-15 down=100 up=100
+    k11: addr=10001133 range=0-15 down=100 up=52
+    k12: addr=10001137 range=0-15 down=100 up=100
+    k13: addr=1000113B range=0-15 down=100 up=100
+    k14: addr=1000113F range=0-15 down=100 up=2
+    k15: addr=10001143 range=0-1 down=1 up=2
+    TYPE catalog: 7 entries @ 10001103
+
+=== page 1 idx 13 REV_SHIMMER ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 20 knobs
+    k0: addr=10001103 range=0-15 down=99 up=76
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=100 up=77
+    k3: addr=1000110F range=1-10 down=9 up=7
+    k4: addr=10001113 range=0-15 down=200 up=172
+    k5: addr=10001117 range=0-15 down=29 up=22
+    k6: addr=1000111B range=0-15 down=29 up=5
+    k7: addr=1000111F range=0-15 down=100 up=52
+    k8: addr=10001123 range=0-15 down=100 up=52
+    k9: addr=10001127 range=0-15 down=100 up=52
+    k10: addr=1000112B range=0-15 down=100 up=100
+    k11: addr=1000112F range=0-15 down=100 up=52
+    k12: addr=10001133 range=0-15 down=100 up=100
+    k13: addr=10001137 range=0-15 down=100 up=100
+    k14: addr=1000113B range=0-15 down=100 up=2
+    k15: addr=1000113F range=0-15 down=48 up=14
+    k16: addr=10001147 range=0-15 down=100 up=2
+    k17: addr=10001143 range=0-15 down=48 up=2
+    k18: addr=1000114B range=0-15 down=100 up=2
+    k19: addr=1000114F range=0-1 down=1 up=2
+
+=== page 1 idx 14 AC_SIM ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 4 knobs
+    k0: addr=10001103 range=0-15 down=100 up=52
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-15 down=100 up=52
+
+=== page 1 idx 15 AC_RESO ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 3 knobs
+    k0: addr=10001107 range=0-15 down=100 up=52
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 1 idx 16 FB ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 3 knobs
+    k0: addr=10001103 range=0-1 down=1 up=1
+    k1: addr=10001107 range=0-1 down=1 up=1
+    k2: addr=1000110B range=0-15 down=52 up=0
+
+=== page 1 idx 17 SITAR_SIM ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001103 range=0-15 down=100 up=52
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-15 down=100 up=70
+    k5: addr=10001117 range=0-15 down=100 up=62
+    k6: addr=1000111B range=0-15 down=100 up=100
+
+=== page 1 idx 18 SG ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 3 knobs
+    k0: addr=10001103 range=0-15 down=100 up=52
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=100 up=52
+
+=== page 1 idx 19 DEFRET ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001103 range=0-15 down=100 up=52
+    k1: addr=10001107 range=0-15 down=100 up=100
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-15 down=100 up=32
+    k5: addr=10001117 range=0-15 down=100 up=52
+    k6: addr=1000111B range=0-15 down=100 up=100
+
+=== page 1 idx 20 T_WAH ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=10001103 range=0-2 down=2 up=3
+    k1: addr=10001107 range=0-1 down=1 up=2
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000111B range=0-15 down=100 up=2
+    k4: addr=1000110F range=0-15 down=100 up=72
+    k5: addr=10001113 range=0-15 down=100 up=32
+    k6: addr=10001117 range=0-15 down=100 up=17
+    k7: addr=1000111F range=0-15 down=100 up=100
+
+=== page 1 idx 21 A_WAH ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=10001103 range=0-2 down=2 up=3
+    k1: addr=10001107 range=0-15 down=118 up=70
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-15 down=100 up=52
+    k5: addr=10001117 range=0-15 down=100 up=52
+    k6: addr=1000111B range=0-1 down=1 up=2
+    k7: addr=1000111F range=0-15 down=100 up=100
+
+=== page 1 idx 22 S_BEND ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 4 knobs
+    k0: addr=10001103 range=0-1 down=1 up=1
+    k1: addr=10001107 range=0-6 down=6 up=4
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-15 down=100 up=97
+
+=== page 1 idx 23 WAH ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=5, payloads=7
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 5 knobs
+    k0: addr=10001113 range=0-15 down=100 up=2
+    k1: addr=10001117 range=0-15 down=100 up=100
+    k2: addr=10001107 range=0-15 down=100 up=2
+    k3: addr=1000110B range=0-15 down=100 up=100
+    k4: addr=1000110F range=0-15 down=100 up=2
+    TYPE catalog: 6 entries @ 10001103
+
+=== page 1 idx 24 PB ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 5 knobs
+    k0: addr=10001103 range=0-15 down=48 up=26
+    k1: addr=10001107 range=0-15 down=48 up=2
+    k2: addr=1000110B range=0-15 down=100 up=2
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-15 down=100 up=100
+
+=== page 1 idx 25 FOOT_VOL ===
+  TYPE present: False, SP TYPE present: True
+  SP TYPE: addr=None, max=0, payloads=0
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 4 knobs
+    k0: addr=1000110F range=0-15 down=100 up=2
+    k1: addr=10001103 range=0-15 down=100 up=100
+    k2: addr=10001107 range=0-15 down=100 up=2
+    k3: addr=1000110B range=0-3 down=3 up=3
+    SP TYPE catalog: 1 entries @ None
+
+=== page 1 idx 26 NS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 3 knobs
+    k0: addr=10001103 range=0-15 down=100 up=72
+    k1: addr=10001107 range=0-15 down=100 up=72
+    k2: addr=1000110B range=0-1 down=1 up=1
+
+=== page 1 idx 27 DIV_MIX ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=1, payloads=3
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 2 knobs
+    k0: addr=10001107 range=0-1 down=1 up=1already on page 1 (handle 792-1359)
+scrolled: handle 230-792 -> 787-1354
+scrolled: handle 787-1354 -> 792-1359
+scrolled: handle 792-1359 -> 1352-1919
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+
+    k1: addr=1000110B range=0-1 down=1 up=2
+    TYPE catalog: 2 entries @ 10001103
+
+=== page 1 idx 28 SEND_RETURN ===
+  drag retry 1/3 for SEND_RETURN
+  drag retry 2/3 for SEND_RETURN
+  drag failed twice — restoring baseline before retry
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 4 knobs
+    k0: addr=10001107 range=0-15 down=200 up=102
+    k1: addr=1000110B range=0-15 down=200 up=102
+    k2: addr=1000110F range=0-15 down=100 up=100
+    k3: addr=10001113 range=0-1 down=1 up=1
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 1 idx 29 LOOP ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 1 knobs
+    k0: addr=10001103 range=0-15 down=100 up=2
+
+=== page 2 idx  0 X_COMP_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 6 knobs
+    k0: addr=10001117 range=0-15 down=100 up=52
+    k1: addr=10001103 range=0-15 down=100 up=52
+    k2: addr=10001107 range=0-15 down=100 up=42
+    k3: addr=1000110B range=0-15 down=100 up=52
+    k4: addr=1000110F range=0-15 down=17 up=7
+    k5: addr=10001113 range=0-15 down=100 up=100
+
+=== page 2 idx  1 OD_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001103 range=0-15 down=120 up=72
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-15 down=100 up=52
+    k4: addr=10001113 range=0-15 down=100 up=100
+    k5: addr=10001117 range=0-1 down=1 up=1
+    k6: addr=1000111B range=0-15 down=100 up=52
+
+=== page 2 idx  2 X_OD_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001103 range=0-15 down=120 up=72
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=1000110B range=0-15 down=100 up=52
+    k4: addr=10001113 range=0-15 down=100 up=100
+    k5: addr=10001117 range=0-1 down=1 up=1
+    k6: addr=1000111B range=0-15 down=100 up=52
+
+=== page 2 idx  3 DIST_BASS ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001107 range=0-15 down=120 up=72
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=10001113 range=0-15 down=100 up=52
+    k4: addr=10001117 range=0-15 down=100 up=100
+    k5: addr=1000111B range=0-1 down=1 up=1
+    k6: addr=1000111F range=0-15 down=100 up=52
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 2 idx  4 METAL_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001103 range=0-15 down=120 up=72
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=1000110B range=0-15 down=100 up=52
+    k4: addr=10001113 range=0-15 down=100 up=100
+    k5: addr=10001117 range=0-1 down=1 up=1
+    k6: addr=1000111B range=0-15 down=100 up=52
+
+=== page 2 idx  5 FUZZ_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001103 range=0-15 down=120 up=72
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=52
+    k3: addr=1000110B range=0-15 down=100 up=52
+    k4: addr=10001113 range=0-15 down=100 up=100
+    k5: addr=10001117 range=0-1 down=1 up=1
+    k6: addr=1000111B range=0-15 down=100 up=52
+
+=== page 2 idx  6 AMP_BASS ===
+  TYPE present: True, SP TYPE present: True
+  TYPE: addr=10001103, max=8, payloads=10
+  SP TYPE: addr=1000113B, max=29, payloads=31
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 12 knobs
+    k0: addr=10001107 range=0-15 down=120 up=72
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000111F range=0-2 down=2 up=3
+    k3: addr=1000110F range=0-15 down=100 up=52
+    k4: addr=10001113 range=0-15 down=100 up=52
+    k5: addr=10001117 range=0-15 down=100 up=52
+    k6: addr=1000111B range=0-15 down=100 up=100
+    k7: addr=1000112B range=0-1 down=1 up=1
+    k8: addr=10001123 range=0-1 down=1 up=1
+    k9: addr=10001127 range=0-15 down=100 up=52
+    k10: addr=1000112F range=0-15 down=20 up=12
+    k11: addr=10001133 range=0-15 down=20 up=12
+    TYPE catalog: 9 entries @ 10001103
+    SP TYPE catalog: 30 entries @ 1000113B
+
+=== page 2 idx  7 CHO_BASS ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=1, payloads=3
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001107 range=0-15 down=118 up=70
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=2
+    k3: addr=10001113 range=0-15 down=29 up=23
+    k4: addr=10001117 range=0-15 down=29 up=4
+    k5: addr=1000111B range=0-15 down=100 up=2
+    k6: addr=10000F02 range=0-14 down=136 up=126
+    TYPE catalog: 2 entries @ 10001103
+
+=== page 2 idx  8 FL_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 9 knobs
+    k0: addr=10001103 range=0-15 down=118 up=95
+    k1: addr=10001107 range=0-15 down=100 up=42
+    k2: addr=1000110B range=0-15 down=100 up=67
+    k3: addr=1000110F range=0-15 down=100 up=47
+    k4: addr=10001117 range=0-15 down=29 up=24
+    k5: addr=10001113 range=0-15 down=119 up=119
+    k6: addr=1000111B range=0-15 down=100 up=2
+    k7: addr=1000111F range=0-15 down=100 up=100
+    k8: addr=10000F02 range=0-14 down=154 up=173
+
+=== page 2 idx  9 FL_PRIME_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 15 knobs
+    k0: addr=10001103 range=0-15 down=118 up=95
+    k1: addr=10001107 range=0-15 down=100 up=42
+    k2: addr=1000110B range=0-15 down=100 up=67
+    k3: addr=1000110F range=0-15 down=100 up=47
+    k4: addr=10001117 range=0-1 down=1 up=1
+    k5: addr=1000111F range=0-12 down=12 up=12
+    k6: addr=1000111B range=0-15 down=119 up=119
+    k7: addr=10001113 range=0-1 down=1 up=1
+    k8: addr=10001127 range=0-15 down=100 up=42
+    k9: addr=1000112B range=0-15 down=100 up=42
+    k10: addr=10001133 range=0-15 down=29 up=28
+    k11: addr=10001137 range=0-15 down=29 up=7
+    k12: addr=10001123 range=0-15 down=100 up=2
+    k13: addr=1000112F range=0-15 down=100 up=100
+    k14: addr=10000F02 range=0-14 down=137 up=144
+
+=== page 2 idx 10 PH_BASS ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=10001107 range=0-15 down=118 up=90
+    k1: addr=1000110B range=0-15 down=100 up=32
+    k2: addr=1000110F range=0-15 down=100 up=72
+    k3: addr=10001113 range=0-15 down=100 up=52
+    k4: addr=10001117 range=0-15 down=119 up=119
+    k5: addr=1000111B range=0-15 down=100 up=2
+    k6: addr=1000111F range=0-15 down=100 up=100
+    k7: addr=10000F02 range=0-14 down=156 up=168
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 2 idx 11 PH_PRIME_BASS ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=4, payloads=6
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 15 knobs
+    k0: addr=10001107 range=0-15 down=118 up=70
+    k1: addr=1000110B range=0-15 down=100 up=52
+    k2: addr=1000110F range=0-15 down=100 up=100
+    k3: addr=10001113 range=0-15 down=100 up=52
+    k4: addr=10001117 range=0-1 down=1 up=1
+    k5: addr=10001123 range=0-12 down=12 up=12
+    k6: addr=1000111B range=0-15 down=119 up=119
+    k7: addr=1000111F range=0-1 down=1 up=1
+    k8: addr=10001127 range=0-15 down=100 up=52already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+
+    k9: addr=1000112B range=0-15 down=100 up=52
+    k10: addr=1000112F range=0-15 down=29 up=29
+    k11: addr=10001133 range=0-15 down=29 up=2
+    k12: addr=10001137 range=0-15 down=100 up=2
+    k13: addr=1000113B range=0-15 down=100 up=100
+    k14: addr=10000F02 range=0-14 down=140 up=158
+    TYPE catalog: 5 entries @ 10001103
+
+=== page 2 idx 12 PS_BASS ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=1000110B range=0-15 down=48 up=26
+    k1: addr=10001113 range=0-15 down=100 up=42
+    k2: addr=1000110F range=0-3 down=3 up=4
+    k3: addr=10001117 range=0-15 down=202 up=201
+    k4: addr=1000111F range=0-15 down=100 up=100
+    k5: addr=1000111B range=0-15 down=100 up=2
+    k6: addr=10001107 range=0-15 down=100 up=2
+    k7: addr=10000F02 range=0-14 down=134 up=147
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 2 idx 13 HARM_BASS ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=2, payloads=4
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 7 knobs
+    k0: addr=10001107 range=0-15 down=29 up=19
+    k1: addr=1000110B range=0-15 down=100 up=2
+    k2: addr=1000110F range=0-15 down=202 up=201
+    k3: addr=10001113 range=0-15 down=100 up=100
+    k4: addr=10000F06 range=0-11 down=11 up=11
+    k5: addr=10001123 range=0-15 down=100 up=2
+    k6: addr=10000F02 range=0-14 down=126 up=115
+    TYPE catalog: 3 entries @ 10001103
+
+=== page 2 idx 14 OCT_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 3 knobs
+    k0: addr=10001103 range=0-15 down=100 up=52
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=100 up=2
+
+=== page 2 idx 15 SG_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 3 knobs
+    k0: addr=10001103 range=0-15 down=100 up=52
+    k1: addr=10001107 range=0-15 down=100 up=52
+    k2: addr=1000110B range=0-15 down=100 up=52
+
+=== page 2 idx 16 DEFRET_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 5 knobs
+    k0: addr=10001103 range=0-15 down=100 up=52
+    k1: addr=10001107 range=0-15 down=100 up=32
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-15 down=100 up=100
+
+=== page 2 idx 17 T_WAH_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 8 knobs
+    k0: addr=10001103 range=0-1 down=1 up=1
+    k1: addr=10001107 range=0-1 down=1 up=2
+    k2: addr=1000110B range=0-15 down=100 up=42
+    k3: addr=1000111B range=0-15 down=100 up=2
+    k4: addr=1000110F range=0-15 down=100 up=52
+    k5: addr=10001113 range=0-15 down=100 up=42
+    k6: addr=10001117 range=0-15 down=100 up=52
+    k7: addr=1000111F range=0-15 down=100 up=100
+
+=== page 2 idx 18 S_BEND_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 4 knobs
+    k0: addr=10001103 range=0-1 down=1 up=1
+    k1: addr=10001107 range=0-6 down=6 up=4
+    k2: addr=1000110B range=0-15 down=100 up=52
+    k3: addr=1000110F range=0-15 down=100 up=97
+
+=== page 2 idx 19 WAH_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 5 knobs
+    k0: addr=1000110F range=0-15 down=100 up=2
+    k1: addr=10001113 range=0-15 down=100 up=100
+    k2: addr=10001103 range=0-15 down=100 up=2
+    k3: addr=10001107 range=0-15 down=100 up=100
+    k4: addr=1000110B range=0-15 down=100 up=2
+
+=== page 2 idx 20 PB_BASS ===
+  TYPE present: False, SP TYPE present: False
+  captured all-up + all-down sweeps and min/max screenshots
+  classified 5 knobs
+    k0: addr=10001103 range=0-15 down=48 up=26
+    k1: addr=10001107 range=0-15 down=48 up=2
+    k2: addr=1000110B range=0-15 down=100 up=2
+    k3: addr=1000110F range=0-15 down=100 up=2
+    k4: addr=10001113 range=0-15 down=100 up=100
+
+=== DONE: 81 effects explored ===

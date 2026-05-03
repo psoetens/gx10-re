@@ -1,0 +1,225 @@
+{
+  "page": 1,
+  "idx": 27,
+  "name": "DIV_MIX",
+  "color": [
+    200,
+    200,
+    200
+  ],
+  "hex_x": 1771,
+  "n_dt1": 11,
+  "triplet_at_10001100": "1D0000",
+  "has_type": true,
+  "has_sp_type": false,
+  "type_address": "10001103",
+  "type_max": 1,
+  "type_payloads": [
+    "08000000",
+    "08000001",
+    "08000001"
+  ],
+  "sp_type_address": null,
+  "sp_type_max": -1,
+  "sp_type_payloads": [],
+  "knobs": [
+    {
+      "knob_idx": 0,
+      "knob_x": 308,
+      "knob_y": 590,
+      "address": "10001107",
+      "min": 0,
+      "max": 1,
+      "n_dt1_down": 1,
+      "n_dt1_up": 1,
+      "first_payload_down": "08000000",
+      "name_manual": "MODE",
+      "min_raw": 32768,
+      "max_raw": 32769,
+      "min_display": 0,
+      "max_display": 1,
+      "n_events_total": 2,
+      "name_manual_v2": "MODE"
+    },
+    {
+      "knob_idx": 1,
+      "knob_x": 428,
+      "knob_y": 590,
+      "address": "1000110B",
+      "min": 0,
+      "max": 1,
+      "n_dt1_down": 1,
+      "n_dt1_up": 2,
+      "first_payload_down": "08000000",
+      "name_manual": "CH SELECT\u00a0\u00a0*1",
+      "min_raw": 32768,
+      "max_raw": 32769,
+      "min_display": 0,
+      "max_display": 1,
+      "n_events_total": 3,
+      "name_manual_v2": "CH SELECT\u00a0\u00a0*1"
+    }
+  ],
+  "per_type_layouts": [
+    {
+      "type_value": 0,
+      "knob_master_indices": [
+        0,
+        1
+      ]
+    },
+    {
+      "type_value": 1,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "master_knob_positions": [
+    [
+      308,
+      590
+    ],
+    [
+      428,
+      590
+    ],
+    [
+      550,
+      590
+    ],
+    [
+      669,
+      590
+    ],
+    [
+      307,
+      710
+    ],
+    [
+      427,
+      710
+    ],
+    [
+      549,
+      710
+    ],
+    [
+      669,
+      710
+    ]
+  ],
+  "knobs_extra": [
+    {
+      "knob_x": 550,
+      "knob_y": 590,
+      "address": "10001117",
+      "min": 0,
+      "max": 2,
+      "n_dt1_down": 2,
+      "n_dt1_up": 2,
+      "first_seen_at_type": 1,
+      "name_manual": "MIX MODE\u00a0 *1",
+      "min_raw": 32768,
+      "max_raw": 32770,
+      "min_display": 0,
+      "max_display": 2,
+      "n_events_total": 4,
+      "name_manual_v2": "MIX MODE\u00a0 *1"
+    },
+    {
+      "knob_x": 669,
+      "knob_y": 590,
+      "address": "1000111B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 16,
+      "n_dt1_up": 9,
+      "first_seen_at_type": 1,
+      "name_manual": "A:DYNAMIC *2 B:DYNAMIC *2",
+      "min_raw": 32768,
+      "max_raw": 32784,
+      "min_display": 0,
+      "max_display": 16,
+      "n_events_total": 25,
+      "name_manual_v2": "A:DYNAMIC *2 B:DYNAMIC *2"
+    },
+    {
+      "knob_x": 307,
+      "knob_y": 710,
+      "address": "1000111F",
+      "min": 0,
+      "max": 2,
+      "n_dt1_down": 2,
+      "n_dt1_up": 2,
+      "first_seen_at_type": 1,
+      "name_manual": "A: DYNAMIC SENS *2 B: DYNAMIC SENS *2",
+      "min_raw": 32768,
+      "max_raw": 32770,
+      "min_display": 0,
+      "max_display": 2,
+      "n_events_total": 4,
+      "name_manual_v2": "A: DYNAMIC SENS *2 B: DYNAMIC SENS *2"
+    },
+    {
+      "knob_x": 427,
+      "knob_y": 710,
+      "address": "10001123",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_seen_at_type": 1,
+      "name_manual": "A: FILTER *2 B: FILTER *2",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "A: FILTER *2 B: FILTER *2"
+    },
+    {
+      "knob_x": 549,
+      "knob_y": 710,
+      "address": "10001127",
+      "min": 0,
+      "max": 2,
+      "n_dt1_down": 2,
+      "n_dt1_up": 2,
+      "first_seen_at_type": 1,
+      "name_manual": "A: CUTOFF FREQ *2 B: CUTOFF FREQ *2",
+      "min_raw": 32768,
+      "max_raw": 32770,
+      "min_display": 0,
+      "max_display": 2,
+      "n_events_total": 4,
+      "name_manual_v2": "A: CUTOFF FREQ *2 B: CUTOFF FREQ *2"
+    },
+    {
+      "knob_x": 669,
+      "knob_y": 710,
+      "address": "1000112B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 16,
+      "n_dt1_up": 9,
+      "first_seen_at_type": 1,
+      "name_manual": "MODE",
+      "min_raw": 32768,
+      "max_raw": 32784,
+      "min_display": 0,
+      "max_display": 16,
+      "n_events_total": 25,
+      "name_manual_v2": "MODE"
+    }
+  ],
+  "fx_type_byte": 29,
+  "fx_type_official": "DIVIDER"
+}

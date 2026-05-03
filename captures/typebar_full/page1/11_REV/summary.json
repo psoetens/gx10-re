@@ -1,0 +1,280 @@
+{
+  "page": 1,
+  "idx": 11,
+  "name": "REV",
+  "color": [
+    220,
+    80,
+    150
+  ],
+  "hex_x": 872,
+  "n_dt1": 8,
+  "triplet_at_10001100": "3E0000",
+  "has_type": true,
+  "has_sp_type": false,
+  "type_address": "10001103",
+  "type_max": 4,
+  "type_payloads": [
+    "08000000",
+    "08000001",
+    "08000002",
+    "08000003",
+    "08000004",
+    "08000004"
+  ],
+  "sp_type_address": null,
+  "sp_type_max": -1,
+  "sp_type_payloads": [],
+  "knobs": [
+    {
+      "knob_idx": 0,
+      "knob_x": 309,
+      "knob_y": 590,
+      "address": "10001107",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 99,
+      "n_dt1_up": 72,
+      "first_payload_down": "08000603",
+      "name_manual": "TIME",
+      "min_raw": 32769,
+      "max_raw": 32868,
+      "min_display": 1,
+      "max_display": 100,
+      "n_events_total": 171,
+      "name_manual_v2": "TIME"
+    },
+    {
+      "knob_idx": 1,
+      "knob_x": 428,
+      "knob_y": 590,
+      "address": "1000110B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 72,
+      "first_payload_down": "08000603",
+      "name_manual": "EFFECT LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32968,
+      "min_display": 0,
+      "max_display": 200,
+      "n_events_total": 372,
+      "name_manual_v2": "EFFECT LEVEL",
+      "address_legacy": "1000110F"
+    },
+    {
+      "knob_idx": 2,
+      "knob_x": 549,
+      "knob_y": 590,
+      "address": "1000110F",
+      "min": 1,
+      "max": 10,
+      "n_dt1_down": 9,
+      "n_dt1_up": 4,
+      "first_payload_down": "08000009",
+      "name_manual": "DENSITY",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 172,
+      "name_manual_v2": "DENSITY",
+      "address_legacy": "10001113"
+    },
+    {
+      "knob_idx": 3,
+      "knob_x": 669,
+      "knob_y": 590,
+      "address": "10001113",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 200,
+      "n_dt1_up": 172,
+      "first_payload_down": "08000C07",
+      "name_manual": "PRE-DELAY",
+      "min_raw": 32769,
+      "max_raw": 32778,
+      "min_display": 1,
+      "max_display": 10,
+      "n_events_total": 13,
+      "name_manual_v2": "PRE-DELAY",
+      "address_legacy": "1000110B"
+    },
+    {
+      "knob_idx": 4,
+      "knob_x": 788,
+      "knob_y": 590,
+      "address": "10001117",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 17,
+      "n_dt1_up": 17,
+      "first_payload_down": "08000100",
+      "name_manual": "LOW CUT",
+      "min_raw": 32768,
+      "max_raw": 32785,
+      "min_display": 0,
+      "max_display": 17,
+      "n_events_total": 34,
+      "name_manual_v2": "LOW CUT"
+    },
+    {
+      "knob_idx": 5,
+      "knob_x": 908,
+      "knob_y": 590,
+      "address": "1000111B",
+      "min": 0,
+      "max": 14,
+      "n_dt1_down": 14,
+      "n_dt1_up": 2,
+      "first_payload_down": "0800000D",
+      "name_manual": "HIGH CUT",
+      "min_raw": 32768,
+      "max_raw": 32782,
+      "min_display": 0,
+      "max_display": 14,
+      "n_events_total": 16,
+      "name_manual_v2": "HIGH CUT"
+    },
+    {
+      "knob_idx": 6,
+      "knob_x": 1028,
+      "knob_y": 590,
+      "address": "1000111F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 2,
+      "first_payload_down": "08000603",
+      "name_manual": "DIRECT LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 102,
+      "name_manual_v2": "DIRECT LEVEL"
+    },
+    {
+      "knob_idx": 7,
+      "knob_x": 1150,
+      "knob_y": 590,
+      "address": "10001123",
+      "min": 0,
+      "max": 1,
+      "n_dt1_down": 1,
+      "n_dt1_up": 2,
+      "first_payload_down": "08000000",
+      "name_manual": "CARRYOVER",
+      "min_raw": 32768,
+      "max_raw": 32769,
+      "min_display": 0,
+      "max_display": 1,
+      "n_events_total": 3,
+      "name_manual_v2": "CARRYOVER"
+    }
+  ],
+  "per_type_layouts": [
+    {
+      "type_value": 0,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "type_value": 1,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "type_value": 2,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "type_value": 3,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "type_value": 4,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "master_knob_positions": [
+    [
+      309,
+      590
+    ],
+    [
+      428,
+      590
+    ],
+    [
+      549,
+      590
+    ],
+    [
+      669,
+      590
+    ],
+    [
+      788,
+      590
+    ],
+    [
+      908,
+      590
+    ],
+    [
+      1028,
+      590
+    ],
+    [
+      1150,
+      590
+    ]
+  ],
+  "fx_type_byte": 62,
+  "fx_type_official": "REVERB"
+}

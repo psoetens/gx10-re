@@ -1,0 +1,794 @@
+{
+  "0": {
+    "addr": "20000000",
+    "name": "NATURAL AMP HB  "
+  },
+  "1": {
+    "addr": "20060000",
+    "name": "BOUTIQUE AMP HB "
+  },
+  "2": {
+    "addr": "200C0000",
+    "name": "SUPREME AMP HB  "
+  },
+  "3": {
+    "addr": "20120000",
+    "name": "MAXIMUM AMP HB  "
+  },
+  "4": {
+    "addr": "20180000",
+    "name": "JUGGERNAUT HB   "
+  },
+  "5": {
+    "addr": "201E0000",
+    "name": "X-CRUNCH AMP HB "
+  },
+  "6": {
+    "addr": "20240000",
+    "name": "EMPTY           "
+  },
+  "7": {
+    "addr": "202A0000",
+    "name": "X-MODDED AMP HB "
+  },
+  "8": {
+    "addr": "20300000",
+    "name": "JC120 AMP HB    "
+  },
+  "9": {
+    "addr": "20360000",
+    "name": "TWIN CMB AMP HB "
+  },
+  "10": {
+    "addr": "203C0000",
+    "name": "DELUXE AMP HB   "
+  },
+  "11": {
+    "addr": "20420000",
+    "name": "TWEED CMB AMP HB"
+  },
+  "12": {
+    "addr": "20480000",
+    "name": "DIAMOND AMP HB  "
+  },
+  "13": {
+    "addr": "204E0000",
+    "name": "BRIT STK AMP HB "
+  },
+  "14": {
+    "addr": "20540000",
+    "name": "RECTI STK AMP HB"
+  },
+  "15": {
+    "addr": "205A0000",
+    "name": "MATCH CMB AMP HB"
+  },
+  "16": {
+    "addr": "20600000",
+    "name": "BG COMBO AMP HB "
+  },
+  "17": {
+    "addr": "20660000",
+    "name": "ORNG STK AMP HB "
+  },
+  "18": {
+    "addr": "206C0000",
+    "name": "BGNR UB AMP HB  "
+  },
+  "19": {
+    "addr": "20720000",
+    "name": "AC SIM HB       "
+  },
+  "20": {
+    "addr": "20780000",
+    "name": "METAL MR 2      "
+  },
+  "21": {
+    "addr": "207E0000",
+    "name": "METAL MR 3      "
+  },
+  "22": {
+    "addr": "21040000",
+    "name": "GS LEAD         "
+  },
+  "23": {
+    "addr": "210A0000",
+    "name": "GS METAL        "
+  },
+  "24": {
+    "addr": "21100000",
+    "name": "Metalica        "
+  },
+  "25": {
+    "addr": "21160000",
+    "name": "Tom Morello     "
+  },
+  "26": {
+    "addr": "211C0000",
+    "name": "AC_DC           "
+  },
+  "27": {
+    "addr": "21220000",
+    "name": "EMPTY           "
+  },
+  "28": {
+    "addr": "21280000",
+    "name": "NO AMP          "
+  },
+  "29": {
+    "addr": "212E0000",
+    "name": "INIT MEMORY     "
+  },
+  "30": {
+    "addr": "21340000",
+    "name": "NATURAL AMP SC  "
+  },
+  "31": {
+    "addr": "213A0000",
+    "name": "BOUTIQUE AMP SC "
+  },
+  "32": {
+    "addr": "21400000",
+    "name": "SUPREME AMP SC  "
+  },
+  "33": {
+    "addr": "21460000",
+    "name": "MAXIMUM AMP SC  "
+  },
+  "34": {
+    "addr": "214C0000",
+    "name": "JUGGERNAUT SC   "
+  },
+  "35": {
+    "addr": "21520000",
+    "name": "X-CRUNCH AMP SC "
+  },
+  "36": {
+    "addr": "21580000",
+    "name": "X-HI GAIN AMP SC"
+  },
+  "37": {
+    "addr": "215E0000",
+    "name": "X-MODDED AMP SC "
+  },
+  "38": {
+    "addr": "21640000",
+    "name": "JC120 AMP SC    "
+  },
+  "39": {
+    "addr": "216A0000",
+    "name": "TWIN CMB AMP SC "
+  },
+  "40": {
+    "addr": "21700000",
+    "name": "DELUXE AMP SC   "
+  },
+  "41": {
+    "addr": "21760000",
+    "name": "TWEED CMB AMP SC"
+  },
+  "42": {
+    "addr": "217C0000",
+    "name": "DIAMOND AMP SC  "
+  },
+  "43": {
+    "addr": "22020000",
+    "name": "BRIT STK AMP SC "
+  },
+  "44": {
+    "addr": "22080000",
+    "name": "RECTI STK AMP SC"
+  },
+  "45": {
+    "addr": "220E0000",
+    "name": "MATCH CMB AMP SC"
+  },
+  "46": {
+    "addr": "22140000",
+    "name": "BG COMBO AMP SC "
+  },
+  "47": {
+    "addr": "221A0000",
+    "name": "ORNG STK AMP SC "
+  },
+  "48": {
+    "addr": "22200000",
+    "name": "BGNR UB AMP SC  "
+  },
+  "49": {
+    "addr": "22260000",
+    "name": "AC SIM SC       "
+  },
+  "50": {
+    "addr": "222C0000",
+    "name": "CLEAR DRIVE     "
+  },
+  "51": {
+    "addr": "22320000",
+    "name": "GOOD FEELING    "
+  },
+  "52": {
+    "addr": "22380000",
+    "name": "SURF COWBOY     "
+  },
+  "53": {
+    "addr": "223E0000",
+    "name": "AMERICANA       "
+  },
+  "54": {
+    "addr": "22440000",
+    "name": "TREBLE BOOST    "
+  },
+  "55": {
+    "addr": "224A0000",
+    "name": "DIGITAL OCEAN   "
+  },
+  "56": {
+    "addr": "22500000",
+    "name": "FUNK DRIVE      "
+  },
+  "57": {
+    "addr": "22560000",
+    "name": "SUPER CLEAN/DS  "
+  },
+  "58": {
+    "addr": "225C0000",
+    "name": "ANCIENT DREAM   "
+  },
+  "59": {
+    "addr": "22620000",
+    "name": "OCTAVE FUNK     "
+  },
+  "60": {
+    "addr": "22680000",
+    "name": "GRAVITY GAINS   "
+  },
+  "61": {
+    "addr": "226E0000",
+    "name": "AMBIENT LEAD    "
+  },
+  "62": {
+    "addr": "22740000",
+    "name": "DJENT METAL     "
+  },
+  "63": {
+    "addr": "227A0000",
+    "name": "SKYBLUE PINK    "
+  },
+  "64": {
+    "addr": "23000000",
+    "name": "FUZZY DIST      "
+  },
+  "65": {
+    "addr": "23060000",
+    "name": "DIMI GILMORIX   "
+  },
+  "66": {
+    "addr": "230C0000",
+    "name": "A LIGHTER TOUCH "
+  },
+  "67": {
+    "addr": "23120000",
+    "name": "HARMONIC DIST   "
+  },
+  "68": {
+    "addr": "23180000",
+    "name": "PROUD DAD       "
+  },
+  "69": {
+    "addr": "231E0000",
+    "name": "DRY CRUNCH      "
+  },
+  "70": {
+    "addr": "23240000",
+    "name": "OCTAVE CRUNCH   "
+  },
+  "71": {
+    "addr": "232A0000",
+    "name": "FUSION SWELLS   "
+  },
+  "72": {
+    "addr": "23300000",
+    "name": "LO-FI CLEAN     "
+  },
+  "73": {
+    "addr": "23360000",
+    "name": "SLAP GUITAR     "
+  },
+  "74": {
+    "addr": "233C0000",
+    "name": "1993            "
+  },
+  "75": {
+    "addr": "23420000",
+    "name": "OCTAVE ORGAN    "
+  },
+  "76": {
+    "addr": "23480000",
+    "name": "BIG DRIVE       "
+  },
+  "77": {
+    "addr": "234E0000",
+    "name": "BLUE LAKE       "
+  },
+  "78": {
+    "addr": "23540000",
+    "name": "FAIRY OF FOREST "
+  },
+  "79": {
+    "addr": "235A0000",
+    "name": "HARMONIC DRIVE  "
+  },
+  "80": {
+    "addr": "23600000",
+    "name": "PROG LEAD TONE  "
+  },
+  "81": {
+    "addr": "23660000",
+    "name": "CRYSTAL CLEAN   "
+  },
+  "82": {
+    "addr": "236C0000",
+    "name": "CLEAN BOOSTER   "
+  },
+  "83": {
+    "addr": "23720000",
+    "name": "BUBBLE DELAY    "
+  },
+  "84": {
+    "addr": "23780000",
+    "name": "HOT COUNTRY     "
+  },
+  "85": {
+    "addr": "237E0000",
+    "name": "EXPENSIVE TASTE "
+  },
+  "86": {
+    "addr": "24040000",
+    "name": "SWAMP CHORUS    "
+  },
+  "87": {
+    "addr": "240A0000",
+    "name": "EVERY 00'S MOVIE"
+  },
+  "88": {
+    "addr": "24100000",
+    "name": "STUDIO BASS     "
+  },
+  "89": {
+    "addr": "24160000",
+    "name": "ROCK BASS CRUNCH"
+  },
+  "90": {
+    "addr": "241C0000",
+    "name": "CLEAN ROCK BASS "
+  },
+  "91": {
+    "addr": "24220000",
+    "name": "T WAH BASS      "
+  },
+  "92": {
+    "addr": "24280000",
+    "name": "DIST ROCK BASS  "
+  },
+  "93": {
+    "addr": "242E0000",
+    "name": "MONO BASS CLOUD "
+  },
+  "94": {
+    "addr": "24340000",
+    "name": "SYNTHY OCT BASS "
+  },
+  "95": {
+    "addr": "243A0000",
+    "name": "FUZZ BASS       "
+  },
+  "96": {
+    "addr": "24400000",
+    "name": "LOOPER CLEAN    "
+  },
+  "97": {
+    "addr": "24460000",
+    "name": "LOOPER CRUNCH   "
+  },
+  "98": {
+    "addr": "244C0000",
+    "name": "LOOPER DRIVE    "
+  },
+  "99": {
+    "addr": "24520000",
+    "name": "GX DUAL DRIVE   "
+  },
+  "100": {
+    "addr": "24580000",
+    "name": "HEAVY METAL     "
+  },
+  "101": {
+    "addr": "245E0000",
+    "name": "STUDIO BLUES    "
+  },
+  "102": {
+    "addr": "24640000",
+    "name": "JC CLEAN        "
+  },
+  "103": {
+    "addr": "246A0000",
+    "name": "LEAD DRIVE      "
+  },
+  "104": {
+    "addr": "24700000",
+    "name": "CRUNCH LEAD     "
+  },
+  "105": {
+    "addr": "24760000",
+    "name": "NEO SOUL        "
+  },
+  "106": {
+    "addr": "247C0000",
+    "name": "MODERN OD       "
+  },
+  "107": {
+    "addr": "25020000",
+    "name": "MODERN DS       "
+  },
+  "108": {
+    "addr": "25080000",
+    "name": "CLEAN+SHIMMER   "
+  },
+  "109": {
+    "addr": "250E0000",
+    "name": "MILD DRIVE      "
+  },
+  "110": {
+    "addr": "25140000",
+    "name": "ACOUSTIC GUITAR "
+  },
+  "111": {
+    "addr": "251A0000",
+    "name": "X-ULTRA FEED    "
+  },
+  "112": {
+    "addr": "25200000",
+    "name": "X-OPTIMA SD-1   "
+  },
+  "113": {
+    "addr": "25260000",
+    "name": "X-TITAN MDP     "
+  },
+  "114": {
+    "addr": "252C0000",
+    "name": "DUAL X LEAD     "
+  },
+  "115": {
+    "addr": "25320000",
+    "name": "SLICER DRIVE    "
+  },
+  "116": {
+    "addr": "25380000",
+    "name": "HUMANIZER AC    "
+  },
+  "117": {
+    "addr": "253E0000",
+    "name": "BRIGHT SITAR    "
+  },
+  "118": {
+    "addr": "25440000",
+    "name": "AUTO WAH BOX    "
+  },
+  "119": {
+    "addr": "254A0000",
+    "name": "FUZZY ROCK      "
+  },
+  "120": {
+    "addr": "25500000",
+    "name": "PHASER CLEAN    "
+  },
+  "121": {
+    "addr": "25560000",
+    "name": "BG DRIVE        "
+  },
+  "122": {
+    "addr": "255C0000",
+    "name": "OCTAVE CLEAN    "
+  },
+  "123": {
+    "addr": "25620000",
+    "name": "HI-GAIN LEAD    "
+  },
+  "124": {
+    "addr": "25680000",
+    "name": "DIMENSION FL    "
+  },
+  "125": {
+    "addr": "256E0000",
+    "name": "DRIVE + OCT CLN "
+  },
+  "126": {
+    "addr": "25740000",
+    "name": "SYNTH LEAD      "
+  },
+  "127": {
+    "addr": "257A0000",
+    "name": "RICH CHORUS DS  "
+  },
+  "128": {
+    "addr": "26000000",
+    "name": "BASIC GIG       "
+  },
+  "129": {
+    "addr": "26060000",
+    "name": "ROTARY+ECHO     "
+  },
+  "130": {
+    "addr": "260C0000",
+    "name": "AMBIENT CLEAN   "
+  },
+  "131": {
+    "addr": "26120000",
+    "name": "FUSION SOLO     "
+  },
+  "132": {
+    "addr": "26180000",
+    "name": "TWEED DRIVE     "
+  },
+  "133": {
+    "addr": "261E0000",
+    "name": "FLYING OVERTONE "
+  },
+  "134": {
+    "addr": "26240000",
+    "name": "CONSOLE CLEAN   "
+  },
+  "135": {
+    "addr": "262A0000",
+    "name": "DUAL CRUNCH     "
+  },
+  "136": {
+    "addr": "26300000",
+    "name": "FUZZ SOLO       "
+  },
+  "137": {
+    "addr": "26360000",
+    "name": "BOOST BAR BROS  "
+  },
+  "138": {
+    "addr": "263C0000",
+    "name": "THE BELLS       "
+  },
+  "139": {
+    "addr": "26420000",
+    "name": "WINDWARD        "
+  },
+  "140": {
+    "addr": "26480000",
+    "name": "ANCIENT MOON    "
+  },
+  "141": {
+    "addr": "264E0000",
+    "name": "CAPO'S & NUTS   "
+  },
+  "142": {
+    "addr": "26540000",
+    "name": "WINTER IN 2047  "
+  },
+  "143": {
+    "addr": "265A0000",
+    "name": "JAZZ CLUB       "
+  },
+  "144": {
+    "addr": "26600000",
+    "name": "GITARRE SPIELEN "
+  },
+  "145": {
+    "addr": "26660000",
+    "name": "SLOW DANCE      "
+  },
+  "146": {
+    "addr": "266C0000",
+    "name": "OVERTONE ORGAN  "
+  },
+  "147": {
+    "addr": "26720000",
+    "name": "NEW AGED BLUES  "
+  },
+  "148": {
+    "addr": "26780000",
+    "name": "SPACE ECHO      "
+  },
+  "149": {
+    "addr": "267E0000",
+    "name": "CLEAR DRIVE     "
+  },
+  "150": {
+    "addr": "27040000",
+    "name": "GOOD FEELING    "
+  },
+  "151": {
+    "addr": "270A0000",
+    "name": "SURF COWBOY     "
+  },
+  "152": {
+    "addr": "27100000",
+    "name": "AMERICANA       "
+  },
+  "153": {
+    "addr": "27160000",
+    "name": "TREBLE BOOST    "
+  },
+  "154": {
+    "addr": "271C0000",
+    "name": "DIGITAL OCEAN   "
+  },
+  "155": {
+    "addr": "27220000",
+    "name": "FUNK DRIVE      "
+  },
+  "156": {
+    "addr": "27280000",
+    "name": "SUPER CLEAN/DS  "
+  },
+  "157": {
+    "addr": "272E0000",
+    "name": "ANCIENT DREAM   "
+  },
+  "158": {
+    "addr": "27340000",
+    "name": "OCTAVE FUNK     "
+  },
+  "159": {
+    "addr": "273A0000",
+    "name": "GRAVITY GAINS   "
+  },
+  "160": {
+    "addr": "27400000",
+    "name": "AMBIENT LEAD    "
+  },
+  "161": {
+    "addr": "27460000",
+    "name": "DJENT METAL     "
+  },
+  "162": {
+    "addr": "274C0000",
+    "name": "SKYBLUE PINK    "
+  },
+  "163": {
+    "addr": "27520000",
+    "name": "FUZZY DIST      "
+  },
+  "164": {
+    "addr": "27580000",
+    "name": "DIMI GILMORIX   "
+  },
+  "165": {
+    "addr": "275E0000",
+    "name": "A LIGHTER TOUCH "
+  },
+  "166": {
+    "addr": "27640000",
+    "name": "HARMONIC DIST   "
+  },
+  "167": {
+    "addr": "276A0000",
+    "name": "PROUD DAD       "
+  },
+  "168": {
+    "addr": "27700000",
+    "name": "DRY CRUNCH      "
+  },
+  "169": {
+    "addr": "27760000",
+    "name": "OCTAVE CRUNCH   "
+  },
+  "170": {
+    "addr": "277C0000",
+    "name": "FUSION SWELLS   "
+  },
+  "171": {
+    "addr": "28020000",
+    "name": "LO-FI CLEAN     "
+  },
+  "172": {
+    "addr": "28080000",
+    "name": "SLAP GUITAR     "
+  },
+  "173": {
+    "addr": "280E0000",
+    "name": "1993            "
+  },
+  "174": {
+    "addr": "28140000",
+    "name": "OCTAVE ORGAN    "
+  },
+  "175": {
+    "addr": "281A0000",
+    "name": "BIG DRIVE       "
+  },
+  "176": {
+    "addr": "28200000",
+    "name": "BLUE LAKE       "
+  },
+  "177": {
+    "addr": "28260000",
+    "name": "FAIRY OF FOREST "
+  },
+  "178": {
+    "addr": "282C0000",
+    "name": "HARMONIC DRIVE  "
+  },
+  "179": {
+    "addr": "28320000",
+    "name": "PROG LEAD TONE  "
+  },
+  "180": {
+    "addr": "28380000",
+    "name": "CRYSTAL CLEAN   "
+  },
+  "181": {
+    "addr": "283E0000",
+    "name": "CLEAN BOOSTER   "
+  },
+  "182": {
+    "addr": "28440000",
+    "name": "BUBBLE DELAY    "
+  },
+  "183": {
+    "addr": "284A0000",
+    "name": "HOT COUNTRY     "
+  },
+  "184": {
+    "addr": "28500000",
+    "name": "EXPENSIVE TASTE "
+  },
+  "185": {
+    "addr": "28560000",
+    "name": "SWAMP CHORUS    "
+  },
+  "186": {
+    "addr": "285C0000",
+    "name": "EVERY 00'S MOVIE"
+  },
+  "187": {
+    "addr": "28620000",
+    "name": "STUDIO BASS     "
+  },
+  "188": {
+    "addr": "28680000",
+    "name": "ROCK BASS CRUNCH"
+  },
+  "189": {
+    "addr": "286E0000",
+    "name": "CLEAN ROCK BASS "
+  },
+  "190": {
+    "addr": "28740000",
+    "name": "T WAH BASS      "
+  },
+  "191": {
+    "addr": "287A0000",
+    "name": "DIST ROCK BASS  "
+  },
+  "192": {
+    "addr": "29000000",
+    "name": "MONO BASS CLOUD "
+  },
+  "193": {
+    "addr": "29060000",
+    "name": "SYNTHY OCT BASS "
+  },
+  "194": {
+    "addr": "290C0000",
+    "name": "FUZZ BASS       "
+  },
+  "195": {
+    "addr": "29120000",
+    "name": "LOOPER CLEAN    "
+  },
+  "196": {
+    "addr": "29180000",
+    "name": "LOOPER CRUNCH   "
+  },
+  "197": {
+    "addr": "291E0000",
+    "name": "LOOPER DRIVE    "
+  }
+}

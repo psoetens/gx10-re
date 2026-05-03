@@ -1,0 +1,257 @@
+{
+  "page": 0,
+  "idx": 16,
+  "name": "PH",
+  "color": [
+    75,
+    200,
+    165
+  ],
+  "hex_x": 1153,
+  "n_dt1": 8,
+  "triplet_at_10001100": "370000",
+  "has_type": true,
+  "has_sp_type": false,
+  "type_address": "10001103",
+  "type_max": 2,
+  "type_payloads": [
+    "08000000",
+    "08000001",
+    "08000002",
+    "08000002"
+  ],
+  "sp_type_address": null,
+  "sp_type_max": -1,
+  "sp_type_payloads": [],
+  "knobs": [
+    {
+      "knob_idx": 0,
+      "knob_x": 307,
+      "knob_y": 590,
+      "address": "10001107",
+      "min": 0,
+      "max": 14,
+      "n_dt1_down": 150,
+      "n_dt1_up": 94,
+      "first_payload_down": "00090006",
+      "name_manual": "STAGE",
+      "min_raw": 32768,
+      "max_raw": 32886,
+      "min_display": 0,
+      "max_display": 118,
+      "n_events_total": 208,
+      "name_manual_v2": "STAGE",
+      "address_legacy": "10000F02"
+    },
+    {
+      "knob_idx": 1,
+      "knob_x": 429,
+      "knob_y": 590,
+      "address": "1000110B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 118,
+      "n_dt1_up": 90,
+      "first_payload_down": "08000705",
+      "name_manual": "RATE",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 132,
+      "name_manual_v2": "RATE",
+      "address_legacy": "10001107"
+    },
+    {
+      "knob_idx": 2,
+      "knob_x": 548,
+      "knob_y": 590,
+      "address": "1000110F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 32,
+      "first_payload_down": "08000603",
+      "name_manual": "DEPTH",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 172,
+      "name_manual_v2": "DEPTH",
+      "address_legacy": "1000110B"
+    },
+    {
+      "knob_idx": 3,
+      "knob_x": 668,
+      "knob_y": 590,
+      "address": "10001113",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 72,
+      "first_payload_down": "08000603",
+      "name_manual": "RESONANCE",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "RESONANCE",
+      "address_legacy": "1000110F"
+    },
+    {
+      "knob_idx": 4,
+      "knob_x": 788,
+      "knob_y": 590,
+      "address": "10001117",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "MANUAL",
+      "min_raw": 32768,
+      "max_raw": 32887,
+      "min_display": 0,
+      "max_display": 119,
+      "n_events_total": 238,
+      "name_manual_v2": "MANUAL",
+      "address_legacy": "10001113"
+    },
+    {
+      "knob_idx": 5,
+      "knob_x": 908,
+      "knob_y": 590,
+      "address": "1000111B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 119,
+      "n_dt1_up": 119,
+      "first_payload_down": "08000706",
+      "name_manual": "STEP RATE",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 102,
+      "name_manual_v2": "STEP RATE",
+      "address_legacy": "10001117"
+    },
+    {
+      "knob_idx": 6,
+      "knob_x": 1029,
+      "knob_y": 590,
+      "address": "1000111F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 2,
+      "first_payload_down": "08000603",
+      "name_manual": "EFFECT LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 200,
+      "name_manual_v2": "EFFECT LEVEL",
+      "address_legacy": "1000111B"
+    },
+    {
+      "knob_idx": 7,
+      "knob_x": 1149,
+      "knob_y": 590,
+      "address": "10001123",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 100,
+      "first_payload_down": "08000603",
+      "name_manual": "DIRECT MIX",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 200,
+      "name_manual_v2": "DIRECT MIX",
+      "address_legacy": "1000111F"
+    }
+  ],
+  "per_type_layouts": [
+    {
+      "type_value": 0,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "type_value": 1,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "type_value": 2,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "master_knob_positions": [
+    [
+      307,
+      590
+    ],
+    [
+      429,
+      590
+    ],
+    [
+      548,
+      590
+    ],
+    [
+      668,
+      590
+    ],
+    [
+      788,
+      590
+    ],
+    [
+      908,
+      590
+    ],
+    [
+      1029,
+      590
+    ],
+    [
+      1149,
+      590
+    ]
+  ],
+  "fx_type_byte": 55,
+  "fx_type_official": "PHASER"
+}

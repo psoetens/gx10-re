@@ -1,0 +1,332 @@
+{
+  "page": 1,
+  "idx": 5,
+  "name": "DELAY_ANALOG",
+  "color": [
+    200,
+    200,
+    200
+  ],
+  "hex_x": 535,
+  "n_dt1": 8,
+  "triplet_at_10001100": "0F0000",
+  "has_type": true,
+  "has_sp_type": false,
+  "type_address": "10001103",
+  "type_max": 1,
+  "type_payloads": [
+    "08000000",
+    "08000001",
+    "08000001"
+  ],
+  "sp_type_address": null,
+  "sp_type_max": -1,
+  "sp_type_payloads": [],
+  "knobs": [
+    {
+      "knob_idx": 0,
+      "knob_x": 309,
+      "knob_y": 590,
+      "address": "10001107",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 202,
+      "n_dt1_up": 202,
+      "first_payload_down": "08020509",
+      "name_manual": "TIME",
+      "min_raw": 33167,
+      "max_raw": 33369,
+      "min_display": 399,
+      "max_display": 601,
+      "n_events_total": 404,
+      "name_manual_v2": "TIME"
+    },
+    {
+      "knob_idx": 1,
+      "knob_x": 428,
+      "knob_y": 590,
+      "address": "1000110B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 72,
+      "first_payload_down": "08000603",
+      "name_manual": "FEEDBACK",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 172,
+      "name_manual_v2": "FEEDBACK"
+    },
+    {
+      "knob_idx": 2,
+      "knob_x": 548,
+      "knob_y": 590,
+      "address": "1000110F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 120,
+      "n_dt1_up": 72,
+      "first_payload_down": "08000707",
+      "name_manual": "EFFECT LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32888,
+      "min_display": 0,
+      "max_display": 120,
+      "n_events_total": 192,
+      "name_manual_v2": "EFFECT LEVEL"
+    },
+    {
+      "knob_idx": 3,
+      "knob_x": 668,
+      "knob_y": 590,
+      "address": "10001113",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 2,
+      "first_payload_down": "08000603",
+      "name_manual": "DIRECT LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 102,
+      "name_manual_v2": "DIRECT LEVEL"
+    },
+    {
+      "knob_idx": 4,
+      "knob_x": 788,
+      "knob_y": 590,
+      "address": "10001117",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 29,
+      "n_dt1_up": 2,
+      "first_payload_down": "0800010C",
+      "name_manual": "HIGH CUT",
+      "min_raw": 32768,
+      "max_raw": 32797,
+      "min_display": 0,
+      "max_display": 29,
+      "n_events_total": 31,
+      "name_manual_v2": "HIGH CUT"
+    },
+    {
+      "knob_idx": 5,
+      "knob_x": 907,
+      "knob_y": 590,
+      "address": "1000111B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "MOD RATE",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "MOD RATE"
+    },
+    {
+      "knob_idx": 6,
+      "knob_x": 1029,
+      "knob_y": 590,
+      "address": "1000111F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 100,
+      "first_payload_down": "08000603",
+      "name_manual": "MOD DEPTH",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 200,
+      "name_manual_v2": "MOD DEPTH"
+    },
+    {
+      "knob_idx": 7,
+      "knob_x": 1148,
+      "knob_y": 590,
+      "address": "10001123",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "DUCK SENS",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "DUCK SENS"
+    },
+    {
+      "knob_idx": 8,
+      "knob_x": 1268,
+      "knob_y": 590,
+      "address": "10001127",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 100,
+      "first_payload_down": "08000603",
+      "name_manual": "DUCK PRE",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 200,
+      "name_manual_v2": "DUCK PRE"
+    },
+    {
+      "knob_idx": 9,
+      "knob_x": 1388,
+      "knob_y": 590,
+      "address": "1000112B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 100,
+      "first_payload_down": "08000603",
+      "name_manual": "DUCK POST",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 200,
+      "name_manual_v2": "DUCK POST"
+    },
+    {
+      "knob_idx": 10,
+      "knob_x": 1510,
+      "knob_y": 590,
+      "address": "1000112F",
+      "min": 0,
+      "max": 1,
+      "n_dt1_down": 1,
+      "n_dt1_up": 2,
+      "first_payload_down": "08000000",
+      "name_manual": "CARRYOVER",
+      "min_raw": 32768,
+      "max_raw": 32769,
+      "min_display": 0,
+      "max_display": 1,
+      "n_events_total": 3,
+      "name_manual_v2": "CARRYOVER"
+    },
+    {
+      "knob_idx": 11,
+      "knob_x": 1629,
+      "knob_y": 590,
+      "address": "10001133",
+      "min": 0,
+      "max": 14,
+      "n_dt1_down": 150,
+      "n_dt1_up": 120,
+      "first_payload_down": "00090C04",
+      "name_manual": "BPM",
+      "min_raw": 480,
+      "max_raw": 2500,
+      "min_display": -32288,
+      "max_display": -30268,
+      "n_events_total": 270,
+      "name_manual_v2": "BPM",
+      "address_legacy": "10000F02"
+    }
+  ],
+  "per_type_layouts": [
+    {
+      "type_value": 0,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "type_value": 1,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "master_knob_positions": [
+    [
+      309,
+      590
+    ],
+    [
+      428,
+      590
+    ],
+    [
+      548,
+      590
+    ],
+    [
+      668,
+      590
+    ],
+    [
+      788,
+      590
+    ],
+    [
+      907,
+      590
+    ],
+    [
+      1029,
+      590
+    ],
+    [
+      1148,
+      590
+    ],
+    [
+      1268,
+      590
+    ],
+    [
+      1388,
+      590
+    ],
+    [
+      1510,
+      590
+    ],
+    [
+      1629,
+      590
+    ]
+  ],
+  "fx_type_byte": 15,
+  "fx_type_official": "ANALOG DELAY"
+}

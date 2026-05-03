@@ -1,0 +1,13 @@
+{"event": "open", "t": 0.032101, "label": "(no label)"}
+{"event": "opened", "port_index": 0, "port_name": "GX-10", "t": 0.03291, "label": "(no label)"}
+{"event": "started", "t": 0.033789, "label": "(no label)"}
+{"event": "label", "label": "--- start script: knob ---", "t": 1.776658}
+{"event": "label", "label": "== SCRIPT: knob drag (effect level) ==", "t": 2.816987}
+{"event": "label", "label": "focus WAH slot by clicking its hex block", "t": 2.817597}
+{"dir": "dev->host", "kind": "sysex", "len": 23, "hex": "F04110000000000B1210000154000003000301000014F7", "t": 2.863517, "label": "focus WAH slot by clicking its hex block"}
+{"event": "label", "label": "knob drag down 150", "t": 3.858032}
+{"event": "label", "label": "knob drag up 150", "t": 6.903186}
+{"event": "label", "label": "knob drag down 60", "t": 9.94488}
+{"event": "label", "label": "knob drag up 60", "t": 13.038279}
+{"event": "label", "label": "--- end script: knob ---", "t": 16.033206}
+{"event": "label", "label": "DONE", "t": 16.558166}

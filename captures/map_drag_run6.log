@@ -1,0 +1,312 @@
+scrolled: handle 230-792 -> 787-1354
+scrolled: handle 787-1354 -> 792-1359
+scrolled: handle 792-1359 -> 1352-1919
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+already on page 2 (handle 1352-1919)
+
+=== page 0 idx  0 COMP ===
+  triplet: 080000
+
+=== page 0 idx  1 X-COMP ===
+  triplet: 090000
+
+=== page 0 idx  2 BOOST ===
+  triplet: 240000
+
+=== page 0 idx  3 OD ===
+  triplet: 250000
+
+=== page 0 idx  4 X-OD ===
+  triplet: 2B0000
+
+=== page 0 idx  5 DIST ===
+  triplet: 270000
+
+=== page 0 idx  6 X-DIST ===
+  triplet: 2D0000
+
+=== page 0 idx  7 METAL ===
+  triplet: 2E0000
+
+=== page 0 idx  8 FUZZ ===
+  triplet: 290000
+
+=== page 0 idx  9 AMP ===
+  triplet: 020000
+
+=== page 0 idx 10 PEQ ===
+  triplet: 140000
+
+=== page 0 idx 11 GEQ ===
+  triplet: 150000
+
+=== page 0 idx 12 CHO ===
+  triplet: 040000
+
+=== page 0 idx 13 CHO_PRIME ===
+  triplet: 060000
+
+=== page 0 idx 14 FL ===
+  triplet: 160000
+
+=== page 0 idx 15 FL_PRIME ===
+  triplet: 180000
+
+=== page 0 idx 16 PH ===
+  triplet: 370000
+
+=== page 0 idx 17 PH_SCRIPT ===
+  triplet: 3B0000
+
+=== page 0 idx 18 PH_PRIME ===
+  triplet: 390000
+
+=== page 0 idx 19 CLASS_VIBE ===
+  triplet: 070000
+
+=== page 0 idx 20 ROTARY ===
+  triplet: 430000
+
+=== page 0 idx 21 VIB ===
+  triplet: 4B0000
+
+=== page 0 idx 22 VIB_PRIME ===
+  triplet: 4C0000
+
+=== page 0 idx 23 TREM ===
+  triplet: 4A0000
+
+=== page 0 idx 24 PAN ===
+  triplet: 310000
+
+=== page 0 idx 25 RING_MOD ===
+  triplet: 420000
+
+=== page 0 idx 26 SLICER ===
+  triplet: 4E0000
+
+=== page 0 idx 27 HMN ===
+  triplet: 4F0000
+
+=== page 0 idx 28 PS ===
+  triplet: 3C0000
+
+=== page 0 idx 29 HARM ===
+  triplet: 1A0000
+
+=== page 1 idx  0 OVER_TONE ===
+  triplet: 300000
+
+=== page 1 idx  1 OCT ===
+  triplet: 210000
+
+=== page 1 idx  2 OCT_POLY ===
+  triplet: 220000
+
+=== page 1 idx  3 DELAY ===
+  triplet: 0D0000
+
+=== page 1 idx  4 DELAY_PLUS ===
+  triplet: 0E0000
+
+=== page 1 idx  5 DELAY_ANALOG ===
+  triplet: 0F0000
+
+=== page 1 idx  6 SPACE_ECHO ===
+  triplet: 100000
+
+=== page 1 idx  7 DELAY_SHIMMER ===
+  triplet: 110000
+
+=== page 1 idx  8 TERA_ECHO ===
+  triplet: 410000
+
+=== page 1 idx  9 DELAY_TWIST ===
+  triplet: 120000
+
+=== page 1 idx 10 DELAY_WARP ===
+  triplet: 130000
+
+=== page 1 idx 11 REV ===
+  triplet: 3E0000
+
+=== page 1 idx 12 REV_PLUS ===
+  triplet: 3F0000
+
+=== page 1 idx 13 REV_SHIMMER ===
+  triplet: 400000
+
+=== page 1 idx 14 AC_SIM ===
+  triplet: 000000
+
+=== page 1 idx 15 AC_RESO ===
+  triplet: 010000
+
+=== page 1 idx 16 FB ===
+  triplet: 500000
+
+=== page 1 idx 17 SITAR_SIM ===
+  triplet: 510000
+
+=== page 1 idx 18 SG ===
+  triplet: 460000
+
+=== page 1 idx 19 DEFRET ===
+  triplet: 0B0000
+
+=== page 1 idx 20 T_WAH ===
+  triplet: 480000
+
+=== page 1 idx 21 A_WAH ===
+  triplet: 520000
+
+=== page 1 idx 22 S_BEND ===
+  triplet: 440000
+
+=== page 1 idx 23 WAH ===
+  triplet: 350000
+
+=== page 1 idx 24 PB ===
+  triplet: 330000
+
+=== page 1 idx 25 FOOT_VOL ===
+  triplet: 320000
+
+=== page 1 idx 26 NS ===
+  triplet: 200000
+
+=== page 1 idx 27 DIV_MIX ===
+  triplet: 1D0000
+
+=== page 1 idx 28 SEND_RETURN ===
+  triplet: 4D0000
+
+=== page 1 idx 29 LOOP ===
+  triplet: 1C0000
+
+=== page 2 idx  0 X_COMP_BASS ===
+  triplet: 0A0000
+
+=== page 2 idx  1 OD_BASS ===
+  retry 1/3 for OD_BASS
+  retry 2/3 for OD_BASS
+  retry 3/3 for OD_BASS
+  triplet: None
+
+=== page 2 idx  2 X_OD_BASS ===
+  triplet: 2C0000
+
+=== page 2 idx  3 DIST_BASS ===
+  triplet: 280000
+
+=== page 2 idx  4 METAL_BASS ===
+  retry 1/3 for METAL_BASS
+  retry 2/3 for METAL_BASS
+  retry 3/3 for METAL_BASS
+  triplet: None
+
+=== page 2 idx  5 FUZZ_BASS ===
+  retry 1/3 for FUZZ_BASS
+  retry 2/3 for FUZZ_BASS
+  triplet: 2A0000
+
+=== page 2 idx  6 AMP_BASS ===
+  retry 1/3 for AMP_BASS
+  retry 2/3 for AMP_BASS
+  retry 3/3 for AMP_BASS
+  triplet: None
+
+=== page 2 idx  7 CHO_BASS ===
+  retry 1/3 for CHO_BASS
+  triplet: 050000
+
+=== page 2 idx  8 FL_BASS ===
+  retry 1/3 for FL_BASS
+  triplet: 170000
+
+=== page 2 idx  9 FL_PRIME_BASS ===
+  retry 1/3 for FL_PRIME_BASS
+  triplet: 190000
+
+=== page 2 idx 10 PH_BASS ===
+  retry 1/3 for PH_BASS
+  retry 2/3 for PH_BASS
+  retry 3/3 for PH_BASS
+  triplet: None
+
+=== page 2 idx 11 PH_PRIME_BASS ===
+  triplet: 3A0000
+
+=== page 2 idx 12 PS_BASS ===
+  triplet: 3D0000
+
+=== page 2 idx 13 HARM_BASS ===
+  retry 1/3 for HARM_BASS
+  retry 2/3 for HARM_BASS
+  retry 3/3 for HARM_BASS
+  triplet: None
+
+=== page 2 idx 14 OCT_BASS ===
+  retry 1/3 for OCT_BASS
+  retry 2/3 for OCT_BASS
+  retry 3/3 for OCT_BASS
+  triplet: None
+
+=== page 2 idx 15 SG_BASS ===
+  triplet: 470000
+
+=== page 2 idx 16 DEFRET_BASS ===
+  retry 1/3 for DEFRET_BASS
+  retry 2/3 for DEFRET_BASS
+  triplet: 0C0000
+
+=== page 2 idx 17 T_WAH_BASS ===
+  triplet: 490000
+
+=== page 2 idx 18 S_BEND_BASS ===
+  triplet: 450000
+
+=== page 2 idx 19 WAH_BASS ===
+  triplet: 360000
+
+=== page 2 idx 20 PB_BASS ===
+  triplet: 340000
+
+=== DONE: 81 effects mapped ===

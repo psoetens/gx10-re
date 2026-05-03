@@ -1,0 +1,17 @@
+already on page 0 (handle 230-792)
+=== AMP (page 0, idx 9) ===
+  reset TYPE to 0...
+Traceback (most recent call last):
+  File "C:\Users\Peter\Claude\gx10-re\tools\test_type_selection.py", line 194, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Peter\Claude\gx10-re\tools\test_type_selection.py", line 173, in main
+    log(f"  step \u2192 TYPE={tv}")
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Peter\Claude\gx10-re\tools\test_type_selection.py", line 151, in log
+    print(s)
+    ~~~~~^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3568.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 7: character maps to <undefined>

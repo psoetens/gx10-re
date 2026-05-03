@@ -1,0 +1,19 @@
+already on page 0 (handle 230-792)
+
+=== page 0 idx 12 CHO ===
+  TYPE present: True, SP TYPE present: False
+  TYPE: addr=10001103, max=3, payloads=5
+  captured all-down + all-up sweeps and min/max screenshots
+  classified 9 knobs
+    k0: addr=1000110B range=0-15 down=50 up=118
+    k1: addr=1000110F range=0-15 down=40 up=100
+    k2: addr=10001113 range=0-15 down=100 up=100
+    k3: addr=1000111F range=0-15 down=8 up=80
+    k4: addr=10001117 range=0-15 down=3 up=29
+    k5: addr=1000111B range=0-15 down=25 up=29
+    k6: addr=10001107 range=0-15 down=100 up=100
+    k7: addr=10000F02 range=0-14 down=80 up=130
+    k8: addr=None range=None-None down=0 up=0
+    TYPE catalog: 4 entries @ 10001103
+
+=== DONE: 1 effects explored ===

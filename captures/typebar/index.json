@@ -1,0 +1,272 @@
+[
+  {
+    "idx": 3,
+    "name": "OD",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag03_OD.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag03_OD.png",
+    "drag_src": [
+      418,
+      156
+    ]
+  },
+  {
+    "idx": 4,
+    "name": "X-OD",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag04_X-OD.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag04_X-OD.png",
+    "drag_src": [
+      472,
+      156
+    ]
+  },
+  {
+    "idx": 5,
+    "name": "DIST",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag05_DIST.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag05_DIST.png",
+    "drag_src": [
+      533,
+      156
+    ]
+  },
+  {
+    "idx": 6,
+    "name": "X-DIST",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag06_X-DIST.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag06_X-DIST.png",
+    "drag_src": [
+      590,
+      156
+    ]
+  },
+  {
+    "idx": 7,
+    "name": "METAL",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag07_METAL.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag07_METAL.png",
+    "drag_src": [
+      645,
+      156
+    ]
+  },
+  {
+    "idx": 8,
+    "name": "FUZZ",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag08_FUZZ.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag08_FUZZ.png",
+    "drag_src": [
+      703,
+      156
+    ]
+  },
+  {
+    "idx": 9,
+    "name": "AMP",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag09_AMP.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag09_AMP.png",
+    "drag_src": [
+      759,
+      156
+    ]
+  },
+  {
+    "idx": 10,
+    "name": "PEQ",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag10_PEQ.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag10_PEQ.png",
+    "drag_src": [
+      816,
+      156
+    ]
+  },
+  {
+    "idx": 11,
+    "name": "GEQ",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag11_GEQ.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag11_GEQ.png",
+    "drag_src": [
+      872,
+      156
+    ]
+  },
+  {
+    "idx": 12,
+    "name": "CHO",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag12_CHO.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag12_CHO.png",
+    "drag_src": [
+      928,
+      156
+    ]
+  },
+  {
+    "idx": 13,
+    "name": "CHO_PRIME",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag13_CHO_PRIME.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag13_CHO_PRIME.png",
+    "drag_src": [
+      982,
+      156
+    ]
+  },
+  {
+    "idx": 14,
+    "name": "FL",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag14_FL.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag14_FL.png",
+    "drag_src": [
+      1041,
+      156
+    ]
+  },
+  {
+    "idx": 15,
+    "name": "FL_PRIME",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag15_FL_PRIME.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag15_FL_PRIME.png",
+    "drag_src": [
+      1097,
+      156
+    ]
+  },
+  {
+    "idx": 16,
+    "name": "PH",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag16_PH.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag16_PH.png",
+    "drag_src": [
+      1156,
+      156
+    ]
+  },
+  {
+    "idx": 17,
+    "name": "PH_SCRIPT",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag17_PH_SCRIPT.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag17_PH_SCRIPT.png",
+    "drag_src": [
+      1208,
+      156
+    ]
+  },
+  {
+    "idx": 18,
+    "name": "PH_PRIME",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag18_PH_PRIME.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag18_PH_PRIME.png",
+    "drag_src": [
+      1265,
+      156
+    ]
+  },
+  {
+    "idx": 19,
+    "name": "CLASS_VIBE",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag19_CLASS_VIBE.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag19_CLASS_VIBE.png",
+    "drag_src": [
+      1322,
+      156
+    ]
+  },
+  {
+    "idx": 20,
+    "name": "ROTARY",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag20_ROTARY.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag20_ROTARY.png",
+    "drag_src": [
+      1378,
+      156
+    ]
+  },
+  {
+    "idx": 21,
+    "name": "VIB",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag21_VIB.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag21_VIB.png",
+    "drag_src": [
+      1432,
+      156
+    ]
+  },
+  {
+    "idx": 22,
+    "name": "VIB_PRIME",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag22_VIB_PRIME.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag22_VIB_PRIME.png",
+    "drag_src": [
+      1490,
+      156
+    ]
+  },
+  {
+    "idx": 23,
+    "name": "TREM",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag23_TREM.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag23_TREM.png",
+    "drag_src": [
+      1546,
+      156
+    ]
+  },
+  {
+    "idx": 24,
+    "name": "PAN",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag24_PAN.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag24_PAN.png",
+    "drag_src": [
+      1602,
+      156
+    ]
+  },
+  {
+    "idx": 25,
+    "name": "RING_MOD",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag25_RING_MOD.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag25_RING_MOD.png",
+    "drag_src": [
+      1658,
+      156
+    ]
+  },
+  {
+    "idx": 26,
+    "name": "SLICER",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag26_SLICER.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag26_SLICER.png",
+    "drag_src": [
+      1716,
+      156
+    ]
+  },
+  {
+    "idx": 27,
+    "name": "HMN",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag27_HMN.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag27_HMN.png",
+    "drag_src": [
+      1772,
+      156
+    ]
+  },
+  {
+    "idx": 28,
+    "name": "PS",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag28_PS.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag28_PS.png",
+    "drag_src": [
+      1828,
+      156
+    ]
+  },
+  {
+    "idx": 29,
+    "name": "HARM",
+    "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag29_HARM.pcap",
+    "screenshot": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\typebar\\drag29_HARM.png",
+    "drag_src": [
+      1884,
+      156
+    ]
+  }
+]

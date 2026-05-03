@@ -1,0 +1,6 @@
+{"event": "open", "t": 0.047068, "label": "(no label)"}
+{"event": "opened", "port_index": 0, "port_name": "GX-10", "t": 0.047301, "label": "(no label)"}
+{"event": "started", "t": 0.047903, "label": "(no label)"}
+{"event": "label", "label": "opened in='GX-10' out='GX-10'", "t": 0.047998}
+{"event": "label", "label": "SEND DT1 7F000001=01 editor-attached: F04110000000000B127F000001017FF7", "t": 0.586499}
+{"dir": "dev->host", "kind": "sysex", "len": 16, "hex": "F04110000000000B127F000001017FF7", "t": 0.591219, "label": "SEND DT1 7F000001=01 editor-attached: F04110000000000B127F000001017FF7"}

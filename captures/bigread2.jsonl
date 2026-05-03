@@ -1,0 +1,2 @@
+{"event": "opened", "source": "pcap", "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\usbpcap\\bigread2.pcap", "t": 0.0, "label": "(no label)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1110001000000100005FF7", "t": 1.316206, "frame": 27, "label": "(usbpcap)"}

@@ -1,0 +1,37 @@
+{"event": "open", "t": 0.015568, "label": "(no label)"}
+{"event": "opened", "port_index": 0, "port_name": "GX-10", "t": 0.015999, "label": "(no label)"}
+{"event": "started", "t": 0.016809, "label": "(no label)"}
+{"event": "label", "label": "--- start script: wah-toggle ---", "t": 2.220929}
+{"event": "label", "label": "== SCRIPT: WAH on/off toggle ==", "t": 3.251854}
+{"event": "label", "label": "focus WAH slot", "t": 3.252471}
+{"dir": "dev->host", "kind": "sysex", "len": 23, "hex": "F04110000000000B1210000154000003000301000014F7", "t": 4.282825, "label": "focus WAH slot"}
+{"event": "label", "label": "toggle WAH on/off (#1)", "t": 4.291907}
+{"event": "label", "label": "toggle WAH on/off (#2)", "t": 5.322653}
+{"dir": "dev->host", "kind": "sysex", "len": 23, "hex": "F04110000000000B1210000154000003000201000015F7", "t": 5.373671, "label": "toggle WAH on/off (#2)"}
+{"dir": "dev->host", "kind": "sysex", "len": 23, "hex": "F04110000000000B1210000154000003000301000014F7", "t": 6.382883, "label": "toggle WAH on/off (#2)"}
+{"event": "label", "label": "toggle WAH on/off (#3)", "t": 6.408101}
+{"event": "label", "label": "toggle WAH on/off (#4)", "t": 7.441568}
+{"dir": "dev->host", "kind": "sysex", "len": 23, "hex": "F04110000000000B1210000154000003000201000015F7", "t": 7.451565, "label": "toggle WAH on/off (#4)"}
+{"event": "label", "label": "--- end script: wah-toggle ---", "t": 8.522418}
+{"event": "label", "label": "--- start script: knob2 ---", "t": 9.045525}
+{"dir": "dev->host", "kind": "sysex", "len": 23, "hex": "F04110000000000B1210000154000003000301000014F7", "t": 10.012036, "label": "--- start script: knob2 ---"}
+{"event": "label", "label": "== SCRIPT: knob dragRel v2 ==", "t": 10.026569}
+{"event": "label", "label": "focus WAH slot", "t": 10.026895}
+{"event": "label", "label": "dragRel down 120", "t": 11.36736}
+{"event": "label", "label": "dragRel up 120", "t": 13.320533}
+{"event": "label", "label": "dragRel down 50", "t": 15.221684}
+{"event": "label", "label": "--- end script: knob2 ---", "t": 17.126389}
+{"event": "label", "label": "--- start script: wah-type ---", "t": 17.651645}
+{"event": "label", "label": "== SCRIPT: WAH TYPE dropdown sweep ==", "t": 18.630603}
+{"event": "label", "label": "focus WAH slot", "t": 18.630923}
+{"dir": "dev->host", "kind": "sysex", "len": 23, "hex": "F04110000000000B1210000154000003000201000015F7", "t": 18.672593, "label": "focus WAH slot"}
+{"event": "label", "label": "click WAH TYPE dropdown", "t": 19.713662}
+{"event": "label", "label": "arrow-down (1)", "t": 20.759767}
+{"event": "label", "label": "arrow-down (2)", "t": 21.328676}
+{"event": "label", "label": "arrow-down (3)", "t": 21.848028}
+{"event": "label", "label": "arrow-down (4)", "t": 22.422022}
+{"event": "label", "label": "arrow-down (5)", "t": 22.946936}
+{"event": "label", "label": "arrow-down (6)", "t": 23.523921}
+{"event": "label", "label": "press Enter to confirm", "t": 24.091676}
+{"event": "label", "label": "--- end script: wah-type ---", "t": 25.126856}
+{"event": "label", "label": "DONE", "t": 25.647397}

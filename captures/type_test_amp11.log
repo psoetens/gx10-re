@@ -1,0 +1,42 @@
+already on page 0 (handle 230-792)
+=== AMP (page 0, idx 9) ===
+  reset TYPE to 0...
+  step -> TYPE=1
+  step -> TYPE=2
+  step -> TYPE=3
+  step -> TYPE=4
+  step -> TYPE=5
+  step -> TYPE=6
+  step -> TYPE=7
+  step -> TYPE=8
+  step -> TYPE=9
+  step -> TYPE=10
+  step -> TYPE=11
+  step -> TYPE=12
+  step -> TYPE=13
+  step -> TYPE=14
+  step -> TYPE=15
+  step -> TYPE=16
+  step -> TYPE=17
+  step -> TYPE=18
+  step -> TYPE=19
+  step -> TYPE=20
+  step -> TYPE=21
+  step -> TYPE=22
+  step -> TYPE=23
+    -> hash matches TYPE=22 (wrap or clamp). max=22
+
+  TYPE max value detected: 22 (= 23 TYPE entries)
+  captured 24 DT1s during TYPE cycling
+  addr 10001103: 24 writes, first 3 payloads: ['08000000', '08000001', '08000002']
+
+  reset SP TYPE to 0...
+  step -> SP TYPE=1
+  step -> SP TYPE=2
+  step -> SP TYPE=3
+  step -> SP TYPE=4
+  step -> SP TYPE=5
+    -> hash matches SP TYPE=4. max=4
+  SP TYPE max value detected: 4 (= 5 entries)
+  captured 6 DT1s during SP TYPE cycling
+  addr 1000113B: 6 writes, first 3: ['08000000', '08000001', '08000002']

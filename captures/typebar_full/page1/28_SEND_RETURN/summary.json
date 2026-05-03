@@ -1,0 +1,146 @@
+{
+  "page": 1,
+  "idx": 28,
+  "name": "SEND_RETURN",
+  "color": [
+    75,
+    200,
+    165
+  ],
+  "hex_x": 1827,
+  "n_dt1": 6,
+  "triplet_at_10001100": "4D0000",
+  "has_type": true,
+  "has_sp_type": false,
+  "type_address": "10001103",
+  "type_max": 2,
+  "type_payloads": [
+    "08000000",
+    "08000001",
+    "08000002",
+    "08000002"
+  ],
+  "sp_type_address": null,
+  "sp_type_max": -1,
+  "sp_type_payloads": [],
+  "knobs": [
+    {
+      "knob_idx": 0,
+      "knob_x": 308,
+      "knob_y": 590,
+      "address": "10001107",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 200,
+      "n_dt1_up": 102,
+      "first_payload_down": "08000C07",
+      "name_manual": "MODE",
+      "min_raw": 32768,
+      "max_raw": 32968,
+      "min_display": 0,
+      "max_display": 200,
+      "n_events_total": 302,
+      "name_manual_v2": "MODE"
+    },
+    {
+      "knob_idx": 1,
+      "knob_x": 429,
+      "knob_y": 590,
+      "address": "1000110B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 200,
+      "n_dt1_up": 102,
+      "first_payload_down": "08000C07",
+      "name_manual": "SEND LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32968,
+      "min_display": 0,
+      "max_display": 200,
+      "n_events_total": 302,
+      "name_manual_v2": "SEND LEVEL"
+    },
+    {
+      "knob_idx": 2,
+      "knob_x": 549,
+      "knob_y": 590,
+      "address": "1000110F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 100,
+      "first_payload_down": "08000603",
+      "name_manual": "RETURN LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 200,
+      "name_manual_v2": "RETURN LEVEL"
+    },
+    {
+      "knob_idx": 3,
+      "knob_x": 668,
+      "knob_y": 590,
+      "address": "10001113",
+      "min": 0,
+      "max": 1,
+      "n_dt1_down": 1,
+      "n_dt1_up": 1,
+      "first_payload_down": "08000000",
+      "name_manual": "ADJUST",
+      "min_raw": 32768,
+      "max_raw": 32769,
+      "min_display": 0,
+      "max_display": 1,
+      "n_events_total": 2,
+      "name_manual_v2": "ADJUST"
+    }
+  ],
+  "per_type_layouts": [
+    {
+      "type_value": 0,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "type_value": 1,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "type_value": 2,
+      "knob_master_indices": [
+        0
+      ]
+    }
+  ],
+  "master_knob_positions": [
+    [
+      308,
+      590
+    ],
+    [
+      429,
+      590
+    ],
+    [
+      549,
+      590
+    ],
+    [
+      668,
+      590
+    ]
+  ],
+  "fx_type_byte": 77,
+  "fx_type_official": "SEND/RETURN"
+}

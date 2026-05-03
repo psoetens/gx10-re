@@ -1,0 +1,119 @@
+
+=== STRATEGY: pyautogui_long_hold ===
+  [OK  ]  0 COMP         expected=08 got=080000
+  [FAIL]  1 X-COMP       expected=09 got=None
+  [OK  ]  2 BOOST        expected=24 got=240000
+  [OK  ]  3 OD           expected=25 got=250000
+  [FAIL]  4 X-OD         expected=2B got=None
+  [FAIL]  5 DIST         expected=27 got=None
+  [FAIL]  6 X-DIST       expected=2D got=None
+  [OK  ]  7 METAL        expected=2E got=2E0000
+  [OK  ]  8 FUZZ         expected=29 got=290000
+  [FAIL]  9 AMP          expected=02 got=None
+  [FAIL] 10 PEQ          expected=14 got=None
+  [FAIL] 11 GEQ          expected=15 got=None
+  [FAIL] 12 CHO          expected=04 got=None
+  [FAIL] 13 CHO_PRIME    expected=06 got=None
+  [FAIL] 14 FL           expected=16 got=None
+  [FAIL] 15 FL_PRIME     expected=18 got=None
+  [FAIL] 16 PH           expected=37 got=None
+  [FAIL] 17 PH_SCRIPT    expected=3B got=None
+  [FAIL] 18 PH_PRIME     expected=39 got=None
+  [FAIL] 19 CLASS_VIBE   expected=07 got=None
+
+=== STRATEGY: pyautogui_double_click ===
+  [FAIL]  0 COMP         expected=08 got=None
+  [FAIL]  1 X-COMP       expected=09 got=None
+  [FAIL]  2 BOOST        expected=24 got=None
+  [FAIL]  3 OD           expected=25 got=None
+  [FAIL]  4 X-OD         expected=2B got=None
+  [FAIL]  5 DIST         expected=27 got=None
+  [FAIL]  6 X-DIST       expected=2D got=None
+  [FAIL]  7 METAL        expected=2E got=None
+  [FAIL]  8 FUZZ         expected=29 got=None
+  [FAIL]  9 AMP          expected=02 got=None
+  [FAIL] 10 PEQ          expected=14 got=None
+  [FAIL] 11 GEQ          expected=15 got=None
+  [FAIL] 12 CHO          expected=04 got=None
+  [FAIL] 13 CHO_PRIME    expected=06 got=None
+  [FAIL] 14 FL           expected=16 got=None
+  [FAIL] 15 FL_PRIME     expected=18 got=None
+  [FAIL] 16 PH           expected=37 got=None
+  [FAIL] 17 PH_SCRIPT    expected=3B got=None
+  [FAIL] 18 PH_PRIME     expected=39 got=None
+  [FAIL] 19 CLASS_VIBE   expected=07 got=None
+
+=== STRATEGY: pyautogui_dragto ===
+  [OK  ]  0 COMP         expected=08 got=080000
+  [FAIL]  1 X-COMP       expected=09 got=None
+  [OK  ]  2 BOOST        expected=24 got=240000
+  [OK  ]  3 OD           expected=25 got=250000
+  [OK  ]  4 X-OD         expected=2B got=2B0000
+  [FAIL]  5 DIST         expected=27 got=None
+  [FAIL]  6 X-DIST       expected=2D got=None
+  [FAIL]  7 METAL        expected=2E got=None
+  [FAIL]  8 FUZZ         expected=29 got=None
+  [FAIL]  9 AMP          expected=02 got=None
+  [FAIL] 10 PEQ          expected=14 got=0A0000
+  [FAIL] 11 GEQ          expected=15 got=None
+  [FAIL] 12 CHO          expected=04 got=None
+  [FAIL] 13 CHO_PRIME    expected=06 got=None
+  [FAIL] 14 FL           expected=16 got=None
+  [FAIL] 15 FL_PRIME     expected=18 got=None
+  [FAIL] 16 PH           expected=37 got=None
+  [FAIL] 17 PH_SCRIPT    expected=3B got=None
+  [FAIL] 18 PH_PRIME     expected=39 got=None
+  [FAIL] 19 CLASS_VIBE   expected=07 got=None
+
+=== STRATEGY: win32_long_hold ===
+  [OK  ]  0 COMP         expected=08 got=080000
+  [OK  ]  1 X-COMP       expected=09 got=090000
+  [OK  ]  2 BOOST        expected=24 got=240000
+  [OK  ]  3 OD           expected=25 got=250000
+  [OK  ]  4 X-OD         expected=2B got=2B0000
+  [OK  ]  5 DIST         expected=27 got=270000
+  [OK  ]  6 X-DIST       expected=2D got=2D0000
+  [OK  ]  7 METAL        expected=2E got=2E0000
+  [OK  ]  8 FUZZ         expected=29 got=290000
+  [OK  ]  9 AMP          expected=02 got=020000
+  [OK  ] 10 PEQ          expected=14 got=140000
+  [OK  ] 11 GEQ          expected=15 got=150000
+  [OK  ] 12 CHO          expected=04 got=040000
+  [OK  ] 13 CHO_PRIME    expected=06 got=060000
+  [OK  ] 14 FL           expected=16 got=160000
+  [OK  ] 15 FL_PRIME     expected=18 got=180000
+  [OK  ] 16 PH           expected=37 got=370000
+  [OK  ] 17 PH_SCRIPT    expected=3B got=3B0000
+  [OK  ] 18 PH_PRIME     expected=39 got=390000
+  [OK  ] 19 CLASS_VIBE   expected=07 got=070000
+
+=== STRATEGY: win32_double_click ===
+  [OK  ]  0 COMP         expected=08 got=080000
+  [OK  ]  1 X-COMP       expected=09 got=090000
+  [OK  ]  2 BOOST        expected=24 got=240000
+  [OK  ]  3 OD           expected=25 got=250000
+  [OK  ]  4 X-OD         expected=2B got=2B0000
+  [OK  ]  5 DIST         expected=27 got=270000
+  [OK  ]  6 X-DIST       expected=2D got=2D0000
+  [OK  ]  7 METAL        expected=2E got=2E0000
+  [OK  ]  8 FUZZ         expected=29 got=290000
+  [OK  ]  9 AMP          expected=02 got=020000
+  [OK  ] 10 PEQ          expected=14 got=140000
+  [OK  ] 11 GEQ          expected=15 got=150000
+  [OK  ] 12 CHO          expected=04 got=040000
+  [OK  ] 13 CHO_PRIME    expected=06 got=060000
+  [OK  ] 14 FL           expected=16 got=160000
+  [OK  ] 15 FL_PRIME     expected=18 got=180000
+  [OK  ] 16 PH           expected=37 got=370000
+  [OK  ] 17 PH_SCRIPT    expected=3B got=3B0000
+  [OK  ] 18 PH_PRIME     expected=39 got=390000
+  [OK  ] 19 CLASS_VIBE   expected=07 got=070000
+
+=== STRATEGY: win32_step_move ===
+  [OK  ]  0 COMP         expected=08 got=080000
+  [OK  ]  1 X-COMP       expected=09 got=090000
+  [OK  ]  2 BOOST        expected=24 got=240000
+  [OK  ]  3 OD           expected=25 got=250000
+  [OK  ]  4 X-OD         expected=2B got=2B0000
+  [OK  ]  5 DIST         expected=27 got=270000
+  [OK  ]  6 X-DIST       expected=2D got=2D0000

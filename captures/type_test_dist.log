@@ -1,0 +1,14 @@
+already on page 0 (handle 230-792)
+=== DIST (page 0, idx 5) ===
+  reset TYPE to 0...
+  step -> TYPE=1
+  step -> TYPE=2
+  step -> TYPE=3
+  step -> TYPE=4
+  step -> TYPE=5
+  step -> TYPE=6
+  step -> TYPE=7
+  step -> TYPE=8
+    -> hash matches TYPE=7 (wrap or clamp). max=7
+
+  TYPE max value detected: 7 (= 8 TYPE entries)

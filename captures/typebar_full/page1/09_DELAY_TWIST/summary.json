@@ -1,0 +1,187 @@
+{
+  "page": 1,
+  "idx": 9,
+  "name": "DELAY_TWIST",
+  "color": [
+    200,
+    200,
+    200
+  ],
+  "hex_x": 759,
+  "n_dt1": 8,
+  "triplet_at_10001100": "120000",
+  "has_type": true,
+  "has_sp_type": false,
+  "type_address": "10001103",
+  "type_max": 1,
+  "type_payloads": [
+    "08000000",
+    "08000001",
+    "08000001"
+  ],
+  "sp_type_address": null,
+  "sp_type_max": -1,
+  "sp_type_payloads": [],
+  "knobs": [
+    {
+      "knob_idx": 0,
+      "knob_x": 310,
+      "knob_y": 590,
+      "address": "10001107",
+      "min": 0,
+      "max": 1,
+      "n_dt1_down": 1,
+      "n_dt1_up": 1,
+      "first_payload_down": "08000000",
+      "name_manual": "MODE",
+      "min_raw": 32768,
+      "max_raw": 32769,
+      "min_display": 0,
+      "max_display": 1,
+      "n_events_total": 2,
+      "name_manual_v2": "MODE"
+    },
+    {
+      "knob_idx": 1,
+      "knob_x": 428,
+      "knob_y": 590,
+      "address": "1000110B",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "TRIGGER",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "TRIGGER"
+    },
+    {
+      "knob_idx": 2,
+      "knob_x": 548,
+      "knob_y": 590,
+      "address": "1000110F",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "LEVEL",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "LEVEL"
+    },
+    {
+      "knob_idx": 3,
+      "knob_x": 668,
+      "knob_y": 590,
+      "address": "10001113",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_payload_down": "08000603",
+      "name_manual": "RISE TIME",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "RISE TIME"
+    },
+    {
+      "knob_idx": 4,
+      "knob_x": 910,
+      "knob_y": 590,
+      "address": "10001117",
+      "min": 0,
+      "max": 1,
+      "n_dt1_down": 1,
+      "n_dt1_up": 2,
+      "first_payload_down": "08000000",
+      "name_manual": "FADE TIME *2",
+      "min_raw": 32768,
+      "max_raw": 32769,
+      "min_display": 0,
+      "max_display": 1,
+      "n_events_total": 3,
+      "name_manual_v2": "FADE TIME *2",
+      "address_legacy": "1000111B"
+    }
+  ],
+  "per_type_layouts": [
+    {
+      "type_value": 0,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "type_value": 1,
+      "knob_master_indices": [
+        0,
+        1,
+        2,
+        4,
+        5
+      ]
+    }
+  ],
+  "master_knob_positions": [
+    [
+      310,
+      590
+    ],
+    [
+      428,
+      590
+    ],
+    [
+      548,
+      590
+    ],
+    [
+      668,
+      590
+    ],
+    [
+      787,
+      590
+    ],
+    [
+      910,
+      590
+    ]
+  ],
+  "knobs_extra": [
+    {
+      "knob_x": 787,
+      "knob_y": 590,
+      "address": "10001117",
+      "min": 0,
+      "max": 15,
+      "n_dt1_down": 100,
+      "n_dt1_up": 52,
+      "first_seen_at_type": 1,
+      "name_manual": "FALL TIME *1",
+      "min_raw": 32768,
+      "max_raw": 32868,
+      "min_display": 0,
+      "max_display": 100,
+      "n_events_total": 152,
+      "name_manual_v2": "FALL TIME *1"
+    }
+  ],
+  "fx_type_byte": 18,
+  "fx_type_official": "TWIST"
+}

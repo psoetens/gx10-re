@@ -1,0 +1,111 @@
+{"ts": 1777823827.699494, "addr": "7F000001", "tag": "(NEW)", "len": 1, "hex": "01"}
+{"ts": 1777823827.700568, "addr": "7F000001", "tag": "(NEW)", "len": 1, "hex": "01"}
+{"ts": 1777823835.3172083, "addr": "7F000002", "tag": "RunningMode", "len": 1, "hex": "00"}
+{"ts": 1777823837.161944, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "02"}
+{"ts": 1777823842.2759566, "addr": "10000154", "tag": "0x10000154 (live FxItem byte?)", "len": 8, "hex": "0000030402000000"}
+{"ts": 1777823842.277691, "addr": "10001301", "tag": "(NEW)", "len": 1, "hex": "01"}
+{"ts": 1777823842.4109604, "addr": "10000154", "tag": "0x10000154 (live FxItem byte?)", "len": 8, "hex": "0000030402000000"}
+{"ts": 1777823845.0869727, "addr": "10000154", "tag": "0x10000154 (live FxItem byte?)", "len": 8, "hex": "0000030C02000000"}
+{"ts": 1777823845.088645, "addr": "10002701", "tag": "(NEW)", "len": 1, "hex": "01"}
+{"ts": 1777823845.2582333, "addr": "10000154", "tag": "0x10000154 (live FxItem byte?)", "len": 8, "hex": "0000030C02000000"}
+{"ts": 1777823847.467595, "addr": "10000154", "tag": "0x10000154 (live FxItem byte?)", "len": 8, "hex": "0000030C02000800"}
+{"ts": 1777823847.4680958, "addr": "10001507", "tag": "(NEW)", "len": 4, "hex": "08000001"}
+{"ts": 1777823855.367805, "addr": "10000154", "tag": "0x10000154 (live FxItem byte?)", "len": 8, "hex": "0000030C03000800"}
+{"ts": 1777823855.369739, "addr": "10001101", "tag": "(NEW)", "len": 1, "hex": "01"}
+{"ts": 1777823857.2272813, "addr": "10000154", "tag": "0x10000154 (live FxItem byte?)", "len": 8, "hex": "0000030C02000800"}
+{"ts": 1777823857.227593, "addr": "10001101", "tag": "(NEW)", "len": 1, "hex": "00"}
+{"ts": 1777823858.5571852, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000603"}
+{"ts": 1777823858.5665514, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000601"}
+{"ts": 1777823858.5767357, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800050D"}
+{"ts": 1777823858.6221673, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800010F"}
+{"ts": 1777823858.6245022, "addr": "10000154", "tag": "0x10000154 (live FxItem byte?)", "len": 8, "hex": "0000030C00000800"}
+{"ts": 1777823858.6272361, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000102"}
+{"ts": 1777823858.6374226, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000002"}
+{"ts": 1777823858.645522, "addr": "7F000002", "tag": "RunningMode", "len": 1, "hex": "02"}
+{"ts": 1777823858.8355246, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "06"}
+{"ts": 1777823858.9741335, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000000"}
+{"ts": 1777823859.9175878, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000001"}
+{"ts": 1777823859.9699478, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000005"}
+{"ts": 1777823859.9755259, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000006"}
+{"ts": 1777823860.0054646, "addr": "7F000002", "tag": "RunningMode", "len": 1, "hex": "00"}
+{"ts": 1777823860.0222423, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800000C"}
+{"ts": 1777823860.0263016, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800000E"}
+{"ts": 1777823860.1460004, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "02"}
+{"ts": 1777823860.3979285, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000604"}
+{"ts": 1777823860.3997052, "addr": "10000154", "tag": "0x10000154 (live FxItem byte?)", "len": 8, "hex": "0000030C02000800"}
+{"ts": 1777823861.3077254, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000603"}
+{"ts": 1777823861.3171427, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000602"}
+{"ts": 1777823861.371074, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800050C"}
+{"ts": 1777823861.3768594, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800050B"}
+{"ts": 1777823861.3879137, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800050A"}
+{"ts": 1777823861.3970811, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000509"}
+{"ts": 1777823861.4067395, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000507"}
+{"ts": 1777823861.416758, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000506"}
+{"ts": 1777823861.426683, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000505"}
+{"ts": 1777823861.4701464, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000500"}
+{"ts": 1777823861.477082, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800040E"}
+{"ts": 1777823861.4877446, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800040C"}
+{"ts": 1777823861.4973326, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800040A"}
+{"ts": 1777823861.507272, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000408"}
+{"ts": 1777823861.5169024, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000407"}
+{"ts": 1777823861.526708, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000405"}
+{"ts": 1777823861.5705035, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800030F"}
+{"ts": 1777823861.577114, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800030D"}
+{"ts": 1777823861.587861, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800030B"}
+{"ts": 1777823861.59703, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800030A"}
+{"ts": 1777823861.606386, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000308"}
+{"ts": 1777823861.6169271, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000307"}
+{"ts": 1777823861.626953, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000306"}
+{"ts": 1777823861.6705592, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000300"}
+{"ts": 1777823861.6747007, "addr": "10000154", "tag": "0x10000154 (live FxItem byte?)", "len": 8, "hex": "0000030C00000800"}
+{"ts": 1777823861.6771717, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800020F"}
+{"ts": 1777823861.687875, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800020C"}
+{"ts": 1777823861.6966963, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800020B"}
+{"ts": 1777823861.707047, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000209"}
+{"ts": 1777823861.7169578, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000208"}
+{"ts": 1777823861.7268124, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000207"}
+{"ts": 1777823861.8804507, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800000D"}
+{"ts": 1777823861.9062455, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800000C"}
+{"ts": 1777823861.9666417, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800000B"}
+{"ts": 1777823861.9880052, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800000A"}
+{"ts": 1777823861.9968612, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000009"}
+{"ts": 1777823862.0066378, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000008"}
+{"ts": 1777823862.0168345, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000007"}
+{"ts": 1777823862.0271158, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000006"}
+{"ts": 1777823862.0715642, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000002"}
+{"ts": 1777823862.0875125, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000001"}
+{"ts": 1777823862.1559253, "addr": "7F000002", "tag": "RunningMode", "len": 1, "hex": "02"}
+{"ts": 1777823862.2450483, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "06"}
+{"ts": 1777823862.3789704, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000000"}
+{"ts": 1777823863.2757008, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000001"}
+{"ts": 1777823863.3677464, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000002"}
+{"ts": 1777823863.3755686, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000003"}
+{"ts": 1777823863.4193254, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000005"}
+{"ts": 1777823863.4259396, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000006"}
+{"ts": 1777823863.4658313, "addr": "7F000002", "tag": "RunningMode", "len": 1, "hex": "00"}
+{"ts": 1777823863.4721801, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800000A"}
+{"ts": 1777823863.4767969, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "0800000C"}
+{"ts": 1777823863.5964236, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "02"}
+{"ts": 1777823863.8678682, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000603"}
+{"ts": 1777823863.8703191, "addr": "10000154", "tag": "0x10000154 (live FxItem byte?)", "len": 8, "hex": "0000030C02000800"}
+{"ts": 1777823863.8770137, "addr": "1000230F", "tag": "FxItem #10 FX Param 4 (mono cents)", "len": 4, "hex": "08000604"}
+{"ts": 1777823872.6620257, "addr": "00000004", "tag": "(NEW)", "len": 1, "hex": "03"}
+{"ts": 1777823874.3789113, "addr": "00000004", "tag": "(NEW)", "len": 1, "hex": "02"}
+{"ts": 1777823875.7697477, "addr": "00000004", "tag": "(NEW)", "len": 1, "hex": "03"}
+{"ts": 1777823877.872037, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "03"}
+{"ts": 1777823879.2024765, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "02"}
+{"ts": 1777823880.6871867, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "03"}
+{"ts": 1777823883.1185675, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "02"}
+{"ts": 1777823884.4593494, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "03"}
+{"ts": 1777823895.611754, "addr": "10001117", "tag": "(NEW)", "len": 4, "hex": "08000001"}
+{"ts": 1777823896.3751726, "addr": "10001113", "tag": "(NEW)", "len": 4, "hex": "08000603"}
+{"ts": 1777823896.8373952, "addr": "10001113", "tag": "(NEW)", "len": 4, "hex": "08000604"}
+{"ts": 1777823897.5922153, "addr": "10001103", "tag": "(NEW)", "len": 4, "hex": "08000001"}
+{"ts": 1777823898.0915651, "addr": "10001103", "tag": "(NEW)", "len": 4, "hex": "08000002"}
+{"ts": 1777823910.7317045, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "05"}
+{"ts": 1777823910.8015397, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "03"}
+{"ts": 1777823910.884188, "addr": "00200003", "tag": "(NEW)", "len": 1, "hex": "00"}
+{"ts": 1777823914.0405242, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "05"}
+{"ts": 1777823914.1085355, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "03"}
+{"ts": 1777823914.1976168, "addr": "00200003", "tag": "(NEW)", "len": 1, "hex": "00"}
+{"ts": 1777823917.850051, "addr": "7F000701", "tag": "0x7F000701 (state?)", "len": 1, "hex": "02"}

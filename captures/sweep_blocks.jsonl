@@ -1,0 +1,22 @@
+{"event": "open", "t": 0.01502, "label": "(no label)"}
+{"event": "opened", "port_index": 0, "port_name": "GX-10", "t": 0.015395, "label": "(no label)"}
+{"event": "started", "t": 0.016091, "label": "(no label)"}
+{"event": "label", "label": "--- start script: blocks ---", "t": 1.908512}
+{"event": "label", "label": "== SCRIPT: effect block sweep on current patch ==", "t": 1.908945}
+{"event": "label", "label": "click effect block WAH", "t": 2.374918}
+{"dir": "dev->host", "kind": "sysex", "len": 23, "hex": "F04110000000000B1210000154000003000201000015F7", "t": 2.386187, "label": "click effect block WAH"}
+{"event": "label", "label": "click effect block FOOT_VOL", "t": 3.256226}
+{"event": "label", "label": "click effect block OD", "t": 4.090078}
+{"event": "label", "label": "click effect block DIV", "t": 4.973793}
+{"event": "label", "label": "click effect block AMP1", "t": 5.807611}
+{"event": "label", "label": "click effect block PEQ1", "t": 6.691626}
+{"event": "label", "label": "click effect block NS1", "t": 7.52543}
+{"event": "label", "label": "click effect block MIX", "t": 8.408201}
+{"event": "label", "label": "click effect block DELAY", "t": 9.286449}
+{"event": "label", "label": "click effect block REV", "t": 10.115076}
+{"event": "label", "label": "click effect block MASTER", "t": 10.999595}
+{"event": "label", "label": "click effect block AMP2", "t": 11.837051}
+{"event": "label", "label": "click effect block PEQ2", "t": 12.661965}
+{"event": "label", "label": "click effect block NS2", "t": 13.55945}
+{"event": "label", "label": "--- end script: blocks ---", "t": 14.393705}
+{"event": "label", "label": "DONE", "t": 14.923372}

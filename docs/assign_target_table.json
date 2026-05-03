@@ -1,0 +1,2966 @@
+{
+  "0": {
+    "category": "----",
+    "target": "----"
+  },
+  "1": {
+    "category": "EFFECT(RENAMED WITH TYPE)",
+    "target": "ON/OFF"
+  },
+  "2": {
+    "category": "AC GUITAR SIM",
+    "target": "BODY"
+  },
+  "3": {
+    "category": "AC GUITAR SIM",
+    "target": "LOW"
+  },
+  "4": {
+    "category": "AC GUITAR SIM",
+    "target": "HIGH"
+  },
+  "5": {
+    "category": "AC GUITAR SIM",
+    "target": "LEVEL"
+  },
+  "6": {
+    "category": "AC RESONANCE",
+    "target": "TYPE"
+  },
+  "7": {
+    "category": "AC RESONANCE",
+    "target": "RESONANCE"
+  },
+  "8": {
+    "category": "AC RESONANCE",
+    "target": "TONE"
+  },
+  "9": {
+    "category": "AC RESONANCE",
+    "target": "LEVEL"
+  },
+  "10": {
+    "category": "SLOW GEAR",
+    "target": "SENS"
+  },
+  "11": {
+    "category": "SLOW GEAR",
+    "target": "RISE TIME"
+  },
+  "12": {
+    "category": "SLOW GEAR",
+    "target": "LEVEL"
+  },
+  "13": {
+    "category": "BASS SLOW GEAR",
+    "target": "SENS"
+  },
+  "14": {
+    "category": "BASS SLOW GEAR",
+    "target": "RISE TIME"
+  },
+  "15": {
+    "category": "BASS SLOW GEAR",
+    "target": "LEVEL"
+  },
+  "16": {
+    "category": "DEFRETTER",
+    "target": "SENS"
+  },
+  "17": {
+    "category": "DEFRETTER",
+    "target": "DEPTH"
+  },
+  "18": {
+    "category": "DEFRETTER",
+    "target": "TONE"
+  },
+  "19": {
+    "category": "DEFRETTER",
+    "target": "EFFECT LEVEL"
+  },
+  "20": {
+    "category": "DEFRETTER",
+    "target": "ATTACK"
+  },
+  "21": {
+    "category": "DEFRETTER",
+    "target": "RESONANCE"
+  },
+  "22": {
+    "category": "DEFRETTER",
+    "target": "DIRECT MIX"
+  },
+  "23": {
+    "category": "BASS DEFRETTER",
+    "target": "SENS"
+  },
+  "24": {
+    "category": "BASS DEFRETTER",
+    "target": "ATTACK"
+  },
+  "25": {
+    "category": "BASS DEFRETTER",
+    "target": "TONE"
+  },
+  "26": {
+    "category": "BASS DEFRETTER",
+    "target": "EFFECT LEVEL"
+  },
+  "27": {
+    "category": "BASS DEFRETTER",
+    "target": "DIRECT MIX"
+  },
+  "28": {
+    "category": "WAH",
+    "target": "WAH TYPE"
+  },
+  "29": {
+    "category": "WAH",
+    "target": "PEDAL POSITION"
+  },
+  "30": {
+    "category": "WAH",
+    "target": "PEDAL MIN"
+  },
+  "31": {
+    "category": "WAH",
+    "target": "PEDAL MAX"
+  },
+  "32": {
+    "category": "WAH",
+    "target": "EFFECT LEVEL"
+  },
+  "33": {
+    "category": "WAH",
+    "target": "DIRECT MIX"
+  },
+  "34": {
+    "category": "BASS WAH",
+    "target": "PEDAL POSITION"
+  },
+  "35": {
+    "category": "BASS WAH",
+    "target": "PEDAL MIN"
+  },
+  "36": {
+    "category": "BASS WAH",
+    "target": "PEDAL MAX"
+  },
+  "37": {
+    "category": "BASS WAH",
+    "target": "EFFECT LEVEL"
+  },
+  "38": {
+    "category": "BASS WAH",
+    "target": "DIRECT MIX"
+  },
+  "39": {
+    "category": "TOUCH WAH",
+    "target": "FILTER MODE"
+  },
+  "40": {
+    "category": "TOUCH WAH",
+    "target": "POLARITY"
+  },
+  "41": {
+    "category": "TOUCH WAH",
+    "target": "SENS"
+  },
+  "42": {
+    "category": "TOUCH WAH",
+    "target": "FREQUENCY"
+  },
+  "43": {
+    "category": "TOUCH WAH",
+    "target": "RESONANCE"
+  },
+  "44": {
+    "category": "TOUCH WAH",
+    "target": "DECAY"
+  },
+  "45": {
+    "category": "TOUCH WAH",
+    "target": "EFFECT LEVEL"
+  },
+  "46": {
+    "category": "TOUCH WAH",
+    "target": "DIRECT MIX"
+  },
+  "47": {
+    "category": "BASS TOUCH WAH",
+    "target": "FILTER MODE"
+  },
+  "48": {
+    "category": "BASS TOUCH WAH",
+    "target": "POLARITY"
+  },
+  "49": {
+    "category": "BASS TOUCH WAH",
+    "target": "SENS"
+  },
+  "50": {
+    "category": "BASS TOUCH WAH",
+    "target": "FREQUENCY"
+  },
+  "51": {
+    "category": "BASS TOUCH WAH",
+    "target": "RESONANCE"
+  },
+  "52": {
+    "category": "BASS TOUCH WAH",
+    "target": "DECAY"
+  },
+  "53": {
+    "category": "BASS TOUCH WAH",
+    "target": "EFFECT LEVEL"
+  },
+  "54": {
+    "category": "BASS TOUCH WAH",
+    "target": "DIRECT MIX"
+  },
+  "55": {
+    "category": "COMPRESSOR",
+    "target": "TYPE"
+  },
+  "56": {
+    "category": "COMPRESSOR",
+    "target": "SUSTAIN"
+  },
+  "57": {
+    "category": "COMPRESSOR",
+    "target": "ATTACK"
+  },
+  "58": {
+    "category": "COMPRESSOR",
+    "target": "LEVEL"
+  },
+  "59": {
+    "category": "COMPRESSOR",
+    "target": "TONE"
+  },
+  "60": {
+    "category": "COMPRESSOR",
+    "target": "DIRECT MIX"
+  },
+  "61": {
+    "category": "X COMPRESSOR",
+    "target": "ATTACK"
+  },
+  "62": {
+    "category": "X COMPRESSOR",
+    "target": "LEVEL"
+  },
+  "63": {
+    "category": "X COMPRESSOR",
+    "target": "TONE"
+  },
+  "64": {
+    "category": "X COMPRESSOR",
+    "target": "RATIO"
+  },
+  "65": {
+    "category": "X COMPRESSOR",
+    "target": "DIRECT MIX"
+  },
+  "66": {
+    "category": "X COMPRESSOR",
+    "target": "SUSTAIN"
+  },
+  "67": {
+    "category": "BASS X COMP",
+    "target": "ATTACK"
+  },
+  "68": {
+    "category": "BASS X COMP",
+    "target": "LEVEL"
+  },
+  "69": {
+    "category": "BASS X COMP",
+    "target": "TONE"
+  },
+  "70": {
+    "category": "BASS X COMP",
+    "target": "RATIO"
+  },
+  "71": {
+    "category": "BASS X COMP",
+    "target": "DIRECT MIX"
+  },
+  "72": {
+    "category": "BASS X COMP",
+    "target": "THRESHOLD"
+  },
+  "73": {
+    "category": "BOOSTER",
+    "target": "TYPE"
+  },
+  "74": {
+    "category": "BOOSTER",
+    "target": "BOOST"
+  },
+  "75": {
+    "category": "BOOSTER",
+    "target": "TONE"
+  },
+  "76": {
+    "category": "BOOSTER",
+    "target": "EFFECT LEVEL"
+  },
+  "77": {
+    "category": "BOOSTER",
+    "target": "BOTTOM"
+  },
+  "78": {
+    "category": "BOOSTER",
+    "target": "DIRECT MIX"
+  },
+  "79": {
+    "category": "BOOSTER",
+    "target": "SOLO SW"
+  },
+  "80": {
+    "category": "BOOSTER",
+    "target": "SOLO LEVEL"
+  },
+  "81": {
+    "category": "OVERDRIVE",
+    "target": "TYPE"
+  },
+  "82": {
+    "category": "OVERDRIVE",
+    "target": "DRIVE"
+  },
+  "83": {
+    "category": "OVERDRIVE",
+    "target": "TONE"
+  },
+  "84": {
+    "category": "OVERDRIVE",
+    "target": "EFFECT LEVEL"
+  },
+  "85": {
+    "category": "OVERDRIVE",
+    "target": "BOTTOM"
+  },
+  "86": {
+    "category": "OVERDRIVE",
+    "target": "DIRECT MIX"
+  },
+  "87": {
+    "category": "OVERDRIVE",
+    "target": "SOLO SW"
+  },
+  "88": {
+    "category": "OVERDRIVE",
+    "target": "SOLO LEVEL"
+  },
+  "89": {
+    "category": "BASS OVERDRIVE",
+    "target": "DRIVE"
+  },
+  "90": {
+    "category": "BASS OVERDRIVE",
+    "target": "TONE"
+  },
+  "91": {
+    "category": "BASS OVERDRIVE",
+    "target": "EFFECT LEVEL"
+  },
+  "92": {
+    "category": "BASS OVERDRIVE",
+    "target": "BOTTOM"
+  },
+  "93": {
+    "category": "BASS OVERDRIVE",
+    "target": "DIRECT MIX"
+  },
+  "94": {
+    "category": "BASS OVERDRIVE",
+    "target": "SOLO SW"
+  },
+  "95": {
+    "category": "BASS OVERDRIVE",
+    "target": "SOLO LEVEL"
+  },
+  "96": {
+    "category": "X OVERDRIVE",
+    "target": "DRIVE"
+  },
+  "97": {
+    "category": "X OVERDRIVE",
+    "target": "TONE"
+  },
+  "98": {
+    "category": "X OVERDRIVE",
+    "target": "EFFECT LEVEL"
+  },
+  "99": {
+    "category": "X OVERDRIVE",
+    "target": "BOTTOM"
+  },
+  "100": {
+    "category": "X OVERDRIVE",
+    "target": "DIRECT MIX"
+  },
+  "101": {
+    "category": "X OVERDRIVE",
+    "target": "SOLO SW"
+  },
+  "102": {
+    "category": "X OVERDRIVE",
+    "target": "SOLO LEVEL"
+  },
+  "103": {
+    "category": "X BASS OVERDRIVE",
+    "target": "DRIVE"
+  },
+  "104": {
+    "category": "X BASS OVERDRIVE",
+    "target": "TONE"
+  },
+  "105": {
+    "category": "X BASS OVERDRIVE",
+    "target": "EFFECT LEVEL"
+  },
+  "106": {
+    "category": "X BASS OVERDRIVE",
+    "target": "BOTTOM"
+  },
+  "107": {
+    "category": "X BASS OVERDRIVE",
+    "target": "DIRECT MIX"
+  },
+  "108": {
+    "category": "X BASS OVERDRIVE",
+    "target": "SOLO SW"
+  },
+  "109": {
+    "category": "X BASS OVERDRIVE",
+    "target": "SOLO LEVEL"
+  },
+  "110": {
+    "category": "X DISTORTION",
+    "target": "DRIVE"
+  },
+  "111": {
+    "category": "X DISTORTION",
+    "target": "TONE"
+  },
+  "112": {
+    "category": "X DISTORTION",
+    "target": "EFFECT LEVEL"
+  },
+  "113": {
+    "category": "X DISTORTION",
+    "target": "BOTTOM"
+  },
+  "114": {
+    "category": "X DISTORTION",
+    "target": "DIRECT MIX"
+  },
+  "115": {
+    "category": "X DISTORTION",
+    "target": "SOLO SW"
+  },
+  "116": {
+    "category": "X DISTORTION",
+    "target": "SOLO LEVEL"
+  },
+  "117": {
+    "category": "METAL",
+    "target": "DISTORTION TYPE"
+  },
+  "118": {
+    "category": "METAL",
+    "target": "DISTORTION DIST"
+  },
+  "119": {
+    "category": "METAL",
+    "target": "DISTORTION TONE"
+  },
+  "120": {
+    "category": "METAL",
+    "target": "DISTORTION EFFECT LEVEL"
+  },
+  "121": {
+    "category": "METAL",
+    "target": "DISTORTION BOTTOM"
+  },
+  "122": {
+    "category": "METAL",
+    "target": "DISTORTION DIRECT MIX"
+  },
+  "123": {
+    "category": "METAL",
+    "target": "DISTORTION SOLO SW"
+  },
+  "124": {
+    "category": "METAL",
+    "target": "DISTORTION SOLO LEVEL"
+  },
+  "125": {
+    "category": "BASS METAL DIST",
+    "target": "DIST"
+  },
+  "126": {
+    "category": "BASS METAL DIST",
+    "target": "TONE"
+  },
+  "127": {
+    "category": "BASS METAL DIST",
+    "target": "EFFECT LEVEL"
+  },
+  "128": {
+    "category": "BASS METAL DIST",
+    "target": "BOTTOM"
+  },
+  "129": {
+    "category": "BASS METAL DIST",
+    "target": "DIRECT MIX"
+  },
+  "130": {
+    "category": "BASS METAL DIST",
+    "target": "SOLO SW"
+  },
+  "131": {
+    "category": "BASS METAL DIST",
+    "target": "SOLO LEVEL"
+  },
+  "132": {
+    "category": "DISTORTION",
+    "target": "TYPE"
+  },
+  "133": {
+    "category": "DISTORTION",
+    "target": "DIST"
+  },
+  "134": {
+    "category": "DISTORTION",
+    "target": "TONE"
+  },
+  "135": {
+    "category": "DISTORTION",
+    "target": "EFFECT LEVEL"
+  },
+  "136": {
+    "category": "DISTORTION",
+    "target": "BOTTOM"
+  },
+  "137": {
+    "category": "DISTORTION",
+    "target": "DIRECT MIX"
+  },
+  "138": {
+    "category": "DISTORTION",
+    "target": "SOLO SW"
+  },
+  "139": {
+    "category": "DISTORTION",
+    "target": "SOLO LEVEL"
+  },
+  "140": {
+    "category": "BASS DISTORTION",
+    "target": "TYPE"
+  },
+  "141": {
+    "category": "BASS DISTORTION",
+    "target": "DRIVE"
+  },
+  "142": {
+    "category": "BASS DISTORTION",
+    "target": "TONE"
+  },
+  "143": {
+    "category": "BASS DISTORTION",
+    "target": "EFFECT LEVEL"
+  },
+  "144": {
+    "category": "BASS DISTORTION",
+    "target": "BOTTOM"
+  },
+  "145": {
+    "category": "BASS DISTORTION",
+    "target": "DIRECT MIX"
+  },
+  "146": {
+    "category": "BASS DISTORTION",
+    "target": "SOLO SW"
+  },
+  "147": {
+    "category": "BASS DISTORTION",
+    "target": "SOLO LEVEL"
+  },
+  "148": {
+    "category": "FUZZ",
+    "target": "TYPE"
+  },
+  "149": {
+    "category": "FUZZ",
+    "target": "FUZZ"
+  },
+  "150": {
+    "category": "FUZZ",
+    "target": "TONE"
+  },
+  "151": {
+    "category": "FUZZ",
+    "target": "EFFECT LEVEL"
+  },
+  "152": {
+    "category": "FUZZ",
+    "target": "BOTTOM"
+  },
+  "153": {
+    "category": "FUZZ",
+    "target": "DIRECT MIX"
+  },
+  "154": {
+    "category": "FUZZ",
+    "target": "SOLO SW"
+  },
+  "155": {
+    "category": "FUZZ",
+    "target": "SOLO LEVEL"
+  },
+  "156": {
+    "category": "BASS FUZZ",
+    "target": "FUZZ"
+  },
+  "157": {
+    "category": "BASS FUZZ",
+    "target": "TONE"
+  },
+  "158": {
+    "category": "BASS FUZZ",
+    "target": "EFFECT LEVEL"
+  },
+  "159": {
+    "category": "BASS FUZZ",
+    "target": "BOTTOM"
+  },
+  "160": {
+    "category": "BASS FUZZ",
+    "target": "DIRECT MIX"
+  },
+  "161": {
+    "category": "BASS FUZZ",
+    "target": "SOLO SW"
+  },
+  "162": {
+    "category": "BASS FUZZ",
+    "target": "SOLO LEVEL"
+  },
+  "163": {
+    "category": "PREAMP",
+    "target": "TYPE"
+  },
+  "164": {
+    "category": "PREAMP",
+    "target": "GAIN"
+  },
+  "165": {
+    "category": "PREAMP",
+    "target": "LEVEL"
+  },
+  "166": {
+    "category": "PREAMP",
+    "target": "BASS"
+  },
+  "167": {
+    "category": "PREAMP",
+    "target": "MIDDLE"
+  },
+  "168": {
+    "category": "PREAMP",
+    "target": "TREBLE"
+  },
+  "169": {
+    "category": "PREAMP",
+    "target": "PRESENCE"
+  },
+  "170": {
+    "category": "PREAMP",
+    "target": "GAIN SW"
+  },
+  "171": {
+    "category": "PREAMP",
+    "target": "SOLO SW"
+  },
+  "172": {
+    "category": "PREAMP",
+    "target": "SOLO LEVEL"
+  },
+  "173": {
+    "category": "PREAMP",
+    "target": "BRIGHT SW"
+  },
+  "174": {
+    "category": "PREAMP",
+    "target": "SAG"
+  },
+  "175": {
+    "category": "PREAMP",
+    "target": "RESONANCE"
+  },
+  "176": {
+    "category": "PREAMP",
+    "target": "DIRECT MIX"
+  },
+  "177": {
+    "category": "PREAMP",
+    "target": "SP TYPE"
+  },
+  "178": {
+    "category": "PREAMP",
+    "target": "MIC TYPE"
+  },
+  "179": {
+    "category": "PREAMP",
+    "target": "MIC DISTANCE"
+  },
+  "180": {
+    "category": "PREAMP",
+    "target": "MIC POSITION"
+  },
+  "181": {
+    "category": "PREAMP",
+    "target": "MIC LEVEL"
+  },
+  "182": {
+    "category": "BASS PREAMP",
+    "target": "TYPE"
+  },
+  "183": {
+    "category": "BASS PREAMP",
+    "target": "GAIN"
+  },
+  "184": {
+    "category": "BASS PREAMP",
+    "target": "LEVEL"
+  },
+  "185": {
+    "category": "BASS PREAMP",
+    "target": "BASS"
+  },
+  "186": {
+    "category": "BASS PREAMP",
+    "target": "MIDDLE"
+  },
+  "187": {
+    "category": "BASS PREAMP",
+    "target": "TREBLE"
+  },
+  "188": {
+    "category": "BASS PREAMP",
+    "target": "PRESENCE"
+  },
+  "189": {
+    "category": "BASS PREAMP",
+    "target": "GAIN SW"
+  },
+  "190": {
+    "category": "BASS PREAMP",
+    "target": "SOLO SW"
+  },
+  "191": {
+    "category": "BASS PREAMP",
+    "target": "SOLO LEVEL"
+  },
+  "192": {
+    "category": "BASS PREAMP",
+    "target": "BRIGHT SW"
+  },
+  "193": {
+    "category": "BASS PREAMP",
+    "target": "SAG"
+  },
+  "194": {
+    "category": "BASS PREAMP",
+    "target": "RESONANCE"
+  },
+  "195": {
+    "category": "BASS PREAMP",
+    "target": "DIRECT MIX"
+  },
+  "196": {
+    "category": "BASS PREAMP",
+    "target": "SP TYPE"
+  },
+  "197": {
+    "category": "BASS PREAMP",
+    "target": "MIC TYPE"
+  },
+  "198": {
+    "category": "BASS PREAMP",
+    "target": "MIC DISTANCE"
+  },
+  "199": {
+    "category": "BASS PREAMP",
+    "target": "MIC POSITION"
+  },
+  "200": {
+    "category": "BASS PREAMP",
+    "target": "MIC LEVEL"
+  },
+  "201": {
+    "category": "NOISE SUPPRESSOR",
+    "target": "THRESHOLD"
+  },
+  "202": {
+    "category": "NOISE SUPPRESSOR",
+    "target": "RELEASE"
+  },
+  "203": {
+    "category": "NOISE SUPPRESSOR",
+    "target": "DETECT"
+  },
+  "204": {
+    "category": "DIVIDER",
+    "target": "MODE"
+  },
+  "205": {
+    "category": "DIVIDER",
+    "target": "CH SELECT"
+  },
+  "206": {
+    "category": "DIVIDER",
+    "target": "MIX MODE"
+  },
+  "207": {
+    "category": "DIVIDER",
+    "target": "A:DYNAMIC"
+  },
+  "208": {
+    "category": "DIVIDER",
+    "target": "A:DYNAMIC SENS"
+  },
+  "209": {
+    "category": "DIVIDER",
+    "target": "A:FILTER"
+  },
+  "210": {
+    "category": "DIVIDER",
+    "target": "A:CUTOFF FREQ"
+  },
+  "211": {
+    "category": "DIVIDER",
+    "target": "B:DYNAMIC"
+  },
+  "212": {
+    "category": "DIVIDER",
+    "target": "B:DYNAMIC SENS"
+  },
+  "213": {
+    "category": "DIVIDER",
+    "target": "B:FILTER"
+  },
+  "214": {
+    "category": "DIVIDER",
+    "target": "B:CUTOFF FREQ"
+  },
+  "215": {
+    "category": "MIXER",
+    "target": "MODE"
+  },
+  "216": {
+    "category": "MIXER",
+    "target": "A LEVEL"
+  },
+  "217": {
+    "category": "MIXER",
+    "target": "B LEVEL"
+  },
+  "218": {
+    "category": "MIXER",
+    "target": "A/B BALANCE"
+  },
+  "219": {
+    "category": "MIXER",
+    "target": "SPREAD"
+  },
+  "220": {
+    "category": "PARAMETRIC EQ",
+    "target": "LOW GAIN"
+  },
+  "221": {
+    "category": "PARAMETRIC EQ",
+    "target": "HIGH GAIN"
+  },
+  "222": {
+    "category": "PARAMETRIC EQ",
+    "target": "LEVEL"
+  },
+  "223": {
+    "category": "PARAMETRIC EQ",
+    "target": "LOW-MID FREQ"
+  },
+  "224": {
+    "category": "PARAMETRIC EQ",
+    "target": "LOW-MID Q"
+  },
+  "225": {
+    "category": "PARAMETRIC EQ",
+    "target": "LOW-MID GAIN"
+  },
+  "226": {
+    "category": "PARAMETRIC EQ",
+    "target": "HIGH-MID FREQ"
+  },
+  "227": {
+    "category": "PARAMETRIC EQ",
+    "target": "HIGH-MID Q"
+  },
+  "228": {
+    "category": "PARAMETRIC EQ",
+    "target": "HIGH-MID GAIN"
+  },
+  "229": {
+    "category": "PARAMETRIC EQ",
+    "target": "LOW CUT"
+  },
+  "230": {
+    "category": "PARAMETRIC EQ",
+    "target": "HIGH CUT"
+  },
+  "231": {
+    "category": "GRAPHIC EQ",
+    "target": "31.5Hz"
+  },
+  "232": {
+    "category": "GRAPHIC EQ",
+    "target": "63Hz"
+  },
+  "233": {
+    "category": "GRAPHIC EQ",
+    "target": "125Hz"
+  },
+  "234": {
+    "category": "GRAPHIC EQ",
+    "target": "250Hz"
+  },
+  "235": {
+    "category": "GRAPHIC EQ",
+    "target": "500Hz"
+  },
+  "236": {
+    "category": "GRAPHIC EQ",
+    "target": "1kHz"
+  },
+  "237": {
+    "category": "GRAPHIC EQ",
+    "target": "2kHz"
+  },
+  "238": {
+    "category": "GRAPHIC EQ",
+    "target": "4kHz"
+  },
+  "239": {
+    "category": "GRAPHIC EQ",
+    "target": "8kHz"
+  },
+  "240": {
+    "category": "GRAPHIC EQ",
+    "target": "16kHz"
+  },
+  "241": {
+    "category": "GRAPHIC EQ",
+    "target": "LEVEL"
+  },
+  "242": {
+    "category": "CHORUS",
+    "target": "TYPE"
+  },
+  "243": {
+    "category": "CHORUS",
+    "target": "DIRECT LEVEL"
+  },
+  "244": {
+    "category": "CHORUS",
+    "target": "RATE"
+  },
+  "245": {
+    "category": "CHORUS",
+    "target": "DEPTH"
+  },
+  "246": {
+    "category": "CHORUS",
+    "target": "EFFECT LEVEL"
+  },
+  "247": {
+    "category": "CHORUS",
+    "target": "LOW CUT"
+  },
+  "248": {
+    "category": "CHORUS",
+    "target": "HIGH CUT"
+  },
+  "249": {
+    "category": "CHORUS",
+    "target": "PRE-DELAY"
+  },
+  "250": {
+    "category": "CHORUS",
+    "target": "WAVEFORM"
+  },
+  "251": {
+    "category": "CHORUS",
+    "target": "1:RATE"
+  },
+  "252": {
+    "category": "CHORUS",
+    "target": "1:DEPTH"
+  },
+  "253": {
+    "category": "CHORUS",
+    "target": "1:EFFECT LEVEL"
+  },
+  "254": {
+    "category": "CHORUS",
+    "target": "1:PRE-DELAY"
+  },
+  "255": {
+    "category": "CHORUS",
+    "target": "1:WAVEFORM"
+  },
+  "256": {
+    "category": "CHORUS",
+    "target": "1:LOW CUT"
+  },
+  "257": {
+    "category": "CHORUS",
+    "target": "1:HIGH CUT"
+  },
+  "258": {
+    "category": "CHORUS",
+    "target": "2:RATE"
+  },
+  "259": {
+    "category": "CHORUS",
+    "target": "2:DEPTH"
+  },
+  "260": {
+    "category": "CHORUS",
+    "target": "2:EFFECT LEVEL"
+  },
+  "261": {
+    "category": "CHORUS",
+    "target": "2:PRE-DELAY"
+  },
+  "262": {
+    "category": "CHORUS",
+    "target": "2:WAVEFORM"
+  },
+  "263": {
+    "category": "CHORUS",
+    "target": "2:LOW CUT"
+  },
+  "264": {
+    "category": "CHORUS",
+    "target": "2:HIGH CUT"
+  },
+  "265": {
+    "category": "CHORUS",
+    "target": "OUTPUT MODE"
+  },
+  "266": {
+    "category": "BASS CHORUS",
+    "target": "TYPE"
+  },
+  "267": {
+    "category": "BASS CHORUS",
+    "target": "RATE"
+  },
+  "268": {
+    "category": "BASS CHORUS",
+    "target": "DEPTH"
+  },
+  "269": {
+    "category": "BASS CHORUS",
+    "target": "EFFECT LEVEL"
+  },
+  "270": {
+    "category": "BASS CHORUS",
+    "target": "LOW CUT"
+  },
+  "271": {
+    "category": "BASS CHORUS",
+    "target": "HIGH CUT"
+  },
+  "272": {
+    "category": "BASS CHORUS",
+    "target": "DIRECT LEVEL"
+  },
+  "273": {
+    "category": "PRIME CHORUS",
+    "target": "RATE"
+  },
+  "274": {
+    "category": "PRIME CHORUS",
+    "target": "DEPTH"
+  },
+  "275": {
+    "category": "PRIME CHORUS",
+    "target": "EFFECT LEVEL"
+  },
+  "276": {
+    "category": "PRIME CHORUS",
+    "target": "PRE-DELAY"
+  },
+  "277": {
+    "category": "PRIME CHORUS",
+    "target": "WAVEFORM"
+  },
+  "278": {
+    "category": "PRIME CHORUS",
+    "target": "LOW CUT"
+  },
+  "279": {
+    "category": "PRIME CHORUS",
+    "target": "HIGH CUT"
+  },
+  "280": {
+    "category": "PRIME CHORUS",
+    "target": "SWEETNESS"
+  },
+  "281": {
+    "category": "PRIME CHORUS",
+    "target": "BELL"
+  },
+  "282": {
+    "category": "PRIME CHORUS",
+    "target": "OUTPUT MODE"
+  },
+  "283": {
+    "category": "OVERTONE",
+    "target": "LOWER LEVEL"
+  },
+  "284": {
+    "category": "OVERTONE",
+    "target": "UPPER LEVEL"
+  },
+  "285": {
+    "category": "OVERTONE",
+    "target": "UNISON LEVEL"
+  },
+  "286": {
+    "category": "OVERTONE",
+    "target": "DIRECT LEVEL"
+  },
+  "287": {
+    "category": "OVERTONE",
+    "target": "DETUNE"
+  },
+  "288": {
+    "category": "OVERTONE",
+    "target": "OUTPUT MODE"
+  },
+  "289": {
+    "category": "OVERTONE",
+    "target": "LOW"
+  },
+  "290": {
+    "category": "OVERTONE",
+    "target": "HIGH"
+  },
+  "291": {
+    "category": "DELAY",
+    "target": "TIME"
+  },
+  "292": {
+    "category": "DELAY",
+    "target": "FEEDBACK"
+  },
+  "293": {
+    "category": "DELAY",
+    "target": "EFFECT LEVEL"
+  },
+  "294": {
+    "category": "DELAY",
+    "target": "DIRECT LEVEL"
+  },
+  "295": {
+    "category": "DELAY",
+    "target": "HIGH CUT"
+  },
+  "296": {
+    "category": "DELAY",
+    "target": "CARRYOVER"
+  },
+  "297": {
+    "category": "DELAY PLUS",
+    "target": "TYPE"
+  },
+  "298": {
+    "category": "DELAY PLUS",
+    "target": "DIRECT LEVEL"
+  },
+  "299": {
+    "category": "DELAY PLUS",
+    "target": "MOD RATE"
+  },
+  "300": {
+    "category": "DELAY PLUS",
+    "target": "MOD DEPTH"
+  },
+  "301": {
+    "category": "DELAY PLUS",
+    "target": "DUCK SENS"
+  },
+  "302": {
+    "category": "DELAY PLUS",
+    "target": "DUCK PRE"
+  },
+  "303": {
+    "category": "DELAY PLUS",
+    "target": "DUCK POST"
+  },
+  "304": {
+    "category": "DELAY PLUS",
+    "target": "CARRYOVER"
+  },
+  "305": {
+    "category": "DELAY PLUS",
+    "target": "TIME"
+  },
+  "306": {
+    "category": "DELAY PLUS",
+    "target": "FEEDBACK"
+  },
+  "307": {
+    "category": "DELAY PLUS",
+    "target": "EFFECT LEVEL"
+  },
+  "308": {
+    "category": "DELAY PLUS",
+    "target": "HIGH CUT"
+  },
+  "309": {
+    "category": "DELAY PLUS",
+    "target": "TAP TIME"
+  },
+  "310": {
+    "category": "DELAY PLUS",
+    "target": "AUTO TRIGGER"
+  },
+  "311": {
+    "category": "DELAY PLUS",
+    "target": "MODE"
+  },
+  "312": {
+    "category": "DELAY PLUS",
+    "target": "1:TYPE"
+  },
+  "313": {
+    "category": "DELAY PLUS",
+    "target": "1:TIME"
+  },
+  "314": {
+    "category": "DELAY PLUS",
+    "target": "1:FEEDBACK"
+  },
+  "315": {
+    "category": "DELAY PLUS",
+    "target": "1:EFFECT LEVEL"
+  },
+  "316": {
+    "category": "DELAY PLUS",
+    "target": "1:HIGH CUT"
+  },
+  "317": {
+    "category": "DELAY PLUS",
+    "target": "2:HIGH CUT"
+  },
+  "318": {
+    "category": "DELAY PLUS",
+    "target": "2:TYPE"
+  },
+  "319": {
+    "category": "DELAY PLUS",
+    "target": "2:TIME"
+  },
+  "320": {
+    "category": "DELAY PLUS",
+    "target": "2:FEEDBACK"
+  },
+  "321": {
+    "category": "DELAY PLUS",
+    "target": "2:EFFECT LEVEL"
+  },
+  "322": {
+    "category": "ANALOG DELAY",
+    "target": "TYPE"
+  },
+  "323": {
+    "category": "ANALOG DELAY",
+    "target": "TIME"
+  },
+  "324": {
+    "category": "ANALOG DELAY",
+    "target": "FEEDBACK"
+  },
+  "325": {
+    "category": "ANALOG DELAY",
+    "target": "EFFECT LEVEL"
+  },
+  "326": {
+    "category": "ANALOG DELAY",
+    "target": "DIRECT LEVEL"
+  },
+  "327": {
+    "category": "ANALOG DELAY",
+    "target": "HIGH CUT"
+  },
+  "328": {
+    "category": "ANALOG DELAY",
+    "target": "MOD RATE"
+  },
+  "329": {
+    "category": "ANALOG DELAY",
+    "target": "MOD DEPTH"
+  },
+  "330": {
+    "category": "ANALOG DELAY",
+    "target": "DUCK SENS"
+  },
+  "331": {
+    "category": "ANALOG DELAY",
+    "target": "DUCK PRE"
+  },
+  "332": {
+    "category": "ANALOG DELAY",
+    "target": "DUCK POST"
+  },
+  "333": {
+    "category": "ANALOG DELAY",
+    "target": "CARRYOVER"
+  },
+  "334": {
+    "category": "SPACE ECHO",
+    "target": "TIME"
+  },
+  "335": {
+    "category": "SPACE ECHO",
+    "target": "FEEDBACK"
+  },
+  "336": {
+    "category": "SPACE ECHO",
+    "target": "EFFECT LEVEL"
+  },
+  "337": {
+    "category": "SPACE ECHO",
+    "target": "DIRECT LEVEL"
+  },
+  "338": {
+    "category": "SPACE ECHO",
+    "target": "HIGH CUT"
+  },
+  "339": {
+    "category": "SPACE ECHO",
+    "target": "MOD RATE"
+  },
+  "340": {
+    "category": "SPACE ECHO",
+    "target": "MOD DEPTH"
+  },
+  "341": {
+    "category": "SPACE ECHO",
+    "target": "DUCK SENS"
+  },
+  "342": {
+    "category": "SPACE ECHO",
+    "target": "DUCK PRE"
+  },
+  "343": {
+    "category": "SPACE ECHO",
+    "target": "DUCK POST"
+  },
+  "344": {
+    "category": "SPACE ECHO",
+    "target": "HEAD"
+  },
+  "345": {
+    "category": "SPACE ECHO",
+    "target": "WOW FLUTTER"
+  },
+  "346": {
+    "category": "SPACE ECHO",
+    "target": "CARRYOVER"
+  },
+  "347": {
+    "category": "SHIMMER DELAY",
+    "target": "TIME"
+  },
+  "348": {
+    "category": "SHIMMER DELAY",
+    "target": "FEEDBACK"
+  },
+  "349": {
+    "category": "SHIMMER DELAY",
+    "target": "EFFECT LEVEL"
+  },
+  "350": {
+    "category": "SHIMMER DELAY",
+    "target": "DIRECT LEVEL"
+  },
+  "351": {
+    "category": "SHIMMER DELAY",
+    "target": "HIGH CUT"
+  },
+  "352": {
+    "category": "SHIMMER DELAY",
+    "target": "MOD RATE"
+  },
+  "353": {
+    "category": "SHIMMER DELAY",
+    "target": "MOD DEPTH"
+  },
+  "354": {
+    "category": "SHIMMER DELAY",
+    "target": "DUCK SENS"
+  },
+  "355": {
+    "category": "SHIMMER DELAY",
+    "target": "DUCK PRE"
+  },
+  "356": {
+    "category": "SHIMMER DELAY",
+    "target": "DUCK POST"
+  },
+  "357": {
+    "category": "SHIMMER DELAY",
+    "target": "PITCH"
+  },
+  "358": {
+    "category": "SHIMMER DELAY",
+    "target": "PITCH BALANCE"
+  },
+  "359": {
+    "category": "SHIMMER DELAY",
+    "target": "PITCH FEEDBACK"
+  },
+  "360": {
+    "category": "SHIMMER DELAY",
+    "target": "CARRYOVER"
+  },
+  "361": {
+    "category": "TWIST",
+    "target": "MODE"
+  },
+  "362": {
+    "category": "TWIST",
+    "target": "TRIGGER"
+  },
+  "363": {
+    "category": "TWIST",
+    "target": "LEVEL"
+  },
+  "364": {
+    "category": "TWIST",
+    "target": "RISE TIME"
+  },
+  "365": {
+    "category": "TWIST",
+    "target": "FALL TIME"
+  },
+  "366": {
+    "category": "TWIST",
+    "target": "FADE TIME"
+  },
+  "367": {
+    "category": "TWIST",
+    "target": "CARRYOVER"
+  },
+  "368": {
+    "category": "WARP",
+    "target": "TIME"
+  },
+  "369": {
+    "category": "WARP",
+    "target": "TRIGGER"
+  },
+  "370": {
+    "category": "WARP",
+    "target": "LEVEL"
+  },
+  "371": {
+    "category": "WARP",
+    "target": "CARRYOVER"
+  },
+  "372": {
+    "category": "REVERB",
+    "target": "TYPE"
+  },
+  "373": {
+    "category": "REVERB",
+    "target": "TIME"
+  },
+  "374": {
+    "category": "REVERB",
+    "target": "PRE-DELAY"
+  },
+  "375": {
+    "category": "REVERB",
+    "target": "EFFECT LEVEL"
+  },
+  "376": {
+    "category": "REVERB",
+    "target": "DENSITY"
+  },
+  "377": {
+    "category": "REVERB",
+    "target": "LOW CUT"
+  },
+  "378": {
+    "category": "REVERB",
+    "target": "HIGH CUT"
+  },
+  "379": {
+    "category": "REVERB",
+    "target": "DIRECT LEVEL"
+  },
+  "380": {
+    "category": "REVERB",
+    "target": "CARRYOVER"
+  },
+  "381": {
+    "category": "REVERB PLUS",
+    "target": "TYPE"
+  },
+  "382": {
+    "category": "REVERB PLUS",
+    "target": "TIME"
+  },
+  "383": {
+    "category": "REVERB PLUS",
+    "target": "TONE"
+  },
+  "384": {
+    "category": "REVERB PLUS",
+    "target": "EFFECT LEVEL"
+  },
+  "385": {
+    "category": "REVERB PLUS",
+    "target": "DENSITY"
+  },
+  "386": {
+    "category": "REVERB PLUS",
+    "target": "PRE-DELAY"
+  },
+  "387": {
+    "category": "REVERB PLUS",
+    "target": "LOW CUT"
+  },
+  "388": {
+    "category": "REVERB PLUS",
+    "target": "HIGH CUT"
+  },
+  "389": {
+    "category": "REVERB PLUS",
+    "target": "LOW DAMP"
+  },
+  "390": {
+    "category": "REVERB PLUS",
+    "target": "HIGH DAMP"
+  },
+  "391": {
+    "category": "REVERB PLUS",
+    "target": "MOD RATE"
+  },
+  "392": {
+    "category": "REVERB PLUS",
+    "target": "MOD DEPTH"
+  },
+  "393": {
+    "category": "REVERB PLUS",
+    "target": "DUCK SENS"
+  },
+  "394": {
+    "category": "REVERB PLUS",
+    "target": "DUCK PRE"
+  },
+  "395": {
+    "category": "REVERB PLUS",
+    "target": "DUCK POST"
+  },
+  "396": {
+    "category": "REVERB PLUS",
+    "target": "DIRECT LEVEL"
+  },
+  "397": {
+    "category": "REVERB PLUS",
+    "target": "CARRYOVER"
+  },
+  "398": {
+    "category": "SHIMMER REVERB",
+    "target": "TIME"
+  },
+  "399": {
+    "category": "SHIMMER REVERB",
+    "target": "TONE"
+  },
+  "400": {
+    "category": "SHIMMER REVERB",
+    "target": "EFFECT LEVEL"
+  },
+  "401": {
+    "category": "SHIMMER REVERB",
+    "target": "DENSITY"
+  },
+  "402": {
+    "category": "SHIMMER REVERB",
+    "target": "PRE-DELAY"
+  },
+  "403": {
+    "category": "SHIMMER REVERB",
+    "target": "LOW CUT"
+  },
+  "404": {
+    "category": "SHIMMER REVERB",
+    "target": "HIGH CUT"
+  },
+  "405": {
+    "category": "SHIMMER REVERB",
+    "target": "LOW DAMP"
+  },
+  "406": {
+    "category": "SHIMMER REVERB",
+    "target": "HIGH DAMP"
+  },
+  "407": {
+    "category": "SHIMMER REVERB",
+    "target": "MOD RATE"
+  },
+  "408": {
+    "category": "SHIMMER REVERB",
+    "target": "MOD DEPTH"
+  },
+  "409": {
+    "category": "SHIMMER REVERB",
+    "target": "DUCK SENS"
+  },
+  "410": {
+    "category": "SHIMMER REVERB",
+    "target": "DUCK PRE"
+  },
+  "411": {
+    "category": "SHIMMER REVERB",
+    "target": "DUCK POST"
+  },
+  "412": {
+    "category": "SHIMMER REVERB",
+    "target": "DIRECT LEVEL"
+  },
+  "413": {
+    "category": "SHIMMER REVERB",
+    "target": "1:PITCH"
+  },
+  "414": {
+    "category": "SHIMMER REVERB",
+    "target": "2:PITCH"
+  },
+  "415": {
+    "category": "SHIMMER REVERB",
+    "target": "1:LEVEL"
+  },
+  "416": {
+    "category": "SHIMMER REVERB",
+    "target": "2:LEVEL"
+  },
+  "417": {
+    "category": "SHIMMER REVERB",
+    "target": "CARRYOVER"
+  },
+  "418": {
+    "category": "TERA ECHO",
+    "target": "MODE"
+  },
+  "419": {
+    "category": "TERA ECHO",
+    "target": "SPREAD TIME"
+  },
+  "420": {
+    "category": "TERA ECHO",
+    "target": "FEEDBACK"
+  },
+  "421": {
+    "category": "TERA ECHO",
+    "target": "EFFECT LEVEL"
+  },
+  "422": {
+    "category": "TERA ECHO",
+    "target": "TONE"
+  },
+  "423": {
+    "category": "TERA ECHO",
+    "target": "DIRECT LEVEL"
+  },
+  "424": {
+    "category": "TERA ECHO",
+    "target": "TRIGGER"
+  },
+  "425": {
+    "category": "TERA ECHO",
+    "target": "CARRYOVER"
+  },
+  "426": {
+    "category": "FLANGER",
+    "target": "RATE"
+  },
+  "427": {
+    "category": "FLANGER",
+    "target": "DEPTH"
+  },
+  "428": {
+    "category": "FLANGER",
+    "target": "RESONANCE"
+  },
+  "429": {
+    "category": "FLANGER",
+    "target": "MANUAL"
+  },
+  "430": {
+    "category": "FLANGER",
+    "target": "STEP RATE"
+  },
+  "431": {
+    "category": "FLANGER",
+    "target": "LOW CUT"
+  },
+  "432": {
+    "category": "FLANGER",
+    "target": "EFFECT LEVEL"
+  },
+  "433": {
+    "category": "FLANGER",
+    "target": "DIRECT MIX"
+  },
+  "434": {
+    "category": "BASS FLANGER",
+    "target": "RATE"
+  },
+  "435": {
+    "category": "BASS FLANGER",
+    "target": "DEPTH"
+  },
+  "436": {
+    "category": "BASS FLANGER",
+    "target": "RESONANCE"
+  },
+  "437": {
+    "category": "BASS FLANGER",
+    "target": "MANUAL"
+  },
+  "438": {
+    "category": "BASS FLANGER",
+    "target": "STEP RATE"
+  },
+  "439": {
+    "category": "BASS FLANGER",
+    "target": "LOW CUT"
+  },
+  "440": {
+    "category": "BASS FLANGER",
+    "target": "EFFECT LEVEL"
+  },
+  "441": {
+    "category": "BASS FLANGER",
+    "target": "DIRECT MIX"
+  },
+  "442": {
+    "category": "PRIME FLANGER",
+    "target": "RATE"
+  },
+  "443": {
+    "category": "PRIME FLANGER",
+    "target": "DEPTH"
+  },
+  "444": {
+    "category": "PRIME FLANGER",
+    "target": "RESONANCE"
+  },
+  "445": {
+    "category": "PRIME FLANGER",
+    "target": "MANUAL"
+  },
+  "446": {
+    "category": "PRIME FLANGER",
+    "target": "TURBO"
+  },
+  "447": {
+    "category": "PRIME FLANGER",
+    "target": "WAVEFORM"
+  },
+  "448": {
+    "category": "PRIME FLANGER",
+    "target": "STEP RATE"
+  },
+  "449": {
+    "category": "PRIME FLANGER",
+    "target": "SEPARATION"
+  },
+  "450": {
+    "category": "PRIME FLANGER",
+    "target": "EFFECT LEVEL"
+  },
+  "451": {
+    "category": "PRIME FLANGER",
+    "target": "LOW DAMP"
+  },
+  "452": {
+    "category": "PRIME FLANGER",
+    "target": "HIGH DAMP"
+  },
+  "453": {
+    "category": "PRIME FLANGER",
+    "target": "DIRECT MIX"
+  },
+  "454": {
+    "category": "PRIME FLANGER",
+    "target": "LOW CUT"
+  },
+  "455": {
+    "category": "PRIME FLANGER",
+    "target": "HIGH CUT"
+  },
+  "456": {
+    "category": "BASS PRIME FLANGER",
+    "target": "RATE"
+  },
+  "457": {
+    "category": "BASS PRIME FLANGER",
+    "target": "DEPTH"
+  },
+  "458": {
+    "category": "BASS PRIME FLANGER",
+    "target": "RESONANCE"
+  },
+  "459": {
+    "category": "BASS PRIME FLANGER",
+    "target": "MANUAL"
+  },
+  "460": {
+    "category": "BASS PRIME FLANGER",
+    "target": "TURBO"
+  },
+  "461": {
+    "category": "BASS PRIME FLANGER",
+    "target": "WAVEFORM"
+  },
+  "462": {
+    "category": "BASS PRIME FLANGER",
+    "target": "STEP RATE"
+  },
+  "463": {
+    "category": "BASS PRIME FLANGER",
+    "target": "SEPARATION"
+  },
+  "464": {
+    "category": "BASS PRIME FLANGER",
+    "target": "EFFECT LEVEL"
+  },
+  "465": {
+    "category": "BASS PRIME FLANGER",
+    "target": "LOW DAMP"
+  },
+  "466": {
+    "category": "BASS PRIME FLANGER",
+    "target": "HIGH DAMP"
+  },
+  "467": {
+    "category": "BASS PRIME FLANGER",
+    "target": "DIRECT MIX"
+  },
+  "468": {
+    "category": "BASS PRIME FLANGER",
+    "target": "LOW CUT"
+  },
+  "469": {
+    "category": "BASS PRIME FLANGER",
+    "target": "HIGH CUT"
+  },
+  "470": {
+    "category": "PAN",
+    "target": "RATE"
+  },
+  "471": {
+    "category": "PAN",
+    "target": "DEPTH"
+  },
+  "472": {
+    "category": "PAN",
+    "target": "WAVEFORM"
+  },
+  "473": {
+    "category": "PAN",
+    "target": "EFFECT LEVEL"
+  },
+  "474": {
+    "category": "PAN",
+    "target": "DIRECT MIX"
+  },
+  "475": {
+    "category": "PEDAL BEND",
+    "target": "PITCH MIN"
+  },
+  "476": {
+    "category": "PEDAL BEND",
+    "target": "PITCH MAX"
+  },
+  "477": {
+    "category": "PEDAL BEND",
+    "target": "PEDAL POSITION"
+  },
+  "478": {
+    "category": "PEDAL BEND",
+    "target": "EFFECT LEVEL"
+  },
+  "479": {
+    "category": "PEDAL BEND",
+    "target": "DIRECT MIX"
+  },
+  "480": {
+    "category": "BASS PEDAL BEND",
+    "target": "PITCH MIN"
+  },
+  "481": {
+    "category": "BASS PEDAL BEND",
+    "target": "PITCH MAX"
+  },
+  "482": {
+    "category": "BASS PEDAL BEND",
+    "target": "PEDAL POSITION"
+  },
+  "483": {
+    "category": "BASS PEDAL BEND",
+    "target": "EFFECT LEVEL"
+  },
+  "484": {
+    "category": "BASS PEDAL BEND",
+    "target": "DIRECT MIX"
+  },
+  "485": {
+    "category": "FOOT VOLUME",
+    "target": "PEDAL POSITION"
+  },
+  "486": {
+    "category": "FOOT VOLUME",
+    "target": "VOLUME MIN"
+  },
+  "487": {
+    "category": "FOOT VOLUME",
+    "target": "VOLUME MAX"
+  },
+  "488": {
+    "category": "FOOT VOLUME",
+    "target": "CURVE"
+  },
+  "489": {
+    "category": "HARMONIST",
+    "target": "VOICE"
+  },
+  "490": {
+    "category": "HARMONIST",
+    "target": "1:HARMONY"
+  },
+  "491": {
+    "category": "HARMONIST",
+    "target": "1:LEVEL"
+  },
+  "492": {
+    "category": "HARMONIST",
+    "target": "1:PRE-DELAY"
+  },
+  "493": {
+    "category": "HARMONIST",
+    "target": "1:FEEDBACK"
+  },
+  "494": {
+    "category": "HARMONIST",
+    "target": "2:HARMONY"
+  },
+  "495": {
+    "category": "HARMONIST",
+    "target": "2:LEVEL"
+  },
+  "496": {
+    "category": "HARMONIST",
+    "target": "2:PRE-DELAY"
+  },
+  "497": {
+    "category": "HARMONIST",
+    "target": "DIRECT LEVEL"
+  },
+  "498": {
+    "category": "HARMONIST",
+    "target": "1:C"
+  },
+  "499": {
+    "category": "HARMONIST",
+    "target": "1:Db"
+  },
+  "500": {
+    "category": "HARMONIST",
+    "target": "1:D"
+  },
+  "501": {
+    "category": "HARMONIST",
+    "target": "1:Eb"
+  },
+  "502": {
+    "category": "HARMONIST",
+    "target": "1:E"
+  },
+  "503": {
+    "category": "HARMONIST",
+    "target": "1:F"
+  },
+  "504": {
+    "category": "HARMONIST",
+    "target": "1:F#"
+  },
+  "505": {
+    "category": "HARMONIST",
+    "target": "1:G"
+  },
+  "506": {
+    "category": "HARMONIST",
+    "target": "1:Ab"
+  },
+  "507": {
+    "category": "HARMONIST",
+    "target": "1:A"
+  },
+  "508": {
+    "category": "HARMONIST",
+    "target": "1:Bb"
+  },
+  "509": {
+    "category": "HARMONIST",
+    "target": "1:B"
+  },
+  "510": {
+    "category": "HARMONIST",
+    "target": "2:C"
+  },
+  "511": {
+    "category": "HARMONIST",
+    "target": "2:Db"
+  },
+  "512": {
+    "category": "HARMONIST",
+    "target": "2:D"
+  },
+  "513": {
+    "category": "HARMONIST",
+    "target": "2:Eb"
+  },
+  "514": {
+    "category": "HARMONIST",
+    "target": "2:E"
+  },
+  "515": {
+    "category": "HARMONIST",
+    "target": "2:F"
+  },
+  "516": {
+    "category": "HARMONIST",
+    "target": "2:F#"
+  },
+  "517": {
+    "category": "HARMONIST",
+    "target": "2:G"
+  },
+  "518": {
+    "category": "HARMONIST",
+    "target": "2:Ab"
+  },
+  "519": {
+    "category": "HARMONIST",
+    "target": "2:A"
+  },
+  "520": {
+    "category": "HARMONIST",
+    "target": "2:Bb"
+  },
+  "521": {
+    "category": "HARMONIST",
+    "target": "2:B"
+  },
+  "522": {
+    "category": "BASS HARMONIST",
+    "target": "VOICE"
+  },
+  "523": {
+    "category": "BASS HARMONIST",
+    "target": "1:HARMONY"
+  },
+  "524": {
+    "category": "BASS HARMONIST",
+    "target": "1:LEVEL"
+  },
+  "525": {
+    "category": "BASS HARMONIST",
+    "target": "1:PRE-DELAY"
+  },
+  "526": {
+    "category": "BASS HARMONIST",
+    "target": "1:FEEDBACK"
+  },
+  "527": {
+    "category": "BASS HARMONIST",
+    "target": "2:HARMONY"
+  },
+  "528": {
+    "category": "BASS HARMONIST",
+    "target": "2:LEVEL"
+  },
+  "529": {
+    "category": "BASS HARMONIST",
+    "target": "2:PRE-DELAY"
+  },
+  "530": {
+    "category": "BASS HARMONIST",
+    "target": "DIRECT LEVEL"
+  },
+  "531": {
+    "category": "BASS HARMONIST",
+    "target": "1:C"
+  },
+  "532": {
+    "category": "BASS HARMONIST",
+    "target": "1:Db"
+  },
+  "533": {
+    "category": "BASS HARMONIST",
+    "target": "1:D"
+  },
+  "534": {
+    "category": "BASS HARMONIST",
+    "target": "1:Eb"
+  },
+  "535": {
+    "category": "BASS HARMONIST",
+    "target": "1:E"
+  },
+  "536": {
+    "category": "BASS HARMONIST",
+    "target": "1:F"
+  },
+  "537": {
+    "category": "BASS HARMONIST",
+    "target": "1:F#"
+  },
+  "538": {
+    "category": "BASS HARMONIST",
+    "target": "1:G"
+  },
+  "539": {
+    "category": "BASS HARMONIST",
+    "target": "1:Ab"
+  },
+  "540": {
+    "category": "BASS HARMONIST",
+    "target": "1:A"
+  },
+  "541": {
+    "category": "BASS HARMONIST",
+    "target": "1:Bb"
+  },
+  "542": {
+    "category": "BASS HARMONIST",
+    "target": "1:B"
+  },
+  "543": {
+    "category": "BASS HARMONIST",
+    "target": "2:C"
+  },
+  "544": {
+    "category": "BASS HARMONIST",
+    "target": "2:Db"
+  },
+  "545": {
+    "category": "BASS HARMONIST",
+    "target": "2:D"
+  },
+  "546": {
+    "category": "BASS HARMONIST",
+    "target": "2:Eb"
+  },
+  "547": {
+    "category": "BASS HARMONIST",
+    "target": "2:E"
+  },
+  "548": {
+    "category": "BASS HARMONIST",
+    "target": "2:F"
+  },
+  "549": {
+    "category": "BASS HARMONIST",
+    "target": "2:F#"
+  },
+  "550": {
+    "category": "BASS HARMONIST",
+    "target": "2:G"
+  },
+  "551": {
+    "category": "BASS HARMONIST",
+    "target": "2:Ab"
+  },
+  "552": {
+    "category": "BASS HARMONIST",
+    "target": "2:A"
+  },
+  "553": {
+    "category": "BASS HARMONIST",
+    "target": "2:Bb"
+  },
+  "554": {
+    "category": "BASS HARMONIST",
+    "target": "2:B"
+  },
+  "555": {
+    "category": "OCTAVE",
+    "target": "-"
+  },
+  "556": {
+    "category": "OCTAVE",
+    "target": "-"
+  },
+  "557": {
+    "category": "OCTAVE",
+    "target": "DIRECT LEVEL"
+  },
+  "558": {
+    "category": "POLY OCTAVE",
+    "target": "RANGE"
+  },
+  "559": {
+    "category": "POLY OCTAVE",
+    "target": "OCTAVE LEVEL"
+  },
+  "560": {
+    "category": "POLY OCTAVE",
+    "target": "DIRECT LEVEL"
+  },
+  "561": {
+    "category": "BASS OCTAVE",
+    "target": "-"
+  },
+  "562": {
+    "category": "BASS OCTAVE",
+    "target": "-"
+  },
+  "563": {
+    "category": "BASS OCTAVE",
+    "target": "DIRECT LEVEL"
+  },
+  "564": {
+    "category": "CLASSIC VIBE",
+    "target": "MODE"
+  },
+  "565": {
+    "category": "CLASSIC VIBE",
+    "target": "RATE"
+  },
+  "566": {
+    "category": "CLASSIC VIBE",
+    "target": "DEPTH"
+  },
+  "567": {
+    "category": "CLASSIC VIBE",
+    "target": "EFFECT LEVEL"
+  },
+  "568": {
+    "category": "PHASER",
+    "target": "STAGE"
+  },
+  "569": {
+    "category": "PHASER",
+    "target": "RATE"
+  },
+  "570": {
+    "category": "PHASER",
+    "target": "DEPTH"
+  },
+  "571": {
+    "category": "PHASER",
+    "target": "RESONANCE"
+  },
+  "572": {
+    "category": "PHASER",
+    "target": "MANUAL"
+  },
+  "573": {
+    "category": "PHASER",
+    "target": "STEP RATE"
+  },
+  "574": {
+    "category": "PHASER",
+    "target": "EFFECT LEVEL"
+  },
+  "575": {
+    "category": "PHASER",
+    "target": "DIRECT MIX"
+  },
+  "576": {
+    "category": "BASS PHASER",
+    "target": "STAGE"
+  },
+  "577": {
+    "category": "BASS PHASER",
+    "target": "RATE"
+  },
+  "578": {
+    "category": "BASS PHASER",
+    "target": "DEPTH"
+  },
+  "579": {
+    "category": "BASS PHASER",
+    "target": "RESONANCE"
+  },
+  "580": {
+    "category": "BASS PHASER",
+    "target": "MANUAL"
+  },
+  "581": {
+    "category": "BASS PHASER",
+    "target": "STEP RATE"
+  },
+  "582": {
+    "category": "BASS PHASER",
+    "target": "EFFECT LEVEL"
+  },
+  "583": {
+    "category": "BASS PHASER",
+    "target": "DIRECT MIX"
+  },
+  "584": {
+    "category": "PRIME PHASER",
+    "target": "STAGE"
+  },
+  "585": {
+    "category": "PRIME PHASER",
+    "target": "RATE"
+  },
+  "586": {
+    "category": "PRIME PHASER",
+    "target": "DEPTH"
+  },
+  "587": {
+    "category": "PRIME PHASER",
+    "target": "RESONANCE"
+  },
+  "588": {
+    "category": "PRIME PHASER",
+    "target": "MANUAL"
+  },
+  "589": {
+    "category": "PRIME PHASER",
+    "target": "WAVEFORM"
+  },
+  "590": {
+    "category": "PRIME PHASER",
+    "target": "STEP RATE"
+  },
+  "591": {
+    "category": "PRIME PHASER",
+    "target": "BI-PHASE"
+  },
+  "592": {
+    "category": "PRIME PHASER",
+    "target": "SEPARATION"
+  },
+  "593": {
+    "category": "PRIME PHASER",
+    "target": "LOW DAMP"
+  },
+  "594": {
+    "category": "PRIME PHASER",
+    "target": "HIGH DAMP"
+  },
+  "595": {
+    "category": "PRIME PHASER",
+    "target": "LOW CUT"
+  },
+  "596": {
+    "category": "PRIME PHASER",
+    "target": "HIGH CUT"
+  },
+  "597": {
+    "category": "PRIME PHASER",
+    "target": "EFFECT LEVEL"
+  },
+  "598": {
+    "category": "PRIME PHASER",
+    "target": "DIRECT MIX"
+  },
+  "599": {
+    "category": "BASS PRIME PHASER",
+    "target": "STAGE"
+  },
+  "600": {
+    "category": "BASS PRIME PHASER",
+    "target": "RATE"
+  },
+  "601": {
+    "category": "BASS PRIME PHASER",
+    "target": "DEPTH"
+  },
+  "602": {
+    "category": "BASS PRIME PHASER",
+    "target": "RESONANCE"
+  },
+  "603": {
+    "category": "BASS PRIME PHASER",
+    "target": "MANUAL"
+  },
+  "604": {
+    "category": "BASS PRIME PHASER",
+    "target": "WAVEFORM"
+  },
+  "605": {
+    "category": "BASS PRIME PHASER",
+    "target": "STEP RATE"
+  },
+  "606": {
+    "category": "BASS PRIME PHASER",
+    "target": "BI-PHASE"
+  },
+  "607": {
+    "category": "BASS PRIME PHASER",
+    "target": "SEPARATION"
+  },
+  "608": {
+    "category": "BASS PRIME PHASER",
+    "target": "LOW DAMP"
+  },
+  "609": {
+    "category": "BASS PRIME PHASER",
+    "target": "HIGH DAMP"
+  },
+  "610": {
+    "category": "BASS PRIME PHASER",
+    "target": "LOW CUT"
+  },
+  "611": {
+    "category": "BASS PRIME PHASER",
+    "target": "HIGH CUT"
+  },
+  "612": {
+    "category": "BASS PRIME PHASER",
+    "target": "EFFECT LEVEL"
+  },
+  "613": {
+    "category": "BASS PRIME PHASER",
+    "target": "DIRECT MIX"
+  },
+  "614": {
+    "category": "SCRIPT PHASER",
+    "target": "RATE"
+  },
+  "615": {
+    "category": "SCRIPT PHASER",
+    "target": "DEPTH"
+  },
+  "616": {
+    "category": "SCRIPT PHASER",
+    "target": "EFFECT LEVEL"
+  },
+  "617": {
+    "category": "SCRIPT PHASER",
+    "target": "DIRECT MIX"
+  },
+  "618": {
+    "category": "PITCH SHIFTER",
+    "target": "VOICE"
+  },
+  "619": {
+    "category": "PITCH SHIFTER",
+    "target": "DIRECT LEVEL"
+  },
+  "620": {
+    "category": "PITCH SHIFTER",
+    "target": "1:PITCH"
+  },
+  "621": {
+    "category": "PITCH SHIFTER",
+    "target": "1:MODE"
+  },
+  "622": {
+    "category": "PITCH SHIFTER",
+    "target": "1:FINE"
+  },
+  "623": {
+    "category": "PITCH SHIFTER",
+    "target": "1:PRE-DELAY"
+  },
+  "624": {
+    "category": "PITCH SHIFTER",
+    "target": "1:LEVEL"
+  },
+  "625": {
+    "category": "PITCH SHIFTER",
+    "target": "1:FEEDBACK"
+  },
+  "626": {
+    "category": "PITCH SHIFTER",
+    "target": "2:PITCH"
+  },
+  "627": {
+    "category": "PITCH SHIFTER",
+    "target": "2:MODE"
+  },
+  "628": {
+    "category": "PITCH SHIFTER",
+    "target": "2:FINE"
+  },
+  "629": {
+    "category": "PITCH SHIFTER",
+    "target": "2:PRE-DELAY"
+  },
+  "630": {
+    "category": "PITCH SHIFTER",
+    "target": "2:LEVEL"
+  },
+  "631": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "VOICE"
+  },
+  "632": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "DIRECT LEVEL"
+  },
+  "633": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "1:PITCH"
+  },
+  "634": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "1:MODE"
+  },
+  "635": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "1:FINE"
+  },
+  "636": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "1:PRE-DELAY"
+  },
+  "637": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "1:LEVEL"
+  },
+  "638": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "1:FEEDBACK"
+  },
+  "639": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "2:PITCH"
+  },
+  "640": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "2:MODE"
+  },
+  "641": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "2:FINE"
+  },
+  "642": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "2:PRE-DELAY"
+  },
+  "643": {
+    "category": "BASS PITCH SHIFTER",
+    "target": "2:LEVEL"
+  },
+  "644": {
+    "category": "RING MODULATOR",
+    "target": "INTELLIGENT"
+  },
+  "645": {
+    "category": "RING MODULATOR",
+    "target": "FREQUENCY"
+  },
+  "646": {
+    "category": "RING MODULATOR",
+    "target": "MOD RATE"
+  },
+  "647": {
+    "category": "RING MODULATOR",
+    "target": "MOD DEPTH"
+  },
+  "648": {
+    "category": "RING MODULATOR",
+    "target": "EFFECT LEVEL"
+  },
+  "649": {
+    "category": "RING MODULATOR",
+    "target": "DIRECT MIX"
+  },
+  "650": {
+    "category": "ROTARY",
+    "target": "SPEED SELECT"
+  },
+  "651": {
+    "category": "ROTARY",
+    "target": "SLOW RATE"
+  },
+  "652": {
+    "category": "ROTARY",
+    "target": "FAST RATE"
+  },
+  "653": {
+    "category": "ROTARY",
+    "target": "EFFECT LEVEL"
+  },
+  "654": {
+    "category": "ROTARY",
+    "target": "RISE TIME"
+  },
+  "655": {
+    "category": "ROTARY",
+    "target": "FALL TIME"
+  },
+  "656": {
+    "category": "ROTARY",
+    "target": "MIC DISTANCE"
+  },
+  "657": {
+    "category": "ROTARY",
+    "target": "ROTOR/HORN"
+  },
+  "658": {
+    "category": "ROTARY",
+    "target": "DRIVE"
+  },
+  "659": {
+    "category": "ROTARY",
+    "target": "DIRECT MIX"
+  },
+  "660": {
+    "category": "TREMOLO",
+    "target": "RATE"
+  },
+  "661": {
+    "category": "TREMOLO",
+    "target": "DEPTH"
+  },
+  "662": {
+    "category": "TREMOLO",
+    "target": "WAVEFORM"
+  },
+  "663": {
+    "category": "TREMOLO",
+    "target": "EFFECT LEVEL"
+  },
+  "664": {
+    "category": "TREMOLO",
+    "target": "TRIGGER"
+  },
+  "665": {
+    "category": "TREMOLO",
+    "target": "RISE TIME"
+  },
+  "666": {
+    "category": "TREMOLO",
+    "target": "DIRECT MIX"
+  },
+  "667": {
+    "category": "VIBRATO",
+    "target": "RATE"
+  },
+  "668": {
+    "category": "VIBRATO",
+    "target": "DEPTH"
+  },
+  "669": {
+    "category": "VIBRATO",
+    "target": "TRIGGER"
+  },
+  "670": {
+    "category": "VIBRATO",
+    "target": "RISE TIME"
+  },
+  "671": {
+    "category": "VIBRATO",
+    "target": "EFFECT LEVEL"
+  },
+  "672": {
+    "category": "PRIME VIBARTO",
+    "target": "RATE"
+  },
+  "673": {
+    "category": "PRIME VIBARTO",
+    "target": "DEPTH"
+  },
+  "674": {
+    "category": "PRIME VIBARTO",
+    "target": "COLOR"
+  },
+  "675": {
+    "category": "PRIME VIBARTO",
+    "target": "EFFECT LEVEL"
+  },
+  "676": {
+    "category": "PRIME VIBARTO",
+    "target": "TRIGGER"
+  },
+  "677": {
+    "category": "PRIME VIBARTO",
+    "target": "RISE TIME"
+  },
+  "678": {
+    "category": "PRIME VIBARTO",
+    "target": "DIRECT MIX"
+  },
+  "679": {
+    "category": "S-BEND",
+    "target": "TRIGGER"
+  },
+  "680": {
+    "category": "S-BEND",
+    "target": "PITCH"
+  },
+  "681": {
+    "category": "S-BEND",
+    "target": "RISE TIME"
+  },
+  "682": {
+    "category": "S-BEND",
+    "target": "FALL TIME"
+  },
+  "683": {
+    "category": "BASS S-BEND",
+    "target": "TRIGGER"
+  },
+  "684": {
+    "category": "BASS S-BEND",
+    "target": "PITCH"
+  },
+  "685": {
+    "category": "BASS S-BEND",
+    "target": "RISE TIME"
+  },
+  "686": {
+    "category": "BASS S-BEND",
+    "target": "FALL TIME"
+  },
+  "687": {
+    "category": "PHRASE LOOP",
+    "target": "LOOP LEVEL"
+  },
+  "688": {
+    "category": "SEND/RETURN",
+    "target": "MODE"
+  },
+  "689": {
+    "category": "SEND/RETURN",
+    "target": "SEND LEVEL"
+  },
+  "690": {
+    "category": "SEND/RETURN",
+    "target": "RETURN LEVEL"
+  },
+  "691": {
+    "category": "SEND/RETURN",
+    "target": "ADJUST"
+  },
+  "692": {
+    "category": "SEND/RETURN",
+    "target": "INVERT"
+  },
+  "693": {
+    "category": "MASTER",
+    "target": "MEMORY LEVEL"
+  },
+  "694": {
+    "category": "MASTER",
+    "target": "BPM"
+  },
+  "695": {
+    "category": "MASTER",
+    "target": "KEY"
+  },
+  "696": {
+    "category": "MASTER",
+    "target": "INPUT SETTING"
+  },
+  "697": {
+    "category": "MASTER",
+    "target": "AMP CTL1"
+  },
+  "698": {
+    "category": "MASTER",
+    "target": "AMP CTL2"
+  },
+  "699": {
+    "category": "TUNER",
+    "target": "ON/OFF"
+  },
+  "700": {
+    "category": "MIDI",
+    "target": "MIDI CC#"
+  },
+  "701": {
+    "category": "MIDI",
+    "target": "MIDI PC#"
+  },
+  "702": {
+    "category": "SLICER",
+    "target": "PATTERN"
+  },
+  "703": {
+    "category": "SLICER",
+    "target": "RATE"
+  },
+  "704": {
+    "category": "SLICER",
+    "target": "TRIGGER"
+  },
+  "705": {
+    "category": "SLICER",
+    "target": "EFFECT LEVEL"
+  },
+  "706": {
+    "category": "SLICER",
+    "target": "ATTACK"
+  },
+  "707": {
+    "category": "SLICER",
+    "target": "DUTY"
+  },
+  "708": {
+    "category": "SLICER",
+    "target": "DIRECT MIX"
+  },
+  "709": {
+    "category": "HUMANIZER",
+    "target": "MODE"
+  },
+  "710": {
+    "category": "HUMANIZER",
+    "target": "VOWEL1"
+  },
+  "711": {
+    "category": "HUMANIZER",
+    "target": "VOWEL2"
+  },
+  "712": {
+    "category": "HUMANIZER",
+    "target": "SENS"
+  },
+  "713": {
+    "category": "HUMANIZER",
+    "target": "RATE"
+  },
+  "714": {
+    "category": "HUMANIZER",
+    "target": "DEPTH"
+  },
+  "715": {
+    "category": "HUMANIZER",
+    "target": "MANUAL"
+  },
+  "716": {
+    "category": "HUMANIZER",
+    "target": "LEVEL"
+  },
+  "717": {
+    "category": "FEEDBACKER",
+    "target": "MODE"
+  },
+  "718": {
+    "category": "FEEDBACKER",
+    "target": "TRIGGER"
+  },
+  "719": {
+    "category": "FEEDBACKER",
+    "target": "DEPTH"
+  },
+  "720": {
+    "category": "FEEDBACKER",
+    "target": "RISE TIME"
+  },
+  "721": {
+    "category": "FEEDBACKER",
+    "target": "OCT RISE TIME"
+  },
+  "722": {
+    "category": "FEEDBACKER",
+    "target": "FEEDBACK"
+  },
+  "723": {
+    "category": "FEEDBACKER",
+    "target": "OCT FEEDBACK"
+  },
+  "724": {
+    "category": "FEEDBACKER",
+    "target": "VIB RATE"
+  },
+  "725": {
+    "category": "FEEDBACKER",
+    "target": "VIB DEPTH"
+  },
+  "726": {
+    "category": "SITAR SIM",
+    "target": "SENS"
+  },
+  "727": {
+    "category": "SITAR SIM",
+    "target": "DEPTH"
+  },
+  "728": {
+    "category": "SITAR SIM",
+    "target": "TONE"
+  },
+  "729": {
+    "category": "SITAR SIM",
+    "target": "EFFECT LEVEL"
+  },
+  "730": {
+    "category": "SITAR SIM",
+    "target": "RESONANCE"
+  },
+  "731": {
+    "category": "SITAR SIM",
+    "target": "BUZZ"
+  },
+  "732": {
+    "category": "SITAR SIM",
+    "target": "DIRECT MIX"
+  },
+  "733": {
+    "category": "AUTO WAH",
+    "target": "FILTER MODE"
+  },
+  "734": {
+    "category": "AUTO WAH",
+    "target": "RATE"
+  },
+  "735": {
+    "category": "AUTO WAH",
+    "target": "DEPTH"
+  },
+  "736": {
+    "category": "AUTO WAH",
+    "target": "EFFECT LEVEL"
+  },
+  "737": {
+    "category": "AUTO WAH",
+    "target": "FREQUENCY"
+  },
+  "738": {
+    "category": "AUTO WAH",
+    "target": "RESONANCE"
+  },
+  "739": {
+    "category": "AUTO WAH",
+    "target": "WAVEFORM"
+  },
+  "740": {
+    "category": "AUTO WAH",
+    "target": "DIRECT MIX"
+  }
+}

@@ -1,0 +1,14 @@
+{"event": "opened", "source": "pcap", "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\usbpcap\\probe10001.pcap", "t": 0.0, "label": "(no label)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1110001000000001005FF7", "t": 1.436898, "frame": 25, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1110001000000002005EF7", "t": 2.628726, "frame": 33, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B11100010000000100050F7", "t": 3.740369, "frame": 53, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B11100010000000400020F7", "t": 4.877969, "frame": 351, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1110001100000001005EF7", "t": 5.994469, "frame": 1093, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1110001500000001005AF7", "t": 7.095237, "frame": 1535, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1110001A000000010055F7", "t": 8.191356, "frame": 1575, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 63, "hex": "F04110000000000B1210001A0308000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000073F7", "t": 8.20053, "frame": 1587, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1110002000000001004FF7", "t": 9.273767, "frame": 1589, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 63, "hex": "F04110000000000B12100020030800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000006DF7", "t": 9.283586, "frame": 1601, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1110003000000001003FF7", "t": 10.365932, "frame": 1603, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 63, "hex": "F04110000000000B12100030030800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000005DF7", "t": 10.380257, "frame": 1619, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1110004000000001002FF7", "t": 11.463679, "frame": 1621, "label": "(usbpcap)"}

@@ -1,0 +1,18 @@
+{"event": "opened", "source": "pcap", "pcap": "C:\\Users\\Peter\\Claude\\gx10-re\\captures\\usbpcap\\presetload_cmd.pcap", "t": 0.0, "label": "(no label)"}
+{"dir": "host->dev", "kind": "sysex", "len": 16, "hex": "F04110000000000B127F000001017FF7", "t": 1.47593, "frame": 25, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 16, "hex": "F04110000000000B127F000001017FF7", "t": 1.479492, "frame": 35, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B1100000000000000057BF7", "t": 2.286239, "frame": 37, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 20, "hex": "F04110000000000B120000000000000C080369F7", "t": 2.290559, "frame": 47, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 20, "hex": "F04110000000000B1200000000000000000000F7", "t": 2.945648, "frame": 49, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B11100000000000001060F7", "t": 3.82864, "frame": 59, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 19, "hex": "F04110000000000B12000000000000000000F7", "t": 3.910736, "frame": 69, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 19, "hex": "F04110000000000B121000230F080006042CF7", "t": 3.91416, "frame": 79, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 31, "hex": "F04110000000000B12100000004E41545552414C20414D50204842202071F7", "t": 3.917755, "frame": 95, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 23, "hex": "F04110000000000B120020033100000000000000002CF7", "t": 4.375247, "frame": 227, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 98, "hex": "F04110000000000B1200200040010100000101010101010101010101010101010101010101010101010100000001010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010152F7", "t": 4.383519, "frame": 273, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 20, "hex": "F04110000000000B1200000000604009000057F7", "t": 4.718062, "frame": 275, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 19, "hex": "F04110000000000B12000000000000090077F7", "t": 5.245097, "frame": 285, "label": "(usbpcap)"}
+{"dir": "host->dev", "kind": "sysex", "len": 19, "hex": "F04110000000000B11100000000000001060F7", "t": 5.60621, "frame": 301, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 31, "hex": "F04110000000000B12100000004749544152524520535049454C454E2012F7", "t": 5.615855, "frame": 317, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 23, "hex": "F04110000000000B120020033100000000000000002CF7", "t": 6.103252, "frame": 419, "label": "(usbpcap)"}
+{"dir": "dev->host", "kind": "sysex", "len": 98, "hex": "F04110000000000B1200200040010100000101000101010101010101010101010101010101010101010101010101010101010101010101010101010101000101010101010101000001010101000000010101010101010101010101010101010156F7", "t": 6.111681, "frame": 455, "label": "(usbpcap)"}

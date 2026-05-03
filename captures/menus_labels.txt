@@ -1,0 +1,16 @@
+=== menu sweep start ===
+click toolbar EDITOR (240,60)
+settle after EDITOR
+click toolbar LIBRARIAN (320,60)
+settle after LIBRARIAN
+click toolbar TONE_EXCHANGE (399,60)
+settle after TONE_EXCHANGE
+click toolbar TUNER (482,60)
+settle after TUNER
+click toolbar IR_LOADER (542,60)
+settle after IR_LOADER
+click toolbar MENU (605,60)
+settle after MENU
+ESC to close any open modal
+click EDITOR (return)
+DONE
