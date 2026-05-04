@@ -300,7 +300,7 @@ A pointer value of 0 means "no next" (end of chain).
 |--------|-------|----------|
 | 0x00 | **TYPE** | 1 byte enum, range 0–82 — see `tools/fx_type_enum.py` for the 83-name table |
 | 0x01 | OFF/ON | 0/1 |
-| 0x02 | DuplicationNumber | 0–9 (allows the same effect type multiple times in one chain) |
+| 0x02 | **DuplicationNumber** | 0–9. Acts as both "Nth instance of this effect type in the chain" AND as the **A/B path marker inside a DIVIDER..MIXER parallel section**: `dup=1` runs on path A, `dup=2` runs on path B. The SPLITTER (FX TYPE 30) between the two paths carries `dup=0` and is internal-only — it doesn't appear on the device's chain display. Verified empirically against the "JC120 AMP HB" preset (preamp + EQ + NS doubled on both paths). |
 | 0x03–0x132 | **FX Parameter 1..44** | each 4 nibbles big-endian, range 12768–52768 = -20000..+20000 in offset binary |
 
 > ⚠️ **CRITICAL** — every FX Parameter is **4 nibbles**, not 1 byte.
