@@ -442,23 +442,48 @@ likely holds Bank Select MSB/LSB, PC#, etc. (not yet exercised).
 
 ### USB SETTINGS (tab at sidebar y=400)
 
-Four knobs at row y=520 + two ON/OFF toggles. Captured:
+Chart-documented as the `[SystemInOut]` block, size `0x0D` bytes,
+starting at `0x00004000`. Verified by reading the whole block on a
+GX-10 in vendor mode (2026-05-04).
 
-| Knob | Address | Bytes | Default observed |
-|------|---------|------:|------------------|
-| EFX OUT LEVEL | `0x0000_4003` | 2 | `01 0B` (= 0x10B = 267 → 26%) |
-| MIX LEVEL | `0x0000_4005` | 2 | `04 08` |
-| DRY OUT | `0x0000_4007` | 2 | `06 05` |
-| DRY TO EFX | `0x0000_4009` | 2 | `06 05` |
-| DIRECT MONITOR | `0x0020_0113` | 1 | `01` = ON |
-| LOOP BACK | `0x0020_0114` | 1 | `01` = ON |
+| Offset | Address | Field | Range | Encoding |
+|--------|---------|-------|-------|----------|
+| 0x00 | `0x00004000` | **MAIN:LEVEL SELECT** | 0 / 1 | 1 byte: 0 = −10 dBu, 1 = +4 dBu |
+| 0x01–02 | `0x00004001..02` | (N/A, fixed 0) | – | – |
+| 0x03–04 | `0x00004003..04` | USB MAIN:EFX OUT | 0..200 % | **2 nibbles** (low nibble of each byte combine into 8-bit value) |
+| 0x05–06 | `0x00004005..06` | USB MAIN:MIX LEVEL | 0..200 % | 2 nibbles |
+| 0x07–08 | `0x00004007..08` | USB DRY:OUT | 0..200 % | 2 nibbles |
+| 0x09–0A | `0x00004009..0A` | USB DRY:TO EFX | 0..200 % | 2 nibbles |
+| 0x0B | `0x0000400B` | USB LOOPBACK | 0 / 1 | 1 byte |
+| 0x0C | `0x0000400C` | AIRD OUTPUT SELECT | 0..14 | 1 byte enum |
 
-USB knobs use **2-byte values** (incremented by 1 per arrow press,
-e.g. `04 08` → `04 09` for MIX LEVEL). Likely a 14-bit value with
-high*256+low encoding for fine-grained percent control.
+**Encoding correction** to earlier note: the level fields are
+**2 nibbles**, not 14-bit. The chart shows `0000 aaaa | 0000 bbbb`
+for each pair — only the low nibble of each byte is data, so the
+combined value is `(byte_hi & 0xF) << 4 | (byte_lo & 0xF)`,
+range 0..200 (`0x00..0xC8`) representing 0..200 %.
 
-Note: `0x0020_0113` and `0x0020_0114` live in the editor I/O staging
-region (same range as IN/OUT settings).
+Example: `04 0B` → `0x4B` = **75 %**, not 0x40B / 26 %.
+
+`AIRD OUTPUT SELECT` enum: LINE/PHONES (RECORDING), JC-120 RETURN,
+JC-120 INPUT, KATANA-100/212 RETURN, KATANA-100/212 INPUT,
+KATANA-100 RETURN, KATANA-100 INPUT, TUBE COMBO 212 RETURN/INPUT,
+TUBE COMBO 112 RETURN/INPUT, TUBE STACK 412 RETURN/INPUT,
+BASS AMP WITH TWEETER, BASS AMP NO TWEETER.
+
+The Setup_temp addresses `0x0020_0113` (DIRECT MONITOR) and
+`0x0020_0114` (LOOP BACK) are editor-staging mirrors used by BTS;
+the persistent value lives at `0x00004000+`. `DIRECT MONITOR`
+specifically isn't in the chart's `[SystemInOut]` block — it's a
+BTS-only UI control that toggles whether the host hears the input
+signal directly through the GX-10 mix.
+
+**Why BTS hides some of these in generic mode**: in generic USB-Audio
+class mode the device exposes only stereo (the DRY channel pair isn't
+present in the USB descriptor), so `USB DRY:OUT` and `USB DRY:TO EFX`
+have no audible effect — BTS greys them out. `MAIN:LEVEL SELECT` is
+the analog output line-level pad; BTS only surfaces it when it knows
+the user is on the vendor (full-feature) driver path.
 
 ### DEVICE SETTINGS (tab at sidebar y=480)
 
