@@ -1,0 +1,77 @@
+# Claude Code's per-user memory + config — never committed.
+.claude/
+
+# Empty leftover from the gx10-re/ → root flatten (locked by Windows process at
+# the time of the flatten; remove with `rmdir gx10-re` once it's no longer in use).
+/gx10-re/
+
+# Roland's official documentation is NOT redistributed in this repo.
+# Place the following two files here yourself if you want the
+# manual_xref_v2 / build_effect_catalog tooling to work:
+#   docs/manuals/GX-100_GX-10_MIDI_Imple_eng02_W.md
+#   docs/manuals/GX-10_Parameter_Guide.txt
+# (see docs/manuals/README.md for sources)
+docs/manuals/*.md
+docs/manuals/*.txt
+docs/manuals/*.pdf
+!docs/manuals/README.md
+
+# Empty stub used by tools that take a Path arg they never actually write to.
+__nul__.jsonl
+
+# Python cruft.
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Editor / OS noise.
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Large binary capture artifacts. The summary.json files in the same
+# directories are small and ARE tracked — they're the consumables for
+# build_effect_catalog.py / manual_xref_v2.py.
+captures/typebar_full/**/*.png
+captures/typebar_full/**/*.pcap
+captures/typebar_full/**/*.jsonl
+captures/typebar_full/**/*.flag
+captures/drag_test/**/*.png
+captures/drag_test/**/*.pcap
+captures/drag_test/**/*.jsonl
+captures/type_test/**/*.png
+captures/type_test/**/*.pcap
+captures/type_test/**/*.jsonl
+captures/chain_buttons/**/*.png
+captures/chain_buttons/**/*.pcap
+captures/chain_buttons/**/*.jsonl
+captures/usbpcap/**/*.pcap
+captures/usbpcap/**/*.jsonl
+captures/flows/**/*.pcap
+captures/flows/**/*.jsonl
+captures/menus_v*/**/*.pcap
+captures/menus_v*/**/*.jsonl
+captures/menus_v*/**/*.png
+captures/typebar/**/*.png
+captures/typebar/**/*.pcap
+captures/typebar/**/*.jsonl
+captures/bpm_test/**/*.pcap
+
+# All PNG/JPG screenshots in captures (any subdir).
+captures/**/*.png
+captures/**/*.jpg
+
+# Snapshot screenshots — referenced by the per-effect TYPE name extraction
+# pipeline, but the resulting JSON (docs/effects/all_effects.json etc.) is
+# what's checked in.
+snapshots/**/*.png
+snapshots/**/*.jpg
+
+# Loose junk that accumulates in captures/ at the top level.
+captures/_*.jsonl
+captures/probe_select.jsonl

@@ -1,132 +1,150 @@
-# GX-10 reverse engineering
+# BOSS GX-10 / GX-100 — Reverse-Engineered USB MIDI Protocol
 
-Tools and notes for reverse-engineering the BOSS GX-10's USB-MIDI control
-protocol, as spoken between BOSS Tone Studio for GX-10 and the device.
+> Tools, observations, and a complete-enough protocol description to
+> programmatically read and write any user-visible state of the
+> BOSS GX-10 (and, by extension, the GX-100) over USB MIDI, without
+> using BOSS Tone Studio.
 
-```
-gx10-re/
-├── docs/
-│   ├── protocol.md                   # Address map + 10 sub-protocols (start here)
-│   ├── programmatic_construction.md  # End-to-end recipe for building a patch
-│   ├── effect_catalog.md             # 81 effects, every captured knob (auto-gen)
-│   ├── gaps.md                       # What's done / deferred / un-investigable
-│   ├── menus.md, methodology.md, official_xref.md, bpm_encoding.md, API.md
-│   └── manuals/                      # Roland MIDI Implementation chart + Parameter Guide
-├── tools/
-│   ├── midi_send.py                  # Active sender (DT1 / RQ1 / identity)
-│   ├── midi_sniff.py                 # Passive WinMM sniffer (JSONL log)
-│   ├── address_scan.py               # Combine sniffer + sender, sweep address space
-│   ├── example_lib.py                # Shared utilities for the example_*.py scripts
-│   ├── example2_zero_knobs.py        # Zero the 4 main-display knobs
-│   ├── example3_show_chain.py        # Render chain with DIV/MIX A/B paths
-│   ├── example4_all_off.py           # Turn off every effect (DIV -> A path)
-│   ├── demo_full_patch.py            # Build a custom patch end-to-end
-│   ├── build_effect_catalog.py       # Regenerate docs/effect_catalog.md
-│   ├── probe_user_memory_names_burst.py / probe_preset_names.py  # Patch DB capture
-│   ├── watch_hardware_actions.py     # Subscribe + log device-side events
-│   ├── spot_check_open.py            # Bulk-read chart-documented registers
-│   ├── read_tuner_settings.py        # REF PITCH / POLY TYPE / OFFSET / OUTPUT
-│   ├── fix_stuck_chain_edit.py       # Clear stuck ChainEditTrigger
-│   └── (~50 more — capture, diagnostic, and one-off probes)
-└── captures/                         # JSON / JSONL summaries of capture sessions
-```
+What's documented and verified against a live device:
 
-## TL;DR findings
+- **Full address map** — every chart-documented register decoded, with
+  encoding rules and gotchas
+- **Programmatic patch construction** — chain edits, knob settings,
+  MIDI assigns, end-to-end working example
+- **Per-effect knob catalogue** — 81 effects, every captured knob
+  named and addressed
+- **Patch database** — all 200 user + 100 preset memory slots,
+  read/write flow, name decoding
+- **Tuner protocol** — including pitch encoding (½-cent unsigned
+  magnitude with note-byte sign recovery)
+- **Hardware-event channel** — every footswitch / knob / screen /
+  menu action emits a chart-documented DT1; subscribing once with
+  `DT1 0x7F000001 = 1` gives a real-time event stream
+- **USB / driver layer** — vendor-mode descriptors, generic-vs-vendor
+  driver differences, a per-OS support landscape (Windows / macOS /
+  iOS / Linux)
+- **A small set of demo scripts** that exercise the protocol end-to-end
 
-- GX-10 uses **standard Roland "extended" SysEx**: 5-byte model ID, 4-byte
-  big-endian addresses, 7-bit checksum.
-- Family code `0x040B`, model number `0x0000`, default device ID `0x10`.
-- The device exposes its MIDI port through Microsoft's USB-MIDI class
-  driver, which **allows multiple openers** — both a passive sniffer and
-  Tone Studio can hold the port at the same time. The output port is
-  similarly shareable, which means a Python script can issue its own
-  RQ1 reads / DT1 writes even while Tone Studio is connected.
-- Subscribe with `DT1 0x7F000001 = 1` and the device pushes a real-time
-  event stream of every footswitch, knob, screen, and menu action — all
-  at chart-documented addresses (see `gx10_hw_action_protocol` memory).
-  No polling needed for state mirroring.
-- A patch is fully programmatically constructable: chain edit (linked
-  list at `0x10000F0C` with the `0x00200003` ChainEditTrigger handshake),
-  main-display knob settings (MemoryCommon `0x69..0x7C`), and 20 MIDI
-  assigns (per-row 0x40 stride at `0x10000200..0x10000B7F`). See
-  `docs/programmatic_construction.md` for the recipe and
-  `tools/demo_full_patch.py` for a working example.
+## Where to start
 
-## Quick examples
+| If you want to… | Read this |
+|------------------|-----------|
+| Understand the address map and SysEx framing | [`docs/protocol.md`](docs/protocol.md) |
+| Build a patch from scratch programmatically | [`docs/programmatic_construction.md`](docs/programmatic_construction.md) |
+| Look up a specific effect's knobs and addresses | [`docs/effect_catalog.md`](docs/effect_catalog.md) |
+| See what's done, deferred, and out-of-scope | [`docs/gaps.md`](docs/gaps.md) |
+| Talk to the device from Linux / macOS / iOS | [`docs/linux_macos_ios_support.md`](docs/linux_macos_ios_support.md) |
+| Understand the vendor-mode USB layout | [`docs/usb_vendor_mode.md`](docs/usb_vendor_mode.md) |
 
-Four self-contained example scripts demonstrate the major operations:
+## Quickstart — try it on a connected device
 
-```
-tools/demo_full_patch.py        Build BOOST CLEAN + PEQ + REV PLATE chain,
-                                 configure the 4 main-display knobs, arm
-                                 a CC#64 -> REV ON/OFF assign.
+The tools are pure Python with `ctypes` and `winmm` on Windows
+(no compiler / driver install needed). On Linux / macOS, swap the
+`midi_send.py` backend for `python-rtmidi` (a TODO in this repo).
 
-tools/example2_zero_knobs.py    Zero the 4 main-display knobs of the
-                                 currently loaded patch (handles 1-byte
-                                 ON/OFF and 4-byte FX-Param targets).
+```bash
+# 1. Confirm we can see the GX-10
+python tools/list_midi.py
 
-tools/example3_show_chain.py    Read the chain linked-list, render it
-                                 with DIVIDER / MIXER parallel-section
-                                 A/B path attribution via the per-FxItem
-                                 DuplicationNumber byte.
+# 2. Read the device's full chain layout
+python tools/example3_show_chain.py
 
-tools/example4_all_off.py       Turn every effect in the chain OFF.
-                                 DIVIDER is special-cased to switch to
-                                 SINGLE / A path rather than ON/OFF=0.
+# 3. Read the USB-settings block
+python tools/example5_usb_settings.py
+
+# 4. Subscribe and watch every footswitch / knob / screen event
+python tools/watch_hardware_actions.py
+# (Press something on the device; events stream to stdout.)
 ```
 
-Every example writes only to memory_temp at `0x10000000+`, so a patch
-button press on the device discards the changes.
+To programmatically build a chain (BOOSTER + PEQ + REVERB PLATE) plus
+configure the four main-display knobs and arm a CC#64 → REVERB ON/OFF
+assign, all reversibly via memory_temp:
 
-## Protocol-level "what we know"
+```bash
+python tools/demo_full_patch.py
+# (Press any patch button on the device to discard.)
+```
 
-- **Address map** (`docs/protocol.md` §3): MemoryCommon, MemoryLed,
-  20 Assigns, MemoryEfct (BPM + chain linked list), 20 MemoryFxItems
-  (each 0x200 bytes, with TYPE byte + ON/OFF + DupNumber + 44 FX
-  Parameters).
-- **FX Parameter encoding**: each is **4 nibbles big-endian, offset
-  binary** (raw − 0x8000 = display value). The chart prints this as
-  range `12768..52768` = `−20000..+20000`.
-- **DuplicationNumber** (MemoryFxItem offset 0x02) tags A/B path
-  inside a DIVIDER..MIXER parallel section: `dup=1` is path A,
-  `dup=2` is path B. The SPLITTER (FX TYPE 30) is an internal
-  housekeeping marker between the two paths; it doesn't appear on
-  the device's chain display.
-- **Per-effect TYPE selectors** are at MemoryFxItem FX Param 1 (offset
-  `0x03`). Some effects expose this in the ASSIGN TARGET TABLE (BOOSTER,
-  REVERB, …); others hide it (PHASER's `STAGE` is FX Param 2 because the
-  TYPE selector at Param 1 isn't user-assignable). `tools/example_lib.py`
-  resolves all of this automatically.
-- **Assign-row writes are field-by-field** — the chart documents the
-  group-parameter rule, but a single bulk DT1 of all 45 bytes is
-  rejected (only SOURCE/MODE/ACT-RANGE/MIDI-CC commit; SW/TARGET/MIN/MAX
-  get cleared to defaults). Each chart-listed field needs its own DT1,
-  ending with the MIDI BANK LSB write at offset `0x2B` to trigger the
-  group commit-check. See `docs/protocol.md` §5.9.
-- **Roland excludes CC#32..CC#63** from the assign SOURCE enum (CC#32 is
-  Bank-Select LSB, 33..63 reserved). Use CC#1..31 or CC#64..95.
+## Layout
 
-## What this repo does *not* do
+```
+docs/
+  protocol.md                   # Address map + 10 sub-protocols (start here)
+  programmatic_construction.md  # End-to-end recipe for building a patch
+  effect_catalog.md             # 81 effects, every captured knob (auto-gen)
+  gaps.md                       # What's done / deferred / un-investigable
+  usb_vendor_mode.md            # Vendor-mode USB descriptor breakdown
+  linux_macos_ios_support.md    # Per-OS support landscape
+  menus.md / methodology.md / official_xref.md / bpm_encoding.md / API.md
+  effects/                      # Auto-generated per-effect summaries
+  manuals/                      # Empty by design — see manuals/README.md
 
-- **Sniff the host → device direction at the wire level.** WinMM only
-  shows what the device sends back. The active-probe approach replaces
-  this for most reverse-engineering; for *literally* capturing what
-  Tone Studio sends, install USBPcap + Wireshark.
-- **LIBRARIAN / TONE EXCHANGE / IR LOADER.** Not exercised; user-deferred.
-- **RESTORE / Factory reset / AUTO OFF triggering.** Destructive or
-  observation-only; deferred. AUTO OFF investigation confirmed there's
-  no countdown register or farewell SysEx — USB just disconnects.
+tools/
+  midi_send.py                  # DT1 / RQ1 / Identity Reply senders
+  midi_sniff.py                 # Passive WinMM sysex sniffer
+  example*.py                   # Five small demo scripts
+  demo_full_patch.py            # End-to-end patch construction
+  example_lib.py                # Shared session helper, target→offset resolver
+  build_effect_catalog.py       # Regenerate docs/effect_catalog.md
+  watch_hardware_actions.py     # Subscribe + log device-side broadcasts
+  fix_stuck_chain_edit.py       # Rescue BTS when the ChainEditTrigger gets stuck
+  fx_type_enum.py / per_effect_types.py / assign_target_table.py
+  (~60 more — captures, diagnostics, one-off probes)
 
-## Earlier "TBD" items now resolved
+captures/                       # JSON / JSONL summaries of capture sessions
+snapshots/                      # JSON dumps of patches and per-slot state
+LICENSE                         # MIT (see notes about Roland docs below)
+```
 
-The repo's first README warned that decoding "the per-parameter layout
-inside a patch beyond name + first ~48 bytes" required methodical
-tweak-and-diff against the live device. That's no longer true for
-visible knobs: the chart-documented layout (each FxItem = TYPE + ON/OFF
-+ DupNumber + 44 FX Params, each 4-nibble offset-binary), combined
-with the 741-entry ASSIGN TARGET TABLE and the per-effect captured
-knob addresses, gives `target_to_offset()` enough data to resolve any
-visible-knob target to its exact byte address. The diffing workflow
-is still required for genuinely conditional / hidden parameters
-(DELAY PLUS DUAL-mode extras, FB OSC-mode extras, HARMONY=USER scale
-notes), but those are the exception, not the rule.
+## Legal — what this repo *is* and *is not*
+
+**It is**: independent reverse-engineering of behaviour observable on a
+device the contributors own, performed for the purpose of
+interoperability (driving the device from non-BOSS software). The
+work is permitted under EU Software Directive Article 6 (decompilation
+for interoperability), US 17 USC §1201(f) and §117, and equivalent
+provisions in JP/AU/CA. All code, prose, and observations are original.
+
+**It is not** a redistribution of Roland's documentation or software.
+The Markdown chart and parameter-guide files some tools optionally
+consume are not in this repository — see [`docs/manuals/README.md`](docs/manuals/README.md)
+for the URLs to download them from Roland yourself. The repository's
+own factual reference material (e.g. [`docs/assign_target_table.json`](docs/assign_target_table.json),
+[`docs/effect_catalog.md`](docs/effect_catalog.md), the `tools/*_enum.py`
+modules) is independently structured / paraphrased, not verbatim, and
+documents factual behaviour rather than copyrightable expression.
+
+If you are at Roland and you'd prefer specific framing or additional
+disclaimers anywhere, please open an issue rather than a takedown —
+this is fan-made interoperability work, not piracy.
+
+The MIT licence in [`LICENSE`](LICENSE) covers the original code and
+prose. It does not (and cannot) cover Roland's IP referenced here.
+
+## Status & contributions
+
+This is a one-person research project that reached "good enough to
+publish" on 2026-05-06. Every byte and behaviour mentioned here was
+verified empirically on a single GX-10 unit. The GX-100 is described
+based on chart symmetry and a vguitarforums report that the sister
+device behaves analogously on Linux — please open an issue with your
+findings if you have access to one.
+
+Issues and PRs welcome. Particular interest in:
+- macOS / Linux / iOS testing reports
+- The 4-byte poly-tuner per-string `pitch` field encoding (deferred)
+- Any vendor-control transfers Tone Studio issues at startup that we
+  haven't accounted for (USB-Pcap traces appreciated)
+
+## Acknowledgements
+
+- The Linux ALSA developers, whose pre-existing Roland 0x0582
+  vendor-class catch-all in `sound/usb/quirks-table.h` and generic
+  Roland implicit-feedback handling means *the GX-10 likely already
+  works on Linux without any patch*.
+- The vguitarforums and ALSA-devel community for prior art on Roland
+  RE generally and the BOSS multi-effects family specifically.
+- Anthropic's Claude as a research and writing partner for this
+  project — it is, after all, why this folder lived under
+  `C:\Users\Peter\Claude\` to begin with.
