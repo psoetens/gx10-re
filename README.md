@@ -1,3 +1,14 @@
+## Preamble
+
+First of all, Roland Corporation, **thank you** for creating the best and most affordable musical instruments, effects, gear and so much more!
+BUT: you are in your genes a hardware company, not a software company and that shows :-( 
+
+I reverse engineered with Claude Code the GX-10 in a timespan of ~48 hours... just because I got so frustrated with the iOS 'BOSS Tone Studio' app for this device. It was excruciating slow, did not work in landscape mode and has a dated look and feel.
+
+Everything you find in this repo was written by Claude. I just told it what to do, where to look, what makes sense. A lot of it seems to check out and work, but the vast parameter space (we estimated >800 parameters) means that we may have overlooked corner cases. Especially GX-100 users will not be fully covered, since my unit is a gx-10 (hence the repo name). But **a lot** should also work for the GX-100.
+
+Next station: the ios app. Not so sure if this will take ~48 hours as well... but maybe it just does 🤯
+
 # BOSS GX-10 / GX-100 — Reverse-Engineered USB MIDI Protocol
 
 > Tools, observations, and a complete-enough protocol description to
