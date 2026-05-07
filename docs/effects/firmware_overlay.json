@@ -1,0 +1,46 @@
+{
+  "_comment": "Per-category firmware annotations. Independent of all_effects.json (which is the raw RE capture, captured against GX-10 firmware 1.00 where all categories are present). The keys here are category names (matching the `name` field in all_effects.json); the values record when that category became available on each device family member. Hosts that ship a unified GX-10/GX-100 dictionary use this to filter the visible effect list at runtime based on the connected device's Identity-Reply software-version. Sources / confidence notes are in docs/firmware_versions.md.",
+
+  "_devices": {
+    "GX-10":  { "available_since": "1.00 (launch)" },
+    "GX-100": { "available_since_v1": "1.00 (launch, partial set)",
+                "available_since_v2": "2.00 (Sept 2024 — closes the gap with GX-10)" }
+  },
+
+  "categories": {
+    "SLICER":     { "min_firmware_gx10": "1.00", "min_firmware_gx100": "2.00",
+                    "source": "BOSS GX-100 v2.0 announcement",
+                    "confidence": "high — name matches press release exactly" },
+
+    "SITAR_SIM":  { "min_firmware_gx10": "1.00", "min_firmware_gx100": "2.00",
+                    "source": "BOSS GX-100 v2.0 announcement (\"Sitar Sim\")",
+                    "confidence": "high — name matches press release exactly" },
+
+    "HMN":        { "min_firmware_gx10": "1.00", "min_firmware_gx100": "2.00",
+                    "source": "BOSS GX-100 v2.0 announcement (\"Humanizer\")",
+                    "confidence": "high — HMN is the GX series' standard short name for Humanizer (vocal-vowel formant)" }
+  },
+
+  "categories_unverified": {
+    "_comment": "Category names that *might* be among the v2.0 additions but the press wording is ambiguous — left untagged until confirmed.",
+    "T_WAH": "Press release says \"Auto Wah\" was added in v2.0. T_WAH is BOSS's standard \"Touch Wah\" category (envelope-following wah), which is the same effect class. But Touch Wah may have been in the GX-100 v1.x already and v2.0 only added a new TYPE within it (not the whole category). Verify against a v1.x GX-100 and re-tag at sub-type granularity once the schema supports it.",
+    "T_WAH_BASS": "Same caveat as T_WAH; the bass companion is similarly ambiguous."
+  },
+
+  "subtype_additions_pending_schema": {
+    "_comment": "Effects/amps that v2.0 added as new TYPES within an existing category. Tagging these requires a per-type firmware annotation (per_effect_types.json + raw_payloads_hex), which the current schema doesn't support. Captured here so we don't lose the information — schema upgrade is a follow-up.",
+
+    "OVERDRIVE.SD-1":   "v2.0 — Boss SD-1 Super Overdrive model added",
+    "DISTORTION.DS-1":  "v2.0 — Boss DS-1 Distortion model added",
+
+    "amp_models_v2": [
+      "X-Ultra (high-gain guitar)",
+      "X-Optima (high-gain guitar)",
+      "X-Titan (high-gain guitar)",
+      "(1 additional unnamed guitar amp)",
+      "(6 bass amps — exact names TBD; press referenced \"vintage classics + modern favorites\")"
+    ],
+
+    "_provenance": "Names from BOSS GX-100 v2.0 announcement / Guitar Player + Guitar World coverage 2024-09; cross-reference docs/firmware_versions.md."
+  }
+}

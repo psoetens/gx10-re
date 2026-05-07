@@ -97,9 +97,43 @@ Sources cataloged below.
    effects) does.
 3. **The GX-10 dictionary needs no `min_firmware` tags today** — every
    effect was present at launch.
-4. **The GX-100 dictionary needs ~13 categories tagged `min_firmware: "2.0"`**
-   (the 7 new effects + ~6 amp categories) for hosts that target users
-   on firmware 1.x.
+4. **The GX-100 dictionary needs categories tagged `min_firmware: "2.0"`**
+   for hosts that target users on firmware 1.x.
+
+### Tagged so far (confidence: high)
+
+These are *whole categories* present in `all_effects.json` whose names
+match the v2.0 announcement byte-for-byte. They are recorded in
+[`effects/firmware_overlay.json`](effects/firmware_overlay.json):
+
+| `all_effects.json` name | Press / announcement name | min_firmware_gx100 |
+|---|---|---|
+| `SLICER`     | Slicer                  | 2.00 |
+| `SITAR_SIM`  | Sitar Sim               | 2.00 |
+| `HMN`        | Humanizer               | 2.00 |
+
+### Untagged (pending confirmation against a v1.x GX-100)
+
+- `T_WAH` / `T_WAH_BASS` — the press release explicitly cites "Auto Wah"
+  as a v2.0 addition. T_WAH is BOSS's "Touch Wah" category. It's not
+  clear whether the entire category was new in v2.0 or whether v2.0
+  added a new sub-type within an already-existing T_WAH block. Needs
+  cross-check against a GX-100 still on firmware 1.x.
+
+### Sub-type additions (waiting on schema upgrade)
+
+The following v2.0 additions are *new sub-types within an existing
+category* — tagging them requires per-type firmware annotation, which
+the current schema (effects-keyed by category name) does not support.
+They are captured in `firmware_overlay.json` under
+`subtype_additions_pending_schema`:
+
+- **OVERDRIVE.SD-1** (Boss SD-1 Super Overdrive model)
+- **DISTORTION.DS-1** (Boss DS-1 Distortion model)
+- **AMP.X-Ultra**, **AMP.X-Optima**, **AMP.X-Titan** — three high-gain
+  guitar amp models
+- 1 additional unnamed guitar amp + 6 bass amps (BOSS announced 10 amps
+  total in v2.0; only 3 high-gain models were named in the press).
 
 ## Sources
 
