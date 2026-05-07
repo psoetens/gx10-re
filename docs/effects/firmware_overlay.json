@@ -1,46 +1,108 @@
 {
-  "_comment": "Per-category firmware annotations. Independent of all_effects.json (which is the raw RE capture, captured against GX-10 firmware 1.00 where all categories are present). The keys here are category names (matching the `name` field in all_effects.json); the values record when that category became available on each device family member. Hosts that ship a unified GX-10/GX-100 dictionary use this to filter the visible effect list at runtime based on the connected device's Identity-Reply software-version. Sources / confidence notes are in docs/firmware_versions.md.",
+  "_comment": "Per-category and per-type firmware annotations. Independent of all_effects.json (which is the raw RE capture, captured against GX-10 firmware 1.00 where all effects are present). Hosts that ship a unified GX-10/GX-100 dictionary use this to filter the visible effect list at runtime based on the connected device's Identity-Reply software-version. Source / confidence notes are in docs/firmware_versions.md.",
 
   "_devices": {
     "GX-10":  { "available_since": "1.00 (launch)" },
-    "GX-100": { "available_since_v1": "1.00 (launch, partial set)",
-                "available_since_v2": "2.00 (Sept 2024 — closes the gap with GX-10)" }
+    "GX-100": { "available_since_v1": "1.00 (launch)",
+                "available_since_v2": "2.00 (Sept 2024 — adds 7 effects + 9 amps to close the gap with GX-10)" }
   },
+
+  "_keys": "Category names below match the `name` field in all_effects.json (the short forms — OD, DIST, AMP, AMP_BASS, A_WAH, FB, …), NOT the long names in per_effect_types.json (OVERDRIVE, DISTORTION, AIRD PREAMP, …). The mapping between the two was confirmed empirically in May 2026.",
 
   "categories": {
-    "SLICER":     { "min_firmware_gx10": "1.00", "min_firmware_gx100": "2.00",
-                    "source": "BOSS GX-100 v2.0 announcement",
-                    "confidence": "high — name matches press release exactly" },
-
-    "SITAR_SIM":  { "min_firmware_gx10": "1.00", "min_firmware_gx100": "2.00",
-                    "source": "BOSS GX-100 v2.0 announcement (\"Sitar Sim\")",
-                    "confidence": "high — name matches press release exactly" },
-
-    "HMN":        { "min_firmware_gx10": "1.00", "min_firmware_gx100": "2.00",
-                    "source": "BOSS GX-100 v2.0 announcement (\"Humanizer\")",
-                    "confidence": "high — HMN is the GX series' standard short name for Humanizer (vocal-vowel formant)" }
+    "SLICER": {
+      "min_firmware_gx10": "1.00",
+      "min_firmware_gx100": "2.00",
+      "long_name": "SLICER",
+      "source": "BOSS GX-100 v2.0 announcement",
+      "confidence": "high"
+    },
+    "SITAR_SIM": {
+      "min_firmware_gx10": "1.00",
+      "min_firmware_gx100": "2.00",
+      "long_name": "SITAR SIMULATOR",
+      "source": "BOSS GX-100 v2.0 announcement (\"Sitar Sim\")",
+      "confidence": "high"
+    },
+    "HMN": {
+      "min_firmware_gx10": "1.00",
+      "min_firmware_gx100": "2.00",
+      "long_name": "HUMANIZER",
+      "source": "BOSS GX-100 v2.0 announcement (\"Humanizer\")",
+      "confidence": "high"
+    },
+    "A_WAH": {
+      "min_firmware_gx10": "1.00",
+      "min_firmware_gx100": "2.00",
+      "long_name": "AUTO WAH",
+      "source": "BOSS GX-100 v2.0 announcement (\"Auto Wah\"). Distinct from T_WAH (Touch Wah) — they are separate categories in per_effect_types.json.",
+      "confidence": "high"
+    },
+    "FB": {
+      "min_firmware_gx10": "1.00",
+      "min_firmware_gx100": "2.00",
+      "long_name": "FEEDBACKER",
+      "source": "BOSS GX-100 v2.0 announcement (\"Feedbacker\"); short-name FB confirmed in all_effects.json page 1 idx 16.",
+      "confidence": "high"
+    }
   },
 
-  "categories_unverified": {
-    "_comment": "Category names that *might* be among the v2.0 additions but the press wording is ambiguous — left untagged until confirmed.",
-    "T_WAH": "Press release says \"Auto Wah\" was added in v2.0. T_WAH is BOSS's standard \"Touch Wah\" category (envelope-following wah), which is the same effect class. But Touch Wah may have been in the GX-100 v1.x already and v2.0 only added a new TYPE within it (not the whole category). Verify against a v1.x GX-100 and re-tag at sub-type granularity once the schema supports it.",
-    "T_WAH_BASS": "Same caveat as T_WAH; the bass companion is similarly ambiguous."
+  "type_overrides": {
+    "_comment": "Per-type firmware annotations. Each block keys by the short category name (matching `name` in all_effects.json), then by type_index (the value the device's TYPE byte selects). type_index ↔ type_name mapping comes from per_effect_types.json.",
+
+    "OD": {
+      "long_name": "OVERDRIVE",
+      "by_index": {
+        "4": {
+          "type_name": "SD-1",
+          "min_firmware_gx100": "2.00",
+          "source": "BOSS GX-100 v2.0 announcement (\"SD-1 Super Overdrive\")"
+        }
+      }
+    },
+    "DIST": {
+      "long_name": "DISTORTION",
+      "by_index": {
+        "1": {
+          "type_name": "DS-1",
+          "min_firmware_gx100": "2.00",
+          "source": "BOSS GX-100 v2.0 announcement (\"DS-1 Distortion\")"
+        }
+      }
+    },
+    "AMP": {
+      "long_name": "AIRD PREAMP",
+      "by_index": {
+        "9":  { "type_name": "X-ULTRA",  "min_firmware_gx100": "2.00",
+                "source": "BOSS GX-100 v2.0 announcement (3 high-gain guitar amps)" },
+        "10": { "type_name": "X-OPTIMA", "min_firmware_gx100": "2.00",
+                "source": "BOSS GX-100 v2.0 announcement" },
+        "11": { "type_name": "X-TITAN",  "min_firmware_gx100": "2.00",
+                "source": "BOSS GX-100 v2.0 announcement" }
+      }
+    },
+    "AMP_BASS": {
+      "long_name": "AIRD BASS PREAMP",
+      "by_index": {
+        "3": { "type_name": "STUDIO BASS",  "min_firmware_gx100": "2.00",
+               "source": "BOSS GX-100 v2.0 announcement (6 new bass amps)" },
+        "4": { "type_name": "SILVER TUBE",  "min_firmware_gx100": "2.00",
+               "source": "BOSS GX-100 v2.0 announcement" },
+        "5": { "type_name": "CLASSIC BLUE", "min_firmware_gx100": "2.00",
+               "source": "BOSS GX-100 v2.0 announcement" },
+        "6": { "type_name": "SOLID STACK",  "min_firmware_gx100": "2.00",
+               "source": "BOSS GX-100 v2.0 announcement" },
+        "7": { "type_name": "FAT TUBE",     "min_firmware_gx100": "2.00",
+               "source": "BOSS GX-100 v2.0 announcement" },
+        "8": { "type_name": "DARK DRV",     "min_firmware_gx100": "2.00",
+               "source": "BOSS GX-100 v2.0 announcement" }
+      }
+    }
   },
 
-  "subtype_additions_pending_schema": {
-    "_comment": "Effects/amps that v2.0 added as new TYPES within an existing category. Tagging these requires a per-type firmware annotation (per_effect_types.json + raw_payloads_hex), which the current schema doesn't support. Captured here so we don't lose the information — schema upgrade is a follow-up.",
-
-    "OVERDRIVE.SD-1":   "v2.0 — Boss SD-1 Super Overdrive model added",
-    "DISTORTION.DS-1":  "v2.0 — Boss DS-1 Distortion model added",
-
-    "amp_models_v2": [
-      "X-Ultra (high-gain guitar)",
-      "X-Optima (high-gain guitar)",
-      "X-Titan (high-gain guitar)",
-      "(1 additional unnamed guitar amp)",
-      "(6 bass amps — exact names TBD; press referenced \"vintage classics + modern favorites\")"
-    ],
-
-    "_provenance": "Names from BOSS GX-100 v2.0 announcement / Guitar Player + Guitar World coverage 2024-09; cross-reference docs/firmware_versions.md."
+  "_provenance": {
+    "v2.0_amp_list_source": "https://www.guitarplayer.com/news/boss-gx-100-firmware-update-2024 (per WebFetch 2026-05-07)",
+    "v2.0_effect_list_source": "BOSS GX-100 v2.0 announcement, cross-referenced with Sweetwater + Guitar World coverage 2024-09",
+    "type_index_source": "docs/per_effect_types.json (this repo) cross-referenced with all_effects.json category names"
   }
 }
