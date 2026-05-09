@@ -190,6 +190,27 @@ regeneration.
 - Re-run the 22-effect mismatch audit on the regenerated data — most
   should resolve, the remainder should be reclassified.
 
+**Status (2026-05-09): VERIFIED RESOLVED.**
+`reanalyze_knobs_4nibble.py` was re-run and updated 0 records — the
+fix has already been applied to all `summary.json` files. The
+committed `all_effects.json` already has `min_raw`/`max_raw`/
+`min_display`/`max_display` fields with correct 4-nibble offset-binary
+decoded ranges (e.g. COMP SUSTAIN: legacy `min/max = 0/15`,
+correct `min_display/max_display = 0/100`; BOOST TONE:
+`-50/+50`).
+The 22-effect mismatch audit reports all 22 entries with explanations
+(categories A–E), zero unresolved (category F): the count
+discrepancies are about manual-vs-capture knob structure (BPM unit
+toggles, TYPE/MODE conditionals, USER-scale conditionals,
+captured-extras), NOT about value ranges. So 4-nibble decoding
+correctly didn't change them.
+
+**Tangential bug spotted:** `tools/build_effects_doc.py` aggregation
+is non-deterministic — re-running it produces 61 lines of swapped
+`name_manual_v2` attributions per run. Likely a dict iteration
+order issue in `manual_xref_v2.py`. Filed as a follow-up; doesn't
+affect the decoded value ranges, only manual-name attribution.
+
 ---
 
 ### P1-3. `firmware_overlay.json` flags subtype additions as "pending schema"; gxnarly already has the schema
