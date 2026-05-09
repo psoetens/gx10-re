@@ -70,11 +70,18 @@ captures/bpm_test/**/*.pcap
 captures/bts_*/**/*.pcap
 captures/bts_*/**/*.jsonl
 captures/bts_*/**/*.png
+captures/bts_*/**/*.bin
+captures/bts_*/**/*.log
 captures/bts_*.jsonl
 
 # All PNG/JPG screenshots in captures (any subdir).
 captures/**/*.png
 captures/**/*.jpg
+
+# Exception: bts_typebar_resweep — these screenshots ARE the dataset
+# (one pair per of all 83 effects, 6 MB total). They give ground-truth
+# label→address mapping per effect, which is what we're building.
+!captures/bts_typebar_resweep/**/*.png
 
 # Snapshot screenshots — referenced by the per-effect TYPE name extraction
 # pipeline, but the resulting JSON (docs/effects/all_effects.json etc.) is

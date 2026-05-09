@@ -1,0 +1,16 @@
+{
+  "fxitem": 2,
+  "fxitem_base": "0x10001500",
+  "type_byte": "0x1D",
+  "tag": "DIV_MIX",
+  "n_pairs": 1,
+  "all_pairs": [
+    {
+      "x": 312,
+      "y": 585,
+      "label": "CH SELECT",
+      "value": "B"
+    }
+  ],
+  "labels_by_addr_at_fxitem0": {}
+}

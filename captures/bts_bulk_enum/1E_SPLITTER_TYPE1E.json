@@ -1,0 +1,8 @@
+{
+  "type_byte": "0x1E",
+  "fxitem_index": 1,
+  "max_raw_probed": 15,
+  "dropdowns": {},
+  "knobs": {},
+  "_note": "LOOP LEVEL knob entry was BTS UI leakage from a stale PHRASE LOOP (0x1C) panel; this effect has only dropdowns."
+}

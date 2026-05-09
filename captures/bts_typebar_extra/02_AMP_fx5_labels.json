@@ -1,0 +1,60 @@
+{
+  "fxitem": 5,
+  "fxitem_base": "0x10001B00",
+  "type_byte": "0x02",
+  "tag": "AMP",
+  "n_pairs": 7,
+  "all_pairs": [
+    {
+      "x": 313,
+      "y": 585,
+      "label": "GAIN",
+      "value": "1"
+    },
+    {
+      "x": 433,
+      "y": 585,
+      "label": "LEVEL",
+      "value": "2"
+    },
+    {
+      "x": 673,
+      "y": 585,
+      "label": "BASS",
+      "value": "3"
+    },
+    {
+      "x": 793,
+      "y": 585,
+      "label": "MIDDLE",
+      "value": "4"
+    },
+    {
+      "x": 913,
+      "y": 585,
+      "label": "TREBLE",
+      "value": "5"
+    },
+    {
+      "x": 1033,
+      "y": 585,
+      "label": "PRESENCE",
+      "value": "6"
+    },
+    {
+      "x": 1393,
+      "y": 585,
+      "label": "SOLO LEVEL",
+      "value": "9"
+    }
+  ],
+  "labels_by_addr_at_fxitem0": {
+    "0x10001107": "GAIN",
+    "0x1000110B": "LEVEL",
+    "0x1000110F": "BASS",
+    "0x10001113": "MIDDLE",
+    "0x10001117": "TREBLE",
+    "0x1000111B": "PRESENCE",
+    "0x10001127": "SOLO LEVEL"
+  }
+}

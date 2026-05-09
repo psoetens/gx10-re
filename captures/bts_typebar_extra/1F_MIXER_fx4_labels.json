@@ -1,0 +1,25 @@
+{
+  "fxitem": 4,
+  "fxitem_base": "0x10001900",
+  "type_byte": "0x1F",
+  "tag": "MIXER",
+  "n_pairs": 2,
+  "all_pairs": [
+    {
+      "x": 313,
+      "y": 585,
+      "label": "A LEVEL",
+      "value": "1"
+    },
+    {
+      "x": 433,
+      "y": 585,
+      "label": "B LEVEL",
+      "value": "2"
+    }
+  ],
+  "labels_by_addr_at_fxitem0": {
+    "0x10001107": "A LEVEL",
+    "0x1000110B": "B LEVEL"
+  }
+}
