@@ -241,9 +241,12 @@
       "0x1000111F": "MOD DEPTH",
       "0x10001123": "DUCK SENS",
       "0x10001127": "DUCK PRE",
-      "0x1000112B": "DUCK POST"
+      "0x1000112B": "DUCK POST",
+      "0x1000112F": "HEAD (enum)",
+      "0x10001133": "WOW & FLUTTER",
+      "0x10001137_or_3B": "CARRYOVER (enum) / BPM"
     },
-    "_note_row2": "Row 2 cut off in crop; values +10, 11, 12, ON, 120 visible — likely WOW/FLUTTER/SAT/CARRYOVER/BPM."
+    "_note_row2": "Tall resweep got row 2: HEAD (enum), WOW & FLUTTER, CARRYOVER (enum), BPM. Last two addresses TBD (values not from my distinctive writes)."
   },
   "0x11": {
     "title": "SHIMMER DELAY", "category": "DELAY_SHIMMER",
@@ -257,9 +260,13 @@
       "0x1000111F": "MOD DEPTH",
       "0x10001123": "DUCK SENS",
       "0x10001127": "DUCK PRE",
-      "0x1000112B": "DUCK POST"
+      "0x1000112B": "DUCK POST",
+      "0x1000112F": "PITCH (bipolar)",
+      "0x10001133": "PITCH BALANCE",
+      "0x10001137": "PITCH FEEDBACK",
+      "0x1000113B_or_3F": "CARRYOVER (enum) / BPM"
     },
-    "_note_row2": "Row 2 cut off; values +10, 11, 12, ON, 120 visible."
+    "_note_row2": "Tall resweep got row 2: PITCH/PITCH BALANCE/PITCH FEEDBACK/CARRYOVER/BPM. Last two addresses approximate."
   },
   "0x12": {
     "title": "TWIST DELAY", "category": "DELAY_TWIST",
@@ -294,10 +301,10 @@
       "0x1000111B": "HIGH-MID FREQ",
       "0x1000111F": "HIGH-MID Q",
       "0x10001123": "HIGH-MID GAIN",
-      "0x10001127": "LOW FREQ (likely)",
-      "0x1000112B": "HIGH FREQ (likely)"
+      "0x10001127": "LOW CUT (Hz)",
+      "0x1000112B": "HIGH CUT (Hz)"
     },
-    "_note_row2": "Row 2 truncated; 125Hz, 200Hz visible — last two slots are LOW FREQ + HIGH FREQ."
+    "_note": "Tall resweep confirmed row 2: LOW CUT (125Hz) + HIGH CUT (200Hz). 11 knobs total."
   },
   "0x15": {
     "title": "GRAPHIC EQUALIZER", "category": "GEQ",
@@ -352,9 +359,13 @@
       "0x10001117": "SEPARATION",
       "0x1000111B": "STEP RATE",
       "0x1000111F": "TURBO (enum)",
-      "0x10001123": "LOW DAMP (bipolar)"
+      "0x10001123": "LOW DAMP (bipolar)",
+      "0x10001127": "HIGH DAMP (bipolar)",
+      "0x1000112B": "EFFECT LEVEL",
+      "0x1000112F": "DIRECT MIX",
+      "0x10001133": "BPM"
     },
-    "_note_row2": "Row 2 cut: EFFECT LEVEL/DIRECT MIX/BPM at 0x10001127, 0x1000112B, 0x1000112F."
+    "_note": "Tall resweep confirmed row 2: HIGH DAMP, EFFECT LEVEL, DIRECT MIX, BPM. 13 knobs total."
   },
   "0x19": {
     "title": "PRIME BASS FLANGER", "category": "FL_PRIME_BASS",
@@ -367,8 +378,13 @@
       "0x10001117": "SEPARATION",
       "0x1000111B": "STEP RATE",
       "0x1000111F": "TURBO (enum)",
-      "0x10001123": "LOW DAMP (bipolar)"
-    }
+      "0x10001123": "LOW DAMP (bipolar)",
+      "0x10001127": "HIGH DAMP (bipolar)",
+      "0x1000112B": "EFFECT LEVEL",
+      "0x1000112F": "DIRECT MIX",
+      "0x10001133": "BPM"
+    },
+    "_note": "Tall resweep confirmed: same layout as FL_PRIME, 13 knobs."
   },
   "0x1A": {
     "title": "HARMONIST", "category": "HARM",
