@@ -496,3 +496,77 @@ DIRECT MIX (in WAH). So the BTS slider drag — whatever TYPE was
 selected at capture time — most likely wrote to the DIRECT MIX
 parameter, not PEDAL MIN. The wire-encoding finding (canonical
 4-nibble offset binary) stands regardless of slot identity.
+
+---
+
+## 2026-05-09 follow-up: catalog audit — COMP
+
+After the WAH audit (above) revealed a **name↔address permutation**
+bug, ran the same write-distinctive-and-read protocol on **COMP**
+(TYPE byte 0x08) by changing FxItem 0's TYPE byte and writing
+11/22/33/44/55/66 to FX Params 2..7.
+
+User-reported displays:
+
+| Address    | Distinctive | UI label  | Catalog claimed |
+|------------|------------:|-----------|-----------------|
+| `10001107` | 11          | SUSTAIN   | SUSTAIN ✓       |
+| `1000110B` | 22          | ATTACK    | ATTACK ✓        |
+| `1000110F` | 33          | LEVEL     | LEVEL ✓         |
+| `10001113` | +44         | TONE      | (not listed)    |
+| `10001117` | 55          | DIRECT MIX | (not listed)    |
+| `1000111B` | 66          | (hidden)  | not listed      |
+
+So COMP has a **different** catalog-bug pattern from WAH:
+
+- WAH: 5 catalog-listed knobs, but the **names↔addresses are
+  permuted**.
+- COMP: 3 catalog-listed knobs, all **correctly mapped**, but two
+  more **always-visible knobs (TONE, DIRECT MIX) are missing from
+  the catalog entirely**.
+
+Two distinct bug types. The "+44" display for TONE incidentally
+confirms the encoder also handles bipolar knobs correctly (TONE
+range presumably -50..+50; we wrote `encode_fx_param(44) = [08 00
+02 0C]` and got display "+44" — i.e. the device interprets raw
+0x802C as +44, matching offset binary).
+
+Task #29 is now firmly a **systematic** catalog audit — each effect
+needs the write-distinctive-and-read pass to determine which bug
+pattern (or none) it has. The two patterns observed so far suggest
+the catalog generator (`tools/build_effect_catalog.py`,
+`tools/manual_xref_v2.py`, plus the captured `summary.json` data)
+has at least two distinct alignment / completeness bugs that need
+investigating at the source-code level, not patched effect by
+effect in the markdown.
+
+### Probe of `0x7F000703` toggle (cross_check P2-4 follow-up)
+
+Mirrored the BTS startup sequence to test the hypothesis that
+writing `0x7F000703 = 0x01` unlocks unsolicited DT1 broadcasts:
+
+```
+1. Identity Request                              -> reply
+2. RQ1 0x7F000000                                -> 0x03
+3. DT1 0x7F000001 = 0x01 (twice, mirroring BTS)  -> ack via RQ1 reply 0x01
+4. RQ1 0x7F000002                                -> 0x00 (reply unlocked by attach bit)
+5. RQ1 0x7F000003                                -> 0x00
+6. RQ1 0x7F000703                                -> NO REPLY (silent even with attach bit)
+7. DT1 0x7F000703 = 0x00 then 0x01               -> ack
+8. RQ1 0x7F000703                                -> NO REPLY
+9. listen 8s for unsolicited broadcasts          -> 0 events
+```
+
+**Hypothesis rejected.** Writing `0x7F000703 = 0x01` does not
+unlock any device-side broadcast channel. The register also doesn't
+reply to RQ1 (Windows-Claude's BTS capture only saw BTS *write*
+the register, not read it — so `0x7F000703` is plausibly write-only,
+or its read-replies are gated behind something we haven't set up).
+
+Whatever `0x7F000703` does for BTS, it isn't activating MIDI
+broadcasts. Its purpose remains unknown. Possible roles:
+internal-state-only flag with no MIDI side effects; or a write that
+unlocks something only when paired with a specific user action
+(entering tuner mode, opening a particular dialog) we didn't
+trigger. Closing as inconclusive but with the broadcast-subscribe
+hypothesis ruled out.
