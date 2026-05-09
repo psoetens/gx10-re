@@ -1,0 +1,264 @@
+{
+  "_method": "Manual visual extraction from captures/bts_typebar_resweep_cropped/<TT>_<NAME>_filled.png by Claude reading the cropped screenshots. Each effect entry pairs the BTS-displayed label with the address that received the matching distinctive value (1..12 written to consecutive Param 2..13 slots; sub-type written to 0x10001103 = 0).",
+  "_writes_per_run": {
+    "sub_type_addr": "0x10001103",
+    "sub_type_value": 0,
+    "param_2_addr": "0x10001107",
+    "param_2_value": 1,
+    "param_3_addr": "0x1000110B",
+    "param_3_value": 2,
+    "param_4_addr": "0x1000110F",
+    "param_4_value": 3,
+    "param_5_addr": "0x10001113",
+    "param_5_value": 4,
+    "param_6_addr": "0x10001117",
+    "param_6_value": 5,
+    "param_7_addr": "0x1000111B",
+    "param_7_value": 6,
+    "param_8_addr": "0x1000111F",
+    "param_8_value": 7,
+    "param_9_addr": "0x10001123",
+    "param_9_value": 8,
+    "param_10_addr": "0x10001127",
+    "param_10_value": 9,
+    "param_11_addr": "0x1000112B",
+    "param_11_value": 10,
+    "param_12_addr": "0x1000112F",
+    "param_12_value": 11,
+    "param_13_addr": "0x10001133",
+    "param_13_value": 12
+  },
+  "_blank_meaning": "A knob displayed as blank/empty likely means the device clamped my distinctive value to invalid for that knob's range (e.g., enum knob with only 0..3 valid received my 4..12 write).",
+  "0x00": {
+    "title": "AC GUITAR SIMULATOR",
+    "category": "AC_SIM",
+    "knobs": [
+      { "addr": "0x10001107", "label": "BODY", "shown": "0", "note": "my 1 clamped — BODY is enum/categorical" },
+      { "addr": "0x1000110B", "label": "LOW", "shown": "-49", "note": "bipolar with non-zero baseline; my 2 displayed as -49" },
+      { "addr": "0x1000110F", "label": "HIGH", "shown": "-48", "note": "bipolar; my 3 displayed as -48" },
+      { "addr": "0x10001113", "label": "LEVEL", "shown": "3", "note": "my 4 displayed as 3 — possibly off-by-1 baseline" }
+    ]
+  },
+  "0x01": {
+    "title": "AC RESONANCE",
+    "category": "AC_RESO",
+    "knobs": [
+      { "addr": "0x10001107", "label": "RESONANCE", "shown": "1" },
+      { "addr": "0x1000110B", "label": "TONE", "shown": "+2" },
+      { "addr": "0x1000110F", "label": "LEVEL", "shown": "3" }
+    ]
+  },
+  "0x04": {
+    "title": "CHORUS",
+    "category": "CHO",
+    "knobs": [
+      { "addr": "0x10001103", "label": "TYPE/sub-type", "shown": "MONO" },
+      { "addr": "0x10001107", "label": "DIRECT LEVEL", "shown": "1" },
+      { "addr": "0x1000110B", "label": "RATE", "shown": "2" },
+      { "addr": "0x1000110F", "label": "DEPTH", "shown": "3" },
+      { "addr": "0x10001113", "label": "EFFECT LEVEL", "shown": "4" },
+      { "addr": "0x10001117", "label": "PRE-DELAY", "shown": "3.5ms", "note": "value displayed as ms" },
+      { "addr": "0x1000111B", "label": "WAVEFORM", "shown": "(blank)", "note": "enum, my 6 invalid" },
+      { "addr": "0x1000111F", "label": "LOW CUT", "shown": "50.0Hz" },
+      { "addr": "0x10001123", "label": "HIGH CUT", "shown": "80.0Hz" },
+      { "addr": "0x10001127", "label": "BPM", "shown": "120" }
+    ]
+  },
+  "0x06": {
+    "title": "PRIME CHORUS",
+    "category": "CHO_PRIME",
+    "knobs": [
+      { "addr": "0x10001107", "label": "RATE", "shown": "0", "note": "RATE displayed 0 — possibly clamped" },
+      { "addr": "0x1000110B", "label": "DEPTH", "shown": "1" },
+      { "addr": "0x1000110F", "label": "EFFECT LEVEL", "shown": "2" },
+      { "addr": "0x10001113", "label": "PRE-DELAY", "shown": "1.5ms" },
+      { "addr": "0x10001117", "label": "WAVEFORM", "shown": "(blank)" },
+      { "addr": "0x1000111B", "label": "LOW CUT", "shown": "50.0Hz" },
+      { "addr": "0x1000111F", "label": "HIGH CUT", "shown": "80.0Hz" },
+      { "addr": "0x10001123", "label": "SWEETNESS", "shown": "7" },
+      { "addr": "0x10001127", "label": "BELL", "shown": "8" },
+      { "addr": "0x1000112B", "label": "OUTPUT MODE", "shown": "(blank)" }
+    ]
+  },
+  "0x08": {
+    "title": "COMPRESSOR",
+    "category": "COMP",
+    "knobs": [
+      { "addr": "0x10001103", "label": "TYPE", "shown": "BOSS COMP" },
+      { "addr": "0x10001107", "label": "SUSTAIN", "shown": "1" },
+      { "addr": "0x1000110B", "label": "ATTACK", "shown": "2" },
+      { "addr": "0x1000110F", "label": "LEVEL", "shown": "3" },
+      { "addr": "0x10001113", "label": "TONE", "shown": "+4" },
+      { "addr": "0x10001117", "label": "DIRECT MIX", "shown": "5" }
+    ]
+  },
+  "0x09": {
+    "title": "X-COMPRESSOR",
+    "category": "X-COMP",
+    "knobs": [
+      { "addr": "0x10001107", "label": "LEVEL", "shown": "1" },
+      { "addr": "0x1000110B", "label": "TONE", "shown": "+2" },
+      { "addr": "0x1000110F", "label": "RATIO", "shown": "1.6:1" },
+      { "addr": "0x10001113", "label": "DIRECT MIX", "shown": "4" },
+      { "addr": "0x10001117", "label": "SUSTAIN", "shown": "5" },
+      { "addr": "0x1000111B", "label": "ATTACK", "shown": "0", "note": "my 6 clamped to 0" }
+    ]
+  },
+  "0x0A": {
+    "title": "X BASS COMPRESSOR",
+    "category": "X_COMP_BASS",
+    "knobs": [
+      { "addr": "0x10001107", "label": "LEVEL", "shown": "1" },
+      { "addr": "0x1000110B", "label": "TONE", "shown": "+2" },
+      { "addr": "0x1000110F", "label": "RATIO", "shown": "1.6:1" },
+      { "addr": "0x10001113", "label": "DIRECT MIX", "shown": "4" },
+      { "addr": "0x10001117", "label": "THRESHOLD", "shown": "5" },
+      { "addr": "0x1000111B", "label": "ATTACK", "shown": "0" }
+    ]
+  },
+  "0x0B": {
+    "title": "DEFRETTER",
+    "category": "DEFRET",
+    "knobs": [
+      { "addr": "0x10001103", "label": "SENS", "shown": "0", "note": "actually sub-type write of 0" },
+      { "addr": "0x10001107", "label": "DEPTH", "shown": "1" },
+      { "addr": "0x1000110B", "label": "TONE", "shown": "+2" },
+      { "addr": "0x1000110F", "label": "EFFECT LEVEL", "shown": "3" },
+      { "addr": "0x10001113", "label": "ATTACK", "shown": "4" },
+      { "addr": "0x10001117", "label": "RESONANCE", "shown": "5" },
+      { "addr": "0x1000111B", "label": "DIRECT MIX", "shown": "6" }
+    ]
+  },
+  "0x0C": {
+    "title": "BASS DEFRETTER",
+    "category": "DEFRET_BASS",
+    "knobs": [
+      { "addr": "0x10001103", "label": "SENS", "shown": "0" },
+      { "addr": "0x10001107", "label": "ATTACK", "shown": "1" },
+      { "addr": "0x1000110B", "label": "TONE", "shown": "+2" },
+      { "addr": "0x1000110F", "label": "EFFECT LEVEL", "shown": "3" },
+      { "addr": "0x10001113", "label": "DIRECT MIX", "shown": "4" }
+    ]
+  },
+  "0x0D": {
+    "title": "DELAY",
+    "category": "DELAY",
+    "knobs": [
+      { "addr": "0x10001107", "label": "TIME", "shown": "1ms", "note": "value displayed as ms" },
+      { "addr": "0x1000110B", "label": "FEEDBACK", "shown": "1" },
+      { "addr": "0x1000110F", "label": "EFFECT LEVEL", "shown": "2" },
+      { "addr": "0x10001113", "label": "DIRECT LEVEL", "shown": "3" },
+      { "addr": "0x10001117", "label": "HIGH CUT", "shown": "50.0Hz" },
+      { "addr": "0x1000111B", "label": "CARRYOVER", "shown": "(blank)", "note": "enum on/off" },
+      { "addr": "0x1000111F", "label": "BPM", "shown": "120" }
+    ]
+  },
+  "0x10": {
+    "title": "SPACE ECHO",
+    "category": "SPACE_ECHO",
+    "knobs_row1": [
+      { "addr": "0x10001107", "label": "TIME", "shown": "1ms" },
+      { "addr": "0x1000110B", "label": "FEEDBACK", "shown": "1" },
+      { "addr": "0x1000110F", "label": "EFFECT LEVEL", "shown": "2" },
+      { "addr": "0x10001113", "label": "DIRECT LEVEL", "shown": "3" },
+      { "addr": "0x10001117", "label": "HIGH CUT", "shown": "50.0Hz" },
+      { "addr": "0x1000111B", "label": "MOD RATE", "shown": "5" },
+      { "addr": "0x1000111F", "label": "MOD DEPTH", "shown": "6" },
+      { "addr": "0x10001123", "label": "DUCK SENS", "shown": "7" },
+      { "addr": "0x10001127", "label": "DUCK PRE", "shown": "8" },
+      { "addr": "0x1000112B", "label": "DUCK POST", "shown": "9" }
+    ],
+    "knobs_row2_partial": [
+      { "value_shown": "+10" },
+      { "value_shown": "11" },
+      { "value_shown": "12" },
+      { "value_shown": "ON" },
+      { "value_shown": "120" }
+    ],
+    "_note": "Row-2 labels cut off in current crop height."
+  },
+  "0x11": {
+    "title": "SHIMMER DELAY",
+    "category": "DELAY_SHIMMER",
+    "knobs_row1": [
+      { "addr": "0x10001107", "label": "TIME", "shown": "1ms" },
+      { "addr": "0x1000110B", "label": "FEEDBACK", "shown": "1" },
+      { "addr": "0x1000110F", "label": "EFFECT LEVEL", "shown": "2" },
+      { "addr": "0x10001113", "label": "DIRECT LEVEL", "shown": "3" },
+      { "addr": "0x10001117", "label": "HIGH CUT", "shown": "50.0Hz" },
+      { "addr": "0x1000111B", "label": "MOD RATE", "shown": "5" },
+      { "addr": "0x1000111F", "label": "MOD DEPTH", "shown": "6" },
+      { "addr": "0x10001123", "label": "DUCK SENS", "shown": "7" },
+      { "addr": "0x10001127", "label": "DUCK PRE", "shown": "8" },
+      { "addr": "0x1000112B", "label": "DUCK POST", "shown": "9" }
+    ],
+    "knobs_row2_partial": [
+      { "value_shown": "+10" }, { "value_shown": "11" },
+      { "value_shown": "12" }, { "value_shown": "ON" },
+      { "value_shown": "120" }
+    ]
+  },
+  "0x1A": {
+    "title": "HARMONIST",
+    "category": "HARM",
+    "knobs": [
+      { "addr": "0x10001103", "label": "VOICE", "shown": "1 VOICE" },
+      { "addr": "0x10001107", "label": "1: HARMONY", "shown": "-14th", "note": "enum interval" },
+      { "addr": "0x1000110B", "label": "1: LEVEL", "shown": "2" },
+      { "addr": "0x1000110F", "label": "1: PRE-DELAY", "shown": "3ms" },
+      { "addr": "0x10001113", "label": "1: FEEDBACK", "shown": "4" },
+      { "addr": "0x10001117", "label": "KEY", "shown": "C(Am)", "note": "enum key" },
+      { "addr": "0x1000111B", "label": "DIRECT LEVEL", "shown": "8" },
+      { "addr": "0x1000111F", "label": "BPM", "shown": "120" }
+    ]
+  },
+  "0x1C": {
+    "title": "PHRASE LOOP",
+    "category": "LOOP",
+    "knobs": [
+      { "addr": "0x10001107", "label": "LOOP LEVEL", "shown": "0", "note": "my 1 clamped" }
+    ]
+  },
+  "0x1D": {
+    "title": "PHRASE LOOP (BTS UI stuck)",
+    "category": "DIV_MIX",
+    "_status": "BTS UI did NOT switch to DIV_MIX — still showing PHRASE LOOP from 0x1C. Cannot extract real DIV_MIX labels from this screenshot."
+  },
+  "0x1E": {
+    "title": "PHRASE LOOP (BTS UI stuck)",
+    "category": "(unknown — typebar_full had no entry)",
+    "_status": "Stuck on PHRASE LOOP UI. Real TYPE 0x1E is unidentified."
+  },
+  "0x1F": {
+    "title": "PHRASE LOOP (BTS UI stuck)",
+    "category": "(unknown)",
+    "_status": "Stuck on PHRASE LOOP UI."
+  },
+  "0x35": {
+    "title": "WAH",
+    "category": "WAH",
+    "knobs": [
+      { "addr": "0x10001103", "label": "WAH TYPE", "shown": "CRY WAH" },
+      { "addr": "0x10001107", "label": "PEDAL POSITION", "shown": "1" },
+      { "addr": "0x1000110B", "label": "PEDAL MIN", "shown": "2" },
+      { "addr": "0x1000110F", "label": "PEDAL MAX", "shown": "3" },
+      { "addr": "0x10001113", "label": "EFFECT LEVEL", "shown": "4" },
+      { "addr": "0x10001117", "label": "DIRECT MIX", "shown": "5" }
+    ]
+  },
+  "0x52": {
+    "title": "AUTO WAH",
+    "category": "A_WAH",
+    "knobs_row1": [
+      { "addr": "0x10001103", "label": "FILTER MODE", "shown": "LPF" },
+      { "addr": "0x10001107", "label": "RATE", "shown": "1" },
+      { "addr": "0x1000110B", "label": "DEPTH", "shown": "2" },
+      { "addr": "0x1000110F", "label": "EFFECT LEVEL", "shown": "3" }
+    ],
+    "knobs_row2_partial": [
+      { "value_shown": "4" }, { "value_shown": "5" },
+      { "value_shown": "(blank)" }, { "value_shown": "7" }
+    ],
+    "_note": "Row-2 labels cut off in current crop height."
+  }
+}

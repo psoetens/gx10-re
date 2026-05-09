@@ -1,0 +1,563 @@
+{
+  "0x00": {
+    "effect_name_typebar": "AC_SIM",
+    "ground_truth_labels": {},
+    "typebar_claimed_labels": {
+      "0X10001107": "BODY",
+      "0X1000110B": "LOW",
+      "0X1000110F": "HIGH",
+      "0X10001113": "LEVEL"
+    },
+    "correct": [],
+    "permuted": [],
+    "missing_in_typebar": [],
+    "only_typebar": [
+      {
+        "addr": "0X10001107",
+        "label": "BODY"
+      },
+      {
+        "addr": "0X1000110B",
+        "label": "LOW"
+      },
+      {
+        "addr": "0X1000110F",
+        "label": "HIGH"
+      },
+      {
+        "addr": "0X10001113",
+        "label": "LEVEL"
+      }
+    ]
+  },
+  "0x01": {
+    "effect_name_typebar": "AC_RESO",
+    "ground_truth_labels": {
+      "0X10001107": "RESONANCE",
+      "0X1000110B": "TONE",
+      "0X1000110F": "LEVEL"
+    },
+    "typebar_claimed_labels": {
+      "0X10001107": "RESONANCE",
+      "0X1000110B": "TONE",
+      "0X1000110F": "LEVEL"
+    },
+    "correct": [
+      {
+        "addr": "0X10001107",
+        "label": "RESONANCE"
+      },
+      {
+        "addr": "0X1000110B",
+        "label": "TONE"
+      },
+      {
+        "addr": "0X1000110F",
+        "label": "LEVEL"
+      }
+    ],
+    "permuted": [],
+    "missing_in_typebar": [],
+    "only_typebar": []
+  },
+  "0x02": {
+    "effect_name_typebar": "AMP",
+    "ground_truth_labels": {
+      "0X10001107": "RESONANCE",
+      "0X1000110B": "TONE",
+      "0X1000110F": "LEVEL"
+    },
+    "typebar_claimed_labels": {
+      "0X10001107": "GAIN",
+      "0X1000110B": "LEVEL",
+      "0X1000110F": "GAIN SW",
+      "0X10001113": "BASS",
+      "0X10001117": "MIDDLE",
+      "0X1000111B": "TREBLE",
+      "0X1000111F": "PRESENCE",
+      "0X10001123": "SOLO SW",
+      "0X10001127": "SOLO LEVEL",
+      "0X1000112B": "SAG",
+      "0X1000112F": "RESONANCE"
+    },
+    "correct": [],
+    "permuted": [
+      {
+        "addr": "0X10001107",
+        "real": "RESONANCE",
+        "typebar": "GAIN"
+      },
+      {
+        "addr": "0X1000110B",
+        "real": "TONE",
+        "typebar": "LEVEL"
+      },
+      {
+        "addr": "0X1000110F",
+        "real": "LEVEL",
+        "typebar": "GAIN SW"
+      }
+    ],
+    "missing_in_typebar": [],
+    "only_typebar": [
+      {
+        "addr": "0X10001113",
+        "label": "BASS"
+      },
+      {
+        "addr": "0X10001117",
+        "label": "MIDDLE"
+      },
+      {
+        "addr": "0X1000111B",
+        "label": "TREBLE"
+      },
+      {
+        "addr": "0X1000111F",
+        "label": "PRESENCE"
+      },
+      {
+        "addr": "0X10001123",
+        "label": "SOLO SW"
+      },
+      {
+        "addr": "0X10001127",
+        "label": "SOLO LEVEL"
+      },
+      {
+        "addr": "0X1000112B",
+        "label": "SAG"
+      },
+      {
+        "addr": "0X1000112F",
+        "label": "RESONANCE"
+      }
+    ]
+  },
+  "0x03": {
+    "effect_name_typebar": "AMP_BASS",
+    "ground_truth_labels": {
+      "0X10001107": "RESONANCE",
+      "0X1000110B": "TONE",
+      "0X1000110F": "LEVEL"
+    },
+    "typebar_claimed_labels": {
+      "0X10001107": "GAIN",
+      "0X1000110B": "LEVEL",
+      "0X1000110F": "GAIN SW",
+      "0X10001113": "BASS",
+      "0X10001117": "MIDDLE",
+      "0X1000111B": "TREBLE",
+      "0X1000111F": "PRESENCE",
+      "0X10001123": "BRIGHT SW",
+      "0X10001127": "SOLO SW",
+      "0X1000112B": "SOLO LEVEL",
+      "0X1000112F": "SAG",
+      "0X10001133": "RESONANCE"
+    },
+    "correct": [],
+    "permuted": [
+      {
+        "addr": "0X10001107",
+        "real": "RESONANCE",
+        "typebar": "GAIN"
+      },
+      {
+        "addr": "0X1000110B",
+        "real": "TONE",
+        "typebar": "LEVEL"
+      },
+      {
+        "addr": "0X1000110F",
+        "real": "LEVEL",
+        "typebar": "GAIN SW"
+      }
+    ],
+    "missing_in_typebar": [],
+    "only_typebar": [
+      {
+        "addr": "0X10001113",
+        "label": "BASS"
+      },
+      {
+        "addr": "0X10001117",
+        "label": "MIDDLE"
+      },
+      {
+        "addr": "0X1000111B",
+        "label": "TREBLE"
+      },
+      {
+        "addr": "0X1000111F",
+        "label": "PRESENCE"
+      },
+      {
+        "addr": "0X10001123",
+        "label": "BRIGHT SW"
+      },
+      {
+        "addr": "0X10001127",
+        "label": "SOLO SW"
+      },
+      {
+        "addr": "0X1000112B",
+        "label": "SOLO LEVEL"
+      },
+      {
+        "addr": "0X1000112F",
+        "label": "SAG"
+      },
+      {
+        "addr": "0X10001133",
+        "label": "RESONANCE"
+      }
+    ]
+  },
+  "0x04": {
+    "effect_name_typebar": "CHO",
+    "ground_truth_labels": {
+      "0X1000110B": "RATE",
+      "0X1000110F": "DEPTH",
+      "0X10001113": "EFFECT LEVEL",
+      "0X10001107": "DIRECT LEVEL"
+    },
+    "typebar_claimed_labels": {
+      "0X10001107": "RATE",
+      "0X1000110B": "EFFECT LEVEL",
+      "0X1000110F": "WAVEFORM",
+      "0X10001113": "HIGH CUT",
+      "0X10001117": "BPM",
+      "0X1000111B": "2: RATE",
+      "0X1000111F": "2: DEPTH",
+      "0X10001123": "2: EFFECT LEVEL",
+      "0X10001127": "2: PRE-DELAY"
+    },
+    "correct": [],
+    "permuted": [
+      {
+        "addr": "0X10001107",
+        "real": "DIRECT LEVEL",
+        "typebar": "RATE"
+      },
+      {
+        "addr": "0X1000110B",
+        "real": "RATE",
+        "typebar": "EFFECT LEVEL"
+      },
+      {
+        "addr": "0X1000110F",
+        "real": "DEPTH",
+        "typebar": "WAVEFORM"
+      },
+      {
+        "addr": "0X10001113",
+        "real": "EFFECT LEVEL",
+        "typebar": "HIGH CUT"
+      }
+    ],
+    "missing_in_typebar": [],
+    "only_typebar": [
+      {
+        "addr": "0X10001117",
+        "label": "BPM"
+      },
+      {
+        "addr": "0X1000111B",
+        "label": "2: RATE"
+      },
+      {
+        "addr": "0X1000111F",
+        "label": "2: DEPTH"
+      },
+      {
+        "addr": "0X10001123",
+        "label": "2: EFFECT LEVEL"
+      },
+      {
+        "addr": "0X10001127",
+        "label": "2: PRE-DELAY"
+      }
+    ]
+  },
+  "0x05": {
+    "effect_name_typebar": "CHO_BASS",
+    "ground_truth_labels": {
+      "0X10001107": "RATE",
+      "0X1000110B": "DEPTH",
+      "0X1000110F": "EFFECT LEVEL",
+      "0X1000111B": "DIRECT LEVEL"
+    },
+    "typebar_claimed_labels": {
+      "0X10001107": "RATE",
+      "0X1000110B": "DEPTH",
+      "0X1000110F": "EFFECT LEVEL",
+      "0X10001113": "LOW CUT",
+      "0X10001117": "HIGH CUT",
+      "0X1000111B": "DIRECT LEVEL",
+      "0X1000111F": "BPM"
+    },
+    "correct": [
+      {
+        "addr": "0X10001107",
+        "label": "RATE"
+      },
+      {
+        "addr": "0X1000110B",
+        "label": "DEPTH"
+      },
+      {
+        "addr": "0X1000110F",
+        "label": "EFFECT LEVEL"
+      },
+      {
+        "addr": "0X1000111B",
+        "label": "DIRECT LEVEL"
+      }
+    ],
+    "permuted": [],
+    "missing_in_typebar": [],
+    "only_typebar": [
+      {
+        "addr": "0X10001113",
+        "label": "LOW CUT"
+      },
+      {
+        "addr": "0X10001117",
+        "label": "HIGH CUT"
+      },
+      {
+        "addr": "0X1000111F",
+        "label": "BPM"
+      }
+    ]
+  },
+  "0x06": {
+    "effect_name_typebar": "CHO_PRIME",
+    "ground_truth_labels": {},
+    "typebar_claimed_labels": {
+      "0X10001107": "RATE",
+      "0X1000110B": "DEPTH",
+      "0X1000110F": "EFFECT LEVEL",
+      "0X10001113": "PRE-DELAY",
+      "0X10001117": "WAVEFORM",
+      "0X1000111B": "LOW CUT",
+      "0X1000111F": "HIGH CUT",
+      "0X10001123": "SWEETNESS",
+      "0X10001127": "BELL",
+      "0X1000112B": "OUTPUT MODE",
+      "0X1000112F": "BPM"
+    },
+    "correct": [],
+    "permuted": [],
+    "missing_in_typebar": [],
+    "only_typebar": [
+      {
+        "addr": "0X10001107",
+        "label": "RATE"
+      },
+      {
+        "addr": "0X1000110B",
+        "label": "DEPTH"
+      },
+      {
+        "addr": "0X1000110F",
+        "label": "EFFECT LEVEL"
+      },
+      {
+        "addr": "0X10001113",
+        "label": "PRE-DELAY"
+      },
+      {
+        "addr": "0X10001117",
+        "label": "WAVEFORM"
+      },
+      {
+        "addr": "0X1000111B",
+        "label": "LOW CUT"
+      },
+      {
+        "addr": "0X1000111F",
+        "label": "HIGH CUT"
+      },
+      {
+        "addr": "0X10001123",
+        "label": "SWEETNESS"
+      },
+      {
+        "addr": "0X10001127",
+        "label": "BELL"
+      },
+      {
+        "addr": "0X1000112B",
+        "label": "OUTPUT MODE"
+      },
+      {
+        "addr": "0X1000112F",
+        "label": "BPM"
+      }
+    ]
+  },
+  "0x07": {
+    "effect_name_typebar": "CLASS_VIBE",
+    "ground_truth_labels": {
+      "0X10001107": "RATE",
+      "0X1000110B": "DEPTH",
+      "0X1000110F": "LEVEL"
+    },
+    "typebar_claimed_labels": {
+      "0X10001107": "MODE",
+      "0X1000110B": "RATE",
+      "0X1000110F": "DEPTH",
+      "0X10001113": "LEVEL"
+    },
+    "correct": [],
+    "permuted": [
+      {
+        "addr": "0X10001107",
+        "real": "RATE",
+        "typebar": "MODE"
+      },
+      {
+        "addr": "0X1000110B",
+        "real": "DEPTH",
+        "typebar": "RATE"
+      },
+      {
+        "addr": "0X1000110F",
+        "real": "LEVEL",
+        "typebar": "DEPTH"
+      }
+    ],
+    "missing_in_typebar": [],
+    "only_typebar": [
+      {
+        "addr": "0X10001113",
+        "label": "LEVEL"
+      }
+    ]
+  },
+  "0x08": {
+    "effect_name_typebar": "COMP",
+    "ground_truth_labels": {
+      "0X10001107": "SUSTAIN",
+      "0X1000110B": "ATTACK",
+      "0X1000110F": "LEVEL",
+      "0X10001113": "TONE",
+      "0X10001117": "DIRECT MIX"
+    },
+    "typebar_claimed_labels": {
+      "0X10001107": "SUSTAIN",
+      "0X1000110B": "ATTACK",
+      "0X1000110F": "LEVEL",
+      "0X10001113": "TONE",
+      "0X10001117": "DIRECT MIX"
+    },
+    "correct": [
+      {
+        "addr": "0X10001107",
+        "label": "SUSTAIN"
+      },
+      {
+        "addr": "0X1000110B",
+        "label": "ATTACK"
+      },
+      {
+        "addr": "0X1000110F",
+        "label": "LEVEL"
+      },
+      {
+        "addr": "0X10001113",
+        "label": "TONE"
+      },
+      {
+        "addr": "0X10001117",
+        "label": "DIRECT MIX"
+      }
+    ],
+    "permuted": [],
+    "missing_in_typebar": [],
+    "only_typebar": []
+  },
+  "0x09": {
+    "effect_name_typebar": "X-COMP",
+    "ground_truth_labels": {},
+    "typebar_claimed_labels": {
+      "0X10001107": "SUSTAIN",
+      "0X1000110B": "ATTACK",
+      "0X1000110F": "LEVEL",
+      "0X10001113": "TONE",
+      "0X10001117": "RATIO",
+      "0X1000111B": "DIRECT MIX"
+    },
+    "correct": [],
+    "permuted": [],
+    "missing_in_typebar": [],
+    "only_typebar": [
+      {
+        "addr": "0X10001107",
+        "label": "SUSTAIN"
+      },
+      {
+        "addr": "0X1000110B",
+        "label": "ATTACK"
+      },
+      {
+        "addr": "0X1000110F",
+        "label": "LEVEL"
+      },
+      {
+        "addr": "0X10001113",
+        "label": "TONE"
+      },
+      {
+        "addr": "0X10001117",
+        "label": "RATIO"
+      },
+      {
+        "addr": "0X1000111B",
+        "label": "DIRECT MIX"
+      }
+    ]
+  },
+  "0x0A": {
+    "effect_name_typebar": "X_COMP_BASS",
+    "ground_truth_labels": {},
+    "typebar_claimed_labels": {
+      "0X10001107": "THRESHOLD",
+      "0X1000110B": "ATTACK",
+      "0X1000110F": "LEVEL",
+      "0X10001113": "TONE",
+      "0X10001117": "RATIO",
+      "0X1000111B": "DIRECT MIX"
+    },
+    "correct": [],
+    "permuted": [],
+    "missing_in_typebar": [],
+    "only_typebar": [
+      {
+        "addr": "0X10001107",
+        "label": "THRESHOLD"
+      },
+      {
+        "addr": "0X1000110B",
+        "label": "ATTACK"
+      },
+      {
+        "addr": "0X1000110F",
+        "label": "LEVEL"
+      },
+      {
+        "addr": "0X10001113",
+        "label": "TONE"
+      },
+      {
+        "addr": "0X10001117",
+        "label": "RATIO"
+      },
+      {
+        "addr": "0X1000111B",
+        "label": "DIRECT MIX"
+      }
+    ]
+  }
+}

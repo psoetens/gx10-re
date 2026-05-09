@@ -1,0 +1,2699 @@
+{
+  "0x00": {
+    "effect_name_typebar": "AC_SIM",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x01": {
+    "effect_name_typebar": "AC_RESO",
+    "n_default_knobs": 3,
+    "n_filled_knobs": 3,
+    "default_knobs": [
+      {
+        "label": "RESONANCE",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "TONE",
+        "value": "0",
+        "x": 433
+      },
+      {
+        "label": "LEVEL",
+        "value": "50",
+        "x": 547
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "RESONANCE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "TONE",
+        "value": "+2",
+        "x": 427
+      },
+      {
+        "label": "LEVEL",
+        "value": "3",
+        "x": 553
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "RESONANCE",
+      "0x1000110B": "TONE",
+      "0x1000110F": "LEVEL"
+    }
+  },
+  "0x02": {
+    "effect_name_typebar": "AMP",
+    "n_default_knobs": 3,
+    "n_filled_knobs": 3,
+    "default_knobs": [
+      {
+        "label": "RESONANCE",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "TONE",
+        "value": "+50",
+        "x": 422
+      },
+      {
+        "label": "LEVEL",
+        "value": "50",
+        "x": 547
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "RESONANCE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "TONE",
+        "value": "+2",
+        "x": 427
+      },
+      {
+        "label": "LEVEL",
+        "value": "3",
+        "x": 553
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "RESONANCE",
+      "0x1000110B": "TONE",
+      "0x1000110F": "LEVEL"
+    }
+  },
+  "0x03": {
+    "effect_name_typebar": "AMP_BASS",
+    "n_default_knobs": 3,
+    "n_filled_knobs": 3,
+    "default_knobs": [
+      {
+        "label": "RESONANCE",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "TONE",
+        "value": "+50",
+        "x": 422
+      },
+      {
+        "label": "LEVEL",
+        "value": "50",
+        "x": 547
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "RESONANCE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "TONE",
+        "value": "+2",
+        "x": 427
+      },
+      {
+        "label": "LEVEL",
+        "value": "3",
+        "x": 553
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "RESONANCE",
+      "0x1000110B": "TONE",
+      "0x1000110F": "LEVEL"
+    }
+  },
+  "0x04": {
+    "effect_name_typebar": "CHO",
+    "n_default_knobs": 9,
+    "n_filled_knobs": 8,
+    "default_knobs": [
+      {
+        "label": "RATE",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "DEPTH",
+        "value": "40",
+        "x": 427
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "100",
+        "x": 541
+      },
+      {
+        "label": "PRE-DELAY",
+        "value": "4.0ms",
+        "x": 657
+      },
+      {
+        "label": "WAVEFORM",
+        "value": "TRI",
+        "x": 783
+      },
+      {
+        "label": "LOW CUT",
+        "value": "31.5Hz",
+        "x": 893
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "6.30kHz",
+        "x": 1009
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "100",
+        "x": 1141
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1261
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "RATE",
+        "value": "2",
+        "x": 313
+      },
+      {
+        "label": "DEPTH",
+        "value": "3",
+        "x": 433
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "4",
+        "x": 553
+      },
+      {
+        "label": "PRE-DELAY",
+        "value": "3.5ms",
+        "x": 657
+      },
+      {
+        "label": "LOW CUT",
+        "value": "50.0Hz",
+        "x": 893
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "80.0Hz",
+        "x": 1013
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "1",
+        "x": 1153
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1261
+      }
+    ],
+    "labels_by_addr": {
+      "0x1000110B": "RATE",
+      "0x1000110F": "DEPTH",
+      "0x10001113": "EFFECT LEVEL",
+      "0x10001107": "DIRECT LEVEL"
+    }
+  },
+  "0x05": {
+    "effect_name_typebar": "CHO_BASS",
+    "n_default_knobs": 7,
+    "n_filled_knobs": 7,
+    "default_knobs": [
+      {
+        "label": "RATE",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "DEPTH",
+        "value": "50",
+        "x": 427
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "100",
+        "x": 541
+      },
+      {
+        "label": "LOW CUT",
+        "value": "100Hz",
+        "x": 656
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "10.0kHz",
+        "x": 769
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "100",
+        "x": 901
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1021
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "RATE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "DEPTH",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "LOW CUT",
+        "value": "40.0Hz",
+        "x": 653
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "63.0Hz",
+        "x": 773
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "6",
+        "x": 913
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1021
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "RATE",
+      "0x1000110B": "DEPTH",
+      "0x1000110F": "EFFECT LEVEL",
+      "0x1000111B": "DIRECT LEVEL"
+    }
+  },
+  "0x06": {
+    "effect_name_typebar": "CHO_PRIME",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x07": {
+    "effect_name_typebar": "CLASS_VIBE",
+    "n_default_knobs": 4,
+    "n_filled_knobs": 4,
+    "default_knobs": [
+      {
+        "label": "RATE",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "DEPTH",
+        "value": "100",
+        "x": 421
+      },
+      {
+        "label": "LEVEL",
+        "value": "100",
+        "x": 541
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 661
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "RATE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "DEPTH",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "LEVEL",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 661
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "RATE",
+      "0x1000110B": "DEPTH",
+      "0x1000110F": "LEVEL"
+    }
+  },
+  "0x08": {
+    "effect_name_typebar": "COMP",
+    "n_default_knobs": 5,
+    "n_filled_knobs": 5,
+    "default_knobs": [
+      {
+        "label": "SUSTAIN",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "ATTACK",
+        "value": "50",
+        "x": 427
+      },
+      {
+        "label": "LEVEL",
+        "value": "60",
+        "x": 547
+      },
+      {
+        "label": "TONE",
+        "value": "0",
+        "x": 673
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "0",
+        "x": 793
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "SUSTAIN",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "ATTACK",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "LEVEL",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "TONE",
+        "value": "+4",
+        "x": 667
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "5",
+        "x": 793
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "SUSTAIN",
+      "0x1000110B": "ATTACK",
+      "0x1000110F": "LEVEL",
+      "0x10001113": "TONE",
+      "0x10001117": "DIRECT MIX"
+    }
+  },
+  "0x09": {
+    "effect_name_typebar": "X-COMP",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x0A": {
+    "effect_name_typebar": "X_COMP_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x0B": {
+    "effect_name_typebar": "DEFRET",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x0C": {
+    "effect_name_typebar": "DEFRET_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x0D": {
+    "effect_name_typebar": "DELAY",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x0E": {
+    "effect_name_typebar": "DELAY_PLUS",
+    "n_default_knobs": 9,
+    "n_filled_knobs": 9,
+    "default_knobs": [
+      {
+        "label": "TIME",
+        "value": "400ms",
+        "x": 295
+      },
+      {
+        "label": "FEEDBACK",
+        "value": "30",
+        "x": 427
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "50",
+        "x": 547
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "100",
+        "x": 661
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "6.30kHz",
+        "x": 769
+      },
+      {
+        "label": "MOD RATE",
+        "value": "50",
+        "x": 907
+      },
+      {
+        "label": "MOD DEPTH",
+        "value": "0",
+        "x": 1033
+      },
+      {
+        "label": "DUCK SENS",
+        "value": "50",
+        "x": 1147
+      },
+      {
+        "label": "DUCK PRE",
+        "value": "0",
+        "x": 1273
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "TIME",
+        "value": "8ms",
+        "x": 304
+      },
+      {
+        "label": "FEEDBACK",
+        "value": "9",
+        "x": 433
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "10",
+        "x": 547
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "1",
+        "x": 673
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "250Hz",
+        "x": 776
+      },
+      {
+        "label": "MOD RATE",
+        "value": "2",
+        "x": 913
+      },
+      {
+        "label": "MOD DEPTH",
+        "value": "3",
+        "x": 1033
+      },
+      {
+        "label": "DUCK SENS",
+        "value": "4",
+        "x": 1153
+      },
+      {
+        "label": "DUCK PRE",
+        "value": "5",
+        "x": 1273
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001127": "FEEDBACK",
+      "0x1000112B": "EFFECT LEVEL",
+      "0x10001107": "DIRECT LEVEL",
+      "0x1000110B": "MOD RATE",
+      "0x1000110F": "MOD DEPTH",
+      "0x10001113": "DUCK SENS",
+      "0x10001117": "DUCK PRE"
+    }
+  },
+  "0x0F": {
+    "effect_name_typebar": "DELAY_ANALOG",
+    "n_default_knobs": 9,
+    "n_filled_knobs": 8,
+    "default_knobs": [
+      {
+        "label": "TIME",
+        "value": "400ms",
+        "x": 295
+      },
+      {
+        "label": "FEEDBACK",
+        "value": "30",
+        "x": 427
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "50",
+        "x": 547
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "100",
+        "x": 661
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "FLAT",
+        "x": 781
+      },
+      {
+        "label": "MOD RATE",
+        "value": "50",
+        "x": 907
+      },
+      {
+        "label": "MOD DEPTH",
+        "value": "0",
+        "x": 1033
+      },
+      {
+        "label": "DUCK SENS",
+        "value": "50",
+        "x": 1147
+      },
+      {
+        "label": "DUCK PRE",
+        "value": "0",
+        "x": 1273
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "FEEDBACK",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "4",
+        "x": 673
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "63.0Hz",
+        "x": 773
+      },
+      {
+        "label": "MOD RATE",
+        "value": "6",
+        "x": 913
+      },
+      {
+        "label": "MOD DEPTH",
+        "value": "7",
+        "x": 1033
+      },
+      {
+        "label": "DUCK SENS",
+        "value": "8",
+        "x": 1153
+      },
+      {
+        "label": "DUCK PRE",
+        "value": "9",
+        "x": 1273
+      }
+    ],
+    "labels_by_addr": {
+      "0x1000110B": "FEEDBACK",
+      "0x1000110F": "EFFECT LEVEL",
+      "0x10001113": "DIRECT LEVEL",
+      "0x1000111B": "MOD RATE",
+      "0x1000111F": "MOD DEPTH",
+      "0x10001123": "DUCK SENS",
+      "0x10001127": "DUCK PRE"
+    }
+  },
+  "0x10": {
+    "effect_name_typebar": "SPACE_ECHO",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x11": {
+    "effect_name_typebar": "DELAY_SHIMMER",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x12": {
+    "effect_name_typebar": "DELAY_TWIST",
+    "n_default_knobs": 5,
+    "n_filled_knobs": 4,
+    "default_knobs": [
+      {
+        "label": "TRIGGER",
+        "value": "OFF",
+        "x": 301
+      },
+      {
+        "label": "LEVEL",
+        "value": "50",
+        "x": 427
+      },
+      {
+        "label": "RISE TIME",
+        "value": "50",
+        "x": 547
+      },
+      {
+        "label": "FALL TIME",
+        "value": "50",
+        "x": 667
+      },
+      {
+        "label": "CARRYOVER",
+        "value": "ON",
+        "x": 905
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "TRIGGER",
+        "value": "ON",
+        "x": 305
+      },
+      {
+        "label": "LEVEL",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "RISE TIME",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "FALL TIME",
+        "value": "4",
+        "x": 673
+      }
+    ],
+    "labels_by_addr": {
+      "0x1000110B": "LEVEL",
+      "0x1000110F": "RISE TIME",
+      "0x10001113": "FALL TIME"
+    }
+  },
+  "0x13": {
+    "effect_name_typebar": "DELAY_WARP",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x14": {
+    "effect_name_typebar": "PEQ",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x15": {
+    "effect_name_typebar": "GEQ",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x16": {
+    "effect_name_typebar": "FL",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x17": {
+    "effect_name_typebar": "FL_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x18": {
+    "effect_name_typebar": "FL_PRIME",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x19": {
+    "effect_name_typebar": "FL_PRIME_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x1A": {
+    "effect_name_typebar": "HARM",
+    "n_default_knobs": 7,
+    "n_filled_knobs": 7,
+    "default_knobs": [
+      {
+        "label": "1: HARMONY",
+        "value": "-3rd",
+        "x": 304
+      },
+      {
+        "label": "1: LEVEL",
+        "value": "100",
+        "x": 421
+      },
+      {
+        "label": "1: PRE-DELAY",
+        "value": "0ms",
+        "x": 539
+      },
+      {
+        "label": "1: FEEDBACK",
+        "value": "0",
+        "x": 673
+      },
+      {
+        "label": "KEY",
+        "value": "C(Am)",
+        "x": 776
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "100",
+        "x": 901
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1021
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "1: HARMONY",
+        "value": "-14th",
+        "x": 299
+      },
+      {
+        "label": "1: LEVEL",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "1: PRE-DELAY",
+        "value": "3ms",
+        "x": 539
+      },
+      {
+        "label": "1: FEEDBACK",
+        "value": "4",
+        "x": 673
+      },
+      {
+        "label": "KEY",
+        "value": "C(Am)",
+        "x": 776
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "8",
+        "x": 913
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1021
+      }
+    ],
+    "labels_by_addr": {
+      "0x1000110B": "1: LEVEL",
+      "0x10001113": "1: FEEDBACK",
+      "0x10001123": "DIRECT LEVEL"
+    }
+  },
+  "0x1B": {
+    "effect_name_typebar": "HARM_BASS",
+    "n_default_knobs": 7,
+    "n_filled_knobs": 7,
+    "default_knobs": [
+      {
+        "label": "1: HARMONY",
+        "value": "-3rd",
+        "x": 304
+      },
+      {
+        "label": "1: LEVEL",
+        "value": "100",
+        "x": 421
+      },
+      {
+        "label": "1: PRE-DELAY",
+        "value": "0ms",
+        "x": 539
+      },
+      {
+        "label": "1: FEEDBACK",
+        "value": "0",
+        "x": 673
+      },
+      {
+        "label": "KEY",
+        "value": "C(Am)",
+        "x": 776
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "100",
+        "x": 901
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1021
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "1: HARMONY",
+        "value": "-14th",
+        "x": 299
+      },
+      {
+        "label": "1: LEVEL",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "1: PRE-DELAY",
+        "value": "3ms",
+        "x": 539
+      },
+      {
+        "label": "1: FEEDBACK",
+        "value": "4",
+        "x": 673
+      },
+      {
+        "label": "KEY",
+        "value": "C(Am)",
+        "x": 776
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "8",
+        "x": 913
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1021
+      }
+    ],
+    "labels_by_addr": {
+      "0x1000110B": "1: LEVEL",
+      "0x10001113": "1: FEEDBACK",
+      "0x10001123": "DIRECT LEVEL"
+    }
+  },
+  "0x1C": {
+    "effect_name_typebar": "LOOP",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x1D": {
+    "effect_name_typebar": "DIV_MIX",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x1E": {
+    "effect_name_typebar": "unk_0x1E",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x1F": {
+    "effect_name_typebar": "unk_0x1F",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x20": {
+    "effect_name_typebar": "NS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x21": {
+    "effect_name_typebar": "OCT",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x22": {
+    "effect_name_typebar": "OCT_POLY",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x23": {
+    "effect_name_typebar": "OCT_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x24": {
+    "effect_name_typebar": "BOOST",
+    "n_default_knobs": 7,
+    "n_filled_knobs": 6,
+    "default_knobs": [
+      {
+        "label": "BOOST",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "TONE",
+        "value": "0",
+        "x": 433
+      },
+      {
+        "label": "LEVEL",
+        "value": "50",
+        "x": 547
+      },
+      {
+        "label": "BOTTOM",
+        "value": "0",
+        "x": 673
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "0",
+        "x": 793
+      },
+      {
+        "label": "SOLO SW",
+        "value": "OFF",
+        "x": 901
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "50",
+        "x": 1027
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "BOOST",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "TONE",
+        "value": "+2",
+        "x": 427
+      },
+      {
+        "label": "LEVEL",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "BOTTOM",
+        "value": "+4",
+        "x": 667
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "5",
+        "x": 793
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "7",
+        "x": 1033
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "BOOST",
+      "0x1000110B": "TONE",
+      "0x1000110F": "LEVEL",
+      "0x10001113": "BOTTOM",
+      "0x10001117": "DIRECT MIX",
+      "0x1000111F": "SOLO LEVEL"
+    }
+  },
+  "0x25": {
+    "effect_name_typebar": "OD",
+    "n_default_knobs": 7,
+    "n_filled_knobs": 6,
+    "default_knobs": [
+      {
+        "label": "DRIVE",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "TONE",
+        "value": "0",
+        "x": 433
+      },
+      {
+        "label": "LEVEL",
+        "value": "50",
+        "x": 547
+      },
+      {
+        "label": "BOTTOM",
+        "value": "0",
+        "x": 673
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "0",
+        "x": 793
+      },
+      {
+        "label": "SOLO SW",
+        "value": "OFF",
+        "x": 901
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "50",
+        "x": 1027
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "DRIVE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "TONE",
+        "value": "+2",
+        "x": 427
+      },
+      {
+        "label": "LEVEL",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "BOTTOM",
+        "value": "+4",
+        "x": 667
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "5",
+        "x": 793
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "7",
+        "x": 1033
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "DRIVE",
+      "0x1000110B": "TONE",
+      "0x1000110F": "LEVEL",
+      "0x10001113": "BOTTOM",
+      "0x10001117": "DIRECT MIX",
+      "0x1000111F": "SOLO LEVEL"
+    }
+  },
+  "0x26": {
+    "effect_name_typebar": "OD_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x27": {
+    "effect_name_typebar": "DIST",
+    "n_default_knobs": 7,
+    "n_filled_knobs": 6,
+    "default_knobs": [
+      {
+        "label": "DRIVE",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "TONE",
+        "value": "0",
+        "x": 433
+      },
+      {
+        "label": "LEVEL",
+        "value": "50",
+        "x": 547
+      },
+      {
+        "label": "BOTTOM",
+        "value": "0",
+        "x": 673
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "0",
+        "x": 793
+      },
+      {
+        "label": "SOLO SW",
+        "value": "OFF",
+        "x": 901
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "50",
+        "x": 1027
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "DRIVE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "TONE",
+        "value": "+2",
+        "x": 427
+      },
+      {
+        "label": "LEVEL",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "BOTTOM",
+        "value": "+4",
+        "x": 667
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "5",
+        "x": 793
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "7",
+        "x": 1033
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "DRIVE",
+      "0x1000110B": "TONE",
+      "0x1000110F": "LEVEL",
+      "0x10001113": "BOTTOM",
+      "0x10001117": "DIRECT MIX",
+      "0x1000111F": "SOLO LEVEL"
+    }
+  },
+  "0x28": {
+    "effect_name_typebar": "DIST_BASS",
+    "n_default_knobs": 7,
+    "n_filled_knobs": 6,
+    "default_knobs": [
+      {
+        "label": "DRIVE",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "TONE",
+        "value": "0",
+        "x": 433
+      },
+      {
+        "label": "LEVEL",
+        "value": "50",
+        "x": 547
+      },
+      {
+        "label": "BOTTOM",
+        "value": "0",
+        "x": 673
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "0",
+        "x": 793
+      },
+      {
+        "label": "SOLO SW",
+        "value": "OFF",
+        "x": 901
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "50",
+        "x": 1027
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "DRIVE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "TONE",
+        "value": "+2",
+        "x": 427
+      },
+      {
+        "label": "LEVEL",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "BOTTOM",
+        "value": "+4",
+        "x": 667
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "5",
+        "x": 793
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "7",
+        "x": 1033
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "DRIVE",
+      "0x1000110B": "TONE",
+      "0x1000110F": "LEVEL",
+      "0x10001113": "BOTTOM",
+      "0x10001117": "DIRECT MIX",
+      "0x1000111F": "SOLO LEVEL"
+    }
+  },
+  "0x29": {
+    "effect_name_typebar": "FUZZ",
+    "n_default_knobs": 7,
+    "n_filled_knobs": 6,
+    "default_knobs": [
+      {
+        "label": "FUZZ",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "TONE",
+        "value": "0",
+        "x": 433
+      },
+      {
+        "label": "LEVEL",
+        "value": "50",
+        "x": 547
+      },
+      {
+        "label": "BOTTOM",
+        "value": "0",
+        "x": 673
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "0",
+        "x": 793
+      },
+      {
+        "label": "SOLO SW",
+        "value": "OFF",
+        "x": 901
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "50",
+        "x": 1027
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "FUZZ",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "TONE",
+        "value": "+2",
+        "x": 427
+      },
+      {
+        "label": "LEVEL",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "BOTTOM",
+        "value": "+4",
+        "x": 667
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "5",
+        "x": 793
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "7",
+        "x": 1033
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "FUZZ",
+      "0x1000110B": "TONE",
+      "0x1000110F": "LEVEL",
+      "0x10001113": "BOTTOM",
+      "0x10001117": "DIRECT MIX",
+      "0x1000111F": "SOLO LEVEL"
+    }
+  },
+  "0x2A": {
+    "effect_name_typebar": "FUZZ_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x2B": {
+    "effect_name_typebar": "X-OD",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x2C": {
+    "effect_name_typebar": "X_OD_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x2D": {
+    "effect_name_typebar": "X-DIST",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x2E": {
+    "effect_name_typebar": "METAL",
+    "n_default_knobs": 7,
+    "n_filled_knobs": 6,
+    "default_knobs": [
+      {
+        "label": "DIST",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "TONE",
+        "value": "0",
+        "x": 433
+      },
+      {
+        "label": "LEVEL",
+        "value": "50",
+        "x": 547
+      },
+      {
+        "label": "BOTTOM",
+        "value": "0",
+        "x": 673
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "0",
+        "x": 793
+      },
+      {
+        "label": "SOLO SW",
+        "value": "OFF",
+        "x": 901
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "50",
+        "x": 1027
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "DIST",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "TONE",
+        "value": "+2",
+        "x": 427
+      },
+      {
+        "label": "LEVEL",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "BOTTOM",
+        "value": "+4",
+        "x": 667
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "5",
+        "x": 793
+      },
+      {
+        "label": "SOLO LEVEL",
+        "value": "7",
+        "x": 1033
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "DIST",
+      "0x1000110B": "TONE",
+      "0x1000110F": "LEVEL",
+      "0x10001113": "BOTTOM",
+      "0x10001117": "DIRECT MIX",
+      "0x1000111F": "SOLO LEVEL"
+    }
+  },
+  "0x2F": {
+    "effect_name_typebar": "METAL_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x30": {
+    "effect_name_typebar": "OVER_TONE",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x31": {
+    "effect_name_typebar": "PAN",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x32": {
+    "effect_name_typebar": "FOOT_VOL",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x33": {
+    "effect_name_typebar": "PB",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x34": {
+    "effect_name_typebar": "PB_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x35": {
+    "effect_name_typebar": "WAH",
+    "n_default_knobs": 5,
+    "n_filled_knobs": 5,
+    "default_knobs": [
+      {
+        "label": "EFFECT LEVEL",
+        "value": "100",
+        "x": 301
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "0",
+        "x": 433
+      },
+      {
+        "label": "PEDAL POSITION",
+        "value": "100",
+        "x": 541
+      },
+      {
+        "label": "PEDAL MIN",
+        "value": "0",
+        "x": 673
+      },
+      {
+        "label": "PEDAL MAX",
+        "value": "100",
+        "x": 781
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "EFFECT LEVEL",
+        "value": "4",
+        "x": 313
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "5",
+        "x": 433
+      },
+      {
+        "label": "PEDAL POSITION",
+        "value": "1",
+        "x": 553
+      },
+      {
+        "label": "PEDAL MIN",
+        "value": "2",
+        "x": 673
+      },
+      {
+        "label": "PEDAL MAX",
+        "value": "3",
+        "x": 793
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001113": "EFFECT LEVEL",
+      "0x10001117": "DIRECT MIX",
+      "0x10001107": "PEDAL POSITION",
+      "0x1000110B": "PEDAL MIN",
+      "0x1000110F": "PEDAL MAX"
+    }
+  },
+  "0x36": {
+    "effect_name_typebar": "WAH_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x37": {
+    "effect_name_typebar": "PH",
+    "n_default_knobs": 8,
+    "n_filled_knobs": 8,
+    "default_knobs": [
+      {
+        "label": "RATE",
+        "value": "30",
+        "x": 307
+      },
+      {
+        "label": "DEPTH",
+        "value": "70",
+        "x": 427
+      },
+      {
+        "label": "RESONANCE",
+        "value": "30",
+        "x": 547
+      },
+      {
+        "label": "MANUAL",
+        "value": "50",
+        "x": 667
+      },
+      {
+        "label": "STEP RATE",
+        "value": "OFF",
+        "x": 781
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "100",
+        "x": 901
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "0",
+        "x": 1033
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1141
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "RATE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "DEPTH",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "RESONANCE",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "MANUAL",
+        "value": "4",
+        "x": 673
+      },
+      {
+        "label": "STEP RATE",
+        "value": "4",
+        "x": 793
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "6",
+        "x": 913
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "7",
+        "x": 1033
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1141
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "RATE",
+      "0x1000110B": "DEPTH",
+      "0x1000110F": "RESONANCE",
+      "0x10001113": "STEP RATE",
+      "0x1000111B": "EFFECT LEVEL",
+      "0x1000111F": "DIRECT MIX"
+    }
+  },
+  "0x38": {
+    "effect_name_typebar": "PH_BASS",
+    "n_default_knobs": 8,
+    "n_filled_knobs": 8,
+    "default_knobs": [
+      {
+        "label": "RATE",
+        "value": "30",
+        "x": 307
+      },
+      {
+        "label": "DEPTH",
+        "value": "70",
+        "x": 427
+      },
+      {
+        "label": "RESONANCE",
+        "value": "30",
+        "x": 547
+      },
+      {
+        "label": "MANUAL",
+        "value": "50",
+        "x": 667
+      },
+      {
+        "label": "STEP RATE",
+        "value": "OFF",
+        "x": 781
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "100",
+        "x": 901
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "0",
+        "x": 1033
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1141
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "RATE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "DEPTH",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "RESONANCE",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "MANUAL",
+        "value": "4",
+        "x": 673
+      },
+      {
+        "label": "STEP RATE",
+        "value": "4",
+        "x": 793
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "6",
+        "x": 913
+      },
+      {
+        "label": "DIRECT MIX",
+        "value": "7",
+        "x": 1033
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1141
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "RATE",
+      "0x1000110B": "DEPTH",
+      "0x1000110F": "RESONANCE",
+      "0x10001113": "STEP RATE",
+      "0x1000111B": "EFFECT LEVEL",
+      "0x1000111F": "DIRECT MIX"
+    }
+  },
+  "0x39": {
+    "effect_name_typebar": "PH_PRIME",
+    "n_default_knobs": 9,
+    "n_filled_knobs": 7,
+    "default_knobs": [
+      {
+        "label": "RATE",
+        "value": "30",
+        "x": 307
+      },
+      {
+        "label": "DEPTH",
+        "value": "70",
+        "x": 427
+      },
+      {
+        "label": "RESONANCE",
+        "value": "30",
+        "x": 547
+      },
+      {
+        "label": "MANUAL",
+        "value": "50",
+        "x": 667
+      },
+      {
+        "label": "WAVEFORM",
+        "value": "TRI",
+        "x": 783
+      },
+      {
+        "label": "SEPARATION",
+        "value": "0",
+        "x": 913
+      },
+      {
+        "label": "STEP RATE",
+        "value": "OFF",
+        "x": 1021
+      },
+      {
+        "label": "BI-PHASE",
+        "value": "OFF",
+        "x": 1141
+      },
+      {
+        "label": "LOW DAMP",
+        "value": "-50",
+        "x": 1263
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "RATE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "DEPTH",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "RESONANCE",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "MANUAL",
+        "value": "4",
+        "x": 673
+      },
+      {
+        "label": "SEPARATION",
+        "value": "120",
+        "x": 901
+      },
+      {
+        "label": "STEP RATE",
+        "value": "5",
+        "x": 1033
+      },
+      {
+        "label": "LOW DAMP",
+        "value": "+9",
+        "x": 1267
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "RATE",
+      "0x1000110B": "DEPTH",
+      "0x1000110F": "RESONANCE",
+      "0x10001113": "MANUAL",
+      "0x10001117": "STEP RATE",
+      "0x10001127": "LOW DAMP"
+    }
+  },
+  "0x3A": {
+    "effect_name_typebar": "PH_PRIME_BASS",
+    "n_default_knobs": 9,
+    "n_filled_knobs": 7,
+    "default_knobs": [
+      {
+        "label": "RATE",
+        "value": "50",
+        "x": 307
+      },
+      {
+        "label": "DEPTH",
+        "value": "50",
+        "x": 427
+      },
+      {
+        "label": "RESONANCE",
+        "value": "0",
+        "x": 553
+      },
+      {
+        "label": "MANUAL",
+        "value": "50",
+        "x": 667
+      },
+      {
+        "label": "WAVEFORM",
+        "value": "TRI",
+        "x": 783
+      },
+      {
+        "label": "SEPARATION",
+        "value": "0",
+        "x": 913
+      },
+      {
+        "label": "STEP RATE",
+        "value": "OFF",
+        "x": 1021
+      },
+      {
+        "label": "BI-PHASE",
+        "value": "OFF",
+        "x": 1141
+      },
+      {
+        "label": "LOW DAMP",
+        "value": "-50",
+        "x": 1263
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "RATE",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "DEPTH",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "RESONANCE",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "MANUAL",
+        "value": "4",
+        "x": 673
+      },
+      {
+        "label": "SEPARATION",
+        "value": "120",
+        "x": 901
+      },
+      {
+        "label": "STEP RATE",
+        "value": "5",
+        "x": 1033
+      },
+      {
+        "label": "LOW DAMP",
+        "value": "+9",
+        "x": 1267
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "RATE",
+      "0x1000110B": "DEPTH",
+      "0x1000110F": "RESONANCE",
+      "0x10001113": "MANUAL",
+      "0x10001117": "STEP RATE",
+      "0x10001127": "LOW DAMP"
+    }
+  },
+  "0x3B": {
+    "effect_name_typebar": "PH_SCRIPT",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x3C": {
+    "effect_name_typebar": "PS",
+    "n_default_knobs": 8,
+    "n_filled_knobs": 8,
+    "default_knobs": [
+      {
+        "label": "1: PITCH",
+        "value": "-5",
+        "x": 309
+      },
+      {
+        "label": "1: FINE",
+        "value": "+10",
+        "x": 422
+      },
+      {
+        "label": "1: MODE",
+        "value": "MEDIUM",
+        "x": 529
+      },
+      {
+        "label": "1: PRE-DELAY",
+        "value": "0ms",
+        "x": 659
+      },
+      {
+        "label": "1: FEEDBACK",
+        "value": "0",
+        "x": 793
+      },
+      {
+        "label": "1: LEVEL",
+        "value": "100",
+        "x": 901
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "100",
+        "x": 1021
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1141
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "1: PITCH",
+        "value": "+2",
+        "x": 307
+      },
+      {
+        "label": "1: FINE",
+        "value": "+4",
+        "x": 427
+      },
+      {
+        "label": "1: MODE",
+        "value": "MONO",
+        "x": 536
+      },
+      {
+        "label": "1: PRE-DELAY",
+        "value": "5ms",
+        "x": 659
+      },
+      {
+        "label": "1: FEEDBACK",
+        "value": "7",
+        "x": 793
+      },
+      {
+        "label": "1: LEVEL",
+        "value": "6",
+        "x": 913
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "1",
+        "x": 1033
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1141
+      }
+    ],
+    "labels_by_addr": {
+      "0x1000110B": "1: PITCH",
+      "0x10001113": "1: FINE",
+      "0x1000111F": "1: FEEDBACK",
+      "0x1000111B": "1: LEVEL",
+      "0x10001107": "DIRECT LEVEL"
+    }
+  },
+  "0x3D": {
+    "effect_name_typebar": "PS_BASS",
+    "n_default_knobs": 8,
+    "n_filled_knobs": 8,
+    "default_knobs": [
+      {
+        "label": "1: PITCH",
+        "value": "0",
+        "x": 313
+      },
+      {
+        "label": "1: FINE",
+        "value": "+10",
+        "x": 422
+      },
+      {
+        "label": "1: MODE",
+        "value": "MEDIUM",
+        "x": 529
+      },
+      {
+        "label": "1: PRE-DELAY",
+        "value": "0ms",
+        "x": 659
+      },
+      {
+        "label": "1: FEEDBACK",
+        "value": "0",
+        "x": 793
+      },
+      {
+        "label": "1: LEVEL",
+        "value": "100",
+        "x": 901
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "100",
+        "x": 1021
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1141
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "1: PITCH",
+        "value": "+2",
+        "x": 307
+      },
+      {
+        "label": "1: FINE",
+        "value": "+4",
+        "x": 427
+      },
+      {
+        "label": "1: MODE",
+        "value": "MONO",
+        "x": 536
+      },
+      {
+        "label": "1: PRE-DELAY",
+        "value": "5ms",
+        "x": 659
+      },
+      {
+        "label": "1: FEEDBACK",
+        "value": "7",
+        "x": 793
+      },
+      {
+        "label": "1: LEVEL",
+        "value": "6",
+        "x": 913
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "1",
+        "x": 1033
+      },
+      {
+        "label": "BPM",
+        "value": "120",
+        "x": 1141
+      }
+    ],
+    "labels_by_addr": {
+      "0x1000110B": "1: PITCH",
+      "0x10001113": "1: FINE",
+      "0x1000111F": "1: FEEDBACK",
+      "0x1000111B": "1: LEVEL",
+      "0x10001107": "DIRECT LEVEL"
+    }
+  },
+  "0x3E": {
+    "effect_name_typebar": "REV",
+    "n_default_knobs": 8,
+    "n_filled_knobs": 7,
+    "default_knobs": [
+      {
+        "label": "TIME",
+        "value": "3.0s",
+        "x": 299
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "30",
+        "x": 427
+      },
+      {
+        "label": "DENSITY",
+        "value": "8",
+        "x": 553
+      },
+      {
+        "label": "PRE-DELAY",
+        "value": "30ms",
+        "x": 654
+      },
+      {
+        "label": "LOW CUT",
+        "value": "FLAT",
+        "x": 781
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "FLAT",
+        "x": 901
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "100",
+        "x": 1021
+      },
+      {
+        "label": "CARRYOVER",
+        "value": "ON",
+        "x": 1145
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "TIME",
+        "value": "0.1s",
+        "x": 299
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "3",
+        "x": 433
+      },
+      {
+        "label": "DENSITY",
+        "value": "4",
+        "x": 553
+      },
+      {
+        "label": "PRE-DELAY",
+        "value": "2ms",
+        "x": 659
+      },
+      {
+        "label": "LOW CUT",
+        "value": "50.0Hz",
+        "x": 773
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "2.50kHz",
+        "x": 889
+      },
+      {
+        "label": "DIRECT LEVEL",
+        "value": "7",
+        "x": 1033
+      }
+    ],
+    "labels_by_addr": {
+      "0x1000110F": "EFFECT LEVEL",
+      "0x10001113": "DENSITY",
+      "0x1000111F": "DIRECT LEVEL"
+    }
+  },
+  "0x3F": {
+    "effect_name_typebar": "REV_PLUS",
+    "n_default_knobs": 9,
+    "n_filled_knobs": 9,
+    "default_knobs": [
+      {
+        "label": "TIME",
+        "value": "2.6s",
+        "x": 299
+      },
+      {
+        "label": "TONE",
+        "value": "0",
+        "x": 433
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "25",
+        "x": 547
+      },
+      {
+        "label": "DENSITY",
+        "value": "5",
+        "x": 673
+      },
+      {
+        "label": "PRE-DELAY",
+        "value": "30ms",
+        "x": 774
+      },
+      {
+        "label": "LOW CUT",
+        "value": "125Hz",
+        "x": 896
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "8.00kHz",
+        "x": 1009
+      },
+      {
+        "label": "LOW DAMP",
+        "value": "0",
+        "x": 1153
+      },
+      {
+        "label": "HIGH DAMP",
+        "value": "0",
+        "x": 1273
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "TIME",
+        "value": "0.1s",
+        "x": 299
+      },
+      {
+        "label": "TONE",
+        "value": "+2",
+        "x": 427
+      },
+      {
+        "label": "EFFECT LEVEL",
+        "value": "3",
+        "x": 553
+      },
+      {
+        "label": "DENSITY",
+        "value": "4",
+        "x": 673
+      },
+      {
+        "label": "PRE-DELAY",
+        "value": "5ms",
+        "x": 779
+      },
+      {
+        "label": "LOW CUT",
+        "value": "63.0Hz",
+        "x": 893
+      },
+      {
+        "label": "HIGH CUT",
+        "value": "100Hz",
+        "x": 1016
+      },
+      {
+        "label": "LOW DAMP",
+        "value": "+8",
+        "x": 1147
+      },
+      {
+        "label": "HIGH DAMP",
+        "value": "+9",
+        "x": 1267
+      }
+    ],
+    "labels_by_addr": {
+      "0x1000110B": "TONE",
+      "0x1000110F": "EFFECT LEVEL",
+      "0x10001113": "DENSITY",
+      "0x10001123": "LOW DAMP",
+      "0x10001127": "HIGH DAMP"
+    }
+  },
+  "0x40": {
+    "effect_name_typebar": "REV_SHIMMER",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x41": {
+    "effect_name_typebar": "TERA_ECHO",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x42": {
+    "effect_name_typebar": "RING_MOD",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x43": {
+    "effect_name_typebar": "ROTARY",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x44": {
+    "effect_name_typebar": "S_BEND",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x45": {
+    "effect_name_typebar": "S_BEND_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x46": {
+    "effect_name_typebar": "SG",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x47": {
+    "effect_name_typebar": "SG_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x48": {
+    "effect_name_typebar": "T_WAH",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x49": {
+    "effect_name_typebar": "T_WAH_BASS",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x4A": {
+    "effect_name_typebar": "TREM",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x4B": {
+    "effect_name_typebar": "VIB",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x4C": {
+    "effect_name_typebar": "VIB_PRIME",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x4D": {
+    "effect_name_typebar": "SEND_RETURN",
+    "n_default_knobs": 4,
+    "n_filled_knobs": 3,
+    "default_knobs": [
+      {
+        "label": "SEND LEVEL",
+        "value": "100",
+        "x": 301
+      },
+      {
+        "label": "RETURN LEVEL",
+        "value": "100",
+        "x": 421
+      },
+      {
+        "label": "ADJUST",
+        "value": "0",
+        "x": 553
+      },
+      {
+        "label": "INVERT",
+        "value": "OFF",
+        "x": 661
+      }
+    ],
+    "filled_knobs": [
+      {
+        "label": "SEND LEVEL",
+        "value": "1",
+        "x": 313
+      },
+      {
+        "label": "RETURN LEVEL",
+        "value": "2",
+        "x": 433
+      },
+      {
+        "label": "ADJUST",
+        "value": "3",
+        "x": 553
+      }
+    ],
+    "labels_by_addr": {
+      "0x10001107": "SEND LEVEL",
+      "0x1000110B": "RETURN LEVEL",
+      "0x1000110F": "ADJUST"
+    }
+  },
+  "0x4E": {
+    "effect_name_typebar": "SLICER",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x4F": {
+    "effect_name_typebar": "HMN",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x50": {
+    "effect_name_typebar": "FB",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x51": {
+    "effect_name_typebar": "SITAR_SIM",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  },
+  "0x52": {
+    "effect_name_typebar": "A_WAH",
+    "n_default_knobs": 0,
+    "n_filled_knobs": 0,
+    "default_knobs": [],
+    "filled_knobs": [],
+    "labels_by_addr": {}
+  }
+}
