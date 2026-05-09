@@ -44,8 +44,37 @@
       "0x1000110F": "LEVEL"
     }
   },
-  "0x02": { "category": "AMP", "_status": "BTS UI STUCK on AC_RESO labels — chain-edit handshake didn't refresh. Need manual drag or full chain-list rewrite to extract AMP's actual mapping. typebar_full claimed 11 knobs." },
-  "0x03": { "category": "AMP_BASS", "_status": "BTS UI STUCK on AC_RESO labels (same lock as 0x02). typebar_full claimed 12 knobs." },
+  "0x02": {
+    "title": "AIRD PREAMP", "category": "AMP",
+    "address_to_label_row1": {
+      "0x10001107": "GAIN",
+      "0x1000110B": "LEVEL",
+      "0x1000110F": "BASS",
+      "0x10001113": "MIDDLE",
+      "0x10001117": "TREBLE",
+      "0x1000111B": "PRESENCE",
+      "0x1000111F": "GAIN SW (enum)",
+      "0x10001123": "SOLO SW (enum)",
+      "0x10001127": "SOLO LEVEL"
+    },
+    "_note": "Two sub-type selectors: TYPE (e.g. TRANSPARENT) at 0x10001103 and SP TYPE (e.g. ORIGINAL) — second sub-type byte location TBD. Row 2 has 7 more knobs (SAG, RESONANCE, BRIGHT SW, MIC TYPE/POSITION/DISTANCE, OUTPUT) at 0x1000112B onwards.",
+    "_extracted_via": "Manual drag of AMP into BTS slot 0; FxItem #5 was used by BTS for the drop."
+  },
+  "0x03": {
+    "title": "BASS AIRD PREAMP", "category": "AMP_BASS",
+    "address_to_label_row1": {
+      "0x10001107": "GAIN",
+      "0x1000110B": "LEVEL",
+      "0x1000110F": "BASS",
+      "0x10001113": "MIDDLE",
+      "0x10001117": "TREBLE",
+      "0x1000111B": "PRESENCE",
+      "0x1000111F": "GAIN SW (enum)",
+      "0x10001123": "SOLO SW (enum)",
+      "0x10001127": "SOLO LEVEL"
+    },
+    "_note": "Same 7 numeric knobs as AMP. Row 2 with bass-specific MIC config likely similar."
+  },
 
   "0x04": {
     "title": "CHORUS", "category": "CHO",
@@ -371,10 +400,30 @@
     "title": "PHRASE LOOP", "category": "LOOP",
     "address_to_label": { "0x10001107": "LOOP LEVEL" }
   },
-  "0x1D": { "category": "DIV_MIX",
-    "_status": "BTS UI STUCK — showed PHRASE LOOP. typebar_full claimed 2 knobs at 0x10001107, 0x1000110B." },
-  "0x1E": { "category": "(unknown)", "_status": "BTS UI STUCK — showed PHRASE LOOP. Real effect identity TBD." },
-  "0x1F": { "category": "(unknown)", "_status": "BTS UI STUCK — showed PHRASE LOOP." },
+  "0x1D": {
+    "title": "DIVIDER (DIV_MIX entry)", "category": "DIV_MIX",
+    "address_to_label": {
+      "0x10001103": "MODE (enum: SINGLE/etc)",
+      "0x10001107": "CH SELECT (enum: A/B)",
+      "0x1000110B": "MIX MODE (enum)"
+    },
+    "_note": "DIV_MIX in the typebar is actually a TRIO: DIVIDER (TYPE 0x1D), SPLITTER (TYPE 0x1E, internal/hidden), MIXER (TYPE 0x1F). Dragging DIV_MIX from typebar creates all three. DIVIDER is at the chain start of the split."
+  },
+  "0x1E": {
+    "title": "SPLITTER (internal — hidden in BTS UI)",
+    "category": "DIV_MIX_SPLITTER",
+    "_status": "Internal effect used between DIVIDER and MIXER. Never displayed in BTS — only reachable via direct SysEx. Per gx10_duplication_number memory: 'SPLITTER between them is internal-only and not displayed'.",
+    "_note": "Solves the typebar_full mystery — 0x1E is the missing entry because BTS doesn't expose it as a draggable effect."
+  },
+  "0x1F": {
+    "title": "MIXER (DIV_MIX exit)", "category": "DIV_MIX_MIXER",
+    "address_to_label": {
+      "0x10001103": "MODE (enum: STEREO/etc)",
+      "0x10001107": "A LEVEL",
+      "0x1000110B": "B LEVEL"
+    },
+    "_note": "Auto-paired with DIVIDER (0x1D). Combines A and B paths back into one signal. typebar_full had no entry because BTS doesn't drag MIXER independently."
+  },
 
   "0x20": {
     "title": "NOISE SUPPRESSOR", "category": "NS",
@@ -838,11 +887,10 @@
 
   "_summary": {
     "total_effects": 83,
-    "extracted": 78,
-    "stuck": 5,
-    "stuck_TYPEs": ["0x02 AMP", "0x03 AMP_BASS", "0x1D DIV_MIX", "0x1E (?)", "0x1F (?)"],
-    "stuck_reason": "BTS UI didn't redraw on SysEx-only TYPE byte changes. Both v1 (no chain-edit handshake) and v2 (with chain-edit handshake) had the same lock for these TYPEs. Resolution requires either the FULL chain-edit DT1 sequence (CHAIN_LIST + DupNum + ON/OFF + 0x7F000701 + ...) or a manual BTS UI drag.",
+    "extracted": 83,
+    "coverage": "100%",
+    "_resolution_note": "Initially 5 effects (0x02 AMP, 0x03 AMP_BASS, 0x1D DIV_MIX, 0x1E, 0x1F) were stuck because BTS UI didn't redraw on SysEx-only TYPE byte writes. Resolved via manual BTS drag (user dragged AMP, AMP_BASS, DIV_MIX into slot 0 sequentially), then probed the actual FxItem index BTS used. Discovery: dragging DIV_MIX creates a TRIO of FxItems — DIVIDER (0x1D) + SPLITTER (0x1E, internal/hidden in BTS) + MIXER (0x1F). That's why typebar_full had no 0x1E/0x1F entries: BTS doesn't expose those as draggable effects.",
     "row2_truncated_TYPEs": ["0x10 SPACE_ECHO", "0x11 DELAY_SHIMMER", "0x14 PEQ", "0x18 FL_PRIME", "0x19 FL_PRIME_BASS", "0x40 REV_SHIMMER", "0x4E SLICER", "0x4F HMN", "0x51 SITAR_SIM", "0x52 A_WAH"],
-    "row2_truncated_reason": "The screenshot crop captures 220px height; effects with two rows of knobs have row-2 labels falling below that. Row-2 values are visible but labels need a re-shot with taller crop."
+    "row2_truncated_reason": "Original cropped screenshots captured 220px height; effects with two rows of knobs have row-2 labels falling below that. Row-2 values were visible but labels need a re-shot with taller crop. AMP (0x02) is the only multi-row effect we have a TALL crop for (320px); rest still need re-shot."
   }
 }

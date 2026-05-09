@@ -1,0 +1,68 @@
+{
+  "type_byte": "0x35",
+  "tag": "AMP",
+  "n_pairs": 10,
+  "all_pairs": [
+    {
+      "x": 307,
+      "y": 585,
+      "label": "GAIN",
+      "value": "35"
+    },
+    {
+      "x": 427,
+      "y": 585,
+      "label": "LEVEL",
+      "value": "60"
+    },
+    {
+      "x": 531,
+      "y": 588,
+      "label": "GAIN SW",
+      "value": "MIDDLE"
+    },
+    {
+      "x": 667,
+      "y": 585,
+      "label": "BASS",
+      "value": "50"
+    },
+    {
+      "x": 787,
+      "y": 585,
+      "label": "MIDDLE",
+      "value": "40"
+    },
+    {
+      "x": 907,
+      "y": 585,
+      "label": "TREBLE",
+      "value": "60"
+    },
+    {
+      "x": 1027,
+      "y": 585,
+      "label": "PRESENCE",
+      "value": "80"
+    },
+    {
+      "x": 1141,
+      "y": 585,
+      "label": "BRIGHT SW",
+      "value": "OFF"
+    },
+    {
+      "x": 1261,
+      "y": 585,
+      "label": "SOLO SW",
+      "value": "OFF"
+    },
+    {
+      "x": 1387,
+      "y": 585,
+      "label": "SOLO LEVEL",
+      "value": "50"
+    }
+  ],
+  "labels_by_addr": {}
+}
