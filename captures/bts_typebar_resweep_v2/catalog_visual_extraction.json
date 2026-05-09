@@ -46,7 +46,8 @@
   },
   "0x02": {
     "title": "AIRD PREAMP", "category": "AMP",
-    "address_to_label_row1": {
+    "address_to_label": {
+      "0x10001103": "TYPE (sub-type, e.g. TRANSPARENT/CRUNCH/etc — first dropdown)",
       "0x10001107": "GAIN",
       "0x1000110B": "LEVEL",
       "0x1000110F": "BASS",
@@ -55,14 +56,23 @@
       "0x1000111B": "PRESENCE",
       "0x1000111F": "GAIN SW (enum)",
       "0x10001123": "SOLO SW (enum)",
-      "0x10001127": "SOLO LEVEL"
+      "0x10001127": "SOLO LEVEL",
+      "0x1000112B": "OUTPUT (level)",
+      "0x1000112F": "SAG (bipolar)",
+      "0x10001133": "RESONANCE (bipolar)",
+      "0x10001137": "BRIGHT SW (enum)",
+      "0x1000113B": "MIC TYPE (enum: DYN57/etc)",
+      "0x1000113F": "MIC POSITION (enum: SHORT/CENTER/etc)",
+      "0x10001143": "MIC DISTANCE (enum: 5cm/etc)",
+      "0x10001147": "SP TYPE (sub-type, e.g. ORIGINAL — second dropdown, possibly at this addr or earlier)"
     },
-    "_note": "Two sub-type selectors: TYPE (e.g. TRANSPARENT) at 0x10001103 and SP TYPE (e.g. ORIGINAL) — second sub-type byte location TBD. Row 2 has 7 more knobs (SAG, RESONANCE, BRIGHT SW, MIC TYPE/POSITION/DISTANCE, OUTPUT) at 0x1000112B onwards.",
+    "_note": "AMP has TWO sub-type dropdowns: TYPE (TRANSPARENT/CRUNCH/CLEAN/CRUNCH/HIGH GAIN/etc) and SP TYPE (cabinet model: ORIGINAL/etc). Row-2 mappings inferred from screenshot screen order matched with my distinctive value writes (1..12). Some row-2 enum addresses are best-guess by stride; verify with targeted single-knob test.",
     "_extracted_via": "Manual drag of AMP into BTS slot 0; FxItem #5 was used by BTS for the drop."
   },
   "0x03": {
     "title": "BASS AIRD PREAMP", "category": "AMP_BASS",
-    "address_to_label_row1": {
+    "address_to_label": {
+      "0x10001103": "TYPE (sub-type)",
       "0x10001107": "GAIN",
       "0x1000110B": "LEVEL",
       "0x1000110F": "BASS",
@@ -71,9 +81,17 @@
       "0x1000111B": "PRESENCE",
       "0x1000111F": "GAIN SW (enum)",
       "0x10001123": "SOLO SW (enum)",
-      "0x10001127": "SOLO LEVEL"
+      "0x10001127": "SOLO LEVEL",
+      "0x1000112B": "OUTPUT (level)",
+      "0x1000112F": "SAG (bipolar)",
+      "0x10001133": "RESONANCE (bipolar)",
+      "0x10001137": "BRIGHT SW (enum)",
+      "0x1000113B": "MIC TYPE (enum)",
+      "0x1000113F": "MIC POSITION (enum)",
+      "0x10001143": "MIC DISTANCE (enum)",
+      "0x10001147": "SP TYPE (sub-type)"
     },
-    "_note": "Same 7 numeric knobs as AMP. Row 2 with bass-specific MIC config likely similar."
+    "_note": "Same layout as AMP. Bass-specific MIC types likely differ in enum values."
   },
 
   "0x04": {
