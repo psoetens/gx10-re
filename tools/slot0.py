@@ -74,26 +74,59 @@ def collect_text(win, win_l, win_t, max_y=900):
     return out
 
 
-def extract_knob_pairs(elements):
-    """Pair each value-row TextControl with its nearest label-row
-    TextControl. Returns list of (label, value_str) sorted screen left-to-right
-    within each row.
+def cluster_rows(elements, y_tol=10):
+    """Group elements by y-coordinate (within y_tol px). Returns
+    list of clusters sorted by avg y, each cluster is a list of
+    (x, y, name) sorted by x.
     """
+    if not elements:
+        return []
+    elements = sorted(elements, key=lambda e: e[1])
+    clusters = []
+    cur = [elements[0]]
+    for el in elements[1:]:
+        if el[1] - cur[-1][1] <= y_tol:
+            cur.append(el)
+        else:
+            clusters.append(sorted(cur, key=lambda e: e[0]))
+            cur = [el]
+    clusters.append(sorted(cur, key=lambda e: e[0]))
+    # Sort clusters by avg y
+    clusters.sort(key=lambda c: sum(e[1] for e in c) / len(c))
+    return clusters
+
+
+def extract_knob_pairs(elements):
+    """Cluster elements into rows, then pair value rows with the
+    label row ~50 px below. Skips the dropdown row (480..520).
+
+    Returns (vx, vy, label, value_str) tuples.
+    """
+    # Exclude dropdown row (480..520) from knob extraction
+    knob_elements = [(x, y, n) for (x, y, n) in elements
+                     if not (DROPDOWN_Y_BAND[0] <= y <= DROPDOWN_Y_BAND[1])]
+    rows = cluster_rows(knob_elements, y_tol=10)
     pairs = []
-    for vy_lo, vy_hi in VALUE_ROWS:
-        values = sorted([(x, y, n) for (x, y, n) in elements
-                         if vy_lo <= y <= vy_hi], key=lambda e: e[0])
-        if not values: continue
-        for ly_lo, ly_hi in LABEL_ROWS:
-            if not (40 < ((ly_lo+ly_hi)/2 - (vy_lo+vy_hi)/2) < 90):
-                continue
-            labels = sorted([(x, y, n) for (x, y, n) in elements
-                             if ly_lo <= y <= ly_hi], key=lambda e: e[0])
-            if not labels: continue
-            for vx, vy, vn in values:
-                lbl = min(labels, key=lambda e: abs(e[0]-vx), default=None)
-                if lbl: pairs.append((vx, vy, lbl[2], vn))
-            break
+    used = set()
+    for i, vrow in enumerate(rows):
+        if i in used:
+            continue
+        # Find a label row 40-90 px below this one
+        v_y = sum(e[1] for e in vrow) / len(vrow)
+        for j in range(i+1, len(rows)):
+            l_y = sum(e[1] for e in rows[j]) / len(rows[j])
+            diff = l_y - v_y
+            if 35 <= diff <= 95:
+                # Pair value-row vrow with label-row rows[j]
+                for vx, vy, vn in vrow:
+                    lbl = min(rows[j], key=lambda e: abs(e[0]-vx),
+                              default=None)
+                    if lbl:
+                        pairs.append((vx, vy, lbl[2], vn))
+                used.add(j)
+                break
+            elif diff > 95:
+                break
     return pairs
 
 
