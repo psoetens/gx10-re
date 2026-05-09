@@ -49,6 +49,24 @@ nibble** (low 4 bits only). For values > 15 the upper nibble of
 
 Full transcript: `gx10-re/reports/linux_probe_results.md` §P0-1.
 
+### Independent confirmation: BTS sends the canonical form
+
+A Windows USBPcap session running BOSS Tone Studio captured BTS
+dragging a slider through values 1, 50, 100. **Every DT1 BTS sent
+matches the canonical 4-nibble offset-binary form**:
+
+| Display | BTS DT1 payload | Decoded raw |
+|--------:|:----------------|------------:|
+|   0     | `08 00 00 00`   | 0x8000      |
+|   1     | `08 00 00 01`   | 0x8001      |
+|  50     | `08 00 03 02`   | 0x8032      |
+| 100     | `08 00 06 04`   | 0x8064      |
+
+None of the 39 captured drag DT1s used the gxnarly single-byte
+form (`[08 00 00 64]` etc.). BTS — Roland's own editor — uses the
+same encoding `tools/encoding.py` produces. Source:
+`gx10-re/reports/bts_capture_findings.md` §3.
+
 ### Why `verify-dict` doesn't catch it
 
 `Sources/GxnarlyCLI/VerifyDict.swift:101-105` does read-only RQ1

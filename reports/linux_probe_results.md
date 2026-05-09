@@ -404,3 +404,95 @@ can adopt the same in the Python implementation.
 
 Device state was restored after each write (TYPE byte and FX
 Parameter cell). No persistent changes.
+
+---
+
+## 2026-05-09 follow-up: encoder wire→display validation + WAH catalog bug
+
+After the device returned to Linux, validated `tools/encoding.py`
+end-to-end (wire bytes → device → user-visible display value) using
+the human-in-the-loop method (write known-distinctive value → user
+reads display).
+
+### Setup
+
+FxItem 0 was holding TYPE = `0x35` (WAH), variant 2 (FAT WAH per
+user). Wrote 6 distinctive values via `encode_fx_param(N)` to the
+6 FX Param cells of FxItem 0:
+
+| Address    | FX Param # | Wrote display | Wire bytes      |
+|------------|-----------:|--------------:|-----------------|
+| `10001107` | 2 | 11 | `08 00 00 0B` |
+| `1000110B` | 3 | 22 | `08 00 01 06` |
+| `1000110F` | 4 | 33 | `08 00 02 01` |
+| `10001113` | 5 | 44 | `08 00 02 0C` |
+| `10001117` | 6 | 55 | `08 00 03 07` |
+| `1000111B` | 7 | 66 | `08 00 04 02` |
+
+Asked the user to read each WAH FAT knob value displayed on the
+device.
+
+### User-reported display values
+
+| Knob (UI label)  | Displayed | → maps to wire address |
+|------------------|----------:|------------------------|
+| WAH TYPE         | FAT WAH (unchanged) | `0x10001103` (untouched, variant selector) |
+| EFFECT LEVEL     | 44        | `0x10001113`             |
+| DIRECT MIX       | 55        | `0x10001117`             |
+| PEDAL POSITION   | 11        | `0x10001107`             |
+| PEDAL MIN        | 22        | `0x1000110B`             |
+| PEDAL MAX        | 33        | `0x1000110F`             |
+| (none — value 66 not shown) | — | `0x1000111B` (unused FX Param 7) |
+
+### Two findings
+
+**1. `tools/encoding.py` validated end-to-end.** Every wire value
+landed at the correct displayed value. The encoder is correct for
+unipolar knobs over the full 0..100 display range. (Bipolar +
+out-of-band cases not tested in this round but the unit tests in
+`tools/test_encoding.py` cover them.)
+
+**2. `docs/effect_catalog.md` WAH section is wrong** — the addresses
+are correct but the **knob name → address mapping is permuted**:
+
+| Address    | Reality (verified)  | Catalog claimed |
+|------------|---------------------|-----------------|
+| `10001107` | **PEDAL POSITION**  | WAH TYPE        |
+| `1000110B` | **PEDAL MIN**       | EFFECT LEVEL    |
+| `1000110F` | **PEDAL MAX**       | DIRECT MIX      |
+| `10001113` | **EFFECT LEVEL**    | PEDAL POSITION  |
+| `10001117` | **DIRECT MIX**      | PEDAL MIN       |
+| `1000111B` | (unused FX Param 7) | not listed      |
+
+Likely cause: `tools/build_effect_catalog.py` aligns capture-order
+knobs against manual-order names, but BTS UI ordering ≠ manual
+ordering for WAH. Tracked as task #29 — needs systematic audit of
+other effects via the same write-and-read method.
+
+### Bonus: device LCD edits don't broadcast on MIDI
+
+During the failed first attempt to sniff a knob turn, no DT1 events
+were captured even though the user reported having turned a knob
+(and a subsequent re-read showed `0x1000110B` had moved 0 → 50 from
+the device side). The GX-10 stores user-driven knob changes
+internally without echoing on MIDI OUT to the editor port.
+
+This means **passive sniffing only captures host-driven edits**
+(BTS, our scripts, etc.), not edits the user makes via the device's
+own LCD/buttons. For mapping device-side controls, use the
+write-and-read-display loop instead of a sniff.
+
+### Restored state
+
+After the experiment, FxItem 0 cells restored to their pre-test
+values (the user's PEDAL MIN had been left at 50 from the failed
+sniff attempt, so that is what was restored — not 0).
+
+### Slot-identity correction for BTS findings §3
+
+The Windows-Claude assumed FxItem 0 was COMP/X-COMP and inferred
+`0x10001117` was DIRECT MIX. With FAT WAH, `0x10001117` is **also**
+DIRECT MIX (in WAH). So the BTS slider drag — whatever TYPE was
+selected at capture time — most likely wrote to the DIRECT MIX
+parameter, not PEDAL MIN. The wire-encoding finding (canonical
+4-nibble offset binary) stands regardless of slot identity.

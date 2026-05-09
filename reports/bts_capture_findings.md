@@ -231,15 +231,36 @@ form; **none** use the alternative single-byte form. Encoding is
 consistent across the entire drag, with no observable
 firmware-version or driver-mode dependency.
 
-### Slot/parameter caveat
+### Slot/parameter caveat — resolved 2026-05-09 (Linux probe)
 
 The drag wrote to `0x10001117` (offset `+0x17` of FxItem #0) =
-**FX Parameter 6**. Whether that's "SUSTAIN" depends on the TYPE
-byte FxItem #0 holds: in COMP it would be DIRECT MIX, in
-X-COMPRESSOR it's also DIRECT MIX. The user's UI label may not have
-matched the actual parameter slot the slider wired to. **For the
-purposes of P0-1 the slot identity doesn't matter** — only the
-wire-format of each value, and that is unambiguous.
+**FX Parameter 6** (formula `0x03 + (N−1)*4`, so
+`(0x17 − 0x03)/4 + 1 = 6`). Which parameter that is depends on the
+TYPE byte FxItem #0 holds at capture time:
+
+| FxItem 0 TYPE | Param at offset 0x17 | Source |
+|---------------|---------------------|--------|
+| 0x08 COMP     | DIRECT MIX          | `docs/effect_catalog.md` |
+| 0x09 X-COMP   | DIRECT MIX          | `docs/effect_catalog.md` |
+| 0x35 WAH (53) | DIRECT MIX          | **verified live 2026-05-09** by writing distinctive values and reading the device display — see `linux_probe_results.md` 2026-05-09 follow-up |
+
+The Windows captures don't preserve the TYPE byte BTS read at
+startup (BTS bulk-reads all 20 FxItems but the committed summary
+files only record the *addresses* read, not the *bytes returned*).
+Subsequent Linux probe found FxItem 0 = WAH = 0x35; in WAH FAT
+variant `0x10001117` is **DIRECT MIX**, not PEDAL MIN as
+`docs/effect_catalog.md` previously claimed (catalog has a
+permuted name→address bug for WAH — task #29).
+
+So the most likely slot identity of the captured drag is **WAH
+DIRECT MIX**, not SUSTAIN. The user's UI label "SUSTAIN" was the
+BTS panel layout for a *different* selected FxItem, not slot 0.
+
+**For P0-1 the slot identity doesn't matter** — only the wire format
+of each value, and that is unambiguous. But for any future
+parameter-meaning analysis from these captures, treat
+`0x10001117` as WAH PEDAL MIN (display 0..100, raw 32768..32868)
+unless re-verified.
 
 ---
 
