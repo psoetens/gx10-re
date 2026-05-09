@@ -469,18 +469,99 @@ knobs against manual-order names, but BTS UI ordering ≠ manual
 ordering for WAH. Tracked as task #29 — needs systematic audit of
 other effects via the same write-and-read method.
 
-### Bonus: device LCD edits don't broadcast on MIDI
+### ~~Bonus: device LCD edits don't broadcast on MIDI~~ — RETRACTED
 
-During the failed first attempt to sniff a knob turn, no DT1 events
-were captured even though the user reported having turned a knob
-(and a subsequent re-read showed `0x1000110B` had moved 0 → 50 from
-the device side). The GX-10 stores user-driven knob changes
-internally without echoing on MIDI OUT to the editor port.
+**Original claim (wrong): The GX-10 doesn't broadcast user-driven
+knob changes on MIDI.**
 
-This means **passive sniffing only captures host-driven edits**
-(BTS, our scripts, etc.), not edits the user makes via the device's
-own LCD/buttons. For mapping device-side controls, use the
-write-and-read-display loop instead of a sniff.
+**Correct (verified after Windows re-test): The GX-10 DOES
+broadcast on every knob change, but only when the editor-attach
+bit is set.**
+
+Re-test recipe (mirror of the BTS startup):
+
+```
+1. DT1 0x7F000001 = 0x01  ×2     (editor-attach bit)
+2. DT1 0x7F000703 = 0x00 then 0x01 (BTS does this; necessity unverified)
+3. open passive listener
+4. user turns a physical knob
+5. expect DT1 events at FxItem-region addresses
+```
+
+Linux re-test confirmed: 128 events captured in 30 s while the
+user turned 4 OVERDRIVE knobs on FxItem 14
+(`0x10002D03/07/0B/0F`). The encoding is identical to host-driven
+writes — 4-nibble offset binary `[08 00 NN NN]`.
+
+The earlier failed attempt missed it because the listen window had
+attach=1 but no physical knob movement during the window — the
+broadcast channel only emits on change, so a quiet listen is
+silent regardless. Cross-reference:
+`reports/bts_capture_findings.md` §5 (Windows session that
+triggered the retraction).
+
+This re-opens what `0x7F000703` does: the broadcast channel works
+with both `0x7F000001 = 0x01` and `0x7F000703 = 0x01` set; whether
+just `0x7F000001` alone is sufficient is still untested. A
+comparison test is on the follow-up list.
+
+This finding is significant: real-time device-state mirroring is
+feasible **without polling**. Set the editor-attach bit, listen,
+and every parameter change comes through as a one-line DT1.
+
+### Bonus: OVERDRIVE catalog confirmation via broadcast
+
+The 30 s broadcast window captured the user turning 4 OD knobs on
+FxItem 14:
+
+| Address     | Catalog claim | Display range observed | User-confirmed |
+|-------------|---------------|------------------------|----------------|
+| `10002D03`  | TYPE selector (0..8) | 0..8                | TYPE       ✓   |
+| `10002D07`  | DRIVE (0..120)       | 32..46              | DRIVE-shaped ✓ |
+| `10002D0B`  | TONE (-50..+50)      | 27..49              | TONE-shaped  ✓ |
+| `10002D0F`  | LEVEL (0..100)       | 35..99              | LEVEL-shaped ✓ |
+
+User-reported turn order: "I also turned the type knob of this OD
+effect" — confirming the TYPE selector at offset 0x03. So **OD's
+catalog matches reality for at least the first 4 entries**, in
+contrast to:
+
+- **WAH** — names↔addresses permuted across the visible knob set
+- **COMP** — first 3 names correctly mapped, but TONE / DIRECT MIX
+  visible-on-device but missing from catalog
+- **OD** — catalog correct for TYPE + DRIVE + TONE + LEVEL (first
+  4); offsets 0x13..0x1F (BOTTOM, DIRECT MIX, SOLO SW, SOLO LEVEL)
+  not validated yet
+
+### New audit method (passive broadcast capture)
+
+This re-test established a much better catalog audit workflow than
+the write-distinctive-and-read approach used earlier:
+
+```
+1. attach=1, 703=1
+2. listen on the MIDI input port
+3. user turns a single named knob
+4. the address that lights up = the knob's wire address
+5. repeat for each knob
+```
+
+Faster (no need to write/restore) and more authoritative (the
+device tells us directly what address its knob writes to). Should
+become the default audit method for task #29.
+
+### Open: 0x7F000703 necessity for broadcasts
+
+The Linux re-test set BOTH `0x7F000001=0x01` AND `0x7F000703=0x01`.
+Whether `0x7F000703` is required for broadcasts (or whether attach=1
+alone is sufficient) is untested. Comparison test:
+
+```
+attach=1, 703=0, listen, knob turn -> any events?
+```
+
+If yes: `0x7F000703` doesn't gate broadcasts. If no: it is part of
+the broadcast handshake. Defer; not blocking.
 
 ### Restored state
 
