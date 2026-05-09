@@ -1,0 +1,63 @@
+{
+  "type_byte": "0x37",
+  "fxitem_index": 1,
+  "dropdowns": {},
+  "enum_knobs": {
+    "RATE": {
+      "address": "0x10001107",
+      "kind": "numeric",
+      "raw_to_display": {
+        "0": "2"
+      }
+    },
+    "DEPTH": {
+      "address": "0x1000110B",
+      "kind": "numeric",
+      "raw_to_display": {
+        "0": "99"
+      }
+    },
+    "RESONANCE": {
+      "address": "0x1000110F",
+      "kind": "numeric",
+      "raw_to_display": {
+        "0": "99"
+      }
+    },
+    "MANUAL": {
+      "address": "0x10001113",
+      "kind": "numeric",
+      "raw_to_display": {
+        "0": "99"
+      }
+    },
+    "STEP RATE": {
+      "address": "0x10001117",
+      "kind": "numeric",
+      "raw_to_display": {
+        "0": "98"
+      }
+    },
+    "EFFECT LEVEL": {
+      "address": "0x1000111B",
+      "kind": "numeric",
+      "raw_to_display": {
+        "0": "59"
+      }
+    },
+    "DIRECT MIX": {
+      "address": "0x1000111F",
+      "kind": "numeric",
+      "raw_to_display": {
+        "0": "92"
+      }
+    },
+    "BPM": {
+      "address": "0x10001123",
+      "kind": "numeric",
+      "raw_to_display": {
+        "0": "167"
+      }
+    }
+  }
+}
