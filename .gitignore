@@ -65,6 +65,13 @@ captures/typebar/**/*.pcap
 captures/typebar/**/*.jsonl
 captures/bpm_test/**/*.pcap
 
+# Windows BTS capture session — only the curated .summary.md files and
+# the synthesis report under reports/ are tracked, not the raw captures.
+captures/bts_*/**/*.pcap
+captures/bts_*/**/*.jsonl
+captures/bts_*/**/*.png
+captures/bts_*.jsonl
+
 # All PNG/JPG screenshots in captures (any subdir).
 captures/**/*.png
 captures/**/*.jpg
