@@ -59,6 +59,7 @@ _bind(winmm.midiOutClose, [HMIDIOUT])
 _bind(winmm.midiOutPrepareHeader, [HMIDIOUT, LPMIDIHDR, wintypes.UINT])
 _bind(winmm.midiOutUnprepareHeader, [HMIDIOUT, LPMIDIHDR, wintypes.UINT])
 _bind(winmm.midiOutLongMsg, [HMIDIOUT, LPMIDIHDR, wintypes.UINT])
+_bind(winmm.midiOutShortMsg, [HMIDIOUT, wintypes.DWORD])
 
 CALLBACK_NULL = 0
 
@@ -83,6 +84,20 @@ class MidiOut:
         rc = winmm.midiOutOpen(ctypes.byref(self.handle), port_index, None, None, CALLBACK_NULL)
         if rc != 0:
             raise RuntimeError(f"midiOutOpen failed: {_err(rc)}")
+
+    def send_short_msg(self, data: bytes):
+        """Send a 1- to 3-byte MIDI short message. Used for PC#, CC, etc."""
+        if not (1 <= len(data) <= 3):
+            raise ValueError("short message must be 1-3 bytes")
+        # WinMM's dwMsg packs the bytes little-endian: status, data1, data2.
+        msg = data[0]
+        if len(data) >= 2:
+            msg |= data[1] << 8
+        if len(data) == 3:
+            msg |= data[2] << 16
+        rc = winmm.midiOutShortMsg(self.handle, msg)
+        if rc != 0:
+            raise RuntimeError(f"midiOutShortMsg: {_err(rc)}")
 
     def send_sysex(self, data: bytes):
         if not data or data[0] != 0xF0 or data[-1] != 0xF7:
