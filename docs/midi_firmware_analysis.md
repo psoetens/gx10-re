@@ -34,7 +34,7 @@ F0 7E dev 06 02 41 0B 04 00 00 nn 00 vv 00 F7
 `F0`). `vvH` is `Software revision level #3` (byte 12). Bytes #2 and #4
 are documented as `00H`.
 
-### 1.2 Conflicting interpretations of `nnH`
+### 1.2 Byte 10 is a product discriminator (verified)
 
 The v2 manual annotates byte 10 as a **product discriminator**:
 
@@ -46,48 +46,58 @@ The v1 manual leaves byte 10 unannotated:
 > `nnH: Software revision level # 1`
 > *(GX-100_MIDI_Imple_eng01_W.md, line 222)*
 
-This **conflicts** with `docs/firmware_versions.md`, which treats the
-first sw-rev byte as the **major version number**:
+**Confirmed by live device probe (2026-05-09 — `reports/linux_probe_results.md`
+§P1-1).** A GX-10 running firmware **1.04** returns
+`softwareVersion = [01 00 00 00]` — byte-identical to what
+`docs/firmware_versions.md` historically documented for firmware
+1.0. The bytes do **not** track firmware version. The v2 manual's
+reading is correct: byte 10 is a product flag, bytes 11/12/13 are
+reserved zeros.
+
+The earlier interpretation in `docs/firmware_versions.md` — that
+the first sw-rev byte encoded a major version number — has been
+retracted; that file has been rewritten.
+
+### 1.3 Detection: product flag + feature probe (no firmware version)
 
 ```
-01 00 ... -> firmware 1.0
-01 05 ... -> firmware 1.05
-02 00 ... -> firmware 2.0
-02 04 ... -> firmware 2.04
+product = sw_rev[0]            // 0x00 = GX-100, 0x01 = GX-10
+                               //   stable across firmwares within a product
+
+// There is NO firmware version we can read from Identity Reply.
+// For per-firmware feature gating, probe a v2-only register and
+// infer from the response:
+
+is_v2_capable_gx100 :=
+    RQ1(0x0000001B, 1).payload != 0x00  // [SystemCommon] COLOR MODE
+                                        // v1: fixed-zero slot
+                                        // v2: enumerated 0/1
+    OR
+    DT1(0x10001100, [78]) round-trips   // TYPE 78 (SLICER) accepted
+
+is_v2_capable_gx10 :=
+    RQ1(0x00001065, 1)                  // GX-10 footswitch fn — v2-only field
+    AND read replies                    // (on v1 the byte may not exist)
+
+// gxnarly's `min_firmware: "M.m"` field still works as dictionary
+// metadata — but the predicate that gates it must be a feature
+// probe, NOT a parsed Identity-Reply version pair.
 ```
 
-Both readings happen to agree on GX-100 v2.04 (`nn=02`, major=2) and on
-GX-10 v1.05 (`nn=01`, major=1) only because the major version *coincides*
-with the product-id Roland chose. They diverge for any GX-100 firmware
-with major !=2 (e.g. GX-100 v1.10 should report `nn=01` on the
-"product" reading but `nn=01` only by coincidence — the v2 doc was
-written when that firmware was already obsolete).
-
-**Recommendation for code:** treat `(nn, byte11, vv, byte13)` as
-`(major, minor, patch, build)` per `firmware_versions.md`, and derive
-product from the **combination** of `(family_code=0x040B, major_version)`
-plus a probe write/read to a v2-only address (e.g. RQ1 to
-`[SystemCommon] 0x1B COLOR MODE` returns non-zero on v2). Do not rely
-on byte 10 as a product flag alone.
-
-### 1.3 Detection booleans
-
-```
-is_v2     := sw_rev_major >= 2 || (gx10_marker_seen)
-is_gx10   := product_string contains "GX-10" (from device probe)
-is_v1     := !is_v2
-
-// Probe-based fallback if Identity Reply is ambiguous:
-// RQ1 to 00 00 00 1B (1 byte). If COLOR MODE is non-trivially enumerated,
-// the device is on v2 firmware. v1 firmware will return 0 (N/A fixed slot).
-```
+The device-screen MENU on the GX-10 shows the running firmware
+(1.04 in our case), so the version IS stored on the device — just
+not exposed via SysEx by anything we've found. A Windows-side BTS
+USBPcap capture is queued (`reports/windows-session-task-plan.md`
+Task 4) to discover any address BTS uses; if it finds one this §1
+is updated.
 
 ---
 
-## 2. Removed `Setup*` region (entire `00 20 xx xx` bank)
+## 2. `Setup*` region — removed in v2 manual, INTACT in firmware
 
-Five sub-blocks present in v1, **removed** in v2. The v2 Address Map
-jumps from `00 10 08 00 [PcmapPc bank3]` directly to
+Five sub-blocks documented in v1, **deleted from v2 manual address
+map**. The v2 manual's Address Map jumps from
+`00 10 08 00 [PcmapPc bank3]` directly to
 `10 00 00 00 [Memory (temporary)]`.
 
 | Address      | Block name    | Total size | Notes                              |
@@ -98,9 +108,34 @@ jumps from `00 10 08 00 [PcmapPc bank3]` directly to
 | `00 20 03 40` | `[SetupEfct]`  | `0x0D`    | LEVEL SELECT, USB MIX, AIRD        |
 | `00 20 04 40` | `[SetupComm]`  | `0x12`    | INPUT/EQ/BPM                       |
 
-**v2 firmware response is unspecified** — the doc is silent on what RQ1
-to a deleted address returns. Most likely outcomes: silent drop or
-out-of-range error. Code must gate all `00 20 xx xx` access on `is_v1`.
+### Live firmware behaviour (verified 2026-05-09)
+
+**The firmware on a GX-10 v1.04 still exposes the Setup region**
+despite the v2 manual's removal. Per
+`reports/linux_probe_results.md` §P2-2:
+
+| Address       | Reply on GX-10 v1.04 |
+|---------------|----------------------|
+| `0x00200000` `[SetupTemp]`           | `0x00` (1 byte) |
+| `0x00200003` `[ChainEditTrigger]`    | `0x00` (handshake idle) |
+| `0x00200040` `[SetupTemp2]`          | `0x00` |
+| `0x00200140` `[SetupTemp3]`          | `0x4C` |
+| `0x00200340` `[SetupEfct]`           | `0x01` |
+| `0x00200440` `[SetupComm]`           | timeout (layout may have shifted; not removed) |
+
+**Treat the v2-manual removal as documentation-only.** Editor code
+that interacts with GX-10 firmware (any version we've observed) MUST
+still handle the Setup region. The ChainEditTrigger handshake at
+`0x00200003` (per `protocol.md:625-635`) remains valid.
+
+What's still unknown:
+- GX-100 v2.x firmware behaviour at these addresses (no live GX-100
+  probed yet). Possible the v2-manual removal mirrors a real
+  firmware change there.
+- Whether `[SetupComm]` was relocated or just renamed. Linux probe
+  saw the other 4 sub-blocks intact but `0x00200440` silent. Defer
+  to a Windows BTS chain-edit capture (`windows-session-task-plan.md`
+  Task 2) for clarity.
 
 ---
 
