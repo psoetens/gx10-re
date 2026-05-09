@@ -70,6 +70,8 @@ captures/bpm_test/**/*.pcap
 captures/bts_*/**/*.pcap
 captures/bts_*/**/*.jsonl
 captures/bts_*/**/*.png
+captures/bts_*/**/*.bin
+captures/bts_*/**/*.log
 captures/bts_*.jsonl
 
 # All PNG/JPG screenshots in captures (any subdir).
