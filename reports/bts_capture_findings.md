@@ -21,6 +21,7 @@ SysEx-only (MIDI traffic), not raw USB.
 | 2. Chain edit (INSERT/DELETE/OVERWRITE) | **Done (via drag-drop)** | `0x00200003 ChainEditTrigger` still active; **new** `0x7F000701` mirror register (0x05 editing / 0x03 idle). gaps.md §1.1 device-side **clear** — BTS button bug is BTS-internal. |
 | 3. Knob drag (SUSTAIN, P0-1) | **Done** | BTS sends canonical 4-nibble offset binary. 50 → `08 00 03 02`, 100 → `08 00 06 04`, 1 → `08 00 00 01`. P0-1 confirmed; gxnarly's `knob_cell` encoder fix per the cross-check **stands**. |
 | 4. Firmware version source (P1-1) | **Unsettled** | No SysEx fetched the firmware version while BTS ran. Most likely path is a USB control transfer, which is invisible to MIDI sniffers and unreachable here without working USBPcap. |
+| 5. Device-knob broadcast (follow-up, post-Linux pull) | **Done** | Device DOES broadcast knob changes via DT1 to the FxItem FX-Param addresses, contrary to Linux commit `bccde3e`. Captured 39+24 events while user turned two physical knobs; BTS mirrored both. **Overturns "no broadcast" Linux finding** — they listened with no physical movement. See §5. |
 
 ---
 
@@ -316,6 +317,104 @@ on the Linux side and document the hypothesis in
 
 ---
 
+## §5. Device-knob broadcast — overturns the Linux "no broadcast" finding
+
+Source: `captures/bts_device_knob.summary.md`,
+`captures/bts_device_knob/sniff2.jsonl`. Captured **after** the Linux
+side merged `firmware-versions` and reported that device LCD/knob
+edits "don't broadcast on MIDI" (commit `bccde3e`).
+
+### The setup
+
+User opened BTS. BTS performed its standard editor-attach handshake
+(`0x7F000001 = 0x01` ×2, `0x7F000703 = 0x00 → 0x01`, etc.) and the
+usual bulk-read sweep. Then the user **physically turned two knobs on
+the GX-10**. BTS visually mirrored both movements in real time
+(user-confirmed: "both done and seen on device and in bts").
+
+### What the device broadcast
+
+| Address | Decode | Events | Sweep |
+|---------|--------|-------:|-------|
+| `0x10002D07` | FxItem #14, FX Param 2 | 39 | display 42 → 0 over 3.1 s |
+| `0x10002D0F` | FxItem #14, FX Param 4 | 24 | display 51 → 100 over 1.9 s |
+
+Every event is a **DT1 with no preceding RQ1** — pure unsolicited
+broadcast. Encoding is the canonical 4-nibble offset binary
+(payload `08 00 NN NN`, low nibbles concatenated, minus `0x8000`),
+identical to BTS's own knob writes (cross_check P0-1).
+
+Decisive samples (full curve in
+`captures/bts_device_knob.summary.md`):
+
+```
+t=37.627  DT1 0x10002D07 = 08 00 02 0A   raw=0x802A  display=42  (start)
+t=38.088  DT1 0x10002D07 = 08 00 02 01   raw=0x8021  display=33
+t=39.302  DT1 0x10002D07 = 08 00 00 0E   raw=0x800E  display=14
+t=40.737  DT1 0x10002D07 = 08 00 00 00   raw=0x8000  display=0   (settled)
+
+t=62.189  DT1 0x10002D0F = 08 00 03 03   raw=0x8033  display=51  (start)
+t=62.503  DT1 0x10002D0F = 08 00 06 00   raw=0x8060  display=96
+t=64.093  DT1 0x10002D0F = 08 00 06 04   raw=0x8064  display=100 (settled)
+```
+
+### Why the Linux probe missed this
+
+`reports/linux_probe_results.md` (commit `bccde3e`) replicated the
+full BTS startup handshake on Linux, **listened 8 seconds**, and saw
+zero unsolicited broadcasts. From that the Linux Claude concluded the
+broadcast hypothesis was rejected and that "device LCD edits don't
+broadcast on MIDI".
+
+The miss was the listen design, not the device behaviour: **the
+device only broadcasts on change**, and the 8 s window apparently had
+no physical user input. With nothing changing on the device, there is
+nothing to broadcast — a quiet 8 s is the expected reading regardless
+of whether the channel exists. Once the user turns a knob, the
+channel produces tens of events per second.
+
+### Verdict
+
+**Linux conclusions to revise:**
+
+1. `0x7F000703 = 0x01` broadcast hypothesis: not rejected. The
+   broadcast channel is real; what `0x7F000703` specifically does
+   inside it is still open (it might or might not gate broadcasts —
+   needs a comparison test: knob-turn with vs without `0x7F000703`).
+2. `tools/passive_sniff.py` description: device knob/LCD edits **do**
+   broadcast on MIDI when the editor-attach bit is set.
+
+**Re-test recipe for Linux:**
+
+```
+1. Identity Request → reply
+2. DT1 0x7F000001 = 0x01 (×2)
+3. (optional) DT1 0x7F000703 = 0x00 then 0x01
+4. Start passive listening on the SAME MIDI device session
+5. **HUMAN TURNS A PHYSICAL KNOB** for 5 seconds
+6. Expect N DT1 events at FxItem-region addresses
+```
+
+### Implications
+
+- Real-time device-state mirroring is feasible **without polling**:
+  set the editor-attach bit, listen, get every parameter change as a
+  one-line DT1.
+- "BTS magic" (BTS knowing about device edits) is just MIDI — no USB
+  control transfers, no HID, no vendor side-channel needed. Linux
+  can do exactly the same with rtmidi/ALSA.
+- Ties together two previously-disconnected findings:
+  - Editor-attach (`0x7F000001 = 0x01`) gates **both** the
+    `0x7F0xxxxx` reply paths (settled via Task 1) **and** the
+    parameter-broadcast channel (settled here).
+  - The 4-nibble offset-binary encoding (Task 3) is the same in
+    both directions: device → host broadcasts use the same wire
+    format BTS uses on the way in.
+
+This finding alone would justify the Windows session.
+
+---
+
 ## Open follow-ups
 
 These are observations that don't block any of the four tasks but
@@ -406,6 +505,7 @@ Committed in this session:
 - `captures/bts_startup.summary.md`
 - `captures/bts_chain_edit.summary.md`
 - `captures/bts_knob_drag.summary.md`
+- `captures/bts_device_knob.summary.md` (§5 follow-up — overturns Linux "no broadcast" finding)
 - `tools/bts_orchestrate.py` (sniffer + BTS launch + taskkill flow,
   superseded by the pause variant — kept for reference)
 - `tools/bts_capture_with_pause.py` (sniffer + user-driven BTS flow)
