@@ -152,7 +152,7 @@ Tone Studio's editor).
 | `0x1000_0000` | Memory (temporary) | ✔ | **Live edit buffer** — current patch, ~16 KiB. See §3.4 |
 | `0x2000_0000` | Memory 1..200 (user) | ✔ | **User-memory bank** — 200 memories × `0x60000` stride (= up to memory 200 at `0x292A_0000`) |
 | `0x5000_0000` | (preset name table) | ✔ | Preset patch name table (read-only, 296 names) — empirically observed |
-| `0x6040_0000` | — | (mirror?) | Earlier RE notes claimed user patches here; per official chart, user patches are at `0x2000_0000`. The `0x6040_0000` region may be a mirror or unrelated. |
+| `0x6040_0000` | (user-patch RAM mirror) | ✔ | **Working-RAM mirror of user patches** — what BTS reads to display the live patch list. 16 patch slot headers at `0x6040_0000..0x604F_0000` stride `0x10000`. Slot starts with the bank-label header (e.g. literal `"USER 1   "` at `0x6040_0000`, `"USER 2   "` at `0x6041_0000`). The persistent flash storage is at `0x2000_0000` per the chart; this region is the live RAM copy. (Source: `reports/bts_capture_findings.md` §1 — BTS startup snapshot.) |
 | `0x7F00_0000` | (status / runtime) | ✔ | System status registers + tuner display stream + WRITE save-trigger. Not in the official address tree (runtime only). |
 
 ### 3.1.1 Address byte rule
@@ -418,16 +418,19 @@ by Tone Studio to decide which UI buttons to enable. Layout not yet decoded.
 
 ### 3.7 `0x7F000000` — system status
 
-Single-byte registers at fixed offsets, observed:
+Single-byte registers at fixed offsets, observed (Linux probes
+`reports/linux_probe_results.md` §P2-4 + Windows BTS captures
+`reports/bts_capture_findings.md` §1+§2):
 
 | Address | Role | Notes |
 |---------|------|-------|
-| `0x7F000000` | unknown system flag (`0x03` observed) | |
-| `0x7F000001` | **editor-attached handshake bit** | host writes `0x01` on connect, device echoes; host writes `0x00` on disconnect |
-| `0x7F000002` | **active app-mode** | mirrors `0x00000007`. Observed `0x01`=MONO TUNER, `0x02`=POLY TUNER (and `0x03`=TT TUNER expected) |
-| `0x7F000003` | unknown (`0x00` observed) | |
+| `0x7F000000` | system-mode flag (`0x03` observed; constant on both Linux probe and BTS capture) | |
+| `0x7F000001` | **editor-attached handshake bit** | host writes `0x01` on connect, device echoes; host writes `0x00` on disconnect. BTS writes it twice back-to-back at startup. |
+| `0x7F000002` | **RunningMode mirror** | mirrors `0x00000007`. `0x00`=EDIT (BTS startup default), `0x01`=MONO TUNER, `0x02`=POLY TUNER, `0x03`=TT TUNER. **Silent until the editor-attach bit is set.** |
+| `0x7F000003` | revision-check stub (`0x00` observed) | |
 | `0x7F000300` | **TUNER pitch streaming buffer** (48 bytes) | streamed by device every ~200 ms while in TUNER mode; layout = 8 string slots × 6 bytes each, encoding per-string pitch / detection state. Empty pattern is `00 01 03 08 08 00` per string. |
-| `0x7F000703` | unknown (`0x01` observed) | |
+| `0x7F000701` | **state-mirror for chain edit** | BTS writes `0x05` when a chain edit begins (paired with `0x00200003 = 0x01`) and `0x03` when it ends (paired with `0x00200003 = 0x00`). Within 0–10 ms of the trigger. Member of the same "global state mirror" family as `0x7F000002`. |
+| `0x7F000703` | **second handshake-style toggle** | host writes `0x00` then `0x01` at startup, mirroring the `0x7F000001` pattern. Purpose unknown — possibly a separate broadcast-subscribe channel. Silent on Linux probe without `0x7F000001 = 0x01` first. |
 
 ### 3.8 `0x00000007` — UI-mode register
 

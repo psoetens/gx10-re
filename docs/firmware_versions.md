@@ -68,10 +68,29 @@ The user-visible "VERSION" screen on the GX-10's MENU does show the
 running firmware, so it's stored on the device — just not exposed
 on any wire interface we can read.
 
-A Windows-side BTS USBPcap session is queued (see
-`reports/windows-session-task-plan.md` Task 4) to discover whether
-BTS reads the version from a yet-undiscovered SysEx address or
-whether it simply doesn't.
+**Update 2026-05-09 (Windows BTS capture, `reports/bts_capture_findings.md`
+§4):** observed BTS startup at MIDI level — no SysEx reads to
+addresses outside the chart-documented map, no payload resembling
+`1.04` / `01 04`. The strong hypothesis from that session is that
+BTS reads the firmware version via a **USB control transfer** or
+the **`bcdDevice` USB descriptor field**, not via MIDI SysEx.
+
+This is consistent with the Linux `lsusb -v` we already captured
+(`bcdDevice = 1.00` on this firmware-1.04 device) — but `bcdDevice`
+appears not to track firmware either. Resolution paths:
+
+1. Linux `lsusb -v` against a different-firmware GX-10 to see if
+   `bcdDevice` differs across firmwares. Not done yet.
+2. A USB analyser (Beagle / Ellisys) to capture control transfers
+   on a working-USBPcap host. USBPcap was unusable on the test
+   machine (Intel xHCI 3.10 controller — see Operational lessons
+   in `reports/bts_capture_findings.md`).
+3. Reverse-engineering BTS's native bridge DLL for
+   `WinUsb_ControlTransfer` calls.
+
+For practical purposes the firmware-version source remains
+**not known on the wire**. The feature-probe strategy described
+above is what this repo uses.
 
 ---
 

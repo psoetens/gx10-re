@@ -42,12 +42,24 @@ from the official `MemoryFxItem` formula
 | Control | Status |
 |---------|--------|
 | Drag effect from typebar to chain slot | ✅ |
-| Drag effect off chain (delete) | ⚠️ untested |
-| Drag effect to swap with another slot | ⚠️ untested |
+| Drag effect off chain (delete) | ✅ via drag-drop — `0x00200003` ChainEditTrigger pair + `0x10000F0C` chain-list rewrite (Windows BTS capture, 2026-05-09) |
+| Drag effect to swap with another slot | ✅ same path as add/remove drag |
 | Right-click slot for context menu | ⚠️ untested |
 | Click slot to bypass / un-bypass (the small power dot) | ⚠️ — but `MemoryFxItem` offset 0x01 = OFF/ON per chart, so this is just a 1-byte write 📜 |
-| INSERT button | ⚠️ **BROKEN in BTS as of 2026-05-03 — see new task #39** |
-| DELETE button | ⚠️ **BROKEN in BTS as of 2026-05-03** |
+| INSERT button | ⚠️ **BTS-internal bug**, device-side clear |
+| DELETE button | ⚠️ **BTS-internal bug**, device-side clear |
+| OVERWRITE button | ⚠️ **BTS-internal bug**, device-side clear |
+
+**2026-05-09 update (Windows BTS capture):** the INSERT/DELETE/OVERWRITE
+buttons are a BTS-internal bug, not a device-protocol issue.
+Drag-drop in the chain panel uses a different BTS code path that
+works fine, and the SysEx sequence it emits is fully documented in
+`reports/bts_capture_findings.md` §2 — `protocol.md §5.6` was correct
+all along. The `ChainEditTrigger` at `0x00200003` is alive and well;
+each drag pairs it with a write to the new state-mirror register
+`0x7F000701` (0x05 editing / 0x03 idle). No firmware change is
+needed; users with broken buttons should clear BTS's WebView2
+user-data or use drag-drop.
 | OVERWRITE button | ⚠️ **BROKEN in BTS as of 2026-05-03** |
 
 ### 1.2 PRESET / USER tab toggle (left rail) ⚠️

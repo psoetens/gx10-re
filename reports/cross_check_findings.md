@@ -28,7 +28,15 @@ for each.
 
 ## P0 findings (likely silent bugs)
 
-### P0-1. gxnarly `knob_cell` encoding may be incorrect for FX Parameters
+### P0-1. gxnarly `knob_cell` encoding is incorrect for FX Parameters
+
+**Status (2026-05-09): BTS confirmation.** Windows BTS session
+captured BTS dragging a slider through values 1, 50, 100. BTS sends
+canonical 4-nibble offset binary identical to our `tools/encoding.py`
+output: `[08 00 00 01]`, `[08 00 03 02]`, `[08 00 06 04]`. gxnarly's
+encoder fix per the issue draft is **definitively required**. See
+`reports/bts_capture_findings.md` §3 for the three decisive hex
+strings.
 
 **Evidence:**
 - `gxnarly/Sources/GxnarlyCore/Dictionary/ParameterEntry.swift:193-197`:
@@ -173,6 +181,21 @@ because the major versions coincide with Roland's chosen product flag.
 - Add a probe to `tools/detect_device.py` that pretty-prints the
   Identity Reply per the resolved interpretation.
 
+**Status (2026-05-09): PARTIAL — settled negatively.** Linux probe
+showed firmware-1.04 GX-10 reports `01 00 00 00` (Identity Reply is
+NOT the version source). Windows BTS capture confirms BTS doesn't
+fetch it via SysEx either: no relevant address seen during BTS
+startup or "About"-style dialog opens. Strong hypothesis (per
+`reports/bts_capture_findings.md` §4): BTS uses a USB control
+transfer or `bcdDevice` field, unreachable without working USBPcap
+(the Intel xHCI 3.10 controller on the test machine made USBPcap
+unusable). `docs/firmware_versions.md` rewritten to recommend a
+**feature-probe** strategy instead of version-string parsing.
+
+Remaining work: capture USB control transfers on a different
+machine (USB analyser hardware or a host with a working USBPcap
+controller). Tracked in BTS-deferred follow-ups.
+
 ---
 
 ### P1-2. `effect_catalog.md` and `all_effects.json` knob ranges are stale (single-byte)
@@ -315,6 +338,15 @@ longer needed?
   BTS traffic on a v2 device).
 - Document in `protocol.md:625` whether the gotcha applies to v2.
 
+**Status (2026-05-09): RESOLVED via Windows BTS capture.**
+ChainEditTrigger at `0x00200003` is **alive and well** on GX-10
+firmware 1.04. BTS pairs every chain edit with `0x00200003 = 0x01`
+(begin) and `0x00200003 = 0x00` (end), AND a write to a newly-
+discovered state-mirror at `0x7F000701` (0x05 editing / 0x03 idle).
+Per `reports/bts_capture_findings.md` §2. The v2 manual's silence
+about Setup region is documentation-only; firmware still has it.
+`docs/protocol.md §3.7` and `docs/gaps.md §1.1` updated.
+
 ---
 
 ### P2-3. Identity-Reply byte 11 ("`00H` Software revision level # 2") — observed value?
@@ -339,6 +371,22 @@ under it.
 attached device — at minimum the editor-attached handshake at
 `0x7F000001` and the active-app-mode mirror at `0x7F000002`. Promote
 out of "unknown" if found-stable.
+
+**Status (2026-05-09): SETTLED.** Windows BTS capture shows:
+- `0x7F000000 = 0x03` constant (system-mode flag; observed identical
+  on Linux probe and BTS startup)
+- `0x7F000001 = 0x01` editor-attach bit (BTS writes twice
+  back-to-back at startup)
+- `0x7F000002 = 0x00` (RunningMode = EDIT — replies once attach
+  bit is set; this is why Linux probe saw it silent)
+- `0x7F000003 = 0x00` revision-check stub
+- `0x7F000701 = 0x05/0x03` **NEW** state-mirror for chain edits
+- `0x7F000703 = 0x00 → 0x01` **NEW** second handshake-style toggle
+  (purpose unclear; mirrors `0x7F000001` pattern at startup)
+
+`docs/protocol.md §3.7` updated. Open follow-up: probe
+`0x7F000703 = 0x01` from a custom probe (without launching BTS) to
+see if it triggers any new device-side broadcasts.
 
 ---
 
