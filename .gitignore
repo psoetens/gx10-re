@@ -19,6 +19,9 @@ docs/manuals/*.pdf
 # Empty stub used by tools that take a Path arg they never actually write to.
 __nul__.jsonl
 
+# Local HTML cache used by tools/scrape_gx100_v1_manual.py.
+_scrape/
+
 # Python cruft.
 __pycache__/
 *.pyc
