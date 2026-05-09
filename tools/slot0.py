@@ -253,16 +253,39 @@ def main():
                 print(f"    {lab}: {val}")
         print()
 
-        # 5. BTS UI knobs (source of truth — what the user sees right now)
+        # 5. Build MIDI raw value lookup by FxItem address
+        midi_raw = {}  # addr_hex -> (raw_hex, disp_int)
+        for n in range(1, 41):
+            offset = 0x03 + (n - 1) * 4
+            if offset + 4 > len(block): break
+            p = block[offset:offset+4]
+            if any(b > 0x7F for b in p): continue
+            addr_hex = f"0x{base + offset:08X}"
+            midi_raw[addr_hex] = (decode4(p) + 0x8000, decode4(p))
+
+        # BTS UI knobs (source of truth for the current state)
         if bts_pairs:
-            print(f"  Knobs (BTS UI, screen left-to-right by row):")
+            print(f"  Knobs:                  BTS shows         MIDI raw")
             current_row_y = -1
+            # Match BTS labels to addresses via the catalog (case-sensitive)
+            label_to_addr = {}
+            for addr_hex, lab in labels.items():
+                # catalog uses FxItem-#0 addresses; remap to current FxItem base
+                offset = int(addr_hex, 16) - FXITEM_BASE
+                live_addr = f"0x{base + offset:08X}"
+                label_to_addr[lab.split(" (")[0]] = live_addr
+
             for (vx, vy, label, value_str) in sorted(bts_pairs,
                                                       key=lambda e: (e[1], e[0])):
                 if current_row_y >= 0 and vy - current_row_y > 30:
                     print()  # row separator
                 current_row_y = vy
-                print(f"    {label:<20s}  =  {value_str}")
+                addr = label_to_addr.get(label, "")
+                raw_str = ""
+                if addr in midi_raw:
+                    rh, di = midi_raw[addr]
+                    raw_str = f"{rh:04X} ({di})"
+                print(f"    {label:<22s}  {value_str:<16s}  {raw_str}")
             print()
 
         # 6. Per-address raw FxItem state with catalog labels (developer view)
