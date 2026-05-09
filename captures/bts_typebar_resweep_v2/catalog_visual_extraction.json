@@ -691,18 +691,29 @@
   },
   "0x40": {
     "title": "SHIMMER REVERB", "category": "REV_SHIMMER",
-    "address_to_label_row1": {
-      "0x10001107": "TIME (s)",
-      "0x1000110B": "TONE (bipolar)",
-      "0x1000110F": "EFFECT LEVEL",
-      "0x10001113": "DENSITY",
-      "0x10001117": "PRE-DELAY (ms)",
-      "0x1000111B": "LOW CUT (Hz)",
-      "0x1000111F": "HIGH CUT (Hz)",
-      "0x10001123": "LOW DAMP (bipolar)",
-      "0x10001127": "HIGH DAMP (bipolar)"
+    "address_to_label": {
+      "0x10001103": "TIME (s)",
+      "0x10001107": "TONE (bipolar)",
+      "0x1000110B": "EFFECT LEVEL",
+      "0x1000110F": "DENSITY",
+      "0x10001113": "PRE-DELAY (ms)",
+      "0x10001117": "LOW CUT (Hz)",
+      "0x1000111B": "HIGH CUT (Hz)",
+      "0x1000111F": "LOW DAMP (bipolar)",
+      "0x10001123": "HIGH DAMP (bipolar)",
+      "0x10001127": "MOD RATE",
+      "0x1000112B": "MOD DEPTH",
+      "0x1000112F": "DUCK SENS",
+      "0x10001133": "DUCK PRE",
+      "0x10001137": "DUCK POST (truncated)",
+      "0x1000113B": "DIRECT LEVEL",
+      "0x1000113F": "PITCH 1 (bipolar)",
+      "0x10001143": "LEVEL 1",
+      "0x10001147": "PITCH 2 (bipolar)",
+      "0x1000114B": "LEVEL 2",
+      "0x1000114F": "CARRYOVER (enum)"
     },
-    "_note_row2": "Row 2 has 9 more knobs (truncated): values 11, 12, 0, 100, +12, 100, +24, 100, ON. Likely SHIMMER amount/level/etc + CARRYOVER + BPM."
+    "_note": "Tall resweep got both rows. ~20 knobs total — most complex effect in the catalog. Includes dual SHIMMER pitch shifters (PITCH 1/2 + LEVEL 1/2) on top of standard reverb + delay-style controls. Last few addresses approximate (beyond distinctive writes)."
   },
   "0x41": {
     "title": "TERA ECHO", "category": "TERA_ECHO",
@@ -854,23 +865,31 @@
   },
   "0x4E": {
     "title": "SLICER", "category": "SLICER",
-    "address_to_label_row1": {
+    "address_to_label": {
       "0x10001103": "PATTERN (enum: P1/etc)",
       "0x10001107": "RATE",
       "0x1000110B": "TRIGGER (enum)",
-      "0x1000110F": "EFFECT LEVEL"
+      "0x1000110F": "EFFECT LEVEL",
+      "0x10001113": "ATTACK",
+      "0x10001117": "DUTY",
+      "0x1000111B": "DIRECT MIX",
+      "0x1000111F": "BPM"
     },
-    "_note_row2": "Row 2 cut — values 4, 5, 6, 120 visible. Likely DIRECT MIX/ATTACK/DUTY/BPM."
+    "_note": "Tall resweep confirmed: 8 knobs total."
   },
   "0x4F": {
     "title": "HUMANIZER", "category": "HMN",
-    "address_to_label_row1": {
+    "address_to_label": {
       "0x10001103": "MODE (enum: PICKING)",
       "0x10001107": "VOWEL1 (enum: a/e/i/o/u)",
       "0x1000110B": "VOWEL2 (enum)",
-      "0x1000110F": "SENS"
+      "0x1000110F": "SENS",
+      "0x10001113": "RATE",
+      "0x10001117": "DEPTH",
+      "0x1000111B": "(hidden — my 6 didn't display)",
+      "0x1000111F": "LEVEL"
     },
-    "_note_row2": "Row 2 cut — values 4, 5, blank, 7."
+    "_note": "Tall resweep got row 2: RATE, DEPTH, LEVEL. One slot at 0x1000111B didn't show a numeric value (could be hidden enum or unused for this sub-type)."
   },
   "0x50": {
     "title": "FEEDBACKER", "category": "FB",
@@ -882,31 +901,38 @@
   },
   "0x51": {
     "title": "SITAR SIMULATOR", "category": "SITAR_SIM",
-    "address_to_label_row1": {
+    "address_to_label": {
       "0x10001103": "SENS",
       "0x10001107": "DEPTH",
       "0x1000110B": "TONE (bipolar)",
-      "0x1000110F": "EFFECT LEVEL"
+      "0x1000110F": "EFFECT LEVEL",
+      "0x10001113": "RESONANCE",
+      "0x10001117": "BUZZ",
+      "0x1000111B": "DIRECT MIX"
     },
-    "_note_row2": "Row 2 cut — values 4, 5, 6 visible."
+    "_note": "Tall resweep: 7 knobs total."
   },
   "0x52": {
     "title": "AUTO WAH", "category": "A_WAH",
-    "address_to_label_row1": {
+    "address_to_label": {
       "0x10001103": "FILTER MODE (enum: LPF)",
       "0x10001107": "RATE",
       "0x1000110B": "DEPTH",
-      "0x1000110F": "EFFECT LEVEL"
+      "0x1000110F": "EFFECT LEVEL",
+      "0x10001113": "FREQUENCY",
+      "0x10001117": "RESONANCE",
+      "0x1000111B": "WAVEFORM (enum)",
+      "0x1000111F": "DIRECT MIX"
     },
-    "_note_row2": "Row 2 cut — values 4, 5, blank, 7. Likely SENS/FREQ/RESONANCE/etc."
+    "_note": "Tall resweep: 8 knobs total."
   },
 
   "_summary": {
     "total_effects": 83,
     "extracted": 83,
-    "coverage": "100%",
+    "coverage": "100% — full row coverage including row-2 labels",
     "_resolution_note": "Initially 5 effects (0x02 AMP, 0x03 AMP_BASS, 0x1D DIV_MIX, 0x1E, 0x1F) were stuck because BTS UI didn't redraw on SysEx-only TYPE byte writes. Resolved via manual BTS drag (user dragged AMP, AMP_BASS, DIV_MIX into slot 0 sequentially), then probed the actual FxItem index BTS used. Discovery: dragging DIV_MIX creates a TRIO of FxItems — DIVIDER (0x1D) + SPLITTER (0x1E, internal/hidden in BTS) + MIXER (0x1F). That's why typebar_full had no 0x1E/0x1F entries: BTS doesn't expose those as draggable effects.",
-    "row2_truncated_TYPEs": ["0x10 SPACE_ECHO", "0x11 DELAY_SHIMMER", "0x14 PEQ", "0x18 FL_PRIME", "0x19 FL_PRIME_BASS", "0x40 REV_SHIMMER", "0x4E SLICER", "0x4F HMN", "0x51 SITAR_SIM", "0x52 A_WAH"],
-    "row2_truncated_reason": "Original cropped screenshots captured 220px height; effects with two rows of knobs have row-2 labels falling below that. Row-2 values were visible but labels need a re-shot with taller crop. AMP (0x02) is the only multi-row effect we have a TALL crop for (320px); rest still need re-shot."
+    "_row2_resolution": "Re-ran tall resweep (320px crop) covering all multi-row effects. Got row-2 labels for all 10 previously-truncated effects: PEQ, SPACE_ECHO, DELAY_SHIMMER, FL_PRIME (+ BASS), REV_SHIMMER, SLICER, HMN, SITAR_SIM, A_WAH. REV_SHIMMER is the largest at 20 knobs (dual SHIMMER pitch shifters on top of standard reverb).",
+    "_subtype_finding": "HARM sub-type cycle confirmed: addresses are STABLE across sub-types. BTS just hides/shows different subsets of the same address space when the sub-type byte changes. So the catalog labels are sub-type-independent — accurate for all sub-type configurations."
   }
 }
