@@ -1,0 +1,151 @@
+{
+  "type_byte": "0x04",
+  "fxitem_index": 1,
+  "max_raw_probed": 15,
+  "dropdowns": {
+    "TYPE": {
+      "raw_to_display": {
+        "0": "MONO",
+        "1": "DIR/EFX",
+        "2": "STEREO",
+        "3": "DUAL"
+      }
+    }
+  },
+  "knobs": {
+    "RATE": {
+      "raw_to_display": {
+        "0": "0",
+        "1": "1",
+        "2": "2"
+      }
+    },
+    "DEPTH": {
+      "raw_to_display": {
+        "0": "0",
+        "1": "1",
+        "2": "2"
+      }
+    },
+    "EFFECT LEVEL": {
+      "raw_to_display": {
+        "0": "0",
+        "1": "1",
+        "2": "2"
+      }
+    },
+    "PRE-DELAY": {
+      "raw_to_display": {
+        "0": "0.0ms",
+        "1": "0.5ms",
+        "2": "1.0ms"
+      }
+    },
+    "WAVEFORM": {
+      "raw_to_display": {
+        "0": "TRI",
+        "1": "SINE"
+      }
+    },
+    "LOW CUT": {
+      "raw_to_display": {
+        "0": "FLAT",
+        "1": "20.0Hz",
+        "2": "25.0Hz"
+      }
+    },
+    "HIGH CUT": {
+      "raw_to_display": {
+        "0": "20.0Hz",
+        "1": "25.0Hz",
+        "2": "31.5Hz"
+      }
+    },
+    "DIRECT LEVEL": {
+      "raw_to_display": {
+        "0": "0",
+        "1": "1",
+        "2": "2",
+        "3": "3"
+      }
+    },
+    "BPM": {
+      "raw_to_display": {
+        "0": "167",
+        "1": "167",
+        "2": "167",
+        "3": "167"
+      }
+    },
+    "1: RATE": {
+      "raw_to_display": {
+        "3": "3"
+      }
+    },
+    "1: DEPTH": {
+      "raw_to_display": {
+        "3": "3"
+      }
+    },
+    "1: EFFECT LEVEL": {
+      "raw_to_display": {
+        "3": "3"
+      }
+    },
+    "1: PRE-DELAY": {
+      "raw_to_display": {
+        "3": "1.5ms"
+      }
+    },
+    "1: LOW CUT": {
+      "raw_to_display": {
+        "3": "31.5Hz"
+      }
+    },
+    "1: HIGH CUT": {
+      "raw_to_display": {
+        "3": "40.0Hz"
+      }
+    },
+    "OUTPUT MODE": {
+      "raw_to_display": {
+        "3": "MONO"
+      }
+    },
+    "2: RATE": {
+      "raw_to_display": {
+        "3": "3"
+      }
+    },
+    "2: DEPTH": {
+      "raw_to_display": {
+        "3": "3"
+      }
+    },
+    "2: EFFECT LEVEL": {
+      "raw_to_display": {
+        "3": "3"
+      }
+    },
+    "2: PRE-DELAY": {
+      "raw_to_display": {
+        "3": "1.5ms"
+      }
+    },
+    "2: WAVEFORM": {
+      "raw_to_display": {
+        "3": "TRI"
+      }
+    },
+    "2: LOW CUT": {
+      "raw_to_display": {
+        "3": "31.5Hz"
+      }
+    },
+    "2: HIGH CUT": {
+      "raw_to_display": {
+        "3": "6.30kHz"
+      }
+    }
+  }
+}

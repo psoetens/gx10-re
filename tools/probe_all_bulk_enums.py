@@ -211,7 +211,12 @@ def main():
     bts_restart_count = 0
 
     for t in range(args.type_min, args.type_max + 1):
-        slug = f"{t:02X}_{catalog.get(f'0x{t:02X}', {}).get('title', 'unk').replace(' ', '_').replace('/', '_')}"
+        title = catalog.get(f'0x{t:02X}', {}).get('title', 'unk')
+        # Sanitize to ASCII-only for safe filenames across encodings.
+        title_ascii = ''.join(c for c in title if c.isascii() and c.isprintable())
+        title_ascii = title_ascii.replace(' ', '_').replace('/', '_').replace('(', '').replace(')', '')
+        title_ascii = '_'.join(filter(None, title_ascii.split('_')))
+        slug = f"{t:02X}_{title_ascii}"
         per_path = out_dir / f"{slug}_TYPE{t:02X}.json"
         if args.skip_existing and per_path.exists():
             print(f"  TYPE 0x{t:02X}: skip (existing)")
@@ -246,10 +251,15 @@ def main():
                 for lab, val in knobs_now:
                     per_knob.setdefault(lab, {})[raw_v] = val
 
-            # Detect BTS stuck: if every dropdown only has 1 unique value over
-            # all probe iterations, AND we expected sub-types, BTS likely stale.
-            stuck = (per_dropdown and
-                     all(len(set(v.values())) <= 1 for v in per_dropdown.values())
+            # Detect BTS stuck: either UI rendered nothing at all, OR both
+            # dropdowns AND knobs froze (single-value dropdowns alone are
+            # valid — knobs always vary unless UI is frozen).
+            empty_ui = (not per_knob and not per_dropdown)
+            knobs_frozen = (per_knob and
+                            all(len(set(v.values())) <= 1 for v in per_knob.values()))
+            dd_frozen = (per_dropdown and
+                         all(len(set(v.values())) <= 1 for v in per_dropdown.values()))
+            stuck = ((empty_ui or (knobs_frozen and dd_frozen))
                      and args.max_raw >= 3)
             if stuck:
                 print(f"  STUCK detected — restarting BTS", flush=True)

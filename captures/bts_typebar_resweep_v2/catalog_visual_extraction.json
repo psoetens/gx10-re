@@ -1,11 +1,18 @@
 {
   "_method": "Manual visual extraction by Claude reading captures/bts_typebar_resweep_cropped/<TT>_<NAME>_filled.png. Each entry pairs each FxItem-region address with the BTS label that displayed our distinctive write value. Sub-type byte (Param 1 at 0x10001103) was set to 0; values 1..12 written to consecutive Param 2..13 slots at offsets 0x07, 0x0B, 0x0F, 0x13, 0x17, 0x1B, 0x1F, 0x23, 0x27, 0x2B, 0x2F, 0x33.",
-  "_blank_meaning": "Blank knob value: device clamped my distinctive value as out-of-range for that knob (e.g., enum knob with valid 0..3 received my 6 write → device shows blank).",
-  "_screen_x_vs_address": "BTS often displays knobs in a screen-x order that differs from address order. typebar_full's earlier extractor read labels in screen-x and paired them with addresses in address order — that's the WAH/CHO/etc names-permuted bug pattern. The mappings below are address→label, so are valid regardless of screen order.",
+  "_blank_meaning": "Blank knob value: device clamped my distinctive value as out-of-range for that knob (e.g., enum knob with valid 0..3 received my 6 write \u2192 device shows blank).",
+  "_screen_x_vs_address": "BTS often displays knobs in a screen-x order that differs from address order. typebar_full's earlier extractor read labels in screen-x and paired them with addresses in address order \u2014 that's the WAH/CHO/etc names-permuted bug pattern. The mappings below are address\u2192label, so are valid regardless of screen order.",
   "_distortion_family_pattern_A": {
-    "_used_by_typebar_bytes": ["0x24 BOOST", "0x25 OD", "0x27 DIST", "0x28 DIST_BASS", "0x29 FUZZ", "0x2E METAL"],
+    "_used_by_typebar_bytes": [
+      "0x24 BOOST",
+      "0x25 OD",
+      "0x27 DIST",
+      "0x28 DIST_BASS",
+      "0x29 FUZZ",
+      "0x2E METAL"
+    ],
     "_layout": "TYPE dropdown + 7 knobs in monotonic address order",
-    "0x10001103": "TYPE (sub-type dropdown — e.g. MID BOOST, NATURAL OD, METAL DS, BASS DS)",
+    "0x10001103": "TYPE (sub-type dropdown \u2014 e.g. MID BOOST, NATURAL OD, METAL DS, BASS DS)",
     "0x10001107": "<gain> (BOOST/DRIVE/FUZZ/DIST per category)",
     "0x1000110B": "TONE (bipolar)",
     "0x1000110F": "LEVEL",
@@ -15,9 +22,16 @@
     "0x1000111F": "SOLO LEVEL"
   },
   "_distortion_family_pattern_B": {
-    "_used_by_typebar_bytes": ["0x26 OD_BASS", "0x2A FUZZ_BASS", "0x2B X-OD", "0x2C X_OD_BASS", "0x2D X-DIST", "0x2F METAL_BASS"],
-    "_layout": "NO TYPE dropdown — 7 knobs total, gain knob IS the sub-type byte",
-    "0x10001103": "<gain> (DRIVE/FUZZ/DIST per category — sub-type byte itself)",
+    "_used_by_typebar_bytes": [
+      "0x26 OD_BASS",
+      "0x2A FUZZ_BASS",
+      "0x2B X-OD",
+      "0x2C X_OD_BASS",
+      "0x2D X-DIST",
+      "0x2F METAL_BASS"
+    ],
+    "_layout": "NO TYPE dropdown \u2014 7 knobs total, gain knob IS the sub-type byte",
+    "0x10001103": "<gain> (DRIVE/FUZZ/DIST per category \u2014 sub-type byte itself)",
     "0x10001107": "TONE (bipolar)",
     "0x1000110B": "LEVEL",
     "0x1000110F": "BOTTOM (bipolar)",
@@ -25,9 +39,9 @@
     "0x10001117": "SOLO SW",
     "0x1000111B": "SOLO LEVEL"
   },
-
   "0x00": {
-    "title": "AC GUITAR SIMULATOR", "category": "AC_SIM",
+    "title": "AC GUITAR SIMULATOR",
+    "category": "AC_SIM",
     "address_to_label": {
       "0x10001107": "BODY (enum)",
       "0x1000110B": "LOW (bipolar)",
@@ -36,7 +50,8 @@
     }
   },
   "0x01": {
-    "title": "AC RESONANCE", "category": "AC_RESO",
+    "title": "AC RESONANCE",
+    "category": "AC_RESO",
     "address_to_label": {
       "0x10001103": "TYPE (NATURAL/etc sub-type)",
       "0x10001107": "RESONANCE",
@@ -45,9 +60,10 @@
     }
   },
   "0x02": {
-    "title": "AIRD PREAMP", "category": "AMP",
+    "title": "AIRD PREAMP",
+    "category": "AMP",
     "address_to_label": {
-      "0x10001103": "TYPE (sub-type, e.g. TRANSPARENT/CRUNCH/etc — first dropdown)",
+      "0x10001103": "TYPE (sub-type, e.g. TRANSPARENT/CRUNCH/etc \u2014 first dropdown)",
       "0x10001107": "GAIN",
       "0x1000110B": "LEVEL",
       "0x1000110F": "BASS",
@@ -64,13 +80,14 @@
       "0x1000113B": "MIC TYPE (enum: DYN57/etc)",
       "0x1000113F": "MIC POSITION (enum: SHORT/CENTER/etc)",
       "0x10001143": "MIC DISTANCE (enum: 5cm/etc)",
-      "0x10001147": "SP TYPE (sub-type, e.g. ORIGINAL — second dropdown, possibly at this addr or earlier)"
+      "0x10001147": "SP TYPE (sub-type, e.g. ORIGINAL \u2014 second dropdown, possibly at this addr or earlier)"
     },
     "_note": "AMP has TWO sub-type dropdowns: TYPE (TRANSPARENT/CRUNCH/CLEAN/CRUNCH/HIGH GAIN/etc) and SP TYPE (cabinet model: ORIGINAL/etc). Row-2 mappings inferred from screenshot screen order matched with my distinctive value writes (1..12). Some row-2 enum addresses are best-guess by stride; verify with targeted single-knob test.",
     "_extracted_via": "Manual drag of AMP into BTS slot 0; FxItem #5 was used by BTS for the drop."
   },
   "0x03": {
-    "title": "BASS AIRD PREAMP", "category": "AMP_BASS",
+    "title": "BASS AIRD PREAMP",
+    "category": "AMP_BASS",
     "address_to_label": {
       "0x10001103": "TYPE (sub-type)",
       "0x10001107": "GAIN",
@@ -93,9 +110,9 @@
     },
     "_note": "Same layout as AMP. Bass-specific MIC types likely differ in enum values."
   },
-
   "0x04": {
-    "title": "CHORUS", "category": "CHO",
+    "title": "CHORUS",
+    "category": "CHO",
     "address_to_label": {
       "0x10001103": "TYPE (MONO sub-type)",
       "0x10001107": "DIRECT LEVEL",
@@ -110,7 +127,8 @@
     }
   },
   "0x05": {
-    "title": "BASS CHORUS", "category": "CHO_BASS",
+    "title": "BASS CHORUS",
+    "category": "CHO_BASS",
     "address_to_label": {
       "0x10001103": "TYPE (MONO)",
       "0x10001107": "RATE",
@@ -123,7 +141,8 @@
     }
   },
   "0x06": {
-    "title": "PRIME CHORUS", "category": "CHO_PRIME",
+    "title": "PRIME CHORUS",
+    "category": "CHO_PRIME",
     "address_to_label": {
       "0x10001107": "RATE",
       "0x1000110B": "DEPTH",
@@ -138,7 +157,8 @@
     }
   },
   "0x07": {
-    "title": "CLASSIC VIBE", "category": "CLASS_VIBE",
+    "title": "CLASSIC VIBE",
+    "category": "CLASS_VIBE",
     "address_to_label": {
       "0x10001103": "MODE (CHORUS sub-type)",
       "0x10001107": "RATE",
@@ -148,7 +168,8 @@
     }
   },
   "0x08": {
-    "title": "COMPRESSOR", "category": "COMP",
+    "title": "COMPRESSOR",
+    "category": "COMP",
     "address_to_label": {
       "0x10001103": "TYPE (BOSS COMP/etc)",
       "0x10001107": "SUSTAIN",
@@ -159,7 +180,8 @@
     }
   },
   "0x09": {
-    "title": "X-COMPRESSOR", "category": "X-COMP",
+    "title": "X-COMPRESSOR",
+    "category": "X-COMP",
     "address_to_label": {
       "0x10001107": "LEVEL",
       "0x1000110B": "TONE (bipolar)",
@@ -170,7 +192,8 @@
     }
   },
   "0x0A": {
-    "title": "X BASS COMPRESSOR", "category": "X_COMP_BASS",
+    "title": "X BASS COMPRESSOR",
+    "category": "X_COMP_BASS",
     "address_to_label": {
       "0x10001107": "LEVEL",
       "0x1000110B": "TONE (bipolar)",
@@ -181,7 +204,8 @@
     }
   },
   "0x0B": {
-    "title": "DEFRETTER", "category": "DEFRET",
+    "title": "DEFRETTER",
+    "category": "DEFRET",
     "address_to_label": {
       "0x10001103": "SENS",
       "0x10001107": "DEPTH",
@@ -193,7 +217,8 @@
     }
   },
   "0x0C": {
-    "title": "BASS DEFRETTER", "category": "DEFRET_BASS",
+    "title": "BASS DEFRETTER",
+    "category": "DEFRET_BASS",
     "address_to_label": {
       "0x10001103": "SENS",
       "0x10001107": "ATTACK",
@@ -203,7 +228,8 @@
     }
   },
   "0x0D": {
-    "title": "DELAY", "category": "DELAY",
+    "title": "DELAY",
+    "category": "DELAY",
     "address_to_label": {
       "0x10001107": "TIME (ms)",
       "0x1000110B": "FEEDBACK",
@@ -215,7 +241,8 @@
     }
   },
   "0x0E": {
-    "title": "DELAY+", "category": "DELAY_PLUS",
+    "title": "DELAY+",
+    "category": "DELAY_PLUS",
     "address_to_label": {
       "0x10001103": "TYPE (MONO)",
       "0x10001107": "DIRECT LEVEL",
@@ -233,7 +260,8 @@
     "_note": "Non-monotonic screen-x: TIME/FEEDBACK/EFFECT LEVEL appear FIRST on screen but are at HIGHEST addresses. Verify with a re-test."
   },
   "0x0F": {
-    "title": "ANALOG DELAY", "category": "DELAY_ANALOG",
+    "title": "ANALOG DELAY",
+    "category": "DELAY_ANALOG",
     "address_to_label": {
       "0x10001103": "TYPE (MONO)",
       "0x10001107": "TIME (ms)",
@@ -248,7 +276,8 @@
     }
   },
   "0x10": {
-    "title": "SPACE ECHO", "category": "SPACE_ECHO",
+    "title": "SPACE ECHO",
+    "category": "SPACE_ECHO",
     "address_to_label": {
       "0x10001107": "TIME (ms)",
       "0x1000110B": "FEEDBACK",
@@ -267,7 +296,8 @@
     "_note_row2": "Tall resweep got row 2: HEAD (enum), WOW & FLUTTER, CARRYOVER (enum), BPM. Last two addresses TBD (values not from my distinctive writes)."
   },
   "0x11": {
-    "title": "SHIMMER DELAY", "category": "DELAY_SHIMMER",
+    "title": "SHIMMER DELAY",
+    "category": "DELAY_SHIMMER",
     "address_to_label": {
       "0x10001107": "TIME (ms)",
       "0x1000110B": "FEEDBACK",
@@ -287,7 +317,8 @@
     "_note_row2": "Tall resweep got row 2: PITCH/PITCH BALANCE/PITCH FEEDBACK/CARRYOVER/BPM. Last two addresses approximate."
   },
   "0x12": {
-    "title": "TWIST DELAY", "category": "DELAY_TWIST",
+    "title": "TWIST DELAY",
+    "category": "DELAY_TWIST",
     "address_to_label": {
       "0x10001103": "MODE (RISE -> FALL)",
       "0x10001107": "TRIGGER (enum: ON)",
@@ -298,7 +329,8 @@
     }
   },
   "0x13": {
-    "title": "WARP DELAY", "category": "DELAY_WARP",
+    "title": "WARP DELAY",
+    "category": "DELAY_WARP",
     "address_to_label": {
       "0x10001107": "TIME (ms)",
       "0x1000110B": "TRIGGER (enum)",
@@ -308,7 +340,8 @@
     }
   },
   "0x14": {
-    "title": "PARAMETRIC EQUALIZER", "category": "PEQ",
+    "title": "PARAMETRIC EQUALIZER",
+    "category": "PEQ",
     "address_to_label": {
       "0x10001103": "LOW GAIN",
       "0x10001107": "HIGH GAIN",
@@ -325,7 +358,8 @@
     "_note": "Tall resweep confirmed row 2: LOW CUT (125Hz) + HIGH CUT (200Hz). 11 knobs total."
   },
   "0x15": {
-    "title": "GRAPHIC EQUALIZER", "category": "GEQ",
+    "title": "GRAPHIC EQUALIZER",
+    "category": "GEQ",
     "address_to_label": {
       "0x10001103": "31.5Hz band",
       "0x10001107": "63Hz band",
@@ -339,7 +373,8 @@
     }
   },
   "0x16": {
-    "title": "FLANGER", "category": "FL",
+    "title": "FLANGER",
+    "category": "FL",
     "address_to_label": {
       "0x10001103": "RATE",
       "0x10001107": "DEPTH",
@@ -353,7 +388,8 @@
     }
   },
   "0x17": {
-    "title": "BASS FLANGER", "category": "FL_BASS",
+    "title": "BASS FLANGER",
+    "category": "FL_BASS",
     "address_to_label": {
       "0x10001103": "RATE",
       "0x10001107": "DEPTH",
@@ -367,7 +403,8 @@
     }
   },
   "0x18": {
-    "title": "PRIME FLANGER", "category": "FL_PRIME",
+    "title": "PRIME FLANGER",
+    "category": "FL_PRIME",
     "address_to_label": {
       "0x10001103": "RATE",
       "0x10001107": "DEPTH",
@@ -386,7 +423,8 @@
     "_note": "Tall resweep confirmed row 2: HIGH DAMP, EFFECT LEVEL, DIRECT MIX, BPM. 13 knobs total."
   },
   "0x19": {
-    "title": "PRIME BASS FLANGER", "category": "FL_PRIME_BASS",
+    "title": "PRIME BASS FLANGER",
+    "category": "FL_PRIME_BASS",
     "address_to_label": {
       "0x10001103": "RATE",
       "0x10001107": "DEPTH",
@@ -405,7 +443,8 @@
     "_note": "Tall resweep confirmed: same layout as FL_PRIME, 13 knobs."
   },
   "0x1A": {
-    "title": "HARMONIST", "category": "HARM",
+    "title": "HARMONIST",
+    "category": "HARM",
     "address_to_label": {
       "0x10001103": "VOICE (1 VOICE/etc)",
       "0x10001107": "1: HARMONY (enum interval)",
@@ -418,7 +457,8 @@
     }
   },
   "0x1B": {
-    "title": "BASS HARMONIST", "category": "HARM_BASS",
+    "title": "BASS HARMONIST",
+    "category": "HARM_BASS",
     "address_to_label": {
       "0x10001103": "VOICE",
       "0x10001107": "1: HARMONY",
@@ -431,11 +471,16 @@
     }
   },
   "0x1C": {
-    "title": "PHRASE LOOP", "category": "LOOP",
-    "address_to_label": { "0x10001107": "LOOP LEVEL" }
+    "title": "PHRASE LOOP",
+    "category": "LOOP",
+    "address_to_label": {
+      "0x10001103": "LOOP LEVEL"
+    },
+    "_correction": "Visual extraction had 0x10001107; live probe with LOOP LEVEL=77 confirmed offset 0x03 (addr 0x10001103)."
   },
   "0x1D": {
-    "title": "DIVIDER (DIV_MIX entry)", "category": "DIV_MIX",
+    "title": "DIVIDER (DIV_MIX entry)",
+    "category": "DIV_MIX",
     "address_to_label": {
       "0x10001103": "MODE (enum: SINGLE/etc)",
       "0x10001107": "CH SELECT (enum: A/B)",
@@ -444,13 +489,14 @@
     "_note": "DIV_MIX in the typebar is actually a TRIO: DIVIDER (TYPE 0x1D), SPLITTER (TYPE 0x1E, internal/hidden), MIXER (TYPE 0x1F). Dragging DIV_MIX from typebar creates all three. DIVIDER is at the chain start of the split."
   },
   "0x1E": {
-    "title": "SPLITTER (internal — hidden in BTS UI)",
+    "title": "SPLITTER (internal \u2014 hidden in BTS UI)",
     "category": "DIV_MIX_SPLITTER",
-    "_status": "Internal effect used between DIVIDER and MIXER. Never displayed in BTS — only reachable via direct SysEx. Per gx10_duplication_number memory: 'SPLITTER between them is internal-only and not displayed'.",
-    "_note": "Solves the typebar_full mystery — 0x1E is the missing entry because BTS doesn't expose it as a draggable effect."
+    "_status": "Internal effect used between DIVIDER and MIXER. Never displayed in BTS \u2014 only reachable via direct SysEx. Per gx10_duplication_number memory: 'SPLITTER between them is internal-only and not displayed'.",
+    "_note": "Solves the typebar_full mystery \u2014 0x1E is the missing entry because BTS doesn't expose it as a draggable effect."
   },
   "0x1F": {
-    "title": "MIXER (DIV_MIX exit)", "category": "DIV_MIX_MIXER",
+    "title": "MIXER (DIV_MIX exit)",
+    "category": "DIV_MIX_MIXER",
     "address_to_label": {
       "0x10001103": "MODE (enum: STEREO/etc)",
       "0x10001107": "A LEVEL",
@@ -458,9 +504,9 @@
     },
     "_note": "Auto-paired with DIVIDER (0x1D). Combines A and B paths back into one signal. typebar_full had no entry because BTS doesn't drag MIXER independently."
   },
-
   "0x20": {
-    "title": "NOISE SUPPRESSOR", "category": "NS",
+    "title": "NOISE SUPPRESSOR",
+    "category": "NS",
     "address_to_label": {
       "0x10001103": "THRESHOLD",
       "0x10001107": "RELEASE",
@@ -468,7 +514,8 @@
     }
   },
   "0x21": {
-    "title": "OCTAVE", "category": "OCT",
+    "title": "OCTAVE",
+    "category": "OCT",
     "address_to_label": {
       "0x10001103": "-2 OCT",
       "0x10001107": "-1 OCT",
@@ -476,7 +523,8 @@
     }
   },
   "0x22": {
-    "title": "POLY OCTAVE", "category": "OCT_POLY",
+    "title": "POLY OCTAVE",
+    "category": "OCT_POLY",
     "address_to_label": {
       "0x10001103": "RANGE",
       "0x10001107": "OCTAVE LEVEL",
@@ -484,29 +532,89 @@
     }
   },
   "0x23": {
-    "title": "BASS OCTAVE", "category": "OCT_BASS",
+    "title": "BASS OCTAVE",
+    "category": "OCT_BASS",
     "address_to_label": {
       "0x10001103": "-2 OCT",
       "0x10001107": "-1 OCT",
       "0x1000110B": "DIRECT LEVEL"
     }
   },
-
-  "0x24": { "title": "BOOSTER", "category": "BOOST", "_layout": "_distortion_family_pattern_A", "knob0": "BOOST" },
-  "0x25": { "title": "OVERDRIVE", "category": "OD", "_layout": "_distortion_family_pattern_A", "knob0": "DRIVE" },
-  "0x26": { "title": "BASS OVERDRIVE", "category": "OD_BASS", "_layout": "_distortion_family_pattern_B", "knob0": "DRIVE" },
-  "0x27": { "title": "DISTORTION", "category": "DIST", "_layout": "_distortion_family_pattern_A", "knob0": "DRIVE" },
-  "0x28": { "title": "BASS DISTORTION", "category": "DIST_BASS", "_layout": "_distortion_family_pattern_A", "knob0": "DRIVE" },
-  "0x29": { "title": "FUZZ", "category": "FUZZ", "_layout": "_distortion_family_pattern_A", "knob0": "FUZZ" },
-  "0x2A": { "title": "BASS FUZZ", "category": "FUZZ_BASS", "_layout": "_distortion_family_pattern_B", "knob0": "FUZZ" },
-  "0x2B": { "title": "X OVERDRIVE", "category": "X-OD", "_layout": "_distortion_family_pattern_B", "knob0": "DRIVE" },
-  "0x2C": { "title": "X BASS OVERDRIVE", "category": "X_OD_BASS", "_layout": "_distortion_family_pattern_B", "knob0": "DRIVE" },
-  "0x2D": { "title": "X DISTORTION", "category": "X-DIST", "_layout": "_distortion_family_pattern_B", "knob0": "DRIVE" },
-  "0x2E": { "title": "METAL DISTORTION", "category": "METAL", "_layout": "_distortion_family_pattern_A", "knob0": "DIST" },
-  "0x2F": { "title": "BASS METAL DISTORTION", "category": "METAL_BASS", "_layout": "_distortion_family_pattern_B", "knob0": "DIST" },
-
+  "0x24": {
+    "title": "BOOSTER",
+    "category": "BOOST",
+    "_layout": "_distortion_family_pattern_A",
+    "knob0": "BOOST"
+  },
+  "0x25": {
+    "title": "OVERDRIVE",
+    "category": "OD",
+    "_layout": "_distortion_family_pattern_A",
+    "knob0": "DRIVE"
+  },
+  "0x26": {
+    "title": "BASS OVERDRIVE",
+    "category": "OD_BASS",
+    "_layout": "_distortion_family_pattern_B",
+    "knob0": "DRIVE"
+  },
+  "0x27": {
+    "title": "DISTORTION",
+    "category": "DIST",
+    "_layout": "_distortion_family_pattern_A",
+    "knob0": "DRIVE"
+  },
+  "0x28": {
+    "title": "BASS DISTORTION",
+    "category": "DIST_BASS",
+    "_layout": "_distortion_family_pattern_A",
+    "knob0": "DRIVE"
+  },
+  "0x29": {
+    "title": "FUZZ",
+    "category": "FUZZ",
+    "_layout": "_distortion_family_pattern_A",
+    "knob0": "FUZZ"
+  },
+  "0x2A": {
+    "title": "BASS FUZZ",
+    "category": "FUZZ_BASS",
+    "_layout": "_distortion_family_pattern_B",
+    "knob0": "FUZZ"
+  },
+  "0x2B": {
+    "title": "X OVERDRIVE",
+    "category": "X-OD",
+    "_layout": "_distortion_family_pattern_B",
+    "knob0": "DRIVE"
+  },
+  "0x2C": {
+    "title": "X BASS OVERDRIVE",
+    "category": "X_OD_BASS",
+    "_layout": "_distortion_family_pattern_B",
+    "knob0": "DRIVE"
+  },
+  "0x2D": {
+    "title": "X DISTORTION",
+    "category": "X-DIST",
+    "_layout": "_distortion_family_pattern_B",
+    "knob0": "DRIVE"
+  },
+  "0x2E": {
+    "title": "METAL DISTORTION",
+    "category": "METAL",
+    "_layout": "_distortion_family_pattern_A",
+    "knob0": "DIST"
+  },
+  "0x2F": {
+    "title": "BASS METAL DISTORTION",
+    "category": "METAL_BASS",
+    "_layout": "_distortion_family_pattern_B",
+    "knob0": "DIST"
+  },
   "0x30": {
-    "title": "OVERTONE", "category": "OVER_TONE",
+    "title": "OVERTONE",
+    "category": "OVER_TONE",
     "address_to_label": {
       "0x10001103": "LOWER LEVEL",
       "0x10001107": "UPPER LEVEL",
@@ -519,7 +627,8 @@
     }
   },
   "0x31": {
-    "title": "PAN", "category": "PAN",
+    "title": "PAN",
+    "category": "PAN",
     "address_to_label": {
       "0x10001103": "RATE",
       "0x10001107": "DEPTH",
@@ -530,7 +639,8 @@
     }
   },
   "0x32": {
-    "title": "FOOT VOLUME", "category": "FOOT_VOL",
+    "title": "FOOT VOLUME",
+    "category": "FOOT_VOL",
     "address_to_label": {
       "0x10001103": "VOLUME MIN",
       "0x10001107": "VOLUME MAX",
@@ -539,7 +649,8 @@
     }
   },
   "0x33": {
-    "title": "PEDAL BEND", "category": "PB",
+    "title": "PEDAL BEND",
+    "category": "PB",
     "address_to_label": {
       "0x10001103": "PITCH MIN",
       "0x10001107": "PITCH MAX (bipolar)",
@@ -549,7 +660,8 @@
     }
   },
   "0x34": {
-    "title": "BASS PEDAL BEND", "category": "PB_BASS",
+    "title": "BASS PEDAL BEND",
+    "category": "PB_BASS",
     "address_to_label": {
       "0x10001103": "PITCH MIN",
       "0x10001107": "PITCH MAX (bipolar)",
@@ -559,7 +671,8 @@
     }
   },
   "0x35": {
-    "title": "WAH (CRY WAH)", "category": "WAH",
+    "title": "WAH (CRY WAH)",
+    "category": "WAH",
     "address_to_label": {
       "0x10001103": "WAH TYPE (sub-type)",
       "0x10001107": "PEDAL POSITION",
@@ -570,7 +683,8 @@
     }
   },
   "0x36": {
-    "title": "BASS WAH", "category": "WAH_BASS",
+    "title": "BASS WAH",
+    "category": "WAH_BASS",
     "address_to_label": {
       "0x10001103": "PEDAL POSITION (sub-type byte)",
       "0x10001107": "PEDAL MIN",
@@ -578,10 +692,11 @@
       "0x1000110F": "EFFECT LEVEL",
       "0x10001113": "DIRECT MIX"
     },
-    "_note": "Different from WAH (0x35) — no separate WAH TYPE selector. The sub-type byte IS PEDAL POSITION."
+    "_note": "Different from WAH (0x35) \u2014 no separate WAH TYPE selector. The sub-type byte IS PEDAL POSITION."
   },
   "0x37": {
-    "title": "PHASER", "category": "PH",
+    "title": "PHASER",
+    "category": "PH",
     "address_to_label": {
       "0x10001103": "STAGE (sub-type, e.g. 4 STAGE)",
       "0x10001107": "RATE",
@@ -595,7 +710,8 @@
     }
   },
   "0x38": {
-    "title": "BASS PHASER", "category": "PH_BASS",
+    "title": "BASS PHASER",
+    "category": "PH_BASS",
     "address_to_label": {
       "0x10001103": "STAGE",
       "0x10001107": "RATE",
@@ -609,7 +725,8 @@
     }
   },
   "0x39": {
-    "title": "PRIME PHASER", "category": "PH_PRIME",
+    "title": "PRIME PHASER",
+    "category": "PH_PRIME",
     "address_to_label": {
       "0x10001103": "STAGE (e.g. 2 STAGE)",
       "0x10001107": "RATE",
@@ -624,7 +741,8 @@
     }
   },
   "0x3A": {
-    "title": "PRIME BASS PHASER", "category": "PH_PRIME_BASS",
+    "title": "PRIME BASS PHASER",
+    "category": "PH_PRIME_BASS",
     "address_to_label": {
       "0x10001103": "STAGE",
       "0x10001107": "RATE",
@@ -639,7 +757,8 @@
     }
   },
   "0x3B": {
-    "title": "SCRIPT PHASER", "category": "PH_SCRIPT",
+    "title": "SCRIPT PHASER",
+    "category": "PH_SCRIPT",
     "address_to_label": {
       "0x10001103": "RATE",
       "0x10001107": "DEPTH",
@@ -649,7 +768,8 @@
     }
   },
   "0x3C": {
-    "title": "PITCH SHIFTER", "category": "PS",
+    "title": "PITCH SHIFTER",
+    "category": "PS",
     "address_to_label": {
       "0x10001103": "VOICE (1 VOICE/etc)",
       "0x10001107": "DIRECT LEVEL",
@@ -661,10 +781,11 @@
       "0x1000111F": "1: FEEDBACK",
       "0x10001123": "BPM"
     },
-    "_note": "Non-monotonic screen-x — DIRECT LEVEL displayed 7th but at lowest knob address."
+    "_note": "Non-monotonic screen-x \u2014 DIRECT LEVEL displayed 7th but at lowest knob address."
   },
   "0x3D": {
-    "title": "BASS PITCH SHIFTER", "category": "PS_BASS",
+    "title": "BASS PITCH SHIFTER",
+    "category": "PS_BASS",
     "address_to_label": {
       "0x10001103": "VOICE",
       "0x10001107": "DIRECT LEVEL",
@@ -678,7 +799,8 @@
     }
   },
   "0x3E": {
-    "title": "REVERB", "category": "REV",
+    "title": "REVERB",
+    "category": "REV",
     "address_to_label": {
       "0x10001103": "TYPE (HALL S/etc)",
       "0x10001107": "TIME (s)",
@@ -690,10 +812,11 @@
       "0x1000111F": "DIRECT LEVEL",
       "0x10001123": "CARRYOVER (enum)"
     },
-    "_note": "Non-monotonic screen-x — PRE-DELAY at addr 0x1000110B but displayed in 4th screen position (after EFFECT LEVEL and DENSITY)."
+    "_note": "Non-monotonic screen-x \u2014 PRE-DELAY at addr 0x1000110B but displayed in 4th screen position (after EFFECT LEVEL and DENSITY)."
   },
   "0x3F": {
-    "title": "REVERB+", "category": "REV_PLUS",
+    "title": "REVERB+",
+    "category": "REV_PLUS",
     "address_to_label": {
       "0x10001103": "TYPE (HALL S/etc)",
       "0x10001107": "TIME (s)",
@@ -708,7 +831,8 @@
     }
   },
   "0x40": {
-    "title": "SHIMMER REVERB", "category": "REV_SHIMMER",
+    "title": "SHIMMER REVERB",
+    "category": "REV_SHIMMER",
     "address_to_label": {
       "0x10001103": "TIME (s)",
       "0x10001107": "TONE (bipolar)",
@@ -731,10 +855,11 @@
       "0x1000114B": "LEVEL 2",
       "0x1000114F": "CARRYOVER (enum)"
     },
-    "_note": "Tall resweep got both rows. ~20 knobs total — most complex effect in the catalog. Includes dual SHIMMER pitch shifters (PITCH 1/2 + LEVEL 1/2) on top of standard reverb + delay-style controls. Last few addresses approximate (beyond distinctive writes)."
+    "_note": "Tall resweep got both rows. ~20 knobs total \u2014 most complex effect in the catalog. Includes dual SHIMMER pitch shifters (PITCH 1/2 + LEVEL 1/2) on top of standard reverb + delay-style controls. Last few addresses approximate (beyond distinctive writes)."
   },
   "0x41": {
-    "title": "TERA ECHO", "category": "TERA_ECHO",
+    "title": "TERA ECHO",
+    "category": "TERA_ECHO",
     "address_to_label": {
       "0x10001107": "SPREAD TIME",
       "0x1000110B": "FEEDBACK",
@@ -747,7 +872,8 @@
     }
   },
   "0x42": {
-    "title": "RING MODULATOR", "category": "RING_MOD",
+    "title": "RING MODULATOR",
+    "category": "RING_MOD",
     "address_to_label": {
       "0x10001103": "INTELLIGENT (enum: OFF)",
       "0x10001107": "FREQUENCY",
@@ -759,7 +885,8 @@
     }
   },
   "0x43": {
-    "title": "ROTARY", "category": "ROTARY",
+    "title": "ROTARY",
+    "category": "ROTARY",
     "address_to_label": {
       "0x10001103": "SPEED SELECT (SLOW/FAST)",
       "0x10001107": "SLOW RATE",
@@ -773,7 +900,8 @@
     }
   },
   "0x44": {
-    "title": "SLOW BEND", "category": "S_BEND",
+    "title": "SLOW BEND",
+    "category": "S_BEND",
     "address_to_label": {
       "0x10001103": "TRIGGER (enum: OFF)",
       "0x10001107": "PITCH (enum: -2 OCT/etc)",
@@ -782,7 +910,8 @@
     }
   },
   "0x45": {
-    "title": "BASS SLOW BEND", "category": "S_BEND_BASS",
+    "title": "BASS SLOW BEND",
+    "category": "S_BEND_BASS",
     "address_to_label": {
       "0x10001103": "TRIGGER (enum)",
       "0x10001107": "PITCH (enum)",
@@ -791,7 +920,8 @@
     }
   },
   "0x46": {
-    "title": "SLOW GEAR", "category": "SG",
+    "title": "SLOW GEAR",
+    "category": "SG",
     "address_to_label": {
       "0x10001103": "SENS",
       "0x10001107": "RISE TIME",
@@ -799,7 +929,8 @@
     }
   },
   "0x47": {
-    "title": "BASS SLOW GEAR", "category": "SG_BASS",
+    "title": "BASS SLOW GEAR",
+    "category": "SG_BASS",
     "address_to_label": {
       "0x10001103": "SENS",
       "0x10001107": "RISE TIME",
@@ -807,7 +938,8 @@
     }
   },
   "0x48": {
-    "title": "TOUCH WAH", "category": "T_WAH",
+    "title": "TOUCH WAH",
+    "category": "T_WAH",
     "address_to_label": {
       "0x10001103": "FILTER (enum: LPF/etc)",
       "0x10001107": "POLARITY (enum: UP/DOWN)",
@@ -818,10 +950,11 @@
       "0x1000111B": "EFFECT LEVEL",
       "0x1000111F": "DIRECT MIX"
     },
-    "_note": "Non-monotonic screen-x — EFFECT LEVEL shown 4th but at addr 0x1000111B (after FREQUENCY/RESONANCE/DECAY)."
+    "_note": "Non-monotonic screen-x \u2014 EFFECT LEVEL shown 4th but at addr 0x1000111B (after FREQUENCY/RESONANCE/DECAY)."
   },
   "0x49": {
-    "title": "BASS TOUCH WAH", "category": "T_WAH_BASS",
+    "title": "BASS TOUCH WAH",
+    "category": "T_WAH_BASS",
     "address_to_label": {
       "0x10001103": "FILTER (enum)",
       "0x10001107": "POLARITY (enum)",
@@ -834,7 +967,8 @@
     }
   },
   "0x4A": {
-    "title": "TREMOLO", "category": "TREM",
+    "title": "TREMOLO",
+    "category": "TREM",
     "address_to_label": {
       "0x10001103": "RATE",
       "0x10001107": "DEPTH",
@@ -847,7 +981,8 @@
     }
   },
   "0x4B": {
-    "title": "VIBRATO", "category": "VIB",
+    "title": "VIBRATO",
+    "category": "VIB",
     "address_to_label": {
       "0x10001103": "RATE",
       "0x10001107": "DEPTH",
@@ -856,10 +991,11 @@
       "0x10001117": "TRIGGER (enum)",
       "0x1000111B": "BPM"
     },
-    "_note": "0x1000110B not visibly mapped — possibly hidden/unused for VIB."
+    "_note": "0x1000110B not visibly mapped \u2014 possibly hidden/unused for VIB."
   },
   "0x4C": {
-    "title": "PRIME VIBRATO", "category": "VIB_PRIME",
+    "title": "PRIME VIBRATO",
+    "category": "VIB_PRIME",
     "address_to_label": {
       "0x10001103": "RATE",
       "0x10001107": "DEPTH",
@@ -872,7 +1008,8 @@
     }
   },
   "0x4D": {
-    "title": "SEND/RETURN", "category": "SEND_RETURN",
+    "title": "SEND/RETURN",
+    "category": "SEND_RETURN",
     "address_to_label": {
       "0x10001103": "MODE (enum: NORMAL)",
       "0x10001107": "SEND LEVEL",
@@ -882,7 +1019,8 @@
     }
   },
   "0x4E": {
-    "title": "SLICER", "category": "SLICER",
+    "title": "SLICER",
+    "category": "SLICER",
     "address_to_label": {
       "0x10001103": "PATTERN (enum: P1/etc)",
       "0x10001107": "RATE",
@@ -896,7 +1034,8 @@
     "_note": "Tall resweep confirmed: 8 knobs total."
   },
   "0x4F": {
-    "title": "HUMANIZER", "category": "HMN",
+    "title": "HUMANIZER",
+    "category": "HMN",
     "address_to_label": {
       "0x10001103": "MODE (enum: PICKING)",
       "0x10001107": "VOWEL1 (enum: a/e/i/o/u)",
@@ -904,13 +1043,14 @@
       "0x1000110F": "SENS",
       "0x10001113": "RATE",
       "0x10001117": "DEPTH",
-      "0x1000111B": "(hidden — my 6 didn't display)",
+      "0x1000111B": "(hidden \u2014 my 6 didn't display)",
       "0x1000111F": "LEVEL"
     },
     "_note": "Tall resweep got row 2: RATE, DEPTH, LEVEL. One slot at 0x1000111B didn't show a numeric value (could be hidden enum or unused for this sub-type)."
   },
   "0x50": {
-    "title": "FEEDBACKER", "category": "FB",
+    "title": "FEEDBACKER",
+    "category": "FB",
     "address_to_label": {
       "0x10001103": "MODE (enum: NORMAL)",
       "0x10001107": "TRIGGER (enum: ON)",
@@ -918,7 +1058,8 @@
     }
   },
   "0x51": {
-    "title": "SITAR SIMULATOR", "category": "SITAR_SIM",
+    "title": "SITAR SIMULATOR",
+    "category": "SITAR_SIM",
     "address_to_label": {
       "0x10001103": "SENS",
       "0x10001107": "DEPTH",
@@ -931,7 +1072,8 @@
     "_note": "Tall resweep: 7 knobs total."
   },
   "0x52": {
-    "title": "AUTO WAH", "category": "A_WAH",
+    "title": "AUTO WAH",
+    "category": "A_WAH",
     "address_to_label": {
       "0x10001103": "FILTER MODE (enum: LPF)",
       "0x10001107": "RATE",
@@ -944,13 +1086,12 @@
     },
     "_note": "Tall resweep: 8 knobs total."
   },
-
   "_summary": {
     "total_effects": 83,
     "extracted": 83,
-    "coverage": "100% — full row coverage including row-2 labels",
-    "_resolution_note": "Initially 5 effects (0x02 AMP, 0x03 AMP_BASS, 0x1D DIV_MIX, 0x1E, 0x1F) were stuck because BTS UI didn't redraw on SysEx-only TYPE byte writes. Resolved via manual BTS drag (user dragged AMP, AMP_BASS, DIV_MIX into slot 0 sequentially), then probed the actual FxItem index BTS used. Discovery: dragging DIV_MIX creates a TRIO of FxItems — DIVIDER (0x1D) + SPLITTER (0x1E, internal/hidden in BTS) + MIXER (0x1F). That's why typebar_full had no 0x1E/0x1F entries: BTS doesn't expose those as draggable effects.",
+    "coverage": "100% \u2014 full row coverage including row-2 labels",
+    "_resolution_note": "Initially 5 effects (0x02 AMP, 0x03 AMP_BASS, 0x1D DIV_MIX, 0x1E, 0x1F) were stuck because BTS UI didn't redraw on SysEx-only TYPE byte writes. Resolved via manual BTS drag (user dragged AMP, AMP_BASS, DIV_MIX into slot 0 sequentially), then probed the actual FxItem index BTS used. Discovery: dragging DIV_MIX creates a TRIO of FxItems \u2014 DIVIDER (0x1D) + SPLITTER (0x1E, internal/hidden in BTS) + MIXER (0x1F). That's why typebar_full had no 0x1E/0x1F entries: BTS doesn't expose those as draggable effects.",
     "_row2_resolution": "Re-ran tall resweep (320px crop) covering all multi-row effects. Got row-2 labels for all 10 previously-truncated effects: PEQ, SPACE_ECHO, DELAY_SHIMMER, FL_PRIME (+ BASS), REV_SHIMMER, SLICER, HMN, SITAR_SIM, A_WAH. REV_SHIMMER is the largest at 20 knobs (dual SHIMMER pitch shifters on top of standard reverb).",
-    "_subtype_finding": "HARM sub-type cycle confirmed: addresses are STABLE across sub-types. BTS just hides/shows different subsets of the same address space when the sub-type byte changes. So the catalog labels are sub-type-independent — accurate for all sub-type configurations."
+    "_subtype_finding": "HARM sub-type cycle confirmed: addresses are STABLE across sub-types. BTS just hides/shows different subsets of the same address space when the sub-type byte changes. So the catalog labels are sub-type-independent \u2014 accurate for all sub-type configurations."
   }
 }

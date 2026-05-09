@@ -1,0 +1,55 @@
+{
+  "type_byte": "0x50",
+  "fxitem_index": 1,
+  "max_raw_probed": 15,
+  "dropdowns": {},
+  "knobs": {
+    "MODE": {
+      "raw_to_display": {
+        "0": "NORMAL",
+        "1": "OSC"
+      }
+    },
+    "TRIGGER": {
+      "raw_to_display": {
+        "0": "OFF",
+        "1": "ON"
+      }
+    },
+    "DEPTH": {
+      "raw_to_display": {
+        "0": "0"
+      }
+    },
+    "RISE TIME": {
+      "raw_to_display": {
+        "1": "1"
+      }
+    },
+    "OCT RISE TIME": {
+      "raw_to_display": {
+        "1": "1"
+      }
+    },
+    "FEEDBACK": {
+      "raw_to_display": {
+        "1": "1"
+      }
+    },
+    "OCT FEEDBACK": {
+      "raw_to_display": {
+        "1": "1"
+      }
+    },
+    "VIB RATE": {
+      "raw_to_display": {
+        "1": "1"
+      }
+    },
+    "VIB DEPTH": {
+      "raw_to_display": {
+        "1": "1"
+      }
+    }
+  }
+}

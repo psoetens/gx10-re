@@ -46,9 +46,9 @@ SUB_TYPE_ADDR = 0x10001103
 # Knob row in BTS, in window-local coords: y=494 (labels) to y=640 (knob
 # bottoms); x covers a wide strip across the slot-detail panel.
 KNOB_AREA_X = 50
-KNOB_AREA_Y = 460
+KNOB_AREA_Y = 425
 KNOB_AREA_W = 1450
-KNOB_AREA_H = 220
+KNOB_AREA_H = 320
 
 
 def encode_4nibble(display: int) -> bytes:
