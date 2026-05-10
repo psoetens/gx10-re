@@ -95,9 +95,10 @@ of type. This is wrong in three ways:
 | Failure mode | Scope (live count, 2026-05-10) | Symptom |
 |---|---|---|
 | Bipolar over-probed wrong half | **82 knobs**, 36 effects | Probe sees raw 0..15 → "0..+15", misses negative half; produces `offset=0` that contradicts the guide's bipolar range. Now tagged `_range_inconsistent`. |
-| `numeric_irregular` truncated | **21 knobs** | Lookup table stops at 630Hz when docs say up to 12.5kHz (e.g. LOW-MID FREQ / HIGH-MID FREQ / HIGH CUT). PITCH on 0x44, 0x45 stops at +4OCT when docs go -3oct..+4oct. |
+| `numeric_irregular` truncated | **17 knobs** | Lookup table stops at 630Hz when docs say up to 12.5kHz (e.g. LOW-MID FREQ / HIGH-MID FREQ / HIGH CUT). Tagged `_probe_likely_truncated`. |
 | Linear numeric over-probed | **320 knobs** | 16 samples written when 1 (with a known offset/step) would have sufficed. Pure waste of wire time. |
 | Enum truncated | **8 knobs** | `values_documented` has more entries than `values` (e.g. BRIGHT SW probed 1/2, AMP DETECT probed 2/3, MODE 3/4). |
+| Enum stuck on one value | **5 knobs** | All 16 probed raws read back the same display (HUMANIZER MODE always "AUTO", VOWEL1 always "a", VOWEL2 always "i", HARMONIST KEY always "C(Am)" on 0x1A and 0x1B). Tagged `_probe_stuck_value`. Address may be wrong, or the knob has a pre-condition the probe didn't meet. |
 
 **Strategy: pick probe length from the Parameter Guide spec.**
 
@@ -130,6 +131,21 @@ out-of-range writes some knobs clamp / wrap (SAG/RESONANCE
 documented above). After each write, RQ1 the cell back and compare
 to detect clamping; treat divergence as "you've passed the upper
 edge, stop probing."
+
+**Stuck-value sanity check**: if every probed raw reads back the
+same display (HUMANIZER / HARMONIST pattern), abort the sweep
+immediately — the cell is not driving the UI under current
+conditions. Possible causes to try, in order:
+
+1. Wrong address — re-probe via broadcast capture (user turns the
+   knob, capture the DT1 address the device emits).
+2. Pre-condition not met — some knobs only respond when a "MODE" or
+   "TYPE" sub-knob has a specific value first (HUMANIZER VOWEL1
+   probably needs MODE=PICKING; HARMONIST KEY may need a different
+   sub-mode). Try setting plausible pre-conditions and re-probe.
+3. Dead label — BTS UI exposes the row but the cell isn't connected
+   to anything live. Mark the knob as `kind: "documented_only"` and
+   rely on `values_documented`.
 
 **Per-effect knowledge already available:**
 

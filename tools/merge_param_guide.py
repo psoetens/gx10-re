@@ -550,6 +550,35 @@ def merge():
                 knob["documented_value_format"] = guide_spec["raw"]
                 knobs_extended += 1
 
+    # Detect probe stuck-value bugs: enum knobs whose probe returned
+    # the same display for every raw it tried. The GX-10 wire is
+    # offset-binary with distinct decode per raw byte, so identical
+    # displays across all probed raws means one of:
+    #   - cell isn't actually writable (probe wrote to wrong address)
+    #   - probe couldn't observe the change (BTS UI mirrored from a
+    #     different cell, or knob requires a pre-condition the probe
+    #     didn't satisfy)
+    #   - cell is a dead label that doesn't drive UI
+    # Either way, the catalog values list is unusable. Flag for
+    # re-probe; consumers must rely on values_documented instead.
+    probe_stuck_count = 0
+    for tk, e in catalog.items():
+        if tk.startswith("_"):
+            continue
+        for knob in e.get("knobs", []):
+            if knob.get("kind") != "enum":
+                continue
+            vals = knob.get("values") or []
+            if len(vals) >= 2 and len(set(vals)) == 1:
+                knob["_probe_stuck_value"] = (
+                    f"all {len(vals)} probed raws (0..{len(vals)-1}) "
+                    f"read back display '{vals[0]}'. Address may be "
+                    f"wrong, knob may have a pre-condition the probe "
+                    f"didn't meet, or cell may not drive UI. "
+                    f"Re-probe via broadcast capture (user turn)."
+                )
+                probe_stuck_count += 1
+
     # Cleanup: drop raw_to_display from numeric knobs where the linear
     # step+offset formula reproduces every entry exactly. The map was
     # just a probe-sample artefact (typically raws 0..15) and is
@@ -593,6 +622,7 @@ def merge():
     print(f"  numeric knobs extended with documented range: {knobs_extended}")
     print(f"  enum knobs filled with documented values: {enums_filled}")
     print(f"  raw_to_display dropped (redundant with step+offset): {rtd_dropped}")
+    print(f"  enums flagged _probe_stuck_value: {probe_stuck_count}")
 
 
 if __name__ == "__main__":

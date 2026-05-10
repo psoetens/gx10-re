@@ -6088,7 +6088,8 @@
         },
         "values_documented": [
           "C (Am)\u2013B (G\\#m)"
-        ]
+        ],
+        "_probe_stuck_value": "all 3 probed raws (0..2) read back display 'C(Am)'. Address may be wrong, knob may have a pre-condition the probe didn't meet, or cell may not drive UI. Re-probe via broadcast capture (user turn)."
       },
       {
         "address": "0x1000111B",
@@ -6343,7 +6344,8 @@
         },
         "values_documented": [
           "C (Am)\u2013B (G\\#m)"
-        ]
+        ],
+        "_probe_stuck_value": "all 3 probed raws (0..2) read back display 'C(Am)'. Address may be wrong, knob may have a pre-condition the probe didn't meet, or cell may not drive UI. Re-probe via broadcast capture (user turn)."
       },
       {
         "address": "0x1000111B",
@@ -13811,7 +13813,8 @@
           "This sets the mode for switching the vowels.",
           "PICKING",
           "AUTO"
-        ]
+        ],
+        "_probe_stuck_value": "all 16 probed raws (0..15) read back display 'AUTO'. Address may be wrong, knob may have a pre-condition the probe didn't meet, or cell may not drive UI. Re-probe via broadcast capture (user turn)."
       },
       {
         "address": "0x10001107",
@@ -13861,7 +13864,8 @@
           "i",
           "o",
           "u"
-        ]
+        ],
+        "_probe_stuck_value": "all 16 probed raws (0..15) read back display 'a'. Address may be wrong, knob may have a pre-condition the probe didn't meet, or cell may not drive UI. Re-probe via broadcast capture (user turn)."
       },
       {
         "address": "0x1000110B",
@@ -13911,7 +13915,8 @@
           "i",
           "o",
           "u"
-        ]
+        ],
+        "_probe_stuck_value": "all 16 probed raws (0..15) read back display 'i'. Address may be wrong, knob may have a pre-condition the probe didn't meet, or cell may not drive UI. Re-probe via broadcast capture (user turn)."
       },
       {
         "address": "0x10001113",
