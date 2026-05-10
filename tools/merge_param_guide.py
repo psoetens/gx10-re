@@ -103,10 +103,23 @@ def parse_value_cell(value: str) -> dict | None:
     # Numeric range like "0-100" or "-50-+50" or "0–120" (em-dash)
     # Normalize em-dash to hyphen for parsing
     s_norm = s.replace("–", "-").replace("—", "-")
-    # Match "[+-]N - [+-]N" with optional unit suffix
+
+    # Strip the ", BPM ŀ–Ō" alternate-units suffix the chart adds to
+    # tempo-sync-capable knobs. We don't model BPM-mode here; the
+    # primary numeric range is what matters for raw/display. Chart
+    # sometimes drops the space after the comma: "0-100, BPMŀ-Ō".
+    s_pre = re.sub(r"\s*,\s*BPM[a-zA-ZĀ-￿].*$", "", s_norm)
+    s_pre = re.sub(r"\s*,\s*BPM\b.*$", "", s_pre)
+    # Strip CENTER-style descriptive prefix that some knobs (MIC POSITION)
+    # carry alongside their range: "CENTER, 1 cm-10 cm".
+    s_pre = re.sub(r"^\s*CENTER\s*,\s*", "", s_pre)
+
+    # Bipolar with explicit centre: "-50-0-+50" — three numbers, two
+    # dashes. Take the outer two as min/max.
     m = re.fullmatch(
-        r"\s*([+-]?\d+(?:\.\d+)?)\s*-\s*([+-]?\d+(?:\.\d+)?)\s*([a-zA-Z%/]*)\s*",
-        s_norm,
+        r"\s*([+-]?\d+(?:\.\d+)?)\s*-\s*[+-]?\d+(?:\.\d+)?\s*-\s*"
+        r"([+-]?\d+(?:\.\d+)?)\s*([a-zA-Z%/]*)\s*",
+        s_pre,
     )
     if m:
         lo, hi, unit = m.group(1), m.group(2), m.group(3)
@@ -116,6 +129,37 @@ def parse_value_cell(value: str) -> dict | None:
             return {"kind": "numeric", "min": lo_n, "max": hi_n, "unit": unit}
         except ValueError:
             pass
+
+    # Match "[+-]N - [+-]N" with optional unit suffix
+    m = re.fullmatch(
+        r"\s*([+-]?\d+(?:\.\d+)?)\s*-\s*([+-]?\d+(?:\.\d+)?)\s*([a-zA-Z%/]*)\s*",
+        s_pre,
+    )
+    if m:
+        lo, hi, unit = m.group(1), m.group(2), m.group(3)
+        try:
+            lo_n = float(lo) if "." in lo else int(lo)
+            hi_n = float(hi) if "." in hi else int(hi)
+            return {"kind": "numeric", "min": lo_n, "max": hi_n, "unit": unit}
+        except ValueError:
+            pass
+
+    # Range with units on both endpoints: "1 ms-2000 ms", "12ms-1200ms",
+    # "0.0 ms-40.0 ms", "1 cm-10 cm" — endpoints repeat their unit.
+    m = re.fullmatch(
+        r"\s*([+-]?\d+(?:\.\d+)?)\s*([a-zA-Z%/]+)\s*-\s*"
+        r"([+-]?\d+(?:\.\d+)?)\s*([a-zA-Z%/]+)\s*",
+        s_pre,
+    )
+    if m:
+        lo, unit_lo, hi, unit_hi = m.group(1), m.group(2), m.group(3), m.group(4)
+        if unit_lo == unit_hi:
+            try:
+                lo_n = float(lo) if "." in lo else int(lo)
+                hi_n = float(hi) if "." in hi else int(hi)
+                return {"kind": "numeric", "min": lo_n, "max": hi_n, "unit": unit_lo}
+            except ValueError:
+                pass
 
     # Special "1:1-INF:1"
     if re.match(r"\d+:\d+\s*[-–]\s*INF:\d+", s_norm):
@@ -357,10 +401,30 @@ def merge():
                 step = knob.get("step", 1)
                 offset = knob.get("offset", 0)
                 if step and step != 0:
-                    knob["raw_min_documented"] = round((guide_spec["min"] - offset) / step)
-                    knob["raw_max_documented"] = round((guide_spec["max"] - offset) / step)
+                    rmin_doc = round((guide_spec["min"] - offset) / step)
+                    rmax_doc = round((guide_spec["max"] - offset) / step)
+                    knob["raw_min_documented"] = rmin_doc
+                    knob["raw_max_documented"] = rmax_doc
+                    # Promote: the probed raw_min/raw_max only reflect the
+                    # bulk-enum sample (typically raw 0..15). The documented
+                    # range is the device's full capability. Preserve the
+                    # probe values under raw_*_probe_sample for diagnostics.
+                    if rmin_doc != knob.get("raw_min") or rmax_doc != knob.get("raw_max"):
+                        knob["raw_min_probe_sample"] = knob.get("raw_min", 0)
+                        knob["raw_max_probe_sample"] = knob.get("raw_max", 0)
+                        knob["raw_min"] = rmin_doc
+                        knob["raw_max"] = rmax_doc
+                    # value_min/value_max also previously reflected the
+                    # probe sample — promote them too.
+                    knob["value_min_probe_sample"] = knob.get("value_min")
+                    knob["value_max_probe_sample"] = knob.get("value_max")
+                    knob["value_min"] = guide_spec["min"]
+                    knob["value_max"] = guide_spec["max"]
                 if guide_spec.get("unit") and not knob.get("unit"):
                     knob["unit"] = guide_spec["unit"]
+                # Drop any stale documented_enum_values that an earlier
+                # run wrote when the parser couldn't extract the range.
+                knob.pop("documented_enum_values", None)
                 knobs_extended += 1
             elif kind_doc in ("enum", "onoff") and kind_probed == "enum":
                 doc_vals = guide_spec["values"]
