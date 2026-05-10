@@ -447,10 +447,18 @@ def merge():
                     knob["unit"] = guide_spec["unit"]
                 # Special values like "CENTER" at raw=0 alongside a
                 # numeric range — preserve them so clients know to
-                # override the formula at those raws.
+                # override the formula at those raws. Also extend
+                # raw_min down to include these special raws (they're
+                # valid writable values).
                 sv = guide_spec.get("special_values")
                 if sv:
                     knob["special_values"] = sv
+                    special_raws = [int(r) for r in sv.keys()]
+                    extended_min = min(special_raws + [knob.get("raw_min", 0)])
+                    if extended_min < knob.get("raw_min", 0):
+                        knob["raw_min"] = extended_min
+                    if extended_min < knob.get("raw_min_documented", 0):
+                        knob["raw_min_documented"] = extended_min
                 # Drop any stale documented_enum_values that an earlier
                 # run wrote when the parser couldn't extract the range.
                 knob.pop("documented_enum_values", None)
