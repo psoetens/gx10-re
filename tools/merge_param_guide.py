@@ -521,7 +521,28 @@ def merge():
                     "unit": guide_spec.get("unit", ""),
                 }
             elif kind_doc in ("enum", "onoff") and kind_probed in ("numeric", "numeric_irregular"):
-                knob["documented_enum_values"] = guide_spec["values"]
+                doc_vals = guide_spec["values"]
+                knob["documented_enum_values"] = doc_vals
+                # If the doc "enum" is really a range string like
+                # "20.0 Hz–12.5 kHz" or "20.0 Hz–12.5 kHz, FLAT" and
+                # the probe is numeric_irregular with a raw_to_display
+                # that obviously stops short of the upper bound, flag
+                # it so re-probe can target these.
+                if kind_probed == "numeric_irregular" and isinstance(doc_vals, list):
+                    range_strs = [v for v in doc_vals
+                                  if isinstance(v, str) and ("–" in v or "Hz" in v or "kHz" in v)]
+                    if range_strs:
+                        rtd = knob.get("raw_to_display") or {}
+                        last_disp = rtd.get(str(knob.get("raw_max")), "")
+                        # Heuristic: if last probed display is in Hz but
+                        # doc range goes to kHz, probe is truncated.
+                        if "kHz" in " ".join(range_strs) and "kHz" not in str(last_disp):
+                            knob["_probe_likely_truncated"] = (
+                                f"probe stops at raw={knob.get('raw_max')} "
+                                f"display='{last_disp}' but doc range "
+                                f"'{range_strs[0]}' extends to kHz — "
+                                f"re-probe with extended raw sweep."
+                            )
             elif kind_doc == "ratio":
                 knob["documented_value_format"] = guide_spec["raw"]
                 knobs_extended += 1

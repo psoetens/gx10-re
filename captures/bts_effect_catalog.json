@@ -1255,7 +1255,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=2 display='31.5Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x10001107",
@@ -1397,7 +1398,8 @@
         "documented_enum_values": [
           "FLAT, 20.0 Hz\u201312.5 kHz"
         ],
-        "_address_verified_2026_05_10": true
+        "_address_verified_2026_05_10": true,
+        "_probe_likely_truncated": "probe stops at raw=3 display='31.5Hz' but doc range 'FLAT, 20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x1000113F",
@@ -1413,7 +1415,8 @@
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_address_verified_2026_05_10": true
+        "_address_verified_2026_05_10": true,
+        "_probe_likely_truncated": "probe stops at raw=3 display='40.0Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x10001143",
@@ -1559,7 +1562,8 @@
         "documented_enum_values": [
           "FLAT, 20.0 Hz\u201312.5 kHz"
         ],
-        "_address_verified_2026_05_10": true
+        "_address_verified_2026_05_10": true,
+        "_probe_likely_truncated": "probe stops at raw=3 display='31.5Hz' but doc range 'FLAT, 20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x1000115F",
@@ -1761,7 +1765,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x1000111B",
@@ -1997,7 +2002,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x10001123",
@@ -2919,7 +2925,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x1000111B",
@@ -3070,7 +3077,8 @@
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_address_verified_2026_05_10": true
+        "_address_verified_2026_05_10": true,
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x1000110B",
@@ -3231,7 +3239,8 @@
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_address_verified_2026_05_10": true
+        "_address_verified_2026_05_10": true,
+        "_probe_likely_truncated": "probe stops at raw=5 display='63.0Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x1000113B",
@@ -3476,7 +3485,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x1000111B",
@@ -3717,7 +3727,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x1000111B",
@@ -4025,7 +4036,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x1000111B",
@@ -4573,7 +4585,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x10001113",
@@ -4643,7 +4656,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x1000111F",
@@ -4760,7 +4774,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       }
     ],
     "dropdowns": []
@@ -11507,7 +11522,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x10001123",
@@ -11914,7 +11930,8 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
       },
       {
         "address": "0x1000111F",

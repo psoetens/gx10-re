@@ -87,6 +87,66 @@ display). Fix in any future write-then-read tools: use
 Linux side's `tools/per_type_range_check.py` already has the
 display-conversion logic; fold that into the BTS-side validator.
 
+### Priority 3b — smarter probe strategy (replace the dumb 0..15 sweep)
+
+The BTS probe currently writes raws 0..15 to every knob regardless
+of type. This is wrong in three ways:
+
+| Failure mode | Scope (live count, 2026-05-10) | Symptom |
+|---|---|---|
+| Bipolar over-probed wrong half | **82 knobs**, 36 effects | Probe sees raw 0..15 → "0..+15", misses negative half; produces `offset=0` that contradicts the guide's bipolar range. Now tagged `_range_inconsistent`. |
+| `numeric_irregular` truncated | **21 knobs** | Lookup table stops at 630Hz when docs say up to 12.5kHz (e.g. LOW-MID FREQ / HIGH-MID FREQ / HIGH CUT). PITCH on 0x44, 0x45 stops at +4OCT when docs go -3oct..+4oct. |
+| Linear numeric over-probed | **320 knobs** | 16 samples written when 1 (with a known offset/step) would have sufficed. Pure waste of wire time. |
+| Enum truncated | **8 knobs** | `values_documented` has more entries than `values` (e.g. BRIGHT SW probed 1/2, AMP DETECT probed 2/3, MODE 3/4). |
+
+**Strategy: pick probe length from the Parameter Guide spec.**
+
+The Parameter Guide is already merged in via `tools/merge_param_guide.py`
+(see `docs/gx10-parameter-guide.md` upstream). Use it to drive probe
+length per knob:
+
+- **`numeric` (linear)** — write **2 samples** (raw=0 and raw=midpoint
+  or one near the guide's max). Solve `step` and `offset` from the
+  two (display, raw) pairs. Don't fill a 16-entry lookup table for a
+  function that's `display = raw*step + offset`.
+- **`numeric_irregular` (lookup table)** — write raws 0..N where
+  `N = guide_max_index` (parse the documented range string, find the
+  upper bound, map to expected entry count). Stop at the first
+  display that equals or exceeds the guide max, *plus 2 extra* to
+  catch trailing sentinels like `FLAT`. Never hard-stop at 15.
+- **`enum`** — probe raws 0..M where
+  `M = len(guide_values) - 1 + 2` (the +2 catches off-by-one and
+  device-specific extras). Stop early when consecutive raws produce
+  identical or clearly-out-of-range displays.
+- **`onoff`** — 2 samples (raws 0 and 1). Done.
+- **Bipolar (guide range crosses zero)** — must include raws near
+  BOTH ends. Probe at least raw=0 and a high raw, AND verify the
+  documented `min` is reachable via the physical knob (broadcast
+  capture). Without this the offset/step pair is ambiguous.
+
+**Encoding to detect "out of range" replies**: the device echoes the
+written wire bytes back via DT1 when the value is accepted, but for
+out-of-range writes some knobs clamp / wrap (SAG/RESONANCE
+documented above). After each write, RQ1 the cell back and compare
+to detect clamping; treat divergence as "you've passed the upper
+edge, stop probing."
+
+**Per-effect knowledge already available:**
+
+- `captures/bts_effect_catalog.json` — current probe state; use
+  `kind`, `documented_enum_values`, `value_min_documented`,
+  `value_max_documented`, `documented_value_format` to drive
+  strategy.
+- `docs/gx10-parameter-guide.md` — source of truth for documented
+  ranges per knob.
+- `tools/merge_param_guide.py` — shows how to map guide entries to
+  catalog knobs.
+
+The 82 bipolar + 21 irregular + 8 enum truncated knobs are concrete
+re-probe targets; the 320 over-probed linear knobs are an
+optimisation/clean-up target (the catalog already has the right
+range for them — they just cost too much wire time).
+
 ### Priority 4 — sub-type knob layout claim
 
 Linux smoke test (`tools/subtype_sweep.py`) had user confirm WAH
