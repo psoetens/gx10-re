@@ -21,6 +21,12 @@
       "MIC TYPE":     {"address": "0x1000113F"},
       "MIC POSITION": {"address": "0x10001147"},
       "MIC LEVEL":    {"address": "0x1000114B"},
+      "MIC DISTANCE": {
+        "address": "0x10001143",
+        "_fix_enum_min": 0,
+        "_fix_enum_values": ["SHORT", "MEDIUM", "LONG"],
+        "_note": "Probe sampled raws 1..2 only so raw=0=SHORT was missed. Documented enum is SHORT/MEDIUM/LONG → raw 0/1/2."
+      },
       "BRIGHT SW":    {
         "address": "0x1000112B",
         "visible_on_variants": [1, 2, 6, 9, 10, 12],
@@ -35,6 +41,11 @@
       "MIC TYPE":     {"address": "0x1000113F"},
       "MIC POSITION": {"address": "0x10001147"},
       "MIC LEVEL":    {"address": "0x1000114B"},
+      "MIC DISTANCE": {
+        "address": "0x10001143",
+        "_fix_enum_min": 0,
+        "_fix_enum_values": ["SHORT", "MEDIUM", "LONG"]
+      },
       "BRIGHT SW":    {
         "address": "0x1000112B",
         "visible_on_variants": [0, 2, 5, 8],

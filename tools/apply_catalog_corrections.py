@@ -122,6 +122,13 @@ def main():
             # to the catalog knob (except 'address' which is handled
             # explicitly). Underscored keys (_note, _visible_on_...)
             # are copied as-is for human-readable annotation.
+            # _fix_enum_min / _fix_enum_values: corrections for enum knobs
+            # where the probe sampled an incomplete raw range (e.g.
+            # MIC DISTANCE probed raw 1..2 missed raw 0 = SHORT).
+            # Rebuild raw_min, raw_max, values, raw_to_display from the
+            # documented enum.
+            enum_min = override.pop("_fix_enum_min", None)
+            enum_values = override.pop("_fix_enum_values", None)
             extra_fields = {k: v for k, v in override.items()
                             if k != "address"}
             if idx is not None:
@@ -135,6 +142,20 @@ def main():
                 knobs[idx].pop("_address_inferred", None)
                 knobs[idx].pop("_address_verified_2026_05_10", None)
                 knobs[idx]["_address_verified_2026_05_10"] = True
+                if enum_values is not None:
+                    # Rebuild enum fields from the documented value list.
+                    rmin = enum_min if enum_min is not None else 0
+                    rmax = rmin + len(enum_values) - 1
+                    rtd = {str(rmin + i): v for i, v in enumerate(enum_values)}
+                    old_values = knobs[idx].get("values")
+                    knobs[idx]["raw_min"] = rmin
+                    knobs[idx]["raw_max"] = rmax
+                    knobs[idx]["values"] = list(enum_values)
+                    knobs[idx]["raw_to_display"] = rtd
+                    changes.setdefault(type_hex, []).append(
+                        f"  '{label}' enum extended: {old_values} -> "
+                        f"{list(enum_values)} (raw {rmin}..{rmax})"
+                    )
                 for fk, fv in extra_fields.items():
                     knobs[idx][fk] = fv
                     if fk == "visible_on_variants":

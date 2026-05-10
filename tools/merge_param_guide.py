@@ -110,9 +110,14 @@ def parse_value_cell(value: str) -> dict | None:
     # sometimes drops the space after the comma: "0-100, BPMŀ-Ō".
     s_pre = re.sub(r"\s*,\s*BPM[a-zA-ZĀ-￿].*$", "", s_norm)
     s_pre = re.sub(r"\s*,\s*BPM\b.*$", "", s_pre)
-    # Strip CENTER-style descriptive prefix that some knobs (MIC POSITION)
-    # carry alongside their range: "CENTER, 1 cm-10 cm".
-    s_pre = re.sub(r"^\s*CENTER\s*,\s*", "", s_pre)
+    # CENTER-prefix: "CENTER, 1 cm-10 cm" → raw 0 is the enum string
+    # "CENTER"; raws 1..N are numeric. Capture the special_value so the
+    # catalog can carry both.
+    special_values = {}
+    m_center = re.match(r"^\s*CENTER\s*,\s*(.*)$", s_pre)
+    if m_center:
+        special_values["0"] = "CENTER"
+        s_pre = m_center.group(1)
 
     # Bipolar with explicit centre: "-50-0-+50" — three numbers, two
     # dashes. Take the outer two as min/max.
@@ -126,7 +131,7 @@ def parse_value_cell(value: str) -> dict | None:
         try:
             lo_n = float(lo) if "." in lo else int(lo)
             hi_n = float(hi) if "." in hi else int(hi)
-            return {"kind": "numeric", "min": lo_n, "max": hi_n, "unit": unit}
+            return {"kind": "numeric", "min": lo_n, "max": hi_n, "unit": unit, "special_values": dict(special_values)}
         except ValueError:
             pass
 
@@ -140,7 +145,7 @@ def parse_value_cell(value: str) -> dict | None:
         try:
             lo_n = float(lo) if "." in lo else int(lo)
             hi_n = float(hi) if "." in hi else int(hi)
-            return {"kind": "numeric", "min": lo_n, "max": hi_n, "unit": unit}
+            return {"kind": "numeric", "min": lo_n, "max": hi_n, "unit": unit, "special_values": dict(special_values)}
         except ValueError:
             pass
 
@@ -157,7 +162,7 @@ def parse_value_cell(value: str) -> dict | None:
             try:
                 lo_n = float(lo) if "." in lo else int(lo)
                 hi_n = float(hi) if "." in hi else int(hi)
-                return {"kind": "numeric", "min": lo_n, "max": hi_n, "unit": unit_lo}
+                return {"kind": "numeric", "min": lo_n, "max": hi_n, "unit": unit_lo, "special_values": dict(special_values)}
             except ValueError:
                 pass
 
@@ -214,17 +219,35 @@ def parse_param_table(lines: list[str], start: int) -> tuple[dict, int]:
         param_cell = re.sub(r"\s+", " ", param_cell)
         value_cell = cells[1]
         if not param_cell and last_param:
-            # Continuation row -> treat as another enum value
+            # Continuation row -> usually another enum value. But the
+            # chart sometimes uses a continuation to add a numeric
+            # range below an enum-style prefix value (e.g. MIC POSITION
+            # row 1 = "CENTER", row 2 = "1 cm-10 cm"). In that case
+            # convert the prefix enum values to special_values and
+            # promote the spec to numeric.
             spec = params[last_param]
-            if spec.get("kind") in ("enum", "enum_value"):
-                pass  # will append
-            else:
-                params[last_param] = {"kind": "enum", "values": []}
-                # carry over earlier "enum_value" if any
-                if isinstance(spec, dict) and spec.get("kind") == "enum_value":
-                    params[last_param]["values"].append(spec["value"])
             sp = parse_value_cell(value_cell)
-            if sp and sp.get("kind") == "enum_value":
+            if sp and sp.get("kind") == "numeric":
+                prefix_vals = []
+                if spec.get("kind") == "enum":
+                    prefix_vals = list(spec.get("values", []))
+                elif spec.get("kind") == "enum_value":
+                    prefix_vals = [spec["value"]]
+                if prefix_vals:
+                    new_spec = dict(sp)
+                    new_spec.setdefault("special_values", {})
+                    for sv_i, sv_v in enumerate(prefix_vals):
+                        new_spec["special_values"][str(sv_i)] = sv_v
+                    params[last_param] = new_spec
+                else:
+                    params[last_param] = sp
+            elif sp and sp.get("kind") == "enum_value":
+                if spec.get("kind") in ("enum", "enum_value"):
+                    if spec.get("kind") == "enum_value":
+                        params[last_param] = {"kind": "enum",
+                                              "values": [spec["value"]]}
+                else:
+                    params[last_param] = {"kind": "enum", "values": []}
                 params[last_param]["values"].append(sp["value"])
         elif param_cell in ("Parameter", ""):
             i += 1
@@ -422,12 +445,30 @@ def merge():
                     knob["value_max"] = guide_spec["max"]
                 if guide_spec.get("unit") and not knob.get("unit"):
                     knob["unit"] = guide_spec["unit"]
+                # Special values like "CENTER" at raw=0 alongside a
+                # numeric range — preserve them so clients know to
+                # override the formula at those raws.
+                sv = guide_spec.get("special_values")
+                if sv:
+                    knob["special_values"] = sv
                 # Drop any stale documented_enum_values that an earlier
                 # run wrote when the parser couldn't extract the range.
                 knob.pop("documented_enum_values", None)
                 knobs_extended += 1
             elif kind_doc in ("enum", "onoff") and kind_probed == "enum":
                 doc_vals = guide_spec["values"]
+                # Some rows arrive as a single comma-joined string
+                # (e.g. "SHORT, MEDIUM, LONG"). Split into individual
+                # values so the documented list is usable.
+                expanded = []
+                for v in doc_vals:
+                    if isinstance(v, str) and "," in v:
+                        expanded.extend(
+                            p.strip() for p in v.split(",") if p.strip()
+                        )
+                    else:
+                        expanded.append(v)
+                doc_vals = expanded
                 # Replace whenever doc looks more authoritative (more values
                 # OR contains values not in probed set).
                 probed_vals = knob.get("values", [])
