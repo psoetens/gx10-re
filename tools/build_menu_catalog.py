@@ -96,16 +96,24 @@ def parse_region_table(text: str, region_name: str) -> list[dict]:
        | OFFSET | ENCODING | LABEL (RANGE) values |
     flattened with extra '|' delimiters. We split, group every 3 cells
     into a row, and parse.
+
+    Multi-byte cells appear as N consecutive rows with the same
+    encoding letter and only the FIRST row carrying a label. We
+    track these as the parser walks rows: the previous-field's
+    `size_bytes` is incremented for each label-less continuation row.
     """
-    cells = [c.strip() for c in text.split("|")]
-    cells = [c for c in cells if c and not re.match(r"^[-:\s+]+$", c)]
+    raw_cells = [c.strip() for c in text.split("|")]
+    # Drop horizontal-rule cells but KEEP empty cells — they are
+    # significant (continuation-row markers).
+    cells = [c for c in raw_cells if not re.match(r"^[-:\s+]+$", c)]
     fields = []
     i = 0
     pending_label_buf = []  # accumulates multi-cell label text
+    last_field = None       # most recent labelled field (for size tracking)
     while i < len(cells) - 2:
         offset_cell = cells[i]
         # Match offset like "00 04" or "# 00 1D"
-        m = re.match(r"^#?\s*([0-9A-Fa-f]{2})\s+([0-9A-Fa-f]{2})$", offset_cell)
+        m = re.match(r"^\\?#?\s*([0-9A-Fa-f]{2})\s+([0-9A-Fa-f]{2})$", offset_cell)
         if not m:
             i += 1
             continue
@@ -114,6 +122,33 @@ def parse_region_table(text: str, region_name: str) -> list[dict]:
         encoding = cells[i+1].strip()
         label_and_range = cells[i+2].strip()
         i += 3
+        # Continuation row: empty label, encoding starts with "0000 "
+        # AND the offset is exactly previous-field-offset + previous-size.
+        if (last_field is not None and not label_and_range
+                and re.match(r"^0000\s+[01a-z]{4}", encoding)
+                and offset == last_field["offset_int"]
+                + last_field.get("size_bytes", 1)):
+            # Cap by what last_field's documented value range needs.
+            v_min = last_field.get("value_min")
+            v_max = last_field.get("value_max")
+            new_size = last_field.get("size_bytes", 1) + 1
+            if isinstance(v_min, (int, float)) and isinstance(v_max, (int, float)):
+                # 4 bits per nibble byte; need ceil(log16(span+1)) bytes
+                span = max(abs(v_max), abs(v_min))
+                if span <= 0xF:        max_size = 1
+                elif span <= 0xFF:     max_size = 2
+                elif span <= 0xFFF:    max_size = 3
+                else:                  max_size = 4
+                if new_size > max_size:
+                    # Don't extend beyond what range needs.
+                    last_field = None
+                else:
+                    last_field["size_bytes"] = new_size
+                    continue
+            else:
+                last_field["size_bytes"] = new_size
+                continue
+            continue
         # Skip "fixed value" / NIU placeholders
         if "N/A" in label_and_range or "fixed" in label_and_range.lower():
             continue
@@ -124,7 +159,7 @@ def parse_region_table(text: str, region_name: str) -> list[dict]:
         extra = []
         while i < len(cells) - 2:
             c = cells[i]
-            if re.match(r"^#?\s*[0-9A-Fa-f]{2}\s+[0-9A-Fa-f]{2}$", c):
+            if re.match(r"^\\?#?\s*[0-9A-Fa-f]{2}\s+[0-9A-Fa-f]{2}$", c):
                 break
             if "Total" in c or c.startswith("00 00 00"):
                 break
@@ -151,7 +186,7 @@ def parse_region_table(text: str, region_name: str) -> list[dict]:
                       if p.strip() and not re.match(r"^[*\s]*$", p.strip())]
                 if vs:
                     values = vs
-            fields.append({
+            new_field = {
                 "offset": f"0x{offset:04X}",
                 "offset_int": offset,
                 "encoding": encoding,
@@ -159,19 +194,27 @@ def parse_region_table(text: str, region_name: str) -> list[dict]:
                 "value_min": v_min,
                 "value_max": v_max,
                 "values": values,
-            })
+                "size_bytes": 1,
+            }
+            fields.append(new_field)
+            last_field = new_field
         else:
             # No clear range — might be a name/string field or odd format.
             # Keep raw label.
             label_clean = full_text.split("(")[0].strip().replace("\\n", " ")
             if label_clean and len(label_clean) < 60:
-                fields.append({
+                new_field = {
                     "offset": f"0x{offset:04X}",
                     "offset_int": offset,
                     "encoding": encoding,
                     "label": label_clean,
                     "raw_text": full_text[:200],
-                })
+                    "size_bytes": 1,
+                }
+                fields.append(new_field)
+                last_field = new_field
+            else:
+                last_field = None
     return fields
 
 
@@ -193,6 +236,20 @@ def find_region_block(chart_text: str, region_name: str) -> str | None:
     return block
 
 
+_BIT_PATTERN_LABEL_RE = re.compile(
+    r"^\s*[0-9A-Fa-f]{2}\s+[0-9A-Fa-f]{2}\s+[01a-z]{4}",
+    re.IGNORECASE,
+)
+
+
+def filter_and_coalesce_fields(fields: list[dict]) -> list[dict]:
+    """Post-process pass — currently a no-op since parse_region_table
+    now tracks multi-byte continuations inline. Kept as a hook for
+    future cleanups.
+    """
+    return fields
+
+
 def main():
     text = CHART.read_text(encoding="utf-8")
     catalog = {}
@@ -202,6 +259,7 @@ def main():
             print(f"  MISS {name}")
             continue
         fields = parse_region_table(block, name)
+        fields = filter_and_coalesce_fields(fields)
         # Compute absolute address
         for f in fields:
             f["address"] = f"0x{base + f['offset_int']:08X}"
@@ -221,6 +279,7 @@ def main():
             print(f"  MISS Memory.{sub_name}")
             continue
         fields = parse_region_table(block, sub_name)
+        fields = filter_and_coalesce_fields(fields)
         # Use offset from temp memory + subregion offset
         sub_base = memory_temp_base + sub_off
         for f in fields:

@@ -663,11 +663,12 @@
           "12": "12",
           "13": "13"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000113B",
@@ -771,11 +772,12 @@
           "12": "12",
           "13": "13"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -1269,11 +1271,12 @@
           "12": "12",
           "13": "13"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000113B",
@@ -1377,11 +1380,12 @@
           "12": "12",
           "13": "13"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -1670,10 +1674,11 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "0\u2013100, BPM \u0140\u2013\u014c"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112F",
@@ -1685,11 +1690,12 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001133",
@@ -1701,11 +1707,12 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001137",
@@ -1717,10 +1724,11 @@
         "raw_to_display": {
           "3": "1.5ms"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "0.0 ms\u201340.0 ms"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000113B",
@@ -1732,10 +1740,11 @@
         "raw_to_display": {
           "3": "31.5Hz"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "FLAT, 20.0 Hz\u201312.5 kHz"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000113F",
@@ -1747,10 +1756,11 @@
         "raw_to_display": {
           "3": "40.0Hz"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001143",
@@ -1764,11 +1774,12 @@
         "raw_to_display": {
           "3": "MONO"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "values_documented": [
           "MONO",
           "STEREO"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001147",
@@ -1780,10 +1791,11 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "0\u2013100, BPM \u0140\u2013\u014c"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000114B",
@@ -1795,11 +1807,12 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000114F",
@@ -1811,11 +1824,12 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001153",
@@ -1827,10 +1841,11 @@
         "raw_to_display": {
           "3": "1.5ms"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "0.0 ms\u201340.0 ms"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001157",
@@ -1844,11 +1859,12 @@
         "raw_to_display": {
           "3": "TRI"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "values_documented": [
           "TRI",
           "SINE"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000115B",
@@ -1860,10 +1876,11 @@
         "raw_to_display": {
           "3": "31.5Hz"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "FLAT, 20.0 Hz\u201312.5 kHz"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000115F",
@@ -1875,10 +1892,11 @@
         "raw_to_display": {
           "3": "6.30kHz"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -4305,11 +4323,12 @@
         "raw_to_display": {
           "3": "3%"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112B",
@@ -4321,10 +4340,11 @@
         "raw_to_display": {
           "5": "5ms"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "1ms\u20132000 ms, BPM \u0140\u2013\u014c"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112F",
@@ -4336,11 +4356,12 @@
         "raw_to_display": {
           "5": "5"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001133",
@@ -4352,11 +4373,12 @@
         "raw_to_display": {
           "5": "5"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 120,
         "raw_min_documented": 0,
-        "raw_max_documented": 120
+        "raw_max_documented": 120,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001137",
@@ -4368,10 +4390,11 @@
         "raw_to_display": {
           "5": "63.0Hz"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000113B",
@@ -4383,10 +4406,11 @@
         "raw_to_display": {
           "5": "300ms"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "1ms\u20132000 ms, BPM \u0140\u2013\u014c"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000113F",
@@ -4398,11 +4422,12 @@
         "raw_to_display": {
           "5": "30"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001143",
@@ -4414,11 +4439,12 @@
         "raw_to_display": {
           "5": "60"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 120,
         "raw_min_documented": 0,
-        "raw_max_documented": 120
+        "raw_max_documented": 120,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001147",
@@ -4430,10 +4456,11 @@
         "raw_to_display": {
           "5": "6.30kHz"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -4802,11 +4829,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001107",
@@ -5213,11 +5241,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001137",
@@ -5233,11 +5262,12 @@
           "0": "OFF",
           "1": "ON"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "values_documented": [
           "OFF",
           "ON"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000113B",
@@ -5268,9 +5298,10 @@
           "14": "167",
           "15": "167"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 40,
-        "value_max_documented": 250
+        "value_max_documented": 250,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001107",
@@ -5733,11 +5764,12 @@
           "0": "OFF",
           "1": "ON"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "values_documented": [
           "OFF",
           "ON"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000113F",
@@ -5768,9 +5800,10 @@
           "14": "167",
           "15": "167"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 40,
-        "value_max_documented": 250
+        "value_max_documented": 250,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001107",
@@ -5946,11 +5979,12 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -6810,11 +6844,12 @@
           "14": "+14dB",
           "15": "+15dB"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": -20,
         "value_max_documented": 20,
         "raw_min_documented": -20,
-        "raw_max_documented": 20
+        "raw_max_documented": 20,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [],
@@ -8562,10 +8597,11 @@
           "1": "-14th",
           "2": "-13th"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "-2 oct, \u2013+2 oct, USER"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001127",
@@ -8582,11 +8618,12 @@
           "1": "1",
           "2": "2"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112B",
@@ -8603,10 +8640,11 @@
           "1": "1ms",
           "2": "2ms"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "0\u2013300 ms, BPM \u0140\u2013\u014c"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -8862,10 +8900,11 @@
           "1": "-14th",
           "2": "-13th"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "-2oct, \u2013+2oct, USER"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001127",
@@ -8882,11 +8921,12 @@
           "1": "1",
           "2": "2"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112B",
@@ -8903,10 +8943,11 @@
           "1": "1ms",
           "2": "2ms"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "0\u2013300ms, BPM \u0140\u2013\u014c"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -14621,11 +14662,12 @@
           "14": "+14",
           "15": "+15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": -100,
         "value_max_documented": 0,
         "raw_min_documented": -100,
-        "raw_max_documented": 0
+        "raw_max_documented": 0,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112F",
@@ -14656,11 +14698,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001133",
@@ -14691,11 +14734,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001137",
@@ -14726,9 +14770,10 @@
           "14": "167",
           "15": "167"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 40,
-        "value_max_documented": 250
+        "value_max_documented": 250,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -15073,11 +15118,12 @@
           "14": "+14",
           "15": "+15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": -100,
         "value_max_documented": 0,
         "raw_min_documented": -100,
-        "raw_max_documented": 0
+        "raw_max_documented": 0,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112F",
@@ -15108,11 +15154,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001133",
@@ -15143,11 +15190,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001137",
@@ -15178,9 +15226,10 @@
           "14": "167",
           "15": "167"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 40,
-        "value_max_documented": 250
+        "value_max_documented": 250,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -15673,11 +15722,12 @@
           "14": "+14",
           "15": "+15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": -24,
         "value_max_documented": 24,
         "raw_min_documented": -24,
-        "raw_max_documented": 24
+        "raw_max_documented": 24,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112B",
@@ -15707,11 +15757,12 @@
           "14": "+14",
           "15": "+15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": -50,
         "value_max_documented": 50,
         "raw_min_documented": -50,
-        "raw_max_documented": 50
+        "raw_max_documented": 50,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112F",
@@ -15729,10 +15780,11 @@
           "2": "SLOW",
           "3": "MONO"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "values_documented": [
           "FAST, MEDIUM, SLOW, MONO"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001133",
@@ -15762,10 +15814,11 @@
           "14": "14ms",
           "15": "15ms"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "0\u2013300 ms, BPM \u0140\u2013\u014c"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001137",
@@ -15795,11 +15848,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -16120,11 +16174,12 @@
           "14": "+14",
           "15": "+15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": -24,
         "value_max_documented": 24,
         "raw_min_documented": -24,
-        "raw_max_documented": 24
+        "raw_max_documented": 24,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112B",
@@ -16154,11 +16209,12 @@
           "14": "+14",
           "15": "+15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": -50,
         "value_max_documented": 50,
         "raw_min_documented": -50,
-        "raw_max_documented": 50
+        "raw_max_documented": 50,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112F",
@@ -16176,10 +16232,11 @@
           "2": "SLOW",
           "3": "MONO"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "values_documented": [
           "FAST, MEDIUM, SLOW, MONO"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001133",
@@ -16209,10 +16266,11 @@
           "14": "14ms",
           "15": "15ms"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "documented_enum_values": [
           "0\u2013300ms, BPM \u0140\u2013\u014c"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001137",
@@ -16242,11 +16300,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -16890,11 +16949,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112F",
@@ -16925,11 +16985,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001133",
@@ -16960,11 +17021,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001137",
@@ -16995,11 +17057,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000113B",
@@ -17030,11 +17093,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000113F",
@@ -17050,11 +17114,12 @@
           "0": "OFF",
           "1": "ON"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "values_documented": [
           "OFF",
           "ON"
-        ]
+        ],
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001107",
@@ -18568,11 +18633,12 @@
           "14": "14",
           "15": "15"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [],
@@ -19085,9 +19151,10 @@
           "14": "50",
           "15": "50"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
-        "value_max_documented": 100
+        "value_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000111B",
@@ -19192,9 +19259,10 @@
           "14": "50",
           "15": "50"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
-        "value_max_documented": 100
+        "value_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000111B",
@@ -19258,9 +19326,10 @@
           "5": "50",
           "6": "50"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
-        "value_max_documented": 100
+        "value_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001117",
@@ -20424,9 +20493,10 @@
           "14": "50",
           "15": "50"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
-        "value_max_documented": 100
+        "value_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000111F",
@@ -20489,9 +20559,10 @@
           "14": "167",
           "15": "167"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 40,
-        "value_max_documented": 250
+        "value_max_documented": 250,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [],
@@ -20567,11 +20638,12 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001113",
@@ -20583,11 +20655,12 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001117",
@@ -20599,11 +20672,12 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000111B",
@@ -20615,11 +20689,12 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000111F",
@@ -20631,11 +20706,12 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001123",
@@ -20647,11 +20723,12 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [],
@@ -21186,9 +21263,10 @@
           "14": "167",
           "15": "167"
         },
-        "_address_inferred": true,
+        "_address_inferred": false,
         "value_min_documented": 40,
-        "value_max_documented": 250
+        "value_max_documented": 250,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [],
