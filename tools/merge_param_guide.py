@@ -426,6 +426,34 @@ def merge():
                 if step and step != 0:
                     rmin_doc = round((guide_spec["min"] - offset) / step)
                     rmax_doc = round((guide_spec["max"] - offset) / step)
+                    # Wire is 4-nibble offset-binary (always unsigned
+                    # 0..0xFFFF). Negative raw is structurally impossible.
+                    # If the probe-derived offset disagrees with the
+                    # documented range (e.g. GEQ bands: probe sampled
+                    # raws 0..15 → "0dB..+15dB" implies offset=0, but
+                    # guide says -20..+20 implying offset=-20 — these
+                    # cannot both be true), flag the inconsistency and
+                    # KEEP the probe values. Don't auto-promote; this
+                    # needs a manual live re-probe to resolve.
+                    if rmin_doc < 0:
+                        knob["_range_inconsistent"] = (
+                            f"probe offset={offset} step={step} "
+                            f"would yield raw_min={rmin_doc} for "
+                            f"documented min={guide_spec['min']}; "
+                            f"wire is unsigned offset-binary so "
+                            f"negative raw is impossible. Probe and "
+                            f"guide disagree — needs live re-probe."
+                        )
+                        # Leave raw_min/raw_max/value_min/value_max as
+                        # the probe sample observed them. Skip promotion.
+                        # Clear any stale raw_*_documented from earlier
+                        # merge runs that produced the impossible values.
+                        knob.pop("raw_min_documented", None)
+                        knob.pop("raw_max_documented", None)
+                        if guide_spec.get("unit") and not knob.get("unit"):
+                            knob["unit"] = guide_spec["unit"]
+                        knobs_extended += 1
+                        continue
                     knob["raw_min_documented"] = rmin_doc
                     knob["raw_max_documented"] = rmax_doc
                     # Promote: the probed raw_min/raw_max only reflect the
