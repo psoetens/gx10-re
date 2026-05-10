@@ -39,6 +39,50 @@ def parse_addr(s: str) -> int:
     return int(str(s).replace("0X", "0x").replace("0x", ""), 16)
 
 
+def pick_test_value(knob, ordinal: int) -> tuple[int, str]:
+    """Return (raw_value_to_write, expected_display_string) for a knob.
+
+    Strategy: try to write the ordinal directly, but clamp to the knob's
+    actual raw range. For numeric knobs with display range that matches
+    the raw range (typical), the displayed value equals the raw written.
+    For enum/dropdown knobs, the displayed label comes from the
+    raw_to_display map.
+    """
+    kind = knob.get("kind", "numeric")
+    raw_max = knob.get("raw_max")
+    raw_min = knob.get("raw_min")
+    rtd = knob.get("raw_to_display", {})
+
+    target = ordinal
+    if isinstance(raw_max, int) and target > raw_max:
+        target = raw_max
+    if isinstance(raw_min, int) and target < raw_min:
+        target = raw_min
+
+    expected = rtd.get(str(target))
+    if expected is None:
+        # Fall back to the documented display range linearly.
+        doc_min = knob.get("value_min_documented")
+        doc_max = knob.get("value_max_documented")
+        if (kind == "numeric"
+                and isinstance(doc_min, (int, float))
+                and isinstance(doc_max, (int, float))
+                and isinstance(raw_min, int)
+                and isinstance(raw_max, int)
+                and raw_max > raw_min):
+            frac = (target - raw_min) / (raw_max - raw_min)
+            disp_val = doc_min + frac * (doc_max - doc_min)
+            # Format integers as ints, floats with one decimal
+            if abs(disp_val - round(disp_val)) < 0.05:
+                expected = str(int(round(disp_val)))
+            else:
+                expected = f"{disp_val:.1f}"
+        else:
+            expected = str(target)
+
+    return target, expected
+
+
 def save_fxitem0(g: GxMidi) -> dict:
     """Save the first ~0x80 bytes of FxItem 0 via per-cell reads."""
     saved = {"header": {}, "cells": {}}
@@ -145,16 +189,26 @@ def main():
             if sub_type_dropdown is not None:
                 g.dt1(FXITEM0_BASE + 0x03, encode_fx_param(st_i))
                 time.sleep(0.04)
-            # Write each knob with its 1-based ordinal value
+            # Write each knob with a value picked to fit its range.
+            # For numeric knobs with display 0..100, the value equals the
+            # ordinal. For enum/small-range knobs, we clamp into range
+            # and report the expected display value so the user can
+            # check by enum-label if needed.
             expected = []
             for i, k in enumerate(knobs, start=1):
                 addr = parse_addr(k["address"])
-                # Skip the sub-type dropdown if it appears in the knobs
-                # list (it shouldn't, but just in case)
                 if addr == FXITEM0_BASE + 0x03:
                     continue
-                g.dt1(addr, encode_fx_param(i))
-                expected.append((i, k["label"], k["address"]))
+                raw_val, exp_disp = pick_test_value(k, i)
+                g.dt1(addr, encode_fx_param(raw_val))
+                expected.append({
+                    "ordinal": i,
+                    "label": k["label"],
+                    "address": k["address"],
+                    "raw_written": raw_val,
+                    "expected_display": exp_disp,
+                    "kind": k.get("kind", "numeric"),
+                })
                 time.sleep(0.02)
 
             # Show the user what they should see
@@ -162,9 +216,11 @@ def main():
             print("-" * 60)
             print(f"  sub-type {st_i}: {st_name}")
             print(f"  device should now display the following knobs in "
-                  f"this catalog order:")
-            for i, label, addr in expected:
-                print(f"    {label:30s}  =  {i}     ({addr})")
+                  f"catalog order:")
+            for e in expected:
+                kind_marker = "" if e["kind"] == "numeric" else f" [{e['kind']}]"
+                print(f"    {e['label']:28s}  =  {e['expected_display']:20s}"
+                      f"  (raw={e['raw_written']}, {e['address']}){kind_marker}")
             print()
 
             if args.auto:
@@ -185,8 +241,7 @@ def main():
                 "type_hex":   type_hex,
                 "sub_type":   st_i,
                 "sub_type_name": st_name,
-                "knob_order": [{"ordinal": i, "label": label,
-                                "address": addr} for i, label, addr in expected],
+                "knob_order": expected,
                 "user_match": user_match,
             })
     finally:

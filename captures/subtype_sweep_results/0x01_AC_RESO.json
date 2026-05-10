@@ -1,0 +1,81 @@
+{
+  "type_hex": "0x01",
+  "title": "AC RESONANCE",
+  "n_knobs": 3,
+  "n_sub_types": 3,
+  "results": [
+    {
+      "type_hex": "0x01",
+      "sub_type": 0,
+      "sub_type_name": "NATURAL",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "RESONANCE",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "TONE",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "LEVEL",
+          "address": "0x1000110F"
+        }
+      ],
+      "user_match": true,
+      "user_confirmed_at": "2026-05-10"
+    },
+    {
+      "type_hex": "0x01",
+      "sub_type": 1,
+      "sub_type_name": "WIDE",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "RESONANCE",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "TONE",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "LEVEL",
+          "address": "0x1000110F"
+        }
+      ],
+      "user_match": true,
+      "user_confirmed_at": "2026-05-10"
+    },
+    {
+      "type_hex": "0x01",
+      "sub_type": 2,
+      "sub_type_name": "BRIGHT",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "RESONANCE",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "TONE",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "LEVEL",
+          "address": "0x1000110F"
+        }
+      ],
+      "user_match": true,
+      "user_confirmed_at": "2026-05-10"
+    }
+  ],
+  "_user_summary": "All 3 AC RESONANCE sub-types matched catalog knob order on smoke test (Linux device, 2026-05-10)."
+}

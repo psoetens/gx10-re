@@ -42,6 +42,67 @@ sub-types?
 
 ---
 
+## §1b. AC RESONANCE (TYPE 0x01) — all 3 sub-types pass
+
+User smoke-tested AC RESONANCE (3 knobs × 3 sub-types). All 'y'.
+Catalog matches the device for every sub-type.
+
+## §1c. AIRD PREAMP (TYPE 0x02) — partial test, no order mismatch found
+
+User started AMP smoke test (17 knobs × 16 sub-types) but didn't
+complete all sub-types. Notable observation:
+
+> "many 'enum' or different ranges values and these didn't match the
+> raw number. but where a number was useful, it was correct."
+
+i.e. for numeric knobs whose display range accommodates the ordinal
+test values (1..17), the device displayed exactly the catalog-claimed
+labels. Enum knobs and small-range knobs (raw_max < ordinal) did not
+show "1, 2, 3, ..." literally because their displays use enum labels
+(e.g. SOLO SW = ON/OFF) or clamp to a smaller range.
+
+**Tool improvement landed**: `tools/subtype_sweep.py` now picks a
+test value clamped to each knob's actual range and reports the
+**expected display value** (with enum labels resolved from the
+catalog's `raw_to_display` map). E.g.:
+
+```
+GAIN SW       = HIGH                 (raw=2, [enum])
+SAG           = +10                  (raw=10)
+MIC TYPE      = BLEND C               (raw=8, [enum])
+```
+
+This makes the user's y/n call clear regardless of knob kind.
+
+## §1d. NEW catalog bug — duplicate addresses for some knobs
+
+While running the improved sweep on AMP, surfaced **7 cells in 3
+effects** where two distinct knobs claim the same address:
+
+| TYPE | Address      | Knob A | Knob B |
+|-----:|--------------|--------|--------|
+| 0x02 AIRD PREAMP | 0x1000113B | DIRECT MIX | MIC TYPE |
+| 0x02 AIRD PREAMP | 0x10001143 | MIC DISTANCE | MIC LEVEL |
+| 0x03 BASS AIRD PREAMP | 0x10001137 | BRIGHT SW | DIRECT MIX |
+| 0x03 BASS AIRD PREAMP | 0x10001143 | MIC DISTANCE | MIC LEVEL |
+| 0x0E DELAY+ | 0x10001127 | FEEDBACK | TAP TIME |
+| 0x0E DELAY+ | 0x1000112B | EFFECT LEVEL | 1: TIME |
+| 0x0E DELAY+ | 0x1000112F | HIGH CUT | 1: FEEDBACK |
+
+Catalog can't have two knobs at the same address. Most likely cause:
+stride-inference + manual-cross-ref overlay conflict in
+`tools/build_bts_catalog.py`. Tracked as task #40. Each pair needs
+disambiguation via either:
+- live-device probe (write distinct values to neighbouring offsets,
+  see which knob the device respects), or
+- a Windows BTS re-capture targeted at these effects.
+
+Until fixed: the SECOND knob in each pair (lexically last in the
+catalog's `knobs` array) shadows the first on writes, since both
+hit the same address.
+
+---
+
 ## §2. Next steps to bracket the hypothesis
 
 To validate "BTS sweep at sub-type 0 is correct for all sub-types" as

@@ -1,0 +1,1513 @@
+{
+  "type_hex": "0x02",
+  "title": "AIRD PREAMP",
+  "n_knobs": 17,
+  "n_sub_types": 16,
+  "results": [
+    {
+      "type_hex": "0x02",
+      "sub_type": 0,
+      "sub_type_name": "TRANSPARENT",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 1,
+      "sub_type_name": "NATURAL",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 2,
+      "sub_type_name": "BOUTIQUE",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 3,
+      "sub_type_name": "SUPREME",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 4,
+      "sub_type_name": "MAXIMUM",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 5,
+      "sub_type_name": "JUGGERNAUT",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 6,
+      "sub_type_name": "X-CRUNCH",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 7,
+      "sub_type_name": "X-HI GAIN",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 8,
+      "sub_type_name": "X-MODDED",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 9,
+      "sub_type_name": "JC-120",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 10,
+      "sub_type_name": "TWIN COMBO",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 11,
+      "sub_type_name": "DELUXE COMBO",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 12,
+      "sub_type_name": "TWEED COMBO",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 13,
+      "sub_type_name": "DIAMOND AMP",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 14,
+      "sub_type_name": "BRIT STACK",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    },
+    {
+      "type_hex": "0x02",
+      "sub_type": 15,
+      "sub_type_name": "RECTI STACK",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "GAIN",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 2,
+          "label": "LEVEL",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 3,
+          "label": "GAIN SW",
+          "address": "0x1000111F"
+        },
+        {
+          "ordinal": 4,
+          "label": "BASS",
+          "address": "0x1000110F"
+        },
+        {
+          "ordinal": 5,
+          "label": "MIDDLE",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 6,
+          "label": "TREBLE",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 7,
+          "label": "PRESENCE",
+          "address": "0x1000111B"
+        },
+        {
+          "ordinal": 8,
+          "label": "SOLO SW",
+          "address": "0x10001123"
+        },
+        {
+          "ordinal": 9,
+          "label": "SOLO LEVEL",
+          "address": "0x10001127"
+        },
+        {
+          "ordinal": 10,
+          "label": "SAG",
+          "address": "0x1000112F"
+        },
+        {
+          "ordinal": 11,
+          "label": "RESONANCE",
+          "address": "0x10001133"
+        },
+        {
+          "ordinal": 12,
+          "label": "BRIGHT SW",
+          "address": "0x10001137"
+        },
+        {
+          "ordinal": 13,
+          "label": "DIRECT MIX",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 14,
+          "label": "MIC TYPE",
+          "address": "0x1000113B"
+        },
+        {
+          "ordinal": 15,
+          "label": "MIC DISTANCE",
+          "address": "0x10001143"
+        },
+        {
+          "ordinal": 16,
+          "label": "MIC POSITION",
+          "address": "0x1000113F"
+        },
+        {
+          "ordinal": 17,
+          "label": "MIC LEVEL",
+          "address": "0x10001143"
+        }
+      ],
+      "user_match": null,
+      "user_partial_2026_05_10": "Numeric knobs displayed expected values; enum/small-range knobs not verifiable with old script. Re-run with improved tool needed."
+    }
+  ],
+  "_user_summary": "AMP partially tested 2026-05-10. Numeric knobs (where display matched ordinal) showed correct catalog order; enum/small-range knobs need re-test with improved tool that resolves enum labels."
+}
