@@ -1,0 +1,61 @@
+{
+  "_doc": "Verified address/label corrections for captures/bts_effect_catalog.json. Discovered via passive broadcast capture on the live device 2026-05-09 .. 2026-05-10. Each entry overrides or adds an entry in the catalog. Apply with tools/apply_catalog_corrections.py.",
+  "_method": "User turned a single knob with editor-attach handshake set; the broadcast address identifies the knob unambiguously.",
+  "_evidence_reports": [
+    "reports/amp_address_audit.md",
+    "reports/delay_plus_audit.md",
+    "reports/linux_probe_results.md"
+  ],
+
+  "remove_phantom_labels": {
+    "_doc": "Labels in the catalog that don't correspond to any real knob on the device. Removing these before applying overlays cleans up duplicate-address conflicts.",
+    "0x0E": ["TAP TIME", "1: TIME", "1: FEEDBACK"]
+  },
+
+  "knob_overrides": {
+    "_doc": "Per-TYPE knob list overrides. Each entry replaces the catalog's address for the named knob. New entries added if the knob is missing.",
+
+    "0x02": {
+      "_title": "AIRD PREAMP — corrected MIC/SP block addresses",
+      "DIRECT MIX":   {"address": "0x10001137"},
+      "MIC TYPE":     {"address": "0x1000113F"},
+      "MIC POSITION": {"address": "0x10001147"},
+      "MIC LEVEL":    {"address": "0x1000114B"},
+      "BRIGHT SW":    {"address": "0x1000112B", "_note": "Hidden on TRANSPARENT/BRIT STACK/DELUXE COMBO/DIAMOND AMP variants. Same offset as AMP_BASS BRIGHT SW (verified)."}
+    },
+
+    "0x03": {
+      "_title": "BASS AIRD PREAMP — same address pattern as AMP",
+      "DIRECT MIX":   {"address": "0x10001137"},
+      "MIC TYPE":     {"address": "0x1000113F"},
+      "MIC POSITION": {"address": "0x10001147"},
+      "MIC LEVEL":    {"address": "0x1000114B"},
+      "BRIGHT SW":    {"address": "0x1000112B"}
+    },
+
+    "0x0E": {
+      "_title": "DELAY+ — TIME at 0x23, plus duplicate cleanup",
+      "TIME":         {"address": "0x10001123", "_note": "Catalog was missing TIME entirely; placed phantom 'TAP TIME' at 0x27 instead."}
+    }
+  },
+
+  "dropdown_overrides": {
+    "_doc": "Per-TYPE dropdown corrections (e.g. SP TYPE wrongly placed at variant-selector address).",
+
+    "0x02": {
+      "SP TYPE": {"address": "0x1000113B"}
+    },
+    "0x03": {
+      "SP TYPE": {"address": "0x1000113B"}
+    }
+  },
+
+  "verified_correct": {
+    "_doc": "Catalog entries we verified ARE correct (broadcast capture confirmed). Useful for regression-test gating.",
+    "0x01": ["RESONANCE", "TONE", "LEVEL"],
+    "0x02": ["GAIN", "LEVEL", "BASS", "MIDDLE", "TREBLE", "PRESENCE", "GAIN SW", "SOLO SW", "SOLO LEVEL", "SAG", "RESONANCE", "MIC DISTANCE"],
+    "0x08": ["SUSTAIN", "ATTACK", "LEVEL", "TONE", "DIRECT MIX"],
+    "0x0E": ["FEEDBACK", "EFFECT LEVEL", "HIGH CUT"],
+    "0x35": ["EFFECT LEVEL", "DIRECT MIX", "PEDAL POSITION", "PEDAL MIN", "PEDAL MAX"]
+  }
+}

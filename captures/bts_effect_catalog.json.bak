@@ -176,8 +176,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x1000110B",
@@ -210,8 +209,7 @@
         },
         "documented_enum_values": [
           "-50\u20130\u2013+50"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x1000110F",
@@ -245,8 +243,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       }
     ],
     "dropdowns": [
@@ -310,8 +307,7 @@
         "value_min_documented": 0,
         "value_max_documented": 120,
         "raw_min_documented": 0,
-        "raw_max_documented": 120,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 120
       },
       {
         "address": "0x1000110B",
@@ -345,8 +341,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x1000111F",
@@ -366,8 +361,7 @@
         },
         "values_documented": [
           "LOW, MID, HIGH"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x1000110F",
@@ -401,8 +395,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x10001113",
@@ -436,8 +429,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x10001117",
@@ -471,8 +463,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x1000111B",
@@ -506,8 +497,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x10001123",
@@ -526,8 +516,7 @@
         "values_documented": [
           "OFF",
           "ON"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x10001127",
@@ -561,8 +550,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x1000112F",
@@ -596,8 +584,7 @@
         "value_min_documented": -10,
         "value_max_documented": 10,
         "raw_min_documented": -10,
-        "raw_max_documented": 10,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 10
       },
       {
         "address": "0x10001133",
@@ -631,11 +618,10 @@
         "value_min_documented": -10,
         "value_max_documented": 10,
         "raw_min_documented": -10,
-        "raw_max_documented": 10,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 10
       },
       {
-        "address": "0x1000112B",
+        "address": "0x10001137",
         "label": "BRIGHT SW",
         "kind": "enum",
         "raw_min": 1,
@@ -649,12 +635,10 @@
         "values_documented": [
           "OFF",
           "ON"
-        ],
-        "_address_verified_2026_05_10": true,
-        "_note": "Hidden on TRANSPARENT/BRIT STACK/DELUXE COMBO/DIAMOND AMP variants. Same offset as AMP_BASS BRIGHT SW (verified)."
+        ]
       },
       {
-        "address": "0x10001137",
+        "address": "0x1000113B",
         "label": "DIRECT MIX",
         "kind": "numeric",
         "raw_min": 1,
@@ -679,6 +663,7 @@
           "12": "12",
           "13": "13"
         },
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
@@ -686,7 +671,7 @@
         "_address_verified_2026_05_10": true
       },
       {
-        "address": "0x1000113F",
+        "address": "0x1000113B",
         "label": "MIC TYPE",
         "kind": "enum",
         "raw_min": 1,
@@ -713,8 +698,7 @@
         },
         "values_documented": [
           "Refer to \u201cMIC TYPE list (p. 11\\)\u201d."
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x10001143",
@@ -732,11 +716,10 @@
         },
         "values_documented": [
           "SHORT, MEDIUM, LONG"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
-        "address": "0x10001147",
+        "address": "0x1000113F",
         "label": "MIC POSITION",
         "kind": "numeric",
         "raw_min": 1,
@@ -761,11 +744,10 @@
         "documented_enum_values": [
           "CENTER",
           "1 cm\u201310 cm"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
-        "address": "0x1000114B",
+        "address": "0x10001143",
         "label": "MIC LEVEL",
         "kind": "numeric",
         "raw_min": 1,
@@ -790,6 +772,7 @@
           "12": "12",
           "13": "13"
         },
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
@@ -845,7 +828,7 @@
         ]
       },
       {
-        "address": "0x1000113B",
+        "address": "0x10001103",
         "label": "SP TYPE",
         "kind": "enum",
         "raw_min": 0,
@@ -888,8 +871,7 @@
         },
         "values_documented": [
           "Refer to \u201cSP TYPE list (p. 11\\)\u201d."
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       }
     ],
     "_unmatched_label_addresses": [
@@ -1126,7 +1108,7 @@
         "raw_max_documented": 100
       },
       {
-        "address": "0x1000112B",
+        "address": "0x10001137",
         "label": "BRIGHT SW",
         "kind": "enum",
         "raw_min": 0,
@@ -1140,8 +1122,7 @@
         "values_documented": [
           "OFF",
           "ON"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x10001123",
@@ -1290,6 +1271,7 @@
           "12": "12",
           "13": "13"
         },
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
@@ -1297,7 +1279,7 @@
         "_address_verified_2026_05_10": true
       },
       {
-        "address": "0x1000113F",
+        "address": "0x1000113B",
         "label": "MIC TYPE",
         "kind": "enum",
         "raw_min": 1,
@@ -1324,8 +1306,7 @@
         },
         "values_documented": [
           "Refer to \u201cMIC TYPE list (p. 11\\)\u201d."
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x10001143",
@@ -1346,7 +1327,7 @@
         ]
       },
       {
-        "address": "0x10001147",
+        "address": "0x1000113F",
         "label": "MIC POSITION",
         "kind": "numeric",
         "raw_min": 1,
@@ -1371,11 +1352,10 @@
         "documented_enum_values": [
           "CENTER",
           "1 cm\u201310 cm"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
-        "address": "0x1000114B",
+        "address": "0x10001143",
         "label": "MIC LEVEL",
         "kind": "numeric",
         "raw_min": 1,
@@ -1400,6 +1380,7 @@
           "12": "12",
           "13": "13"
         },
+        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
@@ -1449,7 +1430,7 @@
         ]
       },
       {
-        "address": "0x1000113B",
+        "address": "0x10001103",
         "label": "SP TYPE",
         "kind": "enum",
         "raw_min": 0,
@@ -1492,8 +1473,7 @@
         },
         "values_documented": [
           "Refer to \u201cSP TYPE list (p. 11\\)\u201d."
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       }
     ],
     "_unmatched_label_addresses": [
@@ -2751,8 +2731,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x1000110B",
@@ -2786,8 +2765,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x1000110F",
@@ -2821,8 +2799,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x10001113",
@@ -2856,8 +2833,7 @@
         "value_min_documented": -50,
         "value_max_documented": 50,
         "raw_min_documented": -50,
-        "raw_max_documented": 50,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 50
       },
       {
         "address": "0x10001117",
@@ -2891,8 +2867,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       }
     ],
     "dropdowns": [
@@ -4040,8 +4015,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x1000112B",
@@ -4074,8 +4048,7 @@
         "value_min_documented": 0,
         "value_max_documented": 120,
         "raw_min_documented": 0,
-        "raw_max_documented": 120,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 120
       },
       {
         "address": "0x10001107",
@@ -4137,8 +4110,7 @@
         },
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x1000110B",
@@ -4339,9 +4311,57 @@
         },
         "documented_enum_values": [
           "1ms\u20132000 ms, BPM \u0140\u2013\u014c"
+        ]
+      },
+      {
+        "address": "0x10001127",
+        "label": "TAP TIME",
+        "kind": "numeric_irregular",
+        "raw_min": 3,
+        "raw_max": 3,
+        "unit": "%",
+        "raw_to_display": {
+          "3": "3%"
+        },
+        "_address_inferred": false,
+        "value_min_documented": 0,
+        "value_max_documented": 100,
+        "raw_min_documented": 0,
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
+      },
+      {
+        "address": "0x1000112B",
+        "label": "1: TIME",
+        "kind": "numeric_irregular",
+        "raw_min": 5,
+        "raw_max": 5,
+        "unit": "ms",
+        "raw_to_display": {
+          "5": "5ms"
+        },
+        "_address_inferred": false,
+        "documented_enum_values": [
+          "1ms\u20132000 ms, BPM \u0140\u2013\u014c"
         ],
-        "_address_verified_2026_05_10": true,
-        "_note": "Catalog was missing TIME entirely; placed phantom 'TAP TIME' at 0x27 instead."
+        "_address_verified_2026_05_10": true
+      },
+      {
+        "address": "0x1000112F",
+        "label": "1: FEEDBACK",
+        "kind": "numeric_irregular",
+        "raw_min": 5,
+        "raw_max": 5,
+        "unit": "",
+        "raw_to_display": {
+          "5": "5"
+        },
+        "_address_inferred": false,
+        "value_min_documented": 0,
+        "value_max_documented": 100,
+        "raw_min_documented": 0,
+        "raw_max_documented": 100,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001133",
@@ -13358,8 +13378,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x10001117",
@@ -13393,8 +13412,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x10001107",
@@ -13428,8 +13446,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x1000110B",
@@ -13463,8 +13480,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       },
       {
         "address": "0x1000110F",
@@ -13498,8 +13514,7 @@
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "raw_max_documented": 100
       }
     ],
     "dropdowns": [
