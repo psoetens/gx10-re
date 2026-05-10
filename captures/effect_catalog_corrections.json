@@ -21,7 +21,12 @@
       "MIC TYPE":     {"address": "0x1000113F"},
       "MIC POSITION": {"address": "0x10001147"},
       "MIC LEVEL":    {"address": "0x1000114B"},
-      "BRIGHT SW":    {"address": "0x1000112B", "_note": "Hidden on TRANSPARENT/BRIT STACK/DELUXE COMBO/DIAMOND AMP variants. Same offset as AMP_BASS BRIGHT SW (verified)."}
+      "BRIGHT SW":    {
+        "address": "0x1000112B",
+        "visible_on_variants": [1, 2, 6, 9, 10, 12],
+        "_visible_on_variant_names": ["NATURAL", "BOUTIQUE", "X-CRUNCH", "JC-120", "TWIN COMBO", "TWEED COMBO"],
+        "_note": "Variant-conditional: only visible on the named variants. Same offset as AMP_BASS BRIGHT SW (verified live)."
+      }
     },
 
     "0x03": {
@@ -30,7 +35,12 @@
       "MIC TYPE":     {"address": "0x1000113F"},
       "MIC POSITION": {"address": "0x10001147"},
       "MIC LEVEL":    {"address": "0x1000114B"},
-      "BRIGHT SW":    {"address": "0x1000112B"}
+      "BRIGHT SW":    {
+        "address": "0x1000112B",
+        "visible_on_variants": [0, 2, 5, 8],
+        "_visible_on_variant_names": ["NATURAL BASS", "CONCERT", "CLASSIC BLUE", "DARK DRV"],
+        "_note": "Variant-conditional: only visible on the named variants."
+      }
     },
 
     "0x0E": {

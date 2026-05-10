@@ -651,7 +651,23 @@
           "ON"
         ],
         "_address_verified_2026_05_10": true,
-        "_note": "Hidden on TRANSPARENT/BRIT STACK/DELUXE COMBO/DIAMOND AMP variants. Same offset as AMP_BASS BRIGHT SW (verified)."
+        "visible_on_variants": [
+          1,
+          2,
+          6,
+          9,
+          10,
+          12
+        ],
+        "_visible_on_variant_names": [
+          "NATURAL",
+          "BOUTIQUE",
+          "X-CRUNCH",
+          "JC-120",
+          "TWIN COMBO",
+          "TWEED COMBO"
+        ],
+        "_note": "Variant-conditional: only visible on the named variants. Same offset as AMP_BASS BRIGHT SW (verified live)."
       },
       {
         "address": "0x10001137",
@@ -1141,7 +1157,20 @@
           "OFF",
           "ON"
         ],
-        "_address_verified_2026_05_10": true
+        "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          0,
+          2,
+          5,
+          8
+        ],
+        "_visible_on_variant_names": [
+          "NATURAL BASS",
+          "CONCERT",
+          "CLASSIC BLUE",
+          "DARK DRV"
+        ],
+        "_note": "Variant-conditional: only visible on the named variants."
       },
       {
         "address": "0x10001123",

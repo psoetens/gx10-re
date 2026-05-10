@@ -118,6 +118,12 @@ def main():
                 continue
             idx = find_knob(knobs, label)
             new_addr = override.get("address")
+            # Schema: any non-underscored key in override is copied
+            # to the catalog knob (except 'address' which is handled
+            # explicitly). Underscored keys (_note, _visible_on_...)
+            # are copied as-is for human-readable annotation.
+            extra_fields = {k: v for k, v in override.items()
+                            if k != "address"}
             if idx is not None:
                 old_addr = knobs[idx].get("address")
                 if old_addr != new_addr:
@@ -129,21 +135,28 @@ def main():
                 knobs[idx].pop("_address_inferred", None)
                 knobs[idx].pop("_address_verified_2026_05_10", None)
                 knobs[idx]["_address_verified_2026_05_10"] = True
-                if "_note" in override:
-                    knobs[idx]["_note"] = override["_note"]
+                for fk, fv in extra_fields.items():
+                    knobs[idx][fk] = fv
+                    if fk == "visible_on_variants":
+                        changes.setdefault(type_hex, []).append(
+                            f"  '{label}' visible_on_variants = {fv}"
+                        )
             else:
                 # Add as a new entry
                 new_entry = {
                     "address": new_addr,
                     "label": label,
                     "_address_verified_2026_05_10": True,
+                    **extra_fields,
                 }
-                if "_note" in override:
-                    new_entry["_note"] = override["_note"]
                 knobs.append(new_entry)
                 changes.setdefault(type_hex, []).append(
                     f"added knob '{label}' at {new_addr}"
                 )
+                if "visible_on_variants" in extra_fields:
+                    changes.setdefault(type_hex, []).append(
+                        f"  '{label}' visible_on_variants = {extra_fields['visible_on_variants']}"
+                    )
 
     # --- 4. Apply dropdown_overrides ------------------------------
     for type_hex, overrides in corrections.get("dropdown_overrides", {}).items():

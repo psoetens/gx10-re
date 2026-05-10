@@ -96,6 +96,62 @@ sub-type. If all sub-types share the same label↔address mapping
 for an effect, that effect's catalog needs only one entry. If
 they differ, per-(TYPE, sub-type) entries are needed.
 
+## Catalog schema extension — `visible_on_variants`
+
+**New as of 2026-05-10** to represent variant-conditional knob
+visibility (e.g. BRIGHT SW on AMP only shows on certain amp model
+variants).
+
+Schema (knob entry):
+
+```json
+{
+  "address": "0x1000112B",
+  "label": "BRIGHT SW",
+  "kind": "enum",
+  "visible_on_variants": [1, 2, 6, 9, 10, 12],
+  "_visible_on_variant_names": ["NATURAL", "BOUTIQUE", "X-CRUNCH",
+                                "JC-120", "TWIN COMBO", "TWEED COMBO"]
+}
+```
+
+**Semantics:**
+- Missing/absent `visible_on_variants` → knob visible on **all**
+  variants (default).
+- Present → knob visible **only** when the current variant byte
+  matches one of the listed indices.
+- `_visible_on_variant_names` is annotation only (audit trail);
+  clients should filter on the numeric list.
+
+**BTS automation MUST:**
+1. Detect variant-conditional knob visibility per (TYPE, sub-type)
+   by reading BTS UIA panel after each variant change.
+2. Populate `visible_on_variants` accordingly when emitting the
+   regenerated catalog.
+3. Preserve `_visible_on_variant_names` if present, or regenerate
+   from the dropdown's `values` list.
+
+**Editor filter pseudocode:**
+
+```python
+current_variant = read_cell(0x10001103)  # raw byte
+for knob in effect.knobs:
+    if "visible_on_variants" in knob:
+        if current_variant not in knob["visible_on_variants"]:
+            continue   # hide
+    render(knob)
+```
+
+**Verified entries (2026-05-10):**
+
+| TYPE | Knob       | Variants                                                |
+|------|------------|---------------------------------------------------------|
+| 0x02 | BRIGHT SW  | [1, 2, 6, 9, 10, 12] = NATURAL/BOUTIQUE/X-CRUNCH/JC-120/TWIN COMBO/TWEED COMBO |
+| 0x03 | BRIGHT SW  | [0, 2, 5, 8]         = NATURAL BASS/CONCERT/CLASSIC BLUE/DARK DRV |
+
+Similar variant-conditional knobs likely exist on other effects;
+BTS UIA can scan exhaustively.
+
 ## Linux-side artefacts to consume
 
 | File | Use |

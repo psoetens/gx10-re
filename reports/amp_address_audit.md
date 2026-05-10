@@ -51,13 +51,58 @@ fires identifies the knob unambiguously.
 
 ## Still uncertain after this round
 
-- **BRIGHT SW** (resolved 2026-05-10 via AMP_BASS test):
+- **BRIGHT SW** (resolved 2026-05-10 via AMP_BASS test +
+  variant-list confirmation):
   AMP_BASS exposes BRIGHT SW; the user toggled it once and the
   broadcast fired at **offset `0x2B`** (cell `0x1000112B`). That's
   the cell catalog had as the "gap" between SOLO LEVEL and SAG.
-  By symmetry, plain AMP almost certainly has BRIGHT SW at the
-  same offset — just hidden on the AMP variants we tested
-  (TRANSPARENT, BRIT STACK, DELUXE COMBO, DIAMOND AMP).
+  By symmetry, plain AMP also has BRIGHT SW at the same offset —
+  hidden on most variants. User-confirmed visibility:
+
+  | TYPE | Variants showing BRIGHT SW                                              |
+  |------|-------------------------------------------------------------------------|
+  | AMP  | 1 NATURAL · 2 BOUTIQUE · 6 X-CRUNCH · 9 JC-120 · 10 TWIN COMBO · 12 TWEED COMBO |
+  | AMP_BASS | 0 NATURAL BASS · 2 CONCERT · 5 CLASSIC BLUE · 8 DARK DRV            |
+
+  Catalog now carries this via the new `visible_on_variants` field
+  on the BRIGHT SW knob entry (numeric indices) and a paired
+  `_visible_on_variant_names` annotation (human-readable).
+
+## Catalog schema extension — `visible_on_variants`
+
+When a knob is only visible on certain sub-type variants, the
+catalog now carries a `visible_on_variants` list of variant
+indices. Schema:
+
+```json
+{
+  "address": "0x1000112B",
+  "label": "BRIGHT SW",
+  "kind": "enum",
+  "visible_on_variants": [1, 2, 6, 9, 10, 12],
+  "_visible_on_variant_names": ["NATURAL", "BOUTIQUE", "X-CRUNCH",
+                                "JC-120", "TWIN COMBO", "TWEED COMBO"]
+}
+```
+
+**Reader semantics**: if `visible_on_variants` is absent, the knob
+is visible on every variant. If present, the knob is visible only
+when the current variant byte (cell `0x10001103` for FxItem 0) is
+in the list.
+
+**Editor filter pseudocode**:
+
+```python
+current_variant = read_cell(0x10001103)  # raw byte
+for knob in effect.knobs:
+    if "visible_on_variants" in knob:
+        if current_variant not in knob["visible_on_variants"]:
+            continue   # hide
+    render(knob)
+```
+
+`_visible_on_variant_names` is informational only; clients should
+use the numeric `visible_on_variants` list for filtering.
 
 ## Definitive AMP knob/dropdown layout (per live broadcast probe)
 
