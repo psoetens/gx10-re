@@ -1,0 +1,4581 @@
+{
+  "0x00000000 SystemCommon": {
+    "base_address": "0x00000000",
+    "field_count": 30,
+    "fields": [
+      {
+        "offset": "0x0001",
+        "offset_int": 1,
+        "encoding": "0000 bbbb",
+        "label": "00 02 0000 cccc",
+        "raw_text": "00 02 0000 cccc",
+        "address": "0x00000001"
+      },
+      {
+        "offset": "0x0003",
+        "offset_int": 3,
+        "encoding": "0000 dddd",
+        "label": "Memory Number",
+        "raw_text": "Memory Number (0 - 299) 0.. 197, 198, 199, 200.. 298, 299 GX-100:U01-1..U50-2,U50-3,U50-4,P01-1..P25-3,P25-4 GX-10 :U01-1..U66-3, NIU, NIU,P01-1..P33-3, NIU \\* NIU : not in use",
+        "address": "0x00000003"
+      },
+      {
+        "offset": "0x0004",
+        "offset_int": 4,
+        "encoding": "0000 00aa",
+        "label": "PLAYPAGE MODE",
+        "value_min": 0,
+        "value_max": 3,
+        "values": [
+          "LARGE NUMBER",
+          "LARGE NAME",
+          "CONTROL",
+          "CHAIN"
+        ],
+        "address": "0x00000004"
+      },
+      {
+        "offset": "0x0005",
+        "offset_int": 5,
+        "encoding": "0000 000a",
+        "label": "CTLVIEW EIDT SW",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x00000005"
+      },
+      {
+        "offset": "0x0006",
+        "offset_int": 6,
+        "encoding": "0000 000a",
+        "label": "TUNER MODE",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "NORMAL",
+          "STREAM"
+        ],
+        "address": "0x00000006"
+      },
+      {
+        "offset": "0x0007",
+        "offset_int": 7,
+        "encoding": "0000 00aa",
+        "label": "TUNER TYPE",
+        "raw_text": "TUNER TYPE (1, 3) MONO, TT",
+        "address": "0x00000007"
+      },
+      {
+        "offset": "0x0008",
+        "offset_int": 8,
+        "encoding": "0000 00aa",
+        "label": "BANK CHANGE MODE",
+        "value_min": 0,
+        "value_max": 2,
+        "values": [
+          "WAIT1",
+          "WAIT2",
+          "IMMEDIATE"
+        ],
+        "address": "0x00000008"
+      },
+      {
+        "offset": "0x0009",
+        "offset_int": 9,
+        "encoding": "0aaa aaaa",
+        "label": "BANK EXTENT MIN",
+        "raw_text": "BANK EXTENT MIN(GX-100) (0 - 74) U01 - U50, P01 - P25",
+        "address": "0x00000009"
+      },
+      {
+        "offset": "0x000A",
+        "offset_int": 10,
+        "encoding": "0aaa aaaa",
+        "label": "BANK EXTENT MAX",
+        "raw_text": "BANK EXTENT MAX(GX-100) (0 - 74) U01 - U50, P01 - P25 \"BANK EXTENT MIN\" and \"BANK EXTENT MAX\" are pair parameters. The DT1 to each parameter is temporarily suspended, and the DT1 to the pair parameter",
+        "address": "0x0000000A"
+      },
+      {
+        "offset": "0x000B",
+        "offset_int": 11,
+        "encoding": "0000 00aa",
+        "label": "AMP CTL1",
+        "value_min": 0,
+        "value_max": 2,
+        "values": [
+          "LATCH",
+          "PULSE",
+          "INVERT"
+        ],
+        "address": "0x0000000B"
+      },
+      {
+        "offset": "0x000C",
+        "offset_int": 12,
+        "encoding": "0000 00aa",
+        "label": "AMP CTL2",
+        "value_min": 0,
+        "value_max": 2,
+        "values": [
+          "LATCH",
+          "PULSE",
+          "INVERT"
+        ],
+        "address": "0x0000000C"
+      },
+      {
+        "offset": "0x000D",
+        "offset_int": 13,
+        "encoding": "0000 000a",
+        "label": "EXP1 HOLD",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x0000000D"
+      },
+      {
+        "offset": "0x000E",
+        "offset_int": 14,
+        "encoding": "0000 000a",
+        "label": "EXP2 HOLD",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x0000000E"
+      },
+      {
+        "offset": "0x000F",
+        "offset_int": 15,
+        "encoding": "0000 0aaa",
+        "label": "AUTO OFF",
+        "value_min": 0,
+        "value_max": 4,
+        "values": [
+          "OFF",
+          "10HOURS",
+          "5HOURS",
+          "1HOUR",
+          "20MIN"
+        ],
+        "address": "0x0000000F"
+      },
+      {
+        "offset": "0x0011",
+        "offset_int": 17,
+        "encoding": "0000 000a",
+        "label": "LOCK STATUS",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x00000011"
+      },
+      {
+        "offset": "0x0012",
+        "offset_int": 18,
+        "encoding": "0000 000a",
+        "label": "KNOB",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x00000012"
+      },
+      {
+        "offset": "0x0013",
+        "offset_int": 19,
+        "encoding": "0000 000a",
+        "label": "TOUCH SCREEN",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x00000013"
+      },
+      {
+        "offset": "0x0014",
+        "offset_int": 20,
+        "encoding": "0000 000a",
+        "label": "BUTTON",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x00000014"
+      },
+      {
+        "offset": "0x0015",
+        "offset_int": 21,
+        "encoding": "0000 000a",
+        "label": "OUTPUT LEVEL\\ LOCK",
+        "raw_text": "OUTPUT LEVEL\\\\nLOCK (0 - 1) OFF, ON",
+        "address": "0x00000015"
+      },
+      {
+        "offset": "0x0016",
+        "offset_int": 22,
+        "encoding": "0000 000a",
+        "label": "DELETE\\ WARNING",
+        "raw_text": "DELETE\\\\nWARNING (0 - 1) OFF, ON",
+        "address": "0x00000016"
+      },
+      {
+        "offset": "0x0017",
+        "offset_int": 23,
+        "encoding": "0000 000a",
+        "label": "OVERWRITE\\ WARNING",
+        "raw_text": "OVERWRITE\\\\nWARNING (0 - 1) OFF, ON",
+        "address": "0x00000017"
+      },
+      {
+        "offset": "0x0018",
+        "offset_int": 24,
+        "encoding": "0000 000a",
+        "label": "FX ORDER",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "BY TYPE",
+          "BY NAME"
+        ],
+        "address": "0x00000018"
+      },
+      {
+        "offset": "0x0019",
+        "offset_int": 25,
+        "encoding": "0aaa aaaa",
+        "label": "BANK EXTENT MIN",
+        "raw_text": "BANK EXTENT MIN(GX-10) (0 - 98) U01 - U66, P01 - P33",
+        "address": "0x00000019"
+      },
+      {
+        "offset": "0x001A",
+        "offset_int": 26,
+        "encoding": "0aaa aaaa",
+        "label": "BANK EXTENT MAX",
+        "raw_text": "BANK EXTENT MAX(GX-10) (0 - 98) U01 - U66, P01 - P33 \"BANK EXTENT MIN\" and \"BANK EXTENT MAX\" are pair parameters. The DT1 to each parameter is temporarily suspended, and the DT1 to the pair parameter ",
+        "address": "0x0000001A"
+      },
+      {
+        "offset": "0x001B",
+        "offset_int": 27,
+        "encoding": "0000 000a",
+        "label": "COLOR MODE",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "TYPE 1",
+          "TYPE 2"
+        ],
+        "address": "0x0000001B"
+      },
+      {
+        "offset": "0x001C",
+        "offset_int": 28,
+        "encoding": "0000 000a",
+        "label": "SHOW AUTO OFF WARNING AT STARTUP",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "ON(SHOW)",
+          "OFF(HIDE) \\# 00 1D 0000 aaaa"
+        ],
+        "address": "0x0000001C"
+      },
+      {
+        "offset": "0x001E",
+        "offset_int": 30,
+        "encoding": "0000 bbbb",
+        "label": "00 1F 0000 cccc",
+        "raw_text": "00 1F 0000 cccc",
+        "address": "0x0000001E"
+      },
+      {
+        "offset": "0x0022",
+        "offset_int": 34,
+        "encoding": "0000 bbbb",
+        "label": "00 23 0000 cccc",
+        "raw_text": "00 23 0000 cccc",
+        "address": "0x00000022"
+      },
+      {
+        "offset": "0x0026",
+        "offset_int": 38,
+        "encoding": "0000 bbbb",
+        "label": "00 27 0000 cccc",
+        "raw_text": "00 27 0000 cccc",
+        "address": "0x00000026"
+      },
+      {
+        "offset": "0x002A",
+        "offset_int": 42,
+        "encoding": "0000 bbbb",
+        "label": "00 2B 0000 cccc",
+        "raw_text": "00 2B 0000 cccc",
+        "address": "0x0000002A"
+      }
+    ]
+  },
+  "0x00001000 SystemControl": {
+    "base_address": "0x00001000",
+    "field_count": 68,
+    "fields": [
+      {
+        "offset": "0x0000",
+        "offset_int": 0,
+        "encoding": "0000 000a",
+        "label": "Num1 Preference",
+        "raw_text": "Num1 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001000"
+      },
+      {
+        "offset": "0x0001",
+        "offset_int": 1,
+        "encoding": "0000 000a",
+        "label": "Num2 Preference",
+        "raw_text": "Num2 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001001"
+      },
+      {
+        "offset": "0x0002",
+        "offset_int": 2,
+        "encoding": "0000 000a",
+        "label": "Num3 Preference",
+        "raw_text": "Num3 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001002"
+      },
+      {
+        "offset": "0x0003",
+        "offset_int": 3,
+        "encoding": "0000 000a",
+        "label": "Num4 Preference",
+        "raw_text": "Num4 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001003"
+      },
+      {
+        "offset": "0x0004",
+        "offset_int": 4,
+        "encoding": "0000 000a",
+        "label": "BankDown Preference",
+        "raw_text": "BankDown Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001004"
+      },
+      {
+        "offset": "0x0005",
+        "offset_int": 5,
+        "encoding": "0000 000a",
+        "label": "BankUp Preference",
+        "raw_text": "BankUp Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001005"
+      },
+      {
+        "offset": "0x0006",
+        "offset_int": 6,
+        "encoding": "0000 000a",
+        "label": "CNum Preference",
+        "raw_text": "CNum Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001006"
+      },
+      {
+        "offset": "0x0007",
+        "offset_int": 7,
+        "encoding": "0000 000a",
+        "label": "Manual Num1 Preference",
+        "raw_text": "Manual Num1 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001007"
+      },
+      {
+        "offset": "0x0008",
+        "offset_int": 8,
+        "encoding": "0000 000a",
+        "label": "Manual Num2 Preference",
+        "raw_text": "Manual Num2 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001008"
+      },
+      {
+        "offset": "0x0009",
+        "offset_int": 9,
+        "encoding": "0000 000a",
+        "label": "Manual Num3 Preference",
+        "raw_text": "Manual Num3 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001009"
+      },
+      {
+        "offset": "0x000A",
+        "offset_int": 10,
+        "encoding": "0000 000a",
+        "label": "Manual Num4 Preference",
+        "raw_text": "Manual Num4 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x0000100A"
+      },
+      {
+        "offset": "0x000B",
+        "offset_int": 11,
+        "encoding": "0000 000a",
+        "label": "Ctl1 Preference",
+        "raw_text": "Ctl1 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x0000100B"
+      },
+      {
+        "offset": "0x000C",
+        "offset_int": 12,
+        "encoding": "0000 000a",
+        "label": "Ctl2 Preference",
+        "raw_text": "Ctl2 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x0000100C"
+      },
+      {
+        "offset": "0x000D",
+        "offset_int": 13,
+        "encoding": "0000 000a",
+        "label": "Ctl3 Preference",
+        "raw_text": "Ctl3 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x0000100D"
+      },
+      {
+        "offset": "0x000E",
+        "offset_int": 14,
+        "encoding": "0000 000a",
+        "label": "Ctl4 Preference",
+        "raw_text": "Ctl4 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x0000100E"
+      },
+      {
+        "offset": "0x000F",
+        "offset_int": 15,
+        "encoding": "0000 000a",
+        "label": "Exp1Sw Preference",
+        "raw_text": "Exp1Sw Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x0000100F"
+      },
+      {
+        "offset": "0x0010",
+        "offset_int": 16,
+        "encoding": "0000 000a",
+        "label": "Exp1 Preference",
+        "raw_text": "Exp1 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001010"
+      },
+      {
+        "offset": "0x0011",
+        "offset_int": 17,
+        "encoding": "0000 000a",
+        "label": "Exp2 Preference",
+        "raw_text": "Exp2 Preference (0 - 1) MEMORY, SYSTEM",
+        "address": "0x00001011"
+      },
+      {
+        "offset": "0x0012",
+        "offset_int": 18,
+        "encoding": "000a aaaa",
+        "label": "Num1 Function",
+        "raw_text": "Num1 Function (0 - 17) OFF, 1, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x00001012"
+      },
+      {
+        "offset": "0x0013",
+        "offset_int": 19,
+        "encoding": "000a aaaa",
+        "label": "Num2 Function",
+        "raw_text": "Num2 Function (0 - 17) OFF, 2, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x00001013"
+      },
+      {
+        "offset": "0x0014",
+        "offset_int": 20,
+        "encoding": "000a aaaa",
+        "label": "Num3 Function",
+        "raw_text": "Num3 Function (0 - 17) OFF, 3, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x00001014"
+      },
+      {
+        "offset": "0x0015",
+        "offset_int": 21,
+        "encoding": "000a aaaa",
+        "label": "Num4 Function",
+        "raw_text": "Num4 Function (0 - 17) OFF, 4, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x00001015"
+      },
+      {
+        "offset": "0x0016",
+        "offset_int": 22,
+        "encoding": "000a aaaa",
+        "label": "BankDown Function",
+        "raw_text": "BankDown Function (0 - 17) OFF, BANK DOWN, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR,",
+        "address": "0x00001016"
+      },
+      {
+        "offset": "0x0017",
+        "offset_int": 23,
+        "encoding": "000a aaaa",
+        "label": "BankUp Function",
+        "raw_text": "BankUp Function (0 - 17) OFF, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MID",
+        "address": "0x00001017"
+      },
+      {
+        "offset": "0x0018",
+        "offset_int": 24,
+        "encoding": "0000 aaaa",
+        "label": "CNum Function",
+        "raw_text": "CNum Function (0 - 14) OFF, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x00001018"
+      },
+      {
+        "offset": "0x0019",
+        "offset_int": 25,
+        "encoding": "0000 aaaa",
+        "label": "Manual Num1 Function",
+        "raw_text": "Manual Num1 Function (0 - 14) OFF, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x00001019"
+      },
+      {
+        "offset": "0x001A",
+        "offset_int": 26,
+        "encoding": "0000 aaaa",
+        "label": "Manual Num2 Function",
+        "raw_text": "Manual Num2 Function (0 - 14) OFF, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x0000101A"
+      },
+      {
+        "offset": "0x001B",
+        "offset_int": 27,
+        "encoding": "0000 aaaa",
+        "label": "Manual Num3 Function",
+        "raw_text": "Manual Num3 Function (0 - 14) OFF, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x0000101B"
+      },
+      {
+        "offset": "0x001C",
+        "offset_int": 28,
+        "encoding": "0000 aaaa",
+        "label": "Manual Num4 Function",
+        "raw_text": "Manual Num4 Function (0 - 14) OFF, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x0000101C"
+      },
+      {
+        "offset": "0x001D",
+        "offset_int": 29,
+        "encoding": "000a aaaa",
+        "label": "Ctl1 Function",
+        "raw_text": "Ctl1 Function (0 - 18) OFF, BANK DOWN, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP C",
+        "address": "0x0000101D"
+      },
+      {
+        "offset": "0x001E",
+        "offset_int": 30,
+        "encoding": "000a aaaa",
+        "label": "Ctl2 Function",
+        "raw_text": "Ctl2 Function (0 - 18) OFF, BANK DOWN, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP C",
+        "address": "0x0000101E"
+      },
+      {
+        "offset": "0x001F",
+        "offset_int": 31,
+        "encoding": "000a aaaa",
+        "label": "Ctl3 Function",
+        "raw_text": "Ctl3 Function (0 - 18) OFF, BANK DOWN, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP C",
+        "address": "0x0000101F"
+      },
+      {
+        "offset": "0x0020",
+        "offset_int": 32,
+        "encoding": "000a aaaa",
+        "label": "Ctl4 Function",
+        "raw_text": "Ctl4 Function (0 - 18) OFF, BANK DOWN, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP C",
+        "address": "0x00001020"
+      },
+      {
+        "offset": "0x0021",
+        "offset_int": 33,
+        "encoding": "000a aaaa",
+        "label": "Exp1Sw Function",
+        "raw_text": "Exp1Sw Function (0 - 18) OFF, BANK DOWN, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP",
+        "address": "0x00001021"
+      },
+      {
+        "offset": "0x0022",
+        "offset_int": 34,
+        "encoding": "0000 0aaa",
+        "label": "Exp1 Function",
+        "raw_text": "Exp1 Function (0 - 5) OFF, FOOT VOL, PEDAL FX, FV/PEDAL FX, FV+TUNER, FV+TUNE/PFX",
+        "address": "0x00001022"
+      },
+      {
+        "offset": "0x0023",
+        "offset_int": 35,
+        "encoding": "0000 0aaa",
+        "label": "Exp2 Function",
+        "raw_text": "Exp2 Function (0 - 5) OFF, FOOT VOL, PEDAL FX, FV/PEDAL FX, FV+TUNER, FV+TUNE/PFX",
+        "address": "0x00001023"
+      },
+      {
+        "offset": "0x0024",
+        "offset_int": 36,
+        "encoding": "0000 000a",
+        "label": "Num1 Mode",
+        "raw_text": "Num1 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x00001024"
+      },
+      {
+        "offset": "0x0025",
+        "offset_int": 37,
+        "encoding": "0000 000a",
+        "label": "Num2 Mode",
+        "raw_text": "Num2 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x00001025"
+      },
+      {
+        "offset": "0x0026",
+        "offset_int": 38,
+        "encoding": "0000 000a",
+        "label": "Num3 Mode",
+        "raw_text": "Num3 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x00001026"
+      },
+      {
+        "offset": "0x0027",
+        "offset_int": 39,
+        "encoding": "0000 000a",
+        "label": "Num4 Mode",
+        "raw_text": "Num4 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x00001027"
+      },
+      {
+        "offset": "0x0028",
+        "offset_int": 40,
+        "encoding": "0000 000a",
+        "label": "BankDown Mode",
+        "raw_text": "BankDown Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x00001028"
+      },
+      {
+        "offset": "0x0029",
+        "offset_int": 41,
+        "encoding": "0000 000a",
+        "label": "BankUp Mode",
+        "raw_text": "BankUp Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x00001029"
+      },
+      {
+        "offset": "0x002A",
+        "offset_int": 42,
+        "encoding": "0000 000a",
+        "label": "CNum Mode",
+        "raw_text": "CNum Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x0000102A"
+      },
+      {
+        "offset": "0x002B",
+        "offset_int": 43,
+        "encoding": "0000 000a",
+        "label": "Manual Num1 Mode",
+        "raw_text": "Manual Num1 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x0000102B"
+      },
+      {
+        "offset": "0x002C",
+        "offset_int": 44,
+        "encoding": "0000 000a",
+        "label": "Manual Num2 Mode",
+        "raw_text": "Manual Num2 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x0000102C"
+      },
+      {
+        "offset": "0x002D",
+        "offset_int": 45,
+        "encoding": "0000 000a",
+        "label": "Manual Num3 Mode",
+        "raw_text": "Manual Num3 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x0000102D"
+      },
+      {
+        "offset": "0x002E",
+        "offset_int": 46,
+        "encoding": "0000 000a",
+        "label": "Manual Num4 Mode",
+        "raw_text": "Manual Num4 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x0000102E"
+      },
+      {
+        "offset": "0x002F",
+        "offset_int": 47,
+        "encoding": "0000 000a",
+        "label": "Ctl1 Mode",
+        "raw_text": "Ctl1 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x0000102F"
+      },
+      {
+        "offset": "0x0030",
+        "offset_int": 48,
+        "encoding": "0000 000a",
+        "label": "Ctl2 Mode",
+        "raw_text": "Ctl2 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x00001030"
+      },
+      {
+        "offset": "0x0031",
+        "offset_int": 49,
+        "encoding": "0000 000a",
+        "label": "Ctl3 Mode",
+        "raw_text": "Ctl3 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x00001031"
+      },
+      {
+        "offset": "0x0032",
+        "offset_int": 50,
+        "encoding": "0000 000a",
+        "label": "Ctl4 Mode",
+        "raw_text": "Ctl4 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x00001032"
+      },
+      {
+        "offset": "0x0033",
+        "offset_int": 51,
+        "encoding": "0000 000a",
+        "label": "Exp1Sw Mode",
+        "raw_text": "Exp1Sw Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x00001033"
+      },
+      {
+        "offset": "0x0034",
+        "offset_int": 52,
+        "encoding": "0000 00aa",
+        "label": "CONTROL MODE",
+        "raw_text": "CONTROL MODE (GX-100:0 - 1), (GX-10:0 - 3) MEMORY, MANUAL, BANK/NUM, MANUAL2 \\# 00 35 0000 aaaa",
+        "address": "0x00001034"
+      },
+      {
+        "offset": "0x0036",
+        "offset_int": 54,
+        "encoding": "0000 bbbb",
+        "label": "00 37 0000 cccc",
+        "raw_text": "00 37 0000 cccc",
+        "address": "0x00001036"
+      },
+      {
+        "offset": "0x003A",
+        "offset_int": 58,
+        "encoding": "0000 bbbb",
+        "label": "00 3B 0000 cccc",
+        "raw_text": "00 3B 0000 cccc",
+        "address": "0x0000103A"
+      },
+      {
+        "offset": "0x003E",
+        "offset_int": 62,
+        "encoding": "0000 bbbb",
+        "label": "00 3F 0000 cccc",
+        "raw_text": "00 3F 0000 cccc",
+        "address": "0x0000103E"
+      },
+      {
+        "offset": "0x0042",
+        "offset_int": 66,
+        "encoding": "0000 bbbb",
+        "label": "00 43 0000 cccc",
+        "raw_text": "00 43 0000 cccc",
+        "address": "0x00001042"
+      },
+      {
+        "offset": "0x0046",
+        "offset_int": 70,
+        "encoding": "0000 bbbb",
+        "label": "00 47 0000 cccc",
+        "raw_text": "00 47 0000 cccc",
+        "address": "0x00001046"
+      },
+      {
+        "offset": "0x004A",
+        "offset_int": 74,
+        "encoding": "0000 bbbb",
+        "label": "00 4B 0000 cccc",
+        "raw_text": "00 4B 0000 cccc",
+        "address": "0x0000104A"
+      },
+      {
+        "offset": "0x004E",
+        "offset_int": 78,
+        "encoding": "0000 bbbb",
+        "label": "00 4F 0000 cccc",
+        "raw_text": "00 4F 0000 cccc",
+        "address": "0x0000104E"
+      },
+      {
+        "offset": "0x0052",
+        "offset_int": 82,
+        "encoding": "0000 bbbb",
+        "label": "00 53 0000 cccc",
+        "raw_text": "00 53 0000 cccc",
+        "address": "0x00001052"
+      },
+      {
+        "offset": "0x0056",
+        "offset_int": 86,
+        "encoding": "0000 bbbb",
+        "label": "00 57 0000 cccc",
+        "raw_text": "00 57 0000 cccc",
+        "address": "0x00001056"
+      },
+      {
+        "offset": "0x005A",
+        "offset_int": 90,
+        "encoding": "0000 bbbb",
+        "label": "00 5B 0000 cccc",
+        "raw_text": "00 5B 0000 cccc",
+        "address": "0x0000105A"
+      },
+      {
+        "offset": "0x005E",
+        "offset_int": 94,
+        "encoding": "0000 bbbb",
+        "label": "00 5F 0000 cccc",
+        "raw_text": "00 5F 0000 cccc",
+        "address": "0x0000105E"
+      },
+      {
+        "offset": "0x0061",
+        "offset_int": 97,
+        "encoding": "0000 aaaa",
+        "label": "INPUT SETTING",
+        "value_min": 0,
+        "value_max": 9,
+        "values": [
+          "1 - 10"
+        ],
+        "address": "0x00001061"
+      },
+      {
+        "offset": "0x0063",
+        "offset_int": 99,
+        "encoding": "0000 000a",
+        "label": "GLOBAL EQ SW",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x00001063"
+      },
+      {
+        "offset": "0x0064",
+        "offset_int": 100,
+        "encoding": "0000 00aa",
+        "label": "Down & Up Function",
+        "raw_text": "Down & Up Function(GX-10) (0 - 3) OFF, TUNER, DOWN, UP",
+        "address": "0x00001064"
+      },
+      {
+        "offset": "0x0065",
+        "offset_int": 101,
+        "encoding": "0000 00aa",
+        "label": "Up & Ctl1 Function",
+        "raw_text": "Up & Ctl1 Function(GX-10) (0 - 3) OFF, MANUAL, DOWN, UP",
+        "address": "0x00001065"
+      }
+    ]
+  },
+  "0x00003000 SystemMidi": {
+    "base_address": "0x00003000",
+    "field_count": 20,
+    "fields": [
+      {
+        "offset": "0x0000",
+        "offset_int": 0,
+        "encoding": "0000 aaaa",
+        "label": "RX CHANNEL",
+        "value_min": 0,
+        "value_max": 15,
+        "values": [
+          "CH 1 - CH16"
+        ],
+        "address": "0x00003000"
+      },
+      {
+        "offset": "0x0002",
+        "offset_int": 2,
+        "encoding": "000a aaaa",
+        "label": "TX CHANNEL",
+        "value_min": 0,
+        "value_max": 16,
+        "values": [
+          "CH 1 - CH16",
+          "RX CH"
+        ],
+        "address": "0x00003002"
+      },
+      {
+        "offset": "0x0003",
+        "offset_int": 3,
+        "encoding": "0000 00aa",
+        "label": "SYNC CLOCK",
+        "raw_text": "SYNC CLOCK(GX-100) (0 - 3) AUTO, INTERNAL, MIDI(AUTO), USB(AUTO)",
+        "address": "0x00003003"
+      },
+      {
+        "offset": "0x0004",
+        "offset_int": 4,
+        "encoding": "0000 00aa",
+        "label": "MIDI IN THRU",
+        "value_min": 0,
+        "value_max": 3,
+        "values": [
+          "OFF",
+          "MIDI OUT",
+          "USB OUT",
+          "USB & MIDI"
+        ],
+        "address": "0x00003004"
+      },
+      {
+        "offset": "0x0005",
+        "offset_int": 5,
+        "encoding": "0000 00aa",
+        "label": "USB IN THRU",
+        "raw_text": "USB IN THRU(GX-100) (0 - 3) OFF, MIDI OUT, USB OUT, USB & MIDI",
+        "address": "0x00003005"
+      },
+      {
+        "offset": "0x0006",
+        "offset_int": 6,
+        "encoding": "0000 000a",
+        "label": "CLOCK OUT",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x00003006"
+      },
+      {
+        "offset": "0x0007",
+        "offset_int": 7,
+        "encoding": "0000 000a",
+        "label": "MAP SELECT",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "FIX",
+          "PROG"
+        ],
+        "address": "0x00003007"
+      },
+      {
+        "offset": "0x0008",
+        "offset_int": 8,
+        "encoding": "00aa aaaa",
+        "label": "NUM1 CC\\#",
+        "raw_text": "NUM1 CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x00003008"
+      },
+      {
+        "offset": "0x0009",
+        "offset_int": 9,
+        "encoding": "00aa aaaa",
+        "label": "NUM2 CC\\#",
+        "raw_text": "NUM2 CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x00003009"
+      },
+      {
+        "offset": "0x000A",
+        "offset_int": 10,
+        "encoding": "00aa aaaa",
+        "label": "NUM3 CC\\#",
+        "raw_text": "NUM3 CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x0000300A"
+      },
+      {
+        "offset": "0x000B",
+        "offset_int": 11,
+        "encoding": "00aa aaaa",
+        "label": "NUM4 CC\\#",
+        "raw_text": "NUM4 CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x0000300B"
+      },
+      {
+        "offset": "0x000C",
+        "offset_int": 12,
+        "encoding": "00aa aaaa",
+        "label": "BANK\\\\x1B CC\\#",
+        "raw_text": "BANK\\\\x1B CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x0000300C"
+      },
+      {
+        "offset": "0x000D",
+        "offset_int": 13,
+        "encoding": "00aa aaaa",
+        "label": "BANK\\\\x1A CC\\#",
+        "raw_text": "BANK\\\\x1A CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x0000300D"
+      },
+      {
+        "offset": "0x000E",
+        "offset_int": 14,
+        "encoding": "00aa aaaa",
+        "label": "CTL1 CC\\#",
+        "raw_text": "CTL1 CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x0000300E"
+      },
+      {
+        "offset": "0x000F",
+        "offset_int": 15,
+        "encoding": "00aa aaaa",
+        "label": "CTL2 CC\\#",
+        "raw_text": "CTL2 CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x0000300F"
+      },
+      {
+        "offset": "0x0010",
+        "offset_int": 16,
+        "encoding": "00aa aaaa",
+        "label": "CTL3 CC\\#",
+        "raw_text": "CTL3 CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x00003010"
+      },
+      {
+        "offset": "0x0011",
+        "offset_int": 17,
+        "encoding": "00aa aaaa",
+        "label": "CTL4 CC\\#",
+        "raw_text": "CTL4 CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x00003011"
+      },
+      {
+        "offset": "0x0012",
+        "offset_int": 18,
+        "encoding": "00aa aaaa",
+        "label": "EXP1 SW CC\\#",
+        "raw_text": "EXP1 SW CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x00003012"
+      },
+      {
+        "offset": "0x0013",
+        "offset_int": 19,
+        "encoding": "00aa aaaa",
+        "label": "EXP1 CC\\#",
+        "raw_text": "EXP1 CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x00003013"
+      },
+      {
+        "offset": "0x0014",
+        "offset_int": 20,
+        "encoding": "00aa aaaa",
+        "label": "EXP2 CC\\#",
+        "raw_text": "EXP2 CC\\# (0 - 63) OFF, CC\\# 1 - CC\\#31, CC\\# 64 - CC\\#95",
+        "address": "0x00003014"
+      }
+    ]
+  },
+  "0x00004000 SystemInOut": {
+    "base_address": "0x00004000",
+    "field_count": 7,
+    "fields": [
+      {
+        "offset": "0x0000",
+        "offset_int": 0,
+        "encoding": "0000 000a",
+        "label": "MAIN:LEVEL SELECT",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "-10dBu",
+          "\\+4dBu"
+        ],
+        "address": "0x00004000"
+      },
+      {
+        "offset": "0x0004",
+        "offset_int": 4,
+        "encoding": "0000 bbbb",
+        "label": "USB MAIN:EFX OUT",
+        "value_min": 0,
+        "value_max": 200,
+        "values": [
+          "0 - 200 [%] \\# 00 05 0000 aaaa"
+        ],
+        "address": "0x00004004"
+      },
+      {
+        "offset": "0x0006",
+        "offset_int": 6,
+        "encoding": "0000 bbbb",
+        "label": "USB MAIN:MIX LEVEL",
+        "value_min": 0,
+        "value_max": 200,
+        "values": [
+          "0 - 200 [%] \\# 00 07 0000 aaaa"
+        ],
+        "address": "0x00004006"
+      },
+      {
+        "offset": "0x0008",
+        "offset_int": 8,
+        "encoding": "0000 bbbb",
+        "label": "USB DRY:OUT",
+        "value_min": 0,
+        "value_max": 200,
+        "values": [
+          "0 - 200 [%] \\# 00 09 0000 aaaa"
+        ],
+        "address": "0x00004008"
+      },
+      {
+        "offset": "0x000A",
+        "offset_int": 10,
+        "encoding": "0000 bbbb",
+        "label": "USB DRY:TO EFX",
+        "value_min": 0,
+        "value_max": 200,
+        "values": [
+          "0 - 200 [%]"
+        ],
+        "address": "0x0000400A"
+      },
+      {
+        "offset": "0x000B",
+        "offset_int": 11,
+        "encoding": "0000 000a",
+        "label": "USB LOOPBACK",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x0000400B"
+      },
+      {
+        "offset": "0x000C",
+        "offset_int": 12,
+        "encoding": "0000 aaaa",
+        "label": "AIRD OUTPUT SELECT",
+        "value_min": 0,
+        "value_max": 14,
+        "values": [
+          "LINE/PHONES (RECORDING)",
+          "JC-120 RETURN",
+          "JC-120 INPUT",
+          "KATANA-100/212 RETURN",
+          "KATANA-100/212 INPUT",
+          "KATANA-100 RETURN",
+          "KATANA-100 INPUT",
+          "TUBE COMBO 212 RETURN",
+          "TUBE COMBO 212 INPUT",
+          "TUBE COMBO 112 RETURN",
+          "TUBE COMBO 112 INPUT",
+          "TUBE STACK 412 RETURN",
+          "TUBE STACK 412 INPUT",
+          "BASS AMP WITH TWEETER",
+          "BASS AMP NO TWEETER"
+        ],
+        "address": "0x0000400C"
+      }
+    ]
+  },
+  "0x00005000 SystemEfct": {
+    "base_address": "0x00005000",
+    "field_count": 2,
+    "fields": [
+      {
+        "offset": "0x0000",
+        "offset_int": 0,
+        "encoding": "0000 000a",
+        "label": "PHRASE LOOP:MODE",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "MONO",
+          "STEREO"
+        ],
+        "address": "0x00005000"
+      },
+      {
+        "offset": "0x0001",
+        "offset_int": 1,
+        "encoding": "0000 000a",
+        "label": "PHRASE LOOP:REC ACTION",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "REC\\>PLAY\\>DUB",
+          "REC\\>DUB\\>PLAY"
+        ],
+        "address": "0x00005001"
+      }
+    ]
+  },
+  "0x00006000 SystemPitch": {
+    "base_address": "0x00006000",
+    "field_count": 5,
+    "fields": [
+      {
+        "offset": "0x0001",
+        "offset_int": 1,
+        "encoding": "0000 bbbb",
+        "label": "00 02 0000 cccc",
+        "raw_text": "00 02 0000 cccc",
+        "address": "0x00006001"
+      },
+      {
+        "offset": "0x0003",
+        "offset_int": 3,
+        "encoding": "0000 dddd",
+        "label": "REF. PITCH",
+        "value_min": 435,
+        "value_max": 445,
+        "values": [
+          "[Hz]"
+        ],
+        "address": "0x00006003"
+      },
+      {
+        "offset": "0x0004",
+        "offset_int": 4,
+        "encoding": "0000 0aaa",
+        "label": "TT TUNER TYPE",
+        "value_min": 0,
+        "value_max": 5,
+        "values": [
+          "6-REG",
+          "6-DROP D",
+          "7-REG",
+          "7-DROP A",
+          "4-B REG",
+          "5-B REG"
+        ],
+        "address": "0x00006004"
+      },
+      {
+        "offset": "0x0005",
+        "offset_int": 5,
+        "encoding": "000a aaaa",
+        "label": "TT TUNER OFFSET",
+        "value_min": 11,
+        "value_max": 16,
+        "values": [
+          "-5",
+          "-4",
+          "-3",
+          "-2",
+          "-1",
+          "----"
+        ],
+        "address": "0x00006005"
+      },
+      {
+        "offset": "0x0006",
+        "offset_int": 6,
+        "encoding": "0000 00aa",
+        "label": "TUNER OUTPUT",
+        "value_min": 0,
+        "value_max": 2,
+        "values": [
+          "MUTE",
+          "BYPASS",
+          "THRU"
+        ],
+        "address": "0x00006006"
+      }
+    ]
+  },
+  "0x00006100 SysteminputSetting": {
+    "base_address": "0x00006100",
+    "field_count": 18,
+    "fields": [
+      {
+        "offset": "0x0000",
+        "offset_int": 0,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x00006100"
+      },
+      {
+        "offset": "0x0001",
+        "offset_int": 1,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x00006101"
+      },
+      {
+        "offset": "0x0002",
+        "offset_int": 2,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x00006102"
+      },
+      {
+        "offset": "0x0003",
+        "offset_int": 3,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x00006103"
+      },
+      {
+        "offset": "0x0004",
+        "offset_int": 4,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x00006104"
+      },
+      {
+        "offset": "0x0005",
+        "offset_int": 5,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x00006105"
+      },
+      {
+        "offset": "0x0006",
+        "offset_int": 6,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x00006106"
+      },
+      {
+        "offset": "0x0007",
+        "offset_int": 7,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x00006107"
+      },
+      {
+        "offset": "0x0008",
+        "offset_int": 8,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x00006108"
+      },
+      {
+        "offset": "0x0009",
+        "offset_int": 9,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x00006109"
+      },
+      {
+        "offset": "0x000A",
+        "offset_int": 10,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x0000610A"
+      },
+      {
+        "offset": "0x000B",
+        "offset_int": 11,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x0000610B"
+      },
+      {
+        "offset": "0x000C",
+        "offset_int": 12,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x0000610C"
+      },
+      {
+        "offset": "0x000D",
+        "offset_int": 13,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x0000610D"
+      },
+      {
+        "offset": "0x000E",
+        "offset_int": 14,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x0000610E"
+      },
+      {
+        "offset": "0x000F",
+        "offset_int": 15,
+        "encoding": "0aaa aaaa",
+        "label": "NAME",
+        "value_min": 32,
+        "value_max": 126,
+        "values": null,
+        "address": "0x0000610F"
+      },
+      {
+        "offset": "0x0010",
+        "offset_int": 16,
+        "encoding": "0000 000a",
+        "label": "INST TYPE",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "GUITAR",
+          "BASS"
+        ],
+        "address": "0x00006110"
+      },
+      {
+        "offset": "0x0011",
+        "offset_int": 17,
+        "encoding": "00aa aaaa",
+        "label": "INPUT LEVEL",
+        "value_min": 12,
+        "value_max": 52,
+        "values": [
+          "[dB]"
+        ],
+        "address": "0x00006111"
+      }
+    ]
+  },
+  "0x00006B00 SystemGlobalEq": {
+    "base_address": "0x00006B00",
+    "field_count": 11,
+    "fields": [
+      {
+        "offset": "0x0010",
+        "offset_int": 16,
+        "encoding": "00aa aaaa",
+        "label": "MAIN:LOW GAIN",
+        "value_min": 12,
+        "value_max": 52,
+        "values": [
+          "[dB]"
+        ],
+        "address": "0x00006B10"
+      },
+      {
+        "offset": "0x0011",
+        "offset_int": 17,
+        "encoding": "00aa aaaa",
+        "label": "MAIN:LOW MID GAIN",
+        "value_min": 12,
+        "value_max": 52,
+        "values": [
+          "[dB]"
+        ],
+        "address": "0x00006B11"
+      },
+      {
+        "offset": "0x0012",
+        "offset_int": 18,
+        "encoding": "000a aaaa",
+        "label": "MAIN:LOW MID FREQ",
+        "value_min": 0,
+        "value_max": 28,
+        "values": [
+          "20.0Hz",
+          "25.0Hz",
+          "31.5Hz",
+          "40.0Hz",
+          "50.0Hz",
+          "63.0Hz",
+          "80.0Hz",
+          "100Hz",
+          "125Hz",
+          "160Hz",
+          "200Hz",
+          "250Hz",
+          "315Hz",
+          "400Hz",
+          "500Hz",
+          "630Hz",
+          "800Hz",
+          "1.00kHz",
+          "1.25kHz",
+          "1.60kHz",
+          "2.00kHz",
+          "2.50kHz",
+          "3.15kHz",
+          "4.00kHz",
+          "5.00kHz",
+          "6.30kHz",
+          "8.00kHz",
+          "10.0kHz",
+          "12.5kHz"
+        ],
+        "address": "0x00006B12"
+      },
+      {
+        "offset": "0x0013",
+        "offset_int": 19,
+        "encoding": "0000 0aaa",
+        "label": "MAIN:LOW MID Q",
+        "value_min": 0,
+        "value_max": 5,
+        "values": [
+          "0.5",
+          "1",
+          "2",
+          "4",
+          "8",
+          "16"
+        ],
+        "address": "0x00006B13"
+      },
+      {
+        "offset": "0x0014",
+        "offset_int": 20,
+        "encoding": "00aa aaaa",
+        "label": "MAIN:HIGH MID GAIN",
+        "value_min": 12,
+        "value_max": 52,
+        "values": [
+          "[dB]"
+        ],
+        "address": "0x00006B14"
+      },
+      {
+        "offset": "0x0015",
+        "offset_int": 21,
+        "encoding": "000a aaaa",
+        "label": "MAIN:HIGH MID FREQ",
+        "value_min": 0,
+        "value_max": 28,
+        "values": [
+          "20.0Hz",
+          "25.0Hz",
+          "31.5Hz",
+          "40.0Hz",
+          "50.0Hz",
+          "63.0Hz",
+          "80.0Hz",
+          "100Hz",
+          "125Hz",
+          "160Hz",
+          "200Hz",
+          "250Hz",
+          "315Hz",
+          "400Hz",
+          "500Hz",
+          "630Hz",
+          "800Hz",
+          "1.00kHz",
+          "1.25kHz",
+          "1.60kHz",
+          "2.00kHz",
+          "2.50kHz",
+          "3.15kHz",
+          "4.00kHz",
+          "5.00kHz",
+          "6.30kHz",
+          "8.00kHz",
+          "10.0kHz",
+          "12.5kHz"
+        ],
+        "address": "0x00006B15"
+      },
+      {
+        "offset": "0x0016",
+        "offset_int": 22,
+        "encoding": "0000 0aaa",
+        "label": "MAIN:HIGH MID Q",
+        "value_min": 0,
+        "value_max": 5,
+        "values": [
+          "0.5",
+          "1",
+          "2",
+          "4",
+          "8",
+          "16"
+        ],
+        "address": "0x00006B16"
+      },
+      {
+        "offset": "0x0017",
+        "offset_int": 23,
+        "encoding": "00aa aaaa",
+        "label": "MAIN:HIGH GAIN",
+        "value_min": 12,
+        "value_max": 52,
+        "values": [
+          "[dB]"
+        ],
+        "address": "0x00006B17"
+      },
+      {
+        "offset": "0x0018",
+        "offset_int": 24,
+        "encoding": "000a aaaa",
+        "label": "MAIN:LOW CUT",
+        "value_min": 0,
+        "value_max": 29,
+        "values": [
+          "FLAT",
+          "20.0Hz",
+          "25.0Hz",
+          "31.5Hz",
+          "40.0Hz",
+          "50.0Hz",
+          "63.0Hz",
+          "80.0Hz",
+          "100Hz",
+          "125Hz",
+          "160Hz",
+          "200Hz",
+          "250Hz",
+          "315Hz",
+          "400Hz",
+          "500Hz",
+          "630Hz",
+          "800Hz",
+          "1.00kHz",
+          "1.25kHz",
+          "1.60kHz",
+          "2.00kHz",
+          "2.50kHz",
+          "3.15kHz",
+          "4.00kHz",
+          "5.00kHz",
+          "6.30kHz",
+          "8.00kHz",
+          "10.0kHz",
+          "12.5kHz"
+        ],
+        "address": "0x00006B18"
+      },
+      {
+        "offset": "0x0019",
+        "offset_int": 25,
+        "encoding": "000a aaaa",
+        "label": "MAIN:HIGH CUT",
+        "value_min": 0,
+        "value_max": 29,
+        "values": [
+          "20.0Hz",
+          "25.0Hz",
+          "31.5Hz",
+          "40.0Hz",
+          "50.0Hz",
+          "63.0Hz",
+          "80.0Hz",
+          "100Hz",
+          "125Hz",
+          "160Hz",
+          "200Hz",
+          "250Hz",
+          "315Hz",
+          "400Hz",
+          "500Hz",
+          "630Hz",
+          "800Hz",
+          "1.00kHz",
+          "1.25kHz",
+          "1.60kHz",
+          "2.00kHz",
+          "2.50kHz",
+          "3.15kHz",
+          "4.00kHz",
+          "5.00kHz",
+          "6.30kHz",
+          "8.00kHz",
+          "10.0kHz",
+          "12.5kHz",
+          "FLAT"
+        ],
+        "address": "0x00006B19"
+      },
+      {
+        "offset": "0x001A",
+        "offset_int": 26,
+        "encoding": "00aa aaaa",
+        "label": "MAIN:LEVEL",
+        "value_min": 12,
+        "value_max": 52,
+        "values": [
+          "[dB]"
+        ],
+        "address": "0x00006B1A"
+      }
+    ]
+  },
+  "0x00100000 PcmapPc": {
+    "base_address": "0x00100000",
+    "field_count": 10,
+    "fields": [
+      {
+        "offset": "0x0001",
+        "offset_int": 1,
+        "encoding": "0000 bbbb",
+        "label": "00 02 0000 cccc",
+        "raw_text": "00 02 0000 cccc",
+        "address": "0x00100001"
+      },
+      {
+        "offset": "0x0003",
+        "offset_int": 3,
+        "encoding": "0000 dddd",
+        "label": "Program Change\\#1",
+        "raw_text": "Program Change\\#1 (0 - 299) 0.. 197, 198, 199, 200.. 298, 299 GX-100:U01-1..U50-2,U50-3,U50-4,P01-1..P25-3,P25-4 GX-10 :U01-1..U66-3, NIU, NIU,P01-1..P33-3, NIU \\* NIU : not in use \\# 00 04 0000 aaaa",
+        "address": "0x00100003"
+      },
+      {
+        "offset": "0x0005",
+        "offset_int": 5,
+        "encoding": "0000 bbbb",
+        "label": "00 06 0000 cccc",
+        "raw_text": "00 06 0000 cccc",
+        "address": "0x00100005"
+      },
+      {
+        "offset": "0x0007",
+        "offset_int": 7,
+        "encoding": "0000 dddd",
+        "label": "Program Change\\#2",
+        "raw_text": "Program Change\\#2 (0 - 299) 0.. 197, 198, 199, 200.. 298, 299 GX-100:U01-1..U50-2,U50-3,U50-4,P01-1..P25-3,P25-4 GX-10 :U01-1..U66-3, NIU, NIU,P01-1..P33-3, NIU \\* NIU : not in use \\# 00 7C 0000 aaaa",
+        "address": "0x00100007"
+      },
+      {
+        "offset": "0x007D",
+        "offset_int": 125,
+        "encoding": "0000 bbbb",
+        "label": "00 7E 0000 cccc",
+        "raw_text": "00 7E 0000 cccc",
+        "address": "0x0010007D"
+      },
+      {
+        "offset": "0x007F",
+        "offset_int": 127,
+        "encoding": "0000 dddd",
+        "label": "Program Change\\#32",
+        "raw_text": "Program Change\\#32 (0 - 299) 0.. 197, 198, 199, 200.. 298, 299 GX-100:U01-1..U50-2,U50-3,U50-4,P01-1..P25-3,P25-4 GX-10 :U01-1..U66-3, NIU, NIU,P01-1..P33-3, NIU \\* NIU : not in use \\# 01 00 0000 aaaa",
+        "address": "0x0010007F"
+      },
+      {
+        "offset": "0x0101",
+        "offset_int": 257,
+        "encoding": "0000 bbbb",
+        "label": "01 02 0000 cccc",
+        "raw_text": "01 02 0000 cccc",
+        "address": "0x00100101"
+      },
+      {
+        "offset": "0x0103",
+        "offset_int": 259,
+        "encoding": "0000 dddd",
+        "label": "Program Change\\#33",
+        "raw_text": "Program Change\\#33 (0 - 299) 0.. 197, 198, 199, 200.. 298, 299 GX-100:U01-1..U50-2,U50-3,U50-4,P01-1..P25-3,P25-4 GX-10 :U01-1..U66-3, NIU, NIU,P01-1..P33-3, NIU \\* NIU : not in use \\# 03 7C 0000 aaaa",
+        "address": "0x00100103"
+      },
+      {
+        "offset": "0x037D",
+        "offset_int": 893,
+        "encoding": "0000 bbbb",
+        "label": "03 7E 0000 cccc",
+        "raw_text": "03 7E 0000 cccc",
+        "address": "0x0010037D"
+      },
+      {
+        "offset": "0x037F",
+        "offset_int": 895,
+        "encoding": "0000 dddd",
+        "label": "Program Change\\#128",
+        "raw_text": "Program Change\\#128 (0 - 299) 0.. 197, 198, 199, 200.. 298, 299 GX-100:U01-1..U50-2,U50-3,U50-4,P01-1..P25-3,P25-4 GX-10 :U01-1..U66-3, NIU, NIU,P01-1..P33-3, NIU \\* NIU : not in use 00 00 04 00",
+        "address": "0x0010037F"
+      }
+    ]
+  },
+  "0x10000000 Memory_temp.MemoryCommon": {
+    "base_address": "0x10000000",
+    "field_count": 95,
+    "_note": "Sub-region of Memory_temp (0x10000000) at +0x000000. Same layout repeats for user memory 1..200 at 0x20000000 + (mem-1)*0x60000.",
+    "fields": [
+      {
+        "offset": "0x0000",
+        "offset_int": 0,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name1",
+        "raw_text": "Memory Name1 (32 - 126) ",
+        "address": "0x10000000"
+      },
+      {
+        "offset": "0x0001",
+        "offset_int": 1,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name2",
+        "raw_text": "Memory Name2 (32 - 126) ",
+        "address": "0x10000001"
+      },
+      {
+        "offset": "0x0002",
+        "offset_int": 2,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name3",
+        "raw_text": "Memory Name3 (32 - 126) ",
+        "address": "0x10000002"
+      },
+      {
+        "offset": "0x0003",
+        "offset_int": 3,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name4",
+        "raw_text": "Memory Name4 (32 - 126) ",
+        "address": "0x10000003"
+      },
+      {
+        "offset": "0x0004",
+        "offset_int": 4,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name5",
+        "raw_text": "Memory Name5 (32 - 126) ",
+        "address": "0x10000004"
+      },
+      {
+        "offset": "0x0005",
+        "offset_int": 5,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name6",
+        "raw_text": "Memory Name6 (32 - 126) ",
+        "address": "0x10000005"
+      },
+      {
+        "offset": "0x0006",
+        "offset_int": 6,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name7",
+        "raw_text": "Memory Name7 (32 - 126) ",
+        "address": "0x10000006"
+      },
+      {
+        "offset": "0x0007",
+        "offset_int": 7,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name8",
+        "raw_text": "Memory Name8 (32 - 126) ",
+        "address": "0x10000007"
+      },
+      {
+        "offset": "0x0008",
+        "offset_int": 8,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name9",
+        "raw_text": "Memory Name9 (32 - 126) ",
+        "address": "0x10000008"
+      },
+      {
+        "offset": "0x0009",
+        "offset_int": 9,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name10",
+        "raw_text": "Memory Name10 (32 - 126) ",
+        "address": "0x10000009"
+      },
+      {
+        "offset": "0x000A",
+        "offset_int": 10,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name11",
+        "raw_text": "Memory Name11 (32 - 126) ",
+        "address": "0x1000000A"
+      },
+      {
+        "offset": "0x000B",
+        "offset_int": 11,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name12",
+        "raw_text": "Memory Name12 (32 - 126) ",
+        "address": "0x1000000B"
+      },
+      {
+        "offset": "0x000C",
+        "offset_int": 12,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name13",
+        "raw_text": "Memory Name13 (32 - 126) ",
+        "address": "0x1000000C"
+      },
+      {
+        "offset": "0x000D",
+        "offset_int": 13,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name14",
+        "raw_text": "Memory Name14 (32 - 126) ",
+        "address": "0x1000000D"
+      },
+      {
+        "offset": "0x000E",
+        "offset_int": 14,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name15",
+        "raw_text": "Memory Name15 (32 - 126) ",
+        "address": "0x1000000E"
+      },
+      {
+        "offset": "0x000F",
+        "offset_int": 15,
+        "encoding": "0aaa aaaa",
+        "label": "Memory Name16",
+        "raw_text": "Memory Name16 (32 - 126) ",
+        "address": "0x1000000F"
+      },
+      {
+        "offset": "0x0010",
+        "offset_int": 16,
+        "encoding": "000a aaaa",
+        "label": "Num1 Function",
+        "raw_text": "Num1 Function (0 - 17) OFF, 1, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x10000010"
+      },
+      {
+        "offset": "0x0011",
+        "offset_int": 17,
+        "encoding": "000a aaaa",
+        "label": "Num2 Function",
+        "raw_text": "Num2 Function (0 - 17) OFF, 2, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x10000011"
+      },
+      {
+        "offset": "0x0012",
+        "offset_int": 18,
+        "encoding": "000a aaaa",
+        "label": "Num3 Function",
+        "raw_text": "Num3 Function (0 - 17) OFF, 3, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x10000012"
+      },
+      {
+        "offset": "0x0013",
+        "offset_int": 19,
+        "encoding": "000a aaaa",
+        "label": "Num4 Function",
+        "raw_text": "Num4 Function (0 - 17) OFF, 4, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x10000013"
+      },
+      {
+        "offset": "0x0014",
+        "offset_int": 20,
+        "encoding": "000a aaaa",
+        "label": "BankDown Function",
+        "raw_text": "BankDown Function (0 - 17) OFF, BANK DOWN, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR,",
+        "address": "0x10000014"
+      },
+      {
+        "offset": "0x0015",
+        "offset_int": 21,
+        "encoding": "000a aaaa",
+        "label": "BankUp Function",
+        "raw_text": "BankUp Function (0 - 17) OFF, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MID",
+        "address": "0x10000015"
+      },
+      {
+        "offset": "0x0016",
+        "offset_int": 22,
+        "encoding": "0000 aaaa",
+        "label": "CNum Function",
+        "raw_text": "CNum Function (0 - 14) OFF, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START \\+------------------------",
+        "address": "0x10000016"
+      },
+      {
+        "offset": "0x0017",
+        "offset_int": 23,
+        "encoding": "0000 aaaa",
+        "label": "Manual Num1 Function",
+        "raw_text": "Manual Num1 Function (0 - 14) OFF, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x10000017"
+      },
+      {
+        "offset": "0x0018",
+        "offset_int": 24,
+        "encoding": "0000 aaaa",
+        "label": "Manual Num2 Function",
+        "raw_text": "Manual Num2 Function (0 - 14) OFF, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x10000018"
+      },
+      {
+        "offset": "0x0019",
+        "offset_int": 25,
+        "encoding": "0000 aaaa",
+        "label": "Manual Num3 Function",
+        "raw_text": "Manual Num3 Function (0 - 14) OFF, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x10000019"
+      },
+      {
+        "offset": "0x001A",
+        "offset_int": 26,
+        "encoding": "0000 aaaa",
+        "label": "Manual Num4 Function",
+        "raw_text": "Manual Num4 Function (0 - 14) OFF, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP CLEAR, MIDI START",
+        "address": "0x1000001A"
+      },
+      {
+        "offset": "0x001B",
+        "offset_int": 27,
+        "encoding": "000a aaaa",
+        "label": "Ctl1 Function",
+        "raw_text": "Ctl1 Function (0 - 18) OFF, BANK DOWN, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP C",
+        "address": "0x1000001B"
+      },
+      {
+        "offset": "0x001C",
+        "offset_int": 28,
+        "encoding": "000a aaaa",
+        "label": "Ctl2 Function",
+        "raw_text": "Ctl2 Function (0 - 18) OFF, BANK DOWN, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP C",
+        "address": "0x1000001C"
+      },
+      {
+        "offset": "0x001D",
+        "offset_int": 29,
+        "encoding": "000a aaaa",
+        "label": "Ctl3 Function",
+        "raw_text": "Ctl3 Function (0 - 18) OFF, BANK DOWN, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP C",
+        "address": "0x1000001D"
+      },
+      {
+        "offset": "0x001E",
+        "offset_int": 30,
+        "encoding": "000a aaaa",
+        "label": "Ctl4 Function",
+        "raw_text": "Ctl4 Function (0 - 18) OFF, BANK DOWN, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP C",
+        "address": "0x1000001E"
+      },
+      {
+        "offset": "0x001F",
+        "offset_int": 31,
+        "encoding": "000a aaaa",
+        "label": "Exp1Sw Function",
+        "raw_text": "Exp1Sw Function (0 - 18) OFF, BANK DOWN, BANK UP, MEMORY -1, MEMORY \\+1, BPM TAP, TUNER, MEMORY/MAN, TUNER/MAN, MAN/TUNER, AMP CTL 1, AMP CTL 2, PFX, DIV CH.SEL, SEND/RETURN, LOOP CTL, LOOP STOP, LOOP",
+        "address": "0x1000001F"
+      },
+      {
+        "offset": "0x0020",
+        "offset_int": 32,
+        "encoding": "0000 0aaa",
+        "label": "Exp1 Function",
+        "raw_text": "Exp1 Function (0 - 5) OFF, FOOT VOL, PEDAL FX, FV/PEDAL FX, FV+TUNER, FV+TUNE/PFX",
+        "address": "0x10000020"
+      },
+      {
+        "offset": "0x0021",
+        "offset_int": 33,
+        "encoding": "0000 0aaa",
+        "label": "Exp2 Function",
+        "raw_text": "Exp2 Function (0 - 5) OFF, FOOT VOL, PEDAL FX, FV/PEDAL FX, FV+TUNER, FV+TUNE/PFX",
+        "address": "0x10000021"
+      },
+      {
+        "offset": "0x0022",
+        "offset_int": 34,
+        "encoding": "0000 000a",
+        "label": "Num1 Mode",
+        "raw_text": "Num1 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x10000022"
+      },
+      {
+        "offset": "0x0023",
+        "offset_int": 35,
+        "encoding": "0000 000a",
+        "label": "Num2 Mode",
+        "raw_text": "Num2 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x10000023"
+      },
+      {
+        "offset": "0x0024",
+        "offset_int": 36,
+        "encoding": "0000 000a",
+        "label": "Num3 Mode",
+        "raw_text": "Num3 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x10000024"
+      },
+      {
+        "offset": "0x0025",
+        "offset_int": 37,
+        "encoding": "0000 000a",
+        "label": "Num4 Mode",
+        "raw_text": "Num4 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x10000025"
+      },
+      {
+        "offset": "0x0026",
+        "offset_int": 38,
+        "encoding": "0000 000a",
+        "label": "BankDown Mode",
+        "raw_text": "BankDown Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x10000026"
+      },
+      {
+        "offset": "0x0027",
+        "offset_int": 39,
+        "encoding": "0000 000a",
+        "label": "BankUp Mode",
+        "raw_text": "BankUp Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x10000027"
+      },
+      {
+        "offset": "0x0028",
+        "offset_int": 40,
+        "encoding": "0000 000a",
+        "label": "CNum Mode",
+        "raw_text": "CNum Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x10000028"
+      },
+      {
+        "offset": "0x0029",
+        "offset_int": 41,
+        "encoding": "0000 000a",
+        "label": "Manual Num1 Mode",
+        "raw_text": "Manual Num1 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x10000029"
+      },
+      {
+        "offset": "0x002A",
+        "offset_int": 42,
+        "encoding": "0000 000a",
+        "label": "Manual Num2 Mode",
+        "raw_text": "Manual Num2 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x1000002A"
+      },
+      {
+        "offset": "0x002B",
+        "offset_int": 43,
+        "encoding": "0000 000a",
+        "label": "Manual Num3 Mode",
+        "raw_text": "Manual Num3 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x1000002B"
+      },
+      {
+        "offset": "0x002C",
+        "offset_int": 44,
+        "encoding": "0000 000a",
+        "label": "Manual Num4 Mode",
+        "raw_text": "Manual Num4 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x1000002C"
+      },
+      {
+        "offset": "0x002D",
+        "offset_int": 45,
+        "encoding": "0000 000a",
+        "label": "Ctl1 Mode",
+        "raw_text": "Ctl1 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x1000002D"
+      },
+      {
+        "offset": "0x002E",
+        "offset_int": 46,
+        "encoding": "0000 000a",
+        "label": "Ctl2 Mode",
+        "raw_text": "Ctl2 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x1000002E"
+      },
+      {
+        "offset": "0x002F",
+        "offset_int": 47,
+        "encoding": "0000 000a",
+        "label": "Ctl3 Mode",
+        "raw_text": "Ctl3 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x1000002F"
+      },
+      {
+        "offset": "0x0030",
+        "offset_int": 48,
+        "encoding": "0000 000a",
+        "label": "Ctl4 Mode",
+        "raw_text": "Ctl4 Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x10000030"
+      },
+      {
+        "offset": "0x0031",
+        "offset_int": 49,
+        "encoding": "0000 000a",
+        "label": "Exp1Sw Mode",
+        "raw_text": "Exp1Sw Mode (0 - 1) TOGGLE, MOMENT",
+        "address": "0x10000031"
+      },
+      {
+        "offset": "0x0032",
+        "offset_int": 50,
+        "encoding": "0000 aaaa",
+        "label": "INPUT SETTING",
+        "value_min": 0,
+        "value_max": 10,
+        "values": [
+          "SYSTEM",
+          "1 - 10"
+        ],
+        "address": "0x10000032"
+      },
+      {
+        "offset": "0x0035",
+        "offset_int": 53,
+        "encoding": "000a aaaa",
+        "label": "MEMORY MIDI 1:CH",
+        "value_min": 0,
+        "value_max": 16,
+        "values": [
+          "OFF",
+          "1 - 16 \\# 00 36 0000 aaaa"
+        ],
+        "address": "0x10000035"
+      },
+      {
+        "offset": "0x0037",
+        "offset_int": 55,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 1:BANK MSB",
+        "value_min": 0,
+        "value_max": 128,
+        "values": [
+          "OFF",
+          "1 - 128 \\# 00 38 0000 aaaa"
+        ],
+        "address": "0x10000037"
+      },
+      {
+        "offset": "0x0039",
+        "offset_int": 57,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 1:BANK LSB",
+        "value_min": 0,
+        "value_max": 128,
+        "values": [
+          "OFF",
+          "1 - 128 \\# 00 3A 0000 aaaa"
+        ],
+        "address": "0x10000039"
+      },
+      {
+        "offset": "0x003B",
+        "offset_int": 59,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 1:PC\\#",
+        "raw_text": "MEMORY MIDI 1:PC\\# (0 - 128) OFF, 1 - 128 \\+------------------------------------------------------------------------------+ Offset Address Description \\# 00 3C 0000 aaaa",
+        "address": "0x1000003B"
+      },
+      {
+        "offset": "0x003D",
+        "offset_int": 61,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 1:CC1\\#",
+        "raw_text": "MEMORY MIDI 1:CC1\\# (0 - 128) OFF, 0 - 127",
+        "address": "0x1000003D"
+      },
+      {
+        "offset": "0x003E",
+        "offset_int": 62,
+        "encoding": "0aaa aaaa",
+        "label": "MEMORY MIDI 1:CC1 VALUE",
+        "value_min": 0,
+        "value_max": 127,
+        "values": [
+          "\\# 00 3F 0000 aaaa"
+        ],
+        "address": "0x1000003E"
+      },
+      {
+        "offset": "0x0040",
+        "offset_int": 64,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 1:CC2\\#",
+        "raw_text": "MEMORY MIDI 1:CC2\\# (0 - 128) OFF, 0 - 127",
+        "address": "0x10000040"
+      },
+      {
+        "offset": "0x0041",
+        "offset_int": 65,
+        "encoding": "0aaa aaaa",
+        "label": "MEMORY MIDI 1:CC2 VALUE",
+        "value_min": 0,
+        "value_max": 127,
+        "values": null,
+        "address": "0x10000041"
+      },
+      {
+        "offset": "0x0042",
+        "offset_int": 66,
+        "encoding": "000a aaaa",
+        "label": "MEMORY MIDI 2:CH",
+        "value_min": 0,
+        "value_max": 16,
+        "values": [
+          "OFF",
+          "1 - 16 \\# 00 43 0000 aaaa"
+        ],
+        "address": "0x10000042"
+      },
+      {
+        "offset": "0x0044",
+        "offset_int": 68,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 2:BANK MSB",
+        "value_min": 0,
+        "value_max": 128,
+        "values": [
+          "OFF",
+          "1 - 128 \\# 00 45 0000 aaaa"
+        ],
+        "address": "0x10000044"
+      },
+      {
+        "offset": "0x0046",
+        "offset_int": 70,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 2:BANK LSB",
+        "value_min": 0,
+        "value_max": 128,
+        "values": [
+          "OFF",
+          "1 - 128 \\# 00 47 0000 aaaa"
+        ],
+        "address": "0x10000046"
+      },
+      {
+        "offset": "0x0048",
+        "offset_int": 72,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 2:PC\\#",
+        "raw_text": "MEMORY MIDI 2:PC\\# (0 - 128) OFF, 1 - 128 \\# 00 49 0000 aaaa",
+        "address": "0x10000048"
+      },
+      {
+        "offset": "0x004A",
+        "offset_int": 74,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 2:CC1\\#",
+        "raw_text": "MEMORY MIDI 2:CC1\\# (0 - 128) OFF, 0 - 127",
+        "address": "0x1000004A"
+      },
+      {
+        "offset": "0x004B",
+        "offset_int": 75,
+        "encoding": "0aaa aaaa",
+        "label": "MEMORY MIDI 2:CC1 VALUE",
+        "value_min": 0,
+        "value_max": 127,
+        "values": [
+          "\\# 00 4C 0000 aaaa"
+        ],
+        "address": "0x1000004B"
+      },
+      {
+        "offset": "0x004D",
+        "offset_int": 77,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 2:CC2\\#",
+        "raw_text": "MEMORY MIDI 2:CC2\\# (0 - 128) OFF, 0 - 127",
+        "address": "0x1000004D"
+      },
+      {
+        "offset": "0x004E",
+        "offset_int": 78,
+        "encoding": "0aaa aaaa",
+        "label": "MEMORY MIDI 2:CC2 VALUE",
+        "value_min": 0,
+        "value_max": 127,
+        "values": null,
+        "address": "0x1000004E"
+      },
+      {
+        "offset": "0x004F",
+        "offset_int": 79,
+        "encoding": "000a aaaa",
+        "label": "MEMORY MIDI 3:CH",
+        "value_min": 0,
+        "value_max": 16,
+        "values": [
+          "OFF",
+          "1 - 16 \\# 00 50 0000 aaaa"
+        ],
+        "address": "0x1000004F"
+      },
+      {
+        "offset": "0x0051",
+        "offset_int": 81,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 3:BANK MSB",
+        "value_min": 0,
+        "value_max": 128,
+        "values": [
+          "OFF",
+          "1 - 128 \\# 00 52 0000 aaaa"
+        ],
+        "address": "0x10000051"
+      },
+      {
+        "offset": "0x0053",
+        "offset_int": 83,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 3:BANK LSB",
+        "value_min": 0,
+        "value_max": 128,
+        "values": [
+          "OFF",
+          "1 - 128 \\# 00 54 0000 aaaa"
+        ],
+        "address": "0x10000053"
+      },
+      {
+        "offset": "0x0055",
+        "offset_int": 85,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 3:PC\\#",
+        "raw_text": "MEMORY MIDI 3:PC\\# (0 - 128) OFF, 1 - 128 \\# 00 56 0000 aaaa",
+        "address": "0x10000055"
+      },
+      {
+        "offset": "0x0057",
+        "offset_int": 87,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 3:CC1\\#",
+        "raw_text": "MEMORY MIDI 3:CC1\\# (0 - 128) OFF, 0 - 127",
+        "address": "0x10000057"
+      },
+      {
+        "offset": "0x0058",
+        "offset_int": 88,
+        "encoding": "0aaa aaaa",
+        "label": "MEMORY MIDI 3:CC1 VALUE",
+        "value_min": 0,
+        "value_max": 127,
+        "values": [
+          "\\# 00 59 0000 aaaa"
+        ],
+        "address": "0x10000058"
+      },
+      {
+        "offset": "0x005A",
+        "offset_int": 90,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 3:CC2\\#",
+        "raw_text": "MEMORY MIDI 3:CC2\\# (0 - 128) OFF, 0 - 127",
+        "address": "0x1000005A"
+      },
+      {
+        "offset": "0x005B",
+        "offset_int": 91,
+        "encoding": "0aaa aaaa",
+        "label": "MEMORY MIDI 3:CC2 VALUE",
+        "value_min": 0,
+        "value_max": 127,
+        "values": null,
+        "address": "0x1000005B"
+      },
+      {
+        "offset": "0x005C",
+        "offset_int": 92,
+        "encoding": "000a aaaa",
+        "label": "MEMORY MIDI 4:CH",
+        "value_min": 0,
+        "value_max": 16,
+        "values": [
+          "OFF",
+          "1 - 16 \\# 00 5D 0000 aaaa"
+        ],
+        "address": "0x1000005C"
+      },
+      {
+        "offset": "0x005E",
+        "offset_int": 94,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 4:BANK MSB",
+        "value_min": 0,
+        "value_max": 128,
+        "values": [
+          "OFF",
+          "1 - 128 \\# 00 5F 0000 aaaa"
+        ],
+        "address": "0x1000005E"
+      },
+      {
+        "offset": "0x0060",
+        "offset_int": 96,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 4:BANK LSB",
+        "value_min": 0,
+        "value_max": 128,
+        "values": [
+          "OFF",
+          "1 - 128 \\# 00 61 0000 aaaa"
+        ],
+        "address": "0x10000060"
+      },
+      {
+        "offset": "0x0062",
+        "offset_int": 98,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 4:PC\\#",
+        "raw_text": "MEMORY MIDI 4:PC\\# (0 - 128) OFF, 1 - 128 \\# 00 63 0000 aaaa",
+        "address": "0x10000062"
+      },
+      {
+        "offset": "0x0064",
+        "offset_int": 100,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 4:CC1\\#",
+        "raw_text": "MEMORY MIDI 4:CC1\\# (0 - 128) OFF, 0 - 127",
+        "address": "0x10000064"
+      },
+      {
+        "offset": "0x0065",
+        "offset_int": 101,
+        "encoding": "0aaa aaaa",
+        "label": "MEMORY MIDI 4:CC1 VALUE",
+        "value_min": 0,
+        "value_max": 127,
+        "values": [
+          "\\# 00 66 0000 aaaa"
+        ],
+        "address": "0x10000065"
+      },
+      {
+        "offset": "0x0067",
+        "offset_int": 103,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY MIDI 4:CC2\\#",
+        "raw_text": "MEMORY MIDI 4:CC2\\# (0 - 128) OFF, 0 - 127",
+        "address": "0x10000067"
+      },
+      {
+        "offset": "0x0068",
+        "offset_int": 104,
+        "encoding": "0aaa aaaa",
+        "label": "MEMORY MIDI 4:CC2 VALUE",
+        "value_min": 0,
+        "value_max": 127,
+        "values": null,
+        "address": "0x10000068"
+      },
+      {
+        "offset": "0x0069",
+        "offset_int": 105,
+        "encoding": "000a aaaa",
+        "label": "Knob1SettingFxItem",
+        "raw_text": "Knob1SettingFxItem (0 - 19) ",
+        "address": "0x10000069"
+      },
+      {
+        "offset": "0x006A",
+        "offset_int": 106,
+        "encoding": "000a aaaa",
+        "label": "Knob2SettingFxItem",
+        "raw_text": "Knob2SettingFxItem (0 - 19) ",
+        "address": "0x1000006A"
+      },
+      {
+        "offset": "0x006B",
+        "offset_int": 107,
+        "encoding": "000a aaaa",
+        "label": "Knob3SettingFxItem",
+        "raw_text": "Knob3SettingFxItem (0 - 19) ",
+        "address": "0x1000006B"
+      },
+      {
+        "offset": "0x006C",
+        "offset_int": 108,
+        "encoding": "000a aaaa",
+        "label": "Knob4SettingFxItem",
+        "raw_text": "Knob4SettingFxItem (0 - 19) \\# 00 6D 0000 aaaa",
+        "address": "0x1000006C"
+      },
+      {
+        "offset": "0x006E",
+        "offset_int": 110,
+        "encoding": "0000 bbbb",
+        "label": "00 6F 0000 cccc",
+        "raw_text": "00 6F 0000 cccc",
+        "address": "0x1000006E"
+      },
+      {
+        "offset": "0x0070",
+        "offset_int": 112,
+        "encoding": "0000 dddd",
+        "label": "KNOB1 SETTING",
+        "value_min": 0,
+        "value_max": 740,
+        "values": [
+          "\\# 00 71 0000 aaaa"
+        ],
+        "address": "0x10000070"
+      },
+      {
+        "offset": "0x0072",
+        "offset_int": 114,
+        "encoding": "0000 bbbb",
+        "label": "00 73 0000 cccc",
+        "raw_text": "00 73 0000 cccc",
+        "address": "0x10000072"
+      },
+      {
+        "offset": "0x0074",
+        "offset_int": 116,
+        "encoding": "0000 dddd",
+        "label": "KNOB2 SETTING",
+        "value_min": 0,
+        "value_max": 740,
+        "values": [
+          "\\# 00 75 0000 aaaa"
+        ],
+        "address": "0x10000074"
+      },
+      {
+        "offset": "0x0076",
+        "offset_int": 118,
+        "encoding": "0000 bbbb",
+        "label": "00 77 0000 cccc",
+        "raw_text": "00 77 0000 cccc",
+        "address": "0x10000076"
+      },
+      {
+        "offset": "0x0078",
+        "offset_int": 120,
+        "encoding": "0000 dddd",
+        "label": "KNOB3 SETTING",
+        "value_min": 0,
+        "value_max": 740,
+        "values": [
+          "\\# 00 79 0000 aaaa"
+        ],
+        "address": "0x10000078"
+      },
+      {
+        "offset": "0x007A",
+        "offset_int": 122,
+        "encoding": "0000 bbbb",
+        "label": "00 7B 0000 cccc",
+        "raw_text": "00 7B 0000 cccc",
+        "address": "0x1000007A"
+      },
+      {
+        "offset": "0x007C",
+        "offset_int": 124,
+        "encoding": "0000 dddd",
+        "label": "KNOB4 SETTING",
+        "value_min": 0,
+        "value_max": 740,
+        "values": null,
+        "address": "0x1000007C"
+      }
+    ]
+  },
+  "0x10000140 Memory_temp.MemoryLed": {
+    "base_address": "0x10000140",
+    "field_count": 4,
+    "_note": "Sub-region of Memory_temp (0x10000000) at +0x000140. Same layout repeats for user memory 1..200 at 0x20000000 + (mem-1)*0x60000.",
+    "fields": [
+      {
+        "offset": "0x0015",
+        "offset_int": 21,
+        "encoding": "0000 bbbb",
+        "label": "00 16 0000 cccc",
+        "raw_text": "00 16 0000 cccc",
+        "address": "0x10000155"
+      },
+      {
+        "offset": "0x0017",
+        "offset_int": 23,
+        "encoding": "0000 dddd",
+        "label": "00 18 0000 eeee",
+        "raw_text": "00 18 0000 eeee",
+        "address": "0x10000157"
+      },
+      {
+        "offset": "0x0019",
+        "offset_int": 25,
+        "encoding": "0000 ffff",
+        "label": "00 1A 0000 gggg",
+        "raw_text": "00 1A 0000 gggg",
+        "address": "0x10000159"
+      },
+      {
+        "offset": "0x001B",
+        "offset_int": 27,
+        "encoding": "0000 hhhh",
+        "label": "ON OFF STATE",
+        "value_min": 0,
+        "value_max": 2147483647,
+        "values": [
+          "\\*3"
+        ],
+        "address": "0x1000015B"
+      }
+    ]
+  },
+  "0x10000200 Memory_temp.Assign": {
+    "base_address": "0x10000200",
+    "field_count": 28,
+    "_note": "Sub-region of Memory_temp (0x10000000) at +0x000200. Same layout repeats for user memory 1..200 at 0x20000000 + (mem-1)*0x60000.",
+    "fields": [
+      {
+        "offset": "0x0000",
+        "offset_int": 0,
+        "encoding": "0000 000a",
+        "label": "SW",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x10000200"
+      },
+      {
+        "offset": "0x0001",
+        "offset_int": 1,
+        "encoding": "000a aaaa",
+        "label": "TARGET\\_FX\\_ITEM",
+        "value_min": 0,
+        "value_max": 19,
+        "values": [
+          "\\*2 \\# 00 02 0000 aaaa"
+        ],
+        "address": "0x10000201"
+      },
+      {
+        "offset": "0x0003",
+        "offset_int": 3,
+        "encoding": "0000 bbbb",
+        "label": "00 04 0000 cccc",
+        "raw_text": "00 04 0000 cccc",
+        "address": "0x10000203"
+      },
+      {
+        "offset": "0x0005",
+        "offset_int": 5,
+        "encoding": "0000 dddd",
+        "label": "TARGET",
+        "value_min": 0,
+        "value_max": 740,
+        "values": [
+          "\\*2 \\# 00 06 0000 aaaa"
+        ],
+        "address": "0x10000205"
+      },
+      {
+        "offset": "0x0007",
+        "offset_int": 7,
+        "encoding": "0000 bbbb",
+        "label": "00 08 0000 cccc",
+        "raw_text": "00 08 0000 cccc",
+        "address": "0x10000207"
+      },
+      {
+        "offset": "0x0009",
+        "offset_int": 9,
+        "encoding": "0000 dddd",
+        "label": "TARGET MIN",
+        "value_min": 0,
+        "value_max": 65535,
+        "values": [
+          "(0 - 127) x 127 \\# 00 0A 0000 aaaa"
+        ],
+        "address": "0x10000209"
+      },
+      {
+        "offset": "0x000B",
+        "offset_int": 11,
+        "encoding": "0000 bbbb",
+        "label": "00 0C 0000 cccc",
+        "raw_text": "00 0C 0000 cccc",
+        "address": "0x1000020B"
+      },
+      {
+        "offset": "0x000D",
+        "offset_int": 13,
+        "encoding": "0000 dddd",
+        "label": "TARGET MAX",
+        "value_min": 0,
+        "value_max": 65535,
+        "values": [
+          "(0 - 127) x 127"
+        ],
+        "address": "0x1000020D"
+      },
+      {
+        "offset": "0x000E",
+        "offset_int": 14,
+        "encoding": "0aaa aaaa",
+        "label": "SOURCE",
+        "value_min": 0,
+        "value_max": 83,
+        "values": [
+          "NUM 1",
+          "NUM 2",
+          "NUM 3",
+          "NUM 4",
+          "MAN 1",
+          "MAN 2",
+          "MAN 3",
+          "MAN 4",
+          "CUR NUM",
+          "BANK DOWN",
+          "BANK UP",
+          "CTL 1",
+          "CTL 2",
+          "CTL 3",
+          "CTL 4",
+          "EXP 1 SW",
+          "EXP 1",
+          "EXP 2",
+          "INT PDL",
+          "WAVE PDL",
+          "INPUT",
+          "CC\\# 1 - CC\\#31",
+          "CC\\# 64 - CC\\#95"
+        ],
+        "address": "0x1000020E"
+      },
+      {
+        "offset": "0x000F",
+        "offset_int": 15,
+        "encoding": "0000 000a",
+        "label": "MODE",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "TOGGLE",
+          "MOMENT"
+        ],
+        "address": "0x1000020F"
+      },
+      {
+        "offset": "0x0010",
+        "offset_int": 16,
+        "encoding": "0aaa aaaa",
+        "label": "WAVE RATE",
+        "value_min": 0,
+        "value_max": 118,
+        "values": [
+          "0 - 100",
+          "DoubleWholeNote",
+          "DottedWholeNote",
+          "WholeNote",
+          "DottedHalfNote",
+          "TripletWholeNote",
+          "HalfNote",
+          "DottedQuarterNote",
+          "TripletHalfNote",
+          "QuarterNote",
+          "Dotted8thNote",
+          "TripletQuarterNote",
+          "8thNote",
+          "Dotted16thNote",
+          "Triplet8thNote",
+          "16thNote",
+          "Dotted32ndNote",
+          "Triplet16thNote",
+          "32ndNote"
+        ],
+        "address": "0x10000210"
+      },
+      {
+        "offset": "0x0011",
+        "offset_int": 17,
+        "encoding": "0000 00aa",
+        "label": "WAVEFORM",
+        "value_min": 0,
+        "value_max": 2,
+        "values": [
+          "SAW",
+          "TRI",
+          "SINE"
+        ],
+        "address": "0x10000211"
+      },
+      {
+        "offset": "0x0012",
+        "offset_int": 18,
+        "encoding": "0aaa aaaa",
+        "label": "INT PDL TRIGGER",
+        "value_min": 0,
+        "value_max": 83,
+        "values": [
+          "MEM CHANGE",
+          "NUM 1",
+          "NUM 2",
+          "NUM 3",
+          "NUM 4",
+          "MAN 1",
+          "MAN 2",
+          "MAN 3",
+          "MAN 4",
+          "CUR NUM",
+          "BANK DOWN",
+          "BANK UP",
+          "CTL 1",
+          "CTL 2",
+          "CTL 3",
+          "CTL 4",
+          "EXP 1 SW",
+          "EXP 1 PDL-LO",
+          "EXP 1 PDL-MID",
+          "EXP 1 PDL-HI",
+          "EXP 2",
+          "CC\\# 1 - CC\\#31",
+          "CC\\# 64 - CC\\#95"
+        ],
+        "address": "0x10000212"
+      },
+      {
+        "offset": "0x0013",
+        "offset_int": 19,
+        "encoding": "0aaa aaaa",
+        "label": "INT PDL TIME",
+        "value_min": 0,
+        "value_max": 100,
+        "values": null,
+        "address": "0x10000213"
+      },
+      {
+        "offset": "0x0014",
+        "offset_int": 20,
+        "encoding": "0000 00aa",
+        "label": "INT PDL CURVE",
+        "value_min": 0,
+        "value_max": 2,
+        "values": [
+          "LINEAR",
+          "SLOW RISE",
+          "FAST RISE \\# 00 15 0000 aaaa"
+        ],
+        "address": "0x10000214"
+      },
+      {
+        "offset": "0x0016",
+        "offset_int": 22,
+        "encoding": "0000 bbbb",
+        "label": "00 17 0000 cccc",
+        "raw_text": "00 17 0000 cccc",
+        "address": "0x10000216"
+      },
+      {
+        "offset": "0x0018",
+        "offset_int": 24,
+        "encoding": "0000 dddd",
+        "label": "ACT RANGE LO",
+        "value_min": 0,
+        "value_max": 16382,
+        "values": [
+          "(0 - 126) x 127 \\# 00 19 0000 aaaa"
+        ],
+        "address": "0x10000218"
+      },
+      {
+        "offset": "0x001A",
+        "offset_int": 26,
+        "encoding": "0000 bbbb",
+        "label": "00 1B 0000 cccc",
+        "raw_text": "00 1B 0000 cccc",
+        "address": "0x1000021A"
+      },
+      {
+        "offset": "0x001C",
+        "offset_int": 28,
+        "encoding": "0000 dddd",
+        "label": "ACT RANGE HI",
+        "value_min": 1,
+        "value_max": 16383,
+        "values": [
+          "(1 - 127) x 127"
+        ],
+        "address": "0x1000021C"
+      },
+      {
+        "offset": "0x001D",
+        "offset_int": 29,
+        "encoding": "000a aaaa",
+        "label": "MIDI CH",
+        "value_min": 0,
+        "value_max": 16,
+        "values": [
+          "SYSTEM",
+          "1 - 16"
+        ],
+        "address": "0x1000021D"
+      },
+      {
+        "offset": "0x001E",
+        "offset_int": 30,
+        "encoding": "0aaa aaaa",
+        "label": "MIDI CC\\#",
+        "raw_text": "MIDI CC\\# (0 - 127) \\# 00 1F 0000 aaaa",
+        "address": "0x1000021E"
+      },
+      {
+        "offset": "0x0020",
+        "offset_int": 32,
+        "encoding": "0000 bbbb",
+        "label": "00 21 0000 cccc",
+        "raw_text": "00 21 0000 cccc",
+        "address": "0x10000220"
+      },
+      {
+        "offset": "0x0022",
+        "offset_int": 34,
+        "encoding": "0000 dddd",
+        "label": "MIDI CC VALUE MIN",
+        "value_min": 0,
+        "value_max": 16383,
+        "values": [
+          "(0 - 127) x 127 \\# 00 23 0000 aaaa"
+        ],
+        "address": "0x10000222"
+      },
+      {
+        "offset": "0x0024",
+        "offset_int": 36,
+        "encoding": "0000 bbbb",
+        "label": "00 25 0000 cccc",
+        "raw_text": "00 25 0000 cccc",
+        "address": "0x10000224"
+      },
+      {
+        "offset": "0x0026",
+        "offset_int": 38,
+        "encoding": "0000 dddd",
+        "label": "MIDI CC VALUE MAX",
+        "value_min": 0,
+        "value_max": 16383,
+        "values": [
+          "(0 - 127) x 127"
+        ],
+        "address": "0x10000226"
+      },
+      {
+        "offset": "0x0028",
+        "offset_int": 40,
+        "encoding": "0aaa aaaa",
+        "label": "MIDI PC\\#",
+        "raw_text": "MIDI PC\\# (0 - 127) 1 - 128 \\+------------------------------------------------------------------------------+ Offset Address Description \\# 00 29 0000 aaaa",
+        "address": "0x10000228"
+      },
+      {
+        "offset": "0x002A",
+        "offset_int": 42,
+        "encoding": "0000 bbbb",
+        "label": "MIDI BANK MSB",
+        "value_min": 0,
+        "value_max": 128,
+        "values": [
+          "OFF",
+          "1 - 128 \\# 00 2B 0000 aaaa"
+        ],
+        "address": "0x1000022A"
+      },
+      {
+        "offset": "0x002C",
+        "offset_int": 44,
+        "encoding": "0000 bbbb",
+        "label": "MIDI BANK LSB",
+        "value_min": 0,
+        "value_max": 128,
+        "values": [
+          "OFF",
+          "1 - 128 From \"SW\" to \"MIDI BANK LSB\" are group parameters. The DT1 to each parameter is temporarily suspended",
+          "and the DT1 to the group parameter final address automatically checks the pending parameters",
+          "and if there is no problem",
+          "the value is set. If the value is incomplete it will not be set. Parameters before set are read out for the RQ1 to pending parameters. Pending values can not be read. The values of all parameters must be set in the above range. If it is out of range",
+          "no value will be written. The TARGET MIN and the TARGET MAX must be in the range from the lower limit to the upper limit to the parameter specified by the TARGET. If the TARGET is set to the MIDI CC\\#",
+          "the TARGET MIN and the TARGET MAX must be set from -32768 to 32767\\. If the TARGET is set to the MIDI PC\\#",
+          "the TARGET MIN and the TARGET MAX must be set from 0 to 1\\. These are the special rule. In addition",
+          "you need to add 32768 to the value set for the TARGET MIN or the TARGET MAX. For example",
+          "it the TARGET is set to COMP:SUSTAIN and you set the TARGET MIN to 0 and the TARGET MAX to 100",
+          "you must set (0 \\+ 32768) \\= 32768 for the TARGET MIN and (100 \\+ 32768) \\= 32868 for the TARGET MAX. The ACT RANGE HI must be set to a value equal to or greater than the ACT RANGE LO. The MIDI BANK LSB must be set to OFF",
+          "if the MIDI BANK MSB is set to OFF."
+        ],
+        "address": "0x1000022C"
+      }
+    ]
+  },
+  "0x10000F00 Memory_temp.MemoryEfct": {
+    "base_address": "0x10000F00",
+    "field_count": 59,
+    "_note": "Sub-region of Memory_temp (0x10000000) at +0x000F00. Same layout repeats for user memory 1..200 at 0x20000000 + (mem-1)*0x60000.",
+    "fields": [
+      {
+        "offset": "0x0001",
+        "offset_int": 1,
+        "encoding": "0000 bbbb",
+        "label": "MEMORY LEVEL",
+        "value_min": 0,
+        "value_max": 200,
+        "values": [
+          "\\# 00 02 0000 aaaa"
+        ],
+        "address": "0x10000F01"
+      },
+      {
+        "offset": "0x0003",
+        "offset_int": 3,
+        "encoding": "0000 bbbb",
+        "label": "00 04 0000 cccc",
+        "raw_text": "00 04 0000 cccc",
+        "address": "0x10000F03"
+      },
+      {
+        "offset": "0x0005",
+        "offset_int": 5,
+        "encoding": "0000 dddd",
+        "label": "BPM",
+        "value_min": 400,
+        "value_max": 2500,
+        "values": null,
+        "address": "0x10000F05"
+      },
+      {
+        "offset": "0x0006",
+        "offset_int": 6,
+        "encoding": "0000 aaaa",
+        "label": "KEY",
+        "value_min": 0,
+        "value_max": 11,
+        "values": [
+          "C(Am)",
+          "Db(Bbm)",
+          "D(Bm)",
+          "Eb(Cm)",
+          "E(C\\#m)",
+          "F(Dm)",
+          "F\\#(D\\#m)",
+          "G(Em)",
+          "Ab(Fm)",
+          "A(F\\#m)",
+          "Bb(Gm)",
+          "B(G\\#m)"
+        ],
+        "address": "0x10000F06"
+      },
+      {
+        "offset": "0x0007",
+        "offset_int": 7,
+        "encoding": "0000 000a",
+        "label": "AMP CTL1",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x10000F07"
+      },
+      {
+        "offset": "0x0008",
+        "offset_int": 8,
+        "encoding": "0000 000a",
+        "label": "AMP CTL2",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x10000F08"
+      },
+      {
+        "offset": "0x0009",
+        "offset_int": 9,
+        "encoding": "0000 000a",
+        "label": "CARRYOVER",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x10000F09"
+      },
+      {
+        "offset": "0x000A",
+        "offset_int": 10,
+        "encoding": "0000 000a",
+        "label": "TEMPO HOLD",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x10000F0A"
+      },
+      {
+        "offset": "0x000B",
+        "offset_int": 11,
+        "encoding": "0aaa aaaa",
+        "label": "INPUT SENS",
+        "value_min": 0,
+        "value_max": 100,
+        "values": null,
+        "address": "0x10000F0B"
+      },
+      {
+        "offset": "0x000C",
+        "offset_int": 12,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN TOP ITEM",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F0C"
+      },
+      {
+        "offset": "0x000D",
+        "offset_int": 13,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM0",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F0D"
+      },
+      {
+        "offset": "0x000E",
+        "offset_int": 14,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM1",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F0E"
+      },
+      {
+        "offset": "0x000F",
+        "offset_int": 15,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM2",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F0F"
+      },
+      {
+        "offset": "0x0010",
+        "offset_int": 16,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM3",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F10"
+      },
+      {
+        "offset": "0x0011",
+        "offset_int": 17,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM4",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F11"
+      },
+      {
+        "offset": "0x0012",
+        "offset_int": 18,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM5",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F12"
+      },
+      {
+        "offset": "0x0013",
+        "offset_int": 19,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM6",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F13"
+      },
+      {
+        "offset": "0x0014",
+        "offset_int": 20,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM7",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F14"
+      },
+      {
+        "offset": "0x0015",
+        "offset_int": 21,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM8",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F15"
+      },
+      {
+        "offset": "0x0016",
+        "offset_int": 22,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM9",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F16"
+      },
+      {
+        "offset": "0x0017",
+        "offset_int": 23,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM10",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F17"
+      },
+      {
+        "offset": "0x0018",
+        "offset_int": 24,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM11",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F18"
+      },
+      {
+        "offset": "0x0019",
+        "offset_int": 25,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM12",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F19"
+      },
+      {
+        "offset": "0x001A",
+        "offset_int": 26,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM13",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F1A"
+      },
+      {
+        "offset": "0x001B",
+        "offset_int": 27,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM14",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F1B"
+      },
+      {
+        "offset": "0x001C",
+        "offset_int": 28,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM15",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F1C"
+      },
+      {
+        "offset": "0x001D",
+        "offset_int": 29,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM16",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F1D"
+      },
+      {
+        "offset": "0x001E",
+        "offset_int": 30,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM17",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F1E"
+      },
+      {
+        "offset": "0x001F",
+        "offset_int": 31,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM18",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F1F"
+      },
+      {
+        "offset": "0x0020",
+        "offset_int": 32,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM19",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F20"
+      },
+      {
+        "offset": "0x0021",
+        "offset_int": 33,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM20",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F21"
+      },
+      {
+        "offset": "0x0022",
+        "offset_int": 34,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM21",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F22"
+      },
+      {
+        "offset": "0x0023",
+        "offset_int": 35,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM22",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F23"
+      },
+      {
+        "offset": "0x0024",
+        "offset_int": 36,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM23",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F24"
+      },
+      {
+        "offset": "0x0025",
+        "offset_int": 37,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM24",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F25"
+      },
+      {
+        "offset": "0x0026",
+        "offset_int": 38,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM25",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F26"
+      },
+      {
+        "offset": "0x0027",
+        "offset_int": 39,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM26",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F27"
+      },
+      {
+        "offset": "0x0028",
+        "offset_int": 40,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM27",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F28"
+      },
+      {
+        "offset": "0x0029",
+        "offset_int": 41,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM28",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F29"
+      },
+      {
+        "offset": "0x002A",
+        "offset_int": 42,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM29",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F2A"
+      },
+      {
+        "offset": "0x002B",
+        "offset_int": 43,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM30",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F2B"
+      },
+      {
+        "offset": "0x002C",
+        "offset_int": 44,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM31",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F2C"
+      },
+      {
+        "offset": "0x002D",
+        "offset_int": 45,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM32",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F2D"
+      },
+      {
+        "offset": "0x002E",
+        "offset_int": 46,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM33",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F2E"
+      },
+      {
+        "offset": "0x002F",
+        "offset_int": 47,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM34",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F2F"
+      },
+      {
+        "offset": "0x0030",
+        "offset_int": 48,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM35",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F30"
+      },
+      {
+        "offset": "0x0031",
+        "offset_int": 49,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM36",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F31"
+      },
+      {
+        "offset": "0x0032",
+        "offset_int": 50,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM37",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F32"
+      },
+      {
+        "offset": "0x0033",
+        "offset_int": 51,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM38",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F33"
+      },
+      {
+        "offset": "0x0034",
+        "offset_int": 52,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM39",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F34"
+      },
+      {
+        "offset": "0x0035",
+        "offset_int": 53,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM40",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F35"
+      },
+      {
+        "offset": "0x0036",
+        "offset_int": 54,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM41",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48 \\+------------------------------------------------------------------------------+ Offset Address Description"
+        ],
+        "address": "0x10000F36"
+      },
+      {
+        "offset": "0x0037",
+        "offset_int": 55,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM42",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F37"
+      },
+      {
+        "offset": "0x0038",
+        "offset_int": 56,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM43",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F38"
+      },
+      {
+        "offset": "0x0039",
+        "offset_int": 57,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM44",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F39"
+      },
+      {
+        "offset": "0x003A",
+        "offset_int": 58,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM45",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F3A"
+      },
+      {
+        "offset": "0x003B",
+        "offset_int": 59,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM46",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F3B"
+      },
+      {
+        "offset": "0x003C",
+        "offset_int": 60,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM47",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F3C"
+      },
+      {
+        "offset": "0x003D",
+        "offset_int": 61,
+        "encoding": "00aa aaaa",
+        "label": "CHAIN NEXT ITEM48",
+        "value_min": 0,
+        "value_max": 49,
+        "values": [
+          "-1 - 48"
+        ],
+        "address": "0x10000F3D"
+      }
+    ]
+  },
+  "0x10001100 Memory_temp.MemoryFxItem": {
+    "base_address": "0x10001100",
+    "field_count": 78,
+    "_note": "Sub-region of Memory_temp (0x10000000) at +0x001100. Same layout repeats for user memory 1..200 at 0x20000000 + (mem-1)*0x60000.",
+    "fields": [
+      {
+        "offset": "0x0000",
+        "offset_int": 0,
+        "encoding": "0aaa aaaa",
+        "label": "TYPE",
+        "value_min": 0,
+        "value_max": 82,
+        "values": [
+          "AC GUITAR SIMULATOR",
+          "AC RESONANCE",
+          "AIRD PREAMP",
+          "AIRD BASS PREAMP",
+          "CHORUS",
+          "BASS CHORUS",
+          "PRIME CHORUS",
+          "CLASSIC-VIBE",
+          "COMPRESSOR",
+          "X-COMP",
+          "X-BASS COMP",
+          "DEFRETTER",
+          "BASS DEFRETTER",
+          "DELAY",
+          "DELAY PLUS",
+          "ANALOG DELAY",
+          "SPACE ECHO",
+          "SHIMMER DELAY",
+          "TWIST",
+          "WARP",
+          "PARAMETRIC EQUALIZER",
+          "GRAPHIC EQUALIZER",
+          "FLANGER",
+          "BASS FLANGER",
+          "FLANGER PRIME",
+          "BASS FLANGER PRIME",
+          "HARMONIST",
+          "BASS HARMONIST",
+          "PHRASE LOOP",
+          "DIVIDER",
+          "SPLITTER",
+          "MIXER",
+          "NOISE SUPPRESSOR",
+          "OCTAVE",
+          "OCTAVE POLY",
+          "OCTAVE BASS",
+          "BOOSTER",
+          "OVERDRIVE",
+          "BASS OVERDRIVE",
+          "DISTORTION",
+          "BASS DISTORTION",
+          "FUZZ",
+          "BASS FUZZ",
+          "X-OD",
+          "X-BASS OD",
+          "X-DS",
+          "METAL",
+          "BASS METAL",
+          "OVERTONE",
+          "PAN",
+          "FOOT VOLUME",
+          "PEDAL BEND",
+          "BASS PEDAL BEND",
+          "WAH",
+          "BASS\\_WAH",
+          "PHASER",
+          "BASS PHASER",
+          "PRIME PHASER",
+          "PRIME BASS PHASER",
+          "SCRIPT PHASER",
+          "PITCH SHIFTER",
+          "BASS PITCH SHIFTER",
+          "REVERB",
+          "REVERB PLUS",
+          "SHIMMER REVERB",
+          "TERA ECHO",
+          "RING MODULATOR",
+          "ROTARY",
+          "S-BEND",
+          "BASS S-BEND",
+          "SLOW GEAR",
+          "BASS SLOW GEAR",
+          "TOUCH WAH",
+          "BASS TOUCH WAH",
+          "TREMOLO",
+          "VIBRATO",
+          "VIBRATO PRIME",
+          "SEND/RETURN",
+          "SLICER",
+          "HUMANIZER",
+          "FEEDBACKER",
+          "SITAR SIM",
+          "AUTO WAH"
+        ],
+        "address": "0x10001100"
+      },
+      {
+        "offset": "0x0001",
+        "offset_int": 1,
+        "encoding": "0000 000a",
+        "label": "OFF/ON",
+        "value_min": 0,
+        "value_max": 1,
+        "values": [
+          "OFF",
+          "ON"
+        ],
+        "address": "0x10001101"
+      },
+      {
+        "offset": "0x0002",
+        "offset_int": 2,
+        "encoding": "0000 aaaa",
+        "label": "DuplicationNumber",
+        "raw_text": "DuplicationNumber (0 - 9) \\# 00 03 0000 aaaa",
+        "address": "0x10001102"
+      },
+      {
+        "offset": "0x0004",
+        "offset_int": 4,
+        "encoding": "0000 bbbb",
+        "label": "00 05 0000 cccc",
+        "raw_text": "00 05 0000 cccc",
+        "address": "0x10001104"
+      },
+      {
+        "offset": "0x0006",
+        "offset_int": 6,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 1",
+        "raw_text": "FX Parameter 1 (12768 - 52768) -20000 - 20000 \\# 00 07 0000 aaaa",
+        "address": "0x10001106"
+      },
+      {
+        "offset": "0x0008",
+        "offset_int": 8,
+        "encoding": "0000 bbbb",
+        "label": "00 09 0000 cccc",
+        "raw_text": "00 09 0000 cccc",
+        "address": "0x10001108"
+      },
+      {
+        "offset": "0x000A",
+        "offset_int": 10,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 2",
+        "raw_text": "FX Parameter 2 (12768 - 52768) -20000 - 20000 \\# 00 0B 0000 aaaa",
+        "address": "0x1000110A"
+      },
+      {
+        "offset": "0x000C",
+        "offset_int": 12,
+        "encoding": "0000 bbbb",
+        "label": "00 0D 0000 cccc",
+        "raw_text": "00 0D 0000 cccc",
+        "address": "0x1000110C"
+      },
+      {
+        "offset": "0x000E",
+        "offset_int": 14,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 3",
+        "raw_text": "FX Parameter 3 (12768 - 52768) -20000 - 20000 \\# 00 0F 0000 aaaa",
+        "address": "0x1000110E"
+      },
+      {
+        "offset": "0x0010",
+        "offset_int": 16,
+        "encoding": "0000 bbbb",
+        "label": "00 11 0000 cccc",
+        "raw_text": "00 11 0000 cccc",
+        "address": "0x10001110"
+      },
+      {
+        "offset": "0x0012",
+        "offset_int": 18,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 4",
+        "raw_text": "FX Parameter 4 (12768 - 52768) -20000 - 20000 \\# 00 13 0000 aaaa",
+        "address": "0x10001112"
+      },
+      {
+        "offset": "0x0014",
+        "offset_int": 20,
+        "encoding": "0000 bbbb",
+        "label": "00 15 0000 cccc",
+        "raw_text": "00 15 0000 cccc",
+        "address": "0x10001114"
+      },
+      {
+        "offset": "0x0016",
+        "offset_int": 22,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 5",
+        "raw_text": "FX Parameter 5 (12768 - 52768) -20000 - 20000 \\# 00 17 0000 aaaa",
+        "address": "0x10001116"
+      },
+      {
+        "offset": "0x0018",
+        "offset_int": 24,
+        "encoding": "0000 bbbb",
+        "label": "00 19 0000 cccc",
+        "raw_text": "00 19 0000 cccc",
+        "address": "0x10001118"
+      },
+      {
+        "offset": "0x001A",
+        "offset_int": 26,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 6",
+        "raw_text": "FX Parameter 6 (12768 - 52768) -20000 - 20000 \\# 00 1B 0000 aaaa",
+        "address": "0x1000111A"
+      },
+      {
+        "offset": "0x001C",
+        "offset_int": 28,
+        "encoding": "0000 bbbb",
+        "label": "00 1D 0000 cccc",
+        "raw_text": "00 1D 0000 cccc",
+        "address": "0x1000111C"
+      },
+      {
+        "offset": "0x001E",
+        "offset_int": 30,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 7",
+        "raw_text": "FX Parameter 7 (12768 - 52768) -20000 - 20000 \\# 00 1F 0000 aaaa",
+        "address": "0x1000111E"
+      },
+      {
+        "offset": "0x0020",
+        "offset_int": 32,
+        "encoding": "0000 bbbb",
+        "label": "00 21 0000 cccc",
+        "raw_text": "00 21 0000 cccc",
+        "address": "0x10001120"
+      },
+      {
+        "offset": "0x0022",
+        "offset_int": 34,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 8",
+        "raw_text": "FX Parameter 8 (12768 - 52768) -20000 - 20000 \\# 00 23 0000 aaaa",
+        "address": "0x10001122"
+      },
+      {
+        "offset": "0x0024",
+        "offset_int": 36,
+        "encoding": "0000 bbbb",
+        "label": "00 25 0000 cccc",
+        "raw_text": "00 25 0000 cccc",
+        "address": "0x10001124"
+      },
+      {
+        "offset": "0x0026",
+        "offset_int": 38,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 9",
+        "raw_text": "FX Parameter 9 (12768 - 52768) -20000 - 20000 \\# 00 27 0000 aaaa",
+        "address": "0x10001126"
+      },
+      {
+        "offset": "0x0028",
+        "offset_int": 40,
+        "encoding": "0000 bbbb",
+        "label": "00 29 0000 cccc",
+        "raw_text": "00 29 0000 cccc",
+        "address": "0x10001128"
+      },
+      {
+        "offset": "0x002A",
+        "offset_int": 42,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 10",
+        "raw_text": "FX Parameter 10 (12768 - 52768) -20000 - 20000 \\# 00 2B 0000 aaaa",
+        "address": "0x1000112A"
+      },
+      {
+        "offset": "0x002C",
+        "offset_int": 44,
+        "encoding": "0000 bbbb",
+        "label": "00 2D 0000 cccc",
+        "raw_text": "00 2D 0000 cccc",
+        "address": "0x1000112C"
+      },
+      {
+        "offset": "0x002E",
+        "offset_int": 46,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 11",
+        "raw_text": "FX Parameter 11 (12768 - 52768) -20000 - 20000 \\# 00 2F 0000 aaaa",
+        "address": "0x1000112E"
+      },
+      {
+        "offset": "0x0030",
+        "offset_int": 48,
+        "encoding": "0000 bbbb",
+        "label": "00 31 0000 cccc",
+        "raw_text": "00 31 0000 cccc",
+        "address": "0x10001130"
+      },
+      {
+        "offset": "0x0032",
+        "offset_int": 50,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 12",
+        "raw_text": "FX Parameter 12 (12768 - 52768) -20000 - 20000 \\# 00 33 0000 aaaa",
+        "address": "0x10001132"
+      },
+      {
+        "offset": "0x0034",
+        "offset_int": 52,
+        "encoding": "0000 bbbb",
+        "label": "00 35 0000 cccc",
+        "raw_text": "00 35 0000 cccc",
+        "address": "0x10001134"
+      },
+      {
+        "offset": "0x0036",
+        "offset_int": 54,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 13",
+        "raw_text": "FX Parameter 13 (12768 - 52768) -20000 - 20000 \\# 00 37 0000 aaaa",
+        "address": "0x10001136"
+      },
+      {
+        "offset": "0x0038",
+        "offset_int": 56,
+        "encoding": "0000 bbbb",
+        "label": "00 39 0000 cccc",
+        "raw_text": "00 39 0000 cccc",
+        "address": "0x10001138"
+      },
+      {
+        "offset": "0x003A",
+        "offset_int": 58,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 14",
+        "raw_text": "FX Parameter 14 (12768 - 52768) -20000 - 20000 \\# 00 3B 0000 aaaa",
+        "address": "0x1000113A"
+      },
+      {
+        "offset": "0x003C",
+        "offset_int": 60,
+        "encoding": "0000 bbbb",
+        "label": "00 3D 0000 cccc",
+        "raw_text": "00 3D 0000 cccc",
+        "address": "0x1000113C"
+      },
+      {
+        "offset": "0x003E",
+        "offset_int": 62,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 15",
+        "raw_text": "FX Parameter 15 (12768 - 52768) -20000 - 20000 \\+------------------------------------------------------------------------------+ Offset Address Description \\# 00 3F 0000 aaaa",
+        "address": "0x1000113E"
+      },
+      {
+        "offset": "0x0040",
+        "offset_int": 64,
+        "encoding": "0000 bbbb",
+        "label": "00 41 0000 cccc",
+        "raw_text": "00 41 0000 cccc",
+        "address": "0x10001140"
+      },
+      {
+        "offset": "0x0042",
+        "offset_int": 66,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 16",
+        "raw_text": "FX Parameter 16 (12768 - 52768) -20000 - 20000 \\# 00 43 0000 aaaa",
+        "address": "0x10001142"
+      },
+      {
+        "offset": "0x0044",
+        "offset_int": 68,
+        "encoding": "0000 bbbb",
+        "label": "00 45 0000 cccc",
+        "raw_text": "00 45 0000 cccc",
+        "address": "0x10001144"
+      },
+      {
+        "offset": "0x0046",
+        "offset_int": 70,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 17",
+        "raw_text": "FX Parameter 17 (12768 - 52768) -20000 - 20000 \\# 00 47 0000 aaaa",
+        "address": "0x10001146"
+      },
+      {
+        "offset": "0x0048",
+        "offset_int": 72,
+        "encoding": "0000 bbbb",
+        "label": "00 49 0000 cccc",
+        "raw_text": "00 49 0000 cccc",
+        "address": "0x10001148"
+      },
+      {
+        "offset": "0x004A",
+        "offset_int": 74,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 18",
+        "raw_text": "FX Parameter 18 (12768 - 52768) -20000 - 20000 \\# 00 4B 0000 aaaa",
+        "address": "0x1000114A"
+      },
+      {
+        "offset": "0x004C",
+        "offset_int": 76,
+        "encoding": "0000 bbbb",
+        "label": "00 4D 0000 cccc",
+        "raw_text": "00 4D 0000 cccc",
+        "address": "0x1000114C"
+      },
+      {
+        "offset": "0x004E",
+        "offset_int": 78,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 19",
+        "raw_text": "FX Parameter 19 (12768 - 52768) -20000 - 20000 \\# 00 4F 0000 aaaa",
+        "address": "0x1000114E"
+      },
+      {
+        "offset": "0x0050",
+        "offset_int": 80,
+        "encoding": "0000 bbbb",
+        "label": "00 51 0000 cccc",
+        "raw_text": "00 51 0000 cccc",
+        "address": "0x10001150"
+      },
+      {
+        "offset": "0x0052",
+        "offset_int": 82,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 20",
+        "raw_text": "FX Parameter 20 (12768 - 52768) -20000 - 20000 \\# 00 53 0000 aaaa",
+        "address": "0x10001152"
+      },
+      {
+        "offset": "0x0054",
+        "offset_int": 84,
+        "encoding": "0000 bbbb",
+        "label": "00 55 0000 cccc",
+        "raw_text": "00 55 0000 cccc",
+        "address": "0x10001154"
+      },
+      {
+        "offset": "0x0056",
+        "offset_int": 86,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 21",
+        "raw_text": "FX Parameter 21 (12768 - 52768) -20000 - 20000 \\# 00 57 0000 aaaa",
+        "address": "0x10001156"
+      },
+      {
+        "offset": "0x0058",
+        "offset_int": 88,
+        "encoding": "0000 bbbb",
+        "label": "00 59 0000 cccc",
+        "raw_text": "00 59 0000 cccc",
+        "address": "0x10001158"
+      },
+      {
+        "offset": "0x005A",
+        "offset_int": 90,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 22",
+        "raw_text": "FX Parameter 22 (12768 - 52768) -20000 - 20000 \\# 00 5B 0000 aaaa",
+        "address": "0x1000115A"
+      },
+      {
+        "offset": "0x005C",
+        "offset_int": 92,
+        "encoding": "0000 bbbb",
+        "label": "00 5D 0000 cccc",
+        "raw_text": "00 5D 0000 cccc",
+        "address": "0x1000115C"
+      },
+      {
+        "offset": "0x005E",
+        "offset_int": 94,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 23",
+        "raw_text": "FX Parameter 23 (12768 - 52768) -20000 - 20000 \\# 00 5F 0000 aaaa",
+        "address": "0x1000115E"
+      },
+      {
+        "offset": "0x0060",
+        "offset_int": 96,
+        "encoding": "0000 bbbb",
+        "label": "00 61 0000 cccc",
+        "raw_text": "00 61 0000 cccc",
+        "address": "0x10001160"
+      },
+      {
+        "offset": "0x0062",
+        "offset_int": 98,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 24",
+        "raw_text": "FX Parameter 24 (12768 - 52768) -20000 - 20000 \\# 00 63 0000 aaaa",
+        "address": "0x10001162"
+      },
+      {
+        "offset": "0x0064",
+        "offset_int": 100,
+        "encoding": "0000 bbbb",
+        "label": "00 65 0000 cccc",
+        "raw_text": "00 65 0000 cccc",
+        "address": "0x10001164"
+      },
+      {
+        "offset": "0x0066",
+        "offset_int": 102,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 25",
+        "raw_text": "FX Parameter 25 (12768 - 52768) -20000 - 20000 \\# 00 67 0000 aaaa",
+        "address": "0x10001166"
+      },
+      {
+        "offset": "0x0068",
+        "offset_int": 104,
+        "encoding": "0000 bbbb",
+        "label": "00 69 0000 cccc",
+        "raw_text": "00 69 0000 cccc",
+        "address": "0x10001168"
+      },
+      {
+        "offset": "0x006A",
+        "offset_int": 106,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 26",
+        "raw_text": "FX Parameter 26 (12768 - 52768) -20000 - 20000 \\# 00 6B 0000 aaaa",
+        "address": "0x1000116A"
+      },
+      {
+        "offset": "0x006C",
+        "offset_int": 108,
+        "encoding": "0000 bbbb",
+        "label": "00 6D 0000 cccc",
+        "raw_text": "00 6D 0000 cccc",
+        "address": "0x1000116C"
+      },
+      {
+        "offset": "0x006E",
+        "offset_int": 110,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 27",
+        "raw_text": "FX Parameter 27 (12768 - 52768) -20000 - 20000 \\# 00 6F 0000 aaaa",
+        "address": "0x1000116E"
+      },
+      {
+        "offset": "0x0070",
+        "offset_int": 112,
+        "encoding": "0000 bbbb",
+        "label": "00 71 0000 cccc",
+        "raw_text": "00 71 0000 cccc",
+        "address": "0x10001170"
+      },
+      {
+        "offset": "0x0072",
+        "offset_int": 114,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 28",
+        "raw_text": "FX Parameter 28 (12768 - 52768) -20000 - 20000 \\# 00 73 0000 aaaa",
+        "address": "0x10001172"
+      },
+      {
+        "offset": "0x0074",
+        "offset_int": 116,
+        "encoding": "0000 bbbb",
+        "label": "00 75 0000 cccc",
+        "raw_text": "00 75 0000 cccc",
+        "address": "0x10001174"
+      },
+      {
+        "offset": "0x0076",
+        "offset_int": 118,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 29",
+        "raw_text": "FX Parameter 29 (12768 - 52768) -20000 - 20000 \\# 00 77 0000 aaaa",
+        "address": "0x10001176"
+      },
+      {
+        "offset": "0x0078",
+        "offset_int": 120,
+        "encoding": "0000 bbbb",
+        "label": "00 79 0000 cccc",
+        "raw_text": "00 79 0000 cccc",
+        "address": "0x10001178"
+      },
+      {
+        "offset": "0x007A",
+        "offset_int": 122,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 30",
+        "raw_text": "FX Parameter 30 (12768 - 52768) -20000 - 20000 \\# 00 7B 0000 aaaa",
+        "address": "0x1000117A"
+      },
+      {
+        "offset": "0x007C",
+        "offset_int": 124,
+        "encoding": "0000 bbbb",
+        "label": "00 7D 0000 cccc",
+        "raw_text": "00 7D 0000 cccc",
+        "address": "0x1000117C"
+      },
+      {
+        "offset": "0x007E",
+        "offset_int": 126,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 31",
+        "raw_text": "FX Parameter 31 (12768 - 52768) -20000 - 20000 \\# 00 7F 0000 aaaa",
+        "address": "0x1000117E"
+      },
+      {
+        "offset": "0x0100",
+        "offset_int": 256,
+        "encoding": "0000 bbbb",
+        "label": "01 01 0000 cccc",
+        "raw_text": "01 01 0000 cccc",
+        "address": "0x10001200"
+      },
+      {
+        "offset": "0x0102",
+        "offset_int": 258,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 32",
+        "raw_text": "FX Parameter 32 (12768 - 52768) -20000 - 20000 \\# 01 03 0000 aaaa",
+        "address": "0x10001202"
+      },
+      {
+        "offset": "0x0104",
+        "offset_int": 260,
+        "encoding": "0000 bbbb",
+        "label": "01 05 0000 cccc",
+        "raw_text": "01 05 0000 cccc",
+        "address": "0x10001204"
+      },
+      {
+        "offset": "0x0106",
+        "offset_int": 262,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 33",
+        "raw_text": "FX Parameter 33 (12768 - 52768) -20000 - 20000 \\# 01 07 0000 aaaa",
+        "address": "0x10001206"
+      },
+      {
+        "offset": "0x0108",
+        "offset_int": 264,
+        "encoding": "0000 bbbb",
+        "label": "01 09 0000 cccc",
+        "raw_text": "01 09 0000 cccc",
+        "address": "0x10001208"
+      },
+      {
+        "offset": "0x010A",
+        "offset_int": 266,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 34",
+        "raw_text": "FX Parameter 34 (12768 - 52768) -20000 - 20000 \\# 01 0B 0000 aaaa",
+        "address": "0x1000120A"
+      },
+      {
+        "offset": "0x010C",
+        "offset_int": 268,
+        "encoding": "0000 bbbb",
+        "label": "01 0D 0000 cccc",
+        "raw_text": "01 0D 0000 cccc",
+        "address": "0x1000120C"
+      },
+      {
+        "offset": "0x010E",
+        "offset_int": 270,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 35",
+        "raw_text": "FX Parameter 35 (12768 - 52768) -20000 - 20000 \\# 01 0F 0000 aaaa",
+        "address": "0x1000120E"
+      },
+      {
+        "offset": "0x0110",
+        "offset_int": 272,
+        "encoding": "0000 bbbb",
+        "label": "01 11 0000 cccc",
+        "raw_text": "01 11 0000 cccc",
+        "address": "0x10001210"
+      },
+      {
+        "offset": "0x0112",
+        "offset_int": 274,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 36",
+        "raw_text": "FX Parameter 36 (12768 - 52768) -20000 - 20000 \\+------------------------------------------------------------------------------+ Offset Address Description \\# 01 13 0000 aaaa",
+        "address": "0x10001212"
+      },
+      {
+        "offset": "0x0114",
+        "offset_int": 276,
+        "encoding": "0000 bbbb",
+        "label": "01 15 0000 cccc",
+        "raw_text": "01 15 0000 cccc",
+        "address": "0x10001214"
+      },
+      {
+        "offset": "0x0116",
+        "offset_int": 278,
+        "encoding": "0000 dddd",
+        "label": "FX Parameter 37",
+        "raw_text": "FX Parameter 37 (12768 - 52768) -20000 - 20000 \\# 01 17 0000 aaaa",
+        "address": "0x10001216"
+      },
+      {
+        "offset": "0x0118",
+        "offset_int": 280,
+        "encoding": "0000 bbbb",
+        "label": "01 19",
+        "raw_text": "01 19 ",
+        "address": "0x10001218"
+      }
+    ]
+  }
+}
