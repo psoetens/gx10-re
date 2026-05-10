@@ -452,10 +452,49 @@ def merge():
                 knob["documented_value_format"] = guide_spec["raw"]
                 knobs_extended += 1
 
+    # Cleanup: drop raw_to_display from numeric knobs where the linear
+    # step+offset formula reproduces every entry exactly. The map was
+    # just a probe-sample artefact (typically raws 0..15) and is
+    # redundant once step/offset are known. Keep it for:
+    #   - numeric_irregular  (the map IS the spec; formula doesn't fit)
+    #   - enum               (the map IS the spec; raw->label mapping)
+    rtd_dropped = 0
+    for tk, e in catalog.items():
+        if tk.startswith("_"):
+            continue
+        for knob in e.get("knobs", []):
+            if knob.get("kind") != "numeric":
+                continue
+            step = knob.get("step")
+            offset = knob.get("offset")
+            rtd = knob.get("raw_to_display")
+            if not rtd or step is None or offset is None:
+                continue
+            ok = True
+            for raw_str, disp_str in rtd.items():
+                try:
+                    raw = int(raw_str)
+                except ValueError:
+                    ok = False
+                    break
+                m = re.match(r"^\s*([+-]?\d+(?:\.\d+)?)", str(disp_str))
+                if not m:
+                    ok = False
+                    break
+                disp = float(m.group(1))
+                predicted = raw * step + offset
+                if abs(disp - predicted) > 1e-6:
+                    ok = False
+                    break
+            if ok:
+                del knob["raw_to_display"]
+                rtd_dropped += 1
+
     CATALOG.write_text(json.dumps(catalog, indent=2))
     print()
     print(f"  numeric knobs extended with documented range: {knobs_extended}")
     print(f"  enum knobs filled with documented values: {enums_filled}")
+    print(f"  raw_to_display dropped (redundant with step+offset): {rtd_dropped}")
 
 
 if __name__ == "__main__":
