@@ -51,10 +51,13 @@ fires identifies the knob unambiguously.
 
 ## Still uncertain after this round
 
-- **BRIGHT SW**: not displayed on BRIT STACK variant. Variant-
-  conditional. Needs a variant that exposes it (TWIN COMBO?
-  TWEED? — try variants where the original amp had a bright
-  switch).
+- **BRIGHT SW** (resolved 2026-05-10 via AMP_BASS test):
+  AMP_BASS exposes BRIGHT SW; the user toggled it once and the
+  broadcast fired at **offset `0x2B`** (cell `0x1000112B`). That's
+  the cell catalog had as the "gap" between SOLO LEVEL and SAG.
+  By symmetry, plain AMP almost certainly has BRIGHT SW at the
+  same offset — just hidden on the AMP variants we tested
+  (TRANSPARENT, BRIT STACK, DELUXE COMBO, DIAMOND AMP).
 
 ## Definitive AMP knob/dropdown layout (per live broadcast probe)
 
