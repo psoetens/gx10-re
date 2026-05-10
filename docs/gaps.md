@@ -283,7 +283,9 @@ User-memory names #0..199 already captured separately by
   matching byte→name tables. AIRD PREAMP / AIRD BASS PREAMP also get
   SP TYPE (30 entries) and MIC TYPE (9 entries).
 - All TYPE / SP TYPE / MIC TYPE enum tables surface in `docs/effect_catalog.md`
-  in the per-effect section (one row per byte value).
+  in the per-effect section (one row per byte value). *(2026-05-10:
+  superseded by `captures/bts_effect_catalog.json` — see
+  `docs/effects/README.md`.)*
 
 ---
 
@@ -313,6 +315,18 @@ to a chart-documented address. See
 ---
 
 ## 11. Knob NAME mismatches ✅ DONE — classified, 0 unresolved
+
+> **2026-05-10 update:** This section's claims have been
+> superseded by `captures/bts_effect_catalog.json` (Windows
+> BTS-driven sweep, 83 effects × 632 knobs, all addresses
+> verified live). The per-effect classification below was based
+> on `typebar_full` data which captured only sub-type 0 of each
+> effect — see `docs/effects/README.md`. The new catalog has
+> per-knob ground-truth address↔name pairs. Three concrete bugs
+> found during the resweep that this section missed:
+> - WAH names permuted by 3 positions for sub-type 2 (FAT WAH)
+> - COMP missing TONE / DIRECT MIX from the catalog table
+> - LOOP LEVEL listed at `0x10001107` — actual is `0x10001103`
 
 `tools/build_effect_catalog.py` produces `docs/effect_catalog.md`,
 a comprehensive per-effect catalogue (81 effects, 1786 lines) showing

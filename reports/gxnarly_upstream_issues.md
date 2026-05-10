@@ -1,15 +1,25 @@
 # gxnarly upstream issues — drafts ready to file
 
-**Date:** 2026-05-09
+**Date:** 2026-05-09 (updated 2026-05-10)
 **Source repo:** `/home/kaltan/src2/gxnarly` (this repo's downstream
 consumer, per `Plan-Phase-4.md:237`).
 **This repo's evidence base:** all references below cite committed
 files in `gx10-re/` (the `firmware-versions` branch) or live device
 probe transcripts in `reports/linux_probe_results.md`.
 
-These are five distinct issues against gxnarly. Copy-paste each one
+These are six distinct issues against gxnarly. Copy-paste each one
 into a separate GitHub Issue (or whatever tracker gxnarly uses) when
 you have repo access. Each one has a self-contained reproduction.
+
+> **2026-05-10 update — Issue 6 added.** A complete BTS-driven
+> effect catalog is now available at
+> `gx10-re/captures/bts_effect_catalog.json` (83 effects × 632
+> knobs × addresses verified live). This makes gxnarly's
+> `devices/gx10.json` / `devices/gx100.json` regenerable from a
+> single source of truth, and supersedes the typebar-derived
+> `docs/effect_catalog.md` that some of the issues below
+> referenced as the bug source. See **Issue 6** for the
+> regeneration recommendation.
 
 ---
 
@@ -365,8 +375,103 @@ distinguishes this product family).
 
 ---
 
+## Issue 6 — Regenerate `devices/{gx10,gx100}.json` from the new BTS-driven effect catalog
+
+**Severity:** P1 — supersedes part of Issue 1 with a more complete fix.
+
+**Background:** A Windows-side BTS USBPcap session (2026-05-10)
+produced `gx10-re/captures/bts_effect_catalog.json` — a complete,
+live-device-verified catalog covering all 83 GX-10 effect TYPE
+bytes (`0x00`..`0x52`), 632 knobs total. Each entry has:
+
+- `address` (verified live, plus 78 stride-inferred entries flagged
+  with `_address_inferred`)
+- `label` (BTS UI text)
+- `kind` (`numeric` / `enum` / `dropdown`)
+- `raw_min` / `raw_max` (probe-sampled — see caveats below)
+- `value_min` / `value_max` (display range, merged from the
+  Parameter Guide)
+- `unit`, `step`, `offset` (for the `display = raw*step + offset`
+  linear formula)
+- `raw_to_display` (sample mapping, raw 0..15 only)
+- `value_min_documented` / `value_max_documented` (Parameter Guide
+  full ranges)
+
+**Caveats** (from
+`captures/bts_typebar_resweep_v2/catalog_diff.md` and the catalog
+metadata):
+
+1. The catalog records **sub-type 0** for each TYPE byte. Effects
+   with sub-type-dependent knob layouts (WAH, AMP, …) need
+   per-`(TYPE, sub-type)` capture for full coverage. Tracked
+   upstream as task #33.
+2. 412/632 knobs have `raw_max=15` because the bulk-enum probe only
+   sampled raw 0..15. Documented full ranges live in
+   `value_*_documented`.
+3. 78 addresses are stride-inferred (`_address_inferred`) — derived
+   from the FxItem's known stride-4 layout. Verify before relying
+   on them for write paths.
+
+**Why this supersedes Issue 1's catalog claims:** Issue 1 cites the
+old `gx10-re/docs/effect_catalog.md` as the wire-format reference,
+which itself had bugs (WAH names permuted, COMP missing TONE +
+DIRECT MIX, LOOP LEVEL at the wrong address). The encoder bug in
+Issue 1 is real and unchanged, but the catalog source it was
+diagnosed against is no longer canonical.
+
+**Recommended fix:**
+
+- Replace `gxnarly/tools/dict/generate.py`'s consumption of
+  `gx10-re/docs/effect_catalog.md` and
+  `gx10-re/docs/effects/all_effects.json` with consumption of
+  `gx10-re/captures/bts_effect_catalog.json` directly.
+- For each effect, emit `parameters` entries from the catalog's
+  `knobs` array. Use `address` directly. Encoding is `knob_cell`
+  (after Issue 1 fix) for numeric knobs, `raw_byte` for enum/
+  dropdown knobs whose raw range is small.
+- Tag effects whose layout might differ from sub-type 0 with a
+  `sub_type_dependent: true` flag — block writes until per-sub-type
+  layouts are captured (or accept the sub-type-0-only limitation
+  with a warning).
+
+**Verification:**
+
+- Re-run `gxnarly-cli verify-dict` after regeneration. Should still
+  hit 100% round-trip on a live device.
+- Compare regenerated `devices/gx10.json` against the old one.
+  Expected diffs:
+  - WAH knob names corrected (per Issue 1 + the catalog diff)
+  - COMP gains TONE and DIRECT MIX entries
+  - LOOP LEVEL moves from `0x10001107` to `0x10001103`
+  - Five new effects already present at TYPE 0x4E..0x52 (SLICER,
+    HUMANIZER, FEEDBACKER, SITAR SIM, AUTO WAH) — verify gxnarly
+    already has these
+  - Two GX-10 SystemControl footswitch params at 0x64/0x65 (per
+    Issue 3)
+- Cross-check stride-inferred addresses (78 entries) by spot-probing
+  on the live device.
+
+**Source files in `gx10-re`:**
+
+- `captures/bts_effect_catalog.json` — the catalog
+- `captures/bts_typebar_resweep_v2/catalog_diff.md` — what changed
+  vs the old catalog
+- `captures/bts_typebar_resweep_v2/catalog_corrected.json` —
+  per-effect "permuted/correct/missing" classification
+- `captures/bts_wah_validation.summary.md` — sub-type-blindness
+  diagnosis
+- `reports/bts_capture_findings.md` — Windows session synthesis
+- `docs/effects/README.md` — status of the old catalog
+
+---
+
 ## Cross-link
 
 Each issue cites this repo's `linux_probe_results.md` for live
 device evidence. Pull the report, the manuals, and this issue list
 on the gxnarly side and the issues should be self-contained.
+
+The new effect catalog (`captures/bts_effect_catalog.json`) is the
+canonical reference for parameter address layouts; everything else
+in `docs/effect_catalog.md` and `docs/effects/all_effects.json` is
+superseded as of 2026-05-10 — see `docs/effects/README.md`.
