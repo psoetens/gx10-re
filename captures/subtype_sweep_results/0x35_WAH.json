@@ -1,0 +1,213 @@
+{
+  "type_hex": "0x35",
+  "title": "WAH (CRY WAH)",
+  "n_knobs": 5,
+  "n_sub_types": 6,
+  "results": [
+    {
+      "type_hex": "0x35",
+      "sub_type": 0,
+      "sub_type_name": "CRY WAH",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "EFFECT LEVEL",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 2,
+          "label": "DIRECT MIX",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 3,
+          "label": "PEDAL POSITION",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 4,
+          "label": "PEDAL MIN",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 5,
+          "label": "PEDAL MAX",
+          "address": "0x1000110F"
+        }
+      ],
+      "user_match": true,
+      "user_confirmed_at": "2026-05-10"
+    },
+    {
+      "type_hex": "0x35",
+      "sub_type": 1,
+      "sub_type_name": "VO WAH",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "EFFECT LEVEL",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 2,
+          "label": "DIRECT MIX",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 3,
+          "label": "PEDAL POSITION",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 4,
+          "label": "PEDAL MIN",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 5,
+          "label": "PEDAL MAX",
+          "address": "0x1000110F"
+        }
+      ],
+      "user_match": true,
+      "user_confirmed_at": "2026-05-10"
+    },
+    {
+      "type_hex": "0x35",
+      "sub_type": 2,
+      "sub_type_name": "FAT WAH",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "EFFECT LEVEL",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 2,
+          "label": "DIRECT MIX",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 3,
+          "label": "PEDAL POSITION",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 4,
+          "label": "PEDAL MIN",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 5,
+          "label": "PEDAL MAX",
+          "address": "0x1000110F"
+        }
+      ],
+      "user_match": true,
+      "user_confirmed_at": "2026-05-10"
+    },
+    {
+      "type_hex": "0x35",
+      "sub_type": 3,
+      "sub_type_name": "LIGHT WAH",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "EFFECT LEVEL",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 2,
+          "label": "DIRECT MIX",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 3,
+          "label": "PEDAL POSITION",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 4,
+          "label": "PEDAL MIN",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 5,
+          "label": "PEDAL MAX",
+          "address": "0x1000110F"
+        }
+      ],
+      "user_match": true,
+      "user_confirmed_at": "2026-05-10"
+    },
+    {
+      "type_hex": "0x35",
+      "sub_type": 4,
+      "sub_type_name": "7STRING WAH",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "EFFECT LEVEL",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 2,
+          "label": "DIRECT MIX",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 3,
+          "label": "PEDAL POSITION",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 4,
+          "label": "PEDAL MIN",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 5,
+          "label": "PEDAL MAX",
+          "address": "0x1000110F"
+        }
+      ],
+      "user_match": true,
+      "user_confirmed_at": "2026-05-10"
+    },
+    {
+      "type_hex": "0x35",
+      "sub_type": 5,
+      "sub_type_name": "RESO WAH",
+      "knob_order": [
+        {
+          "ordinal": 1,
+          "label": "EFFECT LEVEL",
+          "address": "0x10001113"
+        },
+        {
+          "ordinal": 2,
+          "label": "DIRECT MIX",
+          "address": "0x10001117"
+        },
+        {
+          "ordinal": 3,
+          "label": "PEDAL POSITION",
+          "address": "0x10001107"
+        },
+        {
+          "ordinal": 4,
+          "label": "PEDAL MIN",
+          "address": "0x1000110B"
+        },
+        {
+          "ordinal": 5,
+          "label": "PEDAL MAX",
+          "address": "0x1000110F"
+        }
+      ],
+      "user_match": true,
+      "user_confirmed_at": "2026-05-10"
+    }
+  ],
+  "_user_summary": "All 6 WAH sub-types matched catalog knob order on smoke test (Linux device, 2026-05-10)."
+}
