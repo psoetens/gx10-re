@@ -1313,7 +1313,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x1000112F",
@@ -1336,7 +1337,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001133",
@@ -1359,7 +1361,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001137",
@@ -1382,7 +1385,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0.0,
-        "value_max": 40.0
+        "value_max": 40.0,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x1000113B",
@@ -1399,7 +1403,8 @@
           "FLAT, 20.0 Hz\u201312.5 kHz"
         ],
         "_address_verified_2026_05_10": true,
-        "_probe_likely_truncated": "probe stops at raw=3 display='31.5Hz' but doc range 'FLAT, 20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep."
+        "_probe_likely_truncated": "probe stops at raw=3 display='31.5Hz' but doc range 'FLAT, 20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep.",
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x1000113F",
@@ -1416,7 +1421,8 @@
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
         "_address_verified_2026_05_10": true,
-        "_probe_likely_truncated": "probe stops at raw=3 display='40.0Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
+        "_probe_likely_truncated": "probe stops at raw=3 display='40.0Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep.",
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001143",
@@ -1458,7 +1464,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x1000114B",
@@ -1481,7 +1488,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x1000114F",
@@ -1504,7 +1512,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001153",
@@ -1527,7 +1536,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0.0,
-        "value_max": 40.0
+        "value_max": 40.0,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001157",
@@ -1563,7 +1573,8 @@
           "FLAT, 20.0 Hz\u201312.5 kHz"
         ],
         "_address_verified_2026_05_10": true,
-        "_probe_likely_truncated": "probe stops at raw=3 display='31.5Hz' but doc range 'FLAT, 20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep."
+        "_probe_likely_truncated": "probe stops at raw=3 display='31.5Hz' but doc range 'FLAT, 20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep.",
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x1000115F",
@@ -1579,7 +1590,8 @@
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_address_verified_2026_05_10": true
+        "_address_verified_2026_05_10": true,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       }
     ],
     "dropdowns": [
@@ -3223,7 +3235,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 120
+        "value_max": 120,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001137",
@@ -3240,7 +3253,8 @@
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
         "_address_verified_2026_05_10": true,
-        "_probe_likely_truncated": "probe stops at raw=5 display='63.0Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
+        "_probe_likely_truncated": "probe stops at raw=5 display='63.0Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep.",
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x1000113B",
@@ -3263,7 +3277,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 1,
-        "value_max": 2000
+        "value_max": 2000,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x1000113F",
@@ -3286,7 +3301,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001143",
@@ -3309,7 +3325,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 120
+        "value_max": 120,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001147",
@@ -3325,7 +3342,8 @@
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_address_verified_2026_05_10": true
+        "_address_verified_2026_05_10": true,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       }
     ],
     "dropdowns": [
@@ -4340,7 +4358,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001117",
@@ -4382,7 +4401,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       }
     ],
     "dropdowns": [
@@ -14060,7 +14080,8 @@
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x1000110F",
@@ -14072,18 +14093,24 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
         "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001113",
@@ -14095,18 +14122,24 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
         "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001117",
@@ -14118,18 +14151,24 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
         "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x1000111B",
@@ -14141,18 +14180,24 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
         "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x1000111F",
@@ -14164,18 +14209,24 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
         "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
       {
         "address": "0x10001123",
@@ -14187,18 +14238,24 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": false,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
         "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
-        "value_max": 100
+        "value_max": 100,
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       }
     ],
     "dropdowns": [],

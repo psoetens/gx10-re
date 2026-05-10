@@ -550,6 +550,33 @@ def merge():
                 knob["documented_value_format"] = guide_spec["raw"]
                 knobs_extended += 1
 
+    # Detect probe under-sampling for numeric_irregular: when the
+    # probe only observed one (or zero) raw->display mappings, the
+    # knob isn't really "irregular" — it's "unclassified due to
+    # insufficient samples". Usually means the cell was inactive
+    # under the probe's conditions (e.g. FEEDBACKER OSC-only knobs
+    # when MODE was set to STANDARD; CHORUS '1:'/'2:' knobs when
+    # the second voice was off). Flag for re-probe; downstream
+    # consumers should treat as "kind unknown, range from docs only".
+    probe_uncertain_count = 0
+    for tk, e in catalog.items():
+        if tk.startswith("_"):
+            continue
+        for knob in e.get("knobs", []):
+            if knob.get("kind") != "numeric_irregular":
+                continue
+            rtd = knob.get("raw_to_display") or {}
+            if len(rtd) <= 1:
+                knob["_probe_classification_uncertain"] = (
+                    f"probe observed only {len(rtd)} raw->display "
+                    f"sample(s) — too few to confirm 'irregular'. "
+                    f"Likely a mode-conditional cell that was "
+                    f"inactive under probe conditions. Kind is "
+                    f"unverified; trust value_*_documented for the "
+                    f"range and re-probe with the right pre-condition."
+                )
+                probe_uncertain_count += 1
+
     # Detect probe stuck-value bugs: enum knobs whose probe returned
     # the same display for every raw it tried. The GX-10 wire is
     # offset-binary with distinct decode per raw byte, so identical
@@ -623,6 +650,7 @@ def merge():
     print(f"  enum knobs filled with documented values: {enums_filled}")
     print(f"  raw_to_display dropped (redundant with step+offset): {rtd_dropped}")
     print(f"  enums flagged _probe_stuck_value: {probe_stuck_count}")
+    print(f"  numeric_irregular flagged _probe_classification_uncertain: {probe_uncertain_count}")
 
 
 if __name__ == "__main__":

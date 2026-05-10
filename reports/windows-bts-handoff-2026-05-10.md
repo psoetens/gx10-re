@@ -99,6 +99,7 @@ of type. This is wrong in three ways:
 | Linear numeric over-probed | **320 knobs** | 16 samples written when 1 (with a known offset/step) would have sufficed. Pure waste of wire time. |
 | Enum truncated | **8 knobs** | `values_documented` has more entries than `values` (e.g. BRIGHT SW probed 1/2, AMP DETECT probed 2/3, MODE 3/4). |
 | Enum stuck on one value | **5 knobs** | All 16 probed raws read back the same display (HUMANIZER MODE always "AUTO", VOWEL1 always "a", VOWEL2 always "i", HARMONIST KEY always "C(Am)" on 0x1A and 0x1B). Tagged `_probe_stuck_value`. Address may be wrong, or the knob has a pre-condition the probe didn't meet. |
+| `numeric_irregular` with ≤1 sample | **27 knobs** | Probe only observed `{raw → "0"}` (or similar) and defaulted to `numeric_irregular`. The kind is almost certainly wrong — these are mode-conditional cells the probe couldn't sweep (FEEDBACKER OSC-only knobs while MODE=NORMAL; CHORUS `1: …` / `2: …` while second voice off; DELAY+ stage-2 knobs while disabled). Tagged `_probe_classification_uncertain`. |
 
 **Strategy: pick probe length from the Parameter Guide spec.**
 
@@ -146,6 +147,17 @@ conditions. Possible causes to try, in order:
 3. Dead label — BTS UI exposes the row but the cell isn't connected
    to anything live. Mark the knob as `kind: "documented_only"` and
    rely on `values_documented`.
+
+**Mode-conditional knobs and `visible_on_variants`**: when the variant
+byte itself IS an audible "mode" toggle (e.g. FEEDBACKER MODE at
+`0x10001103` = NORMAL/OSC), the OSC-only knobs should carry
+`visible_on_variants: [1]`. The corrections overlay already records
+this for FEEDBACKER's six OSC-only knobs (`RISE TIME`,
+`OCT RISE TIME`, `FEEDBACK`, `OCT FEEDBACK`, `VIB RATE`,
+`VIB DEPTH`). Windows-side BTS UIA can scan exhaustively per
+(TYPE, variant) and populate this for the remaining mode-conditional
+families — likely candidates: CHORUS `1:`/`2:` voices, DELAY+ stage 2
+when the type is single-tap, HARMONIST KEY when scale is chromatic.
 
 **Per-effect knowledge already available:**
 

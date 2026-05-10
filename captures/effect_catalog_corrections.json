@@ -57,6 +57,17 @@
     "0x0E": {
       "_title": "DELAY+ — TIME at 0x23, plus duplicate cleanup",
       "TIME":         {"address": "0x10001123", "_note": "Catalog was missing TIME entirely; placed phantom 'TAP TIME' at 0x27 instead."}
+    },
+
+    "0x50": {
+      "_title": "FEEDBACKER — OSC-mode-only knobs (MODE byte is the variant at 0x10001103: 0=NORMAL, 1=OSC)",
+      "_source": "User report 2026-05-10: 'rise time and the knobs following are specific to OSC only'.",
+      "RISE TIME":     {"address": "0x1000110F", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]},
+      "OCT RISE TIME": {"address": "0x10001113", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]},
+      "FEEDBACK":      {"address": "0x10001117", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]},
+      "OCT FEEDBACK":  {"address": "0x1000111B", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]},
+      "VIB RATE":      {"address": "0x1000111F", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]},
+      "VIB DEPTH":     {"address": "0x10001123", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]}
     }
   },
 
