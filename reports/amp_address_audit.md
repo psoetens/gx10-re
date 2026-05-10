@@ -33,27 +33,85 @@ the catalog conflated SP TYPE / DIRECT MIX / MIC TYPE all at
 `0x1000113B` because the BTS sweep's stride logic placed three
 different parameters at the same offset.
 
-## Still uncertain — display-gated or address unknown
+## Resolved via passive broadcast capture (user-driven knob turns)
 
-SAG, RESONANCE, BRIGHT SW, MIC TYPE, MIC POSITION, MIC DISTANCE
-all displayed values that don't trivially match a single cell:
+Pivot: instead of writing distinct values and decoding by display,
+set editor-attach handshake and listen for unsolicited DT1
+broadcasts while the user turns specific knobs. The address that
+fires identifies the knob unambiguously.
 
-- **SAG**: display 0. Catalog `0x1000112F`. Cell verified to store
-  raw=11 after our write, but display fixed at 0. Either wrong
-  address, or display gated (e.g., requires a power-amp flag we
-  haven't set).
-- **RESONANCE**: display 0. Catalog `0x10001133`. Same situation
-  as SAG.
-- **BRIGHT SW**: catalog `0x10001137`, but that cell is now
-  confirmed DIRECT MIX. So BRIGHT SW is at an unknown address.
-- **MIC TYPE = DYN57**: enum index 1. Cell with raw=1 is `0x07`
-  (GAIN). MIC TYPE address is unknown — possibly at a cell beyond
-  `0x4B` we didn't write (and which retained an old value of 1) or
-  at an unmapped offset. Not `0x07` (which displays GAIN=1
-  correctly per the verified mapping above).
-- **MIC POSITION = 5cm**: numeric. Cell with raw=5 is `0x17`
-  (TREBLE). Same ambiguity as MIC TYPE.
-- **MIC DISTANCE = SHORT**: enum index 1. Same.
+| Address    | Knob (verified by broadcast)          | Catalog status       |
+|------------|---------------------------------------|----------------------|
+| `0x1000112F` | **SAG** (bipolar -10..+10)         | catalog correct ✓ — earlier "always 0" was just our test value clamping (raw 11/12/13 = display +11/+12/+13 → out of range → 0) |
+| `0x10001133` | **RESONANCE** (bipolar -10..+10)   | catalog correct ✓ — same root cause |
+| `0x1000113F` | **MIC POSITION**                   | catalog correct ✓ |
+| `0x10001143` | **MIC DISTANCE**                   | catalog correct ✓ — disambiguates from the duplicate that had MIC LEVEL there |
+| `0x10001137` | **DIRECT MIX** (re-confirmed)      | catalog WRONG (claimed `0x1000113B`) |
+| `0x1000114B` | **MIC LEVEL** (re-confirmed)       | catalog WRONG (claimed `0x10001143`) |
+
+## Still uncertain after this round
+
+- **BRIGHT SW**: not displayed on BRIT STACK variant. Variant-
+  conditional. Needs a variant that exposes it (TWIN COMBO?
+  TWEED? — try variants where the original amp had a bright
+  switch).
+
+## Definitive AMP knob/dropdown layout (per live broadcast probe)
+
+Captures concluded with two more single-knob broadcasts (MIC TYPE
+and MIC POSITION). The full corrected layout for AMP (TYPE 0x02,
+variant BRIT STACK = 14, SP TYPE = ORIGINAL = 1):
+
+| Address      | Knob               | Notes                          |
+|--------------|--------------------|--------------------------------|
+| `0x10001100` | TYPE byte (1B)     | AIRD PREAMP family selector    |
+| `0x10001103` | variant (4N)       | TRANSPARENT/NATURAL/.../BRIT STACK/... — 16 variants per catalog, broadcast went raw 8..20 so device may accept up to ≥20 |
+| `0x10001107` | GAIN               | catalog correct                |
+| `0x1000110B` | LEVEL              | catalog correct                |
+| `0x1000110F` | BASS               | catalog correct                |
+| `0x10001113` | MIDDLE             | catalog correct                |
+| `0x10001117` | TREBLE             | catalog correct                |
+| `0x1000111B` | PRESENCE           | catalog correct                |
+| `0x1000111F` | GAIN SW            | catalog correct (enum 0..2)    |
+| `0x10001123` | SOLO SW            | catalog correct (enum 0..1)    |
+| `0x10001127` | SOLO LEVEL         | catalog correct; display gated on SOLO SW = ON |
+| `0x1000112B` | (gap?)             | catalog skipped this offset    |
+| `0x1000112F` | SAG                | catalog correct (bipolar -10..+10; display clamps to 0 when raw outside 0x7FF6..0x800A) |
+| `0x10001133` | RESONANCE          | catalog correct (same as SAG)  |
+| `0x10001137` | DIRECT MIX         | **catalog WRONG** (claimed 0x1000113B) |
+| `0x1000113B` | SP TYPE            | **catalog WRONG** (claimed 0x10001103) |
+| `0x1000113F` | MIC TYPE           | **catalog WRONG** (claimed 0x1000113B) |
+| `0x10001143` | MIC DISTANCE       | catalog correct                |
+| `0x10001147` | MIC POSITION       | **catalog WRONG** (claimed 0x1000113F) |
+| `0x1000114B` | MIC LEVEL          | **catalog WRONG** (claimed 0x10001143) |
+| `0x1000114F`+| (unmapped)         | possibly BRIGHT SW (variant-conditional) |
+
+**Pattern:** the cells from `0x10001137` onward form a clean
+monotonic +4 sequence (DIRECT MIX → SP TYPE → MIC TYPE → MIC DISTANCE
+→ MIC POSITION → MIC LEVEL) but the catalog generator placed them
+out of order — SP TYPE wrongly at the variant-selector address
+`0x10001103`, and the MIC group shifted around. The order in
+the catalog matches the real order; only the addresses collide
+and shift.
+
+## Methodology that worked
+
+The **passive broadcast capture** (set editor-attach handshake,
+listen, user turns one knob at a time) is dramatically more
+reliable than the write-distinct-values-and-read-display approach
+for catalog audits. Reasons:
+
+1. The device tells us directly which address its knob writes to.
+2. No interpretation needed for enum vs numeric vs bipolar — the
+   address is unambiguous.
+3. No risk of writing out-of-range values that get clamped/modulo'd
+   into wrong-looking displays.
+4. User just turns one knob at a time and says "done" — no need to
+   read 17 displays in catalog order.
+
+Recommend this method as the **canonical catalog-audit tool**;
+deprecate the smoke-test ordinal-write approach for effects with
+many enum / bipolar / range-restricted knobs.
 
 ## Hypothesis: AMP edit screen has multiple "pages" with overlapping displays
 
