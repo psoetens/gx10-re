@@ -1,0 +1,131 @@
+{
+  "_doc": "Phase A address-gap audit findings.",
+  "_ts": "2026-05-10T23:08:57",
+  "findings": {
+    "0x0E": {
+      "title": "DELAY+",
+      "missing_offsets": [
+        "0x1F"
+      ],
+      "panel_elements": 22,
+      "gap_findings": {
+        "0x1F": {
+          "address": "0x1000111F",
+          "expected_value": 8,
+          "labels_at_this_value": []
+        }
+      },
+      "elapsed_s": 7.53
+    },
+    "0x30": {
+      "title": "OVERTONE",
+      "missing_offsets": [
+        "0x17"
+      ],
+      "panel_elements": 15,
+      "gap_findings": {
+        "0x17": {
+          "address": "0x10001117",
+          "expected_value": 6,
+          "labels_at_this_value": []
+        }
+      },
+      "elapsed_s": 7.21
+    },
+    "0x40": {
+      "title": "SHIMMER REVERB",
+      "missing_offsets": [
+        "0x2B"
+      ],
+      "panel_elements": 37,
+      "gap_findings": {
+        "0x2B": {
+          "address": "0x1000112B",
+          "expected_value": 11,
+          "labels_at_this_value": []
+        }
+      },
+      "elapsed_s": 7.83
+    },
+    "0x48": {
+      "title": "TOUCH WAH",
+      "missing_offsets": [
+        "0x13",
+        "0x17"
+      ],
+      "panel_elements": 15,
+      "gap_findings": {
+        "0x13": {
+          "address": "0x10001113",
+          "expected_value": 5,
+          "labels_at_this_value": [
+            "RESONANCE"
+          ]
+        },
+        "0x17": {
+          "address": "0x10001117",
+          "expected_value": 6,
+          "labels_at_this_value": [
+            "DECAY"
+          ]
+        }
+      },
+      "elapsed_s": 7.51
+    },
+    "0x49": {
+      "title": "BASS TOUCH WAH",
+      "missing_offsets": [
+        "0x13",
+        "0x17"
+      ],
+      "panel_elements": 15,
+      "gap_findings": {
+        "0x13": {
+          "address": "0x10001113",
+          "expected_value": 5,
+          "labels_at_this_value": [
+            "RESONANCE"
+          ]
+        },
+        "0x17": {
+          "address": "0x10001117",
+          "expected_value": 6,
+          "labels_at_this_value": [
+            "DECAY"
+          ]
+        }
+      },
+      "elapsed_s": 7.48
+    },
+    "0x4B": {
+      "title": "VIBRATO",
+      "missing_offsets": [
+        "0x0B"
+      ],
+      "panel_elements": 11,
+      "gap_findings": {
+        "0x0B": {
+          "address": "0x1000110B",
+          "expected_value": 3,
+          "labels_at_this_value": []
+        }
+      },
+      "elapsed_s": 7.33
+    },
+    "0x4F": {
+      "title": "HUMANIZER",
+      "missing_offsets": [
+        "0x0F"
+      ],
+      "panel_elements": 16,
+      "gap_findings": {
+        "0x0F": {
+          "address": "0x1000110F",
+          "expected_value": 4,
+          "labels_at_this_value": []
+        }
+      },
+      "elapsed_s": 7.15
+    }
+  }
+}

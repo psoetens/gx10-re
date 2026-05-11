@@ -52,8 +52,14 @@ def main():
     corrections = json.loads(CORRECTIONS_PATH.read_text())
 
     # Backup
-    shutil.copy(CATALOG_PATH, BACKUP_PATH)
-    print(f"  backed up to {BACKUP_PATH}")
+    # Only create the .bak on first apply. After that, .bak preserves
+    # the very-first-pre-corrections snapshot so we don't lose the
+    # audit-trail starting point each time we re-run.
+    if not BACKUP_PATH.exists():
+        shutil.copy(CATALOG_PATH, BACKUP_PATH)
+        print(f"  backed up to {BACKUP_PATH}")
+    else:
+        print(f"  .bak already exists (preserving original snapshot): {BACKUP_PATH}")
 
     # Build a per-effect change log
     changes: dict[str, list[str]] = {}

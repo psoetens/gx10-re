@@ -114,6 +114,58 @@ DIST_PATTERN_A_BYTES = {0x24, 0x25, 0x27, 0x28, 0x29, 0x2E}
 DIST_PATTERN_B_BYTES = {0x26, 0x2A, 0x2B, 0x2C, 0x2D, 0x2F}
 
 
+_PREFIX_PENALTY_PATTERNS = (
+    "TAP ", "1: ", "2: ", "OCT ", "VIB ",
+)
+
+
+def _label_phantom_score(label: str) -> int:
+    """Heuristic: lower score = "more likely to be the real label".
+    Used by `_dedup_phantoms` to pick the keeper from a duplicate
+    group. Penalises sub-section prefixes the BTS UI panel sometimes
+    leaks into adjacent cells, and prefers shorter labels."""
+    s = label.upper().strip()
+    score = len(s)
+    for pat in _PREFIX_PENALTY_PATTERNS:
+        if s.startswith(pat):
+            score += 100
+            break
+    return score
+
+
+def _dedup_phantoms(knobs: list[dict]) -> list[dict]:
+    """Group knobs by address; if a group has more than one entry, keep
+    only the entry with the lowest phantom score (shortest, no
+    sub-section prefix). Drop the rest. Returns a new list preserving
+    original order of the kept entries."""
+    keep_label_per_addr: dict[str, str] = {}
+    addr_groups: dict[str, list[dict]] = {}
+    for k in knobs:
+        a = k.get("address")
+        if not a:
+            continue
+        addr_groups.setdefault(a, []).append(k)
+    for addr, group in addr_groups.items():
+        if len(group) <= 1:
+            keep_label_per_addr[addr] = group[0]["label"]
+            continue
+        winner = min(group, key=lambda k: _label_phantom_score(k["label"]))
+        keep_label_per_addr[addr] = winner["label"]
+    out = []
+    seen_addrs: set[str] = set()
+    for k in knobs:
+        a = k.get("address")
+        if a is None:
+            out.append(k)
+            continue
+        if a in seen_addrs:
+            continue
+        if k["label"] == keep_label_per_addr.get(a):
+            out.append(k)
+            seen_addrs.add(a)
+    return out
+
+
 def label_to_address_map(catalog_entry: dict, type_byte: int,
                          catalog: dict) -> dict[str, str]:
     """Return {NORMALIZED_LABEL: address_hex}."""
@@ -211,6 +263,13 @@ def build():
                 inferred = 0x10001100 + next_known_offset
                 knob["address"] = f"0x{inferred:08X}"
                 knob["_address_inferred"] = True
+
+        # De-dup phantoms: if two knob entries claim the same address,
+        # keep the one with the shortest label without sub-section
+        # prefixes (TAP, 1:, 2:, OCT, etc.). The BTS bulk-enum sweep
+        # sometimes reads neighboring panel labels into the same cell
+        # when a multi-row layout is in play; this collapses them.
+        knobs_out = _dedup_phantoms(knobs_out)
 
         out[tkey] = {
             "title": title,

@@ -105,11 +105,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000110B",
@@ -122,13 +122,10 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "documented_enum_values": [
-          "-50\u20130\u2013+50"
-        ],
-        "_address_verified_2026_05_10": true,
         "value_min_documented": -50,
         "value_max_documented": 50,
-        "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
+        "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe.",
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000110F",
@@ -145,11 +142,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -196,11 +193,11 @@
         "value_max_documented": 120,
         "raw_min_documented": 0,
         "raw_max_documented": 120,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000110B",
@@ -217,11 +214,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000111F",
@@ -261,11 +258,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001113",
@@ -282,11 +279,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001117",
@@ -303,11 +300,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000111B",
@@ -324,11 +321,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001123",
@@ -365,11 +362,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112F",
@@ -384,8 +381,8 @@
         "offset": 0,
         "value_min_documented": -10,
         "value_max_documented": 10,
-        "_address_verified_2026_05_10": true,
-        "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-10 for documented min=-10; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
+        "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-10 for documented min=-10; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe.",
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001133",
@@ -400,8 +397,8 @@
         "offset": 0,
         "value_min_documented": -10,
         "value_max_documented": 10,
-        "_address_verified_2026_05_10": true,
-        "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-10 for documented min=-10; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
+        "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-10 for documented min=-10; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe.",
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112B",
@@ -439,27 +436,6 @@
         "_note": "Variant-conditional: only visible on the named variants. Same offset as AMP_BASS BRIGHT SW (verified live)."
       },
       {
-        "address": "0x10001137",
-        "label": "DIRECT MIX",
-        "kind": "numeric",
-        "raw_min": 0,
-        "raw_max": 100,
-        "value_min": 0,
-        "value_max": 100,
-        "unit": "",
-        "step": 1,
-        "offset": 0,
-        "value_min_documented": 0,
-        "value_max_documented": 100,
-        "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
-        "raw_min_probe_sample": 1,
-        "raw_max_probe_sample": 13,
-        "value_min_probe_sample": 1,
-        "value_max_probe_sample": 13
-      },
-      {
         "address": "0x1000113F",
         "label": "MIC TYPE",
         "kind": "enum",
@@ -491,30 +467,6 @@
         "_address_verified_2026_05_10": true
       },
       {
-        "address": "0x10001143",
-        "label": "MIC DISTANCE",
-        "kind": "enum",
-        "raw_min": 0,
-        "raw_max": 2,
-        "values": [
-          "SHORT",
-          "MEDIUM",
-          "LONG"
-        ],
-        "raw_to_display": {
-          "0": "SHORT",
-          "1": "MEDIUM",
-          "2": "LONG"
-        },
-        "values_documented": [
-          "SHORT",
-          "MEDIUM",
-          "LONG"
-        ],
-        "_address_verified_2026_05_10": true,
-        "_note": "Probe sampled raws 1..2 only so raw=0=SHORT was missed. Documented enum is SHORT/MEDIUM/LONG \u2192 raw 0/1/2."
-      },
-      {
         "address": "0x10001147",
         "label": "MIC POSITION",
         "kind": "numeric",
@@ -525,7 +477,6 @@
         "unit": "cm",
         "step": 1,
         "offset": 0,
-        "_address_verified_2026_05_10": true,
         "value_min_documented": 1,
         "value_max_documented": 10,
         "raw_min_documented": 0,
@@ -534,7 +485,8 @@
         "value_max_probe_sample": 10,
         "special_values": {
           "0": "CENTER"
-        }
+        },
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000114B",
@@ -551,11 +503,22 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 13,
         "value_min_probe_sample": 1,
-        "value_max_probe_sample": 13
+        "value_max_probe_sample": 13,
+        "_address_verified_2026_05_10": true
+      },
+      {
+        "address": "0x10001137",
+        "label": "DIRECT MIX",
+        "_address_verified_2026_05_10": true
+      },
+      {
+        "address": "0x10001143",
+        "label": "MIC DISTANCE",
+        "_address_verified_2026_05_10": true,
+        "_note": "Probe sampled raws 1..2 only so raw=0=SHORT was missed. Documented enum is SHORT/MEDIUM/LONG \u00e2\u2020\u2019 raw 0/1/2."
       }
     ],
     "dropdowns": [
@@ -905,27 +868,6 @@
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-10 for documented min=-10; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
       },
       {
-        "address": "0x10001137",
-        "label": "DIRECT MIX",
-        "kind": "numeric",
-        "raw_min": 0,
-        "raw_max": 100,
-        "value_min": 0,
-        "value_max": 100,
-        "unit": "",
-        "step": 1,
-        "offset": 0,
-        "value_min_documented": 0,
-        "value_max_documented": 100,
-        "raw_min_documented": 0,
-        "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
-        "raw_min_probe_sample": 1,
-        "raw_max_probe_sample": 13,
-        "value_min_probe_sample": 1,
-        "value_max_probe_sample": 13
-      },
-      {
         "address": "0x1000113F",
         "label": "MIC TYPE",
         "kind": "enum",
@@ -957,29 +899,6 @@
         "_address_verified_2026_05_10": true
       },
       {
-        "address": "0x10001143",
-        "label": "MIC DISTANCE",
-        "kind": "enum",
-        "raw_min": 0,
-        "raw_max": 2,
-        "values": [
-          "SHORT",
-          "MEDIUM",
-          "LONG"
-        ],
-        "raw_to_display": {
-          "0": "SHORT",
-          "1": "MEDIUM",
-          "2": "LONG"
-        },
-        "values_documented": [
-          "SHORT",
-          "MEDIUM",
-          "LONG"
-        ],
-        "_address_verified_2026_05_10": true
-      },
-      {
         "address": "0x10001147",
         "label": "MIC POSITION",
         "kind": "numeric",
@@ -990,7 +909,6 @@
         "unit": "cm",
         "step": 1,
         "offset": 0,
-        "_address_verified_2026_05_10": true,
         "value_min_documented": 1,
         "value_max_documented": 10,
         "raw_min_documented": 0,
@@ -999,7 +917,8 @@
         "value_max_probe_sample": 10,
         "special_values": {
           "0": "CENTER"
-        }
+        },
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000114B",
@@ -1016,11 +935,21 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 13,
         "value_min_probe_sample": 1,
-        "value_max_probe_sample": 13
+        "value_max_probe_sample": 13,
+        "_address_verified_2026_05_10": true
+      },
+      {
+        "address": "0x10001137",
+        "label": "DIRECT MIX",
+        "_address_verified_2026_05_10": true
+      },
+      {
+        "address": "0x10001143",
+        "label": "MIC DISTANCE",
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -1302,8 +1231,7 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": false,
-        "_address_verified_2026_05_10": true,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
@@ -1326,12 +1254,11 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 3,
         "raw_max_probe_sample": 3,
         "value_min_probe_sample": null,
@@ -1350,12 +1277,11 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 3,
         "raw_max_probe_sample": 3,
         "value_min_probe_sample": null,
@@ -1374,8 +1300,7 @@
         "raw_to_display": {
           "3": "1.5ms"
         },
-        "_address_inferred": false,
-        "_address_verified_2026_05_10": true,
+        "_address_inferred": true,
         "value_min_documented": 0.0,
         "value_max_documented": 40.0,
         "raw_min_documented": 0,
@@ -1398,11 +1323,10 @@
         "raw_to_display": {
           "3": "31.5Hz"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "documented_enum_values": [
           "FLAT, 20.0 Hz\u201312.5 kHz"
         ],
-        "_address_verified_2026_05_10": true,
         "_probe_likely_truncated": "probe stops at raw=3 display='31.5Hz' but doc range 'FLAT, 20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep.",
         "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
@@ -1416,11 +1340,10 @@
         "raw_to_display": {
           "3": "40.0Hz"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_address_verified_2026_05_10": true,
         "_probe_likely_truncated": "probe stops at raw=3 display='40.0Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep.",
         "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
@@ -1436,12 +1359,11 @@
         "raw_to_display": {
           "3": "MONO"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "values_documented": [
           "MONO",
           "STEREO"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x10001147",
@@ -1453,8 +1375,7 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": false,
-        "_address_verified_2026_05_10": true,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
@@ -1477,12 +1398,11 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 3,
         "raw_max_probe_sample": 3,
         "value_min_probe_sample": null,
@@ -1501,12 +1421,11 @@
         "raw_to_display": {
           "3": "3"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 3,
         "raw_max_probe_sample": 3,
         "value_min_probe_sample": null,
@@ -1525,8 +1444,7 @@
         "raw_to_display": {
           "3": "1.5ms"
         },
-        "_address_inferred": false,
-        "_address_verified_2026_05_10": true,
+        "_address_inferred": true,
         "value_min_documented": 0.0,
         "value_max_documented": 40.0,
         "raw_min_documented": 0,
@@ -1551,12 +1469,11 @@
         "raw_to_display": {
           "3": "TRI"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "values_documented": [
           "TRI",
           "SINE"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x1000115B",
@@ -1568,11 +1485,10 @@
         "raw_to_display": {
           "3": "31.5Hz"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "documented_enum_values": [
           "FLAT, 20.0 Hz\u201312.5 kHz"
         ],
-        "_address_verified_2026_05_10": true,
         "_probe_likely_truncated": "probe stops at raw=3 display='31.5Hz' but doc range 'FLAT, 20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep.",
         "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
@@ -1586,11 +1502,10 @@
         "raw_to_display": {
           "3": "6.30kHz"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_address_verified_2026_05_10": true,
         "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       }
     ],
@@ -2199,11 +2114,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000110B",
@@ -2220,11 +2135,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000110F",
@@ -2241,11 +2156,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001113",
@@ -2260,8 +2175,8 @@
         "offset": 0,
         "value_min_documented": -50,
         "value_max_documented": 50,
-        "_address_verified_2026_05_10": true,
-        "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
+        "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe.",
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001117",
@@ -2278,11 +2193,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -3015,11 +2930,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000112B",
@@ -3036,11 +2951,11 @@
         "value_max_documented": 120,
         "raw_min_documented": 0,
         "raw_max_documented": 120,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001107",
@@ -3089,8 +3004,8 @@
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_address_verified_2026_05_10": true,
-        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
+        "_probe_likely_truncated": "probe stops at raw=15 display='630Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep.",
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000110B",
@@ -3203,8 +3118,6 @@
         "unit": "ms",
         "step": 1,
         "offset": 0,
-        "_address_verified_2026_05_10": true,
-        "_note": "Catalog was missing TIME entirely; placed phantom 'TAP TIME' at 0x27 instead.",
         "value_min_documented": 1,
         "value_max_documented": 2000,
         "raw_min_documented": 1,
@@ -3212,7 +3125,9 @@
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 1,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true,
+        "_note": "Catalog was missing TIME entirely; placed phantom 'TAP TIME' at 0x27 instead."
       },
       {
         "address": "0x10001133",
@@ -3224,12 +3139,11 @@
         "raw_to_display": {
           "5": "5"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 120,
         "raw_min_documented": 0,
         "raw_max_documented": 120,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 5,
         "raw_max_probe_sample": 5,
         "value_min_probe_sample": null,
@@ -3248,11 +3162,10 @@
         "raw_to_display": {
           "5": "63.0Hz"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_address_verified_2026_05_10": true,
         "_probe_likely_truncated": "probe stops at raw=5 display='63.0Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep.",
         "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       },
@@ -3266,8 +3179,7 @@
         "raw_to_display": {
           "5": "300ms"
         },
-        "_address_inferred": false,
-        "_address_verified_2026_05_10": true,
+        "_address_inferred": true,
         "value_min_documented": 1,
         "value_max_documented": 2000,
         "raw_min_documented": 1,
@@ -3290,12 +3202,11 @@
         "raw_to_display": {
           "5": "30"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 5,
         "raw_max_probe_sample": 5,
         "value_min_probe_sample": null,
@@ -3314,12 +3225,11 @@
         "raw_to_display": {
           "5": "60"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 120,
         "raw_min_documented": 0,
         "raw_max_documented": 120,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 5,
         "raw_max_probe_sample": 5,
         "value_min_probe_sample": null,
@@ -3338,11 +3248,10 @@
         "raw_to_display": {
           "5": "6.30kHz"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_address_verified_2026_05_10": true,
         "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
       }
     ],
@@ -3597,12 +3506,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -3887,12 +3795,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -3912,12 +3819,11 @@
           "0": "OFF",
           "1": "ON"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "values_documented": [
           "OFF",
           "ON"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x1000113B",
@@ -3930,10 +3836,9 @@
         "unit": "",
         "step": 0,
         "offset": 167,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 40,
-        "value_max_documented": 250,
-        "_address_verified_2026_05_10": true
+        "value_max_documented": 250
       },
       {
         "address": "0x10001107",
@@ -4226,12 +4131,11 @@
           "0": "OFF",
           "1": "ON"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "values_documented": [
           "OFF",
           "ON"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x1000113F",
@@ -4244,10 +4148,9 @@
         "unit": "",
         "step": 0,
         "offset": 167,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 40,
-        "value_max_documented": 250,
-        "_address_verified_2026_05_10": true
+        "value_max_documented": 250
       },
       {
         "address": "0x10001107",
@@ -4390,12 +4293,11 @@
         "raw_to_display": {
           "1": "1"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
@@ -4950,10 +4852,9 @@
         "unit": "dB",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": -20,
         "value_max_documented": 20,
-        "_address_verified_2026_05_10": true,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-20 for documented min=-20; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
       }
     ],
@@ -6156,11 +6057,10 @@
         "unit": "th",
         "step": 1,
         "offset": -15,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "documented_enum_values": [
           "-2 oct, \u2013+2 oct, USER"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x10001127",
@@ -6173,12 +6073,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 2,
         "value_min_probe_sample": 1,
@@ -6195,8 +6094,7 @@
         "unit": "ms",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
-        "_address_verified_2026_05_10": true,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 300,
         "raw_min_documented": 0,
@@ -6412,11 +6310,10 @@
         "unit": "th",
         "step": 1,
         "offset": -15,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "documented_enum_values": [
           "-2oct, \u2013+2oct, USER"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x10001127",
@@ -6429,12 +6326,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 2,
         "value_min_probe_sample": 1,
@@ -6451,8 +6347,7 @@
         "unit": "ms",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
-        "_address_verified_2026_05_10": true,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 300,
         "raw_min_documented": 0,
@@ -9173,11 +9068,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001117",
@@ -9194,11 +9089,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x10001107",
@@ -9215,11 +9110,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000110B",
@@ -9236,11 +9131,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       },
       {
         "address": "0x1000110F",
@@ -9257,11 +9152,11 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "_address_verified_2026_05_10": true
       }
     ],
     "dropdowns": [
@@ -10037,10 +9932,9 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": -100,
         "value_max_documented": 0,
-        "_address_verified_2026_05_10": true,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-100 for documented min=-100; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
       },
       {
@@ -10054,12 +9948,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -10076,12 +9969,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -10098,10 +9990,9 @@
         "unit": "",
         "step": 0,
         "offset": 167,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 40,
-        "value_max_documented": 250,
-        "_address_verified_2026_05_10": true
+        "value_max_documented": 250
       }
     ],
     "dropdowns": [
@@ -10342,10 +10233,9 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": -100,
         "value_max_documented": 0,
-        "_address_verified_2026_05_10": true,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-100 for documented min=-100; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
       },
       {
@@ -10359,12 +10249,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -10381,12 +10270,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -10403,10 +10291,9 @@
         "unit": "",
         "step": 0,
         "offset": 167,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 40,
-        "value_max_documented": 250,
-        "_address_verified_2026_05_10": true
+        "value_max_documented": 250
       }
     ],
     "dropdowns": [
@@ -10701,10 +10588,9 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": -24,
         "value_max_documented": 24,
-        "_address_verified_2026_05_10": true,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-24 for documented min=-24; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
       },
       {
@@ -10718,10 +10604,9 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": -50,
         "value_max_documented": 50,
-        "_address_verified_2026_05_10": true,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
       },
       {
@@ -10740,14 +10625,13 @@
           "2": "SLOW",
           "3": "MONO"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "values_documented": [
           "FAST",
           "MEDIUM",
           "SLOW",
           "MONO"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x10001133",
@@ -10760,8 +10644,7 @@
         "unit": "ms",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
-        "_address_verified_2026_05_10": true,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 300,
         "raw_min_documented": 0,
@@ -10782,12 +10665,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 1,
@@ -10987,10 +10869,9 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": -24,
         "value_max_documented": 24,
-        "_address_verified_2026_05_10": true,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-24 for documented min=-24; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
       },
       {
@@ -11004,10 +10885,9 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": -50,
         "value_max_documented": 50,
-        "_address_verified_2026_05_10": true,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
       },
       {
@@ -11026,14 +10906,13 @@
           "2": "SLOW",
           "3": "MONO"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "values_documented": [
           "FAST",
           "MEDIUM",
           "SLOW",
           "MONO"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x10001133",
@@ -11046,8 +10925,7 @@
         "unit": "ms",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
-        "_address_verified_2026_05_10": true,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 300,
         "raw_min_documented": 0,
@@ -11068,12 +10946,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 1,
@@ -11387,9 +11264,6 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "documented_enum_values": [
-          "-50\u20130\u2013+50"
-        ],
         "value_min_documented": -50,
         "value_max_documented": 50,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
@@ -11558,9 +11432,6 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "documented_enum_values": [
-          "-50\u20130\u2013+50"
-        ],
         "value_min_documented": -50,
         "value_max_documented": 50,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
@@ -11576,9 +11447,6 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "documented_enum_values": [
-          "-50\u20130\u2013+50"
-        ],
         "value_min_documented": -50,
         "value_max_documented": 50,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
@@ -11594,12 +11462,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -11616,12 +11483,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -11638,12 +11504,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -11660,12 +11525,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -11682,12 +11546,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -11707,12 +11570,11 @@
           "0": "OFF",
           "1": "ON"
         },
-        "_address_inferred": false,
+        "_address_inferred": true,
         "values_documented": [
           "OFF",
           "ON"
-        ],
-        "_address_verified_2026_05_10": true
+        ]
       },
       {
         "address": "0x10001107",
@@ -11795,9 +11657,6 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "documented_enum_values": [
-          "-50\u20130\u2013+50"
-        ],
         "value_min_documented": -50,
         "value_max_documented": 50,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
@@ -11966,9 +11825,6 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "documented_enum_values": [
-          "-50\u20130\u2013+50"
-        ],
         "value_min_documented": -50,
         "value_max_documented": 50,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
@@ -11984,9 +11840,6 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "documented_enum_values": [
-          "-50\u20130\u2013+50"
-        ],
         "value_min_documented": -50,
         "value_max_documented": 50,
         "_range_inconsistent": "probe offset=0 step=1 would yield raw_min=-50 for documented min=-50; wire is unsigned offset-binary so negative raw is impossible. Probe and guide disagree \u2014 needs live re-probe."
@@ -12725,12 +12578,11 @@
         "unit": "",
         "step": 1,
         "offset": 0,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
@@ -13059,10 +12911,9 @@
         "unit": "",
         "step": 0,
         "offset": 50,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
-        "value_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "value_max_documented": 100
       },
       {
         "address": "0x1000111B",
@@ -13077,6 +12928,18 @@
         "offset": 50,
         "value_min_documented": 0,
         "value_max_documented": 100
+      },
+      {
+        "address": "0x10001113",
+        "label": "RESONANCE",
+        "_address_verified_2026_05_10": true,
+        "_note": "Phase A gap audit 2026-05-10: BTS panel showed RESONANCE at offset 0x13 with ordinal value 5"
+      },
+      {
+        "address": "0x10001117",
+        "label": "DECAY",
+        "_address_verified_2026_05_10": true,
+        "_note": "Phase A gap audit 2026-05-10: BTS panel showed DECAY at offset 0x17 with ordinal value 6"
       }
     ],
     "dropdowns": [],
@@ -13113,10 +12976,9 @@
         "unit": "",
         "step": 0,
         "offset": 50,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
-        "value_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "value_max_documented": 100
       },
       {
         "address": "0x1000111B",
@@ -13131,6 +12993,18 @@
         "offset": 50,
         "value_min_documented": 0,
         "value_max_documented": 100
+      },
+      {
+        "address": "0x10001113",
+        "label": "RESONANCE",
+        "_address_verified_2026_05_10": true,
+        "_note": "Phase A gap audit 2026-05-10: same address pattern as TOUCH WAH"
+      },
+      {
+        "address": "0x10001117",
+        "label": "DECAY",
+        "_address_verified_2026_05_10": true,
+        "_note": "Phase A gap audit 2026-05-10: same address pattern as TOUCH WAH"
       }
     ],
     "dropdowns": [],
@@ -13153,10 +13027,9 @@
         "unit": "",
         "step": 0,
         "offset": 50,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
-        "value_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "value_max_documented": 100
       },
       {
         "address": "0x10001117",
@@ -13977,10 +13850,9 @@
         "unit": "",
         "step": 0,
         "offset": 50,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 0,
-        "value_max_documented": 100,
-        "_address_verified_2026_05_10": true
+        "value_max_documented": 100
       },
       {
         "address": "0x1000111F",
@@ -14007,10 +13879,9 @@
         "unit": "",
         "step": 0,
         "offset": 167,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 40,
-        "value_max_documented": 250,
-        "_address_verified_2026_05_10": true
+        "value_max_documented": 250
       }
     ],
     "dropdowns": [],
@@ -14097,20 +13968,20 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
-        "visible_on_variants": [
-          1
-        ],
-        "_visible_on_variant_names": [
-          "OSC"
-        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
       },
       {
         "address": "0x10001113",
@@ -14126,20 +13997,20 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
-        "visible_on_variants": [
-          1
-        ],
-        "_visible_on_variant_names": [
-          "OSC"
-        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
       },
       {
         "address": "0x10001117",
@@ -14155,20 +14026,20 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
-        "visible_on_variants": [
-          1
-        ],
-        "_visible_on_variant_names": [
-          "OSC"
-        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
       },
       {
         "address": "0x1000111B",
@@ -14184,20 +14055,20 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
-        "visible_on_variants": [
-          1
-        ],
-        "_visible_on_variant_names": [
-          "OSC"
-        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
       },
       {
         "address": "0x1000111F",
@@ -14213,20 +14084,20 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
-        "visible_on_variants": [
-          1
-        ],
-        "_visible_on_variant_names": [
-          "OSC"
-        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
       },
       {
         "address": "0x10001123",
@@ -14242,20 +14113,20 @@
         "value_max_documented": 100,
         "raw_min_documented": 0,
         "raw_max_documented": 100,
-        "_address_verified_2026_05_10": true,
-        "visible_on_variants": [
-          1
-        ],
-        "_visible_on_variant_names": [
-          "OSC"
-        ],
         "raw_min_probe_sample": 1,
         "raw_max_probe_sample": 1,
         "value_min_probe_sample": null,
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
       }
     ],
     "dropdowns": [],
@@ -14587,10 +14458,9 @@
         "unit": "",
         "step": 0,
         "offset": 167,
-        "_address_inferred": false,
+        "_address_inferred": true,
         "value_min_documented": 40,
-        "value_max_documented": 250,
-        "_address_verified_2026_05_10": true
+        "value_max_documented": 250
       }
     ],
     "dropdowns": [],

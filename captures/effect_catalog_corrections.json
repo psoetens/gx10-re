@@ -1,93 +1,247 @@
 {
-  "_doc": "Verified address/label corrections for captures/bts_effect_catalog.json. Discovered via passive broadcast capture on the live device 2026-05-09 .. 2026-05-10. Each entry overrides or adds an entry in the catalog. Apply with tools/apply_catalog_corrections.py.",
+  "_doc": "Verified address/label corrections for captures/bts_effect_catalog.json. Discovered via passive broadcast capture on the live device 2026-05-09 .. 2026-05-10. Each entry overrides or adds an entry in the catalog. Apply with tools/apply_catalog_corrections.py. Phase A (Windows BTS-driven gap audit) added TOUCH WAH RESONANCE/DECAY and BASS TOUCH WAH RESONANCE/DECAY 2026-05-10.",
   "_method": "User turned a single knob with editor-attach handshake set; the broadcast address identifies the knob unambiguously.",
   "_evidence_reports": [
     "reports/amp_address_audit.md",
     "reports/delay_plus_audit.md",
-    "reports/linux_probe_results.md"
+    "reports/linux_probe_results.md",
+    "reports/address_gaps_audit.md"
   ],
-
   "remove_phantom_labels": {
     "_doc": "Labels in the catalog that don't correspond to any real knob on the device. Removing these before applying overlays cleans up duplicate-address conflicts.",
-    "0x0E": ["TAP TIME", "1: TIME", "1: FEEDBACK"]
+    "0x0E": [
+      "TAP TIME",
+      "1: TIME",
+      "1: FEEDBACK"
+    ]
   },
-
   "knob_overrides": {
     "_doc": "Per-TYPE knob list overrides. Each entry replaces the catalog's address for the named knob. New entries added if the knob is missing.",
-
     "0x02": {
-      "_title": "AIRD PREAMP — corrected MIC/SP block addresses",
-      "DIRECT MIX":   {"address": "0x10001137"},
-      "MIC TYPE":     {"address": "0x1000113F"},
-      "MIC POSITION": {"address": "0x10001147"},
-      "MIC LEVEL":    {"address": "0x1000114B"},
+      "_title": "AIRD PREAMP \u00e2\u20ac\u201d corrected MIC/SP block addresses",
+      "DIRECT MIX": {
+        "address": "0x10001137"
+      },
+      "MIC TYPE": {
+        "address": "0x1000113F"
+      },
+      "MIC POSITION": {
+        "address": "0x10001147"
+      },
+      "MIC LEVEL": {
+        "address": "0x1000114B"
+      },
       "MIC DISTANCE": {
         "address": "0x10001143",
         "_fix_enum_min": 0,
-        "_fix_enum_values": ["SHORT", "MEDIUM", "LONG"],
-        "_note": "Probe sampled raws 1..2 only so raw=0=SHORT was missed. Documented enum is SHORT/MEDIUM/LONG → raw 0/1/2."
+        "_fix_enum_values": [
+          "SHORT",
+          "MEDIUM",
+          "LONG"
+        ],
+        "_note": "Probe sampled raws 1..2 only so raw=0=SHORT was missed. Documented enum is SHORT/MEDIUM/LONG \u00e2\u2020\u2019 raw 0/1/2."
       },
-      "BRIGHT SW":    {
+      "BRIGHT SW": {
         "address": "0x1000112B",
-        "visible_on_variants": [1, 2, 6, 9, 10, 12],
-        "_visible_on_variant_names": ["NATURAL", "BOUTIQUE", "X-CRUNCH", "JC-120", "TWIN COMBO", "TWEED COMBO"],
+        "visible_on_variants": [
+          1,
+          2,
+          6,
+          9,
+          10,
+          12
+        ],
+        "_visible_on_variant_names": [
+          "NATURAL",
+          "BOUTIQUE",
+          "X-CRUNCH",
+          "JC-120",
+          "TWIN COMBO",
+          "TWEED COMBO"
+        ],
         "_note": "Variant-conditional: only visible on the named variants. Same offset as AMP_BASS BRIGHT SW (verified live)."
       }
     },
-
     "0x03": {
-      "_title": "BASS AIRD PREAMP — same address pattern as AMP",
-      "DIRECT MIX":   {"address": "0x10001137"},
-      "MIC TYPE":     {"address": "0x1000113F"},
-      "MIC POSITION": {"address": "0x10001147"},
-      "MIC LEVEL":    {"address": "0x1000114B"},
+      "_title": "BASS AIRD PREAMP \u00e2\u20ac\u201d same address pattern as AMP",
+      "DIRECT MIX": {
+        "address": "0x10001137"
+      },
+      "MIC TYPE": {
+        "address": "0x1000113F"
+      },
+      "MIC POSITION": {
+        "address": "0x10001147"
+      },
+      "MIC LEVEL": {
+        "address": "0x1000114B"
+      },
       "MIC DISTANCE": {
         "address": "0x10001143",
         "_fix_enum_min": 0,
-        "_fix_enum_values": ["SHORT", "MEDIUM", "LONG"]
+        "_fix_enum_values": [
+          "SHORT",
+          "MEDIUM",
+          "LONG"
+        ]
       },
-      "BRIGHT SW":    {
+      "BRIGHT SW": {
         "address": "0x1000112B",
-        "visible_on_variants": [0, 2, 5, 8],
-        "_visible_on_variant_names": ["NATURAL BASS", "CONCERT", "CLASSIC BLUE", "DARK DRV"],
+        "visible_on_variants": [
+          0,
+          2,
+          5,
+          8
+        ],
+        "_visible_on_variant_names": [
+          "NATURAL BASS",
+          "CONCERT",
+          "CLASSIC BLUE",
+          "DARK DRV"
+        ],
         "_note": "Variant-conditional: only visible on the named variants."
       }
     },
-
     "0x0E": {
-      "_title": "DELAY+ — TIME at 0x23, plus duplicate cleanup",
-      "TIME":         {"address": "0x10001123", "_note": "Catalog was missing TIME entirely; placed phantom 'TAP TIME' at 0x27 instead."}
+      "_title": "DELAY+ \u00e2\u20ac\u201d TIME at 0x23, plus duplicate cleanup",
+      "TIME": {
+        "address": "0x10001123",
+        "_note": "Catalog was missing TIME entirely; placed phantom 'TAP TIME' at 0x27 instead."
+      }
     },
-
     "0x50": {
-      "_title": "FEEDBACKER — OSC-mode-only knobs (MODE byte is the variant at 0x10001103: 0=NORMAL, 1=OSC)",
+      "_title": "FEEDBACKER \u00e2\u20ac\u201d OSC-mode-only knobs (MODE byte is the variant at 0x10001103: 0=NORMAL, 1=OSC)",
       "_source": "User report 2026-05-10: 'rise time and the knobs following are specific to OSC only'.",
-      "RISE TIME":     {"address": "0x1000110F", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]},
-      "OCT RISE TIME": {"address": "0x10001113", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]},
-      "FEEDBACK":      {"address": "0x10001117", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]},
-      "OCT FEEDBACK":  {"address": "0x1000111B", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]},
-      "VIB RATE":      {"address": "0x1000111F", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]},
-      "VIB DEPTH":     {"address": "0x10001123", "visible_on_variants": [1], "_visible_on_variant_names": ["OSC"]}
+      "RISE TIME": {
+        "address": "0x1000110F",
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
+      },
+      "OCT RISE TIME": {
+        "address": "0x10001113",
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
+      },
+      "FEEDBACK": {
+        "address": "0x10001117",
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
+      },
+      "OCT FEEDBACK": {
+        "address": "0x1000111B",
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
+      },
+      "VIB RATE": {
+        "address": "0x1000111F",
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
+      },
+      "VIB DEPTH": {
+        "address": "0x10001123",
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "OSC"
+        ]
+      }
+    },
+    "0x48": {
+      "_title": "TOUCH WAH \u2014 gap audit additions",
+      "RESONANCE": {
+        "address": "0x10001113",
+        "_note": "Phase A gap audit 2026-05-10: BTS panel showed RESONANCE at offset 0x13 with ordinal value 5"
+      },
+      "DECAY": {
+        "address": "0x10001117",
+        "_note": "Phase A gap audit 2026-05-10: BTS panel showed DECAY at offset 0x17 with ordinal value 6"
+      }
+    },
+    "0x49": {
+      "_title": "BASS TOUCH WAH \u2014 gap audit additions",
+      "RESONANCE": {
+        "address": "0x10001113",
+        "_note": "Phase A gap audit 2026-05-10: same address pattern as TOUCH WAH"
+      },
+      "DECAY": {
+        "address": "0x10001117",
+        "_note": "Phase A gap audit 2026-05-10: same address pattern as TOUCH WAH"
+      }
     }
   },
-
   "dropdown_overrides": {
     "_doc": "Per-TYPE dropdown corrections (e.g. SP TYPE wrongly placed at variant-selector address).",
-
     "0x02": {
-      "SP TYPE": {"address": "0x1000113B"}
+      "SP TYPE": {
+        "address": "0x1000113B"
+      }
     },
     "0x03": {
-      "SP TYPE": {"address": "0x1000113B"}
+      "SP TYPE": {
+        "address": "0x1000113B"
+      }
     }
   },
-
   "verified_correct": {
     "_doc": "Catalog entries we verified ARE correct (broadcast capture confirmed). Useful for regression-test gating.",
-    "0x01": ["RESONANCE", "TONE", "LEVEL"],
-    "0x02": ["GAIN", "LEVEL", "BASS", "MIDDLE", "TREBLE", "PRESENCE", "GAIN SW", "SOLO SW", "SOLO LEVEL", "SAG", "RESONANCE", "MIC DISTANCE"],
-    "0x08": ["SUSTAIN", "ATTACK", "LEVEL", "TONE", "DIRECT MIX"],
-    "0x0E": ["FEEDBACK", "EFFECT LEVEL", "HIGH CUT"],
-    "0x35": ["EFFECT LEVEL", "DIRECT MIX", "PEDAL POSITION", "PEDAL MIN", "PEDAL MAX"]
+    "0x01": [
+      "RESONANCE",
+      "TONE",
+      "LEVEL"
+    ],
+    "0x02": [
+      "GAIN",
+      "LEVEL",
+      "BASS",
+      "MIDDLE",
+      "TREBLE",
+      "PRESENCE",
+      "GAIN SW",
+      "SOLO SW",
+      "SOLO LEVEL",
+      "SAG",
+      "RESONANCE",
+      "MIC DISTANCE"
+    ],
+    "0x08": [
+      "SUSTAIN",
+      "ATTACK",
+      "LEVEL",
+      "TONE",
+      "DIRECT MIX"
+    ],
+    "0x0E": [
+      "FEEDBACK",
+      "EFFECT LEVEL",
+      "HIGH CUT"
+    ],
+    "0x35": [
+      "EFFECT LEVEL",
+      "DIRECT MIX",
+      "PEDAL POSITION",
+      "PEDAL MIN",
+      "PEDAL MAX"
+    ]
   }
 }

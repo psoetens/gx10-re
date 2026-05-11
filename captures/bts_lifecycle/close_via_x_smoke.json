@@ -1,0 +1,67 @@
+{
+  "ok": true,
+  "cycle_count": 5,
+  "cycles": [
+    {
+      "index": 1,
+      "pref_files_before": 8,
+      "close_seconds": 0.31,
+      "close_clean": true,
+      "pref_unchanged": true,
+      "pref_diffs": [],
+      "relaunch_seconds": 4.12,
+      "relaunch_ready": true,
+      "total_seconds": 4.95,
+      "ok": true
+    },
+    {
+      "index": 2,
+      "pref_files_before": 8,
+      "close_seconds": 0.3,
+      "close_clean": true,
+      "pref_unchanged": true,
+      "pref_diffs": [],
+      "relaunch_seconds": 4.4,
+      "relaunch_ready": true,
+      "total_seconds": 5.22,
+      "ok": true
+    },
+    {
+      "index": 3,
+      "pref_files_before": 8,
+      "close_seconds": 0.45,
+      "close_clean": true,
+      "pref_unchanged": true,
+      "pref_diffs": [],
+      "relaunch_seconds": 4.46,
+      "relaunch_ready": true,
+      "total_seconds": 5.45,
+      "ok": true
+    },
+    {
+      "index": 4,
+      "pref_files_before": 8,
+      "close_seconds": 0.43,
+      "close_clean": true,
+      "pref_unchanged": true,
+      "pref_diffs": [],
+      "relaunch_seconds": 4.4,
+      "relaunch_ready": true,
+      "total_seconds": 5.36,
+      "ok": true
+    },
+    {
+      "index": 5,
+      "pref_files_before": 8,
+      "close_seconds": 0.27,
+      "close_clean": true,
+      "pref_unchanged": true,
+      "pref_diffs": [],
+      "relaunch_seconds": 4.49,
+      "relaunch_ready": true,
+      "total_seconds": 5.28,
+      "ok": true
+    }
+  ],
+  "pass_count": 5
+}
