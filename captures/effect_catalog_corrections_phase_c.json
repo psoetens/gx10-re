@@ -1,0 +1,2012 @@
+{
+  "_doc": "Phase C variant-conditional sweep",
+  "_ts": "2026-05-11T09:52:36",
+  "findings": {
+    "0x01": {
+      "title": "AC RESONANCE",
+      "variant_count": 3,
+      "variant_names": [
+        "NATURAL",
+        "WIDE",
+        "BRIGHT"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "LEVEL",
+          "NATURAL",
+          "RESONANCE",
+          "TONE",
+          "TYPE"
+        ],
+        "1": [
+          "LEVEL",
+          "RESONANCE",
+          "TONE",
+          "TYPE",
+          "WIDE"
+        ],
+        "2": [
+          "BRIGHT",
+          "LEVEL",
+          "RESONANCE",
+          "TONE",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "LEVEL",
+        "RESONANCE",
+        "TONE",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 48.88
+    },
+    "0x02": {
+      "title": "AIRD PREAMP",
+      "variant_count": 16,
+      "variant_names": [
+        "TRANSPARENT",
+        "NATURAL",
+        "BOUTIQUE",
+        "SUPREME",
+        "MAXIMUM",
+        "JUGGERNAUT",
+        "X-CRUNCH",
+        "X-HI GAIN",
+        "X-MODDED",
+        "JC-120",
+        "TWIN COMBO",
+        "DELUXE COMBO",
+        "TWEED COMBO",
+        "DIAMOND AMP",
+        "BRIT STACK",
+        "RECTI STACK"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "BASS",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TRANSPARENT",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "1": [
+          "BASS",
+          "BRIGHT SW",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "NATURAL",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "2": [
+          "BASS",
+          "BOUTIQUE",
+          "BRIGHT SW",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "3": [
+          "BASS",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "SUPREME",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "4": [
+          "BASS",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MAXIMUM",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "5": [
+          "BASS",
+          "GAIN",
+          "GAIN SW",
+          "JUGGERNAUT",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "6": [
+          "BASS",
+          "BRIGHT SW",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 ",
+          "X-CRUNCH"
+        ],
+        "7": [
+          "BASS",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 ",
+          "X-HI GAIN"
+        ],
+        "8": [
+          "BASS",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 ",
+          "X-MODDED"
+        ],
+        "9": [
+          "BASS",
+          "BRIGHT SW",
+          "GAIN",
+          "GAIN SW",
+          "JC-120",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "10": [
+          "BASS",
+          "BRIGHT SW",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TWIN COMBO",
+          "TYPE",
+          "USER 2 "
+        ],
+        "11": [
+          "BASS",
+          "DELUXE COMBO",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "12": [
+          "BASS",
+          "BRIGHT SW",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TWEED COMBO",
+          "TYPE",
+          "USER 2 "
+        ],
+        "13": [
+          "BASS",
+          "DIAMOND AMP",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "14": [
+          "BASS",
+          "BRIT STACK",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "15": [
+          "BASS",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RECTI STACK",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ]
+      },
+      "universal_labels": [
+        "BASS",
+        "GAIN",
+        "GAIN SW",
+        "LEVEL",
+        "MIDDLE",
+        "PRESENCE",
+        "RESONANCE",
+        "SAG",
+        "SOLO LEVEL",
+        "SOLO SW",
+        "SP TYPE",
+        "TREBLE",
+        "TYPE",
+        "USER 2 "
+      ],
+      "conditional_labels": {
+        "BRIGHT SW": [
+          1,
+          2,
+          6,
+          9,
+          10,
+          12
+        ]
+      },
+      "elapsed_s": 80.9
+    },
+    "0x03": {
+      "title": "BASS AIRD PREAMP",
+      "variant_count": 9,
+      "variant_names": [
+        "NATURAL BASS",
+        "X-DRIVE BASS",
+        "CONCERT",
+        "STUDIO BASS",
+        "SILVER TUBE",
+        "CLASSIC BLUE",
+        "SOLID STACK",
+        "FAT TUBE",
+        "DARK DRV"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "BASS",
+          "BRIGHT SW",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "NATURAL BASS",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "1": [
+          "BASS",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 ",
+          "X-DRIVE BASS"
+        ],
+        "2": [
+          "BASS",
+          "BRIGHT SW",
+          "CONCERT",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "3": [
+          "BASS",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "STUDIO BASS",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "4": [
+          "BASS",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SILVER TUBE",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "5": [
+          "BASS",
+          "BRIGHT SW",
+          "CLASSIC BLUE",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "6": [
+          "BASS",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLID STACK",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "7": [
+          "BASS",
+          "FAT TUBE",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ],
+        "8": [
+          "BASS",
+          "BRIGHT SW",
+          "DARK DRV",
+          "GAIN",
+          "GAIN SW",
+          "LEVEL",
+          "MIDDLE",
+          "PRESENCE",
+          "RESONANCE",
+          "SAG",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "SP TYPE",
+          "TREBLE",
+          "TYPE",
+          "USER 2 "
+        ]
+      },
+      "universal_labels": [
+        "BASS",
+        "GAIN",
+        "GAIN SW",
+        "LEVEL",
+        "MIDDLE",
+        "PRESENCE",
+        "RESONANCE",
+        "SAG",
+        "SOLO LEVEL",
+        "SOLO SW",
+        "SP TYPE",
+        "TREBLE",
+        "TYPE",
+        "USER 2 "
+      ],
+      "conditional_labels": {
+        "BRIGHT SW": [
+          0,
+          2,
+          5,
+          8
+        ]
+      },
+      "elapsed_s": 45.2
+    },
+    "0x04": {
+      "title": "CHORUS",
+      "variant_count": 4,
+      "variant_names": [
+        "MONO",
+        "DIR/EFX",
+        "STEREO",
+        "DUAL"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "BPM",
+          "DEPTH",
+          "DIRECT LEVEL",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "LOW CUT",
+          "MONO",
+          "PRE-DELAY",
+          "RATE",
+          "TYPE",
+          "WAVEFORM"
+        ],
+        "1": [
+          "BPM",
+          "DEPTH",
+          "DIR/EFX",
+          "DIRECT LEVEL",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "LOW CUT",
+          "PRE-DELAY",
+          "RATE",
+          "TYPE",
+          "WAVEFORM"
+        ],
+        "2": [
+          "BPM",
+          "DEPTH",
+          "DIRECT LEVEL",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "LOW CUT",
+          "PRE-DELAY",
+          "RATE",
+          "STEREO",
+          "TYPE",
+          "WAVEFORM"
+        ],
+        "3": [
+          "1: DEPTH",
+          "1: EFFECT LEVEL",
+          "1: HIGH CUT",
+          "1: LOW CUT",
+          "1: PRE-DELAY",
+          "1: RATE",
+          "1: WAVEFORM",
+          "2: DEPTH",
+          "2: EFFECT LEVEL",
+          "2: HIGH CUT",
+          "2: LOW CUT",
+          "2: PRE-DELAY",
+          "2: RATE",
+          "2: WAVEFORM",
+          "BPM",
+          "DIRECT LEVEL",
+          "DUAL",
+          "OUTPUT MODE",
+          "TRI",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "BPM",
+        "DIRECT LEVEL",
+        "TYPE"
+      ],
+      "conditional_labels": {
+        "1: WAVEFORM": [
+          3
+        ],
+        "2: DEPTH": [
+          3
+        ],
+        "WAVEFORM": [
+          0,
+          1,
+          2
+        ],
+        "2: LOW CUT": [
+          3
+        ],
+        "1: HIGH CUT": [
+          3
+        ],
+        "2: RATE": [
+          3
+        ],
+        "DEPTH": [
+          0,
+          1,
+          2
+        ],
+        "LOW CUT": [
+          0,
+          1,
+          2
+        ],
+        "2: PRE-DELAY": [
+          3
+        ],
+        "1: RATE": [
+          3
+        ],
+        "1: EFFECT LEVEL": [
+          3
+        ],
+        "1: PRE-DELAY": [
+          3
+        ],
+        "1: LOW CUT": [
+          3
+        ],
+        "1: DEPTH": [
+          3
+        ],
+        "EFFECT LEVEL": [
+          0,
+          1,
+          2
+        ],
+        "OUTPUT MODE": [
+          3
+        ],
+        "RATE": [
+          0,
+          1,
+          2
+        ],
+        "2: WAVEFORM": [
+          3
+        ],
+        "2: HIGH CUT": [
+          3
+        ],
+        "TRI": [
+          3
+        ],
+        "HIGH CUT": [
+          0,
+          1,
+          2
+        ],
+        "2: EFFECT LEVEL": [
+          3
+        ],
+        "PRE-DELAY": [
+          0,
+          1,
+          2
+        ]
+      },
+      "elapsed_s": 25.66
+    },
+    "0x05": {
+      "title": "BASS CHORUS",
+      "variant_count": 2,
+      "variant_names": [
+        "MONO",
+        "STEREO"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "BPM",
+          "DEPTH",
+          "DIRECT LEVEL",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "LOW CUT",
+          "MONO",
+          "RATE",
+          "TYPE"
+        ],
+        "1": [
+          "BPM",
+          "DEPTH",
+          "DIRECT LEVEL",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "LOW CUT",
+          "RATE",
+          "STEREO",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "BPM",
+        "DEPTH",
+        "DIRECT LEVEL",
+        "EFFECT LEVEL",
+        "HIGH CUT",
+        "LOW CUT",
+        "RATE",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 12.79
+    },
+    "0x07": {
+      "title": "CLASSIC VIBE",
+      "variant_count": 2,
+      "variant_names": [
+        "CHORUS",
+        "VIBRATO"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "BPM",
+          "CHORUS",
+          "DEPTH",
+          "LEVEL",
+          "MODE",
+          "RATE"
+        ],
+        "1": [
+          "BPM",
+          "DEPTH",
+          "LEVEL",
+          "MODE",
+          "RATE",
+          "VIBRATO"
+        ]
+      },
+      "universal_labels": [
+        "BPM",
+        "DEPTH",
+        "LEVEL",
+        "MODE",
+        "RATE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 12.75
+    },
+    "0x08": {
+      "title": "COMPRESSOR",
+      "variant_count": 3,
+      "variant_names": [
+        "BOSS COMP",
+        "D-COMP",
+        "ORANGE"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "ATTACK",
+          "BOSS COMP",
+          "DIRECT MIX",
+          "LEVEL",
+          "SUSTAIN",
+          "TONE",
+          "TYPE"
+        ],
+        "1": [
+          "ATTACK",
+          "D-COMP",
+          "DIRECT MIX",
+          "LEVEL",
+          "SUSTAIN",
+          "TONE",
+          "TYPE"
+        ],
+        "2": [
+          "ATTACK",
+          "DIRECT MIX",
+          "LEVEL",
+          "ORANGE",
+          "SUSTAIN",
+          "TONE",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "ATTACK",
+        "DIRECT MIX",
+        "LEVEL",
+        "SUSTAIN",
+        "TONE",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 16.68
+    },
+    "0x0E": {
+      "title": "DELAY+",
+      "variant_count": 6,
+      "variant_names": [
+        "MONO",
+        "DIR/EFX",
+        "STEREO",
+        "PAN",
+        "REVERSE",
+        "DUAL"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "FEEDBACK",
+          "HIGH CUT",
+          "MOD DEPTH",
+          "MOD RATE",
+          "MONO",
+          "TIME",
+          "TYPE"
+        ],
+        "1": [
+          "DIR/EFX",
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "FEEDBACK",
+          "HIGH CUT",
+          "MOD DEPTH",
+          "MOD RATE",
+          "TIME",
+          "TYPE"
+        ],
+        "2": [
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "FEEDBACK",
+          "HIGH CUT",
+          "MOD DEPTH",
+          "MOD RATE",
+          "STEREO",
+          "TIME",
+          "TYPE"
+        ],
+        "3": [
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "FEEDBACK",
+          "HIGH CUT",
+          "MOD DEPTH",
+          "MOD RATE",
+          "PAN",
+          "TAP TIME",
+          "TIME",
+          "TYPE"
+        ],
+        "4": [
+          "AUTO TRIGGER",
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "FEEDBACK",
+          "HIGH CUT",
+          "MOD DEPTH",
+          "MOD RATE",
+          "REVERSE",
+          "TIME",
+          "TYPE"
+        ],
+        "5": [
+          "1: EFFECT LEVEL",
+          "1: FEEDBACK",
+          "1: HIGH CUT",
+          "1: TIME",
+          "1: TYPE",
+          "2: EFFECT LEVEL",
+          "2: FEEDBACK",
+          "2: HIGH CUT",
+          "2: TIME",
+          "2: TYPE",
+          "DIRECT LEVEL",
+          "DUAL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "MOD DEPTH",
+          "MOD RATE",
+          "MODE",
+          "MONO",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "DIRECT LEVEL",
+        "DUCK POST",
+        "DUCK PRE",
+        "DUCK SENS",
+        "MOD DEPTH",
+        "MOD RATE",
+        "TYPE"
+      ],
+      "conditional_labels": {
+        "FEEDBACK": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "1: HIGH CUT": [
+          5
+        ],
+        "MODE": [
+          5
+        ],
+        "1: FEEDBACK": [
+          5
+        ],
+        "TAP TIME": [
+          3
+        ],
+        "2: FEEDBACK": [
+          5
+        ],
+        "1: EFFECT LEVEL": [
+          5
+        ],
+        "TIME": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "2: TIME": [
+          5
+        ],
+        "1: TYPE": [
+          5
+        ],
+        "1: TIME": [
+          5
+        ],
+        "EFFECT LEVEL": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "AUTO TRIGGER": [
+          4
+        ],
+        "2: HIGH CUT": [
+          5
+        ],
+        "HIGH CUT": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "2: EFFECT LEVEL": [
+          5
+        ],
+        "2: TYPE": [
+          5
+        ]
+      },
+      "elapsed_s": 36.59
+    },
+    "0x0F": {
+      "title": "ANALOG DELAY",
+      "variant_count": 2,
+      "variant_names": [
+        "MONO",
+        "DIR/EFX"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "FEEDBACK",
+          "HIGH CUT",
+          "MOD DEPTH",
+          "MOD RATE",
+          "MONO",
+          "TIME",
+          "TYPE"
+        ],
+        "1": [
+          "DIR/EFX",
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "FEEDBACK",
+          "HIGH CUT",
+          "MOD DEPTH",
+          "MOD RATE",
+          "TIME",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "DIRECT LEVEL",
+        "DUCK POST",
+        "DUCK PRE",
+        "DUCK SENS",
+        "EFFECT LEVEL",
+        "FEEDBACK",
+        "HIGH CUT",
+        "MOD DEPTH",
+        "MOD RATE",
+        "TIME",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 12.2
+    },
+    "0x12": {
+      "title": "TWIST DELAY",
+      "variant_count": 2,
+      "variant_names": [
+        "RISE -> FALL",
+        "RISE -> FADE"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "CARRYOVER",
+          "FALL TIME",
+          "LEVEL",
+          "MODE",
+          "RISE -> FALL",
+          "RISE TIME",
+          "TRIGGER"
+        ],
+        "1": [
+          "CARRYOVER",
+          "FADE TIME",
+          "LEVEL",
+          "MODE",
+          "RISE -> FADE",
+          "RISE TIME",
+          "TRIGGER"
+        ]
+      },
+      "universal_labels": [
+        "CARRYOVER",
+        "LEVEL",
+        "MODE",
+        "RISE TIME",
+        "TRIGGER"
+      ],
+      "conditional_labels": {
+        "FADE TIME": [
+          1
+        ],
+        "FALL TIME": [
+          0
+        ]
+      },
+      "elapsed_s": 11.86
+    },
+    "0x24": {
+      "title": "BOOSTER",
+      "variant_count": 3,
+      "variant_names": [
+        "MID BOOST",
+        "CLEAN BOOST",
+        "TREBLE BOOST"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "BOOST",
+          "BOTTOM",
+          "DIRECT MIX",
+          "LEVEL",
+          "MID BOOST",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "1": [
+          "BOOST",
+          "BOTTOM",
+          "CLEAN BOOST",
+          "DIRECT MIX",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "2": [
+          "BOOST",
+          "BOTTOM",
+          "DIRECT MIX",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TREBLE BOOST",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "BOOST",
+        "BOTTOM",
+        "DIRECT MIX",
+        "LEVEL",
+        "SOLO LEVEL",
+        "SOLO SW",
+        "TONE",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 18.75
+    },
+    "0x25": {
+      "title": "OVERDRIVE",
+      "variant_count": 9,
+      "variant_names": [
+        "NATURAL OD",
+        "WARM OD",
+        "BLUES OD",
+        "OD-1",
+        "CRUNCH",
+        "T-SCREAM",
+        "TURBO OD",
+        "CENTA OD",
+        "SD-1"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "NATURAL OD",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "1": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE",
+          "WARM OD"
+        ],
+        "2": [
+          "BLUES OD",
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "3": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "OD-1",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "4": [
+          "BOTTOM",
+          "CRUNCH",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "5": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "T-SCREAM",
+          "TONE",
+          "TYPE"
+        ],
+        "6": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TURBO OD",
+          "TYPE"
+        ],
+        "7": [
+          "BOTTOM",
+          "CENTA OD",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "8": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "SD-1",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "BOTTOM",
+        "DIRECT MIX",
+        "DRIVE",
+        "LEVEL",
+        "SOLO LEVEL",
+        "SOLO SW",
+        "TONE",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 43.45
+    },
+    "0x27": {
+      "title": "DISTORTION",
+      "variant_count": 8,
+      "variant_names": [
+        "DIST",
+        "A-DIST",
+        "FAT DS",
+        "LEAD DS",
+        "RAT",
+        "GUV DS",
+        "DIST+",
+        "DS-1"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DIST",
+          "DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "1": [
+          "A-DIST",
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "2": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "FAT DS",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "3": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEAD DS",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "4": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "RAT",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "5": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "GUV DS",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "6": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DIST+",
+          "DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "7": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "DS-1",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "BOTTOM",
+        "DIRECT MIX",
+        "DRIVE",
+        "LEVEL",
+        "SOLO LEVEL",
+        "SOLO SW",
+        "TONE",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 45.63
+    },
+    "0x28": {
+      "title": "BASS DISTORTION",
+      "variant_count": 3,
+      "variant_names": [
+        "BASS DS",
+        "BASS DI",
+        "HI BAND DRIVE"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "BASS DS",
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "1": [
+          "BASS DI",
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "2": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DRIVE",
+          "HI BAND DRIVE",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "BOTTOM",
+        "DIRECT MIX",
+        "DRIVE",
+        "LEVEL",
+        "SOLO LEVEL",
+        "SOLO SW",
+        "TONE",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 23.85
+    },
+    "0x29": {
+      "title": "FUZZ",
+      "variant_count": 3,
+      "variant_names": [
+        "OCT FUZZ",
+        "'60S FUZZ",
+        "MUFF FUZZ"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "FUZZ",
+          "LEVEL",
+          "OCT FUZZ",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "1": [
+          "'60S FUZZ",
+          "BOTTOM",
+          "DIRECT MIX",
+          "FUZZ",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "2": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "FUZZ",
+          "LEVEL",
+          "MUFF FUZZ",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "BOTTOM",
+        "DIRECT MIX",
+        "FUZZ",
+        "LEVEL",
+        "SOLO LEVEL",
+        "SOLO SW",
+        "TONE",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 18.55
+    },
+    "0x2E": {
+      "title": "METAL DISTORTION",
+      "variant_count": 4,
+      "variant_names": [
+        "METAL DS",
+        "METAL ZONE",
+        "HM-2",
+        "METAL CORE"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DIST",
+          "LEVEL",
+          "METAL DS",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "1": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DIST",
+          "LEVEL",
+          "METAL ZONE",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "2": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DIST",
+          "HM-2",
+          "LEVEL",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ],
+        "3": [
+          "BOTTOM",
+          "DIRECT MIX",
+          "DIST",
+          "LEVEL",
+          "METAL CORE",
+          "SOLO LEVEL",
+          "SOLO SW",
+          "TONE",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "BOTTOM",
+        "DIRECT MIX",
+        "DIST",
+        "LEVEL",
+        "SOLO LEVEL",
+        "SOLO SW",
+        "TONE",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 24.17
+    },
+    "0x35": {
+      "title": "WAH (CRY WAH)",
+      "variant_count": 6,
+      "variant_names": [
+        "CRY WAH",
+        "VO WAH",
+        "FAT WAH",
+        "LIGHT WAH",
+        "7STRING WAH",
+        "RESO WAH"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "CRY WAH",
+          "DIRECT MIX",
+          "EFFECT LEVEL",
+          "PEDAL MAX",
+          "PEDAL MIN",
+          "PEDAL POSITION",
+          "WAH TYPE"
+        ],
+        "1": [
+          "DIRECT MIX",
+          "EFFECT LEVEL",
+          "PEDAL MAX",
+          "PEDAL MIN",
+          "PEDAL POSITION",
+          "VO WAH",
+          "WAH TYPE"
+        ],
+        "2": [
+          "DIRECT MIX",
+          "EFFECT LEVEL",
+          "FAT WAH",
+          "PEDAL MAX",
+          "PEDAL MIN",
+          "PEDAL POSITION",
+          "WAH TYPE"
+        ],
+        "3": [
+          "DIRECT MIX",
+          "EFFECT LEVEL",
+          "LIGHT WAH",
+          "PEDAL MAX",
+          "PEDAL MIN",
+          "PEDAL POSITION",
+          "WAH TYPE"
+        ],
+        "4": [
+          "7STRING WAH",
+          "DIRECT MIX",
+          "EFFECT LEVEL",
+          "PEDAL MAX",
+          "PEDAL MIN",
+          "PEDAL POSITION",
+          "WAH TYPE"
+        ],
+        "5": [
+          "DIRECT MIX",
+          "EFFECT LEVEL",
+          "PEDAL MAX",
+          "PEDAL MIN",
+          "PEDAL POSITION",
+          "RESO WAH",
+          "WAH TYPE"
+        ]
+      },
+      "universal_labels": [
+        "DIRECT MIX",
+        "EFFECT LEVEL",
+        "PEDAL MAX",
+        "PEDAL MIN",
+        "PEDAL POSITION",
+        "WAH TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 34.77
+    },
+    "0x3E": {
+      "title": "REVERB",
+      "variant_count": 5,
+      "variant_names": [
+        "HALL S",
+        "HALL M",
+        "PLATE",
+        "ROOM",
+        "STUDIO"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "EFFECT LEVEL",
+          "HALL S",
+          "HIGH CUT",
+          "LOW CUT",
+          "PRE-DELAY",
+          "TIME",
+          "TYPE"
+        ],
+        "1": [
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "EFFECT LEVEL",
+          "HALL M",
+          "HIGH CUT",
+          "LOW CUT",
+          "PRE-DELAY",
+          "TIME",
+          "TYPE"
+        ],
+        "2": [
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "LOW CUT",
+          "PLATE",
+          "PRE-DELAY",
+          "TIME",
+          "TYPE"
+        ],
+        "3": [
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "LOW CUT",
+          "PRE-DELAY",
+          "ROOM",
+          "TIME",
+          "TYPE"
+        ],
+        "4": [
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "LOW CUT",
+          "PRE-DELAY",
+          "STUDIO",
+          "TIME",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "CARRYOVER",
+        "DENSITY",
+        "DIRECT LEVEL",
+        "EFFECT LEVEL",
+        "HIGH CUT",
+        "LOW CUT",
+        "PRE-DELAY",
+        "TIME",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 24.63
+    },
+    "0x3F": {
+      "title": "REVERB+",
+      "variant_count": 7,
+      "variant_names": [
+        "HALL S",
+        "HALL M",
+        "PLATE",
+        "ROOM S",
+        "ROOM L",
+        "AMBIENCE",
+        "SPRING"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "HALL S",
+          "HIGH CUT",
+          "HIGH DAMP",
+          "LOW CUT",
+          "LOW DAMP",
+          "MOD RATE",
+          "PRE-DELAY",
+          "TIME",
+          "TONE",
+          "TYPE"
+        ],
+        "1": [
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "HALL M",
+          "HIGH CUT",
+          "HIGH DAMP",
+          "LOW CUT",
+          "LOW DAMP",
+          "MOD RATE",
+          "PRE-DELAY",
+          "TIME",
+          "TONE",
+          "TYPE"
+        ],
+        "2": [
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "HIGH DAMP",
+          "LOW CUT",
+          "LOW DAMP",
+          "MOD RATE",
+          "PLATE",
+          "PRE-DELAY",
+          "TIME",
+          "TONE",
+          "TYPE"
+        ],
+        "3": [
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "HIGH DAMP",
+          "LOW CUT",
+          "LOW DAMP",
+          "MOD RATE",
+          "PRE-DELAY",
+          "ROOM S",
+          "TIME",
+          "TONE",
+          "TYPE"
+        ],
+        "4": [
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "HIGH DAMP",
+          "LOW CUT",
+          "LOW DAMP",
+          "MOD RATE",
+          "PRE-DELAY",
+          "ROOM L",
+          "TIME",
+          "TONE",
+          "TYPE"
+        ],
+        "5": [
+          "AMBIENCE",
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "HIGH DAMP",
+          "LOW CUT",
+          "LOW DAMP",
+          "MOD RATE",
+          "PRE-DELAY",
+          "TIME",
+          "TONE",
+          "TYPE"
+        ],
+        "6": [
+          "CARRYOVER",
+          "DENSITY",
+          "DIRECT LEVEL",
+          "DUCK POST",
+          "DUCK PRE",
+          "DUCK SENS",
+          "EFFECT LEVEL",
+          "HIGH CUT",
+          "HIGH DAMP",
+          "LOW CUT",
+          "LOW DAMP",
+          "MOD RATE",
+          "PRE-DELAY",
+          "SPRING",
+          "TIME",
+          "TONE",
+          "TYPE"
+        ]
+      },
+      "universal_labels": [
+        "CARRYOVER",
+        "DENSITY",
+        "DIRECT LEVEL",
+        "DUCK POST",
+        "DUCK PRE",
+        "DUCK SENS",
+        "EFFECT LEVEL",
+        "HIGH CUT",
+        "HIGH DAMP",
+        "LOW CUT",
+        "LOW DAMP",
+        "MOD RATE",
+        "PRE-DELAY",
+        "TIME",
+        "TONE",
+        "TYPE"
+      ],
+      "conditional_labels": {},
+      "elapsed_s": 36.01
+    },
+    "0x4D": {
+      "title": "SEND/RETURN",
+      "variant_count": 3,
+      "variant_names": [
+        "NORMAL",
+        "DIRECT MIX",
+        "BRANCH OUT"
+      ],
+      "labels_per_variant": {
+        "0": [
+          "ADJUST",
+          "INVERT",
+          "MODE",
+          "NORMAL",
+          "RETURN LEVEL",
+          "SEND LEVEL"
+        ],
+        "1": [
+          "ADJUST",
+          "DIRECT MIX",
+          "INVERT",
+          "MODE",
+          "RETURN LEVEL",
+          "SEND LEVEL"
+        ],
+        "2": [
+          "BRANCH OUT",
+          "MODE",
+          "SEND LEVEL"
+        ]
+      },
+      "universal_labels": [
+        "MODE",
+        "SEND LEVEL"
+      ],
+      "conditional_labels": {
+        "INVERT": [
+          0,
+          1
+        ],
+        "RETURN LEVEL": [
+          0,
+          1
+        ],
+        "ADJUST": [
+          0,
+          1
+        ]
+      },
+      "elapsed_s": 16.07
+    }
+  }
+}

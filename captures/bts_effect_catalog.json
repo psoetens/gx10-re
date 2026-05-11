@@ -433,7 +433,8 @@
           "TWIN COMBO",
           "TWEED COMBO"
         ],
-        "_note": "Variant-conditional: only visible on the named variants. Same offset as AMP_BASS BRIGHT SW (verified live)."
+        "_note": "Variant-conditional: only visible on the named variants. Same offset as AMP_BASS BRIGHT SW (verified live).",
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000113F",
@@ -796,7 +797,8 @@
           "CLASSIC BLUE",
           "DARK DRV"
         ],
-        "_note": "Variant-conditional: only visible on the named variants."
+        "_note": "Variant-conditional: only visible on the named variants.",
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001123",
@@ -1068,7 +1070,18 @@
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 2,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 2
+        "value_max_probe_sample": 2,
+        "visible_on_variants": [
+          0,
+          1,
+          2
+        ],
+        "_visible_on_variant_names": [
+          "MONO",
+          "DIR/EFX",
+          "STEREO"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000110F",
@@ -1088,7 +1101,18 @@
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 2,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 2
+        "value_max_probe_sample": 2,
+        "visible_on_variants": [
+          0,
+          1,
+          2
+        ],
+        "_visible_on_variant_names": [
+          "MONO",
+          "DIR/EFX",
+          "STEREO"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001113",
@@ -1108,7 +1132,18 @@
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 2,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 2
+        "value_max_probe_sample": 2,
+        "visible_on_variants": [
+          0,
+          1,
+          2
+        ],
+        "_visible_on_variant_names": [
+          "MONO",
+          "DIR/EFX",
+          "STEREO"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001117",
@@ -1128,7 +1163,18 @@
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 2,
         "value_min_probe_sample": 0.0,
-        "value_max_probe_sample": 1.0
+        "value_max_probe_sample": 1.0,
+        "visible_on_variants": [
+          0,
+          1,
+          2
+        ],
+        "_visible_on_variant_names": [
+          "MONO",
+          "DIR/EFX",
+          "STEREO"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000111B",
@@ -1147,7 +1193,18 @@
         "values_documented": [
           "TRI",
           "SINE"
-        ]
+        ],
+        "visible_on_variants": [
+          0,
+          1,
+          2
+        ],
+        "_visible_on_variant_names": [
+          "MONO",
+          "DIR/EFX",
+          "STEREO"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000111F",
@@ -1168,7 +1225,18 @@
         "values_documented": [
           "FLAT",
           "20.0 Hz\u201312.5 kHz"
-        ]
+        ],
+        "visible_on_variants": [
+          0,
+          1,
+          2
+        ],
+        "_visible_on_variant_names": [
+          "MONO",
+          "DIR/EFX",
+          "STEREO"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001123",
@@ -1185,7 +1253,18 @@
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_probe_likely_truncated": "probe stops at raw=2 display='31.5Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep."
+        "_probe_likely_truncated": "probe stops at raw=2 display='31.5Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep.",
+        "visible_on_variants": [
+          0,
+          1,
+          2
+        ],
+        "_visible_on_variant_names": [
+          "MONO",
+          "DIR/EFX",
+          "STEREO"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001107",
@@ -1242,7 +1321,14 @@
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000112F",
@@ -1265,7 +1351,14 @@
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001133",
@@ -1288,7 +1381,14 @@
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001137",
@@ -1311,7 +1411,14 @@
         "value_max_probe_sample": null,
         "value_min": 0.0,
         "value_max": 40.0,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000113B",
@@ -1328,7 +1435,14 @@
           "FLAT, 20.0 Hz\u201312.5 kHz"
         ],
         "_probe_likely_truncated": "probe stops at raw=3 display='31.5Hz' but doc range 'FLAT, 20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep.",
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000113F",
@@ -1345,7 +1459,14 @@
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
         "_probe_likely_truncated": "probe stops at raw=3 display='40.0Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep.",
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001143",
@@ -1365,7 +1486,14 @@
           "MONO",
           "STEREO"
         ],
-        "_enum_extended_2026_05_11": true
+        "_enum_extended_2026_05_11": true,
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001147",
@@ -1388,7 +1516,14 @@
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000114B",
@@ -1411,7 +1546,14 @@
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000114F",
@@ -1434,7 +1576,14 @@
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001153",
@@ -1457,7 +1606,14 @@
         "value_max_probe_sample": null,
         "value_min": 0.0,
         "value_max": 40.0,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001157",
@@ -1475,7 +1631,14 @@
         "values_documented": [
           "TRI",
           "SINE"
-        ]
+        ],
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000115B",
@@ -1492,7 +1655,14 @@
           "FLAT, 20.0 Hz\u201312.5 kHz"
         ],
         "_probe_likely_truncated": "probe stops at raw=3 display='31.5Hz' but doc range 'FLAT, 20.0 Hz\u201312.5 kHz' extends to kHz \u2014 re-probe with extended raw sweep.",
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000115F",
@@ -1508,7 +1678,14 @@
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          3
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       }
     ],
     "dropdowns": [
@@ -2961,7 +3138,22 @@
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
         "value_max_probe_sample": 15,
-        "_address_verified_2026_05_10": true
+        "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "_visible_on_variant_names": [
+          "MONO",
+          "DIR/EFX",
+          "STEREO",
+          "PAN",
+          "REVERSE"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000112B",
@@ -2982,7 +3174,22 @@
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
         "value_max_probe_sample": 15,
-        "_address_verified_2026_05_10": true
+        "_address_verified_2026_05_10": true,
+        "visible_on_variants": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "_visible_on_variant_names": [
+          "MONO",
+          "DIR/EFX",
+          "STEREO",
+          "PAN",
+          "REVERSE"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001107",
@@ -3058,7 +3265,22 @@
         ],
         "_address_verified_2026_05_10": true,
         "_lookup_extended_2026_05_11": true,
-        "_lookup_max_display": "6.30kHz"
+        "_lookup_max_display": "6.30kHz",
+        "visible_on_variants": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "_visible_on_variant_names": [
+          "MONO",
+          "DIR/EFX",
+          "STEREO",
+          "PAN",
+          "REVERSE"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000110B",
@@ -3180,7 +3402,22 @@
         "value_min_probe_sample": 1,
         "value_max_probe_sample": 15,
         "_address_verified_2026_05_10": true,
-        "_note": "Catalog was missing TIME entirely; placed phantom 'TAP TIME' at 0x27 instead."
+        "_note": "Catalog was missing TIME entirely; placed phantom 'TAP TIME' at 0x27 instead.",
+        "visible_on_variants": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "_visible_on_variant_names": [
+          "MONO",
+          "DIR/EFX",
+          "STEREO",
+          "PAN",
+          "REVERSE"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001133",
@@ -3203,7 +3440,14 @@
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 120,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          5
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001137",
@@ -3220,7 +3464,14 @@
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
         "_probe_likely_truncated": "probe stops at raw=5 display='63.0Hz' but doc range '20.0 Hz\u201312.5 kHz, FLAT' extends to kHz \u2014 re-probe with extended raw sweep.",
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          5
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000113B",
@@ -3243,7 +3494,14 @@
         "value_max_probe_sample": null,
         "value_min": 1,
         "value_max": 2000,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          5
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000113F",
@@ -3266,7 +3524,14 @@
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          5
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001143",
@@ -3289,7 +3554,14 @@
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 120,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          5
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001147",
@@ -3305,7 +3577,14 @@
         "documented_enum_values": [
           "20.0 Hz\u201312.5 kHz, FLAT"
         ],
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          5
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       }
     ],
     "dropdowns": [
@@ -3359,7 +3638,14 @@
           "PAN",
           "REVERSE",
           "DUAL"
-        ]
+        ],
+        "visible_on_variants": [
+          5
+        ],
+        "_visible_on_variant_names": [
+          "DUAL"
+        ],
+        "_variant_conditional_2026_05_11": true
       }
     ],
     "_unmatched_label_addresses": [
@@ -4330,7 +4616,14 @@
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          0
+        ],
+        "_visible_on_variant_names": [
+          "RISE -> FALL"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001117",
@@ -4372,7 +4665,14 @@
         "value_max_probe_sample": null,
         "value_min": 0,
         "value_max": 100,
-        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition."
+        "_probe_classification_uncertain": "probe observed only 1 raw->display sample(s) \u2014 too few to confirm 'irregular'. Likely a mode-conditional cell that was inactive under probe conditions. Kind is unverified; trust value_*_documented for the range and re-probe with the right pre-condition.",
+        "visible_on_variants": [
+          1
+        ],
+        "_visible_on_variant_names": [
+          "RISE -> FADE"
+        ],
+        "_variant_conditional_2026_05_11": true
       }
     ],
     "dropdowns": [
@@ -13491,7 +13791,16 @@
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "visible_on_variants": [
+          0,
+          1
+        ],
+        "_visible_on_variant_names": [
+          "NORMAL",
+          "DIRECT MIX"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x1000110F",
@@ -13511,7 +13820,16 @@
         "raw_min_probe_sample": 0,
         "raw_max_probe_sample": 15,
         "value_min_probe_sample": 0,
-        "value_max_probe_sample": 15
+        "value_max_probe_sample": 15,
+        "visible_on_variants": [
+          0,
+          1
+        ],
+        "_visible_on_variant_names": [
+          "NORMAL",
+          "DIRECT MIX"
+        ],
+        "_variant_conditional_2026_05_11": true
       },
       {
         "address": "0x10001113",
@@ -13530,7 +13848,16 @@
         "values_documented": [
           "OFF",
           "ON"
-        ]
+        ],
+        "visible_on_variants": [
+          0,
+          1
+        ],
+        "_visible_on_variant_names": [
+          "NORMAL",
+          "DIRECT MIX"
+        ],
+        "_variant_conditional_2026_05_11": true
       }
     ],
     "dropdowns": [
