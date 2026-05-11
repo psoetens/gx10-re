@@ -1,0 +1,355 @@
+{
+  "_doc": "Phase B-2 truncated numeric_irregular probe",
+  "_ts": "2026-05-11T09:09:21",
+  "findings": {
+    "0x04": {
+      "title": "CHORUS",
+      "extended_knobs": {
+        "HIGH CUT": {
+          "new_entries": {},
+          "all_probed": {}
+        },
+        "1: LOW CUT": {
+          "new_entries": {},
+          "all_probed": {}
+        },
+        "1: HIGH CUT": {
+          "new_entries": {},
+          "all_probed": {}
+        },
+        "2: LOW CUT": {
+          "new_entries": {},
+          "all_probed": {}
+        }
+      },
+      "iterations": 25,
+      "elapsed_s": 105.69
+    },
+    "0x05": {
+      "title": "BASS CHORUS",
+      "extended_knobs": {
+        "HIGH CUT": {
+          "new_entries": {
+            "16": "800Hz",
+            "17": "1.00kHz",
+            "18": "1.25kHz",
+            "19": "1.60kHz",
+            "20": "2.00kHz",
+            "21": "2.50kHz",
+            "22": "3.15kHz",
+            "23": "4.00kHz",
+            "24": "5.00kHz",
+            "25": "6.30kHz",
+            "26": "8.00kHz",
+            "27": "10.0kHz",
+            "28": "12.5kHz",
+            "29": "FLAT"
+          },
+          "all_probed": {
+            "16": "800Hz",
+            "17": "1.00kHz",
+            "18": "1.25kHz",
+            "19": "1.60kHz",
+            "20": "2.00kHz",
+            "21": "2.50kHz",
+            "22": "3.15kHz",
+            "23": "4.00kHz",
+            "24": "5.00kHz",
+            "25": "6.30kHz",
+            "26": "8.00kHz",
+            "27": "10.0kHz",
+            "28": "12.5kHz",
+            "29": "FLAT"
+          }
+        }
+      },
+      "iterations": 25,
+      "elapsed_s": 114.27
+    },
+    "0x06": {
+      "title": "PRIME CHORUS",
+      "extended_knobs": {
+        "HIGH CUT": {
+          "new_entries": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          },
+          "all_probed": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          }
+        }
+      },
+      "iterations": 4,
+      "elapsed_s": 22.82
+    },
+    "0x0D": {
+      "title": "DELAY",
+      "extended_knobs": {
+        "HIGH CUT": {
+          "new_entries": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          },
+          "all_probed": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          }
+        }
+      },
+      "iterations": 4,
+      "elapsed_s": 20.86
+    },
+    "0x0E": {
+      "title": "DELAY+",
+      "extended_knobs": {
+        "HIGH CUT": {
+          "new_entries": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz",
+            "20": "6.30kHz",
+            "21": "6.30kHz",
+            "22": "6.30kHz",
+            "23": "6.30kHz",
+            "24": "6.30kHz",
+            "25": "6.30kHz",
+            "26": "6.30kHz",
+            "27": "6.30kHz",
+            "28": "6.30kHz",
+            "29": "6.30kHz",
+            "30": "6.30kHz",
+            "31": "6.30kHz",
+            "32": "6.30kHz",
+            "33": "6.30kHz",
+            "34": "6.30kHz",
+            "35": "6.30kHz",
+            "36": "6.30kHz",
+            "37": "6.30kHz",
+            "38": "6.30kHz",
+            "39": "6.30kHz",
+            "40": "6.30kHz"
+          },
+          "all_probed": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz",
+            "20": "6.30kHz",
+            "21": "6.30kHz",
+            "22": "6.30kHz",
+            "23": "6.30kHz",
+            "24": "6.30kHz",
+            "25": "6.30kHz",
+            "26": "6.30kHz",
+            "27": "6.30kHz",
+            "28": "6.30kHz",
+            "29": "6.30kHz",
+            "30": "6.30kHz",
+            "31": "6.30kHz",
+            "32": "6.30kHz",
+            "33": "6.30kHz",
+            "34": "6.30kHz",
+            "35": "6.30kHz",
+            "36": "6.30kHz",
+            "37": "6.30kHz",
+            "38": "6.30kHz",
+            "39": "6.30kHz",
+            "40": "6.30kHz"
+          }
+        },
+        "1: HIGH CUT": {
+          "new_entries": {},
+          "all_probed": {}
+        }
+      },
+      "iterations": 25,
+      "elapsed_s": 151.95
+    },
+    "0x0F": {
+      "title": "ANALOG DELAY",
+      "extended_knobs": {
+        "HIGH CUT": {
+          "new_entries": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          },
+          "all_probed": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          }
+        }
+      },
+      "iterations": 4,
+      "elapsed_s": 26.85
+    },
+    "0x10": {
+      "title": "SPACE ECHO",
+      "extended_knobs": {
+        "HIGH CUT": {
+          "new_entries": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          },
+          "all_probed": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          }
+        }
+      },
+      "iterations": 4,
+      "elapsed_s": 29.02
+    },
+    "0x11": {
+      "title": "SHIMMER DELAY",
+      "extended_knobs": {
+        "HIGH CUT": {
+          "new_entries": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          },
+          "all_probed": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          }
+        }
+      },
+      "iterations": 4,
+      "elapsed_s": 26.93
+    },
+    "0x14": {
+      "title": "PARAMETRIC EQUALIZER",
+      "extended_knobs": {
+        "LOW-MID FREQ": {
+          "new_entries": {},
+          "all_probed": {}
+        },
+        "HIGH-MID FREQ": {
+          "new_entries": {},
+          "all_probed": {}
+        },
+        "HIGH CUT": {
+          "new_entries": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz",
+            "20": "6.30kHz",
+            "21": "6.30kHz",
+            "22": "6.30kHz",
+            "23": "6.30kHz",
+            "24": "6.30kHz",
+            "25": "6.30kHz",
+            "26": "6.30kHz",
+            "27": "6.30kHz",
+            "28": "6.30kHz",
+            "29": "6.30kHz",
+            "30": "6.30kHz",
+            "31": "6.30kHz",
+            "32": "6.30kHz",
+            "33": "6.30kHz",
+            "34": "6.30kHz",
+            "35": "6.30kHz",
+            "36": "6.30kHz",
+            "37": "6.30kHz",
+            "38": "6.30kHz",
+            "39": "6.30kHz",
+            "40": "6.30kHz"
+          },
+          "all_probed": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz",
+            "20": "6.30kHz",
+            "21": "6.30kHz",
+            "22": "6.30kHz",
+            "23": "6.30kHz",
+            "24": "6.30kHz",
+            "25": "6.30kHz",
+            "26": "6.30kHz",
+            "27": "6.30kHz",
+            "28": "6.30kHz",
+            "29": "6.30kHz",
+            "30": "6.30kHz",
+            "31": "6.30kHz",
+            "32": "6.30kHz",
+            "33": "6.30kHz",
+            "34": "6.30kHz",
+            "35": "6.30kHz",
+            "36": "6.30kHz",
+            "37": "6.30kHz",
+            "38": "6.30kHz",
+            "39": "6.30kHz",
+            "40": "6.30kHz"
+          }
+        }
+      },
+      "iterations": 25,
+      "elapsed_s": 140.32
+    },
+    "0x3F": {
+      "title": "REVERB+",
+      "extended_knobs": {
+        "HIGH CUT": {
+          "new_entries": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          },
+          "all_probed": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          }
+        }
+      },
+      "iterations": 4,
+      "elapsed_s": 20.4
+    },
+    "0x40": {
+      "title": "SHIMMER REVERB",
+      "extended_knobs": {
+        "HIGH CUT": {
+          "new_entries": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          },
+          "all_probed": {
+            "16": "6.30kHz",
+            "17": "6.30kHz",
+            "18": "6.30kHz",
+            "19": "6.30kHz"
+          }
+        }
+      },
+      "iterations": 4,
+      "elapsed_s": 19.7
+    }
+  }
+}

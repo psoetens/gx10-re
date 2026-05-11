@@ -1,0 +1,106 @@
+{
+  "_doc": "Phase B-3 truncated enum probe",
+  "_ts": "2026-05-11T09:14:20",
+  "findings": {
+    "0x02": {
+      "title": "AIRD PREAMP",
+      "results": {
+        "BRIGHT SW": {
+          "address": "0x1000112B",
+          "full_values": [],
+          "new_values": [],
+          "raw_to_display": {}
+        }
+      },
+      "elapsed_s": 26.98
+    },
+    "0x03": {
+      "title": "BASS AIRD PREAMP",
+      "results": {
+        "BRIGHT SW": {
+          "address": "0x1000112B",
+          "full_values": [],
+          "new_values": [],
+          "raw_to_display": {}
+        }
+      },
+      "elapsed_s": 25.68
+    },
+    "0x04": {
+      "title": "CHORUS",
+      "results": {
+        "OUTPUT MODE": {
+          "address": "0x10001143",
+          "full_values": [
+            "STEREO"
+          ],
+          "new_values": [
+            "STEREO"
+          ],
+          "raw_to_display": {
+            "0": "STEREO",
+            "1": "STEREO",
+            "2": "STEREO",
+            "3": "STEREO",
+            "4": "STEREO"
+          }
+        },
+        "2: WAVEFORM": {
+          "address": "0x10001157",
+          "full_values": [],
+          "new_values": [],
+          "raw_to_display": {}
+        }
+      },
+      "elapsed_s": 23.94
+    },
+    "0x20": {
+      "title": "NOISE SUPPRESSOR",
+      "results": {
+        "DETECT": {
+          "address": "0x1000110B",
+          "full_values": [],
+          "new_values": [],
+          "raw_to_display": {}
+        }
+      },
+      "elapsed_s": 27.61
+    },
+    "0x3C": {
+      "title": "PITCH SHIFTER",
+      "results": {
+        "2: MODE": {
+          "address": "0x1000112F",
+          "full_values": [],
+          "new_values": [],
+          "raw_to_display": {}
+        }
+      },
+      "elapsed_s": 33.58
+    },
+    "0x3D": {
+      "title": "BASS PITCH SHIFTER",
+      "results": {
+        "2: MODE": {
+          "address": "0x1000112F",
+          "full_values": [],
+          "new_values": [],
+          "raw_to_display": {}
+        }
+      },
+      "elapsed_s": 33.61
+    },
+    "0x52": {
+      "title": "AUTO WAH",
+      "results": {
+        "FILTER MODE": {
+          "address": "0x10001103",
+          "full_values": [],
+          "new_values": [],
+          "raw_to_display": {}
+        }
+      },
+      "elapsed_s": 33.39
+    }
+  }
+}

@@ -1,0 +1,965 @@
+{
+  "_doc": "Phase B bipolar verification: write doc_min to each bipolar knob flagged _range_inconsistent, check BTS displays it. Verified knobs become eligible for raw_min/raw_max = doc_min/doc_max in the catalog.",
+  "_ts": "2026-05-11T08:36:34",
+  "summary": {
+    "effects_audited": 36,
+    "knobs_verified": 76,
+    "knobs_failed": 6
+  },
+  "findings": {
+    "0x01": {
+      "title": "AC RESONANCE",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.19
+    },
+    "0x02": {
+      "title": "AIRD PREAMP",
+      "knobs": {
+        "SAG": {
+          "label": "SAG",
+          "address": "0x1000112F",
+          "doc_min": -10,
+          "doc_max": 10,
+          "displayed": "-10",
+          "parsed": -10,
+          "verified": true
+        },
+        "RESONANCE": {
+          "label": "RESONANCE",
+          "address": "0x10001133",
+          "doc_min": -10,
+          "doc_max": 10,
+          "displayed": "-10",
+          "parsed": -10,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.41
+    },
+    "0x03": {
+      "title": "BASS AIRD PREAMP",
+      "knobs": {
+        "SAG": {
+          "label": "SAG",
+          "address": "0x1000112F",
+          "doc_min": -10,
+          "doc_max": 10,
+          "displayed": "-10",
+          "parsed": -10,
+          "verified": true
+        },
+        "RESONANCE": {
+          "label": "RESONANCE",
+          "address": "0x10001133",
+          "doc_min": -10,
+          "doc_max": 10,
+          "displayed": "-10",
+          "parsed": -10,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.39
+    },
+    "0x08": {
+      "title": "COMPRESSOR",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x10001113",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.01
+    },
+    "0x09": {
+      "title": "X-COMPRESSOR",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 7.88
+    },
+    "0x0A": {
+      "title": "X BASS COMPRESSOR",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.05
+    },
+    "0x0B": {
+      "title": "DEFRETTER",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.18
+    },
+    "0x0C": {
+      "title": "BASS DEFRETTER",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.07
+    },
+    "0x11": {
+      "title": "SHIMMER DELAY",
+      "knobs": {
+        "PITCH": {
+          "label": "PITCH",
+          "address": "0x1000112F",
+          "doc_min": -24,
+          "doc_max": 24,
+          "displayed": "+11",
+          "parsed": 11,
+          "verified": false
+        }
+      },
+      "elapsed_s": 8.56
+    },
+    "0x14": {
+      "title": "PARAMETRIC EQUALIZER",
+      "knobs": {
+        "LOW GAIN": {
+          "label": "LOW GAIN",
+          "address": "0x10001103",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "HIGH GAIN": {
+          "label": "HIGH GAIN",
+          "address": "0x10001107",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "LEVEL": {
+          "label": "LEVEL",
+          "address": "0x1000110B",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "LOW-MID GAIN": {
+          "label": "LOW-MID GAIN",
+          "address": "0x10001117",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "HIGH-MID GAIN": {
+          "label": "HIGH-MID GAIN",
+          "address": "0x10001123",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.6
+    },
+    "0x15": {
+      "title": "GRAPHIC EQUALIZER",
+      "knobs": {
+        "31.5Hz": {
+          "label": "31.5Hz",
+          "address": "0x10001103",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "63Hz": {
+          "label": "63Hz",
+          "address": "0x10001107",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "125Hz": {
+          "label": "125Hz",
+          "address": "0x1000110B",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "250Hz": {
+          "label": "250Hz",
+          "address": "0x1000110F",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "500Hz": {
+          "label": "500Hz",
+          "address": "0x10001113",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "1kHz": {
+          "label": "1kHz",
+          "address": "0x10001117",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "2kHz": {
+          "label": "2kHz",
+          "address": "0x1000111B",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "4kHz": {
+          "label": "4kHz",
+          "address": "0x1000111F",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "8kHz": {
+          "label": "8kHz",
+          "address": "0x10001123",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        },
+        "16kHz": {
+          "label": "16kHz",
+          "address": "0x10001127",
+          "doc_min": -20,
+          "doc_max": 20,
+          "displayed": "-20dB",
+          "parsed": -20,
+          "verified": true
+        }
+      },
+      "elapsed_s": 9.2
+    },
+    "0x18": {
+      "title": "PRIME FLANGER",
+      "knobs": {
+        "LOW DAMP": {
+          "label": "LOW DAMP",
+          "address": "0x10001123",
+          "doc_min": -100,
+          "doc_max": 0,
+          "displayed": "-100",
+          "parsed": -100,
+          "verified": true
+        },
+        "HIGH DAMP": {
+          "label": "HIGH DAMP",
+          "address": "0x10001127",
+          "doc_min": -100,
+          "doc_max": 0,
+          "displayed": "+11",
+          "parsed": 11,
+          "verified": false
+        }
+      },
+      "elapsed_s": 8.31
+    },
+    "0x19": {
+      "title": "PRIME BASS FLANGER",
+      "knobs": {
+        "LOW DAMP": {
+          "label": "LOW DAMP",
+          "address": "0x10001123",
+          "doc_min": -100,
+          "doc_max": 0,
+          "displayed": "-100",
+          "parsed": -100,
+          "verified": true
+        },
+        "HIGH DAMP": {
+          "label": "HIGH DAMP",
+          "address": "0x10001127",
+          "doc_min": -100,
+          "doc_max": 0,
+          "displayed": "+11",
+          "parsed": 11,
+          "verified": false
+        }
+      },
+      "elapsed_s": 8.37
+    },
+    "0x24": {
+      "title": "BOOSTER",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x10001113",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.29
+    },
+    "0x25": {
+      "title": "OVERDRIVE",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x10001113",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.02
+    },
+    "0x26": {
+      "title": "BASS OVERDRIVE",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x10001107",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x1000110F",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.25
+    },
+    "0x27": {
+      "title": "DISTORTION",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x10001113",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.55
+    },
+    "0x28": {
+      "title": "BASS DISTORTION",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x10001113",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.93
+    },
+    "0x29": {
+      "title": "FUZZ",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x10001113",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.11
+    },
+    "0x2A": {
+      "title": "BASS FUZZ",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x10001107",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x1000110F",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.2
+    },
+    "0x2B": {
+      "title": "X OVERDRIVE",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x10001107",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x1000110F",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.21
+    },
+    "0x2C": {
+      "title": "X BASS OVERDRIVE",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x10001107",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x1000110F",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.32
+    },
+    "0x2D": {
+      "title": "X DISTORTION",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x10001107",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x1000110F",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.52
+    },
+    "0x2E": {
+      "title": "METAL DISTORTION",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x10001113",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.19
+    },
+    "0x2F": {
+      "title": "BASS METAL DISTORTION",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x10001107",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "BOTTOM": {
+          "label": "BOTTOM",
+          "address": "0x1000110F",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.33
+    },
+    "0x30": {
+      "title": "OVERTONE",
+      "knobs": {
+        "LOW": {
+          "label": "LOW",
+          "address": "0x1000111B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "HIGH": {
+          "label": "HIGH",
+          "address": "0x1000111F",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.18
+    },
+    "0x33": {
+      "title": "PEDAL BEND",
+      "knobs": {
+        "PITCH MIN": {
+          "label": "PITCH MIN",
+          "address": "0x10001103",
+          "doc_min": -24,
+          "doc_max": 24,
+          "displayed": "-24",
+          "parsed": -24,
+          "verified": true
+        },
+        "PITCH MAX": {
+          "label": "PITCH MAX",
+          "address": "0x10001107",
+          "doc_min": -24,
+          "doc_max": 24,
+          "displayed": "-24",
+          "parsed": -24,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.01
+    },
+    "0x34": {
+      "title": "BASS PEDAL BEND",
+      "knobs": {
+        "PITCH MIN": {
+          "label": "PITCH MIN",
+          "address": "0x10001103",
+          "doc_min": -24,
+          "doc_max": 24,
+          "displayed": "-24",
+          "parsed": -24,
+          "verified": true
+        },
+        "PITCH MAX": {
+          "label": "PITCH MAX",
+          "address": "0x10001107",
+          "doc_min": -24,
+          "doc_max": 24,
+          "displayed": "-24",
+          "parsed": -24,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.18
+    },
+    "0x39": {
+      "title": "PRIME PHASER",
+      "knobs": {
+        "LOW DAMP": {
+          "label": "LOW DAMP",
+          "address": "0x10001127",
+          "doc_min": -100,
+          "doc_max": 0,
+          "displayed": "-100",
+          "parsed": -100,
+          "verified": true
+        },
+        "HIGH DAMP": {
+          "label": "HIGH DAMP",
+          "address": "0x1000112B",
+          "doc_min": -100,
+          "doc_max": 0,
+          "displayed": "-100",
+          "parsed": -100,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.43
+    },
+    "0x3A": {
+      "title": "PRIME BASS PHASER",
+      "knobs": {
+        "LOW DAMP": {
+          "label": "LOW DAMP",
+          "address": "0x10001127",
+          "doc_min": -100,
+          "doc_max": 0,
+          "displayed": "-100",
+          "parsed": -100,
+          "verified": true
+        },
+        "HIGH DAMP": {
+          "label": "HIGH DAMP",
+          "address": "0x1000112B",
+          "doc_min": -100,
+          "doc_max": 0,
+          "displayed": "-100",
+          "parsed": -100,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.32
+    },
+    "0x3C": {
+      "title": "PITCH SHIFTER",
+      "knobs": {
+        "1: PITCH": {
+          "label": "1: PITCH",
+          "address": "0x1000110B",
+          "doc_min": -24,
+          "doc_max": 24,
+          "displayed": "-24",
+          "parsed": -24,
+          "verified": true
+        },
+        "1: FINE": {
+          "label": "1: FINE",
+          "address": "0x10001113",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "2: PITCH": {
+          "label": "2: PITCH",
+          "address": "0x10001127",
+          "doc_min": -24,
+          "doc_max": 24,
+          "displayed": "+9",
+          "parsed": 9,
+          "verified": false
+        },
+        "2: FINE": {
+          "label": "2: FINE",
+          "address": "0x1000112B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.55
+    },
+    "0x3D": {
+      "title": "BASS PITCH SHIFTER",
+      "knobs": {
+        "1: PITCH": {
+          "label": "1: PITCH",
+          "address": "0x1000110B",
+          "doc_min": -24,
+          "doc_max": 24,
+          "displayed": "-24",
+          "parsed": -24,
+          "verified": true
+        },
+        "1: FINE": {
+          "label": "1: FINE",
+          "address": "0x10001113",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "2: PITCH": {
+          "label": "2: PITCH",
+          "address": "0x10001127",
+          "doc_min": -24,
+          "doc_max": 24,
+          "displayed": "+9",
+          "parsed": 9,
+          "verified": false
+        },
+        "2: FINE": {
+          "label": "2: FINE",
+          "address": "0x1000112B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.34
+    },
+    "0x3F": {
+      "title": "REVERB+",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "LOW DAMP": {
+          "label": "LOW DAMP",
+          "address": "0x10001123",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "HIGH DAMP": {
+          "label": "HIGH DAMP",
+          "address": "0x10001127",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.33
+    },
+    "0x40": {
+      "title": "SHIMMER REVERB",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x10001107",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "LOW DAMP": {
+          "label": "LOW DAMP",
+          "address": "0x1000111F",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "HIGH DAMP": {
+          "label": "HIGH DAMP",
+          "address": "0x10001123",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        },
+        "PITCH 1": {
+          "label": "PITCH 1",
+          "address": "0x1000113F",
+          "doc_min": -24,
+          "doc_max": 24,
+          "displayed": "-24",
+          "parsed": -24,
+          "verified": true
+        },
+        "PITCH 2": {
+          "label": "PITCH 2",
+          "address": "0x10001147",
+          "doc_min": -24,
+          "doc_max": 24,
+          "displayed": "+17",
+          "parsed": 17,
+          "verified": false
+        }
+      },
+      "elapsed_s": 8.74
+    },
+    "0x41": {
+      "title": "TERA ECHO",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x10001113",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.63
+    },
+    "0x51": {
+      "title": "SITAR SIMULATOR",
+      "knobs": {
+        "TONE": {
+          "label": "TONE",
+          "address": "0x1000110B",
+          "doc_min": -50,
+          "doc_max": 50,
+          "displayed": "-50",
+          "parsed": -50,
+          "verified": true
+        }
+      },
+      "elapsed_s": 8.23
+    }
+  }
+}
