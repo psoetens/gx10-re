@@ -7,8 +7,17 @@ the parameter dictionary accordingly.
 > ⚠️ **Updated 2026-05-09 after live device probe.** The earlier
 > claim that the Identity Reply's `softwareVersion` field encodes the
 > firmware version as `(major, minor)` is **wrong** for this device
-> family. See `reports/linux_probe_results.md` §P1-1. This file has
-> been rewritten accordingly.
+> family. See `reports/linux_probe_results.md` §P1-1.
+>
+> 🆕 **Updated 2026-05-14 after BTS-for-Mac source inspection.** The
+> prior claim that "there is no SysEx address known to expose the
+> firmware version" was incomplete. There is no address that reveals
+> the exact `(major, minor)` firmware version, but the two-byte pair
+> `(0x7F000000, 0x7F000003)` = (`EDITOR_COMMUNICATION_LEVEL`,
+> `EDITOR_COMMUNICATION_REVISION`) IS a coarse firmware capability
+> fingerprint that Roland bumps with firmware updates and that BTS
+> uses as its on-connect compatibility gate. See §"Firmware
+> capability fingerprint" below.
 
 ## TL;DR
 
@@ -16,15 +25,23 @@ the parameter dictionary accordingly.
   **product flag** (GX-100 = `0x00`, GX-10 = `0x01`), **not** a
   firmware major version. The remaining three bytes are reserved
   zeros on every firmware we've observed.
-- **There is no SysEx address known to expose the firmware
-  version.** A BOSS GX-10 running firmware 1.04 returns the same
+- **No SysEx address reveals the exact firmware `(major, minor)`.**
+  A BOSS GX-10 running firmware 1.04 returns the same
   `softwareVersion = [01 00 00 00]` as one running firmware 1.0.
+- However, the **firmware capability level** at `0x7F000000` does
+  change across firmware update generations and is exposed on the
+  wire. On this unit: `0x03` (the launch family, fw ≤ 1.04).
+  BTS v1.0.2 — built against firmware 1.05 — hard-codes `4`, and so
+  refuses to connect to this unit. See §"Firmware capability
+  fingerprint" below for the full mapping.
 - For dictionary filtering, replace "version sniff" with **feature
   probe**: read a small set of v2-only registers (e.g. an out-of-v1
   effect TYPE, or a v2-only `[SystemCommon]` slot) and infer the
-  feature surface from what responds.
+  feature surface from what responds. The capability level alone
+  is too coarse for per-feature decisions.
 - Per-product gating IS reliable (Identity Reply byte 10 is stable
-  across firmwares within a product). Per-firmware gating is not.
+  across firmwares within a product). Per-firmware gating works at
+  the **capability level** but does not resolve every sub-revision.
 
 ---
 
@@ -56,41 +73,92 @@ which device or which firmware.
 
 ## What the device DOES NOT tell you over MIDI
 
-- **Firmware version.** Not in Identity Reply, not in any RQ1
-  address probed so far (we tested `0x00000040`, `0x00000050`,
-  `0x00000060`, `0x00000080`, `0x000000A0`, `0x00010000`,
-  `0x00FF0000`, `0x00200500`, `0x7F000800`, `0x7F010000` — none
-  reply with version-looking data).
+- **Exact firmware `(major, minor)`** (e.g. distinguishing 1.00 from
+  1.04). Not in Identity Reply, not in any RQ1 address probed so
+  far (we tested `0x00000040`, `0x00000050`, `0x00000060`,
+  `0x00000080`, `0x000000A0`, `0x00010000`, `0x00FF0000`,
+  `0x00200500`, `0x7F000800`, `0x7F010000` — none reply with
+  version-looking data).
 - **USB descriptors.** `bcdDevice = 1.00` regardless of firmware;
   `iSerial` is empty.
 
+But the device DOES tell you the **firmware capability level**
+(see next section), which is what BTS actually uses to decide if a
+connected unit is "old". That's a coarser signal than the
+sub-version but it's the same signal Roland uses internally.
+
 The user-visible "VERSION" screen on the GX-10's MENU does show the
-running firmware, so it's stored on the device — just not exposed
-on any wire interface we can read.
+running firmware (e.g. "1.04"), so the exact value is stored on the
+device — just not exposed on any wire interface we can read.
 
 **Update 2026-05-09 (Windows BTS capture, `reports/bts_capture_findings.md`
 §4):** observed BTS startup at MIDI level — no SysEx reads to
 addresses outside the chart-documented map, no payload resembling
-`1.04` / `01 04`. The strong hypothesis from that session is that
-BTS reads the firmware version via a **USB control transfer** or
-the **`bcdDevice` USB descriptor field**, not via MIDI SysEx.
+`1.04` / `01 04`. The hypothesis from that session was that BTS
+reads the firmware version via a **USB control transfer** or the
+**`bcdDevice` USB descriptor field**, not via MIDI SysEx.
 
-This is consistent with the Linux `lsusb -v` we already captured
-(`bcdDevice = 1.00` on this firmware-1.04 device) — but `bcdDevice`
-appears not to track firmware either. Resolution paths:
+**Resolved 2026-05-14 (BTS-for-Mac v1.0.0 source inspection +
+live handshake capture, `captures/bts_v100_handshake.jsonl`):**
+BTS does NOT need the exact firmware version. It reads a single
+**capability level** byte at `0x7F000000` (`EDITOR_COMMUNICATION_LEVEL`)
+and a sub-revision at `0x7F000003` (`EDITOR_COMMUNICATION_REVISION`),
+each via standard RQ1, and compares the pair to its hard-coded
+`(ProductSetting.communicationLevel, ProductSetting.communicationRevision)`.
+This is the gate. There is no USB control transfer involved.
 
-1. Linux `lsusb -v` against a different-firmware GX-10 to see if
-   `bcdDevice` differs across firmwares. Not done yet.
-2. A USB analyser (Beagle / Ellisys) to capture control transfers
-   on a working-USBPcap host. USBPcap was unusable on the test
-   machine (Intel xHCI 3.10 controller — see Operational lessons
-   in `reports/bts_capture_findings.md`).
-3. Reverse-engineering BTS's native bridge DLL for
-   `WinUsb_ControlTransfer` calls.
+This means the **firmware-version-on-the-wire claim above is
+nuanced**: the exact `(major, minor)` isn't exposed, but the
+capability-level pair that Roland actually cares about IS, and
+it changes with firmware updates that change protocol behaviour.
 
-For practical purposes the firmware-version source remains
-**not known on the wire**. The feature-probe strategy described
-above is what this repo uses.
+## Firmware capability fingerprint
+
+| Address | Purpose | Observed on this unit | Reserved? |
+|---------|---------|-----------------------|-----------|
+| `0x7F000000` | `EDITOR_COMMUNICATION_LEVEL` | `0x03` | no — bumped per firmware family |
+| `0x7F000003` | `EDITOR_COMMUNICATION_REVISION` | `0x00` | unused so far; bumped within a level |
+
+**BTS-version mapping** (extracted from each BTS bundle's
+`Contents/Resources/html/js/config/product_setting.js`):
+
+| BTS macOS version | Expected `(level, revision)` | Bundle filename |
+|-------------------|-------------------------------|-----------------|
+| v1.0.0 | `(3, 0)` | `bts_gx10_m100.zip` (archived; on `static.roland.com`) |
+| v1.0.2 | `(4, 0)` | `bts_gx10_m102.zip` (current Roland release) |
+
+**Inferred firmware → level mapping** (cross-referencing BOSS's
+GX-10 update history with the BTS-version mapping above):
+
+| Firmware | Inferred level | Source of inference |
+|----------|----------------|---------------------|
+| 1.00 (launch) | `3` | BTS v1.0.0 was current at GX-10 launch |
+| 1.04 | `3` | Linux probe 2026-05-09 returned `0x03` |
+| 1.05 | `4` (predicted) | BTS v1.0.2 expects `4` and was released alongside fw 1.05 |
+
+DT1 writes to `0x7F000000` are **silently ignored** (confirmed
+2026-05-14 by writing `0x04` and reading back `0x03`). The
+capability level is firmware-baked, not a settable runtime flag,
+so it cannot be spoofed to bypass BTS's gate.
+
+The handshake sequence BTS runs on connect, decoded from
+`captures/bts_v100_handshake.jsonl`:
+
+```
+1.  H→D    F0 7E 7F 06 01 F7                  Identity Request
+2.  D→H    F0 7E 10 06 02 41 0B 04 00 00 01 00 00 00 F7
+                                                Identity Reply (product=GX-10)
+3.  H→D    RQ1 0x7F000000  size=1               read capability level
+4.  D→H    DT1 0x7F000000  03                   level=3 (gate check vs ProductSetting.communicationLevel)
+5.  H→D    DT1 0x7F000001  01                   editor-attach handshake (twice)
+6.  H→D    RQ1 0x7F000003  size=1               read capability sub-revision
+7.  D→H    DT1 0x7F000003  00                   revision=0 (gate check)
+8.  …                                           proceed with patch-list reads (§3.5)
+```
+
+If either check fails, BTS shows `IDM_ERROR_OLD_FIRM_MESSAGE` (when
+level too low) or `IDM_ERROR_OLD_BTS_MESSAGE` (when level too high)
+and falls into offline mode.
 
 ---
 
@@ -157,9 +225,9 @@ See `reports/cross_check_findings.md` P1-1b for the cross-link.
 
 | Version | Released | What's known |
 |---------|----------|--------------|
-| **1.00** | release-day (2024) | Launch firmware. Identity Reply: `softwareVersion = [01 00 00 00]`. |
-| **1.04** | (current at 2026-05-09) | Live tested: `[01 00 00 00]` — **same bytes as 1.00**. Setup region (00 20 xx xx) intact. SystemControl block is 0x66 bytes (GX-10 footswitch fields at offsets 0x64/0x65 populated). All 5 v2-effects (TYPE 78..82) present and selectable. |
-| **1.05** | (per BOSS support page, 2026-05-09) | Listed but not yet tested. Likely the same Identity Reply pattern. |
+| **1.00** | release-day (2024) | Launch firmware. Identity Reply: `softwareVersion = [01 00 00 00]`. Inferred capability `(level=3, revision=0)` — BTS v1.0.0 was released alongside this firmware and expects `(3, 0)`. |
+| **1.04** | (current at 2026-05-09) | Live tested: Identity Reply `[01 00 00 00]` — **same bytes as 1.00**. Capability `(3, 0)`. Setup region (00 20 xx xx) intact. SystemControl block is 0x66 bytes (GX-10 footswitch fields at offsets 0x64/0x65 populated). All 5 v2-effects (TYPE 78..82) present and selectable. |
+| **1.05** | (per BOSS support page, 2026-05-09) | Not directly tested. Predicted capability `(level=4, revision=0)` from BTS v1.0.2's `ProductSetting.communicationLevel: 4`. Identity Reply almost certainly still `[01 00 00 00]` (product flag is firmware-stable). |
 
 The repository's protocol captures were taken against firmware 1.00
 (see `docs/protocol.md` "Captured at the wire level …" section).

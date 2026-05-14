@@ -151,7 +151,7 @@ Tone Studio's editor).
 | `0x0020_0000` | (editor staging) | ✔ | Tone Studio's I/O staging area — host writes here, device echoes the persisted value into `0x0000_6xxx`. NOT in the official chart; appears to be TS-internal. |
 | `0x1000_0000` | Memory (temporary) | ✔ | **Live edit buffer** — current patch, ~16 KiB. See §3.4 |
 | `0x2000_0000` | Memory 1..200 (user) | ✔ | **User-memory bank** — 200 memories × `0x60000` stride (= up to memory 200 at `0x292A_0000`) |
-| `0x5000_0000` | (preset name table) | ✔ | Preset patch name table (read-only, 296 names) — empirically observed |
+| `0x5000_0000` | (preset name table) | ✔ | Preset patch name table (read-only, 300 names) — empirically observed; see §3.5 |
 | `0x6040_0000` | (user-patch RAM mirror) | ✔ | **Working-RAM mirror of user patches** — what BTS reads to display the live patch list. 16 patch slot headers at `0x6040_0000..0x604F_0000` stride `0x10000`. Slot starts with the bank-label header (e.g. literal `"USER 1   "` at `0x6040_0000`, `"USER 2   "` at `0x6041_0000`). The persistent flash storage is at `0x2000_0000` per the chart; this region is the live RAM copy. (Source: `reports/bts_capture_findings.md` §1 — BTS startup snapshot.) |
 | `0x7F00_0000` | (status / runtime) | ✔ | System status registers + tuner display stream + WRITE save-trigger. Not in the official address tree (runtime only). |
 
@@ -378,15 +378,33 @@ region, or a parallel temp buffer.
 
 ### 3.5 `0x50000000` — preset name table (read-only)
 
-296 patch names, 16 ASCII bytes each, packed 8 names per 128-byte chunk.
-Address increments by `0x100` per chunk, from `0x50000000` to `0x50002500`.
+Preset patch names, 16 ASCII bytes each, packed contiguously. Reads are
+in 256-byte chunks (16 names per chunk). Address increments by `0x100`
+per chunk, from `0x50000000` up to `0x50002500`.
+
+Capture against firmware-level-3 GX-10 (2026-05-14, full BTS-v1.0.0
+startup trace at `captures/bts_v100_handshake.jsonl`): **38 chunks
+read, 9536 bytes total, 596 16-byte slots, of which 300 are non-empty
+preset names.** Spaces pad to 16 chars; trailing empty slots are
+all-`0x00`. BTS's last RQ1 in the range is `0x50002500 size=0x40` (a
+short chunk, not the full `0x100`), which is the natural end-of-table.
 
 ```
-0x50000000  "NATURAL AMP HB  BOUTIQUE AMP HB SUPREME AMP HB  MAXIMUM AMP HB  ..."
-0x50000100  "JC120 AMP HB    TWIN CMB AMP HB DELUXE AMP HB   TWEED CMB AMP HB..."
+0x50000000  "NATURAL AMP HB  HEAVY METAL     SUPREME AMP HB  MAXIMUM AMP HB  ..."
+0x50000100  "JC120 AMP HB    TWIN CMB AMP HB BG COMBO AMP HB ORNG STK AMP HB ..."
 ...
-0x50002500  "LOOPER CLEAN    LOOPER CRUNCH   LOOPER DRIVE    LOOPER -1OCT    "
+0x50002500  "FUZZ BASS       LOOPER CLEAN    LOOPER CRUNCH   LOOPER DRIVE    LOOPER -1OCT"
 ```
+
+The catalogue is **read-only**. It is the bulk equivalent of the
+chart-documented per-memory name reads — BTS uses it on connect to
+populate its patch-list UI in one sweep rather than 296 separate
+patch-load + RQ1 cycles.
+
+⚠️ The example name "BOUTIQUE AMP HB" cited in an earlier version of
+this section appears to be from a different firmware or unit. The
+listing above is the actual decoded content of a firmware-level-3
+GX-10 captured on 2026-05-14.
 
 ### 3.6 `0x60400000` — user patch slots (RAM)
 
@@ -424,10 +442,10 @@ Single-byte registers at fixed offsets, observed (Linux probes
 
 | Address | Role | Notes |
 |---------|------|-------|
-| `0x7F000000` | system-mode flag (`0x03` observed; constant on both Linux probe and BTS capture) | |
+| `0x7F000000` | **EDITOR_COMMUNICATION_LEVEL** — firmware capability level | BTS's per-version compatibility gate. On connect BTS reads this byte and compares it to its own `ProductSetting.communicationLevel`; mismatch → "older firmware" or "older BTS" dialog and offline mode. Observed values: **`0x03`** on this unit (firmware-level-3, the launch family — confirmed against fw 1.00 captures and a 2026-05-09 Linux probe of fw 1.04). BTS v1.0.0 (`bts_gx10_m100.zip`) hard-codes 3; BTS v1.0.2 (current Roland release) hard-codes 4. Inferred mapping: fw ≤ 1.04 → 3, fw 1.05 → 4. See `docs/firmware_versions.md` and BTS source `Resources/html/js/businesslogic/midi_connect_controller.js:207`. **DT1 writes are silently ignored** — read-only firmware flag, not a settable register. |
 | `0x7F000001` | **editor-attached handshake bit** | host writes `0x01` on connect, device echoes; host writes `0x00` on disconnect. BTS writes it twice back-to-back at startup. |
 | `0x7F000002` | **RunningMode mirror** | mirrors `0x00000007`. `0x00`=EDIT (BTS startup default), `0x01`=MONO TUNER, `0x02`=POLY TUNER, `0x03`=TT TUNER. **Silent until the editor-attach bit is set.** |
-| `0x7F000003` | revision-check stub (`0x00` observed) | |
+| `0x7F000003` | **EDITOR_COMMUNICATION_REVISION** — firmware capability sub-revision | Second leg of the BTS firmware gate (read right after `0x7F000001` is written). Compared to `ProductSetting.communicationRevision`. **`0x00`** observed on every firmware we've seen and expected by every BTS we've inspected (v1.0.0, v1.0.2); reserved for future use. See `docs/firmware_versions.md`. |
 | `0x7F000300` | **TUNER pitch streaming buffer** (48 bytes) | streamed by device every ~200 ms while in TUNER mode; layout = 8 string slots × 6 bytes each, encoding per-string pitch / detection state. Empty pattern is `00 01 03 08 08 00` per string. |
 | `0x7F000701` | **state-mirror for chain edit** | BTS writes `0x05` when a chain edit begins (paired with `0x00200003 = 0x01`) and `0x03` when it ends (paired with `0x00200003 = 0x00`). Within 0–10 ms of the trigger. Member of the same "global state mirror" family as `0x7F000002`. |
 | `0x7F000703` | **second handshake-style toggle** | host writes `0x00` then `0x01` at startup, mirroring the `0x7F000001` pattern. Purpose unknown — possibly a separate broadcast-subscribe channel. Silent on Linux probe without `0x7F000001 = 0x01` first. |
