@@ -227,7 +227,7 @@ See `reports/cross_check_findings.md` P1-1b for the cross-link.
 |---------|----------|--------------|
 | **1.00** | release-day (2024) | Launch firmware. Identity Reply: `softwareVersion = [01 00 00 00]`. Inferred capability `(level=3, revision=0)` — BTS v1.0.0 was released alongside this firmware and expects `(3, 0)`. |
 | **1.04** | (current at 2026-05-09) | Live tested: Identity Reply `[01 00 00 00]` — **same bytes as 1.00**. Capability `(3, 0)`. Setup region (00 20 xx xx) intact. SystemControl block is 0x66 bytes (GX-10 footswitch fields at offsets 0x64/0x65 populated). All 5 v2-effects (TYPE 78..82) present and selectable. |
-| **1.05** | (per BOSS support page, 2026-05-09) | Not directly tested. Predicted capability `(level=4, revision=0)` from BTS v1.0.2's `ProductSetting.communicationLevel: 4`. Identity Reply almost certainly still `[01 00 00 00]` (product flag is firmware-stable). |
+| **1.05** | (per BOSS support page, 2026-05-09) | Not directly tested. Predicted capability `(level=4, revision=0)` from BTS v1.0.2's `ProductSetting.communicationLevel: 4`. Identity Reply almost certainly still `[01 00 00 00]` (product flag is firmware-stable). The level bump from 3→4 gates **four bug-fix workarounds in BTS v1.0.2** rather than any new wire protocol — see [`bts_version_diff_v100_vs_v102.md`](bts_version_diff_v100_vs_v102.md). Notable: BTS v1.0.2 treats `TOTAL_USER_PATCH` as 198 instead of 200 on this firmware, suggesting 2 user-memory slots are reserved on fw 1.05. |
 
 The repository's protocol captures were taken against firmware 1.00
 (see `docs/protocol.md` "Captured at the wire level …" section).
