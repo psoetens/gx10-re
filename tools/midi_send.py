@@ -1,137 +1,30 @@
 """
-Send arbitrary SysEx to the GX-10 via WinMM `midiOut*` calls.
+Send arbitrary SysEx to the GX-10.
 
-Provides primitives for the address-space probe in `address_scan.py`:
+Backwards-compatible primitives originally written against Win32 `winmm`;
+on macOS and Linux the same API is now served by python-rtmidi (which
+also wraps WinMM on Windows, so we could collapse the two paths — kept
+split so existing Windows-RE tooling sees byte-identical behaviour).
+
   - find_output_port(name_substr) -> (idx, name)
-  - MidiOut(idx).send_sysex(bytes) / .close()
-  - rq1(addr, size_in_bytes) -> bytes  # builds a Roland RQ1 request
+  - MidiOut(idx).send_sysex(bytes) / .send_short_msg(bytes) / .close()
+  - build_dt1(addr, payload), build_rq1(addr, size), build_identity_request()
 
-Also doubles as a CLI:
-    python midi_send.py --identity              # send F0 7E 7F 06 01 F7
-    python midi_send.py --rq1 10000000 00000010 # request 16 bytes at 0x10000000
+CLI:
+    python midi_send.py --identity
+    python midi_send.py --rq1 10000000 00000010
+    python midi_send.py --raw F07E7F0601F7
 """
 import argparse
-import ctypes
 import sys
 import time
-from ctypes import wintypes
 
-winmm = ctypes.WinDLL("winmm")
-
-class MIDIOUTCAPSW(ctypes.Structure):
-    _fields_ = [
-        ("wMid", wintypes.WORD),
-        ("wPid", wintypes.WORD),
-        ("vDriverVersion", wintypes.DWORD),
-        ("szPname", wintypes.WCHAR * 32),
-        ("wTechnology", wintypes.WORD),
-        ("wVoices", wintypes.WORD),
-        ("wNotes", wintypes.WORD),
-        ("wChannelMask", wintypes.WORD),
-        ("dwSupport", wintypes.DWORD),
-    ]
-
-class MIDIHDR(ctypes.Structure):
-    _fields_ = [
-        ("lpData", ctypes.c_void_p),
-        ("dwBufferLength", wintypes.DWORD),
-        ("dwBytesRecorded", wintypes.DWORD),
-        ("dwUser", ctypes.c_void_p),
-        ("dwFlags", wintypes.DWORD),
-        ("lpNext", ctypes.c_void_p),
-        ("reserved", ctypes.c_void_p),
-        ("dwOffset", wintypes.DWORD),
-        ("dwReserved", ctypes.c_void_p * 8),
-    ]
-
-HMIDIOUT = ctypes.c_void_p
-LPMIDIHDR = ctypes.c_void_p
-
-def _bind(fn, argtypes, restype=wintypes.UINT):
-    fn.argtypes = argtypes
-    fn.restype = restype
-
-_bind(winmm.midiOutGetNumDevs, [], wintypes.UINT)
-_bind(winmm.midiOutGetDevCapsW, [wintypes.UINT, ctypes.c_void_p, wintypes.UINT])
-_bind(winmm.midiOutGetErrorTextW, [wintypes.UINT, wintypes.LPWSTR, wintypes.UINT])
-_bind(winmm.midiOutOpen, [ctypes.POINTER(HMIDIOUT), wintypes.UINT, ctypes.c_void_p, ctypes.c_void_p, wintypes.DWORD])
-_bind(winmm.midiOutClose, [HMIDIOUT])
-_bind(winmm.midiOutPrepareHeader, [HMIDIOUT, LPMIDIHDR, wintypes.UINT])
-_bind(winmm.midiOutUnprepareHeader, [HMIDIOUT, LPMIDIHDR, wintypes.UINT])
-_bind(winmm.midiOutLongMsg, [HMIDIOUT, LPMIDIHDR, wintypes.UINT])
-_bind(winmm.midiOutShortMsg, [HMIDIOUT, wintypes.DWORD])
-
-CALLBACK_NULL = 0
-
-def _err(rc):
-    buf = ctypes.create_unicode_buffer(256)
-    winmm.midiOutGetErrorTextW(rc, buf, 256)
-    return f"mmsyserr {rc}: {buf.value}"
-
-def find_output_port(name_substr: str):
-    n = winmm.midiOutGetNumDevs()
-    for i in range(n):
-        caps = MIDIOUTCAPSW()
-        rc = winmm.midiOutGetDevCapsW(i, ctypes.byref(caps), ctypes.sizeof(caps))
-        if rc == 0 and name_substr.lower() in caps.szPname.lower():
-            return i, caps.szPname
-    return None, None
+_IS_WIN = sys.platform == "win32"
 
 
-class MidiOut:
-    def __init__(self, port_index: int):
-        self.handle = HMIDIOUT()
-        rc = winmm.midiOutOpen(ctypes.byref(self.handle), port_index, None, None, CALLBACK_NULL)
-        if rc != 0:
-            raise RuntimeError(f"midiOutOpen failed: {_err(rc)}")
+# --- Roland helpers (pure-Python, shared across backends) ----------------
 
-    def send_short_msg(self, data: bytes):
-        """Send a 1- to 3-byte MIDI short message. Used for PC#, CC, etc."""
-        if not (1 <= len(data) <= 3):
-            raise ValueError("short message must be 1-3 bytes")
-        # WinMM's dwMsg packs the bytes little-endian: status, data1, data2.
-        msg = data[0]
-        if len(data) >= 2:
-            msg |= data[1] << 8
-        if len(data) == 3:
-            msg |= data[2] << 16
-        rc = winmm.midiOutShortMsg(self.handle, msg)
-        if rc != 0:
-            raise RuntimeError(f"midiOutShortMsg: {_err(rc)}")
-
-    def send_sysex(self, data: bytes):
-        if not data or data[0] != 0xF0 or data[-1] != 0xF7:
-            raise ValueError("data must be a complete SysEx (F0..F7)")
-        buf = ctypes.create_string_buffer(data, len(data))
-        hdr = MIDIHDR()
-        hdr.lpData = ctypes.addressof(buf)
-        hdr.dwBufferLength = len(data)
-        hdr.dwBytesRecorded = len(data)
-        hdr.dwFlags = 0
-        rc = winmm.midiOutPrepareHeader(self.handle, ctypes.byref(hdr), ctypes.sizeof(MIDIHDR))
-        if rc != 0:
-            raise RuntimeError(f"midiOutPrepareHeader: {_err(rc)}")
-        try:
-            rc = winmm.midiOutLongMsg(self.handle, ctypes.byref(hdr), ctypes.sizeof(MIDIHDR))
-            if rc != 0:
-                raise RuntimeError(f"midiOutLongMsg: {_err(rc)}")
-            # Wait briefly for the driver to finish with the buffer
-            for _ in range(100):
-                if hdr.dwFlags & 0x00000001:  # MHDR_DONE
-                    break
-                time.sleep(0.005)
-        finally:
-            winmm.midiOutUnprepareHeader(self.handle, ctypes.byref(hdr), ctypes.sizeof(MIDIHDR))
-
-    def close(self):
-        try:
-            winmm.midiOutClose(self.handle)
-        except Exception:
-            pass
-
-
-# --- Roland helpers --------------------------------------------------------
-ROLAND_HEADER = bytes([0xF0, 0x41, 0x10, 0x00, 0x00, 0x00, 0x00, 0x0B])  # 5-byte model
+ROLAND_HEADER = bytes([0xF0, 0x41, 0x10, 0x00, 0x00, 0x00, 0x00, 0x0B])
 
 def roland_checksum(addr_data: bytes) -> int:
     return (-sum(addr_data)) & 0x7F
@@ -148,7 +41,6 @@ def build_dt1(addr: int, payload: bytes) -> bytes:
     return ROLAND_HEADER + b"\x12" + body + bytes([roland_checksum(body)]) + b"\xF7"
 
 def build_rq1(addr: int, size: int) -> bytes:
-    """Build an RQ1 (data request). size is a 4-byte big-endian count of bytes."""
     addr_b = addr.to_bytes(4, "big")
     size_b = size.to_bytes(4, "big")
     if any(b > 0x7F for b in addr_b + size_b):
@@ -159,6 +51,177 @@ def build_rq1(addr: int, size: int) -> bytes:
 def build_identity_request() -> bytes:
     return bytes([0xF0, 0x7E, 0x7F, 0x06, 0x01, 0xF7])
 
+
+# --- backend: WinMM (Windows) --------------------------------------------
+
+if _IS_WIN:
+    import ctypes
+    from ctypes import wintypes
+
+    winmm = ctypes.WinDLL("winmm")
+
+    class MIDIOUTCAPSW(ctypes.Structure):
+        _fields_ = [
+            ("wMid", wintypes.WORD),
+            ("wPid", wintypes.WORD),
+            ("vDriverVersion", wintypes.DWORD),
+            ("szPname", wintypes.WCHAR * 32),
+            ("wTechnology", wintypes.WORD),
+            ("wVoices", wintypes.WORD),
+            ("wNotes", wintypes.WORD),
+            ("wChannelMask", wintypes.WORD),
+            ("dwSupport", wintypes.DWORD),
+        ]
+
+    class MIDIHDR(ctypes.Structure):
+        _fields_ = [
+            ("lpData", ctypes.c_void_p),
+            ("dwBufferLength", wintypes.DWORD),
+            ("dwBytesRecorded", wintypes.DWORD),
+            ("dwUser", ctypes.c_void_p),
+            ("dwFlags", wintypes.DWORD),
+            ("lpNext", ctypes.c_void_p),
+            ("reserved", ctypes.c_void_p),
+            ("dwOffset", wintypes.DWORD),
+            ("dwReserved", ctypes.c_void_p * 8),
+        ]
+
+    HMIDIOUT = ctypes.c_void_p
+    LPMIDIHDR = ctypes.c_void_p
+
+    def _bind(fn, argtypes, restype=wintypes.UINT):
+        fn.argtypes = argtypes
+        fn.restype = restype
+
+    _bind(winmm.midiOutGetNumDevs, [], wintypes.UINT)
+    _bind(winmm.midiOutGetDevCapsW, [wintypes.UINT, ctypes.c_void_p, wintypes.UINT])
+    _bind(winmm.midiOutGetErrorTextW, [wintypes.UINT, wintypes.LPWSTR, wintypes.UINT])
+    _bind(winmm.midiOutOpen, [ctypes.POINTER(HMIDIOUT), wintypes.UINT, ctypes.c_void_p, ctypes.c_void_p, wintypes.DWORD])
+    _bind(winmm.midiOutClose, [HMIDIOUT])
+    _bind(winmm.midiOutPrepareHeader, [HMIDIOUT, LPMIDIHDR, wintypes.UINT])
+    _bind(winmm.midiOutUnprepareHeader, [HMIDIOUT, LPMIDIHDR, wintypes.UINT])
+    _bind(winmm.midiOutLongMsg, [HMIDIOUT, LPMIDIHDR, wintypes.UINT])
+    _bind(winmm.midiOutShortMsg, [HMIDIOUT, wintypes.DWORD])
+
+    CALLBACK_NULL = 0
+
+    def _err(rc):
+        buf = ctypes.create_unicode_buffer(256)
+        winmm.midiOutGetErrorTextW(rc, buf, 256)
+        return f"mmsyserr {rc}: {buf.value}"
+
+    def find_output_port(name_substr: str):
+        n = winmm.midiOutGetNumDevs()
+        for i in range(n):
+            caps = MIDIOUTCAPSW()
+            rc = winmm.midiOutGetDevCapsW(i, ctypes.byref(caps), ctypes.sizeof(caps))
+            if rc == 0 and name_substr.lower() in caps.szPname.lower():
+                return i, caps.szPname
+        return None, None
+
+    class MidiOut:
+        def __init__(self, port_index: int):
+            self.handle = HMIDIOUT()
+            rc = winmm.midiOutOpen(ctypes.byref(self.handle), port_index, None, None, CALLBACK_NULL)
+            if rc != 0:
+                raise RuntimeError(f"midiOutOpen failed: {_err(rc)}")
+
+        def send_short_msg(self, data: bytes):
+            """Send a 1- to 3-byte MIDI short message. Used for PC#, CC, etc."""
+            if not (1 <= len(data) <= 3):
+                raise ValueError("short message must be 1-3 bytes")
+            msg = data[0]
+            if len(data) >= 2:
+                msg |= data[1] << 8
+            if len(data) == 3:
+                msg |= data[2] << 16
+            rc = winmm.midiOutShortMsg(self.handle, msg)
+            if rc != 0:
+                raise RuntimeError(f"midiOutShortMsg: {_err(rc)}")
+
+        def send_sysex(self, data: bytes):
+            if not data or data[0] != 0xF0 or data[-1] != 0xF7:
+                raise ValueError("data must be a complete SysEx (F0..F7)")
+            buf = ctypes.create_string_buffer(data, len(data))
+            hdr = MIDIHDR()
+            hdr.lpData = ctypes.addressof(buf)
+            hdr.dwBufferLength = len(data)
+            hdr.dwBytesRecorded = len(data)
+            hdr.dwFlags = 0
+            rc = winmm.midiOutPrepareHeader(self.handle, ctypes.byref(hdr), ctypes.sizeof(MIDIHDR))
+            if rc != 0:
+                raise RuntimeError(f"midiOutPrepareHeader: {_err(rc)}")
+            try:
+                rc = winmm.midiOutLongMsg(self.handle, ctypes.byref(hdr), ctypes.sizeof(MIDIHDR))
+                if rc != 0:
+                    raise RuntimeError(f"midiOutLongMsg: {_err(rc)}")
+                for _ in range(100):
+                    if hdr.dwFlags & 0x00000001:  # MHDR_DONE
+                        break
+                    time.sleep(0.005)
+            finally:
+                winmm.midiOutUnprepareHeader(self.handle, ctypes.byref(hdr), ctypes.sizeof(MIDIHDR))
+
+        def close(self):
+            try:
+                winmm.midiOutClose(self.handle)
+            except Exception:
+                pass
+
+
+# --- backend: python-rtmidi (macOS / Linux) ------------------------------
+
+else:
+    import rtmidi
+
+    def find_output_port(name_substr: str):
+        mo = rtmidi.MidiOut()
+        try:
+            ports = mo.get_ports()
+        finally:
+            del mo
+        for i, name in enumerate(ports):
+            if name_substr.lower() in name.lower():
+                return i, name
+        return None, None
+
+    class MidiOut:
+        def __init__(self, port_index: int):
+            self._out = rtmidi.MidiOut()
+            try:
+                self._out.open_port(port_index)
+            except Exception:
+                try:
+                    self._out.close_port()
+                except Exception:
+                    pass
+                raise
+
+        def send_short_msg(self, data: bytes):
+            if not (1 <= len(data) <= 3):
+                raise ValueError("short message must be 1-3 bytes")
+            self._out.send_message(list(data))
+
+        def send_sysex(self, data: bytes):
+            if not data or data[0] != 0xF0 or data[-1] != 0xF7:
+                raise ValueError("data must be a complete SysEx (F0..F7)")
+            self._out.send_message(list(data))
+            # Mirrors the WinMM per-buffer settle wait so back-to-back
+            # SysEx don't race the device's parser.
+            time.sleep(0.005)
+
+        def close(self):
+            try:
+                self._out.close_port()
+            except Exception:
+                pass
+            try:
+                del self._out
+            except Exception:
+                pass
+
+
+# --- CLI -----------------------------------------------------------------
 
 def main():
     ap = argparse.ArgumentParser()
