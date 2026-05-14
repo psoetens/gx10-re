@@ -186,11 +186,11 @@ all relative to SystemGlobalEq base `0x0000_6B00`.
 | Control | Address | Status |
 |---------|---------|--------|
 | EXP1 HOLD | `0x0000_000D` | ✅ |
-| EXP2 HOLD | `0x0000_000E` | 🧪 |
-| AUTO OFF (5 values: OFF/10HOURS/5HOURS/1HOUR/20MIN) | `0x0000_000F` | 🧪 (we mislabeled this earlier) |
+| EXP2 HOLD | `0x0000_000E` | ✅ (read 0=OFF via spot_check_open on 2026-05-14) |
+| AUTO OFF (5 values: OFF/10HOURS/5HOURS/1HOUR/20MIN) | `0x0000_000F` | ✅ (read 0=OFF on 2026-05-14) |
 | Bluetooth device-name (9 values, GX-10 AUDIO 1/MIDI 1 .. 9/MIDI 9) | (not in MIDI chart — handled via separate Bluetooth profile, hardware-only) | 🚫 |
-| CONTROL MODE (4 values for GX-10) | `0x0000_1034` (`SystemControl` 0x34) | 🧪 |
-| LOCK / KNOB / TOUCH SCREEN / BUTTON / OUTPUT LEVEL LOCK | `0x0000_0011..0x0000_0015` | 🧪 |
+| CONTROL MODE (4 values for GX-10) | `0x0000_1034` (`SystemControl` 0x34) | ✅ (read 1=MANUAL on 2026-05-14) |
+| LOCK / KNOB / TOUCH SCREEN / BUTTON / OUTPUT LEVEL LOCK | `0x0000_0011..0x0000_0015` | ✅ (all 5 read 0=OFF on 2026-05-14) |
 
 ### 6.2 PLAY OPTION 📜 CHART
 | Control | Address | Status |
@@ -200,19 +200,19 @@ all relative to SystemGlobalEq base `0x0000_6B00`.
 | LOOP MODE (MONO/STEREO) | `0x0000_5000` | ✅ |
 | LOOP REC ACTION | `0x0000_5001` | ✅ |
 | DELETE WARNING / OVERWRITE WARNING | `0x0000_0016/0x0000_0017` | ✅ |
-| FX ORDER (BY TYPE / BY NAME) | `0x0000_0018` | 🧪 |
-| FOOTSWITCH ▼&▲ Function | `0x0000_1064` (`SystemControl` 0x64) | 🧪 |
-| FOOTSWITCH ▲&CTL1 Function | `0x0000_1065` (`SystemControl` 0x65) | 🧪 |
+| FX ORDER (BY TYPE / BY NAME) | `0x0000_0018` | ✅ (read 0=BY TYPE on 2026-05-14) |
+| FOOTSWITCH ▼&▲ Function | `0x0000_1064` (`SystemControl` 0x64) | ✅ (read 0 on 2026-05-14) |
+| FOOTSWITCH ▲&CTL1 Function | `0x0000_1065` (`SystemControl` 0x65) | ✅ (read 1 on 2026-05-14) |
 
 ### 6.3 MIDI SETTINGS 📜 CHART
 | Control | Address | Status |
 |---------|---------|--------|
-| RX CHANNEL (0–15) | `0x0000_3000` | 🧪 |
-| TX CHANNEL (0–16, RX CH) | `0x0000_3002` | 🧪 |
-| MIDI IN THRU (4 values) | `0x0000_3004` | 🧪 |
-| CLOCK OUT | `0x0000_3006` | 🧪 |
-| MAP SELECT (FIX/PROG) | `0x0000_3007` | 🧪 |
-| Per-controller CC# (Num1-4, BankDown/Up, CTL1-4, EXP1 SW, EXP1, EXP2) | `0x0000_3008..0x0000_3014` | 🧪 |
+| RX CHANNEL (0–15) | `0x0000_3000` | ✅ (read 1 = ch 2 on 2026-05-14) |
+| TX CHANNEL (0–16, RX CH) | `0x0000_3002` | ✅ (read 16 = "RX" on 2026-05-14) |
+| MIDI IN THRU (4 values) | `0x0000_3004` | ✅ (read 0 on 2026-05-14). ⚠ Note: this register does NOT control the macOS USB-MIDI loopback (Roland driver always echoes USB out → in regardless of value). See `protocol.md` §2.0.1. |
+| CLOCK OUT | `0x0000_3006` | ✅ (read 1=ON on 2026-05-14) |
+| MAP SELECT (FIX/PROG) | `0x0000_3007` | ✅ (read 0=FIX on 2026-05-14) |
+| Per-controller CC# (Num1-4, BankDown/Up, CTL1-4, EXP1 SW, EXP1, EXP2) | `0x0000_3008..0x0000_3014` | ✅ (all 13 read 0 on 2026-05-14) |
 
 ### 6.4 MIDI PROGRAM MAP 📜 CHART
 3 banks × 128 entries × 4 nibbles each. Bank N at `0x0010_00N0`.
@@ -226,8 +226,8 @@ All 4 knobs + 2 toggles captured.
 ### 6.7 DEVICE SETTINGS 📜 CHART (mostly)
 | Control | Address | Status |
 |---------|---------|--------|
-| KNOB / TOUCH SCREEN / BUTTON / OUTPUT LEVEL LOCK | `0x0000_0012..0x0000_0015` | 🧪 |
-| INPUT SETTING memory pointer | `0x0020_0340` (host staging) → `0x0000_1061` (system) | 🧪 |
+| KNOB / TOUCH SCREEN / BUTTON / OUTPUT LEVEL LOCK | `0x0000_0012..0x0000_0015` | ✅ (duplicate of §6.1 entry — all read OFF on 2026-05-14) |
+| INPUT SETTING memory pointer | `0x0020_0340` (host staging) → `0x0000_1061` (system) | ✅ (system side `0x0000_1061` read 0 = mem 1 on 2026-05-14; host-staging side not yet exercised) |
 | LCD brightness | (not in chart — likely hardware-only) | ⚠️ |
 | USB driver mode (VENDOR/GENERIC) | (not in chart) | ⚠️ |
 | Factory reset button | 🚫 destructive |

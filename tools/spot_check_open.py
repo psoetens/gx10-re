@@ -133,7 +133,11 @@ def main():
     out = MidiOut(out_idx)
     time.sleep(0.3)
 
-    # Burst all RQ1s
+    # Burst all RQ1s. 12 ms per send was measured safe on macOS / CoreMIDI
+    # (45/45 replies across repeated runs, 2026-05-14). If you see drops
+    # at the tail, bump this to 20–30 ms — the per-send overhead has
+    # gotten the device near its input-queue limit once or twice when
+    # another MIDI client (e.g. BTS) was contending for the port.
     print(f"Sending {len(SPOT_CHECKS)} RQ1s...")
     for addr, sz, _label, _dec in SPOT_CHECKS:
         out.send_sysex(build_rq1(addr, sz))

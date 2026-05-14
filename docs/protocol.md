@@ -87,6 +87,39 @@ SOX  Mfr Dev    Model ID      Cmd      Address       Payload    Sum  EOX
   the read, also 4 bytes big-endian.
 - Checksum — `(sum(addr) + sum(payload) + sum) & 0x7F == 0`.
 
+### 2.0.1 macOS sniffer caveat — host→device echo on MIDI IN
+
+On macOS, opening the GX-10's MIDI IN port (the device→host direction)
+with rtmidi/CoreMIDI also surfaces the host's own outbound traffic on
+the same callback stream. Every SysEx written to the device's MIDI OUT
+port comes back as an incoming message. Verified 2026-05-14 in three
+configurations:
+
+- single process, single rtmidi MidiIn+MidiOut → echo present
+- single process, separate MidiIn and MidiOut clients → echo present
+- two independent processes (A sniffs, B sends) → A sees B's writes
+
+The chart-documented `MIDI IN THRU` register at `0x0000_3004` does
+**not** control this. Sweeping it through values 0..3 leaves the
+loopback unchanged. The echo originates in the Roland macOS USB-MIDI
+driver and is independent of every device-side setting we've probed.
+
+**Implication for capture interpretation**: SysEx with `<cmd> = 0x11`
+(RQ1) or messages whose 4-byte address shows up first and is later
+followed by a `<cmd> = 0x12` (DT1) reply at the same address are
+**host-originated** even though they appear on the device→host
+stream. The protocol-decoded direction in tooling output may need a
+helper that distinguishes "host echo" from "device reply" by tracking
+RQ1/DT1 pairs.
+
+BTS v1.0.2 references the same loopback in its
+`chain/chain_controller.js` (see `bts_version_diff_v100_vs_v102.md`):
+the v1.0.2 fix adds an early-return guard to `sendChainEditTrigger`
+that explicitly mentions the issue, suggesting Roland's macOS users
+have always hit this. The same effect likely exists on Windows when
+the user enables the device-side MIDI IN THRU to USB OUT or
+USB & MIDI — different mechanism, same observed pattern.
+
 ### 2.1 Universal Identity exchange
 
 ```
