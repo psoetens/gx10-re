@@ -5,27 +5,26 @@ Sequence:
   t=2    : launch BOSS TONE STUDIO
   t=2..30: BTS loads, connects, performs its handshake
   t=30   : send a Program Change to advance the device patch (BTS reacts)
-  t=40   : taskkill BTS  (its disconnect handshake fires)
+  t=40   : close BTS  (its disconnect handshake fires)
   t=50   : sniffer stops
 
 Captures ALL device->host traffic during the entire timeline.
 Filters out MIDI clock (F8) and active-sensing (FE) noise from the JSONL
 on output to keep the decoded transcript readable.
+
+Cross-platform: macOS uses Apple Events (osascript) for graceful BTS
+close; Windows uses taskkill /F. Both paths live in tools/bts_launcher.py.
 """
 from __future__ import annotations
 import argparse
-import subprocess
 import sys
-import threading
 import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_sniff
+import bts_launcher
 from midi_send import find_output_port, MidiOut
-
-
-BTS_EXE = r"C:\Program Files (x86)\BOSS\BOSS TONE STUDIO for GX-10\BOSS TONE STUDIO for GX-10.exe"
 
 
 def main():
@@ -34,7 +33,8 @@ def main():
     ap.add_argument("--bts-load-secs", type=float, default=30.0)
     ap.add_argument("--post-pc-secs", type=float, default=10.0)
     ap.add_argument("--post-close-secs", type=float, default=10.0)
-    ap.add_argument("--bts-exe", default=BTS_EXE)
+    ap.add_argument("--bts-exe", default=None,
+                    help="override the detected BTS executable path")
     args = ap.parse_args()
 
     log_path = Path(args.log)
@@ -52,9 +52,12 @@ def main():
     t0 = time.time()
 
     # 2) Launch BTS
+    if bts_launcher.is_bts_running():
+        print("WARNING: BTS already running — orchestration may misbehave "
+              "if you have an interactive session open", flush=True)
     time.sleep(2.0)
     print(f"  [t={time.time()-t0:.1f}] launching BTS...", flush=True)
-    bts_proc = subprocess.Popen([args.bts_exe], close_fds=True)
+    bts_proc = bts_launcher.launch(args.bts_exe)
     print(f"  [t={time.time()-t0:.1f}] BTS PID={bts_proc.pid}; waiting "
           f"{args.bts_load_secs}s for connect handshake to complete", flush=True)
     time.sleep(args.bts_load_secs)
@@ -64,7 +67,6 @@ def main():
     out_idx, _ = find_output_port("GX-10")
     out = MidiOut(out_idx)
     time.sleep(0.3)
-    # PC# to memory 1 (typical first patch — BTS will react regardless)
     # Bank Select MSB=0 LSB=0, then PC#=1
     out.send_short_msg(bytes([0xB0, 0x00, 0x00]))   # Bank MSB
     out.send_short_msg(bytes([0xB0, 0x20, 0x00]))   # Bank LSB
@@ -74,14 +76,10 @@ def main():
     time.sleep(args.post_pc_secs)
 
     # 4) Close BTS
-    print(f"  [t={time.time()-t0:.1f}] closing BTS via taskkill", flush=True)
-    try:
-        subprocess.run(["taskkill", "/F", "/PID", str(bts_proc.pid)],
-                       check=False, capture_output=True)
-    except Exception as e:
-        print(f"    taskkill failed: {e}", flush=True)
-    print(f"  [t={time.time()-t0:.1f}] waiting {args.post_close_secs}s "
-          f"for disconnect handshake to settle", flush=True)
+    print(f"  [t={time.time()-t0:.1f}] closing BTS (graceful)", flush=True)
+    rc = bts_launcher.kill(bts_proc, graceful=True, timeout=6.0)
+    print(f"  [t={time.time()-t0:.1f}] BTS exited rc={rc}; waiting "
+          f"{args.post_close_secs}s for disconnect handshake to settle", flush=True)
     time.sleep(args.post_close_secs)
 
     # 5) Stop sniffer

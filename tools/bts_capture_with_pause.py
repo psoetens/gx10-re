@@ -1,19 +1,19 @@
 """Like bts_orchestrate.py but with a manual "press Enter to continue"
 pause between BTS-load and BTS-close, so the user can drive the actual
-GUI scenario for tasks 2/3/4.
+GUI scenario for tasks 2/3/4 (Librarian, Tone Exchange, IR Loader, …).
+
+Cross-platform: macOS / Windows BTS launch + graceful close via
+tools/bts_launcher.py.
 """
 from __future__ import annotations
 import argparse
-import subprocess
 import sys
 import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_sniff
-
-
-BTS_EXE = r"C:\Program Files (x86)\BOSS\BOSS TONE STUDIO for GX-10\BOSS TONE STUDIO for GX-10.exe"
+import bts_launcher
 
 
 def main():
@@ -22,7 +22,8 @@ def main():
     ap.add_argument("--bts-load-secs", type=float, default=12.0,
                     help="seconds to wait after launching BTS for it to settle")
     ap.add_argument("--post-close-secs", type=float, default=3.0)
-    ap.add_argument("--bts-exe", default=BTS_EXE)
+    ap.add_argument("--bts-exe", default=None,
+                    help="override the detected BTS executable path")
     args = ap.parse_args()
 
     log_path = Path(args.log)
@@ -38,9 +39,12 @@ def main():
     t0 = time.time()
     print(f"  [t=0]  sniffer running -> {log_path}", flush=True)
 
+    if bts_launcher.is_bts_running():
+        print("WARNING: BTS already running — capture may misbehave if you "
+              "have an interactive session open", flush=True)
     time.sleep(2.0)
     print(f"  [t={time.time()-t0:.1f}] launching BTS...", flush=True)
-    bts_proc = subprocess.Popen([args.bts_exe], close_fds=True)
+    bts_proc = bts_launcher.launch(args.bts_exe)
     print(f"  [t={time.time()-t0:.1f}] BTS PID={bts_proc.pid}; "
           f"waiting {args.bts_load_secs}s for it to connect", flush=True)
     time.sleep(args.bts_load_secs)
@@ -54,12 +58,9 @@ def main():
     except (EOFError, KeyboardInterrupt):
         pass
 
-    print(f"  [t={time.time()-t0:.1f}] closing BTS via taskkill", flush=True)
-    try:
-        subprocess.run(["taskkill", "/F", "/PID", str(bts_proc.pid)],
-                       check=False, capture_output=True)
-    except Exception as e:
-        print(f"    taskkill failed: {e}", flush=True)
+    print(f"  [t={time.time()-t0:.1f}] closing BTS (graceful)", flush=True)
+    rc = bts_launcher.kill(bts_proc, graceful=True, timeout=6.0)
+    print(f"  [t={time.time()-t0:.1f}] BTS exited rc={rc}", flush=True)
     time.sleep(args.post_close_secs)
 
     print(f"  [t={time.time()-t0:.1f}] stopping sniffer", flush=True)

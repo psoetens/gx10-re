@@ -19,7 +19,11 @@ macOS/Linux, WinMM on Windows) or `midi_io` directly, no UI required.
 
 ## Buckets
 
-- `bts_*` — BTS lifecycle orchestration via `taskkill` + UI automation.
+- `bts_resweep_*` and `bts_capture_and_label` — driven BTS UI captures
+  (`uiautomation` + Win32 screenshots). Genuinely Windows-only.
+  *(Two portable siblings — `bts_orchestrate` and `bts_capture_with_pause` —
+  were promoted to `tools/` on 2026-05-14, behind `tools/bts_launcher.py`,
+  once BTS-on-Mac was made to work via v1.0.0.)*
 - `capture_*` — driven BTS UI captures (`pyautogui` click + screenshot).
 - `diagnose_chain_buttons*` — Win32 SendInput diagnostics for the BTS
   INSERT/DELETE/OVERWRITE buttons (resolved; see `docs/gaps.md` §I).
