@@ -23,7 +23,7 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from midi_io_linux import GxMidi, parse_dt1_payload, hex_msg
+from midi_io import GxMidi, parse_dt1_payload, hex_msg
 
 
 def collect(g, secs, label):

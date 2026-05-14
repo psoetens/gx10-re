@@ -17,7 +17,7 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from midi_io_linux import GxMidi, parse_dt1_payload
+from midi_io import GxMidi, parse_dt1_payload
 
 
 ROOT = Path(__file__).parent.parent

@@ -1,7 +1,10 @@
-"""Linux-side MIDI I/O for GX-10 / GX-100 probing.
+"""Cross-platform MIDI I/O for GX-10 / GX-100 probing.
 
-Mirrors the primitives from `midi_send.py` (which uses Win32 winmm)
-using `python-rtmidi` so the same probe scripts can run on Linux.
+python-rtmidi backend — CoreMIDI on macOS, ALSA on Linux, WinMM on
+Windows. This is the canonical I/O module. `midi_send.py` and
+`midi_sniff.py` remain as thin compatibility shims (their API is kept
+stable for the original Windows-RE tooling) and on non-Windows
+delegate here.
 
   - find_port(name_substr)        -> port index for I/O
   - send_sysex(port_idx, data)    -> bytes
@@ -12,9 +15,9 @@ using `python-rtmidi` so the same probe scripts can run on Linux.
   - rq1_read(addr, size, timeout) -> the 4..N data bytes returned for an RQ1
 
 CLI:
-    python midi_io_linux.py --identity
-    python midi_io_linux.py --rq1 10000000 00000010
-    python midi_io_linux.py --dt1 1000000F 04
+    python midi_io.py --identity
+    python midi_io.py --rq1 10000000 00000010
+    python midi_io.py --dt1 1000000F 04
 """
 import argparse
 import sys
