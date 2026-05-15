@@ -48,6 +48,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from example_lib import GX10Session
+from midi_send import build_identity_request
 
 
 BANK_BASE = {1: 0x00100000, 2: 0x00100400, 3: 0x00100800}
@@ -55,6 +56,12 @@ ENTRIES_PER_BANK = 128
 BYTES_PER_ENTRY = 4
 MAP_SELECT_ADDR = 0x00003007
 MEMORY_MIN, MEMORY_MAX = 0, 299
+
+# Product detection via Identity Reply sw_revision[0]:
+#   0x00 = GX-100  (4 patches/bank, no NIU)
+#   0x01 = GX-10   (3 patches/bank, NIU at raw 198, 199, 299)
+PRODUCT_GX100 = "GX-100"
+PRODUCT_GX10 = "GX-10"
 
 
 def encode_memory(n: int) -> bytes:
@@ -70,22 +77,58 @@ def decode_memory(b: bytes) -> int:
          | ((b[2] & 0xF) << 4) | (b[3] & 0xF)
 
 
-def memory_label(n: int) -> str:
-    """Annotate a memory # with the GX-10 bank/patch label per chart.
+def memory_label(n: int, product: str = PRODUCT_GX10) -> str:
+    """Annotate a memory # with the bank/patch label per chart.
 
-    GX-10: raw 0..197 → U01-1..U66-3 (3 patches/bank);
-           raw 198, 199, 299 → NIU;
-           raw 200..298 → P01-1..P33-3.
-    (GX-100 uses 4 patches/bank — not labelled here.)"""
-    if n in (198, 199, 299):
-        return "NIU"
-    if 0 <= n <= 197:
-        bank, slot = divmod(n, 3)
+    GX-10  (3 patches/bank): raw 0..197 → U01-1..U66-3; raw 198, 199,
+           299 → NIU; raw 200..298 → P01-1..P33-3.
+    GX-100 (4 patches/bank): raw 0..199 → U01-1..U50-4; raw 200..299
+           → P01-1..P25-4."""
+    if product == PRODUCT_GX10:
+        if n in (198, 199, 299):
+            return "NIU"
+        if 0 <= n <= 197:
+            bank, slot = divmod(n, 3)
+            return f"U{bank+1:02d}-{slot+1}"
+        if 200 <= n <= 298:
+            bank, slot = divmod(n - 200, 3)
+            return f"P{bank+1:02d}-{slot+1}"
+        return "?"
+    # GX-100
+    if 0 <= n <= 199:
+        bank, slot = divmod(n, 4)
         return f"U{bank+1:02d}-{slot+1}"
-    if 200 <= n <= 298:
-        bank, slot = divmod(n - 200, 3)
+    if 200 <= n <= 299:
+        bank, slot = divmod(n - 200, 4)
         return f"P{bank+1:02d}-{slot+1}"
     return "?"
+
+
+def detect_product(sess) -> str:
+    """Send an Identity Request and decode the sw_revision[0] product
+    flag. Returns PRODUCT_GX10 / PRODUCT_GX100. Falls back to
+    PRODUCT_GX10 if no reply arrives (the more common case for this
+    repo)."""
+    with sess.lock:
+        sess.events.clear()
+    sess.send(build_identity_request())
+    deadline = time.time() + 1.0
+    while time.time() < deadline:
+        with sess.lock:
+            for e in list(sess.events):
+                if len(e) >= 15 and e[1] == 0x7E and e[3] == 0x06 and e[4] == 0x02:
+                    sw_rev = e[10:14]
+                    flag = sw_rev[0]
+                    if flag == 0x00:
+                        return PRODUCT_GX100
+                    if flag == 0x01:
+                        return PRODUCT_GX10
+                    print(f"warning: unknown product flag 0x{flag:02X}; "
+                          f"assuming GX-10", file=sys.stderr)
+                    return PRODUCT_GX10
+        time.sleep(0.02)
+    print("warning: no identity reply received; assuming GX-10", file=sys.stderr)
+    return PRODUCT_GX10
 
 
 def entry_addr(bank: int, pc: int) -> int:
@@ -139,41 +182,54 @@ def write_entry(sess, bank: int, pc: int, memory: int):
     sess.write(entry_addr(bank, pc), encode_memory(memory))
 
 
-def reset_defaults(sess):
-    """Write the GX-10 factory-default program map to all 3 banks.
+# Per-device default bank ranges for --reset. The GX-10 layout is
+# empirically verified against a stock device; the GX-100 layout is
+# inferred from the per-device totals in firmware_versions.md and
+# has NOT been tested on real hardware.
+RESET_RANGES = {
+    PRODUCT_GX10: {     # 3 patches/bank, NIU at 198/199/299
+        1: (0, 98),     # U01-1 .. U33-3   (99 patches)
+        2: (99, 197),   # U34-1 .. U66-3   (99 patches)
+        3: (200, 298),  # P01-1 .. P33-3   (99 patches)
+    },
+    PRODUCT_GX100: {    # 4 patches/bank, no NIU
+        1: (0, 99),     # U01-1 .. U25-4   (100 patches)
+        2: (100, 199),  # U26-1 .. U50-4   (100 patches)
+        3: (200, 299),  # P01-1 .. P25-4   (100 patches)
+    },
+}
 
-    Each bank covers one third of the GX-10's 297 patches (99 patches
-    per bank, matching the device's 3-patches-per-bank layout):
 
-      Bank 1: PC#1..99  → memory 0..98   (U01-1 .. U33-3)
-              PC#100..128 → memory 98 (clamped at U33-3)
-      Bank 2: PC#1..99  → memory 99..197 (U34-1 .. U66-3)
-              PC#100..128 → memory 197 (clamped at U66-3)
-      Bank 3: PC#1..99  → memory 200..298 (P01-1 .. P33-3)
-              PC#100..128 → memory 298 (clamped at P33-3)
+def reset_defaults(sess, product: str, force: bool = False):
+    """Write the factory-default program map to all 3 banks for the
+    detected product. Each bank covers one third of the device's
+    patch range; PCs past the bank's last valid memory saturate at
+    that memory.
 
-    NIU slots (raw 198, 199, 299) are deliberately skipped — bank 2's
-    user range ends at 197, bank 3 starts at 200, and bank 3's tail
-    clamps at 298. This matches what the device returns out-of-the-
-    box. On a GX-100 the layout would differ (4 patches/bank); this
-    reset is GX-10-specific."""
-    print("Resetting program map to GX-10 factory layout "
-          "(3 × 99 patches + tail-clamp at each bank's last valid memory) …",
-          file=sys.stderr)
-    bank_ranges = {
-        1: (0, 98),     # user U01-1 .. U33-3
-        2: (99, 197),   # user U34-1 .. U66-3
-        3: (200, 298),  # preset P01-1 .. P33-3
-    }
+    The GX-10 pattern is verified on a stock device. The GX-100
+    pattern is an educated guess from `firmware_versions.md`'s
+    canonical totals; requires `force=True` to write."""
+    if product == PRODUCT_GX100 and not force:
+        print("ERROR: --reset on detected GX-100 requires --force.\n"
+              "       The GX-100 default pattern is inferred from the\n"
+              "       per-device totals in `docs/firmware_versions.md`\n"
+              "       and has not been tested on real hardware. If you\n"
+              "       have a GX-100 and want to confirm, run --force\n"
+              "       and report whether the result matches BTS's view.",
+              file=sys.stderr)
+        return False
+    ranges = RESET_RANGES[product]
+    note = "verified" if product == PRODUCT_GX10 else "inferred (FORCED on GX-100)"
+    print(f"Resetting program map for {product} ({note}) …", file=sys.stderr)
     for bank in (1, 2, 3):
-        lo, hi = bank_ranges[bank]
+        lo, hi = ranges[bank]
         for pc in range(1, ENTRIES_PER_BANK + 1):
-            # PCs 1..99 map linearly; PCs 100..128 saturate at hi.
             target = min(lo + (pc - 1), hi)
             write_entry(sess, bank, pc, target)
             time.sleep(0.005)
-        print(f"  bank {bank} done (PC#1..99 → {lo}..{hi}, "
-              f"PC#100..128 clamped to {hi})", file=sys.stderr)
+        print(f"  bank {bank} done (PC#1..{hi - lo + 1} → {lo}..{hi}, "
+              f"PC#{hi - lo + 2}..128 clamped to {hi})", file=sys.stderr)
+    return True
 
 
 def read_map_select(sess):
@@ -189,10 +245,16 @@ def main():
     ap.add_argument("--set", nargs=3, metavar=("BANK", "PC", "MEMORY"),
                     type=int, help="write one entry: --set <bank> <pc#> <memory#>")
     ap.add_argument("--reset", action="store_true",
-                    help="overwrite all 3 banks with the identity mapping")
+                    help="overwrite all 3 banks with the factory defaults "
+                         "(GX-10: verified; GX-100: requires --force)")
+    ap.add_argument("--force", action="store_true",
+                    help="allow --reset on a GX-100 (default pattern is inferred)")
+    ap.add_argument("--product", choices=(PRODUCT_GX10, PRODUCT_GX100),
+                    help="skip auto-detect and force the product family")
     args = ap.parse_args()
 
     sess = GX10Session()
+    product = args.product or detect_product(sess)
 
     if args.set:
         bank, pc, memory = args.set
@@ -206,21 +268,24 @@ def main():
         rb_val = decode_memory(rb)
         ok = rb_val == memory
         verdict = "VERIFIED" if ok else f"WARN: readback {rb_val} != sent {memory}"
-        print(f"bank {bank} PC#{pc} → memory {memory} ({memory_label(memory)}) — {verdict}")
+        print(f"bank {bank} PC#{pc} → memory {memory} ({memory_label(memory, product)}) — {verdict}")
         import os; sys.stdout.flush(); os._exit(0 if ok else 1)
 
     if args.reset:
-        reset_defaults(sess)
-        print("Done. Re-run without --reset to verify.")
-        import os; sys.stdout.flush(); os._exit(0)
+        ok = reset_defaults(sess, product, force=args.force)
+        if ok:
+            print("Done. Re-run without --reset to verify.")
+        import os; sys.stdout.flush(); os._exit(0 if ok else 2)
 
     # Default: list MAP SELECT + bank tables
     ms = read_map_select(sess)
     ms_label = {0: "FIX", 1: "PROG"}.get(ms, f"raw {ms}")
+    print(f"Device: {product}")
     print(f"MAP SELECT (0x{MAP_SELECT_ADDR:08X}): {ms_label}")
     print()
 
-    output = {"map_select": {"raw": ms, "label": ms_label}, "banks": {}}
+    output = {"product": product,
+              "map_select": {"raw": ms, "label": ms_label}, "banks": {}}
     banks = (args.bank,) if args.bank else (1, 2, 3)
     for bank in banks:
         entries = read_bank(sess, bank)
@@ -238,7 +303,7 @@ def main():
                     continue
                 pc = idx + 1
                 m = entries[idx]
-                cells.append(f"PC{pc:>3d}→{m:>3d} ({memory_label(m):<6s})")
+                cells.append(f"PC{pc:>3d}→{m:>3d} ({memory_label(m, product):<6s})")
             print("   ".join(cells))
         print()
 

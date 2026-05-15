@@ -16,6 +16,15 @@ Test:
 4. Listen 10 s for any unsolicited DT1.
 5. Restore 0x7F000703 = 0x00, 0x7F000001 = 0x00.
 6. Report.
+
+Result (2026-05-15 macOS run, live guitar signal during listen):
+**HYPOTHESIS REFUTED.** Setting 0x7F000703 = 0x01 after editor-attach
+does NOT unlock an audio-meter broadcast. The only device-originated
+DT1 stream that appears once editor-attach is set is at 0x10000154
+(the 8-byte chain-state register, chart-documented in gaps.md §10),
+which broadcasts on chain edits / footswitch toggles — independent
+of input audio. If there is an SysEx-side audio meter, it lives
+behind a different gate.
 """
 import sys
 import time
