@@ -47,7 +47,7 @@ This is a top-level index. The detailed material lives in:
 | `0x0020_0000`+ | Editor I/O staging (INPUT type/sens, OUTPUT SELECT, GLOBAL EQ knobs) |
 | `0x1000_0000` (~16 KiB) | **Live patch / edit buffer** — name + master block + 24 effect slots |
 | `0x2000_0000`+ | Live-patch mirror (read-only) |
-| `0x5000_0000`+ | Preset patch name table (296 names) |
+| `0x5000_0000`+ | Patch name catalogue — up to 300 16-byte slots; **GX-10**: 297 usable = 198 user (66 banks × 3) + 99 preset (33 banks × 3), with NIU holes at raw 198/199/299; **GX-100**: 300 usable = 200 user (50 banks × 4) + 100 preset (25 banks × 4) |
 | `0x6040_0000` (16 × 0x10000) | User patch slots — *not* directly written; populated by save command |
 | `0x7F00_0000`+ | System status registers + tuner display stream + save trigger |
 
@@ -132,7 +132,7 @@ dev  → echoes 0x7F000104 = same 2 B
 dev  → DT1 0x00000000 = 4 B   (patch-select register updated to slot)
 host → DT1 0x7F000703 = 1 B   00  (clear dirty flag)
 dev  → DT1 0x00200040 = 83 B  (patch-list metadata refresh)
-host → RQ1 0x50000000 / 0x50000100 size=0x100  (refresh preset name table)
+host → RQ1 0x50000000 / 0x50000100 size=0x100  (refresh patch name catalogue)
 ```
 
 The user-patch slots at `0x6040_xxxx` are populated by the device

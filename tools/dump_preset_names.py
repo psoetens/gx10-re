@@ -1,20 +1,27 @@
-"""Dump the GX-10/GX-100 preset name catalogue at 0x50000000.
+"""Dump the GX-10/GX-100 patch name catalogue at 0x50000000.
 
 Reads the 38 contiguous 256-byte chunks from `0x50000000` to `0x50002500`
 and decodes them as 16-character ASCII patch names. Optionally also
 pulls the user-memory names from `0x20000000 + N * 0x60000` to produce
-a combined "all 300 patches" listing.
+a combined listing of all user-visible patches.
 
-Background: `docs/protocol.md` §3.5. Empirically the device exposes
-the preset roster as a read-only bulk catalogue at `0x50000000` so
-that an editor can populate its patch list in ~1.5 s without 296
-separate patch-load + RQ1 cycles.
+Background: `docs/protocol.md` §3.5. The 300-slot catalogue is read-only
+and shared across both devices. Per-device totals (see
+`docs/firmware_versions.md` "Per-device patch totals"):
+
+  * GX-10:  297 usable = 198 user (66 banks × 3) + 99 preset (33 banks × 3)
+  * GX-100: 300 usable = 200 user (50 banks × 4) + 100 preset (25 banks × 4)
+
+Use --user-count to cap user-memory iteration appropriately for your
+device. The default (198) matches the GX-10's user count; pass 200
+for a GX-100.
 
 Usage:
-    python tools/dump_preset_names.py                      # presets only, table
-    python tools/dump_preset_names.py --format json        # presets only, JSON
-    python tools/dump_preset_names.py --format csv         # presets only, CSV
+    python tools/dump_preset_names.py                      # catalogue only, table
+    python tools/dump_preset_names.py --format json        # catalogue only, JSON
+    python tools/dump_preset_names.py --format csv         # catalogue only, CSV
     python tools/dump_preset_names.py --include-user       # also dump user memories
+    python tools/dump_preset_names.py --user-count 200     # GX-100
     python tools/dump_preset_names.py --out names.json --format json --include-user
 """
 import argparse
@@ -75,12 +82,14 @@ def decode_names(blob: bytes, base_addr: int):
     return out
 
 
-def fetch_user_memory_names(sess, count: int = 200):
+def fetch_user_memory_names(sess, count: int = 198):
     """Read user-memory names one-by-one from 0x20000000 + N*0x60000.
 
     Each user memory's first 16 bytes is the name field (per chart
-    MemoryCommon). count = 200 covers the full bank; BTS v1.0.2 treats
-    only 198 as user-writable on fw 1.05, see firmware_versions.md."""
+    MemoryCommon). Default count = 198 (GX-10 user count, 66 banks × 3).
+    For GX-100 pass count=200 (BTS v1.0.2 treats only 198 as writable
+    on fw 1.05). See `docs/firmware_versions.md` for the canonical
+    per-device totals."""
     out = []
     for n in range(count):
         addr = USER_MEM_BASE + n * USER_MEM_STRIDE
@@ -123,8 +132,8 @@ def main():
     ap.add_argument("--out", default=None, help="write to file; otherwise stdout")
     ap.add_argument("--include-user", action="store_true",
                     help="also pull user-memory names (slow: 200 separate RQ1s)")
-    ap.add_argument("--user-count", type=int, default=200,
-                    help="number of user memories to fetch (default 200)")
+    ap.add_argument("--user-count", type=int, default=198,
+                    help="number of user memories to fetch (default 198 for GX-10; pass 200 for GX-100)")
     args = ap.parse_args()
 
     sess = GX10Session()

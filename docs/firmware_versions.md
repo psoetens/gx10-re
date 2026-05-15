@@ -162,6 +162,30 @@ and falls into offline mode.
 
 ---
 
+## Per-device patch totals (canonical reference)
+
+| Product   | User patches              | Preset patches            | Total | Address-space holes |
+|-----------|---------------------------|---------------------------|-------|---------------------|
+| **GX-10** | 198 (66 banks × 3/bank)   | 99 (33 banks × 3/bank)    | 297   | 3 NIU slots at raw 198, 199, 299 |
+| **GX-100**| 200 (50 banks × 4/bank)   | 100 (25 banks × 4/bank)   | 300   | none                |
+
+Both devices share the same chart-documented address space at
+`0x2000_0000 + N × 0x60000` for N=0..199 (user) and the same
+`0x5000_0000` 300-slot name catalogue. The GX-10 uses 3-patch banks
+while the GX-100 uses 4-patch banks, which is why the GX-10 has
+different bank/patch decomposition and 3 "not in use" slots in the
+address space (raw 198, 199, 299 are NIU per the chart).
+
+Decode raw memory-number → bank/patch on the GX-10:
+
+```
+if raw in (198, 199, 299): NIU
+if raw < 198: ("U", raw/3 + 1, raw%3 + 1)   # U01-1 .. U66-3
+else:         ("P", (raw-200)/3 + 1, (raw-200)%3 + 1)   # P01-1 .. P33-3
+```
+
+See `midi_firmware_analysis.md` §4.3 for the chart-quoted layout.
+
 ## Why this matters
 
 Roland firmware updates can **add entire effect categories** to an
@@ -227,7 +251,7 @@ See `reports/cross_check_findings.md` P1-1b for the cross-link.
 |---------|----------|--------------|
 | **1.00** | release-day (2024) | Launch firmware. Identity Reply: `softwareVersion = [01 00 00 00]`. Inferred capability `(level=3, revision=0)` — BTS v1.0.0 was released alongside this firmware and expects `(3, 0)`. |
 | **1.04** | (current at 2026-05-09) | Live tested: Identity Reply `[01 00 00 00]` — **same bytes as 1.00**. Capability `(3, 0)`. Setup region (00 20 xx xx) intact. SystemControl block is 0x66 bytes (GX-10 footswitch fields at offsets 0x64/0x65 populated). All 5 v2-effects (TYPE 78..82) present and selectable. |
-| **1.05** | (per BOSS support page, 2026-05-09) | Not directly tested. Predicted capability `(level=4, revision=0)` from BTS v1.0.2's `ProductSetting.communicationLevel: 4`. Identity Reply almost certainly still `[01 00 00 00]` (product flag is firmware-stable). The level bump from 3→4 gates **four bug-fix workarounds in BTS v1.0.2** rather than any new wire protocol — see [`bts_version_diff_v100_vs_v102.md`](bts_version_diff_v100_vs_v102.md). Notable: BTS v1.0.2 treats `TOTAL_USER_PATCH` as 198 instead of 200 on this firmware, suggesting 2 user-memory slots are reserved on fw 1.05. |
+| **1.05** | (per BOSS support page, 2026-05-09) | Not directly tested. Predicted capability `(level=4, revision=0)` from BTS v1.0.2's `ProductSetting.communicationLevel: 4`. Identity Reply almost certainly still `[01 00 00 00]` (product flag is firmware-stable). The level bump from 3→4 gates **four bug-fix workarounds in BTS v1.0.2** rather than any new wire protocol — see [`bts_version_diff_v100_vs_v102.md`](bts_version_diff_v100_vs_v102.md). Notable: BTS v1.0.2's `TOTAL_USER_PATCH - 2` adjustment (200 → 198) is a GX-100-specific correction (50 banks × 4 = 200 user slots, with 2 reserved → 198 usable). The GX-10's user-patch count is also 198 by coincidence of arithmetic (66 banks × 3), but the bank decomposition is different — see the totals table above. |
 
 The repository's protocol captures were taken against firmware 1.00
 (see `docs/protocol.md` "Captured at the wire level …" section).

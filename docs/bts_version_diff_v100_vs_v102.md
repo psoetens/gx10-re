@@ -55,14 +55,12 @@ USB OUT, BTS's own DT1 writes come back as DT1 receives, racing the
 `globalIsChainEditing` flag and corrupting the DELETE / OVERWRITE
 flow. v1.0.2 adds a more aggressive idempotence check.
 
-**Cross-link to gx10-re findings**: this is Roland's own explicit
-confirmation of the loopback Task D (`Investigate "sniffer sees
-host→device traffic" oddity`) sets out to characterize. The
-host→device echo we observed in the BTS-v1.0.0 handshake capture is
-the same phenomenon — though Pete's device reports `0x00003004 = 0`
-("OFF") so on this unit the echo must come from CoreMIDI's intra-host
-loopback rather than the device's hardware THRU. Task D's two-process
-experiment can distinguish.
+**Cross-link**: this is Roland's own confirmation of the loopback
+mechanism. The host→device echo observed during the BTS-v1.0.0
+handshake capture is the same phenomenon — caused by the device's
+`USB IN THRU` setting (chart-documented at `0x0000_3004`) being on.
+See `protocol.md` §2.0.1 and `bts_mac_chain_button_bug.md` for the
+full analysis.
 
 ### 2. TOTAL_USER_PATCH count adjustment `patch_controller.js`
 
@@ -80,16 +78,25 @@ numbering elsewhere, so we handle it here only" — i.e. v1.0.2 quietly
 treats the device as having 198 user-patch slots, not 200, while
 keeping the 200 constant elsewhere to avoid breaking other code paths.
 
-The reason is not obvious from this diff alone. Possibilities:
-- Firmware 1.05 reserves 2 patches for internal/system use
-- Off-by-2 correction (some legacy patches at the end of the bank
-  shouldn't be user-writable)
-- Set-list / librarian internal-state allocation
+**This is a GX-100 correction, not a GX-10 one.** Per
+`firmware_versions.md` "Per-device patch totals":
 
-**Implication**: tools that iterate user memory should bound at 198
-on firmware 1.05+ to match BTS, or stay at 200 on firmware ≤ 1.04
-(this unit). The user-memory address layout at `0x20000000 + N*0x60000`
-is unchanged regardless.
+- **GX-100**: 50 user banks × 4 = 200 user slots in the address
+  space at `0x2000_0000 + N × 0x60000`; v1.0.2 reserves the last 2
+  → 198 usable.
+- **GX-10**: 66 user banks × 3 = 198 user slots (and 33 preset
+  banks × 3 = 99 preset). Unchanged across firmwares; 3 NIU slots
+  at raw 198, 199, 299 are documented in Roland's MIDI chart and
+  apply to every GX-10 firmware.
+
+The arithmetic coincidence that both products end up at "198 user
+patches" with BTS v1.0.2's adjustment is just that — a coincidence
+of `66 × 3 = 50 × 4 - 2`. The bank decompositions are different.
+
+**Implication for tooling**: bound user-memory iteration at 200 in
+the GX-100 + fw < 1.05 case, 198 in the GX-100 + fw ≥ 1.05 case, and
+**198 on the GX-10** (regardless of firmware). The address layout
+at `0x2000_0000 + N × 0x60000` is the same in both products.
 
 ### 3. PREAMP / BASS PREAMP equality fix `assign_page_controller.js`, `item/item_logic.js`
 
@@ -124,8 +131,8 @@ button. Suggests Roland decided POLY-mode editing from BTS was buggy
 on the level-3 firmware and removed it as a stopgap rather than
 fixing the underlying issue.
 
-POLY mode itself is still functional on the device (Pete's GX-10
-reports POLY tuner type / offset state at `0x0000_6004..6005` per
+POLY mode itself is still functional on the device (POLY tuner
+type/offset state is exposed at `0x0000_6004..6005` per
 `docs/protocol.md` §2). Only the BTS UI for it disappeared.
 
 ### 5. clearBtx refactor `error_dialog.js`, `util.js`
@@ -184,15 +191,18 @@ firmware 1.05+ to ensure the matching fixes are present on both
 sides. There are no new SysEx addresses, no new editor blocks, no new
 effects, and no new patch-memory layout introduced at level 4.
 
-This means **on Pete's level-3 GX-10, running BTS v1.0.0 gives the
-full feature set** with the four known caveats:
+This means **on a level-3 GX-10, running BTS v1.0.0 gives the full
+feature set** with the four known caveats:
 
-1. ⚠ If you ever set the device's `MIDI IN THRU` (`0x0000_3004`) to
-   `USB OUT` or `USB & MIDI`, chain-edit DELETE/OVERWRITE may
-   misbehave. Workaround: keep THRU = OFF.
-2. ⚠ The 2 highest-numbered user patches (199, 200) may not be safe
-   to write — BTS v1.0.2 treats them as reserved on fw 1.05.
-   Workaround: avoid `0x20000000 + N*0x60000` for `N >= 198`.
+1. ⚠ If the device's `MIDI IN THRU` (`0x0000_3004`) is set to
+   `USB OUT` or `USB & MIDI`, chain-edit DELETE/OVERWRITE will
+   misbehave because of the resulting USB loopback echo. Workaround:
+   keep THRU = OFF. (Same effect on Windows; BTS v1.0.2 ships a JS
+   guard for this scenario.)
+2. ⚠ The BTS v1.0.2 `TOTAL_USER_PATCH - 2` change is a GX-100
+   correction (50 banks × 4 = 200 slots, with 2 reserved → 198
+   usable). It does not affect the GX-10's own user-patch count of
+   132 — see `firmware_versions.md` for per-device totals.
 3. ⚠ Assign-target dropdown won't match `"BASS PREAMP"` when looking
    for `"PREAMP"`. Cosmetic only.
 4. ⚠ BTS v1.0.0's POLY tuner UI is present and works against the

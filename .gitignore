@@ -92,3 +92,4 @@ snapshots/**/*.jpg
 # Loose junk that accumulates in captures/ at the top level.
 captures/_*.jsonl
 captures/probe_select.jsonl
+docs/local_artifacts.md

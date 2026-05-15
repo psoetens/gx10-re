@@ -87,38 +87,49 @@ SOX  Mfr Dev    Model ID      Cmd      Address       Payload    Sum  EOX
   the read, also 4 bytes big-endian.
 - Checksum — `(sum(addr) + sum(payload) + sum) & 0x7F == 0`.
 
-### 2.0.1 macOS sniffer caveat — host→device echo on MIDI IN
+### 2.0.1 Host→device echo when device's `USB IN THRU` is enabled
 
-On macOS, opening the GX-10's MIDI IN port (the device→host direction)
-with rtmidi/CoreMIDI also surfaces the host's own outbound traffic on
-the same callback stream. Every SysEx written to the device's MIDI OUT
-port comes back as an incoming message. Verified 2026-05-14 in three
-configurations:
+When the GX-10's MENU → MIDI SETTINGS → **USB IN THRU** is set to
+`USB OUT` (or `USB & MIDI`), the device routes every SysEx received
+on USB MIDI IN back out on USB MIDI OUT. Any sniffer or observer on
+the host sees the host's own outgoing DT1/RQ1 traffic returned as
+incoming, within single-digit milliseconds.
 
-- single process, single rtmidi MidiIn+MidiOut → echo present
-- single process, separate MidiIn and MidiOut clients → echo present
-- two independent processes (A sniffs, B sends) → A sees B's writes
+This is **device behaviour, not driver behaviour** — it occurs
+identically on macOS, Windows, and Linux when the setting is
+enabled, and not at all when it's set to `OFF` (or `MIDI`, which only
+routes DIN MIDI). Verified 2026-05-15 by toggling the setting on the
+device's hardware menu and observing the echo appear / disappear.
 
-The chart-documented `MIDI IN THRU` register at `0x0000_3004` does
-**not** control this. Sweeping it through values 0..3 leaves the
-loopback unchanged. The echo originates in the Roland macOS USB-MIDI
-driver and is independent of every device-side setting we've probed.
+The setting lives at chart-documented address `0x0000_3004`
+(`SystemMidi[MIDI IN THRU]`). DT1 writes to it from the host appear
+to require a power cycle or specific commit sequence to take effect —
+our earlier sweep test (2026-05-14) saw echoes at all four values
+because the device's persistent value wasn't actually changing despite
+the writes. See `tools/midi_settings.py` for read/write access and
+`docs/midi_settings.md` for the full register map.
 
-**Implication for capture interpretation**: SysEx with `<cmd> = 0x11`
-(RQ1) or messages whose 4-byte address shows up first and is later
-followed by a `<cmd> = 0x12` (DT1) reply at the same address are
-**host-originated** even though they appear on the device→host
-stream. The protocol-decoded direction in tooling output may need a
-helper that distinguishes "host echo" from "device reply" by tracking
-RQ1/DT1 pairs.
+**Implications for tooling**: host code that subscribes to incoming
+SysEx must be loopback-aware when `USB IN THRU` may be on:
 
-BTS v1.0.2 references the same loopback in its
-`chain/chain_controller.js` (see `bts_version_diff_v100_vs_v102.md`):
-the v1.0.2 fix adds an early-return guard to `sendChainEditTrigger`
-that explicitly mentions the issue, suggesting Roland's macOS users
-have always hit this. The same effect likely exists on Windows when
-the user enables the device-side MIDI IN THRU to USB OUT or
-USB & MIDI — different mechanism, same observed pattern.
+- `RQ1` echoes (`<cmd> = 0x11`) arrive on the device-output side
+  and look superficially like RQ1s the device sent. They never are
+  (the device only sends DT1 `<cmd> = 0x12`). Reply parsers must
+  filter on opcode.
+- DT1 echoes match the address of the original write. A handler
+  that reacts to "device wrote X at this address" will fire twice
+  (once for the echo of the host write, once for any real device
+  reply). The fix is to track recently-sent traffic and skip echoes
+  within ~200 ms.
+- Tools in this repo: `example_lib.GX10Session.request()` is safe
+  because it filters DT1 replies by address match and doesn't react
+  to its own RQ1 echoes. `midi_sniff.py` shows the raw stream — the
+  user must keep loopback in mind when reading captures.
+
+BTS v1.0.2's `chain/chain_controller.js:4221-4223` adds a guard for
+this scenario (BG777BTS-309), gated on the same `USB IN THRU` setting
+the device exposes. v1.0.0 lacks the guard, which is why the chain
+buttons misfire when USB IN THRU is on (`bts_mac_chain_button_bug.md`).
 
 ### 2.1 Universal Identity exchange
 
@@ -184,7 +195,7 @@ Tone Studio's editor).
 | `0x0020_0000` | (editor staging) | ✔ | Tone Studio's I/O staging area — host writes here, device echoes the persisted value into `0x0000_6xxx`. NOT in the official chart; appears to be TS-internal. |
 | `0x1000_0000` | Memory (temporary) | ✔ | **Live edit buffer** — current patch, ~16 KiB. See §3.4 |
 | `0x2000_0000` | Memory 1..200 (user) | ✔ | **User-memory bank** — 200 memories × `0x60000` stride (= up to memory 200 at `0x292A_0000`) |
-| `0x5000_0000` | (preset name table) | ✔ | Preset patch name table (read-only, 300 names) — empirically observed; see §3.5 |
+| `0x5000_0000` | (patch name catalogue) | ✔ | Patch name catalogue (read-only). Up to 300 16-byte name slots. **GX-10**: 297 usable = 198 user (66 banks × 3) + 99 preset (33 banks × 3), with 3 NIU slots at raw 198, 199, 299. **GX-100**: 300 usable = 200 user (50 banks × 4) + 100 preset (25 banks × 4). See §3.5. |
 | `0x6040_0000` | (user-patch RAM mirror) | ✔ | **Working-RAM mirror of user patches** — what BTS reads to display the live patch list. 16 patch slot headers at `0x6040_0000..0x604F_0000` stride `0x10000`. Slot starts with the bank-label header (e.g. literal `"USER 1   "` at `0x6040_0000`, `"USER 2   "` at `0x6041_0000`). The persistent flash storage is at `0x2000_0000` per the chart; this region is the live RAM copy. (Source: `reports/bts_capture_findings.md` §1 — BTS startup snapshot.) |
 | `0x7F00_0000` | (status / runtime) | ✔ | System status registers + tuner display stream + WRITE save-trigger. Not in the official address tree (runtime only). |
 
@@ -409,18 +420,28 @@ writes to `0x20000000` have different semantics than to `0x10000000` — they
 might be a write-only "audition" region vs read-only "current-state"
 region, or a parallel temp buffer.
 
-### 3.5 `0x50000000` — preset name table (read-only)
+### 3.5 `0x50000000` — patch name catalogue (read-only)
 
-Preset patch names, 16 ASCII bytes each, packed contiguously. Reads are
-in 256-byte chunks (16 names per chunk). Address increments by `0x100`
-per chunk, from `0x50000000` up to `0x50002500`.
+Patch names, 16 ASCII bytes each, packed contiguously. Reads are in
+256-byte chunks (16 names per chunk). Address increments by `0x100`
+per chunk, from `0x50000000` up to `0x50002500`. The full sweep
+returns **38 chunks, 9536 bytes, 596 16-byte slots, up to 300 of
+which carry non-empty names**. BTS reads the entire range on connect
+to populate its patch-list UI in one sweep rather than via 198+
+separate patch-load + RQ1 cycles. BTS's final RQ1 in the range is
+`0x50002500 size=0x40` (a short last chunk), which is the natural
+end-of-table.
 
-Capture against firmware-level-3 GX-10 (2026-05-14, full BTS-v1.0.0
-startup trace at `captures/bts_v100_handshake.jsonl`): **38 chunks
-read, 9536 bytes total, 596 16-byte slots, of which 300 are non-empty
-preset names.** Spaces pad to 16 chars; trailing empty slots are
-all-`0x00`. BTS's last RQ1 in the range is `0x50002500 size=0x40` (a
-short chunk, not the full `0x100`), which is the natural end-of-table.
+**Per-device totals** (the 300-slot catalogue exists in both products
+but the bank decomposition differs):
+
+- **GX-10**: 297 usable = 198 user (66 banks × 3) + 99 preset
+  (33 banks × 3). 3 NIU slots at raw 198, 199, 299.
+- **GX-100**: 300 usable = 200 user (50 banks × 4) + 100 preset
+  (25 banks × 4).
+
+See `firmware_versions.md` "Per-device patch totals" for the
+canonical reference and the GX-10 raw→bank decode formula.
 
 ```
 0x50000000  "NATURAL AMP HB  HEAVY METAL     SUPREME AMP HB  MAXIMUM AMP HB  ..."
@@ -429,15 +450,12 @@ short chunk, not the full `0x100`), which is the natural end-of-table.
 0x50002500  "FUZZ BASS       LOOPER CLEAN    LOOPER CRUNCH   LOOPER DRIVE    LOOPER -1OCT"
 ```
 
-The catalogue is **read-only**. It is the bulk equivalent of the
-chart-documented per-memory name reads — BTS uses it on connect to
-populate its patch-list UI in one sweep rather than 296 separate
-patch-load + RQ1 cycles.
+The catalogue is **read-only**.
 
-⚠️ The example name "BOUTIQUE AMP HB" cited in an earlier version of
-this section appears to be from a different firmware or unit. The
-listing above is the actual decoded content of a firmware-level-3
-GX-10 captured on 2026-05-14.
+⚠️ Decoded contents above were captured from a firmware-level-3
+GX-10 on 2026-05-14. An earlier version of this section cited
+"BOUTIQUE AMP HB" as an example name — that turns out to have been
+from a different firmware or unit.
 
 ### 3.6 `0x60400000` — user patch slots (RAM)
 
@@ -518,7 +536,7 @@ to the first observed request; round-trip latency for a small read is
 | 0.208 | H→D | `DT1 0x7F000001 = 0x01`              | **Editor-attached handshake bit.** Tone Studio writes this to announce itself. The device echoes it back at +3 ms. |
 | 0.215 | H→D | `RQ1 0x7F000003 size=1`              | Read another system flag. |
 | 0.218 | D→H | `DT1 0x7F000003 = 0x00`              |  |
-| 0.237 | H→D | `RQ1 0x50000000 size=0x100` × 38     | Bulk read entire preset name table; the device splits each 256-byte read into smaller DT1 chunks at logical record boundaries. |
+| 0.237 | H→D | `RQ1 0x50000000 size=0x100` × 38     | Bulk read of the entire patch name catalogue; the device splits each 256-byte read into smaller DT1 chunks at logical record boundaries. |
 | ~3.0  | H→D | `RQ1 0x60400000 size=0x100` × 16     | Bulk read all 16 user patch slot headers (name + first parameters). |
 | ~4.5  | H→D | `RQ1 0x10000XXX size=0x2D` × many   | Walk the live patch buffer in 0x40-byte pages, reading the full effect-chain configuration. |
 | ~5.5  | —   | idle                                  | No further traffic until user edits a parameter. |

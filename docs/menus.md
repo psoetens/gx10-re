@@ -270,7 +270,7 @@ dev  → DT1 0x10000000 len=16  "EMPTY           "    # echo
 host → DT1 0x7F000703 len=1   00                    # clear dirty flag
 dev  → DT1 0x7F000703 len=1   01                    # echo
 dev  → DT1 0x00200040 len=83  (all-0x01s)           # patch-list metadata refresh
-host → RQ1 0x50000000 size=0x100                    # refresh preset name table
+host → RQ1 0x50000000 size=0x100                    # refresh patch name catalogue
 host → RQ1 0x50000100 size=0x100
 ```
 

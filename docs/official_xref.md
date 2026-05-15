@@ -168,9 +168,12 @@ Captured P03-1 NEO SOUL = `00 00 0C 0E` decodes:
 - Nibbles: 0, 0, 0xC, 0xE → V = 0x00CE = 206
 - 206 − 200 = preset 6 (0-indexed) = P03-1 ✓
 
-The full preset-name table at `0x5000_0000` (per `protocol.md`)
-lists 296 names; combined with the patch-select index, we now have a
-complete preset-name → bytes mapping.
+The full patch-name catalogue at `0x5000_0000` (per `protocol.md` §3.5)
+exposes up to 300 16-byte name slots. On the GX-10, 297 are usable
+(198 user via 66 banks × 3 + 99 preset via 33 banks × 3, with NIU
+holes at raw 198/199/299). On the GX-100, all 300 are usable (200
+user + 100 preset). Combined with the patch-select index, we have a
+complete name → bytes mapping.
 
 ### MemoryCommon layout (the per-patch CTL/EXP block we'd been guessing)
 

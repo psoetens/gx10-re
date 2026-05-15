@@ -209,7 +209,7 @@ all relative to SystemGlobalEq base `0x0000_6B00`.
 |---------|---------|--------|
 | RX CHANNEL (0–15) | `0x0000_3000` | ✅ (read 1 = ch 2 on 2026-05-14) |
 | TX CHANNEL (0–16, RX CH) | `0x0000_3002` | ✅ (read 16 = "RX" on 2026-05-14) |
-| MIDI IN THRU (4 values) | `0x0000_3004` | ✅ (read 0 on 2026-05-14). ⚠ Note: this register does NOT control the macOS USB-MIDI loopback (Roland driver always echoes USB out → in regardless of value). See `protocol.md` §2.0.1. |
+| MIDI IN THRU (4 values: OFF, MIDI, USB OUT, USB & MIDI — order TBD) | `0x0000_3004` | ✅ (read 0 on 2026-05-14). ⚠ This setting DOES control USB loopback echo. When set to USB OUT or USB & MIDI, every USB-in SysEx is echoed back on USB-out by the device itself (NOT by host driver). Tools that subscribe to incoming streams need to suppress echoes of their own writes. See `protocol.md` §2.0.1 and `bts_mac_chain_button_bug.md`. Earlier 2026-05-14 test that swept the byte 0..3 saw echoes at all values because host DT1 writes to this register apparently don't take effect without a different commit sequence (or power cycle) — verified 2026-05-15 by toggling the setting on the device hardware menu instead. |
 | CLOCK OUT | `0x0000_3006` | ✅ (read 1=ON on 2026-05-14) |
 | MAP SELECT (FIX/PROG) | `0x0000_3007` | ✅ (read 0=FIX on 2026-05-14) |
 | Per-controller CC# (Num1-4, BankDown/Up, CTL1-4, EXP1 SW, EXP1, EXP2) | `0x0000_3008..0x0000_3014` | ✅ (all 13 read 0 on 2026-05-14) |
