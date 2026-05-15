@@ -31,6 +31,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from example_lib import GX10Session
+from device_id import require_alive
 
 
 CATALOGUE_BASE   = 0x50000000
@@ -137,6 +138,7 @@ def main():
     args = ap.parse_args()
 
     sess = GX10Session()
+    require_alive(sess)
 
     print("Reading preset catalogue 0x50000000..0x50002500 …", file=sys.stderr)
     blob = fetch_preset_catalogue(sess)

@@ -11,13 +11,11 @@ Usage:
     python tools/show_device_version.py
 """
 import sys
-import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from midi_send import find_output_port, MidiOut, build_identity_request
-import midi_sniff
 from example_lib import GX10Session
+from device_id import require_alive
 
 
 # BTS macOS version → (communicationLevel, communicationRevision) it expects.
@@ -28,74 +26,24 @@ BTS_VERSION_REQUIREMENTS = {
 }
 
 
-def parse_identity_reply(raw: bytes):
-    """Decode a Universal Identity Reply (F0 7E <dev> 06 02 ... F7).
-
-    Returns a dict, or None if `raw` isn't an identity reply.
-    """
-    if len(raw) < 15 or raw[0] != 0xF0 or raw[-1] != 0xF7:
-        return None
-    if raw[1] != 0x7E or raw[3] != 0x06 or raw[4] != 0x02:
-        return None
-    return {
-        "device_id":    raw[2],
-        "manufacturer": raw[5],
-        "family":       (raw[7] << 8) | raw[6],
-        "model":        (raw[9] << 8) | raw[8],
-        "sw_revision":  bytes(raw[10:14]),
-    }
-
-
-def collect_identity_reply(timeout=1.0):
-    """Send identity request, wait for the reply on the sniffer.
-
-    The reply comes back on a different code path than DT1 (RQ1 has an
-    address match; identity replies don't), so GX10Session.request can't
-    be used directly. We do it by hand with the same backend.
-    """
-    sess = GX10Session()
-    try:
-        with sess.lock:
-            sess.events.clear()
-        sess.send(build_identity_request())
-        deadline = time.time() + timeout
-        while time.time() < deadline:
-            with sess.lock:
-                for e in list(sess.events):
-                    p = parse_identity_reply(e)
-                    if p is not None:
-                        return p, sess
-            time.sleep(0.02)
-        return None, sess
-    except Exception:
-        try: sess.out.close()
-        except Exception: pass
-        try: sess.sniffer.close()
-        except Exception: pass
-        raise
-
-
 def main():
-    print("Probing GX-10 / GX-100…\n")
-
-    reply, sess = collect_identity_reply()
-    if reply is None:
-        print("ERROR: no identity reply received within 1 s", file=sys.stderr)
-        sys.exit(2)
-
-    # Decode product flag (sw_revision[0])
-    sw_rev = reply["sw_revision"]
-    product_byte = sw_rev[0]
-    product_name = {0x00: "GX-100", 0x01: "GX-10"}.get(product_byte, f"unknown (0x{product_byte:02X})")
+    sess = GX10Session()
+    # Strict sanity check: aborts with diagnostics if the device is
+    # unreachable or replies with an unrecognized product flag.
+    info = require_alive(sess, verbose=False)
 
     print(f"Identity Reply")
-    print(f"  manufacturer       0x{reply['manufacturer']:02X}  ({'Roland' if reply['manufacturer'] == 0x41 else '?'})")
-    print(f"  family             0x{reply['family']:04X}  ({'GX-10/100 family' if reply['family'] == 0x040B else '?'})")
-    print(f"  model              0x{reply['model']:04X}")
-    print(f"  sw_revision[0..3]  {sw_rev.hex(' ').upper()}")
-    print(f"    → product flag   {product_name}")
-    if any(sw_rev[1:]):
-        print(f"  ⚠ sw_revision[1..3] non-zero (unexpected; reserved on all firmware observed so far)")
+    print(f"  device_id          0x{info.device_id:02X}")
+    print(f"  manufacturer       0x{info.manufacturer:02X}  "
+          f"({'Roland' if info.manufacturer == 0x41 else '?'})")
+    print(f"  family             0x{info.family:04X}  "
+          f"({'GX-10/100 family' if info.family == 0x040B else '?'})")
+    print(f"  model              0x{info.model:04X}")
+    print(f"  sw_revision[0..3]  {info.sw_revision.hex(' ').upper()}")
+    print(f"    → product flag   {info.product}")
+    if any(info.sw_revision[1:]):
+        print(f"  ⚠ sw_revision[1..3] non-zero (unexpected; reserved on "
+              f"all firmware observed so far)")
     print()
 
     # Read the firmware capability fingerprint.
@@ -134,13 +82,14 @@ def main():
     # Inferred firmware family
     print(f"Inferred firmware family")
     if level == 3:
-        print(f"  GX-10 firmware ≤ 1.04 (launch family). Exact sub-version (1.00 vs 1.04)")
-        print(f"  is NOT exposed on MIDI — read the on-device VERSION menu for that.")
+        print(f"  GX-10 firmware ≤ 1.04 (launch family). Exact sub-version "
+              f"(1.00 vs 1.04) is NOT exposed on MIDI — read the on-device "
+              f"VERSION menu for that.")
     elif level == 4:
         print(f"  GX-10 firmware ≥ 1.05.")
     else:
-        print(f"  Unknown capability level {level}; mapping in docs/firmware_versions.md")
-        print(f"  may be out of date.")
+        print(f"  Unknown capability level {level}; mapping in "
+              f"docs/firmware_versions.md may be out of date.")
 
     # Be a good citizen — release the input port quickly.
     try: sess.out.close()
@@ -148,8 +97,6 @@ def main():
     try: sess.sniffer.close()
     except Exception: pass
 
-    # Flush before os._exit — otherwise buffered stdout is lost on some
-    # tty configurations.
     sys.stdout.flush()
     import os
     os._exit(0)

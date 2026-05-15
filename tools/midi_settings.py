@@ -25,6 +25,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from example_lib import GX10Session
+from device_id import require_alive
 
 
 # (address, name, kind, decoder_in, decoder_out)
@@ -185,6 +186,7 @@ def main():
     args = ap.parse_args()
 
     sess = GX10Session()
+    require_alive(sess)
 
     if args.set:
         field, value = args.set

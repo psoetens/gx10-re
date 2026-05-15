@@ -48,7 +48,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from example_lib import GX10Session
-from midi_send import build_identity_request
+from device_id import require_alive
 
 
 BANK_BASE = {1: 0x00100000, 2: 0x00100400, 3: 0x00100800}
@@ -104,31 +104,9 @@ def memory_label(n: int, product: str = PRODUCT_GX10) -> str:
     return "?"
 
 
-def detect_product(sess) -> str:
-    """Send an Identity Request and decode the sw_revision[0] product
-    flag. Returns PRODUCT_GX10 / PRODUCT_GX100. Falls back to
-    PRODUCT_GX10 if no reply arrives (the more common case for this
-    repo)."""
-    with sess.lock:
-        sess.events.clear()
-    sess.send(build_identity_request())
-    deadline = time.time() + 1.0
-    while time.time() < deadline:
-        with sess.lock:
-            for e in list(sess.events):
-                if len(e) >= 15 and e[1] == 0x7E and e[3] == 0x06 and e[4] == 0x02:
-                    sw_rev = e[10:14]
-                    flag = sw_rev[0]
-                    if flag == 0x00:
-                        return PRODUCT_GX100
-                    if flag == 0x01:
-                        return PRODUCT_GX10
-                    print(f"warning: unknown product flag 0x{flag:02X}; "
-                          f"assuming GX-10", file=sys.stderr)
-                    return PRODUCT_GX10
-        time.sleep(0.02)
-    print("warning: no identity reply received; assuming GX-10", file=sys.stderr)
-    return PRODUCT_GX10
+# Product detection is delegated to tools/device_id.py — call
+# `require_alive(sess)` and read `info.product` rather than rolling
+# our own identity-reply parsing here.
 
 
 def entry_addr(bank: int, pc: int) -> int:
@@ -254,7 +232,12 @@ def main():
     args = ap.parse_args()
 
     sess = GX10Session()
-    product = args.product or detect_product(sess)
+    # require_alive() aborts the process on any unrecognized product,
+    # so info.product is guaranteed to be "GX-10" or "GX-100" past this
+    # line. --product on the CLI can force one when both are valid
+    # (mostly useful for testing the GX-100 reset pattern).
+    info = require_alive(sess)
+    product = args.product or info.product
 
     if args.set:
         bank, pc, memory = args.set
@@ -277,10 +260,10 @@ def main():
             print("Done. Re-run without --reset to verify.")
         import os; sys.stdout.flush(); os._exit(0 if ok else 2)
 
-    # Default: list MAP SELECT + bank tables
+    # Default: list MAP SELECT + bank tables. (Device line already
+    # printed by require_alive(); we just add MAP SELECT below it.)
     ms = read_map_select(sess)
     ms_label = {0: "FIX", 1: "PROG"}.get(ms, f"raw {ms}")
-    print(f"Device: {product}")
     print(f"MAP SELECT (0x{MAP_SELECT_ADDR:08X}): {ms_label}")
     print()
 
