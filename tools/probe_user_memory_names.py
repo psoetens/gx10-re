@@ -120,6 +120,7 @@ def main():
     out = MidiOut(out_idx)
     print(f"  output: {out_name}")
     time.sleep(0.5)
+    require_alive_raw(out, coll.events, coll.lock)
 
     names = {}
     try:

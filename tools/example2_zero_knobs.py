@@ -27,10 +27,12 @@ from example_lib import (
     GX10Session, read_knob_settings, encode_4nib_offset,
     ON_OFF_OFFSET, DUP_NUMBER_OFFSET, FX_PARAM_BASE_OFFSET,
 )
+from device_id import require_alive
 
 
 def main():
     sess = GX10Session()
+    require_alive(sess)
     knobs = read_knob_settings(sess)
     if not knobs:
         print("ERROR: device did not reply to knob-setting reads")

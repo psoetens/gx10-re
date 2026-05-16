@@ -17,6 +17,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_sniff
+from midi_send import find_output_port, MidiOut
+from device_id import require_alive_raw
 
 
 def parse_dt1(raw):
@@ -49,6 +51,16 @@ def main():
                 pass
     s._emit = emit
     s.open()
+
+    # Identity check (the only DT1/RQ1 we send — otherwise pure passive)
+    out_idx, _ = find_output_port("GX-10")
+    out = MidiOut(out_idx)
+    time.sleep(0.3)
+    require_alive_raw(out, events, lock=lock)
+    out.close()
+    with lock:
+        events.clear()
+
     print(f"Listening for {args.seconds}s — sending NO RQ1.")
     print("Wiggle a string / cycle the tuner to generate broadcasts.")
     time.sleep(args.seconds)

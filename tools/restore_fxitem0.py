@@ -11,6 +11,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
+from example_lib import GX10Session
+from device_id import require_alive
 
 FXITEM0_BASE = 0x10001100
 
@@ -27,11 +29,11 @@ def main():
         print("ERROR: snapshot too short")
         return 2
 
-    out_idx, _ = midi_send.find_output_port(args.port)
-    if out_idx is None:
-        print(f"ERROR: no output port matching {args.port}")
-        return 2
-    out = midi_send.MidiOut(out_idx)
+    # GX10Session gives a sniffer for the identity check; we use
+    # its .out for the actual writes.
+    sess = GX10Session(port_substr=args.port)
+    require_alive(sess)
+    out = sess.out
 
     try:
         # 1. Write the FxItem header bytes (TYPE, ON/OFF, DupNum) individually
@@ -58,7 +60,10 @@ def main():
         print(f"  wrote {n_written} FX-Param 4-byte slots (offsets 0x03..0x7B)", flush=True)
         time.sleep(0.1)
     finally:
-        out.close()
+        try: sess.sniffer.close()
+        except Exception: pass
+        try: out.close()
+        except Exception: pass
     print("done.", flush=True)
     return 0
 

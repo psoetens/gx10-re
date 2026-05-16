@@ -16,6 +16,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
+from example_lib import GX10Session
+from device_id import require_alive
 
 
 def addr_bytes_ok(addr: int) -> bool:
@@ -84,10 +86,11 @@ def main():
     else:
         print(f"unknown plan: {args.plan}", file=sys.stderr); sys.exit(2)
 
-    idx, name = midi_send.find_output_port("GX-10")
-    if idx is None:
-        print("GX-10 output port not found", file=sys.stderr); sys.exit(2)
-    out = midi_send.MidiOut(idx)
+    # GX10Session for the strict identity check; reuse its .out for
+    # the rapid send (this tool is write-only — no sniffing).
+    sess = GX10Session()
+    require_alive(sess)
+    out = sess.out
     print(f"sending {len(plan)} RQ1s with gap={args.gap}s ...", file=sys.stderr)
     t0 = time.perf_counter()
     try:
@@ -95,7 +98,10 @@ def main():
             out.send_sysex(midi_send.build_rq1(addr, size))
             time.sleep(args.gap)
     finally:
-        out.close()
+        try: sess.sniffer.close()
+        except Exception: pass
+        try: out.close()
+        except Exception: pass
     elapsed = time.perf_counter() - t0
     print(f"done in {elapsed:.1f}s", file=sys.stderr)
 

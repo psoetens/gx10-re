@@ -13,6 +13,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
+from example_lib import GX10Session
+from device_id import require_alive
 
 
 def restore(snap_path: Path, addr_min: int, addr_max: int, gap: float = 0.005):
@@ -20,8 +22,11 @@ def restore(snap_path: Path, addr_min: int, addr_max: int, gap: float = 0.005):
     items = sorted((int(a, 16), b) for a, b in raw.items())
     items = [(a, b) for a, b in items if addr_min <= a < addr_max]
 
-    idx, _ = midi_send.find_output_port("GX-10")
-    out = midi_send.MidiOut(idx)
+    # GX10Session gives a sniffer + MidiOut; require_alive does the
+    # strict identity/product check before we start writing.
+    sess = GX10Session()
+    require_alive(sess)
+    out = sess.out
     # editor-attached
     out.send_sysex(midi_send.build_dt1(0x7F000001, b"\x01"))
     time.sleep(0.2)
@@ -71,7 +76,10 @@ def restore(snap_path: Path, addr_min: int, addr_max: int, gap: float = 0.005):
             out.send_sysex(midi_send.build_dt1(addr, data))
             time.sleep(gap)
     finally:
-        out.close()
+        try: sess.sniffer.close()
+        except Exception: pass
+        try: out.close()
+        except Exception: pass
     print("done", file=sys.stderr)
 
 

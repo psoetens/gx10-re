@@ -29,6 +29,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_send import find_output_port, MidiOut, build_dt1, build_rq1
 import midi_sniff
+from example_lib import GX10Session
+from device_id import require_alive
 
 
 def kill_bts():
@@ -94,16 +96,17 @@ def main():
     print("Killing BTS to free MIDI port...")
     kill_bts()
 
-    out_idx, name = find_output_port("GX-10")
-    if out_idx is None:
-        print("ERROR: no MIDI output port matching 'GX-10'")
-        sys.exit(2)
-
-    out = MidiOut(out_idx)
+    # Use GX10Session (with built-in sniffer) so we can do the strict
+    # identity check before writing anything to the device.
+    sess = GX10Session()
+    require_alive(sess)
     msg = build_dt1(0x00200003, b"\x00")
     print(f"Sending DT1 ChainEditTrigger=0:  {msg.hex().upper()}")
-    out.send_sysex(msg)
-    out.close()
+    sess.send(msg)
+    try: sess.out.close()
+    except Exception: pass
+    try: sess.sniffer.close()
+    except Exception: pass
     time.sleep(0.4)
 
     if not args.no_verify:

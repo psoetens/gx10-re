@@ -31,6 +31,7 @@ import midi_send
 import midi_sniff
 from rapid_probe import plan_live_patch_deep
 from patch_snapshot import parse_log_to_address_map, save_snapshot
+from device_id import require_alive_raw
 
 
 def encode_patch_index_bank_pos(n: int) -> bytes:
@@ -76,6 +77,23 @@ def main():
     idx_in, _ = midi_sniff.find_port("GX-10")
     idx_out, _ = midi_send.find_output_port("GX-10")
     out = midi_send.MidiOut(idx_out)
+
+    # Strict identity check via a one-shot sniffer + events buffer.
+    # We don't keep this sniffer open — snapshot_one() opens its own
+    # per-patch JSONL sniffer below.
+    _check_events: list = []
+    _check_sniffer = midi_sniff.Sniffer(idx_in,
+                                        Path("captures/_id_check.jsonl"),
+                                        "GX-10")
+    def _capture(obj):
+        if obj.get("kind") == "sysex":
+            try: _check_events.append(bytes.fromhex(obj["hex"]))
+            except Exception: pass
+    _check_sniffer._emit = _capture
+    _check_sniffer.open()
+    time.sleep(0.3)
+    require_alive_raw(out, _check_events)
+    _check_sniffer.close()
 
     # announce editor
     out.send_sysex(midi_send.build_dt1(0x7F000001, b"\x01"))

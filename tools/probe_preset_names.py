@@ -116,6 +116,7 @@ def main():
     out_idx, _ = find_output_port(args.port)
     out = MidiOut(out_idx)
     time.sleep(0.3)
+    require_alive_raw(out, events, lock)
 
     seen = 0
     # 1. Save current memory #

@@ -25,6 +25,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_io import GxMidi
+from device_id import require_alive_gxmidi
 
 
 _running = True
@@ -53,6 +54,7 @@ def main():
 
     global _g
     _g = GxMidi()
+    require_alive_gxmidi(_g)
     print(f"port: {_g.port_name}", file=sys.stderr)
     print(f"writing events to {out_path}", file=sys.stderr)
 

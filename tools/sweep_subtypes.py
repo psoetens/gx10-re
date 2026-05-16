@@ -19,6 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
 import midi_sniff
+from device_id import require_alive_raw
 
 
 FXITEM0_BASE = 0x10001100
@@ -60,16 +61,20 @@ def main():
     q: "queue.Queue[bytes]" = queue.Queue()
     sn_log = out_dir / f"sniff_{args.effect_name}.jsonl"
     sniffer = midi_sniff.Sniffer(in_idx, sn_log, "GX-10")
-    sniffer.open()
+    id_events: list = []
     orig_emit = sniffer._emit
     def emit(obj):
         if obj.get("kind") == "sysex":
             try:
-                q.put(bytes.fromhex(obj["hex"]))
+                raw = bytes.fromhex(obj["hex"])
+                q.put(raw); id_events.append(raw)
             except Exception:
                 pass
         return orig_emit(obj)
     sniffer._emit = emit
+    sniffer.open()
+    time.sleep(0.3)
+    require_alive_raw(out, id_events)
 
     def drain(secs=0.05):
         time.sleep(secs)

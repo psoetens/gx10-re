@@ -18,6 +18,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
+from example_lib import GX10Session
+from device_id import require_alive
 
 FXITEM0_BASE = 0x10001100
 
@@ -34,10 +36,11 @@ def encode_4nibble(display: int) -> bytes:
 
 
 def main():
-    out_idx, _ = midi_send.find_output_port("GX-10")
-    if out_idx is None:
-        print("no GX-10 output port"); return 2
-    out = midi_send.MidiOut(out_idx)
+    # GX10Session gives us a sniffer for the identity check; we use
+    # its .out for the actual writes.
+    sess = GX10Session()
+    require_alive(sess)
+    out = sess.out
 
     writes = [
         ("EFFECT LEVEL",    0x1000110B, 1),
@@ -54,7 +57,10 @@ def main():
         time.sleep(0.05)
         print(f"  {name:18s}  addr 0x{addr:08X}  payload={payload.hex()}  display={val}")
 
-    out.close()
+    try: sess.sniffer.close()
+    except Exception: pass
+    try: out.close()
+    except Exception: pass
     print()
     print("Done. Now read each knob's value off the device LCD or BTS.")
     print("If all five show 1, 2, 3, 4, 5 in order — mapping is validated.")

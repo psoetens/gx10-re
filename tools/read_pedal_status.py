@@ -34,6 +34,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_send import find_output_port, MidiOut, build_rq1
 import midi_sniff
+from device_id import require_alive_raw
 from device_profile import detect_and_profile, GX10_LED_BITS, GX100_LED_BITS
 from effect_colors import (EFFECT_COLOR, FUNCTION_COLOR, friendly,
                             NAVIGATION_FUNCTIONS, PEDAL_FX_EFFECTS)
@@ -443,6 +444,7 @@ def main():
         print("ERROR: no output port"); sys.exit(2)
     out = MidiOut(out_idx)
     time.sleep(0.4)
+    require_alive_raw(out, events, lock)
 
     # Read MemoryCommon Function+Mode (0x10..0x32, 35 bytes)
     fmaddr = TEMP_BASE + MEMORY_COMMON_OFS + 0x10

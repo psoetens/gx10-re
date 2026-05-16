@@ -28,6 +28,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_io import GxMidi, parse_dt1_payload
 from encoding import encode_fx_param
+from device_id import require_alive_gxmidi
 
 
 ROOT = Path(__file__).parent.parent
@@ -164,6 +165,7 @@ def main():
         sys.exit(f"TYPE {type_hex} ({title}) has no knobs — nothing to sweep")
 
     g = GxMidi()
+    require_alive_gxmidi(g)
     print(f"port: {g.port_name}", file=sys.stderr)
     print()
     print(f"=== {type_hex} {title} — sub-type sweep ===")

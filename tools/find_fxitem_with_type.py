@@ -14,6 +14,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
 import midi_sniff
+from device_id import require_alive_raw
 
 
 FXITEM0_BASE = 0x10001100
@@ -39,17 +40,22 @@ def main():
     sn_log = Path("captures/_probe/find_fxitem.jsonl")
     sn_log.parent.mkdir(parents=True, exist_ok=True)
     sniffer = midi_sniff.Sniffer(in_idx, sn_log, "GX-10")
-    sniffer.open()
     q: "queue.Queue[bytes]" = queue.Queue()
+    id_events: list = []
     def silent(o):
         import json as _j
         o.setdefault("t", round(sniffer._ts(), 6))
         o.setdefault("label", sniffer.label)
         sniffer.log_fp.write(_j.dumps(o, ensure_ascii=False) + "\n")
         if o.get("kind") == "sysex":
-            try: q.put(bytes.fromhex(o["hex"]))
+            try:
+                raw = bytes.fromhex(o["hex"])
+                q.put(raw); id_events.append(raw)
             except: pass
     sniffer._emit = silent
+    sniffer.open()
+    time.sleep(0.3)
+    require_alive_raw(out, id_events)
 
     def drain(secs=0.05):
         time.sleep(secs); msgs = []

@@ -27,6 +27,7 @@ import midi_send
 import midi_sniff
 from rapid_probe import step_7bit
 from patch_snapshot import parse_log_to_address_map, save_snapshot
+from device_id import require_alive_raw
 
 import ctypes
 from ctypes import wintypes
@@ -58,6 +59,22 @@ def main():
     idx_in, _ = midi_sniff.find_port("GX-10")
     idx_out, _ = midi_send.find_output_port("GX-10")
     out = midi_send.MidiOut(idx_out)
+
+    # Strict identity check via a one-shot sniffer (per-patch sniffers
+    # below open + close per snapshot).
+    _ck_events: list = []
+    _ck_sniffer = midi_sniff.Sniffer(idx_in,
+                                     Path("captures/_id_check.jsonl"),
+                                     "GX-10")
+    def _cap(o):
+        if o.get("kind") == "sysex":
+            try: _ck_events.append(bytes.fromhex(o["hex"]))
+            except Exception: pass
+    _ck_sniffer._emit = _cap
+    _ck_sniffer.open()
+    time.sleep(0.3)
+    require_alive_raw(out, _ck_events)
+    _ck_sniffer.close()
 
     # announce editor
     out.send_sysex(midi_send.build_dt1(0x7F000001, b"\x01"))

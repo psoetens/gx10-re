@@ -25,6 +25,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import midi_sniff
 import bts_launcher
 from midi_send import find_output_port, MidiOut
+from device_id import require_alive_raw
 
 
 def main():
@@ -47,9 +48,24 @@ def main():
     if in_idx is None:
         print("ERROR: no GX-10 input port"); sys.exit(2)
     sniffer = midi_sniff.Sniffer(in_idx, log_path, in_name)
+    id_events: list = []
+    orig_emit = sniffer._emit
+    def _cap(o):
+        if o.get("kind") == "sysex":
+            try: id_events.append(bytes.fromhex(o["hex"]))
+            except Exception: pass
+        return orig_emit(o)
+    sniffer._emit = _cap
     sniffer.open()
     print(f"  [t=0.0]  sniffer running -> {log_path}", flush=True)
     t0 = time.time()
+
+    # 1a) Verify device identity BEFORE launching BTS (BTS will hold the port).
+    out_idx_id, _ = find_output_port("GX-10")
+    out_id = MidiOut(out_idx_id)
+    time.sleep(0.3)
+    require_alive_raw(out_id, id_events)
+    out_id.close()
 
     # 2) Launch BTS
     if bts_launcher.is_bts_running():

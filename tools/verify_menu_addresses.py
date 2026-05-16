@@ -17,6 +17,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
 import midi_sniff
+from device_id import require_alive_raw
 
 
 # (address, size, label, expected_range_or_enum)
@@ -88,11 +89,18 @@ def main():
     sn = midi_sniff.Sniffer(in_idx, Path("captures/menu_verify/sniff.jsonl"), "GX-10")
     sn.open()
     q: "queue.Queue[bytes]" = queue.Queue()
+    events = []   # parallel list for require_alive_raw
     def silent(o):
         if o.get("kind") == "sysex":
-            try: q.put(bytes.fromhex(o["hex"]))
+            try:
+                raw = bytes.fromhex(o["hex"])
+                q.put(raw)
+                events.append(raw)
             except: pass
     sn._emit = silent
+    time.sleep(0.3)
+    require_alive_raw(out, events)
+    events.clear()  # don't leak handshake bytes into the per-target reads
 
     def get(addr, timeout=0.4):
         deadline = time.monotonic() + timeout

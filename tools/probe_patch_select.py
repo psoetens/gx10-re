@@ -12,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
 import midi_sniff
 import ctypes
+from device_id import require_alive_raw
 
 
 def setup():
@@ -35,7 +36,19 @@ def main():
     log = Path("captures/probe_select.jsonl")
     log.parent.mkdir(parents=True, exist_ok=True)
     sniffer = midi_sniff.Sniffer(idx_in, log, "GX-10")
+    # Hook _emit before open() so require_alive_raw sees identity reply.
+    events: list = []
+    orig_emit = sniffer._emit
+    def _cap(o):
+        if o.get("kind") == "sysex":
+            try: events.append(bytes.fromhex(o["hex"]))
+            except Exception: pass
+        return orig_emit(o)
+    sniffer._emit = _cap
     sniffer.open()
+    time.sleep(0.3)
+    require_alive_raw(out, events)
+    events.clear()
     # announce editor
     out.send_sysex(midi_send.build_dt1(0x7F000001, b"\x01"))
     time.sleep(0.3)

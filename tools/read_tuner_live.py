@@ -31,6 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_send import find_output_port, MidiOut, build_rq1
 import midi_sniff
+from device_id import require_alive_raw
 
 
 TUNER_ADDR = 0x7F000300
@@ -123,6 +124,7 @@ def main():
     out_idx, _ = find_output_port("GX-10")
     out = MidiOut(out_idx)
     time.sleep(0.3)
+    require_alive_raw(out, events, lock)
 
     if args.watch:
         print("Polling 0x7F000300 every 100ms — Ctrl+C to stop.")

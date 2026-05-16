@@ -27,6 +27,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
 from rapid_probe import step_7bit, plan_live_low
+from device_id import require_alive_raw
 
 ZERO_PAYLOAD = bytes([0])
 ONE_PAYLOAD = bytes([1])
@@ -82,6 +83,7 @@ def add_comp_then_set_type(out, type_id: int):
 
 _GLOBAL_SNIFFER = None
 _GLOBAL_SNIFFER_LOG = None
+_GLOBAL_ID_EVENTS: list = []
 
 
 def _ensure_sniffer():
@@ -94,6 +96,13 @@ def _ensure_sniffer():
     log.parent.mkdir(parents=True, exist_ok=True)
     _GLOBAL_SNIFFER_LOG = log
     _GLOBAL_SNIFFER = midi_sniff.Sniffer(idx_in, log, "GX-10")
+    orig_emit = _GLOBAL_SNIFFER._emit
+    def _cap(o):
+        if o.get("kind") == "sysex":
+            try: _GLOBAL_ID_EVENTS.append(bytes.fromhex(o["hex"]))
+            except Exception: pass
+        return orig_emit(o)
+    _GLOBAL_SNIFFER._emit = _cap
     _GLOBAL_SNIFFER.open()
     return _GLOBAL_SNIFFER, _GLOBAL_SNIFFER_LOG
 
@@ -186,6 +195,9 @@ def main():
     (out_dir / "screenshots").mkdir(parents=True, exist_ok=True)
 
     out = open_out()
+    _ensure_sniffer()
+    time.sleep(0.3)
+    require_alive_raw(out, _GLOBAL_ID_EVENTS)
     announce_editor(out)
 
     summary = []

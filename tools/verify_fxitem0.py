@@ -5,15 +5,12 @@ much as it has — empirically ~179 bytes.
 """
 from __future__ import annotations
 import argparse
-import queue
 import sys
-import time
-import ctypes
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-import midi_send
-import midi_sniff
+from example_lib import GX10Session
+from device_id import require_alive
 
 
 def main():
@@ -23,40 +20,9 @@ def main():
     args = ap.parse_args()
     snapshot = Path(args.snapshot).read_bytes()
 
-    out_idx, _ = midi_send.find_output_port(args.port)
-    in_idx, in_name = midi_sniff.find_port(args.port)
-    if out_idx is None or in_idx is None:
-        print("ERROR: missing port"); return 2
-
-    q: "queue.Queue[bytes]" = queue.Queue()
-    sniffer = midi_sniff.Sniffer(in_idx, Path("captures/_probe/verify.jsonl"), in_name)
-    sniffer.open()
-    # patch the sniffer to push messages to our queue too
-    orig_emit = sniffer._emit
-    def emit(obj):
-        if obj.get("kind") == "sysex":
-            try:
-                q.put(bytes.fromhex(obj["hex"]))
-            except Exception:
-                pass
-        return orig_emit(obj)
-    sniffer._emit = emit
-
-    out = midi_send.MidiOut(out_idx)
-    try:
-        out.send_sysex(midi_send.build_rq1(0x10001100, 0x140))
-        time.sleep(0.4)
-    finally:
-        out.close()
-    sniffer.close()
-
-    # Find the DT1 reply for 0x10001100
-    found = None
-    while not q.empty():
-        msg = q.get_nowait()
-        if len(msg) > 14 and msg[8] == 0x12 and msg[9:13] == b"\x10\x00\x11\x00":
-            found = bytes(msg[13:-2])  # payload only
-            break
+    sess = GX10Session(port_substr=args.port)
+    require_alive(sess)
+    found = sess.request(0x10001100, 0x140, timeout=1.5)
     if found is None:
         print("ERROR: no reply"); return 2
     print(f"current FxItem #0 ({len(found)} bytes): {found[:32].hex()}...")

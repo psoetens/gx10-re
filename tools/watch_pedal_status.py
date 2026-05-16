@@ -20,6 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_send import find_output_port, MidiOut, build_rq1
 import midi_sniff
+from device_id import require_alive_raw
 from device_profile import detect_and_profile
 
 
@@ -73,6 +74,7 @@ def main():
         print("ERROR: no MIDI output port"); sys.exit(2)
     out = MidiOut(out_idx)
     time.sleep(0.4)
+    require_alive_raw(out, events, lock)
 
     print("Watching MemoryLed.ON_OFF_STATE — press each button one at a time.")
     print("Ctrl+C to stop.\n")

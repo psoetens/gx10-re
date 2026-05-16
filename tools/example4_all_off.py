@@ -29,6 +29,7 @@ from example_lib import (
     encode_4nib_offset,
     ON_OFF_OFFSET, FX_PARAM_BASE_OFFSET, FX_PARAM_STRIDE,
 )
+from device_id import require_alive
 
 
 DIVIDER_FX_TYPE = 29
@@ -45,6 +46,7 @@ DIV_CH_SELECT_OFFSET = FX_PARAM_BASE_OFFSET + 1 * FX_PARAM_STRIDE  # 0x07
 
 def main():
     sess = GX10Session()
+    require_alive(sess)
     chain = read_chain(sess)
     if not chain:
         print("(empty chain)")

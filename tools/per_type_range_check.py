@@ -18,6 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_io import GxMidi, parse_dt1_payload
+from device_id import require_alive_gxmidi
 
 
 ROOT = Path(__file__).parent.parent
@@ -44,6 +45,7 @@ def main():
     catalog = json.loads(EFFECT_CATALOG.read_text())
 
     g = GxMidi()
+    require_alive_gxmidi(g)
     print(f"port: {g.port_name}", file=sys.stderr)
 
     # Save FxItem 0 via cell-aligned reads. Bulk reads at offset 0x40

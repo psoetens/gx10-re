@@ -16,6 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_send import find_output_port, MidiOut, build_dt1, build_rq1
 import midi_sniff
+from device_id import require_alive_raw
 from fx_type_enum import FX_TYPE_NAME
 
 
@@ -86,6 +87,7 @@ def main():
     out_idx, _ = find_output_port("GX-10")
     out = MidiOut(out_idx)
     time.sleep(0.4)
+    require_alive_raw(out, events, lock)
 
     BASE = 0x10000200
 

@@ -33,6 +33,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_io import GxMidi, parse_dt1_payload, hex_msg
+from device_id import require_alive_gxmidi
 
 
 def collect(g, secs, label):
@@ -60,6 +61,7 @@ def collect(g, secs, label):
 
 def main():
     g = GxMidi()
+    require_alive_gxmidi(g)
     print(f"port: {g.port_name}")
 
     print("\n=== 1. baseline read of 0x7F000703 (no handshake) ===")

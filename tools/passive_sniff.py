@@ -10,10 +10,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_io import GxMidi, parse_dt1_payload, hex_msg
+from device_id import require_alive_gxmidi
 
 
 def main(duration=15.0):
     g = GxMidi()
+    require_alive_gxmidi(g)
     print(f"sniffing on {g.port_name} for {duration}s — turn knobs now",
           file=sys.stderr)
     g.drain()

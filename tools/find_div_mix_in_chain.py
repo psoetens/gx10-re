@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path.home() /
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
 import midi_sniff
+from device_id import require_alive_raw
 
 
 CHAIN_LIST_BASE = 0x10000F0C
@@ -35,13 +36,18 @@ def main():
     in_idx, _ = midi_sniff.find_port("GX-10")
     out = midi_send.MidiOut(out_idx)
     sn = midi_sniff.Sniffer(in_idx, Path("captures/bts_loop_level_probe/find.jsonl"), "GX-10")
-    sn.open()
     q: "queue.Queue[bytes]" = queue.Queue()
+    id_events: list = []
     def silent(o):
         if o.get("kind") == "sysex":
-            try: q.put(bytes.fromhex(o["hex"]))
+            try:
+                raw = bytes.fromhex(o["hex"])
+                q.put(raw); id_events.append(raw)
             except: pass
     sn._emit = silent
+    sn.open()
+    time.sleep(0.3)
+    require_alive_raw(out, id_events)
 
     def get(addr, timeout=0.6):
         deadline = time.monotonic() + timeout

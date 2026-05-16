@@ -14,6 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from example_lib import GX10Session
+from device_id import require_alive
 
 
 SYSTEM_INOUT_ADDR = 0x00004000
@@ -55,6 +56,7 @@ def percent_bar(value, maximum=200, width=24):
 
 def main():
     sess = GX10Session()
+    require_alive(sess)
     payload = sess.request(SYSTEM_INOUT_ADDR, SYSTEM_INOUT_LEN)
     if not payload or len(payload) < SYSTEM_INOUT_LEN:
         print("ERROR: device did not return the full SystemInOut block")

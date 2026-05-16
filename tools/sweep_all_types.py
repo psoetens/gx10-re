@@ -21,6 +21,7 @@ from collections import defaultdict
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
 import midi_sniff
+from device_id import require_alive_raw
 
 
 FXITEM0_BASE = 0x10001100
@@ -104,6 +105,7 @@ class _Listener:
         self.port_index = port_index
         self.port_name = port_name
         self.q = q
+        self.id_events: list = []
         self.handle = midi_sniff.HMIDIIN()
         self.buffers = []
         self.headers = []
@@ -118,6 +120,7 @@ class _Listener:
                     raw = ctypes.string_at(hdr.lpData, hdr.dwBytesRecorded)
                     if raw[:1] == b"\xF0":
                         self.q.put(raw)
+                        self.id_events.append(raw)
                 # Re-queue
                 midi_sniff.winmm.midiInAddBuffer(self.handle, dwParam1,
                     ctypes.sizeof(midi_sniff.MIDIHDR))
@@ -178,9 +181,9 @@ def main():
     probe = Probe(args.port, args.port)
     print(f"opened ports for {args.port}", flush=True)
 
-    # --- 1. Identity check
-    probe.out.send_sysex(midi_send.build_identity_request())
-    probe.drain(0.3)
+    # --- 1. Identity check (strict — aborts if device unreachable/unknown)
+    time.sleep(0.3)
+    require_alive_raw(probe.out, probe._sniffer.id_events)
 
     # --- 2. Snapshot FxItem #0
     print("snapshotting FxItem #0...", flush=True)

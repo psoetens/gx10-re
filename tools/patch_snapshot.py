@@ -21,6 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
 import midi_sniff
+from device_id import require_alive_raw
 
 
 REGIONS = [
@@ -46,8 +47,21 @@ def snapshot(regions, settle_per_chunk: float = 0.04, listen_seconds: float = 1.
     tmp_log.parent.mkdir(parents=True, exist_ok=True)
 
     sniffer = midi_sniff.Sniffer(idx_in, tmp_log, name_in)
+    # Push every sysex event into an events list so require_alive_raw
+    # can see the identity reply too. The original _emit keeps writing
+    # to the JSONL log unchanged.
+    events: list = []
+    orig_emit = sniffer._emit
+    def _emit_capture(obj):
+        if obj.get("kind") == "sysex":
+            try: events.append(bytes.fromhex(obj["hex"]))
+            except Exception: pass
+        return orig_emit(obj)
+    sniffer._emit = _emit_capture
     sniffer.open()
     out = midi_send.MidiOut(idx_out)
+    time.sleep(0.3)
+    require_alive_raw(out, events)
     try:
         for label, start, end, step in regions:
             sniffer.set_label(f"snapshot region {label}")

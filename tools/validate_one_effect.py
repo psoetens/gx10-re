@@ -24,6 +24,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
 import midi_sniff
+from device_id import require_alive_raw
 
 
 FXITEM0_BASE = 0x10001100
@@ -68,17 +69,22 @@ def main():
     SNAP.parent.mkdir(parents=True, exist_ok=True)
     sn_log = SNAP.parent / "sniff.jsonl"
     sniffer = midi_sniff.Sniffer(in_idx, sn_log, "GX-10")
-    sniffer.open()
     q: "queue.Queue[bytes]" = queue.Queue()
+    id_events: list = []
     def silent_emit(obj):
         import json as _j
         obj.setdefault("t", round(sniffer._ts(), 6))
         obj.setdefault("label", sniffer.label)
         sniffer.log_fp.write(_j.dumps(obj, ensure_ascii=False) + "\n")
         if obj.get("kind") == "sysex":
-            try: q.put(bytes.fromhex(obj["hex"]))
+            try:
+                raw = bytes.fromhex(obj["hex"])
+                q.put(raw); id_events.append(raw)
             except: pass
     sniffer._emit = silent_emit
+    sniffer.open()
+    time.sleep(0.3)
+    require_alive_raw(out, id_events)
 
     def drain(secs=0.05):
         time.sleep(secs); msgs = []

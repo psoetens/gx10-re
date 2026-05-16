@@ -15,6 +15,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_send import find_output_port, MidiOut, build_dt1
+from example_lib import GX10Session
+from device_id import require_alive
 
 
 # ---- chain config ----------------------------------------------------
@@ -115,11 +117,11 @@ def write_assign_fields(out, base, target_fx_item, target_idx,
 # ---- main flow -------------------------------------------------------
 
 def main():
-    out_idx, out_name = find_output_port("GX-10")
-    if out_idx is None:
-        print("ERROR: GX-10 not found"); sys.exit(2)
-    print(f"Connected to: {out_name}")
-    out = MidiOut(out_idx)
+    # GX10Session gives us a built-in sniffer + MidiOut, and lets us
+    # run the strict identity check before sending any DT1.
+    sess = GX10Session()
+    require_alive(sess)
+    out = sess.out
     time.sleep(0.3)
 
     # ---- PHASE 1: chain edit transaction ----

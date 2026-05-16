@@ -163,6 +163,41 @@ WebView2 knobs and dropdowns), don't waste time with pyautogui. Instead:
 
 This is **far** more reliable than mouse driving in WebView2.
 
+## Tool standard: identity check is mandatory
+
+Every Python tool in `tools/` that opens the MIDI port to talk to the device
+MUST call `device_id.require_alive*()` immediately after opening that port
+and BEFORE issuing any other RQ1/DT1. On failure it prints diagnostics and
+aborts with a non-zero exit code — no silent fall-through to wrong-product
+or no-device states.
+
+Three adapters exist in `tools/device_id.py`, one per I/O pattern in this
+codebase:
+
+| Pattern | Adapter | Where to call |
+|---|---|---|
+| `GX10Session()` from `example_lib` | `require_alive(sess)` | after `sess = GX10Session()` |
+| Raw `MidiOut` + `midi_sniff.Sniffer` + events list/queue | `require_alive_raw(out, events, lock=None)` | after sniffer opens & a 0.3s settle |
+| `GxMidi()` from `midi_io` | `require_alive_gxmidi(g)` | after `g = GxMidi()` |
+
+The `require_alive_raw` adapter normalises events: bytes, `(timestamp, bytes)`
+tuples, and dicts with `hex` / `bytes` / `raw` fields are all accepted, so
+tools can keep their existing storage format unchanged.
+
+What `require_alive*` enforces:
+
+1. The device answers a Universal Identity Request within the timeout
+   (default 1s). If not, exit 2 with a "device unreachable" diagnostic.
+2. The Identity Reply's product flag (`sw_revision[0]`) is `0x00` (GX-100)
+   or `0x01` (GX-10). Other values → exit 3 with a full hex dump of the
+   reply so the operator can decide whether it's a related but unsupported
+   Roland product or a corrupted reply.
+3. Optionally, the product matches `allow=` (e.g. `allow={"GX-10"}` for
+   tools that hard-code GX-10 patch counts or chain layouts).
+
+This is a project-wide standard. Any new device-talking tool that skips
+the check will be reverted on review.
+
 ## Safety notes
 
 - Never write to `0x60400000 + N*0x10000` (user patch storage) unless you

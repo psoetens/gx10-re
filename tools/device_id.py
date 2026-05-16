@@ -108,7 +108,95 @@ def identify(sess, timeout: float = 1.0) -> ProductInfo:
                 if info is not None:
                     return info
         time.sleep(0.02)
-    raise DeviceUnreachable(
+    raise DeviceUnreachable(_unreachable_msg(timeout))
+
+
+def _coerce_to_bytes(e) -> bytes | None:
+    """Tolerant extractor for various events-buffer shapes used
+    across tools: raw bytes, bytearray, (timestamp, bytes), or a
+    dict with 'hex' / 'bytes' / 'raw'."""
+    if isinstance(e, (bytes, bytearray)):
+        return bytes(e)
+    if isinstance(e, tuple) and len(e) >= 2 and isinstance(e[1], (bytes, bytearray)):
+        return bytes(e[1])
+    if isinstance(e, dict):
+        for k in ("bytes", "raw"):
+            v = e.get(k)
+            if isinstance(v, (bytes, bytearray)):
+                return bytes(v)
+        hex_str = e.get("hex")
+        if isinstance(hex_str, str):
+            try:
+                return bytes.fromhex(hex_str)
+            except ValueError:
+                return None
+    return None
+
+
+def identify_raw(out, events: list, lock=None,
+                 timeout: float = 1.0) -> ProductInfo:
+    """Identity-check using a raw MidiOut + an events buffer (the
+    pattern used by many tools that don't go through GX10Session).
+
+      `out`    — a midi_send.MidiOut (or equivalent with .send_sysex)
+      `events` — a list of incoming events the caller's sniffer
+                 callback appends to. Each entry may be raw `bytes`,
+                 a `(timestamp, bytes)` tuple, or a sniffer dict with
+                 a 'hex'/'bytes'/'raw' field — `_coerce_to_bytes`
+                 normalises.
+      `lock`   — optional threading.Lock guarding `events`
+
+    The caller must already have a sniffer running that populates
+    `events`. This function just sends the Identity Request and
+    polls the buffer for the matching reply.
+    """
+    import contextlib
+    if lock is None:
+        @contextlib.contextmanager
+        def _no_lock():
+            yield
+        lock_ctx = _no_lock
+    else:
+        lock_ctx = lambda: lock  # noqa: E731 — keep it tight
+
+    with lock_ctx():
+        events.clear()
+    out.send_sysex(build_identity_request())
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        with lock_ctx():
+            snap = list(events)
+        for e in snap:
+            raw = _coerce_to_bytes(e)
+            if raw is None:
+                continue
+            info = _parse_identity_reply(raw)
+            if info is not None:
+                return info
+        time.sleep(0.02)
+    raise DeviceUnreachable(_unreachable_msg(timeout))
+
+
+def identify_gxmidi(g, timeout: float = 1.0) -> ProductInfo:
+    """Identity-check via a midi_io.GxMidi instance.
+
+    GxMidi has a built-in `.identity(timeout)` that returns the
+    full Identity Reply (or None on timeout). We just parse it.
+    """
+    raw = g.identity(timeout=timeout)
+    if raw is None:
+        raise DeviceUnreachable(_unreachable_msg(timeout))
+    info = _parse_identity_reply(bytes(raw))
+    if info is None:
+        raise DeviceUnreachable(
+            f"received a message but it wasn't a valid identity reply: "
+            f"{bytes(raw).hex(' ').upper()}"
+        )
+    return info
+
+
+def _unreachable_msg(timeout: float) -> str:
+    return (
         f"No identity reply within {timeout:.1f}s. The GX-10/GX-100 may be "
         f"unplugged, powered off, or in a stuck CoreMIDI/USB state from a "
         f"previous client. Fix: unplug+replug the USB cable, quit any other "
@@ -141,11 +229,39 @@ def _abort_with_diagnostics(info: ProductInfo, problems: list[str]) -> None:
     sys.exit(3)
 
 
+def _validate_or_die(info: ProductInfo, allow: list[str] | None,
+                     verbose: bool) -> ProductInfo:
+    """Shared sanity-check pass used by all three require_alive_*
+    flavors after a successful identify_*()."""
+    problems: list[str] = []
+    if not info.is_roland_gx:
+        problems.append(
+            f"manufacturer/family mismatch: got mfr=0x{info.manufacturer:02X} "
+            f"family=0x{info.family:04X}, expected Roland (0x41) GX family (0x040B)"
+        )
+    if info.product.startswith("unknown"):
+        problems.append(
+            f"product flag {info.product}; expected 0x00 (GX-100) or 0x01 (GX-10) "
+            f"in sw_revision[0]"
+        )
+    if allow is not None and info.product not in allow:
+        problems.append(
+            f"detected {info.product}; this tool requires one of: {', '.join(allow)}"
+        )
+    if problems:
+        _abort_with_diagnostics(info, problems)
+    if verbose:
+        print(f"Device: {info.product}  "
+              f"(family 0x{info.family:04X}, sw_rev "
+              f"{info.sw_revision.hex(' ').upper()})", file=sys.stderr)
+    return info
+
+
 def require_alive(sess, allow: list[str] | None = None,
                   verbose: bool = True, timeout: float = 1.0) -> ProductInfo:
-    """Strict device sanity check — call at the top of every device-
-    talking tool, before any RQ1 / DT1, to fail fast with diagnostics
-    rather than producing bogus / empty output.
+    """Strict device sanity check via a GX10Session — call at the top
+    of every device-talking tool, before any RQ1 / DT1, to fail fast
+    with diagnostics rather than producing bogus / empty output.
 
     Exits with sys.exit code:
       2  no identity reply within `timeout` seconds (device
@@ -167,31 +283,37 @@ def require_alive(sess, allow: list[str] | None = None,
     except DeviceUnreachable as e:
         print(f"\nERROR: {e}\n", file=sys.stderr)
         sys.exit(2)
+    return _validate_or_die(info, allow, verbose)
 
-    problems: list[str] = []
-    if not info.is_roland_gx:
-        problems.append(
-            f"manufacturer/family mismatch: got mfr=0x{info.manufacturer:02X} "
-            f"family=0x{info.family:04X}, expected Roland (0x41) GX family (0x040B)"
-        )
-    if info.product.startswith("unknown"):
-        problems.append(
-            f"product flag {info.product}; expected 0x00 (GX-100) or 0x01 (GX-10) "
-            f"in sw_revision[0]"
-        )
-    if allow is not None and info.product not in allow:
-        problems.append(
-            f"detected {info.product}; this tool requires one of: {', '.join(allow)}"
-        )
 
-    if problems:
-        _abort_with_diagnostics(info, problems)
+def require_alive_raw(out, events: list, lock=None,
+                      allow: list[str] | None = None,
+                      verbose: bool = True,
+                      timeout: float = 1.0) -> ProductInfo:
+    """Same strict check as `require_alive`, but for tools that don't
+    use GX10Session — instead they have a raw `midi_send.MidiOut`
+    plus their own `events` buffer fed by a `midi_sniff.Sniffer`
+    callback. Call after both the sniffer and the MidiOut are open.
+    """
+    try:
+        info = identify_raw(out, events, lock=lock, timeout=timeout)
+    except DeviceUnreachable as e:
+        print(f"\nERROR: {e}\n", file=sys.stderr)
+        sys.exit(2)
+    return _validate_or_die(info, allow, verbose)
 
-    if verbose:
-        print(f"Device: {info.product}  "
-              f"(family 0x{info.family:04X}, sw_rev "
-              f"{info.sw_revision.hex(' ').upper()})", file=sys.stderr)
-    return info
+
+def require_alive_gxmidi(g, allow: list[str] | None = None,
+                         verbose: bool = True,
+                         timeout: float = 1.0) -> ProductInfo:
+    """Same strict check as `require_alive`, but for tools that use
+    `midi_io.GxMidi`."""
+    try:
+        info = identify_gxmidi(g, timeout=timeout)
+    except DeviceUnreachable as e:
+        print(f"\nERROR: {e}\n", file=sys.stderr)
+        sys.exit(2)
+    return _validate_or_die(info, allow, verbose)
 
 
 # CLI for quick standalone use:

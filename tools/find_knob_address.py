@@ -11,6 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import midi_send
 import midi_sniff
+from device_id import require_alive_raw
 from rapid_probe import step_7bit
 
 
@@ -20,7 +21,17 @@ def snapshot_regions(out, regions):
     log.parent.mkdir(parents=True, exist_ok=True)
     idx_in, _ = midi_sniff.find_port("GX-10")
     sniffer = midi_sniff.Sniffer(idx_in, log, "GX-10")
+    id_events: list = []
+    orig_emit = sniffer._emit
+    def _cap(o):
+        if o.get("kind") == "sysex":
+            try: id_events.append(bytes.fromhex(o["hex"]))
+            except Exception: pass
+        return orig_emit(o)
+    sniffer._emit = _cap
     sniffer.open()
+    time.sleep(0.3)
+    require_alive_raw(out, id_events)
     try:
         for start, end in regions:
             for addr in step_7bit(start, end, 0x40):

@@ -24,6 +24,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from example_lib import GX10Session, read_chain, fx_item_addr
+from device_id import require_alive
 
 
 DIVIDER_FX_TYPE = 29
@@ -33,6 +34,7 @@ MIXER_FX_TYPE = 31
 
 def main():
     sess = GX10Session()
+    require_alive(sess)
     chain = read_chain(sess)
     if not chain:
         print("(empty chain or read failed)")

@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_send import find_output_port, MidiOut, build_rq1
 import midi_sniff
+from device_id import require_alive_raw
 from device_profile import detect_and_profile
 
 
@@ -100,6 +101,7 @@ def main():
     out = MidiOut(out_idx)
     print(f"opened output: {out_name}", flush=True)
     time.sleep(0.4)
+    require_alive_raw(out, events, lock)
 
     # Send burst of RQ1s
     n = args.end - args.start + 1

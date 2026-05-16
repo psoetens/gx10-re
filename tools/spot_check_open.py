@@ -14,6 +14,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from midi_send import find_output_port, MidiOut, build_rq1
 import midi_sniff
+from device_id import require_alive_raw
 
 
 # (addr, size, label, decoder_or_None)
@@ -132,6 +133,7 @@ def main():
     out_idx, _ = find_output_port("GX-10")
     out = MidiOut(out_idx)
     time.sleep(0.3)
+    require_alive_raw(out, events, lock)
 
     # Burst all RQ1s. 12 ms per send was measured safe on macOS / CoreMIDI
     # (45/45 replies across repeated runs, 2026-05-14). If you see drops
