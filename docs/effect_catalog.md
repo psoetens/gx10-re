@@ -25,6 +25,36 @@ Each effect section lists:
 - Any **conditional** knobs (TYPE / MODE / HARMONY=USER), captured into `knobs_extra` during sweep.
 - The TYPE / SP TYPE / MIC TYPE enum values where applicable.
 
+## Per-patch placement limits
+
+From the GX-10 Parameter Guide, *"Maximum number of effects and functional
+devices that can be placed"*
+(<https://static.roland.com/manuals/gx-10_parameter/en-US/158050315161293707.html>):
+
+| Item | Upper limit per patch |
+|------|----------------------:|
+| Same effect (any single TYPE) | **9** |
+| AMP (AIRD PREAMP / AIRD BASS PREAMP) | 2 |
+| LOOPER (PHRASE LOOP) | 1 |
+| DIVIDER / MIXER | 1 |
+| SEND / RETURN | 1 |
+| Total effects + functional devices in the chain | 15 |
+
+> "You can arrange up to 15 effects and functional devices such as
+> DIVIDER/MIXER, LOOPER, SEND/RETURN and so on within the effect chain."
+
+The Parameter Guide also warns that DSP capacity is an additional, dynamic
+constraint: *"you may not be able to insert or overwrite an effect, even
+when the number of connected effects falls within the limits."*
+
+These manual-published caps match the protocol encoding: the
+`MemoryFxItem` field `DuplicationNumber` at offset `0x02` has range
+**0–9** (see `docs/protocol.md` MemoryFxItem layout and
+`docs/official_xref.md` "MemoryFxItem layout"), exactly enough to index
+the 9 allowed copies of one effect type. The 15-item chain cap likewise
+fits comfortably inside the 20 hardware FxItem storage slots at
+`0x10001100..0x10003700`.
+
 ## Mismatch summary
 
 22 effect(s) have a captured-vs-manual knob count gap. Each gap is classified below; un-resolved ones are tagged 'F. Unexplained' for follow-up.

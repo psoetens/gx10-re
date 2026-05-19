@@ -258,6 +258,40 @@ def main():
                    "captured into `knobs_extra` during sweep.")
     header.append("- The TYPE / SP TYPE / MIC TYPE enum values where applicable.")
     header.append("")
+    header.append("## Per-patch placement limits")
+    header.append("")
+    header.append("From the GX-10 Parameter Guide, *\"Maximum number of effects "
+                  "and functional devices that can be placed\"* "
+                  "(<https://static.roland.com/manuals/gx-10_parameter/en-US/"
+                  "158050315161293707.html>):")
+    header.append("")
+    header.append("| Item | Upper limit per patch |")
+    header.append("|------|----------------------:|")
+    header.append("| Same effect (any single TYPE) | **9** |")
+    header.append("| AMP (AIRD PREAMP / AIRD BASS PREAMP) | 2 |")
+    header.append("| LOOPER (PHRASE LOOP) | 1 |")
+    header.append("| DIVIDER / MIXER | 1 |")
+    header.append("| SEND / RETURN | 1 |")
+    header.append("| Total effects + functional devices in the chain | 15 |")
+    header.append("")
+    header.append("> \"You can arrange up to 15 effects and functional devices "
+                  "such as DIVIDER/MIXER, LOOPER, SEND/RETURN and so on within "
+                  "the effect chain.\"")
+    header.append("")
+    header.append("The Parameter Guide also warns that DSP capacity is an "
+                  "additional, dynamic constraint: *\"you may not be able to "
+                  "insert or overwrite an effect, even when the number of "
+                  "connected effects falls within the limits.\"*")
+    header.append("")
+    header.append("These manual-published caps match the protocol encoding: "
+                  "the `MemoryFxItem` field `DuplicationNumber` at offset "
+                  "`0x02` has range **0–9** (see `docs/protocol.md` "
+                  "MemoryFxItem layout and `docs/official_xref.md` "
+                  "\"MemoryFxItem layout\"), exactly enough to index the 9 "
+                  "allowed copies of one effect type. The 15-item chain cap "
+                  "likewise fits comfortably inside the 20 hardware FxItem "
+                  "storage slots at `0x10001100..0x10003700`.")
+    header.append("")
     header.append("## Mismatch summary")
     header.append("")
     header.append(f"{len(classification_table)} effect(s) have a captured-vs-manual "
