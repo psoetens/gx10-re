@@ -93,3 +93,11 @@ snapshots/**/*.jpg
 captures/_*.jsonl
 captures/probe_select.jsonl
 docs/local_artifacts.md
+
+# Raw extract of BTS's `effect_parameter.js` and `resource.js`, produced
+# locally by tools/parse_bts_effect_parameter.js. Substantially mirrors
+# Roland's shipped data files, so we treat them like docs/manuals/ above —
+# not redistributed. The transformative diff and merged catalog derived
+# from them are fine because they're analysis we contribute.
+captures/bts_effect_parameter.json
+captures/bts_effect_parameter_with_resources.json
