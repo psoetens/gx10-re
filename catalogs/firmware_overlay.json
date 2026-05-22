@@ -103,6 +103,6 @@
   "_provenance": {
     "v2.0_amp_list_source": "https://www.guitarplayer.com/news/boss-gx-100-firmware-update-2024 (per WebFetch 2026-05-07)",
     "v2.0_effect_list_source": "BOSS GX-100 v2.0 announcement, cross-referenced with Sweetwater + Guitar World coverage 2024-09",
-    "type_index_source": "docs/per_effect_types.json (this repo) cross-referenced with all_effects.json category names"
+    "type_index_source": "catalogs/per_effect_types.json (this repo) cross-referenced with the BTS catalog category names in catalogs/bts_effect_catalog_complete.json"
   }
 }

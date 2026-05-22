@@ -1,5 +1,5 @@
-"""Parse the GX-10 MIDI Implementation chart into a consolidated menu
-catalog at captures/menu_catalog.json.
+"""Parse the GX-10 MIDI Implementation chart into a consolidated
+register catalog at catalogs/menu_register_catalog.json.
 
 The chart (docs/manuals/GX-100_GX-10_MIDI_Imple_eng02_W.md) documents
 every settable register on the device. Each region is given a section
@@ -34,7 +34,7 @@ from pathlib import Path
 
 REPO = Path(__file__).parent.parent
 CHART = REPO / "docs/manuals/GX-100_GX-10_MIDI_Imple_eng02_W.md"
-OUT = REPO / "captures/menu_catalog.json"
+OUT = REPO / "catalogs/menu_register_catalog.json"
 
 
 # Top-level region map from the chart's "System Exclusive Address Map"

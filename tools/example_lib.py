@@ -8,7 +8,7 @@ Pulls together:
     inside that FxItem of the parameter being controlled.
 
 The target resolver derives its data from two sources:
-  - docs/assign_target_table.json  (chart's 741-entry table)
+  - catalogs/assign_target_table.json  (chart's 741-entry table)
   - captures/typebar_full/page*/*/summary.json  (per-effect captured
     knob addresses, populated by manual_xref_v2.py)
 
@@ -38,7 +38,7 @@ import fx_type_enum
 
 
 ROOT = Path(__file__).parent.parent
-ASSIGN_TARGET_TABLE = json.loads((ROOT / "docs" / "assign_target_table.json").read_text())
+ASSIGN_TARGET_TABLE = json.loads((ROOT / "catalogs" / "assign_target_table.json").read_text())
 TYPEBAR = ROOT / "captures" / "typebar_full"
 
 

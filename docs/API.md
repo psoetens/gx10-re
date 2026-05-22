@@ -8,13 +8,11 @@ This is a top-level index. The detailed material lives in:
 
 - **`docs/protocol.md`** — transport, USB IDs, SysEx framing (RQ1/DT1),
   top-level address regions, patch-select register encoding.
-- **`captures/bts_effect_catalog.json`** — **canonical effect catalog**
-  (2026-05-10). 83 effects × every knob × address verified live via
-  BTS-driven sweep. Use this as the source of truth.
-  See `docs/effects/README.md` for status of the older catalogs in
-  this repo.
-- ~~`docs/effects/all_effects.md`~~ / ~~`docs/effects/all_effects.json`~~
-  — superseded; see `docs/effects/README.md`.
+- **`catalogs/bts_effect_catalog_complete.json`** — **canonical effect
+  catalog**. 83 effects × every knob × address, merged from BTS's own
+  `effect_parameter.js` plus our live-device probe captures. Use this
+  as the source of truth. Schema at `docs/bts_catalog_schema.md`;
+  `catalogs/README.md` lists the complementary tables.
 - **`docs/bpm_encoding.md`** — BPM byte mapping (`V = BPM × 10`,
   4-nibble big-endian at `0x1000_0F02`).
 - **`docs/menus.md`** — toolbar buttons, dialogs (CTL/EXP, IN/OUT,
@@ -27,8 +25,8 @@ This is a top-level index. The detailed material lives in:
 
 | What | How many | Where documented |
 |------|---------:|------------------|
-| Effects (drag-mappable hexes) | **81** | `docs/effects/all_effects.md` |
-| Effect knobs total | **731** (607 base + 124 layout-revealed) | same |
+| Effects (drag-mappable hexes) | **83** | `catalogs/bts_effect_catalog_complete.json` |
+| Effect knobs total | **632** (BTS-verified) | same |
 | Effect categories with multi-TYPE | **29** | per-effect tables |
 | Effects with SP TYPE (AMP family) | **2** (AMP, AMP_BASS) | per-effect + `docs/menus.md` |
 | Effects with HARMONY user-scale | **2** (HARM, HARM_BASS) | per-effect tables |
@@ -109,7 +107,7 @@ Decoded enums:
 - **CTL/EXP FUNCTION** at `0x1000_001B` (and per-controller offsets):
   17 values, table in `docs/menus.md`
 - **HARMONY** at `0x1000_1107` (HARM slot 0): 30 values (-2OCT…USER)
-- **AMP TYPE / SP TYPE**: 23 / 30 values, see `docs/effects/all_effects.md`
+- **AMP TYPE / SP TYPE**: see `catalogs/bts_effect_catalog_complete.json` (AMP / AMP_BASS entries)
 
 ## Top-level workflows
 
@@ -184,7 +182,7 @@ dev  → DT1 <addr> <data:size>     (or split into multiple DT1s by record bound
 | `tools/capture_menu_changes.py` | Toggle settings inside dialogs to capture write addresses |
 | `tools/capture_full_flows.py` | Patch-load, WRITE, INITIALIZE, TUNER mode cycle, CTL/EXP function cycle |
 | `tools/capture_write_flow.py` | Focused WRITE-to-slot capture |
-| `tools/build_effects_doc.py` | Aggregate all `summary.json` → `all_effects.md`/`.json` |
+| `tools/build_effects_doc.py` | Legacy: aggregated typebar `summary.json` → docs (superseded by `tools/merge_bts_into_catalog.py` → `catalogs/`) |
 | `tools/check_per_type_results.py` | Sanity report across all per-TYPE results |
 
 ## Open questions / not yet captured

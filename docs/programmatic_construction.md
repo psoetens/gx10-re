@@ -5,8 +5,8 @@ MIDI assigns) over USB SysEx, end-to-end. Every fact below is verified
 against a live GX-10 by `tools/demo_full_patch.py` (2026-05-03).
 
 For the full chart-level address-block table, see `docs/protocol.md` §3.
-For the per-effect knob catalogue, see `captures/bts_effect_catalog.json`
-(`docs/effect_catalog.md` is superseded — see `docs/effects/README.md`).
+For the per-effect knob catalogue, see `catalogs/bts_effect_catalog_complete.json`
+(schema: `docs/bts_catalog_schema.md`).
 
 ---
 

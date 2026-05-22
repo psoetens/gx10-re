@@ -86,6 +86,7 @@ own.
 
 Most of the tools work without any manual files present. Only the
 manual-cross-reference / catalog-generation tooling needs them. The
-canonical `docs/effect_catalog.md` and `docs/assign_target_table.json`
-in this repo are pre-generated artifacts that capture the relevant
-information in our own structured form.
+canonical `catalogs/bts_effect_catalog_complete.json` and
+`catalogs/assign_target_table.json` in this repo are pre-generated
+artifacts that capture the relevant information in our own structured
+form.

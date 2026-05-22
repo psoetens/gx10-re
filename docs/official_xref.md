@@ -412,10 +412,10 @@ Items NOT addressed by the MIDI chart (still in gaps.md):
 
 1. **HIGH** — write `tools/reanalyze_knobs_4nibble.py` to fix every
    `summary.json` with proper 4-nibble decode of the captured pcaps.
-2. **HIGH** — add a TYPE-byte → effect-name table to
-   `docs/effects/all_effects.md` (replacing our heuristic
-   `triplet_at_10001100[:2]` mapping with the official 83-entry
-   enum).
+2. **HIGH** — add a TYPE-byte → effect-name table to the effect
+   catalog (replacing our heuristic `triplet_at_10001100[:2]`
+   mapping with the official 83-entry enum). *(Closed: now in
+   `catalogs/bts_effect_catalog_complete.json`.)*
 3. **HIGH** — update `docs/protocol.md` with the official region map
    (especially fix the user-patch region from `0x60400000` to
    `0x20000000+`).

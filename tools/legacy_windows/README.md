@@ -9,8 +9,9 @@ platform's native automation / capture APIs.
 
 They are kept here as historical record and as a fallback for anyone
 extending the Windows-side RE. The protocol they helped reveal is now
-fully decoded (`docs/protocol.md`, `docs/effect_catalog.md`,
-`docs/assign_target_table.json`), so day-to-day device interaction does
+fully decoded (`docs/protocol.md`,
+`catalogs/bts_effect_catalog_complete.json`,
+`catalogs/assign_target_table.json`), so day-to-day device interaction does
 **not** need anything from this directory.
 
 For cross-platform device interaction, use the tools in `tools/` —

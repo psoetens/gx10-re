@@ -1,3 +1,9 @@
+> **Last updated 2026-05-14** — adds the
+> `(EDITOR_COMMUNICATION_LEVEL, EDITOR_COMMUNICATION_REVISION)`
+> capability-fingerprint finding after BTS-for-Mac source inspection;
+> supersedes the earlier "no SysEx address reveals firmware version"
+> claim.
+
 # GX-10 / GX-100 firmware versions
 
 How an editor (or any host program) can tell which **product** is
@@ -276,7 +282,7 @@ unverified by us against hardware.
 These were added to the GX-100 in v2.00 and were already present on
 the GX-10 v1.00. Our parameter dictionary tags them
 `min_firmware_gx100: "2.00"` in
-`docs/effects/firmware_overlay.json`:
+`catalogs/firmware_overlay.json`:
 
 **New effects (5)** — confirmed via live device probe (Linux side,
 Task #11), all selectable on GX-10 v1.04:
@@ -301,12 +307,12 @@ see `reports/v2_subtype_additions.md` (in flight).
 
 ---
 
-## What's tagged in `docs/effects/firmware_overlay.json`
+## What's tagged in `catalogs/firmware_overlay.json`
 
-Whole categories present in `all_effects.json` whose names match the
+Whole categories present in the effect catalog whose names match the
 v2.0 announcement byte-for-byte:
 
-| `all_effects.json` name | Press / announcement name | min_firmware_gx100 |
+| Catalog name | Press / announcement name | min_firmware_gx100 |
 |---|---|---|
 | `SLICER`     | Slicer       | 2.00 |
 | `SITAR_SIM`  | Sitar Sim    | 2.00 |

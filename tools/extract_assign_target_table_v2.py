@@ -19,7 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
 MD = ROOT / "docs" / "manuals" / "GX-100_GX-10_MIDI_Imple_eng02_W.md"
-OUT_JSON = ROOT / "docs" / "assign_target_table.json"
+OUT_JSON = ROOT / "catalogs" / "assign_target_table.json"
 OUT_PY = ROOT / "tools" / "assign_target_table.py"
 
 

@@ -2,6 +2,10 @@
 
 Source: GX-100/GX-10 MIDI Implementation chart, MemoryFxItem section.
 
+This module is the Python-import face of the same table also published as
+`catalogs/fx_type_enum.json` for cross-language consumers. Both are
+hand-maintained from the MIDI chart; keep them in sync when adding entries.
+
 Usage:
     from fx_type_enum import FX_TYPE_NAME
     print(FX_TYPE_NAME[0x02])  # → "AIRD PREAMP"

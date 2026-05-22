@@ -18,7 +18,7 @@ in the manual:
 Each list is one or more enumerated tables. We harvest those too.
 
 Output:
-  docs/per_effect_types.json — {EFFECT_NAME: {"TYPE": [...], "SP TYPE": [...], ...}}
+  catalogs/per_effect_types.json — {EFFECT_NAME: {"TYPE": [...], "SP TYPE": [...], ...}}
   tools/per_effect_types.py — Python module with PER_EFFECT_TYPES dict
 """
 import json
@@ -32,7 +32,7 @@ from manual_xref_v2 import (parse_chunk, INTERNAL_TO_MANUAL, CHUNKS,
 
 ROOT = Path(__file__).parent.parent
 MANUALS = ROOT / "docs" / "manuals"
-OUT_JSON = ROOT / "docs" / "per_effect_types.json"
+OUT_JSON = ROOT / "catalogs" / "per_effect_types.json"
 OUT_PY = ROOT / "tools" / "per_effect_types.py"
 
 

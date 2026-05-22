@@ -1,5 +1,5 @@
 """Wire-level existence + range validation of every address in
-captures/bts_effect_catalog.json and captures/menu_catalog.json
+captures/bts_effect_catalog.json and catalogs/menu_register_catalog.json
 against a live GX-10. Read-only RQ1; no DT1 writes. Sets the
 editor-attach bit at start, restores at end.
 
@@ -32,7 +32,7 @@ from device_id import require_alive_gxmidi
 
 ROOT = Path(__file__).parent.parent
 EFFECT_CATALOG = ROOT / "captures" / "bts_effect_catalog.json"
-MENU_CATALOG   = ROOT / "captures" / "menu_catalog.json"
+MENU_CATALOG   = ROOT / "catalogs" / "menu_register_catalog.json"
 
 
 def decode_payload(payload: bytes, size: int) -> int | None:

@@ -42,7 +42,7 @@ What's documented and verified against a live device:
 |------------------|-----------|
 | Understand the address map and SysEx framing | [`docs/protocol.md`](docs/protocol.md) |
 | Build a patch from scratch programmatically | [`docs/programmatic_construction.md`](docs/programmatic_construction.md) |
-| Look up a specific effect's knobs and addresses | [`docs/effect_catalog.md`](docs/effect_catalog.md) |
+| Look up a specific effect's knobs and addresses | [`catalogs/bts_effect_catalog_complete.json`](catalogs/bts_effect_catalog_complete.json) (schema: [`docs/bts_catalog_schema.md`](docs/bts_catalog_schema.md)) |
 | See what's done, deferred, and out-of-scope | [`docs/gaps.md`](docs/gaps.md) |
 | Talk to the device from Linux / macOS / iOS | [`docs/linux_macos_ios_support.md`](docs/linux_macos_ios_support.md) |
 | Understand the vendor-mode USB layout | [`docs/usb_vendor_mode.md`](docs/usb_vendor_mode.md) |
@@ -80,15 +80,22 @@ python tools/demo_full_patch.py
 ## Layout
 
 ```
+catalogs/                       # Ground-truth JSON reference tables
+  bts_effect_catalog_complete.json  # 83 effects × 632 knobs, addresses verified
+  firmware_overlay.json             # Per-effect firmware-version coverage
+  per_effect_types.json             # Per-effect TYPE / SP TYPE / MIC TYPE enums
+  assign_target_table.json          # 741-entry ASSIGN TARGET enum table
+  README.md                         # What each catalog is and who built it
+
 docs/
   protocol.md                   # Address map + 10 sub-protocols (start here)
   programmatic_construction.md  # End-to-end recipe for building a patch
-  effect_catalog.md             # 81 effects, every captured knob (auto-gen)
+  bts_catalog_schema.md         # Schema for catalogs/bts_effect_catalog_complete.json
   gaps.md                       # What's done / deferred / un-investigable
   usb_vendor_mode.md            # Vendor-mode USB descriptor breakdown
   linux_macos_ios_support.md    # Per-OS support landscape
   menus.md / methodology.md / official_xref.md / bpm_encoding.md / API.md
-  effects/                      # Auto-generated per-effect summaries
+  effects/README.md             # Status pointer to catalogs/
   manuals/                      # Empty by design — see manuals/README.md
 
 tools/
@@ -97,7 +104,7 @@ tools/
   example*.py                   # Five small demo scripts
   demo_full_patch.py            # End-to-end patch construction
   example_lib.py                # Shared session helper, target→offset resolver
-  build_effect_catalog.py       # Regenerate docs/effect_catalog.md
+  merge_bts_into_catalog.py     # Regenerate catalogs/bts_effect_catalog_complete.json
   watch_hardware_actions.py     # Subscribe + log device-side broadcasts
   fix_stuck_chain_edit.py       # Rescue BTS when the ChainEditTrigger gets stuck
   fx_type_enum.py / per_effect_types.py / assign_target_table.py
@@ -121,8 +128,8 @@ provisions in JP/AU/CA. All code, prose, and observations are original.
 The Markdown chart and parameter-guide files some tools optionally
 consume are not in this repository — see [`docs/manuals/README.md`](docs/manuals/README.md)
 for the URLs to download them from Roland yourself. The repository's
-own factual reference material (e.g. [`docs/assign_target_table.json`](docs/assign_target_table.json),
-[`docs/effect_catalog.md`](docs/effect_catalog.md), the `tools/*_enum.py`
+own factual reference material (e.g. [`catalogs/assign_target_table.json`](catalogs/assign_target_table.json),
+[`catalogs/bts_effect_catalog_complete.json`](catalogs/bts_effect_catalog_complete.json), the `tools/*_enum.py`
 modules) is independently structured / paraphrased, not verbatim, and
 documents factual behaviour rather than copyrightable expression.
 

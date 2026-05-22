@@ -1,52 +1,30 @@
-# `docs/effects/` — status as of 2026-05-10
+# `docs/effects/` — moved out
 
-## Use this for new work
+The authoritative material that used to live in this directory has
+been promoted to the top-level [`catalogs/`](../../catalogs/) directory
+so it's easier to find. The stale files (`all_effects.{md,json}`,
+`typebar.md`, `typebar_full.md`, `knob_mapping.md`) have been deleted
+— they were sub-type-0-blind and the SUPERSEDED notices they carried
+kept causing confusion downstream.
 
-**`captures/bts_effect_catalog.json`** is the canonical effect
-catalog as of 2026-05-10. Built by Windows-side BTS-driven sweep:
+## Where things went
 
-- 83 effect TYPE bytes (0x00..0x52) all covered, including the 5
-  v2-only effects (SLICER, HUMANIZER, FEEDBACKER, SITAR SIM, AUTO
-  WAH at 0x4E..0x52).
-- 632 knobs total, every address verified against the live device.
-- Per-knob: address, label, kind (numeric/enum/dropdown), raw range
-  (probe-sampled), display range (merged from the Parameter Guide),
-  unit, step, offset, and a partial `raw_to_display` lookup table.
-- 78 addresses are stride-inferred (`_address_inferred: true`) — set
-  by walking the FxItem's known stride-4 layout from a sibling's
-  confirmed address.
-- Sub-type behaviour: only **sub-type 0** of each TYPE is captured
-  here. Effects with sub-types that change knob layouts (WAH, AMP,
-  some others) need per-`(TYPE, sub-type)` capture to be fully
-  pinned — tracked as task #33.
+| Old path | New path |
+|----------|----------|
+| `docs/effects/firmware_overlay.json` | [`catalogs/firmware_overlay.json`](../../catalogs/firmware_overlay.json) |
+| `docs/effect_catalog.md` *(deleted)* | [`catalogs/bts_effect_catalog_complete.json`](../../catalogs/bts_effect_catalog_complete.json) |
+| `docs/effects/all_effects.{md,json}` *(deleted)* | same |
+| `docs/effects/typebar.md`, `typebar_full.md`, `knob_mapping.md` *(deleted)* | (no replacement — capture methodology lives in [`../methodology.md`](../methodology.md)) |
 
-## Stale files in this directory
+## What's where now
 
-The two files below predate the BTS-driven sweep. They have known
-bugs and are kept only for git-history continuity. **Do not consume
-them for new work.**
-
-| File | Status | Known issues |
-|------|--------|--------------|
-| `all_effects.json` | superseded (auto-generated from `captures/typebar_full/`) | sub-type-0-only layouts → WAH names permuted, COMP missing TONE / DIRECT MIX, LOOP LEVEL at wrong address |
-| `all_effects.md`   | superseded (same source)                                     | same |
-
-The fix is captured in `captures/bts_typebar_resweep_v2/catalog_diff.md`
-(per-effect diff between `typebar_full` and the BTS-verified ground
-truth).
-
-## Still authoritative in this directory
-
-| File | Use |
-|------|-----|
-| `firmware_overlay.json` | Per-category and per-type firmware-version annotations. The BTS sweep didn't replace this — it's about *which firmware* exposes which effect, not knob layouts. |
-
-## See also
-
-- `captures/bts_effect_catalog.json` — the new catalog
-- `captures/bts_typebar_resweep_v2/catalog_diff.md` — per-effect
-  diff vs. the old `typebar_full` source
-- `captures/bts_wah_validation.summary.md` — the live-device
-  validation that proved `typebar_full` was sub-type-blind
-- `reports/bts_capture_findings.md` — the Windows BTS session
-  that produced the new catalog
+- **Effect knob catalog (ground truth):**
+  `catalogs/bts_effect_catalog_complete.json` — 83 effects × 632
+  knobs, merged from BTS's own `effect_parameter.js` plus our
+  live-device probe captures. Schema:
+  [`../bts_catalog_schema.md`](../bts_catalog_schema.md).
+- **Firmware coverage overlay:** `catalogs/firmware_overlay.json`.
+- **TYPE / SP TYPE / MIC TYPE enums:**
+  `catalogs/per_effect_types.json`.
+- **ASSIGN TARGET enum table:** `catalogs/assign_target_table.json`.
+- **Build / capture methodology:** [`../methodology.md`](../methodology.md).

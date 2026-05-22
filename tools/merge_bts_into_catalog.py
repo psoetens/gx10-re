@@ -8,7 +8,7 @@ Sources:
       with Parameter Guide cross-references and live-device probe samples)
 
 Output:
-  captures/bts_effect_catalog_merged.json            (the merged catalog)
+  catalogs/bts_effect_catalog_complete.json          (the merged catalog)
 
 Rules:
 - BTS is the source of truth for: raw_min / raw_max, init, ofs, size,
@@ -277,7 +277,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--bts", default="captures/bts_effect_parameter_with_resources.json")
     ap.add_argument("--ours", default="captures/bts_effect_catalog.json")
-    ap.add_argument("--out", default="captures/bts_effect_catalog_merged.json")
+    ap.add_argument("--out", default="catalogs/bts_effect_catalog_complete.json")
     args = ap.parse_args()
 
     bts_doc = json.loads(Path(args.bts).read_text())

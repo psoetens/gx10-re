@@ -1,4 +1,4 @@
-# `captures/bts_effect_catalog_merged.json` — schema reference
+# `catalogs/bts_effect_catalog_complete.json` — schema reference
 
 This catalog is the merged authoritative source-of-truth for the GX-10
 / GX-100 effect parameters. It is built by `tools/merge_bts_into_catalog.py`

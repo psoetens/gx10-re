@@ -1,3 +1,8 @@
+> **Closeout 2026-05-03 — protocol end-to-end verified on a live device.**
+> Open items: §6.1 AUTO OFF (un-investigable), §11 sub-types (deferred).
+> Per-section ✅/⚠️/🚫 markers below are the closeout audit's status, not
+> work-in-progress flags.
+
 # Documentation gaps — what is NOT yet captured
 
 **Closeout audit 2026-05-03.** The protocol is now end-to-end verified
@@ -256,8 +261,10 @@ The "5-byte" claim in earlier protocol.md was wrong — the chart shows
 4 nibbles for memory # plus offset 0x04 for PLAYPAGE MODE. P03-1 NEO
 SOUL = `00 00 0C 0E` = V `0x00CE` = 206 = preset 6 ✓.
 
-**Patch DB ✅ DONE:** all 100 preset names #200..299 captured into
-`captures/preset_memory_names.json` via `tools/probe_preset_names.py`.
+**Patch DB ✅ DONE:** all 100 preset names #200..299 probed via
+`tools/probe_preset_names.py` (writes per-device to
+`captures/preset_memory_names.json`; not bundled with the repo since
+they're the factory names already present in every unit).
 Flow: subscribe → DT1 4-nibble memory # to `0x00000000` → wait
 **1500ms** for the device's bulk-emit at Setup_temp (verified via
 `tools/test_patch_load.py`: bulk-emit DT1s land at `0x00200040`,
@@ -276,16 +283,15 @@ User-memory names #0..199 already captured separately by
 - Global 83-entry FX TYPE enum decoded (`tools/fx_type_enum.py`,
   all 81 captured effects mapped).
 - Per-effect TYPE / SP TYPE / MIC TYPE enums extracted by
-  `tools/extract_per_effect_types.py` → `docs/per_effect_types.json`
+  `tools/extract_per_effect_types.py` → `catalogs/per_effect_types.json`
   + `tools/per_effect_types.py`. 31 effects with TYPE-like enums (TYPE/
   VOICE/STAGE/MODE/WAH TYPE/POLARITY/TRIGGER/WAVEFORM/OUTPUT MODE/
   INTELLIGENT/SPEED SELECT). All 29 effects with `has_type=True` have
   matching byte→name tables. AIRD PREAMP / AIRD BASS PREAMP also get
   SP TYPE (30 entries) and MIC TYPE (9 entries).
-- All TYPE / SP TYPE / MIC TYPE enum tables surface in `docs/effect_catalog.md`
-  in the per-effect section (one row per byte value). *(2026-05-10:
-  superseded by `captures/bts_effect_catalog.json` — see
-  `docs/effects/README.md`.)*
+- All TYPE / SP TYPE / MIC TYPE enum tables now live in
+  `catalogs/bts_effect_catalog_complete.json` in each effect's section
+  (one row per byte value).
 
 ---
 
@@ -317,21 +323,21 @@ to a chart-documented address. See
 ## 11. Knob NAME mismatches ✅ DONE — classified, 0 unresolved
 
 > **2026-05-10 update:** This section's claims have been
-> superseded by `captures/bts_effect_catalog.json` (Windows
-> BTS-driven sweep, 83 effects × 632 knobs, all addresses
-> verified live). The per-effect classification below was based
-> on `typebar_full` data which captured only sub-type 0 of each
-> effect — see `docs/effects/README.md`. The new catalog has
-> per-knob ground-truth address↔name pairs. Three concrete bugs
-> found during the resweep that this section missed:
+> superseded by `catalogs/bts_effect_catalog_complete.json` (Windows
+> BTS-driven sweep + BTS `effect_parameter.js` merge, 83 effects ×
+> 632 knobs, all addresses verified live). The per-effect
+> classification below was based on the old `typebar_full` probe
+> pipeline which captured only sub-type 0 of each effect. The new
+> catalog has per-knob ground-truth address↔name pairs. Three
+> concrete bugs found during the resweep that this section missed:
 > - WAH names permuted by 3 positions for sub-type 2 (FAT WAH)
 > - COMP missing TONE / DIRECT MIX from the catalog table
 > - LOOP LEVEL listed at `0x10001107` — actual is `0x10001103`
 
-`tools/build_effect_catalog.py` produces `docs/effect_catalog.md`,
-a comprehensive per-effect catalogue (81 effects, 1786 lines) showing
-each effect's always-visible knobs, conditional knobs, TYPE/SP TYPE/
-MIC TYPE enums, and any captured-vs-manual count gap.
+The comprehensive per-effect catalogue now lives in
+`catalogs/bts_effect_catalog_complete.json`, showing each effect's
+always-visible knobs, conditional knobs, TYPE/SP TYPE/MIC TYPE enums,
+and the BTS-side `effect_parameter.js` provenance.
 
 All 22 prior mismatches now classified into 5 categories with **0
 unresolved**:
@@ -380,7 +386,7 @@ file access). Documented in `docs/protocol.md` section 5.6:
 
 ### C. Per-effect TYPE/SP TYPE/MIC TYPE byte → name decoding ✅ DONE
 `tools/extract_per_effect_types.py` produces:
-- `docs/per_effect_types.json` and `tools/per_effect_types.py`
+- `catalogs/per_effect_types.json` and `tools/per_effect_types.py`
 - 31 effects with TYPE-like enums (TYPE/VOICE/STAGE/MODE/WAH TYPE/
   POLARITY/TRIGGER/WAVEFORM/OUTPUT MODE/INTELLIGENT/SPEED SELECT)
 - All 29 effects with `has_type=True` in capture summaries are matched,
@@ -390,16 +396,18 @@ file access). Documented in `docs/protocol.md` section 5.6:
 
 ### D. ASSIGN TARGET TABLE (741 entries) ✅ DONE
 `tools/extract_assign_target_table_v2.py` parses all 741 entries into:
-- `docs/assign_target_table.json`
+- `catalogs/assign_target_table.json`
 - `tools/assign_target_table.py` (Python dict literal)
 The v1 parser missed 122 entries because the dash-line stripper
 greedily ate inline data; v2 strips only the dashes themselves.
 
 ### E. Patch-select probe (198 user names) ✅ DONE
-`tools/probe_user_memory_names_burst.py` captured all 198 GX-10
-user-memory names in `captures/user_memory_names.json`. Burst-mode
-RQ1 + single-session DT1 collect, bypasses the WinMM cleanup hang
-via `os._exit`. The 96 PRESET memories (#200..295 for GX-10) need a
+`tools/probe_user_memory_names_burst.py` walks all 198 GX-10
+user-memory slots and writes per-device output to
+`captures/user_memory_names.json` (output is per-user; not bundled
+in the repo since the names are the connected device's own data).
+Burst-mode RQ1 + single-session DT1 collect, bypasses the WinMM
+cleanup hang via `os._exit`. The 96 PRESET memories (#200..295 for GX-10) need a
 separate PC#-load-into-temporary-buffer flow which is deferred
 (would require BTS interaction or a custom PC# emitter; not on
 critical path).
@@ -505,9 +513,9 @@ protocol fully usable for programmatic patch construction.
 | Spot-check pass over 45 chart-documented addresses | ✅ verified | `tools/spot_check_open.py` |
 | GLOBAL EQ encodings (gain = byte − 32 → dB; freq/cut enums; Q direct) | ✅ verified | per user UI inspection |
 | INPUT block (mem name, SENS encoding) | ✅ verified | `tools/spot_check_open.py` |
-| Patch DB — 100 preset names #200..299 | ✅ captured | `tools/probe_preset_names.py` → `captures/preset_memory_names.json` |
+| Patch DB — 100 preset names #200..299 | ✅ flow verified | `tools/probe_preset_names.py` (per-device output, not bundled) |
 | Patch-load flow timing | ✅ ~1.1 s bulk emit window | `tools/test_patch_load.py` |
-| Per-effect knob catalog (81 effects, 0 unexplained mismatches) | ✅ done | `tools/build_effect_catalog.py` → `docs/effect_catalog.md` (1786 lines) |
+| Per-effect knob catalog (83 effects × 632 knobs) | ✅ done | `tools/merge_bts_into_catalog.py` → `catalogs/bts_effect_catalog_complete.json` |
 | Hardware-action capture (footswitches, knobs, screen, menu) | ✅ done | `captures/hw_action_log.jsonl`; `gx10_hw_action_protocol.md` memory |
 | **Programmatic patch construction (chain + knobs + assigns)** | ✅ end-to-end | `tools/demo_full_patch.py`; protocol.md §5.10 |
 | **Assign-row write protocol — group-parameter gotcha** | ✅ field-by-field | protocol.md §5.9; `tools/test_assign_concrete.py` |
@@ -546,6 +554,7 @@ ChainEditTrigger handshake), knob settings (bulk DT1 OK), assign rows
   ChainEditTrigger gotcha).
 - Run `python tools/manual_xref_v2.py` to refresh per-effect
   `name_manual_v2` annotations on `summary.json` files. Run
-  `python tools/build_effect_catalog.py` to regenerate `docs/effect_catalog.md`.
+  `python tools/merge_bts_into_catalog.py` to regenerate
+  `catalogs/bts_effect_catalog_complete.json`.
 - All write tools default to memory_temp at `0x10000000` so they're
   reversible — patch-button press on the device discards.
