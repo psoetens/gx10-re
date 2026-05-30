@@ -855,11 +855,27 @@ GX-10 and GX-100. Only a few user-facing things differ:
 | Item                          | GX-100         | GX-10          |
 |-------------------------------|----------------|----------------|
 | Identity Reply version (b10)  | `0x02` (2.x)   | `0x01` (1.x)   |
-| Front-panel footswitches      | NUM 1-4 + BANK DOWN/UP | BANK DOWN, BANK UP, CTL 1, ... |
+| Front-panel footswitches      | NUM 1-4, BANK ▼, BANK ▲, CTL 1, CTL 2 | **▼, ▲, C1** (▼/▲ written as DOWN/UP; C1 = CTL 1) — no NUM pads, no front CTL 2-4 |
 | External jacks                | CTL 2-4, EXP 2 | (none — only EXP 1 + EXP 1 SW) |
 | User memory count             | 200 (U01-1..U50-4) | 198 (U01-1..U66-3 + 2 NIU) |
 | BANK EXTENT MIN/MAX offset    | SystemCommon 0x09/0x0A | SystemCommon 0x19/0x1A |
-| `MemoryLed.ON_OFF_STATE` bits | Chart `*3` table is correct | bits 5/6 unused; **BANK DOWN = bit 18, BANK UP = bit 19** |
+| `MemoryLed.ON_OFF_STATE` bits | Chart `*3` table is correct | bits 5/6 unused; **DOWN = bit 18, UP = bit 19** (the GX-100 BANK ▼/▲ wire positions) |
+
+> **GX-10 ▼/▲ ≠ GX-100 BANK ▼/▲.** The GX-10's two memory-navigation
+> footswitches are silkscreened **▼** and **▲** on the device (no "BANK"
+> prefix). In plain text we write these as **DOWN** (▼) and **UP** (▲).
+> One press steps a single user memory (in UP/DN mode) — they are **not**
+> the GX-100's **BANK ▼ / BANK ▲**, which carry the "BANK" prefix and
+> step a whole bank. The GX-10's third front footswitch is labelled **C1**
+> and is the **CTL 1** control. All three share the same SysEx wire
+> positions as their GX-100 counterparts (Function/Mode bytes, CC# slots,
+> and the `ON_OFF_STATE` LED bits below), so this repo keys the arrows
+> under the GX-100/source-enum name `BANK DOWN`/`BANK UP` (see
+> `tools/source_names.py`, `tools/device_profile.py`) — but a GX-10-facing
+> UI should render them as **▼ / ▲** (DOWN/UP) and **C1**. The GX-10 has
+> no NUM pads and no front CTL 2-4; its MIDI CC# page (PAGE 2) lists the
+> sources as UP, DOWN, CTL 1, EXP 1, EXP 1 SW, plus the rear CTL 2,
+> CTL 3, EXP 2.
 
 **Detection at runtime**: `tools/detect_device.py` sends an Identity
 Request and reads byte 10 (version major) of the reply. `tools/
@@ -875,15 +891,16 @@ button-press → bit-toggle observation):
 
 | bit | GX-10 hardware                          | chart for GX-100 |
 |-----|-----------------------------------------|------------------|
-|  7  | CTL 1                                   | CTL 1            |
+|  7  | C1 (= CTL 1)                            | CTL 1            |
 | 12  | EXP 1 SW                                | EXP 1 SW         |
-| 18  | **BANK DOWN**                           | (NIU)            |
-| 19  | **BANK UP**                             | (NIU)            |
+| 18  | **▼ (DOWN)** (memory −1; = GX-100 BANK ▼ wire bit) | (NIU) |
+| 19  | **▲ (UP)** (memory +1; = GX-100 BANK ▲ wire bit)   | (NIU) |
 | 15, 20, 21, 26 | status / indicator (always set when "all LEDs on") | (NIU) |
 
-The chart's `*3 ON_OFF_STATE_TABLE` (bit 5 = BANK DOWN, bit 6 = BANK UP)
-applies to GX-100 only; on GX-10 those buttons live at bits 18/19 and
-the chart's bits 5/6 read 0 even when the buttons are physically lit.
+The chart's `*3 ON_OFF_STATE_TABLE` (bit 5 = BANK ▼, bit 6 = BANK ▲)
+applies to GX-100 only; on GX-10 the equivalent **▼ / ▲** (DOWN/UP)
+switches live at bits 18/19 and the chart's bits 5/6 read 0 even when
+the buttons are physically lit.
 
 ## 5.9 Assign-row writes — group-parameter gotcha
 

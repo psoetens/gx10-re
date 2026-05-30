@@ -14,6 +14,18 @@ What differs is:
     a separate pair for each model at SystemCommon offsets 0x09/0x0A
     [GX-100] and 0x19/0x1A [GX-10])
 
+NAMING — GX-10 ▼/▲ + C1 vs GX-100 BANK ▼/▲: the GX-10's two
+memory-navigation footswitches are silkscreened **▼ / ▲** on the device
+(written as DOWN/▼ and UP/▲ in text); one press steps a single memory.
+They are NOT the GX-100's **BANK ▼ / BANK ▲** (which carry the "BANK"
+prefix and step a whole bank). The GX-10's third front footswitch is
+labelled **C1** and is the **CTL 1** control. The arrows occupy the
+same wire positions as the GX-100 BANK switches, so the profiles below
+key them under the shared source-enum name "BANK DOWN" / "BANK UP"
+(matching `tools/source_names.py` and the chart's Function tables) —
+but a GX-10-facing UI should render them as **▼ / ▲** (DOWN/UP) and
+**C1**. See docs/protocol.md §5.8.
+
 This module exports a `get_profile(device)` helper that returns the
 right profile, and a `detect_and_profile()` that does both at once.
 """
