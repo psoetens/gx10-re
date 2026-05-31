@@ -481,7 +481,12 @@ deferred under destructive operations.
 - AUTO OFF triggering (20+ min wait)
 
 🛠️ **Hardware-only (need user action):**
-- Footswitch / EXP pedal / front panel / MIDI IN reception
+- Footswitch / EXP pedal / front panel
+- ✅ **MIDI IN reception — RESOLVED** (from the official MIDI
+  Implementation doc, see `protocol.md §5.11`): inbound Control Change
+  acts only through an Assign whose SOURCE is that CC#; per-controller
+  `CC#` fields are transmit-only; memory/bank changes are Program Change
+  (+ Bank Select via PROGRAM MAP), not CC.
 
 ---
 

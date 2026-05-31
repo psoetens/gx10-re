@@ -1062,6 +1062,62 @@ re-renders.
 
 ---
 
+## 5.11 MIDI Control Change & Program Change — transmit vs receive
+
+Source: Roland's official **GX-100 MIDI Implementation** (ver1.10,
+March 3rd 2022) — `static.roland.com/assets/media/pdf/GX-100_MIDI_Implementation.pdf`.
+The doc is GX-100-titled but the message handling is shared with the
+GX-10 (the combined Implementation Chart is byte-identical between
+models bar the version strings). This resolves the **"MIDI IN reception"**
+gap that `gaps.md` flagged as untested.
+
+**Direction of the per-controller CC# fields (`SystemMidi 0x08–0x14`).**
+These are **transmit-only**. Under *§2 Transmitted data → Control Change*:
+
+> "When you operate a controller, the CC# specified by
+> `MENU:MIDI:MIDI SETTING:NUM1 CC# - EXP2 CC#` is transmitted."
+
+i.e. pressing a physical controller (NUM, BANK ▼/▲, CTL, EXP…) makes the
+device **send** that controller's configured CC#. The same fields do
+**not** appear anywhere in *§1 Recognized data* — sending a CC equal to,
+say, `BANK▼ CC#` back into the device does **nothing** by itself.
+
+**How the device acts on a *received* Control Change.** Only via the
+Assign engine. *§1 Recognized data → Control Change*:
+
+> "Recognized if the `MENU:ASSIGN SETTING:SOURCE` setting is
+> CC#1 - #31 or CC#64 - #95."
+
+So an inbound CC drives a target parameter **iff** some Assign has that
+CC# as its SOURCE (target value computed from the assign's ACT LOW/HIGH
+range). There is no native "received CC → footswitch/bank/CTL action"
+path outside Assigns. This matches our catalogue: `SourceController`
+already enumerates `CC#1–31 / 64–95` as assign sources.
+
+**Memory / bank changes over MIDI = Program Change (+ Bank Select).**
+*§1 Recognized data → Program Change*:
+
+> "This message switches to the memory that is specified by
+> `MENU:MIDI:PROGRAM MAP`."
+
+Bank Select (CC 0 MSB / CC 32 LSB) is recognised and latches the bank
+for the next PC. **Bank/patch navigation is not a Control Change** — a
+remote controller steps memories with PC, or a host writes the
+patch-select register directly (§3.2).
+
+**Implication for editor/companion apps.** To make an on-screen pedal
+take effect on the device:
+- **Memory nav (UP/DOWN/BANK)** → write the patch-select register (§3.2)
+  or send Program Change; CC is the wrong tool.
+- **Arbitrary CTL/EXP action** → send a CC that the user has configured
+  as an Assign SOURCE (the user picks/owns that CC#, so it can avoid
+  conflicts). The controller's own transmit-CC# is not a back-channel.
+
+(BTS confirms the negative case: in `captures/bts_button_dead.jsonl`,
+clicking BTS's on-screen buttons sends **zero** host→device bytes.)
+
+---
+
 ## 7. License / use
 
 Personal reverse-engineering against owned hardware, for interoperability
