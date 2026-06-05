@@ -19,23 +19,23 @@
       "WARM OD",
       "BLUES OD",
       "OD-1",
-      "SD-1",
       "CRUNCH",
       "T-SCREAM",
       "TURBO OD",
-      "CENTA OD"
+      "CENTA OD",
+      "SD-1"
     ]
   },
   "DISTORTION": {
     "TYPE": [
       "DIST",
-      "DS-1",
       "A-DIST",
       "FAT DS",
       "LEAD DS",
       "RAT",
       "GUV DS",
-      "DIST+"
+      "DIST+",
+      "DS-1"
     ]
   },
   "METAL DISTORTION": {
@@ -64,9 +64,6 @@
       "X-CRUNCH",
       "X-HI GAIN",
       "X-MODDED",
-      "X-ULTRA",
-      "X-OPTIMA",
-      "X-TITAN",
       "JC-120",
       "TWIN COMBO",
       "DELUXE COMBO",
@@ -77,7 +74,10 @@
       "MATCH COMBO",
       "BG COMBO",
       "ORNG STACK",
-      "BGNR UB METAL"
+      "BGNR UB METAL",
+      "X-ULTRA",
+      "X-OPTIMA",
+      "X-TITAN"
     ],
     "SP TYPE": [
       "OFF",

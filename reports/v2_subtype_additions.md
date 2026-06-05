@@ -1,5 +1,34 @@
 # GX-100 v2.0 — what was added vs v1.x (per Parameter Guide diff)
 
+> **ERRATA (2026-06-05): the in-list indices below are WRONG for the
+> three guitar amps and the two OD/DIST subtypes.** This report placed
+> them per the *manual's descriptive grouping* (X-amps after X-MODDED,
+> SD-1 after OD-1, DS-1 after DIST), but firmware **appends** new enum
+> values to keep wire bytes stable. Device truth (BTS bulk-enum
+> captures `captures/bts_bulk_enum/{02_AIRD_PREAMP,25_OVERDRIVE,
+> 27_DISTORTION}_*.json` + live GX-10 check 2026-06-05, app showed
+> X-ULTRA where the device showed JC-120):
+>
+> - AIRD PREAMP TYPE: 9 = `JC-120` … 19 = `BGNR UB METAL`,
+>   **20 = `X-ULTRA`, 21 = `X-OPTIMA`, 22 = `X-TITAN`**
+> - OVERDRIVE TYPE: **8 = `SD-1`** (after CENTA OD)
+> - DISTORTION TYPE: **7 = `DS-1`** (after DIST+)
+>
+> This is consistent with this report's own "remaining 20 AIRD PREAMP
+> TYPE entries are byte-identical between v1 and v2" note (only
+> possible with append) and with the bass amps (appended at 3..8,
+> which is why they were correct). MIC TYPE also follows the append
+> pattern ON THE WIRE (FLAT keeps its v1 byte 4; RBN121/BLEND A/B/C
+> appended at 5..8 — wire-verified 2026-06-05: selecting byte 4 in an
+> editor shows FLAT on the device). Note the device's own SCREEN
+> displays MIC TYPE in a friendlier order with FLAT last, after
+> BLEND C — display order ≠ wire order for this list; editors that
+> want to mirror the device UI must reorder at display time only.
+> `catalogs/{bts_effect_catalog_complete,per_effect_types,
+> firmware_overlay}.json` corrected accordingly on 2026-06-05 (the
+> MIC TYPE catalog entries were already wire-correct via
+> raw_to_display and are untouched).
+
 **Date:** 2026-05-09
 **Sources:**
 - `docs/manuals/GX-100_v1_Parameter_Guide_*.md` (pre-v2.0 firmware)

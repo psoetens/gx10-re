@@ -53,7 +53,7 @@
     "OD": {
       "long_name": "OVERDRIVE",
       "by_index": {
-        "4": {
+        "8": {
           "type_name": "SD-1",
           "min_firmware_gx100": "2.00",
           "source": "BOSS GX-100 v2.0 announcement (\"SD-1 Super Overdrive\")"
@@ -63,7 +63,7 @@
     "DIST": {
       "long_name": "DISTORTION",
       "by_index": {
-        "1": {
+        "7": {
           "type_name": "DS-1",
           "min_firmware_gx100": "2.00",
           "source": "BOSS GX-100 v2.0 announcement (\"DS-1 Distortion\")"
@@ -73,11 +73,11 @@
     "AMP": {
       "long_name": "AIRD PREAMP",
       "by_index": {
-        "9":  { "type_name": "X-ULTRA",  "min_firmware_gx100": "2.00",
+        "20": { "type_name": "X-ULTRA",  "min_firmware_gx100": "2.00",
                 "source": "BOSS GX-100 v2.0 announcement (3 high-gain guitar amps)" },
-        "10": { "type_name": "X-OPTIMA", "min_firmware_gx100": "2.00",
+        "21": { "type_name": "X-OPTIMA", "min_firmware_gx100": "2.00",
                 "source": "BOSS GX-100 v2.0 announcement" },
-        "11": { "type_name": "X-TITAN",  "min_firmware_gx100": "2.00",
+        "22": { "type_name": "X-TITAN",  "min_firmware_gx100": "2.00",
                 "source": "BOSS GX-100 v2.0 announcement" }
       }
     },

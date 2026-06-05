@@ -62,6 +62,25 @@ without USBPcap or a virtual-MIDI-port shim.
 | Input  (device → host) | `GX-10` |
 | Output (host → device) | `GX-10` |
 
+### 1.1 USB modes and product IDs
+
+The GX-10's SYSTEM → USB setting switches the device between two USB
+personalities with **different product IDs** (observed live 2026-06-05
+by replugging across a mode change; both repeatedly seen since):
+
+| USB mode | PID | Linux (ALSA) | iOS / iPadOS / macOS | Windows |
+|----------|-----|--------------|----------------------|---------|
+| **VENDOR** | `0x0582:0311` | ✅ 2 MIDI ports (`GX-10 MIDI 1`, `GX-10 MIDI 2`) via the kernel's Roland quirk tables | ❌ invisible — needs Roland's driver, which doesn't exist for iOS | Roland driver (BTS default) |
+| **GENERIC** (class-compliant) | `0x0582:0312` | ✅ 1 MIDI port (`GX-10 MIDI IN`) | ✅ CoreMIDI via Apple's class driver — **the mode gxnarly depends on** | Microsoft USB-MIDI class driver |
+
+Notes:
+- The "Quick facts" PID above (`0x0312`) is the GENERIC-mode ID; logs
+  and notes citing `0x0311` were captured in VENDOR mode.
+- In VENDOR mode the second ALSA port is presumably the DAW-control
+  port; unprobed.
+- GX-100 PIDs not yet captured — expected to follow the same
+  two-personality pattern.
+
 All non-trivial communication is carried over MIDI System Exclusive (SysEx).
 
 ---
@@ -344,7 +363,7 @@ A pointer value of 0 means "no next" (end of chain).
 |--------|-------|----------|
 | 0x00 | **TYPE** | 1 byte enum, range 0–82 — see `tools/fx_type_enum.py` for the 83-name table |
 | 0x01 | OFF/ON | 0/1 |
-| 0x02 | **DuplicationNumber** | 0–9. Acts as both "Nth instance of this effect type in the chain" AND as the **A/B path marker inside a DIVIDER..MIXER parallel section**: `dup=1` runs on path A, `dup=2` runs on path B. The SPLITTER (FX TYPE 30) between the two paths carries `dup=0` and is internal-only — it doesn't appear on the device's chain display. Verified empirically against the "JC120 AMP HB" preset (preamp + EQ + NS doubled on both paths). |
+| 0x02 | **DuplicationNumber** | 0–9, the "Nth instance of this effect type in the chain" counter — **NOT an A/B path marker** (an earlier revision of this row claimed `dup=1` = path A / `dup=2` = path B; live probes falsified that: 2026-05-24 — pre-SPLITTER slots render on path A regardless of dup; 2026-06-05 — direct edit-buffer read of a device-built parallel chain shows `dup=0` on every slot, incl. parallel members). **A/B membership is positional: slots between DIVIDER and SPLITTER are path A; between SPLITTER and MIXER are path B.** The SPLITTER (FX TYPE 30, 0x1E) carries `dup=0` and is internal-only — hidden on the device's chain display. NEW 2026-06-05 (`tools/probe_chain_splitter.py`, patch "METAL MR 3"): the device's own front-panel DIV insert auto-creates the SPLITTER (DIV→SPL→MIX, MIXER arrives OFF) — so BTS, the device, and current gxnarly all emit it; only pre-2026-05-27 gxnarly chains lack one. |
 | 0x03–0x132 | **FX Parameter 1..44** | each 4 nibbles big-endian, range 12768–52768 = -20000..+20000 in offset binary |
 
 > ⚠️ **CRITICAL** — every FX Parameter is **4 nibbles**, not 1 byte.
