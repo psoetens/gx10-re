@@ -1,0 +1,45 @@
+{
+  "patch": {
+    "hdr+misc+knob": {
+      "request_size": 320,
+      "got_bytes": 129,
+      "dt1_count": 1
+    },
+    "assign-pair-merge": {
+      "request_size": 109,
+      "got_bytes": 109,
+      "dt1_count": 2
+    },
+    "all-assigns": {
+      "request_size": 256,
+      "got_bytes": 109,
+      "dt1_count": 2
+    },
+    "master+chain": {
+      "request_size": 62,
+      "got_bytes": 62,
+      "dt1_count": 1
+    },
+    "slot0-full": {
+      "request_size": 259,
+      "got_bytes": 131,
+      "dt1_count": 1
+    },
+    "slot0+1-block": {
+      "request_size": 259,
+      "got_bytes": 131,
+      "dt1_count": 1
+    },
+    "slot0..3-block": {
+      "request_size": 259,
+      "got_bytes": 131,
+      "dt1_count": 1
+    },
+    "all-slots-block": {
+      "request_size": 259,
+      "got_bytes": 131,
+      "dt1_count": 1
+    }
+  },
+  "system": {}
+}

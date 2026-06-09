@@ -352,11 +352,15 @@ with all bulk data.
 | … | … | (24 slots total spanning 0x10001100..0x10003800) |
 | `0x1000_3700` | 0x103 | Slot 19 (final) |
 
-Slots are spaced **0x200 apart**. Each slot has a 0x103-byte parameter
-block. Slots that hold AMP-style effects (with SP_TYPE) have an
-additional 0x30-byte IR sub-block at offset `+0x703` from the slot
-base — these are the `0x10001803`, `0x10002003`, `0x10002603`,
-`0x10002803`, `0x10002A03` reads observed in the capture.
+Slots are spaced **0x200 apart**. BTS reads each slot as two RQ1s
+with request sizes `0x103` + `0x30` (a 131-B main record plus a 48-B
+extension record, with a 0x80-byte gap at offsets 0x83..0x102 that
+returns nothing). Slots that hold AMP-style effects (with SP_TYPE)
+have an additional 0x30-byte IR sub-block at offset `+0x703` from
+the slot base — these are the `0x10001803`, `0x10002003`,
+`0x10002603`, `0x10002803`, `0x10002A03` reads observed in the
+capture. (Note: the request sizes in BTS captures are ceilings — the
+device chooses the response length; see `protocol.md` §3.1.2.)
 
 ### Patch select register `0x0000_0000`
 

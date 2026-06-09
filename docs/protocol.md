@@ -226,12 +226,82 @@ next-higher byte instead. This restricts the effective address space to
 28 bits (256 MiB), with each byte being 7-bit. The `step_7bit` helper in
 `tools/rapid_probe.py` enforces this.
 
-### 3.1.2 RQ1 chunk-size restriction
+### 3.1.2 RQ1 size — encoding and response semantics
 
-The `0x10000000`–`0x10000FFF` region accepts large reads (we successfully
-issued `RQ1 0x10000000 size=0x10000` and got 23 DT1 chunks back covering
-all populated records). The `0x10001000`–`0x10003FFF` region is stricter:
-it only replies when `size <= 0x40`. Larger reads are silently ignored.
+**Size field is raw 4-byte big-endian**, per §2.2 — every byte must be
+`<= 0x7F` (the SysEx data-byte constraint), so sizes like `0x80`,
+`0xFF`, or `0x8000` are illegal on the wire. Pick 7-bit-clean sizes:
+`0x100` instead of `0x80`, `0x10000` instead of `0x8000`, etc.
+
+> **Historical note.** An earlier version of `tools/midi_io.py` (before
+> 2026-05-27) encoded the size with `(size >> N) & 0x7F`, which silently
+> masked the high bit for any value where a big-endian byte naturally
+> landed in `0x80..0xFF`. Probes built on that helper produced wire
+> bytes for a smaller size than intended — the source of an earlier
+> false claim that the `0x10001000`–`0x10003FFF` region had a "size ≤
+> 0x40 restriction". The probes were actually issuing `size=0x40` for
+> any intended size in `0x80..0xFF` and observing successful 0x40-byte
+> replies. `tools/midi_send.py` (`build_rq1`) has always used
+> `to_bytes(4, "big")` and is correct.
+
+#### Size = request ceiling, NOT response length
+
+The size field tells the device the maximum payload to consider, but
+**the device returns its own "natural records" at the addresses inside
+that range, regardless of how big you asked**. Empirically:
+
+| RQ1 (request) | DT1 response | Address |
+|---|---|---|
+| `size=0x103` at slot-main `+0x1100` | **131 bytes** | `+0x1100` |
+| `size=0x100` at header `+0x0000`   | **128 bytes** | `+0x0000` |
+| `size=0x100` at catalogue row      | **128 bytes** | row addr  |
+| `size=0x2D` at assign-row          | 45 bytes      | row addr  |
+
+So when BTS issues `RQ1 0x10001100 size=0x103`, the device replies with
+**one DT1 of 131 bytes** — not 259. The 0x103 is a request ceiling
+that overshoots the natural record. (Direct evidence:
+`captures/bts_import_export/import_export_decoded.txt:307` and
+following.)
+
+This has two consequences:
+
+1. **Request sizes in BTS captures are not response sizes.** Anywhere
+   a doc says "BTS reads N bytes at X", N is the request size; the
+   response is the natural record at X, which may be smaller.
+2. **You can read a much larger range in one RQ1**, and the device
+   will reply with multiple DT1s — one per natural record inside the
+   range. Each DT1 is tagged with its own wire address, so the host
+   reassembles by address (not by sequence). See
+   `reports/merge_read_findings.md`: a single `RQ1 size=0x4000`
+   against a user-slot base returns ~43 DT1s covering the entire
+   16-KiB body in ~1 s, byte-identical to BTS's 64-region method
+   (11.9× faster than the per-region pattern).
+
+#### Observed working request sizes
+
+- `0x10000000`–`0x10000FFF` (live edit buffer): up to at least
+  `0x10000`. Device returns many DT1s; tested in
+  `tools/probe_merge_sizes.py`.
+- `0x10001000`–`0x10003FFF` (live FxItem chain): up to at least
+  `0x2800` (covers all 20 live slots). No special restriction
+  beyond the size-encoding rule above.
+- `0x20000000` user-memory: same — single `RQ1 size=0x4000` reads
+  the full slot body in one round-trip.
+- `0x50000000` patch-name catalogue: up to at least `0x2600` (full
+  catalogue, 300 entries). BTS itself does it as 38 × `0x100`, but
+  one big RQ1 works too.
+
+#### Wire-address arithmetic across DT1s
+
+When a multi-DT1 response crosses a 7-bit address-byte boundary, the
+device increments byte 2 and resets byte 3 (per §3.1.1). So the
+*linear* offset of a follow-up DT1 is **not** `wire_addr - base` —
+that arithmetic skips 0x80 values. Convert each address to its linear
+form (each byte masked to 7 bits, then concatenated) before computing
+offsets. See `tools/probe_bts_match.py::wire_to_linear`.
+
+Empty / unsupported addresses are simply ignored (no DT1 reply at
+all); that's an address-validity behaviour, not a size-validity one.
 
 ### 3.2 `0x0000_0000` — patch-select register
 
@@ -441,15 +511,21 @@ region, or a parallel temp buffer.
 
 ### 3.5 `0x50000000` — patch name catalogue (read-only)
 
-Patch names, 16 ASCII bytes each, packed contiguously. Reads are in
-256-byte chunks (16 names per chunk). Address increments by `0x100`
-per chunk, from `0x50000000` up to `0x50002500`. The full sweep
-returns **38 chunks, 9536 bytes, 596 16-byte slots, up to 300 of
-which carry non-empty names**. BTS reads the entire range on connect
-to populate its patch-list UI in one sweep rather than via 198+
-separate patch-load + RQ1 cycles. BTS's final RQ1 in the range is
-`0x50002500 size=0x40` (a short last chunk), which is the natural
-end-of-table.
+Patch names, 16 ASCII bytes each, packed contiguously. BTS reads it
+as **38 separate RQ1s with `size=0x100`** (16 names of request ceiling
+each), incrementing the base address by 0x100 per request. Each
+request returns one DT1 of 128 bytes (the natural record at that row
+— per §3.1.2, the response size is determined by the device, not by
+the request). The full BTS sweep covers `0x50000000..0x50002500` and
+yields 38 × 128 = **4864 bytes, 304 × 16-byte name slots, up to 300
+of which carry non-empty names** (NIU slots account for the
+remainder). BTS's final RQ1 in the range is `0x50002500 size=0x40`,
+which returns 64 bytes — a 4-name short tail.
+
+Faster alternative: a single `RQ1 0x50000000 size=0x2600` returns the
+entire catalogue as 24 DT1s (packed contiguously, ~210 bytes each)
+in ~0.85 s. Empirical 3.3× speedup over BTS's 38-RQ1 pattern; see
+`reports/merge_read_findings.md`.
 
 **Per-device totals** (the 300-slot catalogue exists in both products
 but the bank decomposition differs):
@@ -555,7 +631,7 @@ to the first observed request; round-trip latency for a small read is
 | 0.208 | H→D | `DT1 0x7F000001 = 0x01`              | **Editor-attached handshake bit.** Tone Studio writes this to announce itself. The device echoes it back at +3 ms. |
 | 0.215 | H→D | `RQ1 0x7F000003 size=1`              | Read another system flag. |
 | 0.218 | D→H | `DT1 0x7F000003 = 0x00`              |  |
-| 0.237 | H→D | `RQ1 0x50000000 size=0x100` × 38     | Bulk read of the entire patch name catalogue; the device splits each 256-byte read into smaller DT1 chunks at logical record boundaries. |
+| 0.237 | H→D | `RQ1 0x50000000 size=0x100` × 38     | Bulk read of the entire patch name catalogue. BTS does 38 separate requests; the device returns one 128-byte DT1 per request (size 0x100 is a request ceiling — see §3.1.2). A single `RQ1 size=0x2600` returns the whole catalogue as 24 DT1s in ~0.85 s, 3.3× faster than the 38-RQ1 pattern. |
 | ~3.0  | H→D | `RQ1 0x60400000 size=0x100` × 16     | Bulk read all 16 user patch slot headers (name + first parameters). |
 | ~4.5  | H→D | `RQ1 0x10000XXX size=0x2D` × many   | Walk the live patch buffer in 0x40-byte pages, reading the full effect-chain configuration. |
 | ~5.5  | —   | idle                                  | No further traffic until user edits a parameter. |

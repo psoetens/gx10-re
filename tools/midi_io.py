@@ -48,8 +48,24 @@ def _addr_bytes(addr: int) -> bytes:
 
 
 def _size_bytes(size: int) -> bytes:
-    return bytes([(size >> 24) & 0x7F, (size >> 16) & 0x7F,
-                  (size >> 8) & 0x7F, size & 0x7F])
+    """Roland RQ1 size field: 4 bytes raw big-endian. Every byte must be
+    ≤ 0x7F (MIDI SysEx data-byte constraint), so sizes whose any
+    big-endian byte would land in [0x80..0xFF] are illegal — e.g. 128
+    (0x00000080), 129..255 — and the device drops them. Use 256 (0x100,
+    encodes as `00 00 01 00`) or other 7-bit-clean values instead.
+    Verified against BTS USB captures in
+    `captures/bts_import_export/import_export.jsonl` (BTS uses 0x100
+    for header, 0x103 for slot main, etc.). Previous impl
+    `(size >> N) & 0x7F` silently masked the high bit for size ≥ 128,
+    producing requests for the wrong byte count."""
+    b = [(size >> 24) & 0xFF, (size >> 16) & 0xFF,
+         (size >> 8) & 0xFF, size & 0xFF]
+    for byte in b:
+        if byte > 0x7F:
+            raise ValueError(
+                f"RQ1 size 0x{size:X} has byte 0x{byte:02X} > 0x7F — illegal "
+                f"in SysEx; pick a 7-bit-clean size (e.g. 0x100 instead of 0x80).")
+    return bytes(b)
 
 
 def rq1(addr: int, size: int) -> bytes:
@@ -132,8 +148,16 @@ class GxMidi:
         )
 
     def rq1(self, addr: int, size: int, timeout=1.0):
-        """Issue RQ1 and return the first matching DT1 reply. Returns the
-        raw SysEx bytes (incl. F0/F7) or None on timeout."""
+        """Issue RQ1 and return the first matching DT1 reply. Returns
+        the raw SysEx bytes (incl. F0/F7) or None on timeout.
+
+        **Single-DT1 only.** The device usually returns one DT1 per
+        RQ1, sized to its natural record at the address — see
+        `docs/protocol.md` §3.1.2. If you need to collect multi-DT1
+        responses (e.g. RQ1 size=0x4000 against a slot base returns
+        ~43 DT1s in one go), use `probe_bts_match.Probe.request()`
+        which handles wire→linear offset conversion across the 7-bit
+        address-byte boundary."""
         self.drain()
         self.send(rq1(addr, size))
         return self.wait_for(self._is_dt1_reply(addr), timeout=timeout)

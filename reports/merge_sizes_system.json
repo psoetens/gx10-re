@@ -1,0 +1,36 @@
+{
+  "patch": {},
+  "system": {
+    "syscommon": null,
+    "syscontrol": {
+      "request_size": 256,
+      "got_bytes": 102,
+      "dt1_count": 1
+    },
+    "sysmidi": {
+      "request_size": 64,
+      "got_bytes": 21,
+      "dt1_count": 1
+    },
+    "sysinout": {
+      "request_size": 64,
+      "got_bytes": 13,
+      "dt1_count": 1
+    },
+    "syspitch": {
+      "request_size": 64,
+      "got_bytes": 7,
+      "dt1_count": 1
+    },
+    "catalogue-chunk": {
+      "request_size": 256,
+      "got_bytes": 128,
+      "dt1_count": 1
+    },
+    "userram-hdr": {
+      "request_size": null,
+      "got_bytes": 0,
+      "dt1_count": 0
+    }
+  }
+}

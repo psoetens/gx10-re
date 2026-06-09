@@ -60,16 +60,23 @@ This is a top-level index. The detailed material lives in:
 | `0x1000` | `0x1000_1000` | 0x100 | Per-memory CTL/EXP assignments (FUNCTION / MODE / PREFERENCE bytes) |
 | `0x100` | `0x1000_001B` | 1 B | CTL1 FUNCTION (17-value enum — see `menus.md`) |
 | `0x100` | `0x1000_001F` | 1 B | EXP1 SW FUNCTION (same enum) |
-| `0x1100` | `0x1000_1100` | 0x103 | **Slot 0** parameter block |
-| `0x1300` | `0x1000_1300` | 0x103 | **Slot 1** parameter block |
+| `0x1100` | `0x1000_1100` | 0x133 | **Slot 0** parameter block (main+ext) |
+| `0x1300` | `0x1000_1300` | 0x133 | **Slot 1** parameter block (main+ext) |
 | … | … | … | … |
-| `0x3700` | `0x1000_3700` | 0x103 | **Slot 19** parameter block (final) |
+| `0x3700` | `0x1000_3700` | 0x133 | **Slot 19** parameter block (final) |
 
-**Slot stride is 0x200**. Each slot's parameter block is 0x103 bytes:
+**Slot stride is 0x200**. Each slot's parameter block is two natural
+records totalling 0x133 bytes (131 + 48), with a 0x80-byte gap between
+them. BTS reads each slot as two RQ1s: `size=0x103` at +0x00
+(device returns 131-B main) + `size=0x30` at +0x103 (device returns
+48-B ext). Per-record offsets:
 - offset `+0x00`: effect-type byte (e.g. `0x08` = COMP, `0x02` = AMP)
 - offset `+0x03`: sub-TYPE byte (popup-cycled enum, e.g. AMP TYPE 0..22)
 - offset `+0x07`+: knob parameters (varies per effect)
 - offset `+0x3B` (AMP family only): SP TYPE byte (AMP family)
+- `+0x83..+0x102` is the gap (no natural record — device returns
+  nothing if asked for an address in here).
+- `+0x103..+0x132`: extension record (48 bytes of additional params).
 
 AMP-style slots additionally have a 0x30-byte IR sub-block at offset
 `+0x703` from the slot base (used for SP TYPE = ORIGINAL/USER1..16).
@@ -85,8 +92,16 @@ All SysEx commands use the framing `F0 41 10 00 00 00 00 0B <cmd>
 | `0x12` | DT1 | both | Write or report — write `<data>` to `<addr>` |
 | `0x40` | (other) | rare | (not used by Tone Studio) |
 
-The address space is 28-bit (each of the 4 bytes is 7-bit). Reads in
-the `0x1000_1xxx`–`0x1000_3xxx` range have a 0x40-byte chunk limit.
+The address space is 28-bit (each of the 4 bytes is 7-bit). The RQ1
+size field is also 4 raw big-endian bytes with each byte `<= 0x7F`
+(pick 7-bit-clean sizes — `0x100` not `0x80`, `0x10000` not `0x8000`).
+**The size is a request ceiling**, not the response length — the
+device replies with one DT1 per natural record at addresses inside
+the requested range; the DT1 sizes are chosen by the device. A single
+`RQ1 size=0x4000` against a slot base returns the entire 16-KiB body
+in ~43 DT1s in one round-trip (11.9× faster than per-region reads).
+See `protocol.md` §3.1.2 and `reports/merge_read_findings.md` for the
+full empirical picture.
 
 ## Parameter knob encoding patterns
 

@@ -160,31 +160,36 @@ preceding 128-byte chunk to keep address arithmetic on `0x100`-aligned
 boundaries (the 7-bit address byte rule, see `protocol.md` §3.1.1).
 
 After all slots are written, BTS re-reads the `0x50000000` preset name
-catalogue (38 × 256-byte RQ1s) to refresh its UI patch list. **No
-WRITE-commit trigger** (`0x7F000104`) is sent — the user-memory region
-appears to be flash-backed and written-through directly.
+catalogue (38 × `RQ1 size=0x100`, each returning a 128-byte DT1) to
+refresh its UI patch list. **No WRITE-commit trigger** (`0x7F000104`)
+is sent — the user-memory region appears to be flash-backed and
+written-through directly.
 
 ### Download: device → liveset (read direction)
 
 When the user picks "Download to liveset" in BTS, the editor issues
 **64 RQ1 reads** against `0x20000000 + S * 0x60000 + offset` for the
-chosen slot `S`. Read takes ~2 seconds and uses larger chunk sizes
-than the write path (the read direction isn't constrained by the
-write's chunk-alignment quirks):
+chosen slot `S`. Read takes ~2 seconds.
 
-| Offset within slot | Read size | Block returned                  |
-|--------------------|-----------|---------------------------------|
-| `0x00000`          | 256B      | `User_patch%common` + slack (only first 129 are meaningful) |
-| `0x00100`          | 1B        | (the 129th byte; vestigial — already in the 256B read above. BTS reads it anyway, presumably symmetric with write path) |
-| `0x00140`          | 28B       | `User_patch%led` |
-| `0x00200..0x00B40` | 45B × 20  | `User_patch%assign(1)..(20)` |
-| `0x00F00`          | 62B       | `User_patch%efct` |
-| Per FxItem (×20)   | 259B + 48B | `User_patch%fxItem(N)` — split into 2 chunks |
+Per `protocol.md` §3.1.2, the **size field in each RQ1 is a request
+ceiling, not the response length** — the device replies with one DT1
+per natural record at the addresses inside the requested range.
+Below, "request size" is what BTS sends; "response" is what the device
+returns:
 
-The 259B read size is notable — it's **larger than the chart's
-documented 256-byte RQ1 chunk recommendation** (`protocol.md` §3.1.2),
-so the device actually accepts up to at least 259B in a single RQ1
-even though our own probes were conservative at 256B.
+| Offset within slot | BTS req size | Response | Block            |
+|--------------------|--------------|----------|------------------|
+| `0x00000`          | `0x100` (256B)  | 128 B   | `User_patch%common` head |
+| `0x00100`          | `0x01` (1B)     | 1 B     | misc byte (the 129th; BTS reads it explicitly even though a larger common read would cover it) |
+| `0x00140`          | `0x1C` (28B)    | 28 B    | `User_patch%led` |
+| `0x00200..0x00B40` | `0x2D` (45B) × 20 | 45 B each | `User_patch%assign(1)..(20)` |
+| `0x00F00`          | `0x3E` (62B)    | 62 B    | `User_patch%efct` |
+| Per FxItem (×20)   | `0x103`+`0x30` (259B+48B) | 131 B + 48 B | `User_patch%fxItem(N)` |
+
+BTS sizes the RQ1s to overshoot each natural record. A single
+`RQ1 size=0x4000` against the slot base reads the same data as one
+round-trip — empirical 11.9× speedup; see
+`reports/merge_read_findings.md`.
 
 Captured against slot 5 (`0x201E0000`) on 2026-05-14 while pulling
 the user's "BTS RE" patch into a liveset entry. BTS then JSON-encodes
