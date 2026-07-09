@@ -404,9 +404,50 @@ edit buffer at `0x1000_0000` and for user memories at `0x2000_0000+`):
 | **0x21** | **Exp2 Function** | (verified) |
 | 0x22–0x33 | Per-controller Mode (TOGGLE / MOMENT) | 1 byte each |
 | 0x32 | INPUT SETTING (per-memory) | 0–10 = SYSTEM / 1–10 |
-| 0x35–0x68 | MEMORY MIDI 1..4 | 4 entries × 13 bytes (CH, BANK MSB, BANK LSB, PC#, CC1#, CC1 VAL, CC2#, CC2 VAL) |
+| 0x35–0x68 | MEMORY MIDI 1..4 | 4 entries × 13 bytes — see per-entry layout + PC convention below |
 | 0x69–0x6C | KnobN SettingFxItem | which FX item the knob targets |
 | 0x6D–0x7C | KnobN SETTING | 4 nibbles each, value 0–740 (target enum index) |
+
+##### MEMORY MIDI per-entry layout (corrected 2026-06-16)
+
+Each of the 4 entries is 13 bytes. **CHANNEL is a single byte** (only
+needs 5 bits); BANK MSB, BANK LSB and PC# are **2-nibble big-endian**
+cells (high4 @+0, low4 @+1) because their values reach 128:
+
+| Entry offset | Field | Encoding |
+|---|---|---|
+| +0x00 | CHANNEL | 1 byte (0 = OFF, 1..16) |
+| +0x01..02 | BANK MSB | 2-nibble BE (0 = OFF, 1..128) |
+| +0x03..04 | BANK LSB | 2-nibble BE |
+| +0x05..06 | PC# | 2-nibble BE (0 = OFF, 1..128) |
+| +0x07..08 | CC1# | 2-nibble BE — wire value `0=OFF, 1..128`; device UI shows `wire-1` (OFF→0→1→…) |
+| +0x09 | CC1 VAL | **single byte** (0..127) |
+| +0x0A..0B | CC2# | 2-nibble BE — same `0=OFF` / `wire-1` display offset |
+| +0x0C | CC2 VAL | **single byte** (0..127) |
+
+Verified against U04-3 hardware (2026-06-16) with a non-consecutive
+pattern: entered CC1#=10/CC1val=99/CC2#=20/CC2val=120 →
+raw `… 00 0B 63 01 05 78` → wire CC1#=11, CC1val=99, CC2#=21, CC2val=120.
+
+> **Earlier docs/codecs decoded CHANNEL as a 2-nibble cell**, which
+> shifted BANK MSB/LSB/PC# one byte later and produced wrong values
+> (e.g. PC read as 112 instead of 71). Corrected against hardware:
+> U02-1 entry0 `01 00 01 00 01 00 04` → CH1/MSB1/LSB1/PC4, and U24-2
+> `01 00 01 00 01 04 07` → CH1/MSB1/LSB1/PC71.
+
+**Default PC convention** (device-stamped on every user memory; verified
+by full 198-memory audit 2026-06-16): for user memory index `V` (0-based,
+U01-1 = 0):
+
+```
+CHANNEL  = 1
+BANK MSB = 1 + (V // 99)     # two MSB banks of 99 (198 = 2 × 99 user mems)
+BANK LSB = 1
+PC#      = (V % 99) + 1      # cycles 1..99, wraps at the MSB boundary
+```
+
+So U24-2 (V=70) → MSB1/PC71; U34-1 (V=99) → MSB2/PC1; U66-3 (V=197) →
+MSB2/PC99. See `tools/memory_midi_audit.py` and `tools/memory_midi_reset.py`.
 
 #### MemoryEfct (master block at offset 0x0F00, 62 bytes)
 
@@ -610,6 +651,63 @@ Writing here triggers the device to enter that mode and start emitting the
 appropriate streaming data at `0x7F000300`. The device mirrors the value
 into `0x7F000002`. Writing `0x00` (or no DT1 to this register on close)
 exits the mode.
+
+### 3.8.1 Editor-controlled tuner toggle (verified 2026-06-28 / 2026-07-09)
+
+Hardware-verified on a GX-10 (sw_rev `01.00.00.00`) via
+`tools/probe_tuner_toggle.py` and follow-up echo-trail captures. An editor
+can drive the device's on-screen tuner directly — enough to host a "watch
+the tuner on the device" toggle without rendering anything. Consumed by
+gxnarly's MENU→TUNER buttons.
+
+**Register semantics on this firmware** (each verified on the pedal's
+display; they contradict parts of §3.8, `API.md` §156, and `menus.md`):
+
+| Write | Effect on display |
+|---|---|
+| `0x7F000002 = 0x00` | exit to play screen (this, NOT `0x01`, exits) |
+| `0x7F000002 = 0x01` | MONO tuner view |
+| `0x7F000002 = 0x02` | POLY tuner view / tuner-active |
+| `0x7F000002 = 0x03` | **Input Settings screen — NOT a tuner** |
+| `0x00000007 = 1/2/3` | switches the tuner view (MONO/POLY/TT) **only while a tuner is already displayed**; TT is reachable ONLY this way |
+
+The display follows the **last write**, so order matters.
+
+**Working sequence (any mode, incl. TT):**
+1. `DT1 0x7F000001 = 0x01` — editor-attach (required first; these
+   registers are deaf without it; give it settle time).
+2. `DT1 0x7F000002 = 0x02` — activate the tuner FIRST.
+3. `DT1 0x00000007 = 1|2|3` — THEN select MONO / POLY / TT.
+4. (BTS also writes `0x00000006 = 0x00` here. Register purpose
+   unidentified — cargo-cult with caution.)
+
+Exit: `DT1 0x7F000002 = 0x00`. `API.md` §156's "deactivate with `= 0x01`"
+is wrong on this firmware — `0x01` switches to the MONO view instead.
+`API.md`'s mode-first-then-activate order is also wrong (last-write-wins
+means you get the activate value's view, not the requested mode).
+
+**Echo behaviour (measured, critical for editor UI sync):**
+
+- While *switching* tuner views the device emits transient
+  `0x7F000002 = 00` echoes (observed +7 ms and +17 ms after the write
+  burst) — identical in value to a genuine exit. An editor that treats
+  every `00` as "tuner closed" will falsely clear its UI state.
+  **Suppress `00` within ~1 s of your own tuner writes**; echo tail of the
+  full sequence runs to ~460 ms.
+- Mode-flavoured `0x7F000002 = 01/02` echoes are unreliable for sync
+  (a `01` was observed even after switching to TT). Ignore them.
+- A genuine **front-panel exit** emits `0x7F000002 = 00` (outside any
+  write window) — the one reliable device→host tuner signal.
+- `0x00000007` echoes lag by ~100–460 ms and are sometimes absent.
+
+**Related chart discrepancy:** the official chart lists TUNER TYPE
+(`0x00000007`) values 1 and 3 only (MONO, TT) — POLY (2) is a BTS-GUI
+extension that the hardware accepts (see `official_xref.md` §"Tuner
+mode").
+
+**Pitch stream.** `0x7F000300` only carries frames when there is detected
+input (a plucked string). With no signal connected the stream stays silent
+even though the tuner display is active — expected, not a fault.
 
 ---
 
