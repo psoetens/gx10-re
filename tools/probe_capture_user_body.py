@@ -46,11 +46,13 @@ def bts_patch_regions():
     serve the full 128-byte region in one RQ1, which would leave
     knob-config + memory-MIDI bytes unset)."""
     regions = []
-    # Header: 8 × 16-byte chunks covering 0x00..0x80
-    # (name 0x00, ctl-function 0x10, ctl-mode 0x22, mem-midi 0x35,
-    #  knob-fx-item 0x69, knob-setting 0x6D)
-    for i in range(8):
-        regions.append((i * 16, 16))
+    # Header: the device serves the whole 0x00..0x80 header (name 0x00,
+    # ctl-function 0x10, ctl-mode 0x22, mem-midi 0x35, knob-fx-item 0x69,
+    # knob-setting 0x6D) as ONE ~129-byte natural record. Read it in a
+    # single RQ1 — the old 8×16 chunking misaligned against the natural
+    # record boundary and the device dropped the off-boundary chunks
+    # (e.g. 0x40/0x60/0x70). Size is a 7-bit-clean overshoot bound.
+    regions.append((0x0000, 0x100))
     regions.append((0x0100, 1))
     regions.append((0x0140, 28))
     for pair in range(10):
@@ -60,7 +62,7 @@ def bts_patch_regions():
     regions.append((0x0F00, 62))
     for slot in range(20):
         slot_base = 0x1100 + slot * 0x200
-        regions.append((slot_base, 131))
+        regions.append((slot_base, 0x100))  # overshoot bound; must be 7-bit-clean (131/0x83 is illegal in RQ1 size)
         regions.append((slot_base + 0x103, 48))
     return regions
 
