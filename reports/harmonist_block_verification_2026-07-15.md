@@ -23,15 +23,19 @@ codegen); this report records the verification so nobody re-probes it.
   cells, values 0/1/2 (1VOICE / 2MONO / 2STEREO). Verified by flipping
   VOICE on the device: cell went `0x8018` (stale garbage, see below) →
   `0x8002` on selecting 2STEREO.
-- **HR user-shift semantics**: wire = display + 0x8000 (offset-binary),
-  display −24…+24 semitones, device INIT = 0x8000 = unison. The
-  catalog's `raw_min: 0 / raw_max: 48` for these knobs are **BTS slider
-  index units**, while `init: 0` is in **display units** — BTS's own
-  resource mixes unit systems here (contrast PITCH SHIFTER, whose
-  raw −24..24 and init are both display units). Downstream consumers
-  must derive the display range from `template`/`format_js`
-  (`formatHarmonistUserShift` → "- 24C" … "+ 24C"), NOT from
-  raw_min/raw_max.
+- **HR user-shift semantics** (CORRECTED 2026-07-16): the wire carries
+  the **slider index 0…48** offset-binary (cell = index + 0x8000), NOT
+  the signed display. Hardware-verified: with USER scales active and
+  every knob showing "0" on the device, all 24 cells read `0x8018`
+  (= index 24 = unison). Selecting HARMONY=USER makes the device
+  initialise the cells to `0x8018` itself; the INIT capture's `0x8000`
+  is just a zeroed inactive field (index 0 = −24, never sounding). The
+  catalog's `raw_min: 0 / raw_max: 48` are therefore the true wire
+  range; `init: 0` is bogus (would mean −24) — trust the device's own
+  initialisation (24). Display comes from `format_js`
+  (`formatHarmonistUserShift` → "- 24C" … "0C" … "+ 24C").
+  (A first reading of this data concluded "wire = display + 0x8000,
+  INIT = unison" — wrong; recorded here so nobody re-derives it.)
 - **KEY and BPM are not block fields.** The device's harmonist page
   surfaces the patch-common MASTER KEY (`0x10000F06`) and BPM
   (`0x10000F02`) contextually; the catalog is right to omit them from
@@ -40,11 +44,11 @@ codegen); this report records the verification so nobody re-probes it.
 ## Known bug-era debris (edit buffers in the wild)
 
 gxnarly builds before 2026-07-15 collapsed the HR knobs to a one-value
-range (display-string sign parsing bug) — clicking them wrote
-**+24 semitones** (`0x8018`) into HR cells, and at least one patch also
-carried `0x8018` in the VOICE cell. Patches edited with those builds may
-hold such values; they are legitimate wire values the device accepts,
-just musically unintended. Fix: re-set the knobs (or re-INIT the block).
+range (display-string sign parsing bug) — clicking them wrote `0x8018`
+into HR cells. With the corrected unit model that value is **unison**
+(harmless — the same value the device initialises USER cells to). The
+one real corruption observed was `0x8018` in a VOICE cell (out-of-range
+for its 0..2 enum); flipping VOICE on the device rewrites it cleanly.
 
 ## Downstream fixes (gxnarly, same date)
 
