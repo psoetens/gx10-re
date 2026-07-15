@@ -2989,7 +2989,7 @@
         "bts": {
           "address": 47,
           "unique_name": "effect-level-1",
-          "init": 50,
+          "init": 100,
           "ofs": 32768,
           "size": "INTEGER4x4",
           "template": "0-100",
@@ -3537,7 +3537,7 @@
         "bts": {
           "address": 75,
           "unique_name": "effect-level-2",
-          "init": 50,
+          "init": 100,
           "ofs": 32768,
           "size": "INTEGER4x4",
           "template": "0-100",
