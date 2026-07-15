@@ -538,6 +538,16 @@ emits a DT1 at `0x10000154` whose 4th payload byte alternates `0x02`↔`0x03`.
 This is a *UI-level* "current slot" register, not the audible on/off state
 (which is in the per-slot block).
 
+> **Update (2026-07-11, GX-10 fw 1.00):** `0x10000154` is
+> `MemoryLed.ON_OFF_STATE` (`0x10000140` + offset `0x14`), the 8-nibble
+> 32-bit footswitch-LED bitmap of §5.7b/§5.8 — which explains the
+> "4th payload byte" wobble above (it's LED bits changing). With the
+> editor-attach bit set, the device **broadcasts this bitmap
+> unsolicited** on footswitch presses and even on looper loop-cycle
+> LED blinks (observed ~3 s period tracking a recorded loop's length,
+> C1 = bit 7 toggling). An editor gets live pedal-LED state for free
+> by decoding these events — no polling needed.
+
 ### 3.4 `0x20000000` — live patch mirror
 
 ```
@@ -636,6 +646,8 @@ Single-byte registers at fixed offsets, observed (Linux probes
 | `0x7F000300` | **TUNER pitch streaming buffer** (48 bytes) | streamed by device every ~200 ms while in TUNER mode; layout = 8 string slots × 6 bytes each, encoding per-string pitch / detection state. Empty pattern is `00 01 03 08 08 00` per string. |
 | `0x7F000701` | **state-mirror for chain edit** | BTS writes `0x05` when a chain edit begins (paired with `0x00200003 = 0x01`) and `0x03` when it ends (paired with `0x00200003 = 0x00`). Within 0–10 ms of the trigger. Member of the same "global state mirror" family as `0x7F000002`. |
 | `0x7F000703` | **second handshake-style toggle** | host writes `0x00` then `0x01` at startup, mirroring the `0x7F000001` pattern. Purpose unknown — possibly a separate broadcast-subscribe channel. Silent on Linux probe without `0x7F000001 = 0x01` first. |
+| `0x7F000705` | **LOOPER_CONTROL — writable looper transport** (verified on GX-10 fw 1.00, 2026-07-11, `tools/probe_looper_control.py`) | Named in BTS `address_const.js` `COMMAND` block; only referenced from commented-out GT-1000-era connect code (`RQ1(…, 4)` gated on com-level ≥ 2), so BTS never exercises it — but the GX-10 firmware implements it. **Writes drive the transport** (DT1 1 byte): the byte behaves like the LOOP CTL pedal's engage state, with `02`/`03` as direct verbs on top. Verified: `01` from empty = **start RECORD**; `01` (0→1 edge) while playing = **start OVERDUB**; `00` while rec/dub = **end rec/dub → PLAY**; `02` from play = **STOP**; `03` from stop = **PLAY**. The firmware acts on register *value changes* — writing `01` when the register already holds `01` does nothing (re-arm by writing `00` first). **CLEAR: unreachable by write** — exhaustively verified 2026-07-11: every single-byte value `0x00`–`0x7F` was written from the STOP state (batched, 300 ms apart, play-test after each batch) and loop content survived all of them; toggling the PHRASE LOOP FxItem's OFF/ON byte (`0x1000_2501` on the test patch) doesn't drop the phrase either; manual CLEAR emits no unique broadcast (only the `0x10000154` LED-bitmap event). `02` during DUB ends the dub into PLAY (it does NOT clear — clean retest). **Reads: content flag, only stable at rest.** Verified: reads `00` when the loop is empty/cleared and `01` when stopped with content (both directions confirmed via manual-clear diff + write-driven re-record). While the transport is rolling (rec/play) reads are inconsistent (`00` and `01` both observed in play-with-content) — to detect content presence, stop first (`02`), then RQ1 1 byte. Not a transport-state readout. No readable transport-state register exists in `0x7F000700`–`0x7F00070F` (only `0x704`, constant `00`, and `0x705` reply), `0x0020_0000`, or the patch region (PHRASE LOOP's only patch param is LOOP LEVEL). Track transport shadow-state host-side from the verbs you issue + `0x10000154` LED broadcasts (physical presses / blink cadence, attach required). **Provenance (GT-1000 BTS v3.20.2, mined 2026-07-11):** on the GT-1000 this register is the looper *chain-block enable* — `effect_controller.js turnOn()` writes only `1`/`0`, `midi_observe_controller.js` decodes inbound broadcasts (byte 0 = on/off), `chain_controller.js` re-reads it after chain-order changes. No BTS for any device ever writes transport or CLEAR values; the GX-10's rec/play/stop verb behavior is firmware capability beyond Roland's own editor. The GX-10 also **broadcasts `0x705` unsolicited on looper pedal events** (confirmed: tonight's value transitions coincided with physical presses) — subscribe (editor-attach) and treat broadcasts as the recording-engaged signal. **CLEAR verdict: not remotely reachable** — exhausted all single-byte writes, slot toggle, and Roland's own editor source; remaining exotic ideas (multi-byte payloads, `0x704` writes) are low-probability. |
+| `0x00001036` | **MODE_SWITCH (BTS name)** — not implemented on GX-10 | Read by the same commented-out GT-1000 code ("get control mode status"). RQ1 of 1 or 4 bytes is silently ignored on GX-10 fw 1.00 (2026-07-11 probe); use `0x00001034` CONTROL_MODE instead. |
 
 ### 3.8 `0x00000007` — UI-mode register
 

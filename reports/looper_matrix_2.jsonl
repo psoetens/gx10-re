@@ -1,0 +1,150 @@
+{"kind": "attach", "t": 0.465}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 0.777}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 1.086}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 3.098}
+{"kind": "read", "value": 0, "t": 7.115}
+{"kind": "observe", "label": "seed/play", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 7.115}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 7.121}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 7.433}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 8.043}
+{"kind": "read", "value": 0, "t": 12.159}
+{"kind": "observe", "label": "pre[00]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 12.16}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 12.166}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 12.478}
+{"kind": "read", "value": 0, "t": 15.988}
+{"kind": "observe", "label": "post[00]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 15.988}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 15.995}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 16.401}
+{"kind": "read", "value": 1, "t": 17.013}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 19.024}
+{"kind": "content_check", "result": "was_empty", "t": 19.529}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 19.536}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 19.847}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 20.459}
+{"kind": "read", "value": 0, "t": 24.574}
+{"kind": "observe", "label": "pre[01]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 24.574}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 24.58}
+{"kind": "read", "value": 1, "t": 28.087}
+{"kind": "observe", "label": "post[01]", "reg": 1, "led_edges": 0, "led_timeline": [], "t": 28.087}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 28.093}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 28.505}
+{"kind": "read", "value": 1, "t": 29.117}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 31.125}
+{"kind": "content_check", "result": "was_empty", "t": 31.627}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 31.633}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 31.945}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 32.557}
+{"kind": "read", "value": 0, "t": 36.673}
+{"kind": "observe", "label": "pre[02]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 36.673}
+{"kind": "write", "addr": "7F000705", "value": 2, "t": 36.679}
+{"kind": "read", "value": 1, "t": 40.191}
+{"kind": "observe", "label": "post[02]", "reg": 1, "led_edges": 0, "led_timeline": [], "t": 40.191}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 40.197}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 40.609}
+{"kind": "read", "value": 1, "t": 41.221}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 43.229}
+{"kind": "content_check", "result": "was_empty", "t": 43.734}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 43.741}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 44.052}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 44.664}
+{"kind": "read", "value": 0, "t": 48.777}
+{"kind": "observe", "label": "pre[03]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 48.777}
+{"kind": "write", "addr": "7F000705", "value": 3, "t": 48.784}
+{"kind": "read", "value": 1, "t": 52.295}
+{"kind": "observe", "label": "post[03]", "reg": 1, "led_edges": 0, "led_timeline": [], "t": 52.295}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 52.302}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 52.713}
+{"kind": "read", "value": 1, "t": 53.326}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 55.332}
+{"kind": "content_check", "result": "was_empty", "t": 55.837}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 55.843}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 56.15}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 56.76}
+{"kind": "read", "value": 0, "t": 60.877}
+{"kind": "observe", "label": "pre[04]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 60.877}
+{"kind": "write", "addr": "7F000705", "value": 4, "t": 60.883}
+{"kind": "read", "value": 1, "t": 64.394}
+{"kind": "observe", "label": "post[04]", "reg": 1, "led_edges": 0, "led_timeline": [], "t": 64.395}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 64.401}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 64.813}
+{"kind": "read", "value": 1, "t": 65.424}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 67.436}
+{"kind": "content_check", "result": "was_empty", "t": 67.94}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 67.947}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 68.258}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 68.867}
+{"kind": "read", "value": 0, "t": 72.979}
+{"kind": "observe", "label": "pre[05]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 72.979}
+{"kind": "write", "addr": "7F000705", "value": 5, "t": 72.986}
+{"kind": "read", "value": 1, "t": 76.497}
+{"kind": "observe", "label": "post[05]", "reg": 1, "led_edges": 0, "led_timeline": [], "t": 76.497}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 76.503}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 76.915}
+{"kind": "read", "value": 1, "t": 77.526}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 79.536}
+{"kind": "content_check", "result": "was_empty", "t": 80.041}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 80.048}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 80.359}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 80.971}
+{"kind": "read", "value": 0, "t": 85.087}
+{"kind": "observe", "label": "pre[06]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 85.087}
+{"kind": "write", "addr": "7F000705", "value": 6, "t": 85.094}
+{"kind": "read", "value": 1, "t": 88.604}
+{"kind": "observe", "label": "post[06]", "reg": 1, "led_edges": 0, "led_timeline": [], "t": 88.605}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 88.611}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 89.021}
+{"kind": "read", "value": 1, "t": 89.628}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 91.636}
+{"kind": "content_check", "result": "was_empty", "t": 92.141}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 92.148}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 92.459}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 93.069}
+{"kind": "read", "value": 0, "t": 97.182}
+{"kind": "observe", "label": "pre[07]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 97.182}
+{"kind": "write", "addr": "7F000705", "value": 7, "t": 97.188}
+{"kind": "read", "value": 1, "t": 100.699}
+{"kind": "observe", "label": "post[07]", "reg": 1, "led_edges": 0, "led_timeline": [], "t": 100.7}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 100.705}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 101.116}
+{"kind": "read", "value": 1, "t": 101.728}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 103.739}
+{"kind": "content_check", "result": "was_empty", "t": 104.242}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 104.249}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 104.558}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 105.169}
+{"kind": "read", "value": 0, "t": 109.282}
+{"kind": "observe", "label": "pre[08]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 109.282}
+{"kind": "write", "addr": "7F000705", "value": 8, "t": 109.289}
+{"kind": "read", "value": 1, "t": 112.799}
+{"kind": "observe", "label": "post[08]", "reg": 1, "led_edges": 0, "led_timeline": [], "t": 112.799}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 112.806}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 113.215}
+{"kind": "read", "value": 1, "t": 113.827}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 115.835}
+{"kind": "content_check", "result": "was_empty", "t": 116.339}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 116.346}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 116.657}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 117.267}
+{"kind": "read", "value": 0, "t": 121.38}
+{"kind": "observe", "label": "pre[10]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 121.38}
+{"kind": "write", "addr": "7F000705", "value": 16, "t": 121.386}
+{"kind": "read", "value": 1, "t": 124.898}
+{"kind": "observe", "label": "post[10]", "reg": 1, "led_edges": 0, "led_timeline": [], "t": 124.898}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 124.905}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 125.316}
+{"kind": "read", "value": 1, "t": 125.924}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 127.935}
+{"kind": "content_check", "result": "was_empty", "t": 128.439}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 128.445}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 128.757}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 129.368}
+{"kind": "read", "value": 0, "t": 133.485}
+{"kind": "observe", "label": "pre[7F]", "reg": 0, "led_edges": 0, "led_timeline": [], "t": 133.485}
+{"kind": "write", "addr": "7F000705", "value": 127, "t": 133.492}
+{"kind": "read", "value": 1, "t": 137.002}
+{"kind": "observe", "label": "post[7F]", "reg": 1, "led_edges": 0, "led_timeline": [], "t": 137.002}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 137.009}
+{"kind": "write", "addr": "7F000705", "value": 1, "t": 137.42}
+{"kind": "read", "value": 1, "t": 138.032}
+{"kind": "write", "addr": "7F000705", "value": 0, "t": 140.042}
+{"kind": "content_check", "result": "was_empty", "t": 140.547}
