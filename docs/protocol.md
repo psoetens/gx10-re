@@ -3,7 +3,7 @@
 Reverse-engineered from observation of the MIDI traffic between **BOSS TONE
 STUDIO for GX-10** (v1.0.0 build 43) and a connected GX-10. The official
 Roland MIDI Implementation chart used to cross-reference every observation
-covers both **GX-10 (firmware 1.x)** and **GX-100 (firmware 2.x)** —
+covers both **GX-10** and **GX-100** —
 the SysEx framing, address map, MemoryFxItem/MemoryEfct/MemoryCommon
 layouts, FX-Parameter encoding, and ASSIGN TARGET TABLE are identical
 across both models. The few model-specific differences (LED bitmap bit
@@ -33,7 +33,7 @@ JSONL format with a `dir` field of `host->dev` / `dev->host`), so the same
 | Device class | USB-MIDI (Microsoft generic class driver, `mid=0x0001`) |
 | Roland family code | `0x040B` |
 | Roland model number | `0x0000` |
-| Software revision (test unit) | `01 00 00 00` (GX-10 — GX-100 starts with `02`) |
+| Software revision (test unit) | `01 00 00 00` — byte 1 is a **product flag**, not a firmware major: GX-100 = `00`, GX-10 = `01` (see `firmware_versions.md`) |
 | SysEx model ID | `00 00 00 00 0B` (5 bytes) |
 | Default device ID | `0x10` |
 | Address width | 4 bytes, big-endian, all 7-bit |
@@ -160,7 +160,9 @@ device: F0 7E 10 06 02 41 0B 04 00 00 01 00 00 00 F7
 - Manufacturer `0x41` (Roland)
 - Family LSB `0x0B`, MSB `0x04` → family code `0x040B`
 - Model LSB `0x00`, MSB `0x00` → model `0x0000`
-- Software version `01 00 00 00`
+- Software revision `01 00 00 00` — byte 1 is the **product flag**
+  (GX-100 = `0x00`, GX-10 = `0x01`, per the MIDI implementation manual;
+  see `firmware_versions.md`), the rest reserved zeros
 
 ### 2.2 RQ1 — read a region
 
@@ -1040,7 +1042,7 @@ GX-10 and GX-100. Only a few user-facing things differ:
 
 | Item                          | GX-100         | GX-10          |
 |-------------------------------|----------------|----------------|
-| Identity Reply version (b10)  | `0x02` (2.x)   | `0x01` (1.x)   |
+| Identity Reply product flag (b10) | `0x00`     | `0x01`         |
 | Front-panel footswitches      | NUM 1-4, BANK ▼, BANK ▲, CTL 1, CTL 2 | **▼, ▲, C1** (▼/▲ written as DOWN/UP; C1 = CTL 1) — no NUM pads, no front CTL 2-4 |
 | External jacks                | CTL 2-4, EXP 2 | (none — only EXP 1 + EXP 1 SW) |
 | User memory count             | 200 (U01-1..U50-4) | 198 (U01-1..U66-3 + 2 NIU) |
@@ -1064,7 +1066,7 @@ GX-10 and GX-100. Only a few user-facing things differ:
 > CTL 3, EXP 2.
 
 **Detection at runtime**: `tools/detect_device.py` sends an Identity
-Request and reads byte 10 (version major) of the reply. `tools/
+Request and reads byte 10 (the product flag) of the reply. `tools/
 device_profile.py` exports a profile dict per model with the right
 bit mappings, physical-pedal sets, and memory counts. Other tools
 (`read_pedal_status.py`, `watch_pedal_status.py`,

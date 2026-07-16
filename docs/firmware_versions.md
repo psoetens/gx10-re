@@ -77,6 +77,23 @@ Manufacturer ID (`0x41`) and 5-byte Model ID (`00 00 00 00 0B`) are
 **identical** across GX-100 and GX-10 — they tell you nothing about
 which device or which firmware.
 
+**Corroborated against BTS source (2026-07-16).** Both BTS-for-Mac
+apps (`GX-10` v1.0.0 b43, `GX-100` v2.0.3 b124,
+`Contents/Resources/html/js/`) parse the Identity Reply as a hex
+string in `midi_connect_controller.js` and store hex chars 20..28 —
+exactly bytes 10..13, the sw_rev field — as
+`ProductSetting.deviceRevisionLevel`. Both apps also ship the
+constant `window.DEVICE_REVISION_LEVEL_GX_100 = '00000000'`
+(`config/product_setting.js`) — Roland's own statement that the
+GX-100's sw_rev is all zeros, i.e. product flag `0x00`. Notably BTS
+never *compares* either value: its accept check
+(`PART_OF_IDENTITY_REPLY`) matches only through the family code
+(`0B 04`), so each single-product BTS app would accept the other
+device and relies on the capability-level gate (§below) plus the
+user having launched the right app. BTS-for-GX-1 is a different
+protocol family entirely (`modelId '01060D'`) and has no
+revision-level constant.
+
 ## What the device DOES NOT tell you over MIDI
 
 - **Exact firmware `(major, minor)`** (e.g. distinguishing 1.00 from
