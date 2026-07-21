@@ -137,27 +137,67 @@ it changes with firmware updates that change protocol behaviour.
 
 ## Firmware capability fingerprint
 
-| Address | Purpose | Observed on this unit | Reserved? |
+| Address | Purpose | Observed (GX-10 fw 1.04) | Reserved? |
 |---------|---------|-----------------------|-----------|
-| `0x7F000000` | `EDITOR_COMMUNICATION_LEVEL` | `0x03` | no — bumped per firmware family |
+| `0x7F000000` | `EDITOR_COMMUNICATION_LEVEL` | `0x03` | no — bumped per firmware family (per-product scale) |
 | `0x7F000003` | `EDITOR_COMMUNICATION_REVISION` | `0x00` | unused so far; bumped within a level |
 
-**BTS-version mapping** (extracted from each BTS bundle's
-`Contents/Resources/html/js/config/product_setting.js`):
+> ⚠️ **The capability level is PER-PRODUCT, not a global scale.**
+> Level `3` means GX-10 firmware 1.0–1.04, but on the GX-100 level `3`
+> means firmware ~2.0.1. Never compare a GX-10 level against a GX-100
+> level as if they were the same axis — always resolve `(product,
+> level)` together. The number is a protocol-compatibility gate BTS
+> compares against its own hard-coded value; each product's firmware
+> line advances it on its own schedule.
 
-| BTS macOS version | Expected `(level, revision)` | Bundle filename |
+**BTS-version mapping** (extracted from each BTS bundle's
+`.../js/config/product_setting.js` — macOS `Contents/Resources/html`,
+Android APK `assets/html`):
+
+*GX-10:*
+
+| BTS version | Expected `(level, revision)` | Source bundle |
 |-------------------|-------------------------------|-----------------|
-| v1.0.0 | `(3, 0)` | `bts_gx10_m100.zip` (archived; on `static.roland.com`) |
+| v1.0.0 (build 43) | `(3, 0)` | macOS `BOSS TONE STUDIO for GX-10.app` |
 | v1.0.2 | `(4, 0)` | `bts_gx10_m102.zip` (current Roland release) |
 
-**Inferred firmware → level mapping** (cross-referencing BOSS's
-GX-10 update history with the BTS-version mapping above):
+*GX-100:*
 
-| Firmware | Inferred level | Source of inference |
-|----------|----------------|---------------------|
-| 1.00 (launch) | `3` | BTS v1.0.0 was current at GX-10 launch |
-| 1.04 | `3` | Linux probe 2026-05-09 returned `0x03` |
-| 1.05 | `4` (predicted) | BTS v1.0.2 expects `4` and was released alongside fw 1.05 |
+| BTS version | `(level, revision)` | Source bundle |
+|-------------------|----------------------|-----------------|
+| v1.0.0 (build 85)  | `(2, 0)` | `BTS+for+GX-100_1.0.0_APKPure.apk` |
+| v2.0.1 (build 118) | `(3, 0)` | `BTS+for+GX-100_2.0.1_APKPure.xapk` |
+| v2.0.3 (build 124) | `(4, 0)` | macOS `BOSS TONE STUDIO for GX-100.app` |
+
+**Firmware → level → feature mapping.** Every row below is anchored to
+a BTS bundle above (or the owner's GX-10 unit); the two rules at the
+bottom reproduce every row and resolve unknown/future levels:
+
+*GX-10:*
+
+| Firmware | Level | Effect roster | POLY tuner | TT tuner | Source |
+|----------|-------|---------------|-----------|----------|--------|
+| 1.00–1.04 | `3` | full (v2-equivalent) | yes | yes | owner unit + Linux probe `0x03` |
+| 1.05+ | `4` (pred.) | full | **no** | yes | BTS v1.0.2 expects `4`; POLY removed per owner |
+
+*GX-100:*
+
+| Firmware | Level | Effect roster | POLY tuner | TT tuner | Source |
+|----------|-------|---------------|-----------|----------|--------|
+| 1.0.x (v1) | `2` | **v1 (smaller)** | yes | **no** | BTS v1.0.0 apk — 2 tuner radios, no TT code |
+| ~2.0.1 | `3` | v2 (full) | yes | yes | BTS v2.0.1 apk |
+| ~2.0.3 | `4` | v2 | yes | yes | BTS v2.0.3 app |
+| 2.0.4+ | `5` | v2 | **no** | yes | owner info; POLY removed |
+
+**Resolution rules** (hold for every anchored row; use for unknown levels):
+
+- **POLY tuner** present iff `level ≤ polyCutoff[product]` — GX-10 `3`, GX-100 `4`.
+- **TT (True Temperament)** present iff `level ≥ 3`, on **both** products.
+  TT is NOT GX-10-exclusive: the GX-100 BTS apps (v2.0.1+) drive TT via
+  `TUNER_TYPE_VALUE.TT`, gated on `communicationLevel >= 3`; the GX-100
+  v1.0.0 app (level 2) has no TT code at all.
+- **Effect roster**: GX-10 is always full (all v2 effects from launch);
+  GX-100 is v1 (smaller) at `level ≤ 2`, v2 (full) at `level ≥ 3`.
 
 DT1 writes to `0x7F000000` are **silently ignored** (confirmed
 2026-05-14 by writing `0x04` and reading back `0x03`). The
