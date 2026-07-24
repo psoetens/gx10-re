@@ -1,0 +1,128 @@
+{
+  "target": 18,
+  "other": 19,
+  "reference_records": 43,
+  "wedged": false,
+  "results": [
+    {
+      "delay_ms": 0,
+      "repeat": 0,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 4,
+      "read_s": 1.51,
+      "t_read_start_ms": 0,
+      "healthy_after": true
+    },
+    {
+      "delay_ms": 0,
+      "repeat": 1,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 1,
+      "read_s": 1.133,
+      "t_read_start_ms": 0,
+      "healthy_after": true
+    },
+    {
+      "delay_ms": 150,
+      "repeat": 0,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 1,
+      "read_s": 1.134,
+      "t_read_start_ms": 150,
+      "healthy_after": true
+    },
+    {
+      "delay_ms": 150,
+      "repeat": 1,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 1,
+      "read_s": 1.137,
+      "t_read_start_ms": 150,
+      "healthy_after": true
+    },
+    {
+      "delay_ms": 300,
+      "repeat": 0,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 4,
+      "read_s": 1.414,
+      "t_read_start_ms": 299,
+      "healthy_after": true
+    },
+    {
+      "delay_ms": 300,
+      "repeat": 1,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 4,
+      "read_s": 1.323,
+      "t_read_start_ms": 299,
+      "healthy_after": true
+    },
+    {
+      "delay_ms": 600,
+      "repeat": 0,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 4,
+      "read_s": 0.985,
+      "t_read_start_ms": 599,
+      "healthy_after": true
+    },
+    {
+      "delay_ms": 600,
+      "repeat": 1,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 4,
+      "read_s": 1.026,
+      "t_read_start_ms": 599,
+      "healthy_after": true
+    },
+    {
+      "delay_ms": 900,
+      "repeat": 0,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 4,
+      "read_s": 0.921,
+      "t_read_start_ms": 900,
+      "healthy_after": true
+    },
+    {
+      "delay_ms": 900,
+      "repeat": 1,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 4,
+      "read_s": 0.917,
+      "t_read_start_ms": 900,
+      "healthy_after": true
+    },
+    {
+      "delay_ms": 1200,
+      "repeat": 0,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 4,
+      "read_s": 0.88,
+      "t_read_start_ms": 1200,
+      "healthy_after": true
+    },
+    {
+      "delay_ms": 1200,
+      "repeat": 1,
+      "verdict": "IDENTICAL",
+      "records": 43,
+      "unsolicited": 4,
+      "read_s": 0.872,
+      "t_read_start_ms": 1200,
+      "healthy_after": true
+    }
+  ]
+}

@@ -276,6 +276,38 @@ User-memory names #0..199 already captured separately by
 `tools/probe_user_memory_names_burst.py` at the static range
 `0x20000000` + `n × 0x60000` (7-bit-stride arithmetic).
 
+### 8.1 The 1500 ms wait does NOT apply to user-memory reads ✅ DONE
+
+The wait above is only needed for **Memory_temp** (`0x10000000`), because
+that region is what the device is busy populating. **User memory is
+static** and can be read *immediately* after the patch-select — no
+settle at all. Measured on a GX-10 fw 01000000 over USB with
+`tools/probe_load_read_window.py` (2026-07-24), 12 trials:
+
+| Offset after patch-select | Body vs settled reference | Unsolicited DT1s during read | Read time | Alive after |
+|---|---|---|---|---|
+| **0 ms** | IDENTICAL (43 records / 4699 B) | 1–4 | 1.13–1.51 s | yes |
+| 150 / 300 / 600 ms | IDENTICAL | 1–4 | 0.98–1.41 s | yes |
+| 900 / 1200 ms | IDENTICAL | 4 | 0.87–0.92 s | yes |
+
+Why it is safe: the read range (`0x2xxxxxxx`) is **address-disjoint**
+from everything the device emits unsolicited (`0x00200xxx` staging,
+`0x10xxxxxx` partial body), so a reassembler keyed on address never
+confuses the two. The unsolicited DT1s did land inside the read window
+on every trial and were correctly ignored. Overlapping the device's load
+costs ~0.3–0.6 s of extra read time; it does not corrupt the reply, and
+the device answered an identity request after every trial (no wedge).
+
+Two corollaries from the same run:
+
+- **Edit buffer == user memory after a clean load** — 43/43 records
+  byte-identical, 0 differing. So a settled `0x10000000` read is
+  redundant on the load path when the memory read is available.
+- **Presets are NOT readable this way.** `0x20000000 + n × 0x60000` with
+  n ≥ 200 returns *zero* DT1s (tried V=200). Preset *names* come from the
+  catalogue at `0x50000000`; preset **bodies** need their own address —
+  still unknown, worth a scan.
+
 ---
 
 ## 9. Effect TYPE / SP TYPE / MIC TYPE / etc. enum decoding ✅ DONE
@@ -520,6 +552,7 @@ protocol fully usable for programmatic patch construction.
 | INPUT block (mem name, SENS encoding) | ✅ verified | `tools/spot_check_open.py` |
 | Patch DB — 100 preset names #200..299 | ✅ flow verified | `tools/probe_preset_names.py` (per-device output, not bundled) |
 | Patch-load flow timing | ✅ ~1.1 s bulk emit window | `tools/test_patch_load.py` |
+| User-memory read needs NO settle (safe at 0 ms post-select); edit buffer == memory after a clean load; presets unreadable at `0x20000000+n×0x60000` | ✅ verified, 12 trials | `tools/probe_load_read_window.py` → `captures/load_read_window.json` (§8.1) |
 | Per-effect knob catalog (83 effects × 632 knobs) | ✅ done | `tools/merge_bts_into_catalog.py` → `catalogs/bts_effect_catalog_complete.json` |
 | Hardware-action capture (footswitches, knobs, screen, menu) | ✅ done | `captures/hw_action_log.jsonl`; `gx10_hw_action_protocol.md` memory |
 | **Programmatic patch construction (chain + knobs + assigns)** | ✅ end-to-end | `tools/demo_full_patch.py`; protocol.md §5.10 |
