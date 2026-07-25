@@ -558,9 +558,54 @@ DT1 0x20000000 len 63  4E41545552414C20414D5020484220 ... "NATURAL AMP HB  ..."
 ```
 
 Byte-identical content to `0x10000000`. We have not yet probed whether
-writes to `0x20000000` have different semantics than to `0x10000000` — they
-might be a write-only "audition" region vs read-only "current-state"
-region, or a parallel temp buffer.
+writes to bare `0x20000000` have different semantics than to `0x10000000`
+— they might be a write-only "audition" region vs read-only
+"current-state" region, or a parallel temp buffer.
+
+#### 3.4.1 Single-field writes into a user memory persist (verified)
+
+Writes into memory space at `0x20000000 + memory_n × 0x60000` do **not**
+have to cover a whole block, let alone a whole patch. A single 16-byte
+DT1 at a memory's name offset rewrites just that name, in place, and
+survives a re-read — no WRITE command, no full-patch rewrite, and no
+disturbance to the rest of the memory.
+
+Verified against a real GX-10 (fw 1.02) by
+`tools/probe_memory_name_write.py`, memory 184 (U62-2, base
+`0x28500000`):
+
+```
+DT1 0x28500000  5A5A50524F424520...   "ZZPROBE         "
+
+memory name    : '1090 TD         '  ->  'ZZPROBE         '
+catalogue name : '1090 TD'           ->  'ZZPROBE'
+blocks sampled : 9   (common, led, assign1/2/20, efct, fxItem1/2/20)
+changed outside the name field : 0
+```
+
+Three findings:
+
+1. **The write persists to the memory itself**, not merely to a cache —
+   a fresh read of the memory returns the new name.
+2. **Nothing else moves.** Zero bytes changed outside the 16-byte name
+   field across all nine sampled blocks. This is what lets an editor
+   offer "rename this memory" independently of the patch's other
+   unsaved edits, which a WRITE (`§5.9`, copies memory_temp wholesale)
+   cannot do.
+3. **The `0x50000000` catalogue tracks it immediately** — no sweep,
+   reload, or power cycle needed before the new name is readable there.
+
+Practical notes for editors: this is flash, so keep it to explicit
+user-initiated renames rather than live per-keystroke pushes. Renaming
+the currently-loaded memory does not update the edit buffer at
+`0x10000000` — write both if the device's own display should follow
+(the display shows the buffer).
+
+Why sampled blocks rather than a full 16 KB diff: the device only emits
+DT1s at 7-bit-safe addresses (§3.1.1) and answers with its own record
+size (a `size=0x40` request returns 63 bytes, as above), so a naive walk
+of conventional offsets dies within the first few hundred bytes. The
+§5.6 block list is the set of addresses the device reliably answers at.
 
 ### 3.5 `0x50000000` — patch name catalogue (read-only)
 
