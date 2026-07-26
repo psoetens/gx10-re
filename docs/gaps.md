@@ -308,6 +308,29 @@ Two corollaries from the same run:
   catalogue at `0x50000000`; preset **bodies** need their own address —
   still unknown, worth a scan.
 
+### 8.2 …but NOT when the patch-select follows a write to that memory ⚠️ FIELD REPORT
+
+§8.1's "read immediately, no settle" holds for the case it measured: selecting a
+memory the device **already had**. Its method selects the other memory, settles
+2 s, then selects the target — no write anywhere.
+
+Put a full 16 KiB memory write immediately before the select and the picture
+changes. The select then makes the firmware load bytes that landed milliseconds
+ago, and with an AMP-family block in the body that rebuild is long. A read
+issued 107 ms after the write (i.e. ~100 ms after the select) came back with one
+chain slot's TYPE byte as `0x00` — the "rogue AC SIM" signature — and the device
+stopped answering everything ~1.8 s later, needing a power cycle. **The bad TYPE
+byte survived the power cycle**: it had been committed to flash.
+
+Field report, not a probe: GX-10 sw_rev `01 00 00 00`, USB, 2026-07-26 —
+`reports/patch_load_commit_window_2026-07-26.md`, which also sketches an
+`--after-write` mode for `probe_load_read_window.py` to pin the real window.
+
+Until that's measured, treat ~1 s (the figure the edit-buffer commit already
+uses) as the safe hold after a select that loads a just-written memory, and keep
+identity requests out of it too — an unanswered identity request is where the
+observed failure began.
+
 ---
 
 ## 9. Effect TYPE / SP TYPE / MIC TYPE / etc. enum decoding ✅ DONE
