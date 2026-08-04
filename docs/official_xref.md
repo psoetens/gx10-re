@@ -312,13 +312,22 @@ matching the CTL1 (0–18 range).
 
 | Offset | Field | Range |
 |-------:|-------|-------|
-| 0x00–0x03 | REF. PITCH | 435–445 Hz (4 nibbles) |
+| 0x00–0x03 | REF. PITCH | 435–445 Hz — binary 4-nibble BE (verified, see below) |
 | 0x04 | TT TUNER TYPE | 0–5: 6-REG, 6-DROP D, 7-REG, 7-DROP A, 4-B REG, 5-B REG |
 | 0x05 | TT TUNER OFFSET | 11–16 (–5..–1, ----) |
 | 0x06 | TUNER OUTPUT | MUTE, BYPASS, THRU |
 
 So when we click the TUNER dialog dropdowns, they target
 `0x00006000..0x00006006`. This **fully resolves gaps §2**.
+
+REF. PITCH's "4 nibbles" is the **binary** 4-nibble big-endian form, not
+BCD — established in `gaps.md` §2 and re-confirmed 2026-08-04 on a GX-10
+(sw_rev 01.00.00.00) reading `00 01 0B 08 00 0B 00` (→ 440; BCD would
+give 218, out of range). All four fields also round-trip on the wire
+(`tools/read_tuner_settings.py --write`). `menus.md` §TUNER carries the
+detail, plus two things this chart does not say: `0x6004`/`0x6005` are
+labelled POLY on the owner's firmware and in BTS (three namings for the
+same registers), and the values apply to the POLY display as well as TT.
 
 ### IN/OUT (SystemInOut, 0x4000)
 

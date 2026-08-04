@@ -159,7 +159,7 @@ Full transcript: `captures/flows/write_save_v2.pcap`.
 host → RQ1 0x00000007 size=4
 dev  → DT1 0x00000007 = current mode byte (1=MONO, 2=POLY, 3=TT)
 host → DT1 0x00000007 = mode    (set tuner mode)
-host → DT1 0x00000006 = 00      (sub-config)
+host → DT1 0x00000006 = 00      (TUNER MODE: 0=NORMAL, 1=STREAM)
 host → DT1 0x7F000002 = 02      (editor-attached state = "tuner active")
 dev  → DT1 0x7F000300 (48 B)    (start of real-time pitch display stream, repeats)
 ```
@@ -227,8 +227,8 @@ dev  → DT1 <addr> <data:size>     (or split into multiple DT1s by record bound
 
 | Address | Bytes | Setting | Source dialog |
 |---------|------:|---------|---------------|
-| `0x0000_0006` | 1 | Tuner sub-config | TUNER |
-| `0x0000_0007` | 1 | Tuner mode (1/2/3 = MONO/POLY/TT) | TUNER |
+| `0x0000_0006` | 1 | TUNER MODE (0=NORMAL, 1=STREAM) | TUNER |
+| `0x0000_0007` | 1 | TUNER TYPE (1/2/3 = MONO/POLY/TT) | TUNER |
 | `0x0000_0008` | 1 | BANK MODE | MENU/PLAY OPTION |
 | `0x0000_000D` | 1 | AUTO OFF | MENU/HARDWARE |
 | `0x0000_000E` | 1 | EXP1 HOLD or EXP2 HOLD | MENU/HARDWARE |

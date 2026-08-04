@@ -90,11 +90,46 @@ Click `(166, 108)` for USER. Probably client-side only.
 Verified by reading the block on-device with the user's known UI
 state (435 Hz / 6-DROP D / −1 / BYPASS) — every byte matched.
 `tools/read_tuner_settings.py` reads + decodes the whole block in
-one shot.
+one shot. Re-confirmed 2026-08-04 on fw 01.00.00.00 (`00 01 0B 08 00 0B
+00` = 440 / 6-REG / −5 / MUTE), and that tool's `--write` mode
+round-tripped all four fields (write → read-back → restore), so the
+block is confirmed **writable**, not just readable.
 
 Note: the chart calls these "TT TUNER ..." but they apply to **POLY**
 mode (the device's poly tuner type/offset selectors). The TT mode's
 own per-string targets live in `0x00200005..08` (`SetupTemp.TT*`).
+The owner's GX-10 (fw 01.00.00.00) labels them "POLY TYPE"/"POLY OFFSET"
+on its own screen, matching BTS; the current online manual says
+"TT TYPE"/"TT OFFSET". Three namings, same two registers — and they
+apply to BOTH displays, so gating them on POLY alone hides live controls
+on firmware that dropped POLY but kept TT.
+
+Added 2026-08-04 (GX-10 fw 01.00.00.00):
+
+| Control | Address | Range | Status |
+|---------|---------|-------|--------|
+| **TUNER MODE** | `0x0000_0006` | 0=NORMAL, 1=STREAM | ✅ |
+
+That is the tuner's SECOND display axis, and it closes a loose end:
+`protocol.md` §3.8.1 used to record BTS's `0x0000_0006 = 0x00` in the
+activation handshake as "purpose unidentified — cargo-cult with
+caution". The chart had it all along (SystemCommon 0x06,
+`NORMAL`/`STREAM`), and the GX-10 manual names the displays it produces:
+*"turn the [SELECT] knob to switch the tuner display: Monophonic
+(normal), Monophonic (streaming), True Temperament (normal), True
+Temperament (streaming)."* Crossed with `0x0000_0007`'s three types that
+is the device's **six** tuner displays; BTS's `0x00` is just "normal".
+
+Still open on this: writes to `0x0000_0006` outside BTS's handshake are
+untested, so it is not confirmed settable on its own. And the STREAM
+readout stays unusable by a client until the `0x7F000300` per-string
+payload gets a note→bar mapping (tracked separately below).
+
+**THRU excludes POLY** — owner-observed, absent from the manual: with
+TUNER OUTPUT = THRU the device will not show the POLY display, leaving
+MONO and TT (4 of the 6). Consistent with POLY being a BTS-GUI extension
+the hardware tolerates rather than a first-class device display. Not
+captured at the wire level — the observation is from the pedal's screen.
 
 ---
 

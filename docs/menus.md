@@ -75,26 +75,69 @@ small handshake then receives a continuous display stream.
 | 2 | dev→host | DT1 | `0x0000_0007` | `01` | Current tuner state |
 | 3 | dev→host | DT1 | `0x0000_0007` | `02` | (next state value) |
 | 4 | host→dev | DT1 | `0x0000_0007` | `01` | Set tuner state = 1 |
-| 5 | host→dev | DT1 | `0x0000_0006` | `00` | Tuner sub-config = 0 |
+| 5 | host→dev | DT1 | `0x0000_0006` | `00` | TUNER MODE = NORMAL (see below; not a "sub-config") |
 | 6 | host→dev | DT1 | `0x7F00_0002` | `02` | Editor-attached flag = 2 (tuner mode) |
 | 7 | dev→host | DT1 | `0x7F00_0002` | `02` | Echo of editor-attached |
 | 8 | dev→host | DT1 | `0x7F00_0701` | `06` | Poly tuner type = 6-REG |
 | 9..N | dev→host | DT1 | `0x7F00_0300` | (48-byte payload) | Real-time pitch display |
 
-**Tuner mode** at `0x0000_0007` (1 byte) — confirmed via official chart
+**Tuner TYPE** at `0x0000_0007` (1 byte) — confirmed via official chart
 (SystemCommon offset 0x07 = TUNER TYPE):
 - `0x01` = MONO
 - `0x02` = POLY (default)
 - `0x03` = TT MODE
 
+**Tuner MODE** at `0x0000_0006` (1 byte) — the second display axis,
+per the official chart (SystemCommon offset 0x06, `NORMAL` / `STREAM`):
+- `0x00` = NORMAL
+- `0x01` = STREAM
+
+The two axes multiply: **3 types × 2 modes = 6 tuner displays.** The
+GX-10 manual lists the four its own UI reaches (it never offers POLY):
+*"You can turn the [SELECT] knob to switch the tuner display:
+Monophonic (normal), Monophonic (streaming), True Temperament (normal),
+True Temperament (streaming)."* BTS's `0x0000_0006 = 0x00` in the
+handshake above is just "normal" — see `protocol.md` §3.8.1, which used
+to file this register as unidentified.
+
+**THRU excludes POLY** (owner-observed on a GX-10, 2026-08-04; absent
+from the manual): with TUNER OUTPUT set to THRU the device will not show
+the POLY display, leaving MONO and TT — i.e. 4 of the 6. Consistent with
+POLY being a BTS-GUI extension the hardware tolerates rather than a
+first-class device display.
+
 The dialog's other sub-controls live in **SystemPitch** (`0x0000_6000`):
 
 | Address | Field | Range |
 |---------|-------|-------|
-| `0x0000_6000`–`0x0000_6003` | REF. PITCH | 4 nibbles, 435–445 Hz |
-| `0x0000_6004` | TT TUNER TYPE | 0–5: 6-REG, 6-DROP D, 7-REG, 7-DROP A, 4-B REG, 5-B REG |
-| `0x0000_6005` | TT TUNER OFFSET | 11–16 (–5..–1, ----) |
-| `0x0000_6006` | TUNER OUTPUT | MUTE, BYPASS, THRU |
+| `0x0000_6000`–`0x0000_6003` | REF. PITCH | 435–445 Hz — **binary 4-nibble big-endian**, see below |
+| `0x0000_6004` | TT / POLY TUNER TYPE | 0–5: 6-REG, 6-DROP D, 7-REG, 7-DROP A, 4-B REG, 5-B REG |
+| `0x0000_6005` | TT / POLY TUNER OFFSET | 11–16 (–5..–1, ----) — NOT zero-based |
+| `0x0000_6006` | TUNER OUTPUT | 0=MUTE, 1=BYPASS, 2=THRU |
+
+**REF. PITCH encoding** — binary 4-nibble big-endian (low nibble of each
+byte, MSN first), the same convention as every other multi-byte field
+here (`tools/encoding.py`). Established in `gaps.md` §2 against a known
+on-device UI state; re-confirmed 2026-08-04 on a GX-10 (sw_rev
+01.00.00.00) reading `00 01 0B 08 00 0B 00`, where the rival BCD reading
+gives 218 — outside the register's own 435–445 range. `--write` on
+`tools/read_tuner_settings.py` additionally round-tripped all four
+fields (write → read-back → restore) on that unit, so the block is
+confirmed writable, not just readable.
+
+**Label drift on `0x6004`/`0x6005`** — three namings for the same two
+registers, so don't treat any one as canonical (`gaps.md` §2 notes the
+chart-vs-POLY discrepancy; the third column is the on-device menu):
+
+| Source | Names |
+|--------|-------|
+| Official MIDI chart / current online GX-10 manual | `TT TYPE`, `TT OFFSET` |
+| Owner's GX-10, fw 01.00.00.00 (on-device menu) | `POLY TYPE`, `POLY OFFSET` |
+| BTS GUI | `POLY TUNER TYPE`, `POLY TUNER OFFSET` |
+
+Note the values bite on BOTH the POLY and TT displays, which is why
+firmware that drops POLY still needs them. A client gating them on POLY
+alone would hide live controls.
 
 Verified by clicking each tab: `captures/flows/tuner_modes.pcap`
 recorded 0x02 → 0x01 → 0x02 → 0x03 transitions matching the GUI.

@@ -1,14 +1,42 @@
-"""Read the tuner-config registers and decode them.
+"""Read (and optionally round-trip) the SystemPitch tuner-config registers.
 
-Per docs/menus.md / docs/gaps.md (chart-documented but unverified):
-  0x0000_6000  SystemPitch        — reference pitch (e.g. 440 Hz)
-  0x0000_6004  POLY TUNER TYPE    — 6-REG, 6-DROP D, 7-REG, 7-DROP A, 4-B REG, 5-B REG
-  0x0000_6005  POLY TUNER OFFSET  — 11..16 = -5..-1, plus '----'
-  0x0000_6006  TUNER OUTPUT       — MUTE, BYPASS, THRU
+Block `0x0000_6000` — the four knobs on the device's own MENU -> TUNER page:
 
-Caller reports current state:
-  pitch=435Hz  poly_offset=-1  poly_type=6-DROP D  tuner_output=BYPASS
-We compare what we read to those expectations to lock down the encoding.
+  0x0000_6000..6003  REF. PITCH     435-445 Hz, binary 4-nibble big-endian
+                                    (low nibble of each byte; 440 = 0x01B8
+                                    = `00 01 0B 08`)
+  0x0000_6004        POLY/TT TYPE   0-5: 6-REG, 6-DROP D, 7-REG, 7-DROP A,
+                                    4-B REG, 5-B REG
+  0x0000_6005        POLY/TT OFFSET 11-15 = -5..-1, 16 = "----" (no offset).
+                                    NOT zero-based.
+  0x0000_6006        TUNER OUTPUT   0=MUTE, 1=BYPASS, 2=THRU
+
+Encoding history: this script originally sprayed decode hypotheses because
+the official chart only said "4 nibbles". That is long settled — see
+docs/gaps.md §2, which recorded the binary-4-nibble-BE form verified
+against a known on-device UI state (435 Hz / 6-DROP D / -1 / BYPASS), every
+byte matching. Re-confirmed 2026-08-04 on a GX-10 (sw_rev 01.00.00.00),
+which read `00 01 0B 08 00 0B 00` = 440 Hz / 6-REG / -5 / MUTE; the rival
+BCD reading gives 218, outside the register's own 435-445 range. The
+decoder below just applies the settled form, and `--verify-encoding`
+prints the BCD comparison if you ever want to re-run the tie-break.
+
+Naming: the official chart calls 0x6004/0x6005 "TT TUNER ...", the owner's
+GX-10 menu and BTS both call them "POLY ...", and the values apply to BOTH
+the POLY and TT displays. See docs/menus.md §TUNER.
+
+Usage:
+    python3 tools/read_tuner_settings.py                     # read + decode
+    python3 tools/read_tuner_settings.py --verify-encoding    # + BCD tie-break
+    python3 tools/read_tuner_settings.py --write              # + write round-trip
+
+`--write` writes a distinct value to each of the four fields, reads each
+back, then RESTORES the values found on entry, leaving the device as it
+was. Verified end to end 2026-08-04. Run it with nothing else driving the
+device.
+
+Read paths are safe alongside an attached editor: replies are matched on
+address, so another client's traffic is ignored.
 """
 import sys
 import threading
@@ -20,9 +48,14 @@ from midi_send import find_output_port, MidiOut, build_dt1, build_rq1
 import midi_sniff
 from device_id import require_alive_raw
 
+BASE = 0x00006000
+# 8 is 7-bit-clean and over-reads past the last documented byte (0x06).
+# RQ1 sizes are raw big-endian with every byte <= 0x7F — see docs/protocol.md.
+SIZE = 8
 
 POLY_TYPES = ["6-REG", "6-DROP D", "7-REG", "7-DROP A", "4-B REG", "5-B REG"]
 TUNER_OUTPUT = ["MUTE", "BYPASS", "THRU"]
+PITCH_RANGE = (435, 445)
 
 
 def parse_dt1(raw):
@@ -33,33 +66,141 @@ def parse_dt1(raw):
     return int.from_bytes(raw[9:13], "big"), bytes(raw[13:-2])
 
 
-def read_one(out, in_events, lock, addr, sz, timeout=0.5):
-    """Send RQ1 and wait for matching DT1."""
-    out.send_sysex(build_rq1(addr, sz))
+def decode_pitch(b):
+    """Binary 4-nibble big-endian: low nibble of each byte, MSN first."""
+    return ((b[0] & 0x0F) << 12) | ((b[1] & 0x0F) << 8) \
+         | ((b[2] & 0x0F) << 4) | (b[3] & 0x0F)
+
+
+def encode_pitch(hz):
+    hz = max(PITCH_RANGE[0], min(hz, PITCH_RANGE[1]))
+    return bytes([(hz >> 12) & 0x0F, (hz >> 8) & 0x0F,
+                  (hz >> 4) & 0x0F, hz & 0x0F])
+
+
+def decode_bcd(b):
+    """The rival reading, kept only for --verify-encoding."""
+    return (b[0] & 0x0F) * 1000 + (b[1] & 0x0F) * 100 \
+         + (b[2] & 0x0F) * 10 + (b[3] & 0x0F)
+
+
+def offset_label(o):
+    if 11 <= o <= 15:
+        return f"{o - 16:+d}"
+    if o == 16:
+        return "---- (no offset)"
+    return f"?({o})"
+
+
+def read_block(out, events, lock, timeout=1.0):
+    """One RQ1 of the whole block; returns the first 7 payload bytes."""
+    with lock:
+        events.clear()
+    out.send_sysex(build_rq1(BASE, SIZE))
     deadline = time.time() + timeout
     while time.time() < deadline:
         with lock:
-            for _, e in in_events:
-                p = parse_dt1(e)
-                if p and p[0] == addr:
-                    return p[1]
+            snap = list(events)
+        for e in snap:
+            p = parse_dt1(e)
+            if p and p[0] == BASE:
+                return p[1][:7]
         time.sleep(0.02)
     return None
 
 
+def show(payload, verify_encoding):
+    print(f"raw 0x{BASE:08X}..0x{BASE + 6:08X} = "
+          + " ".join(f"{b:02X}" for b in payload))
+    print()
+    pitch = payload[0:4]
+    hz = decode_pitch(pitch)
+    in_range = PITCH_RANGE[0] <= hz <= PITCH_RANGE[1]
+    print(f"  REF. PITCH   {pitch.hex().upper()} -> {hz} Hz"
+          + ("" if in_range else "   !! OUTSIDE 435-445"))
+    if verify_encoding:
+        bcd = decode_bcd(pitch)
+        print(f"    binary 4-nibble BE -> {hz:5d}   "
+              f"{'IN RANGE' if in_range else 'out of range'}")
+        print(f"    BCD decimal digits -> {bcd:5d}   "
+              f"{'IN RANGE' if PITCH_RANGE[0] <= bcd <= PITCH_RANGE[1] else 'out of range'}")
+
+    t, o, u = payload[4], payload[5], payload[6]
+    print(f"  TYPE         {t:02X} -> "
+          f"{POLY_TYPES[t] if t < len(POLY_TYPES) else f'?({t})'}")
+    print(f"  OFFSET       {o:02X} -> {offset_label(o)}")
+    print(f"  TUNER OUTPUT {u:02X} -> "
+          f"{TUNER_OUTPUT[u] if u < len(TUNER_OUTPUT) else f'?({u})'}")
+
+
+def write_round_trip(out, events, lock, original):
+    """Write a distinct value to each field, read it back, then restore.
+
+    60 ms between DT1s — far clear of the 3 ms floor the chain-edit deadlock
+    forced (docs/protocol.md §4). These are single-byte system registers,
+    not a chain burst, so there is no reason to crowd them.
+    """
+    print()
+    print("=== WRITE ROUND-TRIP (restores your values at the end) ===")
+    print("  entry state: " + " ".join(f"{b:02X}" for b in original))
+
+    cases = [
+        ("REF. PITCH 443", 0x00, encode_pitch(443)),
+        ("TYPE 7-DROP A",  0x04, bytes([0x03])),
+        ('OFFSET "----"',  0x05, bytes([0x10])),
+        ("OUTPUT BYPASS",  0x06, bytes([0x01])),
+    ]
+
+    failures = 0
+    for label, off, payload in cases:
+        out.send_sysex(build_dt1(BASE + off, payload))
+        time.sleep(0.06)
+        back = read_block(out, events, lock)
+        if back is None:
+            print(f"  {label:16s} FAIL — no read-back")
+            failures += 1
+            continue
+        got = back[off:off + len(payload)]
+        ok = got == payload
+        failures += 0 if ok else 1
+        print(f"  {label:16s} wrote {payload.hex().upper():8s} "
+              f"read {got.hex().upper():8s} {'OK' if ok else 'MISMATCH'}")
+
+    print("  restoring…")
+    out.send_sysex(build_dt1(BASE + 0x00, bytes(original[0:4])))
+    time.sleep(0.06)
+    for off in (0x04, 0x05, 0x06):
+        out.send_sysex(build_dt1(BASE + off, bytes([original[off]])))
+        time.sleep(0.06)
+    back = read_block(out, events, lock)
+    restored = back == original
+    print("  after restore: " + " ".join(f"{b:02X}" for b in (back or []))
+          + ("  OK" if restored else "  !! DID NOT MATCH ENTRY STATE"))
+    if failures or not restored:
+        print(f"  {failures} field(s) failed; "
+              f"restore {'ok' if restored else 'FAILED'}")
+    else:
+        print("  all 4 fields round-tripped, device restored")
+    return failures == 0 and restored
+
+
 def main():
+    verify_encoding = "--verify-encoding" in sys.argv
+    do_write = "--write" in sys.argv
+
     events = []
     lock = threading.Lock()
     in_idx, in_name = midi_sniff.find_port("GX-10")
     if in_idx is None:
-        print("ERROR: no MIDI input"); sys.exit(2)
+        print("ERROR: no MIDI input")
+        sys.exit(2)
     s = midi_sniff.Sniffer(in_idx, Path("__nul__.jsonl"), in_name)
 
     def emit(o):
         if o.get("kind") == "sysex":
             try:
                 with lock:
-                    events.append((time.time(), bytes.fromhex(o["hex"])))
+                    events.append(bytes.fromhex(o["hex"]))
             except Exception:
                 pass
     s._emit = emit
@@ -69,76 +210,21 @@ def main():
     time.sleep(0.3)
     require_alive_raw(out, events, lock)
 
-    # Read a small block at 0x6000 (8 bytes covers all 4 fields)
-    payload = read_one(out, events, lock, 0x00006000, 8, timeout=1.0)
-    if not payload:
-        # Fall back to one-by-one
-        print("Block read failed, reading individually...")
-        fields = {}
-        for off in (0x00, 0x04, 0x05, 0x06):
-            with lock:
-                events.clear()
-            v = read_one(out, events, lock, 0x00006000 + off, 1)
-            fields[off] = v
-        b0 = fields.get(0x00, b"")
-        b4 = fields.get(0x04, b"") or b""
-        b5 = fields.get(0x05, b"") or b""
-        b6 = fields.get(0x06, b"") or b""
-        payload = b0 + b"\x00\x00\x00" + b4 + b5 + b6
-    print(f"raw 0x00006000..0x00006007 = {payload.hex().upper()}")
-    print()
+    payload = read_block(out, events, lock)
+    if payload is None or len(payload) < 7:
+        print(f"RQ1 0x{BASE:08X} size={SIZE}: no usable reply")
+        sys.stdout.flush()
+        import os
+        os._exit(1)
 
-    # 0x6000: SystemPitch — likely 2 bytes packed, or 1 byte offset from 440
-    pitch_bytes = payload[0:4]
-    print(f"0x00006000 SystemPitch     bytes={pitch_bytes.hex().upper()}")
-    # Decoding hypothesis: high+low nibble offset binary (4-nibble)?
-    # Or simple scalar: byte0 = freq - 400 (e.g. 435 -> 35 = 0x23)?
-    # Try a few interpretations:
-    if len(pitch_bytes) >= 2:
-        # 7-bit big-endian 2 bytes: (b0<<7) | b1
-        v_7bit = (pitch_bytes[0] << 7) | pitch_bytes[1]
-        # raw byte
-        v_b0 = pitch_bytes[0]
-        # 4-nibble offset binary
-        v_4n = ((pitch_bytes[0] & 0xF) << 12 | (pitch_bytes[1] & 0xF) << 8
-                | (pitch_bytes[2] & 0xF) << 4 | (pitch_bytes[3] & 0xF))
-        print(f"  byte0          = {v_b0}      (if directly = freq - 400 -> {v_b0 + 400} Hz)")
-        print(f"  7-bit BE 2B    = {v_7bit}    (could be Hz directly)")
-        print(f"  4-nibble (low nibble of each byte) = {v_4n}  (= 0x{v_4n:04X})")
-        print(f"     -> if value is Hz directly: {v_4n} Hz")
-        print(f"     -> if offset binary: {v_4n - 32768}")
+    show(payload, verify_encoding)
+    ok = True
+    if do_write:
+        ok = write_round_trip(out, events, lock, payload)
 
-    # 0x6004 POLY TUNER TYPE
-    if len(payload) > 4:
-        t = payload[4]
-        name = POLY_TYPES[t] if t < len(POLY_TYPES) else f"?({t})"
-        print(f"\n0x00006004 POLY TUNER TYPE   = {t} ({name})")
-
-    # 0x6005 POLY TUNER OFFSET — chart says 11..16 = -5..-1 (or '----')
-    if len(payload) > 5:
-        o = payload[5]
-        if 11 <= o <= 15:
-            offset = o - 16
-            print(f"0x00006005 POLY OFFSET       = {o} (= {offset:+d})")
-        elif o == 16:
-            print(f"0x00006005 POLY OFFSET       = {o} (= ----, no offset)")
-        elif o < 11:
-            print(f"0x00006005 POLY OFFSET       = {o} (= {o:+d}? or 0..N range)")
-        else:
-            print(f"0x00006005 POLY OFFSET       = {o} (?)")
-
-    # 0x6006 TUNER OUTPUT
-    if len(payload) > 6:
-        u = payload[6]
-        name = TUNER_OUTPUT[u] if u < len(TUNER_OUTPUT) else f"?({u})"
-        print(f"0x00006006 TUNER OUTPUT      = {u} ({name})")
-
-    print()
-    print("Expected from caller: pitch=435 Hz, poly_offset=-1, poly_type=6-DROP D, output=BYPASS")
-    print("If decoding matches -> encoding confirmed.")
     sys.stdout.flush()
-
-    import os; os._exit(0)
+    import os
+    os._exit(0 if ok else 1)
 
 
 if __name__ == "__main__":

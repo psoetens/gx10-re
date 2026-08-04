@@ -737,8 +737,23 @@ The display follows the **last write**, so order matters.
    registers are deaf without it; give it settle time).
 2. `DT1 0x7F000002 = 0x02` — activate the tuner FIRST.
 3. `DT1 0x00000007 = 1|2|3` — THEN select MONO / POLY / TT.
-4. (BTS also writes `0x00000006 = 0x00` here. Register purpose
-   unidentified — cargo-cult with caution.)
+4. `DT1 0x00000006 = 0x00` — **TUNER MODE: 0 = NORMAL, 1 = STREAM.**
+   Identified 2026-08-04; previously filed here as "purpose
+   unidentified — cargo-cult with caution". It is the SECOND axis of
+   the tuner display, and the official chart carried it all along
+   (`catalogs/menu_register_catalog.json`, SystemCommon offset 0x06,
+   `values: ["NORMAL", "STREAM"]`). The GX-10 manual's MENU → TUNER page
+   names the resulting four displays: *"You can turn the [SELECT] knob
+   to switch the tuner display: Monophonic (normal), Monophonic
+   (streaming), True Temperament (normal), True Temperament
+   (streaming)."* Crossed with `0x00000007`'s three types that is the
+   device's **six** tuner displays. BTS writing `0x00` is simply
+   "normal", not a magic constant.
+
+   Not exercised by gxnarly: the streaming readout's `0x7F000300`
+   payload has no documented note→bar mapping, so a client can select
+   the mode but cannot render it. Writes outside BTS's handshake are
+   untested — nothing has confirmed the register is settable on its own.
 
 Exit: `DT1 0x7F000002 = 0x00`. `API.md` §156's "deactivate with `= 0x01`"
 is wrong on this firmware — `0x01` switches to the MONO view instead.
